@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Atelier son chic｜ボタニカルキャンドル教室（デザイン案・サンプル）</title>
+<meta name="description" content="花の記憶を、蝋にとじこめる。ヴォーグ社認定講師によるボタニカルキャンドル教室。ティータイム付きの、大人のための上質なレッスン。大阪市天王寺区。">
+<style>
+  :root{
+    --bg:#f5efe3;
+    --panel:#fffdf8;
+    --beige:#e8dcc6;
+    --beige2:#d8c8ab;
+    --green:#6f7d5a;
+    --green2:#4c5940;
+    --green-soft:#e3e8d8;
+    --brown:#8a7355;
+    --gold:#b39a63;
+    --ink:#443d31;
+    --sub:#7b7161;
+    --line:rgba(76,64,44,.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.98;letter-spacing:.045em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+
+  .sample-bar{background:linear-gradient(90deg,#4c5940,#6f7d5a);color:#f3eddf;text-align:center;font-size:11.5px;padding:7px 14px;letter-spacing:.08em;position:relative;z-index:60}
+  .sample-bar b{color:#efe3c6}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(245,239,227,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(245,239,227,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:18px;letter-spacing:.22em;color:var(--green2);font-weight:600}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--brown);margin-top:2px}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.12em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--green);border-color:var(--green)}
+  nav a.cta{background:var(--green);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.08em;box-shadow:0 8px 18px rgba(111,125,90,.3)}
+  nav a.cta:hover{background:var(--green2);color:#fff;transform:translateY(-1px)}
+  @media(max-width:860px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(70,62,44,.32),rgba(245,239,227,.15) 65%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,239,227,.75) 0%,rgba(245,239,227,.1) 46%,transparent 60%)}
+  .hero-inner{position:relative;z-index:2;max-width:600px;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.26em;color:var(--brown);margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--brown)}
+  .hero h1{font-size:clamp(28px,5.4vw,50px);font-weight:600;line-height:1.66;letter-spacing:.07em;color:var(--green2);text-wrap:balance}
+  .hero h1 span{color:var(--brown)}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:var(--sub);max-width:30em}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.08em;transition:.3s}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 12px 26px rgba(111,125,90,.35)}
+  .btn-primary:hover{background:var(--green2);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--beige2);color:var(--green2);background:rgba(255,253,248,.6)}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
+  .hero-badges{margin-top:30px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
+  .hero-badges b{color:var(--green)}
+
+  section{padding:clamp(70px,10vw,120px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.36em;color:var(--brown);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.09em;color:var(--green2)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{background:var(--bg);text-align:center}
+  .cnc{max-width:720px;margin:0 auto}
+  .cnc .lead{font-size:clamp(19px,3.2vw,27px);line-height:2;color:var(--green2);letter-spacing:.08em}
+  .cnc .lead b{color:var(--brown);font-weight:600}
+  .cnc p.body{margin-top:26px;font-size:14px;color:var(--sub);line-height:2.1}
+  .sprig{display:block;width:44px;height:44px;margin:0 auto 24px;color:var(--green)}
+
+  /* charm */
+  .charm{background:linear-gradient(180deg,var(--bg),#efe6d4)}
+  .ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .ch{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 22px;display:flex;gap:13px;align-items:flex-start}
+  .ch .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .ch p{font-size:13.8px;line-height:1.85}
+  .ch-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--green2);letter-spacing:.06em}
+  .ch-foot b{color:var(--brown);font-weight:600}
+
+  /* lesson */
+  .lesson{background:var(--bg)}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .35s,box-shadow .35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(76,64,44,.14)}
+  .lcard .cap{height:88px;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,var(--green-soft),#d6ddc6)}
+  .lcard .body{padding:24px 24px 26px}
+  .lcard h3{font-size:18px;font-weight:600;color:var(--green2);letter-spacing:.05em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.9}
+  .lcard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.08em;color:var(--brown);border:1px solid rgba(138,115,85,.4);border-radius:999px;padding:4px 12px}
+
+  /* teatime feature */
+  .feature{background:var(--green2);color:#eef0e5}
+  .ft-wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;max-width:960px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.ft-wrap{grid-template-columns:1fr;gap:28px}}
+  .ft-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px rgba(0,0,0,.24)}
+  .ft-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ft-info .en{font-size:11px;letter-spacing:.36em;color:#d5c69a;display:block;margin-bottom:12px}
+  .ft-info h2{font-size:clamp(22px,3.2vw,29px);font-weight:600;letter-spacing:.07em;color:#fff;line-height:1.6}
+  .ft-info p{margin-top:18px;font-size:14px;color:#cfd4c2;line-height:2.1}
+  .ft-info p b{color:#e6dcbe;font-weight:600}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,#efe6d4,var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.2em;color:var(--brown);margin-bottom:8px}
+  .rs .ic{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
+  .rs h3{font-size:17px;font-weight:600;letter-spacing:.05em;color:var(--green2);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+
+  /* teacher */
+  .teacher{background:var(--bg)}
+  .tc-wrap{display:grid;grid-template-columns:280px 1fr;gap:46px;max-width:900px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,#e6dcc4,#d3c4a4);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(76,64,44,.18)}
+  .tc-photo .fl{position:absolute;font-size:44px;color:rgba(111,125,90,.5)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(76,64,44,.5);font-size:10.5px;letter-spacing:.2em}
+  .tc-info .role{font-size:11px;letter-spacing:.24em;color:var(--brown)}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.08em;color:var(--green2);margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.1em;margin-left:8px;font-weight:400}
+  .tc-info .lic{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--green);border:1px solid rgba(111,125,90,.4);border-radius:999px;padding:5px 14px;letter-spacing:.06em}
+  .tc-info p{font-size:14px;color:var(--sub);margin-top:16px;line-height:2.05}
+
+  /* voice */
+  .voice{background:linear-gradient(180deg,var(--bg),#efe6d4)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+  .vcard .stars{color:var(--gold);letter-spacing:.18em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.05em}
+
+  /* reserve */
+  .reserve{background:var(--green2)}
+  .reserve .sec-head .en{color:#d5c69a}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#cfd4c2;font-size:14px;margin-bottom:36px}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.06em;color:#eef0e5}
+  .frow .req{color:#e6dcbe;font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #e6dcbe;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:#fff;color:var(--green2);font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.1em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px);background:#f3f1e8}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.14);border-radius:12px;padding:16px;font-size:13.5px}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#a3aa92;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.05em}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:11px;letter-spacing:.2em;background:linear-gradient(135deg,#e3e8d8,#d6ddc6)}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:var(--green2);color:#c3c9b3;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:20px;letter-spacing:.18em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10px;letter-spacing:.3em;color:#d5c69a;margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#98a086;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">このページは <b>Web制作 ゆたか</b> による <b>Atelier son chic 様</b>へのご提案用デザイン案（サンプル）です</div>
+
+<header id="hd">
+  <div class="logo">Atelier son chic<small>BOTANICAL CANDLE</small></div>
+  <nav>
+    <a href="#concept">コンセプト</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#feature">ティータイム</a>
+    <a href="#teacher">講師</a>
+    <a href="#reserve" class="cta">体験レッスン</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">ボタニカルキャンドル教室</span>
+    <h1 class="mincho">花の記憶を、<br><span>蝋</span>にとじこめる。</h1>
+    <p>咲いた瞬間のうつくしさを、そっと蝋のなかへ。ヴォーグ社認定講師とともに、ひとつだけのボタニカルキャンドルを仕立てる、大人のための静かな時間。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験レッスンを予約する →</a>
+      <a href="#lesson" class="btn btn-ghost">レッスンを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>❋ <b>ヴォーグ社</b>認定講師</span>
+      <span>❋ <b>ティータイム</b>付き</span>
+      <span>❋ 少人数・大阪 天王寺</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <svg class="sprig" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+    <path d="M22 40 C22 26 22 14 22 6" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M22 16 C16 12 12 12 9 8 M22 16 C28 12 32 12 35 8" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M22 26 C16 23 13 23 10 20 M22 26 C28 23 31 23 34 20" stroke="currentColor" stroke-width="1.2"/>
+    <circle cx="22" cy="6" r="2.4" fill="currentColor"/>
+  </svg>
+  <div class="cnc">
+    <div class="sec-head reveal" style="margin-bottom:34px"><span class="en">CONCEPT</span><h2 class="mincho">son chic の世界</h2></div>
+    <p class="lead reveal mincho">うつくしい花には、<br>いつか枯れてしまう定めがあります。<br>その<b>いちばん美しい瞬間</b>を、<br>蝋のなかに、そっと。</p>
+    <p class="body reveal">Atelier son chic は、ドライフラワーやプリザーブドフラワーを閉じ込めた、ボタニカルキャンドルの教室です。花と蝋、光と影。ひとつとして同じもののない作品を、あなたの手で仕立てていきます。アンティークの器や道具に囲まれた空間で、日常を少しだけ忘れる、上質な時間をお過ごしください。</p>
+  </div>
+</section>
+
+<!-- charm -->
+<section class="charm">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="ch-grid">
+    <div class="ch reveal"><span class="ic">❋</span><p>花やアンティークが好きで、上質な習いごとを探している</p></div>
+    <div class="ch reveal d1"><span class="ic">❋</span><p>自分の手で、ひとつだけの作品をつくってみたい</p></div>
+    <div class="ch reveal d2"><span class="ic">❋</span><p>日常から離れて、静かに集中できる時間がほしい</p></div>
+    <div class="ch reveal"><span class="ic">❋</span><p>贈りものや、お部屋を彩る作品を手づくりしたい</p></div>
+    <div class="ch reveal d1"><span class="ic">❋</span><p>ゆくゆくは資格を取り、教室を開いてみたい</p></div>
+    <div class="ch reveal d2"><span class="ic">❋</span><p>不器用でも、丁寧に教わりながら楽しみたい</p></div>
+  </div>
+  <p class="ch-foot reveal mincho">ひとつでも心が動いたなら、<b>はじめての一本</b>を仕立てにいらしてください。</p>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><p>目的に合わせてお選びいただけます</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="cap">🌷</div>
+      <div class="body">
+        <h3 class="mincho">1DAY 体験レッスン</h3>
+        <p>まずは気軽に一本を。ドライフラワーを選ぶところから仕上げまで、その日のうちに作品を持ち帰っていただけます。</p>
+        <span class="tag">はじめての方に</span>
+      </div>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="cap">🕯</div>
+      <div class="body">
+        <h3 class="mincho">ボタニカルキャンドル</h3>
+        <p>花の配置や色の重ね方、透明感の出し方まで。回を重ねるごとに、あなたらしい表現を深めていく継続コースです。</p>
+        <span class="tag">じっくり学ぶ</span>
+      </div>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="cap">📜</div>
+      <div class="body">
+        <h3 class="mincho">資格取得コース</h3>
+        <p>ヴォーグ社のカリキュラムに沿って、技術と知識を体系的に。将来、講師として活動したい方に向けたコースです。</p>
+        <span class="tag">講師を目指す方へ</span>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※コース内容はデザイン案の一例です。実際のレッスン・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- feature (teatime) -->
+<section class="feature" id="feature">
+  <div class="ft-wrap">
+    <div class="ft-info reveal">
+      <span class="en">TEA TIME</span>
+      <h2 class="mincho">香りとお茶と、<br>ひとやすみ。</h2>
+      <p>son chic のレッスンには、<b>ティータイム</b>が寄り添います。仕立てた作品を眺めながら、あたたかいお茶とともに、ゆっくりとひと息。作ることそのものだけでなく、その時間まるごとを楽しんでいただきたいから。</p>
+      <p>アンティークの器でお出しするお茶とお菓子も、son chic のレッスンの、大切な一部です。</p>
+    </div>
+    <div class="ft-ph reveal"><img src="images/hero.jpg" alt="ボタニカルキャンドルとドライフラワー（イメージ）"></div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">son chic が選ばれる理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🎓</div>
+      <h3 class="mincho">ヴォーグ社認定講師</h3>
+      <p>確かなカリキュラムにもとづく指導。趣味の一本から、資格取得まで、目的に合わせて丁寧にお伝えします。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🌿</div>
+      <h3 class="mincho">上質な素材と世界観</h3>
+      <p>厳選したドライフラワーとアンティークの空間。「花の記憶をとじこめる」世界観を、細部までしつらえています。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">☕</div>
+      <h3 class="mincho">少人数＆ティータイム</h3>
+      <p>ひとりおひとりに目が届く少人数制。お茶を味わうゆとりの時間まで含めて、心満たされるレッスンです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">❋</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">Atelier son chic</h3>
+      <span class="lic">日本ヴォーグ社 認定講師</span>
+      <p>一輪の花が枯れていくのを、少しだけ惜しむ気持ちから、この教室は生まれました。花のいちばん美しい瞬間を蝋にとじこめ、光を灯すたびによみがえらせる——その静かな喜びを、ひとりでも多くの方と分かち合いたいと願っています。技術はもちろん、その方らしい表現が育つよう、ゆっくり寄り添ってまいります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>アンティークの空間に一歩入っただけで、うっとり。花を選ぶところから楽しく、完成した作品を灯すたびに幸せな気持ちになります。</p>
+      <div class="who">40代・女性／継続コース</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>不器用な私でも、丁寧に教えていただけて素敵な一本が完成。最後のティータイムまで含めて、極上のご褒美時間でした。</p>
+      <div class="who">30代・女性／1DAY体験</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>資格取得コースでお世話になっています。技術だけでなく、作品への向き合い方まで学べて、自分の教室を開く夢に近づいています。</p>
+      <div class="who">50代・女性／資格取得コース</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL LESSON</span><h2 class="mincho">体験レッスンのお申し込み</h2></div>
+  <p class="rsv-sub reveal">まずは1DAY体験から。ひとつだけの一本を、仕立てにいらしてください。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>1DAY 体験レッスン</option>
+          <option>ボタニカルキャンドル（継続）</option>
+          <option>資格取得コース</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望日（任意）</label><input type="date" name="date"></div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="キャンドルづくりの経験や、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容で申し込む</button>
+    <p class="rsv-ok" id="rsvOk">❋ 体験レッスンのお申し込みを受け付けました。アトリエより折り返しご連絡いたします。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-tech reveal">🔒 入力いただいた内容は、アトリエへ直接メールで届く仕組みです。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">アトリエのご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>Atelier son chic</td></tr>
+      <tr><th>エリア</th><td>大阪市天王寺区（詳しい場所はご予約時にご案内）</td></tr>
+      <tr><th>レッスン</th><td>ボタニカルキャンドル（1DAY・継続・資格取得）</td></tr>
+      <tr><th>講師資格</th><td>日本ヴォーグ社 認定講師</td></tr>
+      <tr><th>ご予約</th><td>完全予約制（WEB・お問い合わせ）</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
+  </div>
+  <p class="sample-inline reveal">※アトリエの所在地・レッスン時間などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">Atelier son chic</div>
+  <div class="fsub">BOTANICAL CANDLE</div>
+  <p class="fnote">このページは Web制作 ゆたか による Atelier son chic 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    document.getElementById('rsvOk').classList.add('show');
+    this.querySelector('button').textContent='送信しました';
+  });
+</script>
+</body>
+</html>

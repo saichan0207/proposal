@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>リトミック&amp;ピアノ教室valo｜和歌山市の音楽教室（デザイン案・サンプル）</title>
+<meta name="description" content="和歌山市宮前のリトミック&amp;ピアノ教室valo（ヴァロ）。「できた！」を積み重ねて自己肯定感を育てる音楽教室です。親子リトミックから、そのままピアノへ。体験レッスン随時受付。">
+<style>
+  :root{
+    --bg:#fffdf3;
+    --panel:#ffffff;
+    --yellow:#f4bd3a;
+    --yellow2:#ffd45f;
+    --yellow-soft:#fff3d1;
+    --blue:#43aed3;
+    --blue2:#79cfec;
+    --blue-soft:#e2f4fb;
+    --ink:#40566c;
+    --ink2:#33475b;
+    --sub:#7a8a99;
+    --line:rgba(64,86,108,.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.04em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  .rounded{font-family:"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif}
+
+  .sample-bar{background:linear-gradient(90deg,#43aed3,#5cc2df 55%,#f4bd3a);color:#fff;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.05em;position:relative;z-index:60;line-height:1.6}
+  .sample-bar b{color:#fffbe6}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;background:rgba(255,253,243,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(255,253,243,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(64,86,108,.09);padding:11px 26px}
+  .logo{font-size:19px;letter-spacing:.14em;color:var(--blue);font-weight:700}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.24em;color:var(--yellow);margin-top:3px;font-weight:600}
+  nav{display:flex;gap:19px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12.5px;letter-spacing:.1em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s}
+  nav a:hover{color:var(--blue);border-color:var(--blue2)}
+  nav a.cta{background:var(--yellow);color:#5a4410;padding:9px 19px;border-radius:999px;border:none;letter-spacing:.06em;font-weight:700;box-shadow:0 8px 18px rgba(244,189,58,.4)}
+  nav a.cta:hover{background:var(--yellow2);color:#5a4410;transform:translateY(-1px)}
+  @media(max-width:900px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:96vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden;
+    background:radial-gradient(52vw 50vh at 84% 12%,#fff0c2 0%,transparent 62%),radial-gradient(48vw 46vh at 8% 96%,#d3eefb 0%,transparent 58%),linear-gradient(160deg,#fffdf3 30%,#eaf7fc)}
+  .hero .cloud{position:absolute;border-radius:50%;background:radial-gradient(circle at 38% 34%,#ffffff,#f5faff 70%);opacity:.9;filter:blur(.3px)}
+  .hero .c1{width:min(34vw,360px);aspect-ratio:1;top:14%;right:9%;background:radial-gradient(circle at 36% 32%,#fff7dd,#ffe9a8 62%,#ffdf88)}
+  .hero .c1::after{content:"";position:absolute;inset:-11%;border-radius:50%;border:2px dashed rgba(244,189,58,.35)}
+  .hero .note{position:absolute;font-size:30px;opacity:.55;animation:float 6s ease-in-out infinite}
+  .hero .n1{top:22%;left:12%;color:#f4bd3a;animation-delay:0s}
+  .hero .n2{top:64%;left:22%;font-size:22px;color:#43aed3;animation-delay:1.4s}
+  .hero .n3{top:32%;right:30%;font-size:24px;color:#79cfec;animation-delay:2.2s}
+  .hero .n4{bottom:16%;right:16%;font-size:26px;color:#ffd45f;animation-delay:.7s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+  .hero-inner{position:relative;z-index:2;max-width:660px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;color:var(--blue);background:#fff;border-radius:999px;padding:7px 16px;margin-bottom:24px;box-shadow:0 6px 16px rgba(67,174,211,.16);font-weight:600}
+  .hero h1{font-size:clamp(30px,5.8vw,54px);font-weight:800;line-height:1.5;letter-spacing:.04em;color:var(--ink2);text-wrap:balance}
+  .hero h1 .y{color:var(--yellow);text-shadow:0 2px 0 rgba(244,189,58,.15)}
+  .hero h1 .b{color:var(--blue)}
+  .hero p{margin-top:24px;font-size:clamp(14px,1.7vw,16.5px);color:#5a6b7a;max-width:31em;line-height:2.1}
+  .hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 32px;border-radius:999px;font-size:14.5px;letter-spacing:.06em;transition:.3s;font-weight:700}
+  .btn-primary{background:linear-gradient(135deg,var(--yellow),var(--yellow2));color:#5a4410;box-shadow:0 12px 26px rgba(244,189,58,.42)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:2px solid var(--blue2);color:var(--blue)}
+  .btn-ghost:hover{background:var(--blue-soft);transform:translateY(-2px)}
+  .hero-badges{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px}
+  .hero-badges span{background:#fff;border-radius:999px;padding:8px 15px;box-shadow:0 6px 16px rgba(64,86,108,.08);color:var(--ink)}
+  .hero-badges b{color:var(--blue)}
+
+  section{padding:clamp(66px,9vw,116px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:11px;letter-spacing:.3em;color:var(--blue);display:inline-block;margin-bottom:12px;font-weight:700}
+  .sec-head h2{font-size:clamp(23px,3.5vw,32px);font-weight:800;letter-spacing:.06em;color:var(--ink2)}
+  .sec-head h2 em{font-style:normal;color:var(--yellow)}
+  .sec-head p{margin-top:14px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.11s}.d2{transition-delay:.22s}.d3{transition-delay:.33s}
+
+  /* target */
+  .target{background:linear-gradient(180deg,var(--bg),#eef8fc)}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:960px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 8px 22px rgba(64,86,108,.05)}
+  .tg .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--yellow-soft);display:flex;align-items:center;justify-content:center;font-size:17px}
+  .tg p{font-size:14px;line-height:1.85}
+  .tg-foot{text-align:center;margin-top:42px;font-size:clamp(16px,2.2vw,20px);color:var(--blue);letter-spacing:.05em;font-weight:700}
+  .tg-foot b{color:var(--yellow)}
+
+  /* concept */
+  .concept{background:linear-gradient(155deg,#43aed3,#3597bd)}
+  .cc-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:820px){.cc-wrap{grid-template-columns:1fr;gap:30px}}
+  .cc-art{aspect-ratio:4/3;border-radius:26px;position:relative;overflow:hidden;box-shadow:0 22px 46px rgba(0,0,0,.16);
+    background:radial-gradient(circle at 28% 26%,#fff3cf,transparent 45%),radial-gradient(circle at 78% 74%,#bfe9f8,transparent 46%),linear-gradient(140deg,#fffaf0,#e6f6fd)}
+  .cc-art .em{position:absolute;font-size:40px;opacity:.9}
+  .cc-art .e1{top:20%;left:22%}.cc-art .e2{top:52%;left:56%;font-size:52px}.cc-art .e3{top:64%;left:24%;font-size:34px}.cc-art .e4{top:26%;left:62%;font-size:30px}
+  .cc-art .ring{position:absolute;inset:12%;border-radius:50%;border:2px dashed rgba(67,174,211,.3)}
+  .cc-info .en{font-size:11px;letter-spacing:.3em;color:#fff6d9;display:block;margin-bottom:12px;font-weight:700}
+  .cc-info h2{font-size:clamp(22px,3.3vw,30px);font-weight:800;letter-spacing:.05em;color:#fff;line-height:1.6}
+  .cc-info p{margin-top:18px;font-size:14.5px;color:#eafaff;line-height:2.15}
+  .cc-info p b{color:#fff6d9;font-weight:700}
+
+  /* features */
+  .feature{background:var(--bg)}
+  .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;max-width:1020px;margin:0 auto}
+  .fcard{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:32px 26px;text-align:center;transition:transform .35s,box-shadow .35s}
+  .fcard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(67,174,211,.14)}
+  .fcard .ic{width:66px;height:66px;margin:0 auto 18px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:30px}
+  .fcard.c1 .ic{background:linear-gradient(135deg,#fff0c2,#ffd97a)}
+  .fcard.c2 .ic{background:linear-gradient(135deg,#dcf3fb,#9bdcf1)}
+  .fcard.c3 .ic{background:linear-gradient(135deg,#ffe6cf,#ffc79b)}
+  .fcard.c4 .ic{background:linear-gradient(135deg,#e6f2d6,#c2e39a)}
+  .fcard h3{font-size:17.5px;font-weight:800;color:var(--ink2);letter-spacing:.04em;margin-bottom:10px}
+  .fcard p{font-size:13.5px;color:var(--sub);line-height:1.9}
+
+  /* events */
+  .events{background:linear-gradient(180deg,#eef8fc,var(--bg))}
+  .ev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;max-width:1000px;margin:0 auto}
+  .ev{background:var(--panel);border-radius:20px;padding:26px 22px;text-align:center;border:1px solid var(--line);box-shadow:0 8px 22px rgba(64,86,108,.05)}
+  .ev .em{font-size:38px;display:block;margin-bottom:12px}
+  .ev h3{font-size:16px;font-weight:800;color:var(--blue);letter-spacing:.04em;margin-bottom:8px}
+  .ev p{font-size:12.8px;color:var(--sub);line-height:1.85}
+  .ev-note{text-align:center;margin-top:32px;font-size:14px;color:var(--ink);max-width:40em;margin-left:auto;margin-right:auto;line-height:2}
+
+  /* venues */
+  .venue{background:var(--bg)}
+  .vn-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:960px;margin:0 auto}
+  @media(max-width:760px){.vn-grid{grid-template-columns:1fr}}
+  .vn{background:var(--panel);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(64,86,108,.07)}
+  .vn .top{padding:26px 28px 20px;position:relative;color:#fff}
+  .vn.a .top{background:linear-gradient(135deg,#f4bd3a,#ffce5a)}
+  .vn.b .top{background:linear-gradient(135deg,#43aed3,#6cc9e8)}
+  .vn .top .tag{font-size:11px;letter-spacing:.2em;opacity:.9}
+  .vn .top h3{font-size:22px;font-weight:800;letter-spacing:.05em;margin-top:6px;color:#fff}
+  .vn .top .em{position:absolute;top:20px;right:24px;font-size:34px;opacity:.85}
+  .vn .body{padding:22px 28px 28px}
+  .vn .body dl{display:grid;grid-template-columns:78px 1fr;gap:10px 14px;font-size:13.5px}
+  .vn .body dt{color:var(--sub);font-weight:700}
+  .vn .body dd{color:var(--ink);line-height:1.8}
+
+  /* teacher */
+  .teacher{background:linear-gradient(160deg,#33475b,#2a3b4c);color:#e5eef5}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:740px){.tc-wrap{grid-template-columns:1fr;gap:28px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:24px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 44px rgba(0,0,0,.3);
+    background:radial-gradient(circle at 40% 30%,#5a7186,#3a4d60 70%)}
+  .tc-photo .em{font-size:58px;opacity:.5}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(229,238,245,.55);font-size:10.5px;letter-spacing:.14em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--yellow2);font-weight:700}
+  .tc-info h3{font-size:26px;font-weight:800;letter-spacing:.06em;color:#fff;margin:8px 0 14px}
+  .tc-info h3 small{font-size:13px;color:#a9bccd;letter-spacing:.06em;margin-left:8px;font-weight:400}
+  .lic-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .lic-list span{font-size:11.5px;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;letter-spacing:.03em}
+  .tc-info p{font-size:14px;color:#c7d5e0;line-height:2.1}
+  .tc-info .note{font-size:11.5px;color:#8ba0b2;margin-top:12px}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:980px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 8px 22px rgba(64,86,108,.05)}
+  .vcard .stars{color:var(--yellow);letter-spacing:.15em;font-size:14px}
+  .vcard p{font-size:13.6px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+  .voice .note{text-align:center;margin-top:30px;font-size:12px;color:var(--sub)}
+
+  /* reserve */
+  .reserve{background:linear-gradient(160deg,#43aed3,#f4bd3a 220%)}
+  .reserve .sec-head .en{color:#fff6d9}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#f2fbff;font-size:14.5px;margin-bottom:14px}
+  .rsv-mail{text-align:center;margin-bottom:34px}
+  .rsv-mail a{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue);text-decoration:none;font-weight:700;font-size:14.5px;padding:14px 30px;border-radius:999px;box-shadow:0 12px 26px rgba(0,0,0,.15);transition:.3s}
+  .rsv-mail a:hover{transform:translateY(-2px);color:#5a4410;background:var(--yellow2)}
+  .rsv-mail .or{display:block;margin-top:16px;font-size:12px;color:#eafaff;letter-spacing:.1em}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#fff}
+  .frow .req{color:#5a4410;font-size:10px;margin-left:8px;background:#ffe08a;padding:2px 8px;border-radius:6px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.9);color:#33475b}
+  input::placeholder,textarea::placeholder{color:#93a4b2}
+  input:focus,select:focus,textarea:focus{outline:2px solid #fff;outline-offset:1px;border-color:transparent;background:#fff}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:#33475b;color:#fff;font-weight:700;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.1em;transition:.3s}
+  button.submit:hover{background:#26384a;transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.2);border-radius:12px;padding:16px;font-size:13.5px}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#eafaff;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:30%;color:var(--sub);font-weight:700;letter-spacing:.04em}
+  .map-ph{border-radius:20px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:11px;letter-spacing:.14em;background:linear-gradient(135deg,#e2f4fb,#cdeaf6);border:1px dashed rgba(67,174,211,.4)}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:#33475b;color:#a9bccd;text-align:center;padding:52px 20px 32px}
+  footer .fmark{font-size:21px;letter-spacing:.1em;color:#fff;font-weight:800}
+  footer .fsub{font-size:10px;letter-spacing:.24em;color:var(--yellow2);margin-top:6px}
+  footer .fnote{font-size:11.5px;color:#8ba0b2;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero .note{animation:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ご提案用のデザイン案（サンプル）</b>です ・ <b>2026年8月7日</b>までの限定公開</div>
+
+<header id="hd">
+  <div class="logo">valo<small>RHYTHMIQUE &amp; PIANO</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#concept">教室の想い</a>
+    <a href="#events">季節の行事</a>
+    <a href="#venue">2つのコース</a>
+    <a href="#teacher">講師</a>
+    <a href="#reserve" class="cta">体験申込</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="cloud c1"></div>
+  <span class="note n1">♪</span><span class="note n2">♫</span><span class="note n3">♩</span><span class="note n4">♬</span>
+  <div class="hero-inner">
+    <span class="eyebrow">和歌山市宮前 ｜ リトミック＆ピアノ教室</span>
+    <h1>「できた！」が、<br><span class="y">自信</span>に<span class="b">変わる</span>。</h1>
+    <p>和歌山市宮前の、リトミックとピアノの教室です。音楽を通して「できた！」をたくさん積み重ね、お子さまの自己肯定感を育てます。小さなころのリトミックから、そのままピアノへ進めます。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
+      <a href="#concept" class="btn btn-ghost">教室のことを知る</a>
+    </div>
+    <div class="hero-badges">
+      <span>♪ <b>親子で</b>いっしょに</span>
+      <span>♪ リトミック→<b>ピアノ</b>へ</span>
+      <span>♪ <b>宮前駅</b>から徒歩12分</span>
+    </div>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2>こんな<em>おうち</em>におすすめです</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">🎵</span><p>小さいうちから、音楽の楽しさに触れさせてあげたい</p></div>
+    <div class="tg reveal d1"><span class="ic">👶</span><p>親子でいっしょに通える習い事をさがしている</p></div>
+    <div class="tg reveal d2"><span class="ic">🤝</span><p>リズム感や表現力、集中力を遊びの中で育てたい</p></div>
+    <div class="tg reveal"><span class="ic">🎈</span><p>季節の行事も楽しめる、あたたかい教室がいい</p></div>
+    <div class="tg reveal d1"><span class="ic">🌱</span><p>いずれはピアノなど、音楽への第一歩にしたい</p></div>
+    <div class="tg reveal d2"><span class="ic">😊</span><p>子どもの「できた！」の笑顔をいっしょに喜びたい</p></div>
+  </div>
+  <p class="tg-foot reveal">ひとつでも当てはまったら、まずは<b>体験</b>にきてください♪</p>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <div class="cc-wrap">
+    <div class="cc-art reveal" aria-hidden="true">
+      <span class="ring"></span>
+      <span class="em e1">🎵</span><span class="em e2">🧸</span><span class="em e3">🎈</span><span class="em e4">♫</span>
+    </div>
+    <div class="cc-info reveal">
+      <span class="en">OUR HEART</span>
+      <h2>「たのしい！」から、<br>こころも からだも 育つ。</h2>
+      <p>リトミックは、音楽に合わせて体を動かしながら、リズム感・音感・表現力・集中力を自然に育てていく音楽教育です。valoが何よりも大切にしているのは、<b>「できた！」の瞬間を取りこぼさないこと</b>。上手にできた日も、うまくいかなかった日も、その子なりの一歩を必ず見つけて言葉にします。</p>
+      <p>小さな「できた」が積み重なると、子どもは自分から挑戦するようになります。音楽の力を借りて、その土台＝<b>自己肯定感</b>を育てていく。それがvaloのレッスンです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- features -->
+<section class="feature">
+  <div class="sec-head reveal"><span class="en">RHYTHMIQUE</span><h2>リトミックで<em>育つ</em>力</h2><p>遊びの中で、いろいろな力が自然に伸びていきます</p></div>
+  <div class="f-grid">
+    <div class="fcard c1 reveal"><div class="ic">🎶</div><h3>リズム感・音感</h3><p>音を聴いて体で反応する経験の積み重ねが、豊かなリズム感と音感を育てます。</p></div>
+    <div class="fcard c2 reveal d1"><div class="ic">💡</div><h3>集中力・反応力</h3><p>音の変化に合わせて動くことで、聴く力・集中する力・とっさの反応力が育ちます。</p></div>
+    <div class="fcard c3 reveal d2"><div class="ic">🎨</div><h3>表現力・想像力</h3><p>音楽を体やことばで表現するあそびを通して、自由な表現力と想像力を伸ばします。</p></div>
+    <div class="fcard c4 reveal d3"><div class="ic">💗</div><h3>親子のふれあい</h3><p>いっしょに笑い、ふれあう時間そのものが、お子さまの心の土台になります。</p></div>
+  </div>
+</section>
+
+<!-- events -->
+<section class="events" id="events">
+  <div class="sec-head reveal"><span class="en">SEASONAL EVENTS</span><h2>季節の<em>行事</em>も、みんなで</h2><p>ふだんのレッスンに、季節の楽しいイベントを取り入れています</p></div>
+  <div class="ev-grid">
+    <div class="ev reveal"><span class="em">🎄</span><h3>クリスマス会</h3><p>音楽に合わせて、みんなでクリスマスをお祝い。特別なプログラムを楽しみます。</p></div>
+    <div class="ev reveal d1"><span class="em">🎂</span><h3>お誕生会</h3><p>お友だちのお誕生日を、歌とリズムでお祝い。うれしい気持ちをみんなで分かち合います。</p></div>
+    <div class="ev reveal d2"><span class="em">🌸</span><h3>季節のあそび</h3><p>春夏秋冬、その季節ならではの歌や音あそびで、四季の移ろいを感じます。</p></div>
+    <div class="ev reveal d3"><span class="em">👪</span><h3>親子行事</h3><p>親子でいっしょに参加できるイベントで、ふれあいと思い出を増やしていきます。</p></div>
+  </div>
+  <p class="ev-note reveal">季節の行事は、お子さまにとって「特別な体験」であり、教室のお友だちや先生とのつながりも深まる大切な時間です。</p>
+</section>
+
+<!-- venues -->
+<section class="venue" id="venue">
+  <div class="sec-head reveal"><span class="en">2 COURSES</span><h2>成長に合わせた、<em>2つ</em>のコース</h2><p>リトミックで音楽を好きになってから、ピアノへ。同じ教室のまま進めます</p></div>
+  <div class="vn-grid">
+    <div class="vn a reveal">
+      <div class="top"><span class="em">🎈</span><div class="tag">COURSE 01</div><h3>リトミック</h3></div>
+      <div class="body">
+        <dl>
+          <dt>内容</dt><dd>音楽に合わせて体を動かす、親子で参加のレッスン</dd>
+          <dt>育つ力</dt><dd>リズム感・音感・集中力・表現力</dd>
+          <dt>対象</dt><dd>未就学のお子さまと保護者の方</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="vn b reveal d1">
+      <div class="top"><span class="em">🎹</span><div class="tag">COURSE 02</div><h3>ピアノ</h3></div>
+      <div class="body">
+        <dl>
+          <dt>内容</dt><dd>一人ひとりのペースに合わせた個人レッスン</dd>
+          <dt>育つ力</dt><dd>読譜力・演奏力・やり抜く力</dd>
+          <dt>対象</dt><dd>年少さんくらいから大人の方まで</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※レッスン時間・回数・料金の詳細は、お問い合わせの際にご案内いたします。</p>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal" aria-hidden="true">
+      <span class="em">🎹</span>
+      <span>PHOTO ─ 講師のお写真が入ります</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3>やべ かずこ<small>「かず先生」</small></h3>
+      <div class="lic-list">
+        <span>※ 保有資格が入ります</span>
+        <span>※ 指導歴が入ります</span>
+      </div>
+      <p>子どもたちが「できた！」と目を輝かせる瞬間が、いちばん好きです。できないことを直す時間ではなく、できたことを見つける時間にしたくて、この教室をひらきました。人見知りでも、じっとしていられなくても大丈夫。その子のペースで、音楽を好きになってもらえたら嬉しいです。</p>
+      <p class="note">※ごあいさつ文はブログの発信内容からこちらで書いた案です。資格欄は空にしてあります。実際のご経歴・ごあいさつに差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2>保護者の<em>声</em></h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal"><div class="stars">★★★★★</div><p>人見知りだった娘が、今では音楽が鳴ると自分から体を動かします。親子で通えるので、私も毎回楽しみです。</p><div class="who">2歳のお子さまの保護者</div></div>
+    <div class="vcard reveal d1"><div class="stars">★★★★★</div><p>クリスマス会やお誕生会など行事が多くて、子どもがすごく楽しみにしています。先生がとてもあたたかいです。</p><div class="who">3歳のお子さまの保護者</div></div>
+    <div class="vcard reveal d2"><div class="stars">★★★★★</div><p>リズム感がついてきたのを感じます。家でも歌ったり手拍子したり、音楽が生活の一部になりました。</p><div class="who">1歳のお子さまの保護者</div></div>
+  </div>
+  <p class="note reveal">※掲載内容はイメージ（サンプル）です。実際の保護者の方の声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL LESSON</span><h2>体験レッスンのお申し込み</h2></div>
+  <p class="rsv-sub reveal">まずは親子で体験から。お子さまの「たのしい！」を見にきてください。</p>
+  <div class="rsv-mail reveal">
+    <a href="mailto:rythmcpf67ybkz@gmail.com?subject=体験レッスンのお申し込み（valo）&amp;body=下記をご記入のうえ送信してください%0D%0A%0D%0A・保護者のお名前：%0D%0A・お子さまのお名前／月齢・年齢：%0D%0A・ご希望のコース（リトミック／ピアノ／相談したい）：%0D%0A・ご希望の曜日・時間帯：%0D%0A・ご連絡先（お電話番号）：%0D%0A・ご質問など：%0D%0A">✉ メールで体験を申し込む</a>
+    <span class="or">― または、下のフォームからもどうぞ ―</span>
+  </div>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>保護者のお名前<span class="req">必須</span></label><input type="text" name="name" placeholder="和歌山 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>お子さまの月齢・年齢</label><input type="text" name="age" placeholder="例：1歳6か月"></div>
+      <div class="frow"><label>ご希望のコース</label>
+        <select name="room">
+          <option value="">選択してください</option>
+          <option>リトミック</option>
+          <option>ピアノ</option>
+          <option>どちらか相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ご希望の曜日や、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容で申し込む</button>
+    <p class="rsv-ok" id="rsvOk">♪ 体験レッスンのお申し込みを受け付けました。教室より折り返しご連絡いたします。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-tech reveal">🔒 入力いただいた内容は、教室へ直接メールで届く仕組みです。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2>教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>リトミック＆ピアノ教室 valo（ヴァロ）</td></tr>
+      <tr><th>エリア</th><td>和歌山県和歌山市</td></tr>
+      <tr><th>所在地</th><td>和歌山市宮前</td></tr>
+      <tr><th>アクセス</th><td>JRきのくに線 宮前駅 徒歩12分<br>和歌山バス「北中島」 徒歩5分</td></tr>
+      <tr><th>対象</th><td>未就学のお子さまから大人の方まで</td></tr>
+      <tr><th>お問い合わせ</th><td>体験申込フォーム／メール</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
+  </div>
+  <p class="sample-inline reveal">※開催曜日・レッスン時間などの詳細は、実際の情報に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark">valo</div>
+  <div class="fsub">RHYTHMIQUE &amp; PIANO ─ WAKAYAMA</div>
+  <p class="fnote">和歌山市宮前のリトミック＆ピアノ教室 valo<br>こちらはご提案用のデザイン案（サンプル）です。2026年8月7日までの限定公開。<br>掲載の文章・写真の一部はイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    document.getElementById('rsvOk').classList.add('show');
+    this.querySelector('button').textContent='送信しました';
+  });
+</script>
+</body>
+</html>

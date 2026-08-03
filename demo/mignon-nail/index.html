@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>mignon（ミニョン）｜おうちサロンのネイル｜愛知県大府市・土日祝も営業（ご提案用サンプル）</title>
+<meta name="description" content="愛知県大府市の自宅ネイルサロン mignon。完全予約制・土日祝も営業。リーズナブルでカジュアル、まるでお友だちの家に来たみたいな距離の近さが魅力です。地元の女性に気軽に通っていただけます。">
+<style>
+  :root{
+    --base:#fdf3f6;
+    --panel:#ffffff;
+    --pink:#f18bab;
+    --pink-d:#e06a8f;
+    --lav:#b49be0;
+    --lav-d:#9a7fcf;
+    --cream:#fff5e9;
+    --ink:#5a4650;
+    --sub:#9a828e;
+    --line:rgba(90,70,80,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;background:var(--base);color:var(--ink);line-height:1.95;letter-spacing:.03em;overflow-x:hidden}
+
+  .propbar{background:#5a4650;color:#ffe1ec;text-align:center;font-size:11px;letter-spacing:.05em;padding:7px 14px;line-height:1.6}
+  .propbar b{color:#ffb3cc;font-weight:600}
+
+  header{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(253,243,246,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(253,243,246,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(224,106,143,.1);padding:11px 24px}
+  .logo{font-size:22px;letter-spacing:.12em;color:var(--pink-d);font-weight:700}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.24em;color:var(--sub);margin-top:2px;font-weight:400}
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12.5px;letter-spacing:.1em;transition:.25s}
+  nav a:hover{color:var(--pink-d)}
+  nav a.book{background:var(--pink);color:#fff;padding:10px 20px;border-radius:999px;letter-spacing:.08em;box-shadow:0 6px 16px rgba(241,139,171,.36)}
+  nav a.book:hover{background:var(--pink-d);color:#fff}
+  @media(max-width:820px){nav a:not(.book){display:none}}
+
+  .hero{position:relative;min-height:90vh;display:flex;align-items:center;padding:0 8vw;margin-top:-60px;overflow:hidden;
+    background:radial-gradient(52vw 50vh at 82% 18%,#ffe0ec 0%,transparent 60%),radial-gradient(44vw 44vh at 5% 90%,#ece2fb 0%,transparent 55%),linear-gradient(180deg,#fff8fb,var(--base))}
+  .hero .heart{position:absolute;z-index:0;opacity:.6}
+  .hero .h1{top:16%;right:12%;width:170px;height:170px;background:radial-gradient(circle at 36% 32%,#ffc6da,#f593b3);border-radius:50%;opacity:.8}
+  .hero .h2{bottom:16%;right:30%;width:88px;height:88px;background:radial-gradient(circle at 36% 32%,#d8c6f5,#b49be0);border-radius:50%;opacity:.7}
+  .hero-inner{position:relative;z-index:2;max-width:640px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.1em;color:var(--lav-d);background:#ece2fb;padding:7px 16px;border-radius:999px;margin-bottom:22px;font-weight:600}
+  .hero h1{font-size:clamp(30px,6vw,54px);font-weight:700;line-height:1.5;letter-spacing:.04em;color:var(--pink-d);text-wrap:balance}
+  .hero h1 span{color:var(--lav-d)}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:var(--sub);max-width:29em}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;font-weight:600;transition:.3s}
+  .btn-primary{background:var(--pink);color:#fff;box-shadow:0 10px 24px rgba(241,139,171,.38)}
+  .btn-primary:hover{background:var(--pink-d);transform:translateY(-2px)}
+  .btn-ghost{border:2px solid var(--lav);color:var(--lav-d)}
+  .btn-ghost:hover{background:var(--lav);color:#fff}
+  .hero-badges{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
+  .hero-badges b{color:var(--pink-d)}
+
+  section{padding:clamp(62px,9vw,112px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:46px}
+  .sec-head .en{font-size:11px;letter-spacing:.22em;color:var(--pink);display:block;margin-bottom:12px;font-weight:700}
+  .sec-head h2{font-size:clamp(22px,3.6vw,31px);font-weight:700;letter-spacing:.04em;color:var(--ink)}
+  .sec-head h2 b{color:var(--pink-d)}
+  .sec-head p{margin-top:14px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+
+  .charm{background:var(--base)}
+  .charm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+  .charm-c{background:var(--panel);border-radius:24px;padding:32px 26px;text-align:center;box-shadow:0 10px 28px rgba(90,70,80,.07)}
+  .charm-c .ic{width:66px;height:66px;margin:0 auto 16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px}
+  .charm-c:nth-child(1) .ic{background:#ffe0ec}
+  .charm-c:nth-child(2) .ic{background:#ece2fb}
+  .charm-c:nth-child(3) .ic{background:var(--cream)}
+  .charm-c:nth-child(4) .ic{background:#e0f3ec}
+  .charm-c .ic svg{width:30px;height:30px;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .charm-c:nth-child(1) .ic svg{stroke:var(--pink-d)}
+  .charm-c:nth-child(2) .ic svg{stroke:var(--lav-d)}
+  .charm-c:nth-child(3) .ic svg{stroke:#d99320}
+  .charm-c:nth-child(4) .ic svg{stroke:#4bab86}
+  .charm-c h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:10px}
+  .charm-c p{font-size:13px;color:var(--sub);line-height:1.9}
+
+  .about{background:linear-gradient(180deg,var(--base),#fbe9f0)}
+  .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;max-width:960px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.about-wrap{grid-template-columns:1fr;gap:26px}}
+  .about-ph{aspect-ratio:4/3;border-radius:26px;position:relative;overflow:hidden;background:linear-gradient(140deg,#ffe0ec,#ece2fb);display:flex;align-items:center;justify-content:center}
+  .about-ph::after{content:attr(data-label);position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:10.5px;letter-spacing:.14em;color:rgba(90,70,80,.5)}
+  .about-info .badge{display:inline-block;background:#ffe0ec;color:var(--pink-d);font-size:12px;font-weight:700;padding:6px 15px;border-radius:999px;margin-bottom:14px}
+  .about-info h3{font-size:clamp(19px,2.6vw,25px);font-weight:700;color:var(--ink);line-height:1.6;margin-bottom:14px}
+  .about-info p{font-size:13.5px;color:var(--sub);margin-bottom:12px}
+
+  .menu{background:var(--base)}
+  .menu-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .mrow{background:var(--panel);border-radius:20px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 8px 22px rgba(90,70,80,.06)}
+  .mrow .l .name{font-size:16.5px;font-weight:700;color:var(--ink)}
+  .mrow .l .desc{font-size:12.5px;color:var(--sub);margin-top:4px}
+  .mrow .price{font-size:20px;color:var(--pink-d);white-space:nowrap;font-weight:700}
+  .mrow .price small{font-size:12px;color:var(--sub);font-weight:400}
+  .mrow.pop{outline:2px solid var(--pink);outline-offset:-2px}
+  .menu-note{text-align:center;margin-top:24px;font-size:12px;color:var(--sub)}
+
+  .gallery{background:linear-gradient(180deg,#fbe9f0,var(--base))}
+  .g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;max-width:900px;margin:0 auto}
+  .swatch{aspect-ratio:1;border-radius:22px;position:relative;overflow:hidden;box-shadow:0 8px 20px rgba(90,70,80,.08)}
+  .swatch::after{content:"";position:absolute;top:14%;left:50%;transform:translateX(-50%);width:26%;height:64%;border-radius:44% 44% 42% 42%/56% 56% 40% 40%;background:rgba(255,255,255,.58)}
+  .swatch.s1{background:linear-gradient(150deg,#ffd0e0,#f28fb0)}
+  .swatch.s2{background:linear-gradient(150deg,#e2d5f7,#b49be0)}
+  .swatch.s3{background:linear-gradient(150deg,#fff0d4,#ffd583)}
+  .swatch.s4{background:linear-gradient(150deg,#d6f0e4,#8bd6b3)}
+  .swatch.s5{background:linear-gradient(150deg,#ffe0e0,#ffabab)}
+  .swatch.s6{background:linear-gradient(150deg,#e0ecff,#a8c2f0)}
+  .swatch.s7{background:linear-gradient(150deg,#ffe4f2,#f5a8cf)}
+  .swatch.s8{background:linear-gradient(150deg,#f2e2f7,#d5a8e0)}
+
+  .reserve{background:linear-gradient(150deg,var(--pink),var(--pink-d))}
+  .reserve .sec-head .en{color:#ffe6ef;opacity:.9}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-note{max-width:520px;margin:0 auto 30px;background:rgba(255,255,255,.18);border-radius:16px;padding:14px 20px;text-align:center;color:#fff;font-size:13px;line-height:1.8}
+  .rsv-note b{font-weight:700}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.06em;color:#fff}
+  .frow .req{color:var(--pink-d);font-size:10px;margin-left:8px;background:#fff;padding:2px 7px;border-radius:6px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:13px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.2);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.72)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #fff;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:8px;background:#fff;color:var(--pink-d);border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.08em;font-weight:700;transition:.3s}
+  button.submit:hover{background:var(--lav-d);color:#fff;transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.2);border-radius:14px;padding:16px;font-size:13.5px}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#ffe6ef;margin-top:22px;line-height:1.9;opacity:.94}
+
+  .access{background:var(--base)}
+  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:33%;color:var(--sub);font-weight:700;letter-spacing:.04em}
+  .map-ph{border-radius:22px;min-height:230px;display:flex;align-items:center;justify-content:center;color:rgba(90,70,80,.5);font-size:11px;letter-spacing:.14em;background:linear-gradient(135deg,#ffe0ec,#ece2fb)}
+
+  footer{background:#5a4650;color:#e0cdd6;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:24px;letter-spacing:.1em;color:#fff;font-weight:700}
+  footer .fsub{font-size:10px;letter-spacing:.24em;color:#a58e99;margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#a58e99;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="propbar">このページは <b>Web制作 ゆたか</b> による <b>mignon</b>様へのご提案用デザイン案（サンプル）です</div>
+
+<header id="hd">
+  <div class="logo">mignon<small>NAIL SALON ・ 大府市</small></div>
+  <nav>
+    <a href="#charm">魅力</a>
+    <a href="#about">サロンについて</a>
+    <a href="#menu">メニュー</a>
+    <a href="#gallery">デザイン</a>
+    <a href="#reserve" class="book">ご予約</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="heart h1"></div><div class="heart h2"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">大府市のおうちネイルサロン</span>
+    <h1>お友だちの家みたいに、<br><span>気軽に</span>かわいく。</h1>
+    <p>完全予約制の自宅サロンだから、ゆったり・のんびり。リーズナブルにネイルを楽しめて、土日祝も営業しています。「はじめてで緊張しちゃう」という方も、どうぞ肩の力を抜いて遊びに来てくださいね。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">ご予約はこちら →</a>
+      <a href="#menu" class="btn btn-ghost">メニューを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>♥ <b>リーズナブル</b>でカジュアル</span>
+      <span>♥ <b>土日祝</b>も営業</span>
+      <span>♥ <b>完全予約制</b>の自宅サロン</span>
+    </div>
+  </div>
+</section>
+
+<!-- charm -->
+<section class="charm" id="charm">
+  <div class="sec-head reveal"><span class="en">CHARM</span><h2>mignon の<b>4つの魅力</b></h2></div>
+  <div class="charm-grid">
+    <div class="charm-c reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4-7-9a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5-7 9-7 9z"/></svg></div>
+      <h3>リーズナブル</h3>
+      <p>自宅サロンだからこその、通いやすい価格。気軽にネイルを楽しんでいただけます。</p>
+    </div>
+    <div class="charm-c reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11M9 21v-6h6v6"/></svg></div>
+      <h3>おうちサロンの安心感</h3>
+      <p>完全予約制のプライベート空間。ほかのお客様を気にせず、のんびり過ごせます。</p>
+    </div>
+    <div class="charm-c reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9h16M9 3v4M15 3v4"/></svg></div>
+      <h3>土日祝も営業</h3>
+      <p>お休みの日にゆっくり通いたい方にも。ご都合に合わせてご予約いただけます。</p>
+    </div>
+    <div class="charm-c reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 6.5a3 3 0 0 1 0 5M18 20a5 5 0 0 0-3-4.6"/></svg></div>
+      <h3>距離が近くて話しやすい</h3>
+      <p>まるでお友だちの家。おしゃべりしながら、リラックスしてネイルを楽しめます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="about" id="about">
+  <div class="about-wrap">
+    <div class="about-ph reveal" data-label="サロンのお写真が入ります"></div>
+    <div class="about-info reveal">
+      <span class="badge">地元の女性に愛されるサロン</span>
+      <h3>ちいさな幸せを、<br>指先から。</h3>
+      <p>mignon（ミニョン）は、フランス語で「かわいい」という意味。名前のとおり、あなたの指先をちょっぴりかわいく、毎日をちょっぴりごきげんにするお手伝いをしています。</p>
+      <p>気取らず、無理せず、あなたのペースで。大府の街で、地元の女性が気軽に立ち寄れる小さなサロンを目指しています。</p>
+    </div>
+  </div>
+  <p class="menu-note">※内容はサンプルです。実際のサロン紹介に差し替えてお納めします。</p>
+</section>
+
+<!-- menu -->
+<section class="menu" id="menu">
+  <div class="sec-head reveal"><span class="en">MENU</span><h2><b>メニュー</b>のご案内</h2><p>シンプルでわかりやすい、通いやすい価格で</p></div>
+  <div class="menu-list">
+    <div class="mrow pop reveal"><div class="l"><div class="name">ワンカラー</div><div class="desc">シンプルにかわいく。定番の単色ネイル</div></div><div class="price">¥3,300<small>〜</small></div></div>
+    <div class="mrow reveal"><div class="l"><div class="name">グラデーション</div><div class="desc">じんわり上品なグラデーションデザイン</div></div><div class="price">¥3,800<small>〜</small></div></div>
+    <div class="mrow reveal"><div class="l"><div class="name">デザインネイル</div><div class="desc">季節のアートやニュアンスも楽しめます</div></div><div class="price">¥4,500<small>〜</small></div></div>
+    <div class="mrow reveal"><div class="l"><div class="name">ジェルオフ</div><div class="desc">他店で付けた分もご相談ください</div></div><div class="price">¥1,100<small>〜</small></div></div>
+  </div>
+  <p class="menu-note">※料金はサンプル表記です。実際のメニューと料金に差し替えてお納めします。</p>
+</section>
+
+<!-- gallery -->
+<section class="gallery" id="gallery">
+  <div class="sec-head reveal"><span class="en">DESIGN</span><h2>デザイン<b>ギャラリー</b></h2><p>かわいい・かんたん・季節もの、いろいろ</p></div>
+  <div class="g-grid reveal">
+    <div class="swatch s1"></div><div class="swatch s2"></div><div class="swatch s3"></div><div class="swatch s4"></div>
+    <div class="swatch s5"></div><div class="swatch s6"></div><div class="swatch s7"></div><div class="swatch s8"></div>
+  </div>
+  <p class="menu-note">※デザインはイメージ（サンプル）です。実際の施術写真に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">RESERVATION</span><h2>ご予約・お問い合わせ</h2></div>
+  <div class="rsv-note reveal"><b>完全予約制</b>・<b>土日祝も営業</b>しています。<br>下のフォームからお気軽にどうぞ。</div>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="大府 花子" required></div>
+      <div class="frow"><label>お電話番号<span class="req">必須</span></label><input type="tel" name="tel" placeholder="090-0000-0000" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望メニュー</label><select name="menu"><option value="">選択してください</option><option>ワンカラー</option><option>グラデーション</option><option>デザインネイル</option><option>ジェルオフ</option><option>相談したい</option></select></div>
+      <div class="frow"><label>ご希望日</label><input type="date" name="date"></div>
+    </div>
+    <div class="frow"><label>ご相談・ご要望（任意）</label><textarea name="note" rows="3" placeholder="やってみたいデザインや、ご希望の時間帯などご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容で予約する</button>
+    <p class="rsv-ok" id="rsvOk">✓ ご予約リクエストを受け付けました。サロンより確認のご連絡をいたします。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-tech reveal">🔒 入力された予約情報は、サロンに直接メールで届く仕組みです。ホームページ本体とは別に管理されるため、サイトを更新しても予約情報が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2>サロンの<b>ご案内</b></h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>サロン名</th><td>mignon（ミニョン）</td></tr>
+      <tr><th>エリア</th><td>愛知県大府市（自宅サロン）</td></tr>
+      <tr><th>ご住所</th><td>ご予約時に詳しい場所をご案内します</td></tr>
+      <tr><th>営業日</th><td>完全予約制・土日祝も営業</td></tr>
+      <tr><th>ご予約</th><td>WEB・お問い合わせフォームより</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
+  </div>
+  <p class="menu-note">※営業時間・定休日・アクセス詳細は、実際の情報に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark">mignon</div>
+  <div class="fsub">NAIL SALON ・ OBU</div>
+  <p class="fnote">このページは Web制作 ゆたか による mignon様へのご提案用デザイン案（サンプル）です。<br>掲載内容・数値はサンプルを含みます。実際の情報に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('rsvOk').classList.add('show');this.querySelector('button').textContent='送信しました';});
+</script>
+</body>
+</html>

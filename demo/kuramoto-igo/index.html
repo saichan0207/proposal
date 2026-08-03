@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>くらもと囲碁教室｜京都・大阪・奈良の囲碁教室（デザイン案・サンプル）</title>
+<meta name="description" content="くらもと囲碁教室は、京都本因坊を拠点に、長岡京・富雄（奈良）・茨木・東大阪（大阪）の5教場で開く囲碁教室です。大会ベスト8の実力を持つ蔵元実（くらもと みのる）先生が、全くはじめての方から高段の方まで、幅広くお教えします。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f3ede1;
+    --panel:#faf6ec;
+    --ink:#252019;
+    --sumi:#1a1713;
+    --sumi2:#26221c;
+    --wood:#6e4c2f;
+    --wood-d:#523720;
+    --wood-soft:#e7d8c2;
+    --gold:#a9862f;
+    --gold-l:#c9a758;
+    --gold-soft:#efe3c9;
+    --sub:#7b6f5d;
+    --line:rgba(45,38,30,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.04em;font-size:16.5px;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{display:block}
+
+  .sample-bar{background:var(--sumi);color:#ece2d2;text-align:center;font-size:12px;padding:8px 14px;letter-spacing:.05em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#fff}
+  .sample-bar .lim{color:var(--gold-l);font-weight:700}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;background:rgba(26,23,19,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(26,23,19,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(0,0,0,.4);padding:11px 26px}
+  .logo{font-size:20px;letter-spacing:.16em;color:#fff;font-weight:600;line-height:1.2;display:flex;align-items:center;gap:11px;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo .mk{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 34% 32%,#5a544c,#111 72%);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.5),inset 0 1px 2px rgba(255,255,255,.35)}
+  .logo .lgt{display:block;line-height:1.2}
+  .logo small{display:block;font-size:9.5px;letter-spacing:.26em;color:var(--gold-l);margin-top:2px;font-weight:600}
+  nav{display:flex;gap:19px;align-items:center}
+  nav a{color:#f2ead9;text-decoration:none;font-size:13.5px;letter-spacing:.06em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  nav a:hover{color:var(--gold-l);border-color:var(--gold-l)}
+  nav a.cta{background:var(--gold);color:#231c0c;padding:10px 20px;border-radius:999px;border:none;letter-spacing:.03em;white-space:nowrap;font-weight:700;text-shadow:none;box-shadow:0 8px 18px rgba(169,134,47,.36)}
+  nav a.cta:hover{background:var(--gold-l);color:#231c0c;transform:translateY(-1px)}
+  @media(max-width:980px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(12,10,8,.86) 24%,rgba(18,15,11,.58) 62%,rgba(18,15,11,.32) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:660px;color:#fff;margin-top:62px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.05em;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(201,167,88,.55);padding:8px 18px;border-radius:999px;margin-bottom:24px;font-weight:600}
+  .eyebrow b{color:var(--gold-l)}
+  .hero h1{font-size:clamp(31px,5.7vw,55px);font-weight:600;line-height:1.5;letter-spacing:.06em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.5)}
+  .hero h1 span{color:var(--gold-l)}
+  .hero p{margin-top:22px;font-size:clamp(15px,1.8vw,17.5px);color:rgba(255,255,255,.94);max-width:31em;line-height:1.95;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:16px 32px;border-radius:999px;font-size:15.5px;letter-spacing:.03em;transition:.3s;font-weight:700}
+  .btn-primary{background:var(--gold);color:#231c0c;box-shadow:0 14px 28px rgba(169,134,47,.44)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--gold-l)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.65);color:#fff}
+  .btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l)}
+  .hero-badges{margin-top:30px;display:flex;gap:12px 22px;flex-wrap:wrap;font-size:14px;color:#fff;font-weight:600}
+  .hero-badges span{display:inline-flex;align-items:center;gap:7px;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+  .hero-badges b{color:var(--gold-l)}
+
+  section{padding:clamp(66px,9vw,110px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:12px;letter-spacing:.3em;color:var(--gold);display:block;margin-bottom:12px;font-weight:700}
+  .sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;letter-spacing:.06em;color:var(--sumi);line-height:1.5}
+  .sec-head h2 b{color:var(--wood)}
+  .sec-head p{margin-top:14px;font-size:15px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+
+  /* concept */
+  .concept{background:linear-gradient(180deg,var(--bg),#ede4d4);text-align:center;overflow:hidden}
+  .cnc{max-width:760px;margin:0 auto}
+  .cnc .stones{display:inline-flex;gap:8px;margin-bottom:24px}
+  .cnc .stones i{width:22px;height:22px;border-radius:50%}
+  .cnc .stones .b{background:radial-gradient(circle at 34% 32%,#4a453d,#0d0c0a 72%);box-shadow:0 2px 5px rgba(0,0,0,.3)}
+  .cnc .stones .w{background:radial-gradient(circle at 34% 32%,#fff,#d7cfc0 78%);box-shadow:0 2px 5px rgba(0,0,0,.16)}
+  .cnc .lead{font-size:clamp(20px,3.2vw,29px);line-height:1.9;color:var(--sumi);letter-spacing:.07em}
+  .cnc .lead b{color:var(--wood);font-weight:600}
+  .cnc p.body{margin-top:24px;font-size:15px;color:var(--sub);line-height:2.1}
+
+  /* target */
+  .target{background:#ede4d4}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px;max-width:980px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 8px 20px rgba(45,38,30,.05)}
+  .tg .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 34% 32%,#4a453d,#0d0c0a 72%);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:inset 0 1px 2px rgba(255,255,255,.3)}
+  .tg:nth-child(even) .ic{background:radial-gradient(circle at 34% 32%,#fff,#d7cfc0 78%);color:var(--wood-d);box-shadow:inset 0 1px 2px rgba(255,255,255,.6)}
+  .tg p{font-size:15px;line-height:1.8}
+  .tg-foot{text-align:center;margin-top:44px;font-size:clamp(16px,2.2vw,21px);color:var(--sumi);line-height:1.85}
+  .tg-foot b{color:var(--wood);font-weight:600}
+
+  /* teacher */
+  .teacher{background:linear-gradient(160deg,var(--sumi2),var(--sumi));color:#ece2d2}
+  .tc-wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;max-width:960px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.tc-wrap{grid-template-columns:1fr;gap:30px;max-width:420px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#3a352d,#1c1915);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 42px rgba(0,0,0,.4);border:1px solid rgba(201,167,88,.28)}
+  .tc-photo .stone{width:66px;height:66px;border-radius:50%;background:radial-gradient(circle at 34% 32%,#544e45,#0c0b09 72%);box-shadow:0 8px 22px rgba(0,0,0,.5),inset 0 2px 4px rgba(255,255,255,.28)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(236,226,210,.6);font-size:10.5px;letter-spacing:.18em}
+  .tc-info .role{font-size:12.5px;letter-spacing:.18em;color:var(--gold-l);font-weight:700}
+  .tc-info h3{font-size:clamp(24px,3.4vw,30px);font-weight:600;letter-spacing:.08em;color:#fff;margin:8px 0 2px}
+  .tc-info h3 small{font-size:14px;color:#c8bda8;letter-spacing:.06em;margin-left:10px;font-weight:400}
+  .tc-info .medal{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:#231c0c;background:linear-gradient(135deg,var(--gold-l),var(--gold));border-radius:999px;padding:7px 18px;letter-spacing:.03em;font-weight:700}
+  .tc-info p{font-size:15px;color:#ddd0bd;margin-top:18px;line-height:2.1}
+  .tc-info p b{color:var(--gold-l);font-weight:600}
+  .tc-info .note{font-size:12px;color:#9c8f7c;margin-top:14px}
+
+  /* venues */
+  .venue{background:var(--bg)}
+  .vn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1040px;margin:0 auto}
+  .vn{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:0;overflow:hidden;box-shadow:0 10px 26px rgba(45,38,30,.06);display:flex;flex-direction:column}
+  .vn .top{background:linear-gradient(135deg,var(--wood),var(--wood-d));color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .vn .top .pref{font-size:11.5px;letter-spacing:.08em;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 12px;font-weight:600;white-space:nowrap}
+  .vn .top h3{font-size:18.5px;font-weight:700;letter-spacing:.03em;line-height:1.4}
+  .vn .body{padding:20px 22px 22px}
+  .vn .body p{font-size:14px;color:var(--sub);line-height:1.9}
+  .vn .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .vn .tags span{font-size:11.5px;color:var(--wood-d);background:var(--wood-soft);border-radius:999px;padding:5px 12px;font-weight:600}
+  .vn.base{border-color:rgba(169,134,47,.5)}
+  .vn.base .top{background:linear-gradient(135deg,var(--gold),#8f6f24)}
+  .vn.base .crown{font-size:12px;letter-spacing:.06em;color:#231c0c;background:#fff;border-radius:999px;padding:4px 11px;font-weight:700;white-space:nowrap}
+  .vn .tel{margin-top:14px;font-size:13.5px;color:var(--wood-d);font-weight:700;letter-spacing:.02em}
+  .vn .tel a{color:var(--wood-d);text-decoration:none}
+  .vn-note{text-align:center;font-size:13px;color:var(--sub);margin-top:26px}
+
+  /* method */
+  .method{background:linear-gradient(160deg,var(--sumi2),var(--sumi));color:#ece2d2}
+  .mt-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:960px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.mt-wrap{grid-template-columns:1fr;gap:28px}}
+  .mt-photo{aspect-ratio:4/3;border-radius:22px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.4);border:1px solid rgba(201,167,88,.2)}
+  .mt-photo img{width:100%;height:100%;object-fit:cover}
+  .mt-info .en{font-size:12px;letter-spacing:.3em;color:var(--gold-l);display:block;margin-bottom:12px;font-weight:600}
+  .mt-info h2{font-size:clamp(22px,3.2vw,30px);font-weight:600;letter-spacing:.06em;color:#fff;line-height:1.6}
+  .mt-info p{margin-top:18px;font-size:15px;color:#ddd0bd;line-height:2.1}
+  .mt-info p b{color:var(--gold-l);font-weight:600}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,var(--bg),#ede4d4)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1040px;margin:0 auto}
+  .rs{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 26px rgba(45,38,30,.05);padding:34px 26px}
+  .rs .no{font-size:12.5px;letter-spacing:.12em;color:var(--gold);margin-bottom:12px;font-weight:700}
+  .rs .ic{width:70px;height:70px;margin:0 auto 16px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rs:nth-child(even) .ic{background:var(--wood-soft)}
+  .rs h3{font-size:18px;font-weight:700;color:var(--sumi);margin-bottom:11px;line-height:1.5}
+  .rs p{font-size:14px;color:var(--sub);line-height:1.9}
+
+  /* voice */
+  .voice{background:#ede4d4}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:0 10px 24px rgba(45,38,30,.05)}
+  .vcard .stars{color:var(--gold);letter-spacing:.14em;font-size:16px}
+  .vcard p{font-size:15px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:13.5px;color:var(--sub);letter-spacing:.02em;font-weight:600}
+
+  /* reserve */
+  .reserve{background:linear-gradient(155deg,var(--sumi2),var(--sumi));position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:var(--gold-l)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#d5c9b6;font-size:15px;margin-bottom:22px;line-height:1.85}
+  .rsv-tel{max-width:440px;margin:0 auto 30px;background:rgba(201,167,88,.1);border:1px solid rgba(201,167,88,.4);border-radius:16px;padding:18px 22px;text-align:center}
+  .rsv-tel .lbl{font-size:11.5px;letter-spacing:.14em;color:var(--gold-l);font-weight:700;display:block;margin-bottom:4px}
+  .rsv-tel a{font-size:26px;color:#fff;font-weight:700;letter-spacing:.04em;text-decoration:none;font-family:"Hiragino Mincho ProN",serif}
+  .rsv-tel .sub{display:block;font-size:12px;color:#b6a993;margin-top:5px}
+  form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:8px}
+  .frow label{font-size:14px;letter-spacing:.03em;color:#f2ead9;font-weight:600}
+  .frow .req{color:var(--wood-d);font-size:11px;margin-left:8px;background:var(--gold-l);padding:2px 8px;border-radius:6px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:16px;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(236,226,210,.34);background:rgba(255,255,255,.08);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(236,226,210,.55)}
+  input:focus,select:focus,textarea:focus{outline:2.5px solid var(--gold-l);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:580px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--gold);color:#231c0c;font-weight:700;border:none;cursor:pointer;padding:17px;border-radius:999px;font-size:16px;letter-spacing:.06em;transition:.3s;box-shadow:0 12px 26px rgba(169,134,47,.4)}
+  button.submit:hover{transform:translateY(-2px);background:var(--gold-l)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(201,167,88,.18);border-radius:14px;padding:18px;font-size:14.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-mail{text-align:center;margin-top:16px}
+  .rsv-mail a{color:var(--gold-l);font-size:13.5px;letter-spacing:.03em;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+  .rsv-tech{text-align:center;font-size:12.5px;color:#9c8f7c;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:14px 8px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:30%;color:var(--sub);font-weight:700;letter-spacing:.02em;white-space:nowrap}
+  .sample-inline{text-align:center;font-size:12.5px;color:var(--sub);margin-top:24px}
+
+  footer{background:var(--sumi);color:#b6a993;text-align:center;padding:54px 20px 32px}
+  footer .fmark{font-size:23px;letter-spacing:.16em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10.5px;letter-spacing:.22em;color:var(--gold-l);margin-top:6px}
+  footer .fnote{font-size:12.5px;color:#8f8270;margin-top:22px;line-height:1.95}
+
+  @media(max-width:560px){
+    body{font-size:16px}
+    section{padding:60px 7vw}
+    .hero{padding:0 7vw}
+    header{padding:12px 18px}
+    header.scrolled{padding:10px 18px}
+    .logo{font-size:16px;max-width:66%}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>Web制作 ゆたか</b> による <b>くらもと囲碁教室 様</b> へのご提案用デザイン案（サンプル）です ・ <span class="lim">2026年8月1日まで</span>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">
+    <span class="mk">碁</span>
+    <span class="lgt">くらもと囲碁教室<small>KURAMOTO GO SCHOOL</small></span>
+  </div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#teacher">講師紹介</a>
+    <a href="#venue">教場一覧</a>
+    <a href="#reasons">選ばれる理由</a>
+    <a href="#reserve" class="cta">見学・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">京都・大阪・奈良 ｜ <b>5教場</b>で開く囲碁教室</span>
+    <h1 class="mincho">はじめの一手から、<br><span>その先の一局まで</span>。</h1>
+    <p>くらもと囲碁教室は、京都本因坊を拠点に、長岡京・富雄・茨木・東大阪の5教場で開く囲碁教室です。全くはじめての方から、高段を目指す方まで。大会ベスト8の実力を持つ講師が、幅広くお教えします。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">見学・体験を申し込む →</a>
+      <a href="#venue" class="btn btn-ghost">教場を見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>◆ <b>5教場</b>で開催</span>
+      <span>◆ 大会<b>ベスト8</b>の講師</span>
+      <span>◆ 初心者〜<b>高段者</b>まで</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept">
+  <div class="cnc">
+    <div class="stones reveal" aria-hidden="true"><i class="b"></i><i class="w"></i><i class="b"></i></div>
+    <div class="sec-head reveal" style="margin-bottom:24px"><span class="en">CONCEPT</span><h2 class="mincho">碁盤の前では、<br>誰もが対等です。</h2></div>
+    <p class="lead reveal mincho">石の打ち方も知らない、その一手から。<br>やがて、<b>自分の頭で読み、考える</b>楽しさへ。</p>
+    <p class="body reveal">囲碁は、ルールを覚えたその日から楽しめて、極めようとすれば一生かけても足りない——奥の深い盤上の世界です。くらもと囲碁教室には、「まったくはじめて」という方から、段位を目指す方、すでに高段の方まで、幅広い方が通われています。一人ひとりの棋力に合わせて、次の一手が見えてくる喜びを、ていねいにお伝えします。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2><p>棋力も、目的も、人それぞれ。どんな方も歓迎します</p></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">●</span><p>囲碁に興味はあるが、ルールから知りたい</p></div>
+    <div class="tg reveal d1"><span class="ic">○</span><p>入門書で少しかじった。実際に打って覚えたい</p></div>
+    <div class="tg reveal d2"><span class="ic">●</span><p>級位から、まずは初段を目指してみたい</p></div>
+    <div class="tg reveal"><span class="ic">○</span><p>もっと強くなりたい。高段への壁を越えたい</p></div>
+    <div class="tg reveal d1"><span class="ic">●</span><p>定年後の趣味に、頭を使う楽しみがほしい</p></div>
+    <div class="tg reveal d2"><span class="ic">○</span><p>子どもに、集中力や考える力を育てたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">はじめての方も、高段の方も。<br><b>あなたの棋力に合わせて、お教えします。</b></p>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="stone" aria-hidden="true"></div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">蔵元 実<small>くらもと みのる</small></h3>
+      <div class="medal">🏆 複数の大会でベスト8の実績</div>
+      <p>「囲碁は、勝ち負けの前に、まず<b>考えることそのものが面白い</b>」——蔵元実は、そう考えています。複数の大会でベスト8に入る実力を持ちながら、その指導は初心者にこそ、ていねい。全くはじめての方には、石の並べ方から一つずつ。段位を目指す方、高段の方には、一局ごとに課題を見つけ、次の伸びしろへ導きます。<b>強い人だけの教室ではありません。</b>まず碁盤の前に座ってみてください。</p>
+      <p class="note">※お名前は実在の講師名です。ご経歴の表現・お写真は、実際の内容に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- venues -->
+<section class="venue" id="venue">
+  <div class="sec-head reveal"><span class="en">VENUES</span><h2 class="mincho">通いやすい、<b>5つの教場</b></h2><p>京都・奈良・大阪。お近くの教場でお通いいただけます</p></div>
+  <div class="vn-grid">
+    <div class="vn base reveal">
+      <div class="top">
+        <h3 class="mincho">京都本因坊</h3>
+        <span class="crown">拠点</span>
+      </div>
+      <div class="body">
+        <p>くらもと囲碁教室の拠点となる教場です。歴史ある「本因坊」の名を冠した場所で、じっくりと碁に向き合えます。お電話でのお問い合わせも、こちらで承ります。</p>
+        <div class="tel">☎ <a href="tel:075-621-5817">075-621-5817</a></div>
+        <div class="tags"><span>京都府</span><span>拠点教場</span><span>電話受付</span></div>
+      </div>
+    </div>
+    <div class="vn reveal d1">
+      <div class="top">
+        <h3 class="mincho">長岡京教室</h3>
+        <span class="pref">京都府</span>
+      </div>
+      <div class="body">
+        <p>京都・長岡京エリアの教場。地域の方が気軽に通える、あたたかな雰囲気の教室です。初めての方も安心してご参加いただけます。</p>
+        <div class="tags"><span>京都府</span><span>初心者歓迎</span></div>
+      </div>
+    </div>
+    <div class="vn reveal d2">
+      <div class="top">
+        <h3 class="mincho">富雄囲碁クラブ</h3>
+        <span class="pref">奈良県</span>
+      </div>
+      <div class="body">
+        <p>奈良・富雄の囲碁クラブ。級位者から有段者まで、幅広い棋力の方が集い、対局を楽しんでいます。腕を磨きたい方にもおすすめです。</p>
+        <div class="tags"><span>奈良県</span><span>級位〜有段</span></div>
+      </div>
+    </div>
+    <div class="vn reveal d1">
+      <div class="top">
+        <h3 class="mincho">茨木教室</h3>
+        <span class="pref">大阪府</span>
+      </div>
+      <div class="body">
+        <p>大阪・茨木エリアの教場。お仕事や家事の合間に、無理なく通える立地。趣味として囲碁を始めたい方にぴったりの教室です。</p>
+        <div class="tags"><span>大阪府</span><span>趣味で始めたい方に</span></div>
+      </div>
+    </div>
+    <div class="vn reveal d2">
+      <div class="top">
+        <h3 class="mincho">東大阪教室</h3>
+        <span class="pref">大阪府</span>
+      </div>
+      <div class="body">
+        <p>大阪・東大阪エリアの教場。お子さまからご年配の方まで、幅広い世代が通われています。世代を越えて楽しめるのも、囲碁の魅力です。</p>
+        <div class="tags"><span>大阪府</span><span>幅広い世代</span></div>
+      </div>
+    </div>
+    <div class="vn reveal" style="background:linear-gradient(150deg,var(--wood-soft),#dcc9ad);border-color:rgba(110,76,47,.3);align-items:center;justify-content:center">
+      <div class="body" style="text-align:center;padding:30px 22px">
+        <div style="font-size:30px;margin-bottom:10px">🗺️</div>
+        <p style="color:var(--wood-d);font-weight:600">曜日・時間・会費など、各教場の詳細はお気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </div>
+  <p class="vn-note reveal">※各教場の開催曜日・時間・会費はデザイン案の一例です。実際の内容に差し替えてお納めします。</p>
+</section>
+
+<!-- method -->
+<section class="method">
+  <div class="mt-wrap">
+    <div class="mt-photo reveal"><img src="images/lesson.jpg" alt="碁盤と碁石（イメージ）"></div>
+    <div class="mt-info reveal">
+      <span class="en">OUR LESSON</span>
+      <h2 class="mincho">一局ごとに、<br>強くなる手ごたえを。</h2>
+      <p>くらもと囲碁教室のレッスンは、<b>ただ打つだけ</b>では終わりません。一局を振り返り、「あの一手はどうだったか」を一緒に考える。その積み重ねが、棋力を確かに伸ばしていきます。</p>
+      <p>入門の方には、やさしく、楽しく。上を目指す方には、課題を明確に。<b>今のあなたに、ちょうどいい一手</b>を、蔵元がていねいにお伝えします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons" id="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">くらもと囲碁教室が<b>選ばれる理由</b></h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🏆</div>
+      <h3>実力派の講師</h3>
+      <p>複数の大会でベスト8に入る実力を持つ蔵元実が、直接指導。確かな棋力に裏づけられた教えが受けられます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🌱</div>
+      <h3>初心者〜高段者まで</h3>
+      <p>全くはじめての方から、段位を目指す方、高段の方まで。一人ひとりの棋力に合わせて、幅広く対応します。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">📍</div>
+      <h3>通いやすい5教場</h3>
+      <p>京都・奈良・大阪に5つの教場。お住まいやお勤め先の近くで、無理なく続けられる場所が見つかります。</p>
+    </div>
+    <div class="rs reveal d3">
+      <div class="no">REASON 04</div>
+      <div class="ic">♟️</div>
+      <h3>考える力が育つ</h3>
+      <p>先を読み、考える囲碁は、集中力や思考力を養う趣味。お子さまからご年配の方まで、長く楽しめます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">通われている方の<b>声</b></h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>ルールも知らないまま入りましたが、石の並べ方から本当にていねいに教えてもらえました。今では対局が楽しくて仕方ありません。初段を目指しています。</p>
+      <div class="who">60代・男性／京都本因坊</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>伸び悩んでいた高段の壁を、蔵元先生に一局ずつ見てもらううちに越えられました。課題がはっきりするので、上達の実感があります。</p>
+      <div class="who">40代・男性／富雄囲碁クラブ</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>子どもの集中力を育てたくて通わせています。先生が優しく、子どもも囲碁が大好きに。考える力がついてきたと感じます。</p>
+      <div class="who">小学生の保護者／東大阪教室</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">見学・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは見学・体験から。碁盤に触れたことがない方も、どうぞお気軽に。</p>
+  <div class="rsv-tel reveal">
+    <span class="lbl">お電話でのお問い合わせ（京都本因坊）</span>
+    <a href="tel:075-621-5817">075-621-5817</a>
+    <span class="sub">受付は京都本因坊にて承ります</span>
+  </div>
+  <p class="rsv-sub reveal" style="margin-bottom:26px">メールでのお問い合わせは、下のフォームからどうぞ。<br>送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 太郎" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望の教場</label>
+        <select name="venue">
+          <option value="">選択してください</option>
+          <option>京都本因坊（京都）</option>
+          <option>長岡京教室（京都）</option>
+          <option>富雄囲碁クラブ（奈良）</option>
+          <option>茨木教室（大阪）</option>
+          <option>東大阪教室（大阪）</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>囲碁のご経験・棋力</label>
+        <select name="level">
+          <option value="">選択してください</option>
+          <option>まったくはじめて（ルールから）</option>
+          <option>入門・級位くらい</option>
+          <option>有段者</option>
+          <option>高段者</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="見学希望日や、気になること、目標などをご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">● ご入力ありがとうございます。メールソフトが立ち上がり、宛先（くらもと囲碁教室）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-mail reveal">メールソフトが開かない場合はこちら → <a href="mailto:kuramoto.igo@gmail.com">kuramoto.igo@gmail.com</a></p>
+  <p class="rsv-tech reveal">🔒 メールでのお問い合わせは、教室へ直接届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">INFORMATION</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>くらもと囲碁教室</td></tr>
+      <tr><th>講師</th><td>蔵元 実（くらもと みのる）</td></tr>
+      <tr><th>教場</th><td>京都本因坊（拠点）／長岡京教室（京都）／富雄囲碁クラブ（奈良）／茨木教室（大阪）／東大阪教室（大阪）</td></tr>
+      <tr><th>対象</th><td>全くはじめての方〜高段者まで（お子さま・ご年配の方も歓迎）</td></tr>
+      <tr><th>お電話</th><td>075-621-5817（京都本因坊にて受付）</td></tr>
+      <tr><th>メール</th><td>kuramoto.igo@gmail.com</td></tr>
+    </table>
+  </div>
+  <p class="sample-inline reveal">※各教場の所在地・開催曜日・時間・会費などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">くらもと囲碁教室</div>
+  <div class="fsub">KURAMOTO GO SCHOOL ・ KYOTO ・ OSAKA ・ NARA</div>
+  <p class="fnote">こちらは Web制作 ゆたか による くらもと囲碁教室 様 へのご提案用デザイン案（サンプル）です。<br>掲載の文章・お写真・生徒さんの声はイメージを含み、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var v=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=
+      'くらもと囲碁教室 見学・お問い合わせ\n'+
+      '───────────────────\n'+
+      'お名前　　：'+v('name')+'\n'+
+      'メール　　：'+v('mail')+'\n'+
+      'ご希望の教場：'+v('venue')+'\n'+
+      'ご経験・棋力：'+v('level')+'\n'+
+      'ご質問等　：'+v('note')+'\n'+
+      '───────────────────\n'+
+      '（このメールはデザイン見本のフォームから作成されました）';
+    var url='mailto:kuramoto.igo@gmail.com'+
+      '?subject='+encodeURIComponent('【見学・お問い合わせ】くらもと囲碁教室')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    setTimeout(function(){window.location.href=url;},600);
+  });
+</script>
+</body>
+</html>

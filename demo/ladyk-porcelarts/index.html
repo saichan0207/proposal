@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>ポーセラーツ教室Lady K｜福岡県太宰府市のポーセラーツ教室（デザイン案・サンプル）</title>
+<meta name="description" content="福岡県太宰府市吉松のポーセラーツ教室 Lady K（レディケー）。「大人女性が惹かれるものづくり」をコンセプトに、少人数制のアットホームな教室で、体験レッスン・フリーレッスン・キッズレッスンを開催。レッスン後のカフェタイムも人気です。">
+<style>
+  :root{
+    --base:#f7f2ea;
+    --panel:#fffdf9;
+    --pink:#c98b96;
+    --pink-d:#a86b78;
+    --pink-soft:#f3e4e5;
+    --rose-bg:#f0dcde;
+    --mocha:#8f776d;
+    --brown:#6b564f;
+    --gold:#c9a86b;
+    --ink:#5c4a44;
+    --sub:#94847c;
+    --line:rgba(92,74,68,.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--base);color:var(--ink);line-height:2;letter-spacing:.05em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+
+  .sample-bar{background:linear-gradient(90deg,#a86b78,#c98b96);color:#fff;text-align:center;font-size:11.5px;letter-spacing:.05em;padding:7px 14px;line-height:1.7;position:relative;z-index:60}
+  .sample-bar b{color:#fbeef0;font-weight:600}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:17px 26px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(247,242,234,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 26px}
+  .logo{font-size:19px;letter-spacing:.24em;color:var(--pink-d);font-weight:600}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.34em;color:var(--sub);margin-top:3px}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.13em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--pink-d);border-color:var(--pink-d)}
+  nav a.book{background:var(--pink-d);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.09em;box-shadow:0 8px 18px rgba(168,107,120,.28)}
+  nav a.book:hover{background:var(--brown);color:#fff;transform:translateY(-1px)}
+  @media(max-width:880px){nav a:not(.book){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:95vh;display:flex;align-items:center;padding:0 8vw;margin-top:-64px;
+    background:radial-gradient(54vw 52vh at 82% 16%,#f6e4e2 0%,transparent 60%),radial-gradient(46vw 46vh at 4% 92%,#f4ece0 0%,transparent 55%),linear-gradient(180deg,#fdf8f1,var(--base))}
+  .hero .orb{position:absolute;top:13%;right:7%;width:min(40vw,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 36% 32%,#fdf3ee,#f2dcdd 56%,#e6c4c7);opacity:.92;z-index:0}
+  .hero .orb::after{content:"";position:absolute;inset:-12%;border-radius:50%;border:1px solid rgba(201,139,150,.32)}
+  .hero .orb::before{content:"";position:absolute;top:-3%;left:16%;width:34%;height:34%;border-radius:50%;background:rgba(255,255,255,.5);filter:blur(2px)}
+  .hero-inner{position:relative;z-index:2;max-width:650px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.28em;color:var(--pink-d);margin-bottom:24px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--pink)}
+  .hero h1{font-size:clamp(30px,5.6vw,54px);font-weight:500;line-height:1.55;letter-spacing:.08em;color:var(--brown);text-wrap:balance}
+  .hero h1 span{color:var(--pink-d)}
+  .hero p{margin-top:24px;font-size:clamp(14px,1.7vw,16px);color:var(--sub);max-width:31em}
+  .hero-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:15px 32px;border-radius:999px;font-size:14px;letter-spacing:.1em;transition:.3s}
+  .btn-primary{background:var(--pink-d);color:#fff;box-shadow:0 12px 26px rgba(168,107,120,.3)}
+  .btn-primary:hover{background:var(--brown);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--brown)}
+  .btn-ghost:hover{border-color:var(--pink-d);color:var(--pink-d)}
+  .hero-badges{margin-top:34px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
+  .hero-badges b{color:var(--pink-d)}
+
+  section{padding:clamp(70px,10vw,122px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:52px}
+  .sec-head .en{font-size:11px;letter-spacing:.4em;color:var(--pink);display:block;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:500;letter-spacing:.08em;color:var(--brown)}
+  .sec-head p{margin-top:14px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{background:linear-gradient(180deg,var(--base),#f2e8dc)}
+  .concept .wrap{max-width:720px;margin:0 auto;text-align:center}
+  .concept .lead{font-size:clamp(19px,2.6vw,26px);color:var(--pink-d);letter-spacing:.1em;line-height:2}
+  .concept p{font-size:clamp(14px,1.9vw,16px);line-height:2.35;color:var(--ink);margin-top:24px}
+
+  /* features */
+  .feat{background:var(--base)}
+  .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .fc{text-align:center;padding:8px}
+  .fc .ic{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;background:var(--pink-soft);display:flex;align-items:center;justify-content:center}
+  .fc .ic svg{width:30px;height:30px;stroke:var(--pink-d);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .fc h3{font-size:18px;font-weight:600;letter-spacing:.05em;color:var(--brown);margin-bottom:10px}
+  .fc p{font-size:13.5px;color:var(--sub);line-height:1.95}
+
+  /* cafe highlight */
+  .cafe{background:linear-gradient(160deg,#efdcd6,#f4e6dc)}
+  .cafe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:780px){.cafe-wrap{grid-template-columns:1fr;gap:28px}}
+  .cafe-ph{aspect-ratio:4/3;border-radius:22px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e8cfc6,#dcbfb2 60%,#ecd8cc);box-shadow:0 18px 40px rgba(139,105,90,.2)}
+  .cafe-ph::after{content:attr(data-label);position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.14em;color:rgba(107,86,79,.62)}
+  .cafe-ph .cup{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);width:64px;height:52px;border:2px solid rgba(255,255,255,.72);border-radius:6px 6px 26px 26px}
+  .cafe-ph .cup::after{content:"";position:absolute;top:8px;right:-20px;width:20px;height:22px;border:2px solid rgba(255,255,255,.72);border-left:none;border-radius:0 20px 20px 0}
+  .cafe-ph .cup::before{content:"";position:absolute;top:-16px;left:14px;width:2px;height:12px;background:rgba(255,255,255,.6);box-shadow:12px 0 rgba(255,255,255,.6),24px 0 rgba(255,255,255,.6)}
+  .cafe-info .en{font-size:11px;letter-spacing:.36em;color:var(--pink-d);display:block;margin-bottom:12px}
+  .cafe-info h2{font-size:clamp(22px,3.2vw,29px);font-weight:500;letter-spacing:.06em;color:var(--brown);line-height:1.6}
+  .cafe-info p{margin-top:18px;font-size:14px;color:var(--ink);line-height:2.1}
+  .cafe-info p b{color:var(--pink-d);font-weight:600}
+
+  /* lesson */
+  .lesson{background:var(--base)}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 26px;transition:transform .35s,box-shadow .35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(139,105,90,.14)}
+  .lcard .mic{width:56px;height:56px;border-radius:15px;background:linear-gradient(135deg,var(--pink-soft),#f6d9dc);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+  .lcard h3{font-size:18px;font-weight:600;color:var(--brown);letter-spacing:.05em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.9}
+  .lcard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.08em;color:var(--pink-d);border:1px solid rgba(168,107,120,.4);border-radius:999px;padding:4px 12px}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:26px}
+
+  /* gallery */
+  .gallery{background:linear-gradient(180deg,#f2e8dc,var(--base))}
+  .g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:960px;margin:0 auto}
+  .gtile{aspect-ratio:1;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(139,105,90,.12);display:flex;align-items:center;justify-content:center}
+  .gtile.t1{background:linear-gradient(150deg,#f6ece2,#ecd6c9)}
+  .gtile.t2{background:linear-gradient(150deg,#f4e3e4,#e6c9cc)}
+  .gtile.t3{background:linear-gradient(150deg,#efe7dc,#dccbb8)}
+  .gtile.t4{background:linear-gradient(150deg,#f6e6df,#e8cabd)}
+  .gtile.t5{background:linear-gradient(150deg,#f2e5ea,#dcc4cf)}
+  .gtile.t6{background:linear-gradient(150deg,#f5ecdd,#e2d2b8)}
+  .gtile .plate{width:56%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 36%,rgba(255,255,255,.85),rgba(255,255,255,.35) 60%,transparent);border:1px solid rgba(255,255,255,.6)}
+  .gtile span{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:10.5px;letter-spacing:.12em;color:rgba(107,86,79,.6)}
+
+  /* teacher */
+  .teacher{background:var(--brown);color:#f0e2db}
+  .tc-wrap{display:grid;grid-template-columns:280px 1fr;gap:46px;max-width:900px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:28px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;position:relative;overflow:hidden;background:linear-gradient(160deg,#8a6f65,#6b564f);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(240,226,219,.6);font-size:10.5px;letter-spacing:.16em}
+  .tc-photo .mono{font-size:44px;color:rgba(233,199,190,.4)}
+  .tc-info .role{font-size:11px;letter-spacing:.24em;color:#e6c4c7}
+  .tc-info h3{font-size:25px;font-weight:400;letter-spacing:.08em;color:#fff;margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:#d3b9b2;letter-spacing:.1em;margin-left:8px}
+  .tc-info .lic{display:inline-block;margin-top:8px;font-size:11.5px;color:#f0e2db;border:1px solid rgba(240,226,219,.3);border-radius:999px;padding:5px 14px;letter-spacing:.06em}
+  .tc-info p{font-size:14px;color:#dcc9c1;margin-top:16px;line-height:2.05}
+
+  /* voice */
+  .voice{background:var(--base)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+  .vcard .stars{color:var(--gold);letter-spacing:.18em;font-size:14px}
+  .vcard p{font-size:13.5px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.06em}
+
+  /* contact */
+  .contact{background:linear-gradient(160deg,var(--pink),#b47b86)}
+  .contact .sec-head .en{color:#fbeef0;opacity:.9}
+  .contact .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#fbeef0;font-size:14px;margin-bottom:26px}
+  .mail-direct{max-width:560px;margin:0 auto 30px;text-align:center}
+  .mail-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--pink-d);text-decoration:none;padding:14px 30px;border-radius:999px;font-size:14px;letter-spacing:.08em;font-weight:600;box-shadow:0 10px 24px rgba(107,86,79,.22);transition:.3s}
+  .mail-btn:hover{transform:translateY(-2px);color:var(--brown)}
+  .mail-note{margin-top:12px;font-size:12px;color:#fbeef0;opacity:.92;letter-spacing:.04em}
+  .mail-note b{color:#fff}
+  .or-line{max-width:560px;margin:0 auto 24px;display:flex;align-items:center;gap:16px;color:#fbeef0;font-size:11.5px;letter-spacing:.16em;opacity:.85}
+  .or-line::before,.or-line::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.4)}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.08em;color:#fbeef0}
+  .frow .req{color:#a8586a;font-size:10px;margin-left:8px;background:#fbeef0;padding:2px 7px;border-radius:6px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.16);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.68)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #fff;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--brown);color:#fff;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.12em;transition:.3s}
+  button.submit:hover{background:#57453f;transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.18);border-radius:12px;padding:16px;font-size:13.5px;margin-top:4px}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#fbeef0;margin-top:22px;line-height:1.9;opacity:.92}
+
+  /* access */
+  .access{background:var(--base)}
+  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:33%;color:var(--sub);font-weight:600;letter-spacing:.06em}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;align-items:center;justify-content:center;color:rgba(107,86,79,.55);font-size:11px;letter-spacing:.16em;background:linear-gradient(135deg,#efe1d3,#e6d0c3)}
+
+  footer{background:var(--brown);color:#cdb9b1;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:21px;letter-spacing:.24em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10px;letter-spacing:.32em;color:#c9a0a6;margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#a98d84;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">このページは <b>Web制作 ゆたか</b> による <b>ポーセラーツ教室Lady K 様</b>へのご提案用デザイン案（サンプル）です　・　<b>2026年7月30日まで</b>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">ポーセラーツ教室 Lady K<small>LADY K ・ 太宰府</small></div>
+  <nav>
+    <a href="#concept">コンセプト</a>
+    <a href="#feat">教室の魅力</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#teacher">講師</a>
+    <a href="#contact" class="book">体験・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="orb"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">福岡県太宰府市 ｜ ポーセラーツ教室</span>
+    <h1 class="mincho">大人の女性が惹かれる、<br><span>ものづくり</span>の時間。</h1>
+    <p>白い器に、好きな絵柄をのせて、世界にひとつの作品を。ポーセラーツ教室Lady Kは、少人数制のアットホームな教室です。レッスンのあとは、名物のカフェタイムでほっと一息。太宰府で、心がやさしくほどける趣味の時間をはじめませんか。</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">体験レッスンのお問い合わせ →</a>
+      <a href="#lesson" class="btn btn-ghost">レッスンを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>✿ <b>少人数制</b>のアットホーム</span>
+      <span>✿ レッスン後の<b>カフェタイム</b></span>
+      <span>✿ <b>キッズ</b>レッスンも</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="en">CONCEPT</span><h2 class="mincho">大人女性が、惹かれるものづくり</h2></div>
+    <p class="lead mincho">上手じゃなくて、いい。<br>「好き」から、はじめましょう。</p>
+    <p>ポーセラーツは、白い磁器（ポーセリン）に転写紙や絵の具で絵柄をのせ、自分だけの器や小物をつくるクラフトです。むずかしそうに見えて、絵が得意でなくても大丈夫。Lady Kが大切にしているのは、完成度を競うことではなく、「これが好き」という気持ちに素直になれる時間です。日々の忙しさを少しだけ横に置いて、自分のためのものづくりに没頭する——そんなひとときを、太宰府の小さな教室でご一緒します。</p>
+  </div>
+</section>
+
+<!-- features -->
+<section class="feat" id="feat">
+  <div class="sec-head reveal"><span class="en">OUR CHARM</span><h2 class="mincho">Lady K の、3つの魅力</h2></div>
+  <div class="feat-grid">
+    <div class="fc reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21c-1.5-3-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-4.5 6-6 9z"/><path d="M9.5 12h5"/></svg></div>
+      <h3 class="mincho">少人数制のアットホーム</h3>
+      <p>先生の目が一人ひとりに行き届く、少人数制。わからないところは何度でも、あなたのペースでゆっくり。はじめての方も安心して手を動かせます。</p>
+    </div>
+    <div class="fc reveal d1">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 8h10l-1 11H8L7 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M18 11h1.5a2 2 0 0 1 0 4H17.5"/></svg></div>
+      <h3 class="mincho">名物・レッスン後のカフェタイム</h3>
+      <p>作品づくりのあとは、お茶を飲みながらのおしゃべりタイム。同じ趣味の仲間との会話も、Lady Kならではの楽しみ。通うのが待ち遠しくなる時間です。</p>
+    </div>
+    <div class="fc reveal d2">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10" r="2"/><path d="M15 20a4 4 0 0 1 6-3.3"/></svg></div>
+      <h3 class="mincho">キッズレッスンも対応</h3>
+      <p>お子さまと一緒に、親子でものづくりを楽しめます。夏休みの自由研究や、贈りものづくりにも。世代をこえて「つくる楽しさ」を分かち合えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- cafe highlight -->
+<section class="cafe">
+  <div class="cafe-wrap">
+    <div class="cafe-ph reveal" data-label="カフェタイムのお写真が入ります"><div class="cup"></div></div>
+    <div class="cafe-info reveal">
+      <span class="en">CAFE TIME</span>
+      <h2 class="mincho">つくったあとは、<br>ゆっくりカフェタイム。</h2>
+      <p>Lady Kのレッスンには、作品づくりのあとの<b>カフェタイム</b>がついています。焼き上がりを待つあいだ、あたたかいお茶とともに、今日つくったものを眺めたり、次に挑戦したいデザインを相談したり。</p>
+      <p>「作品ができる」だけでなく、「ここに来ると、ほっとする」。そんな居心地のよさこそ、通いつづけたくなるLady Kの名物です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><p>目的に合わせて、無理なく続けられます</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="mic">🍽️</div>
+      <h3 class="mincho">体験レッスン</h3>
+      <p>まずはここから。お好きな器を選んで、ポーセラーツの楽しさを気軽に体験。手ぶらでご参加いただけます。「自分にできるかな」の不安も、つくり終わるころには「またやりたい」に。</p>
+      <span class="tag">はじめての方に</span>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="mic">🎨</div>
+      <h3 class="mincho">フリーレッスン</h3>
+      <p>つくりたい作品を、自由なペースで。お皿・カップ・アクセサリー・贈りものまで、あなたの「こんなの欲しい」をかたちにします。続けるほど、表現の幅が広がります。</p>
+      <span class="tag">じっくり楽しみたい方に</span>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="mic">🧒</div>
+      <h3 class="mincho">キッズレッスン</h3>
+      <p>お子さまも楽しめるレッスン。親子で一緒に、世界にひとつの作品づくり。夏休みの思い出づくりや、おじいちゃん・おばあちゃんへの贈りものにもぴったりです。</p>
+      <span class="tag">お子さま・親子で</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※コース内容はデザイン案の一例です。実際のレッスン内容・料金・所要時間に差し替えてお納めします。</p>
+</section>
+
+<!-- gallery -->
+<section class="gallery">
+  <div class="sec-head reveal"><span class="en">GALLERY</span><h2 class="mincho">作品ギャラリー</h2><p>やさしい色合いを中心に、大人の暮らしに寄り添う器たちを</p></div>
+  <div class="g-grid reveal">
+    <div class="gtile t1"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+    <div class="gtile t2"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+    <div class="gtile t3"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+    <div class="gtile t4"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+    <div class="gtile t5"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+    <div class="gtile t6"><div class="plate"></div><span>作品のお写真が入ります</span></div>
+  </div>
+  <p class="sample-inline">※上記はデザイン用の仮イメージです。実際の生徒さん・先生の作品写真に差し替えてお納めします。</p>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="mono" aria-hidden="true">✿</div>
+      <span>講師のお写真が入ります</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">KIKO<small>先生</small></h3>
+      <span class="lic">ポーセラーツ講師</span>
+      <p>「ものづくりに夢中になる時間って、大人にこそ必要」。そう感じて、この教室をはじめました。うまく描けるかどうかより、「こういうの好き」という気持ちを大事にしてほしい。だからLady Kは、少人数でゆったり。つくり終わったあとのカフェタイムでのおしゃべりも、私が大好きな時間です。太宰府で、あなたの「好き」を見つけにいらしてください。</p>
+      <p style="font-size:11.5px;color:#c9a0a6;margin-top:12px">※ご紹介文はデザイン案の一例です。実際のご経歴・メッセージに差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal"><div class="stars">★★★★★</div><p>不器用だから不安でしたが、少人数でていねいに教えてもらえて安心。できあがった器を毎日使うたび、うれしくなります。</p><div class="who">40代・女性／太宰府市</div></div>
+    <div class="vcard reveal d1"><div class="stars">★★★★★</div><p>レッスン後のカフェタイムが楽しみで通っています。同じ趣味の方とのおしゃべりも、いい気分転換になっています。</p><div class="who">50代・女性</div></div>
+    <div class="vcard reveal d2"><div class="stars">★★★★★</div><p>娘とキッズレッスンに参加しました。親子で夢中になれて、作品はおばあちゃんへのプレゼントに。よい思い出になりました。</p><div class="who">30代・女性／親子で参加</div></div>
+  </div>
+  <p class="sample-inline">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">体験レッスン・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">はじめての方も、どうぞお気軽に。メールで直接、または下のフォームからご連絡ください。</p>
+  <div class="mail-direct reveal">
+    <a class="mail-btn" href="mailto:ladyk.emma2020@gmail.com?subject=%E4%BD%93%E9%A8%93%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88%E3%83%9D%E3%83%BC%E3%82%BB%E3%83%A9%E3%83%BC%E3%83%84%E6%95%99%E5%AE%A4Lady%20K%EF%BC%89&body=%E3%83%9D%E3%83%BC%E3%82%BB%E3%83%A9%E3%83%BC%E3%83%84%E6%95%99%E5%AE%A4Lady%20K%20%E6%A7%98%0A%0A%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E6%8B%9D%E8%A6%8B%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%EF%BC%88%E4%BD%93%E9%A8%93%2F%E3%83%95%E3%83%AA%E3%83%BC%2F%E3%82%AD%E3%83%83%E3%82%BA%EF%BC%89%EF%BC%9A%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E6%97%A5%EF%BC%9A%0A%E3%81%94%E8%B3%AA%E5%95%8F%E3%83%BB%E3%81%94%E8%A6%81%E6%9C%9B%EF%BC%9A%0A">✉ メールで直接お問い合わせ</a>
+    <p class="mail-note">宛先：<b>ladyk.emma2020@gmail.com</b></p>
+  </div>
+  <div class="or-line reveal">または フォームから</div>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="太宰府 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のレッスン</label><select name="menu"><option value="">選択してください</option><option>体験レッスン</option><option>フリーレッスン</option><option>キッズレッスン（親子）</option><option>まだ決めていない</option></select></div>
+      <div class="frow"><label>ご希望日（任意）</label><input type="date" name="date"></div>
+    </div>
+    <div class="frow"><label>ご質問・ご要望（任意）</label><textarea name="note" rows="3" placeholder="つくってみたい作品や、初めてで不安な点などご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でお問い合わせ</button>
+    <p class="rsv-ok" id="rsvOk">✿ ありがとうございます。ご入力内容でメールソフトが開きます。そのまま送信してください。（教室より折り返しご連絡いたします）</p>
+  </form>
+  <p class="rsv-tech reveal">🔒 「お問い合わせ」を押すと、入力内容がメール本文に自動で入り、教室あてのメールとして送信できます。ホームページ本体とは別にメールで届く仕組みなので、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>ポーセラーツ教室 Lady K（レディケー）</td></tr>
+      <tr><th>エリア</th><td>福岡県太宰府市吉松（とびうめアリーナ近く・自宅教室）</td></tr>
+      <tr><th>レッスン</th><td>体験レッスン・フリーレッスン・キッズレッスン</td></tr>
+      <tr><th>特徴</th><td>少人数制／レッスン後のカフェタイムつき</td></tr>
+      <tr><th>お問い合わせ</th><td>メール（ladyk.emma2020@gmail.com）・フォームより</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
+  </div>
+  <p class="sample-inline">※詳しい住所・レッスン日時・料金などは、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">ポーセラーツ教室 Lady K</div>
+  <div class="fsub">LADY K ・ DAZAIFU</div>
+  <p class="fnote">このページは Web制作 ゆたか による ポーセラーツ教室Lady K 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var g=function(n){var e=f.elements[n];return e&&e.value?e.value:'（未入力）'};
+    var subject='体験レッスンのお問い合わせ（ポーセラーツ教室Lady K）';
+    var body=
+      'ポーセラーツ教室Lady K 様\n\nホームページを拝見しました。\n\n'+
+      'お名前：'+g('name')+'\n'+
+      'メールアドレス：'+g('email')+'\n'+
+      'ご希望のレッスン：'+g('menu')+'\n'+
+      'ご希望日：'+g('date')+'\n'+
+      'ご質問・ご要望：'+g('note')+'\n';
+    window.location.href='mailto:ladyk.emma2020@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+  });
+</script>
+</body>
+</html>

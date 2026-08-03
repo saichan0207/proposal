@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>AHS英会話スクール｜大阪府豊中市・服部天神駅の英会話教室（デザイン案・サンプル）</title>
+<meta name="description" content="アメリカ人ネイティブ講師による、幼稚園児からシニアまで通える英会話スクール。少人数グループ制。無料体験レッスン（マンツーマン20分）実施中。大阪府豊中市・服部天神駅徒歩5分。">
+<style>
+  :root{
+    --bg:#eef4fb;
+    --panel:#ffffff;
+    --blue:#1667c9;
+    --blue2:#0d4ea3;
+    --navy:#0e2a52;
+    --navy2:#0a2043;
+    --blue-soft:#dcebfb;
+    --yellow:#ffc422;
+    --yellow2:#ffd85c;
+    --yellow-soft:#fff3cd;
+    --ink:#172436;
+    --sub:#5a6b82;
+    --line:rgba(22,103,201,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Helvetica Neue",sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.02em;overflow-x:hidden}
+  .en-font{font-family:"Poppins","Helvetica Neue",Arial,sans-serif}
+
+  .sample-bar{background:linear-gradient(90deg,var(--navy2),var(--blue2));color:#eaf2fd;text-align:center;font-size:11.5px;padding:7px 14px;letter-spacing:.06em;position:relative;z-index:60}
+  .sample-bar b{color:var(--yellow2)}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(238,244,251,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:19px;letter-spacing:.06em;color:var(--blue2);font-weight:800;line-height:1.15}
+  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--yellow);font-weight:700;margin-top:2px}
+  header.scrolled .logo small{color:#d69f00}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12.5px;letter-spacing:.08em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s;font-weight:600}
+  nav a:hover{color:var(--blue);border-color:var(--yellow)}
+  nav a.cta{background:var(--yellow);color:#3a2b00;padding:10px 20px;border-radius:999px;border:none;letter-spacing:.04em;font-weight:800;box-shadow:0 8px 18px rgba(255,196,34,.42)}
+  nav a.cta:hover{background:var(--yellow2);color:#3a2b00;transform:translateY(-1px)}
+  header:not(.scrolled) .logo,header:not(.scrolled) nav a:not(.cta){color:#fff}
+  header:not(.scrolled) .logo small{color:var(--yellow2)}
+  @media(max-width:880px){nav a:not(.cta){display:none}}
+  @media(max-width:480px){header{padding:12px 15px}.logo{font-size:15px;letter-spacing:.03em}.logo small{font-size:8px;letter-spacing:.2em}nav a.cta{padding:9px 14px;font-size:11.5px}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,32,67,.86) 28%,rgba(13,78,163,.5) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:730px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.2em;color:var(--yellow2);margin-bottom:20px;font-weight:700}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--yellow2)}
+  .hero h1{font-size:clamp(23px,4.8vw,48px);font-weight:800;line-height:1.44;letter-spacing:.02em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.35)}
+  .hero h1 span{color:var(--yellow2)}
+  .hero p{margin-top:20px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.94);max-width:34em;line-height:1.95}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14.5px;letter-spacing:.03em;transition:.3s;font-weight:800}
+  .btn-primary{background:var(--yellow);color:#3a2b00;box-shadow:0 12px 26px rgba(255,196,34,.44)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--yellow2)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{border-color:var(--yellow2);color:var(--yellow2)}
+  .hero-badges{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#fff}
+  .hero-badges span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 15px;backdrop-filter:blur(4px)}
+  .hero-badges b{color:var(--yellow2);font-weight:800}
+
+  section{padding:clamp(66px,9vw,116px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:11px;letter-spacing:.3em;color:var(--blue);display:block;margin-bottom:11px;font-weight:800}
+  .sec-head h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:.04em;color:var(--navy)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* target */
+  .target{background:linear-gradient(180deg,var(--bg),#e2eefb)}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:960px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 6px 18px rgba(22,103,201,.05)}
+  .tg .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:var(--blue2);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .tg p{font-size:13.8px;line-height:1.8;padding-top:3px}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,19px);color:var(--navy);letter-spacing:.03em;font-weight:700}
+  .tg-foot b{color:var(--blue);border-bottom:3px solid var(--yellow)}
+
+  /* method */
+  .method{background:var(--navy);color:#e6eefb}
+  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:800px){.mth-wrap{grid-template-columns:1fr;gap:28px}}
+  .mth-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px rgba(0,0,0,.32)}
+  .mth-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .mth-info .en{font-size:11px;letter-spacing:.3em;color:var(--yellow2);display:block;margin-bottom:12px;font-weight:800}
+  .mth-info h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:.03em;color:#fff;line-height:1.5}
+  .mth-info h2 span{color:var(--yellow2)}
+  .mth-info p{margin-top:18px;font-size:14px;color:#c7d6ec;line-height:2.05}
+  .mth-info p b{color:#fff;font-weight:700}
+  .mth-tags{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+  .mth-tags span{font-size:11.5px;letter-spacing:.04em;color:#0e2a52;background:var(--yellow2);border-radius:999px;padding:6px 14px;font-weight:700}
+
+  /* course */
+  .course{background:var(--bg)}
+  .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1040px;margin:0 auto}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 24px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
+  .ccard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--yellow))}
+  .ccard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(22,103,201,.14)}
+  .ccard .ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--blue-soft),#eaf3ff);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
+  .ccard .age{font-size:11px;letter-spacing:.08em;color:var(--blue);font-weight:800;margin-bottom:5px}
+  .ccard h3{font-size:18.5px;font-weight:800;color:var(--navy);letter-spacing:.02em;margin-bottom:10px}
+  .ccard p{font-size:13.4px;color:var(--sub);line-height:1.9}
+  .ccard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.04em;color:var(--blue2);background:var(--blue-soft);border-radius:999px;padding:5px 13px;font-weight:700}
+  .c-note{text-align:center;margin-top:34px;font-size:11.5px;color:var(--sub)}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,#e2eefb,var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.14em;color:var(--blue);margin-bottom:10px;font-weight:800;font-family:"Poppins","Helvetica Neue",Arial,sans-serif}
+  .rs .ic{width:68px;height:68px;margin:0 auto 16px;border-radius:50%;background:var(--panel);box-shadow:0 10px 24px rgba(22,103,201,.14);border:2px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rs h3{font-size:17.5px;font-weight:800;letter-spacing:.02em;color:var(--navy);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+
+  /* free trial band */
+  .trial{background:linear-gradient(120deg,var(--yellow),var(--yellow2));color:#3a2b00;text-align:center;position:relative;overflow:hidden}
+  .trial::before{content:"";position:absolute;inset:0;background:url("images/trial.jpg") center/cover;opacity:.12}
+  .trial-in{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .trial .ribbon{display:inline-block;background:var(--navy);color:var(--yellow2);font-size:12px;letter-spacing:.1em;font-weight:800;padding:8px 22px;border-radius:999px;margin-bottom:22px}
+  .trial h2{font-size:clamp(26px,4.6vw,42px);font-weight:800;letter-spacing:.02em;line-height:1.4}
+  .trial h2 span{display:inline-block;background:#fff;padding:0 12px;border-radius:8px;transform:rotate(-1.5deg)}
+  .trial .lead{margin-top:18px;font-size:clamp(15px,2vw,18px);font-weight:700;line-height:1.8}
+  .trial-points{margin:26px auto 6px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;max-width:640px}
+  .trial-points div{background:rgba(255,255,255,.72);border-radius:14px;padding:14px 20px;font-size:13.5px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px}
+  .trial-cta{margin-top:30px}
+  .trial-cta a{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;text-decoration:none;padding:17px 40px;border-radius:999px;font-size:16px;font-weight:800;letter-spacing:.03em;box-shadow:0 14px 30px rgba(14,42,82,.32);transition:.3s}
+  .trial-cta a:hover{transform:translateY(-2px);background:var(--navy2)}
+
+  /* teacher */
+  .teacher{background:var(--navy2);color:#dbe6f6}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:740px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--blue),var(--blue2));display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.34)}
+  .tc-photo .note{position:absolute;font-size:52px;opacity:.5}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.72);font-size:10.5px;letter-spacing:.14em}
+  .tc-info .role{font-size:11px;letter-spacing:.2em;color:var(--yellow2);font-weight:800}
+  .tc-info h3{font-size:26px;font-weight:800;letter-spacing:.03em;color:#fff;margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:#a9bcda;letter-spacing:.08em;margin-left:8px;font-weight:500}
+  .tc-info .lic{display:inline-block;margin-top:8px;font-size:11.5px;color:#0e2a52;background:var(--yellow2);border-radius:999px;padding:5px 15px;letter-spacing:.03em;font-weight:700}
+  .tc-info p{font-size:14px;color:#c1d0e8;margin-top:16px;line-height:2.05}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:980px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:0 6px 18px rgba(22,103,201,.05)}
+  .vcard .stars{color:var(--yellow);letter-spacing:.14em;font-size:15px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.03em;font-weight:700}
+  .vcard .who b{color:var(--blue2)}
+
+  /* reserve */
+  .reserve{background:var(--navy)}
+  .reserve .sec-head .en{color:var(--yellow2)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#c1d0e8;font-size:14px;margin-bottom:34px}
+  form{max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.03em;color:#dbe6f6;font-weight:600}
+  .frow .req{color:var(--yellow2);font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;width:100%}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.5)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow2);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--yellow);color:#3a2b00;font-weight:800;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:15px;letter-spacing:.05em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px);background:var(--yellow2)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.12);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.8}
+  .rsv-ok.show{display:block}
+  .rsv-alt{text-align:center;margin-top:20px;font-size:12.5px;color:#a9bcda;line-height:1.9}
+  .rsv-alt a{color:var(--yellow2);text-decoration:none;font-weight:700;border-bottom:1px solid rgba(255,216,92,.5)}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#8ea3c4;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:740px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:700;letter-spacing:.03em}
+  .map-ph{border-radius:18px;min-height:240px;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;color:var(--blue2);font-size:11px;letter-spacing:.16em;background:linear-gradient(135deg,#dcebfb,#c9e0fa);text-align:center}
+  .map-ph .pin{font-size:30px}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:var(--navy2);color:#a9bcda;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:21px;letter-spacing:.05em;color:#fff;font-weight:800}
+  footer .fsub{font-size:10px;letter-spacing:.3em;color:var(--yellow2);margin-top:5px;font-weight:700}
+  footer .fnote{font-size:11.5px;color:#7f93b6;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">※こちらは <b>Web制作 ゆたか</b> による <b>AHS英会話スクール 様</b> へのご提案用デザイン案（サンプル）です</div>
+
+<header id="hd">
+  <div class="logo">AHS英会話スクール<small>AHS ENGLISH SCHOOL</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#method">教室について</a>
+    <a href="#course">コース</a>
+    <a href="#teacher">講師</a>
+    <a href="#access">アクセス</a>
+    <a href="#reserve" class="cta">無料体験を申し込む</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">大阪府豊中市・服部天神駅 徒歩5分 ｜ 英会話スクール</span>
+    <h1>アメリカ人ネイティブ講師と、<br><span>英語がもっと好きになる。</span></h1>
+    <p>幼稚園児からシニアまで、一人ひとりのペースで学べる少人数グループ制の英会話スクール。本場のネイティブ英語にふれながら、「話せる楽しさ」を毎回のレッスンで。まずは無料体験レッスンから。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">無料体験レッスンを申し込む →</a>
+      <a href="#course" class="btn btn-ghost">コースを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>🇺🇸 <b>ネイティブ講師</b></span>
+      <span>🎈 <b>幼稚園児〜シニア</b></span>
+      <span>🎁 無料体験<b>20分</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2>こんな方へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">🧒</span><p>子どもに、小さいうちから生きた英語にふれさせたい</p></div>
+    <div class="tg reveal d1"><span class="ic">🗣️</span><p>ネイティブの発音で、正しい英語を身につけさせたい</p></div>
+    <div class="tg reveal d2"><span class="ic">🏆</span><p>英検や、高校・大学入試の面接対策をしたい</p></div>
+    <div class="tg reveal"><span class="ic">☕</span><p>大人になってから、もう一度英語を学び直したい</p></div>
+    <div class="tg reveal d1"><span class="ic">✈️</span><p>旅行や仕事で使える、日常英会話を身につけたい</p></div>
+    <div class="tg reveal d2"><span class="ic">🌏</span><p>シニアになっても、無理なく楽しく英語を続けたい</p></div>
+  </div>
+  <p class="tg-foot reveal">年齢も目的もさまざま。だからこそ、<b>一人ひとりに合わせた</b>レッスンを。</p>
+</section>
+
+<!-- method / policy -->
+<section class="method" id="method">
+  <div class="mth-wrap">
+    <div class="mth-ph reveal"><img src="images/room.jpg" alt="英語の本と世界地図のある学習スペース（イメージ）"></div>
+    <div class="mth-info reveal">
+      <span class="en">OUR SCHOOL</span>
+      <h2>本場の英語を、<span>少人数でじっくり</span>。</h2>
+      <p>AHS英会話スクールのレッスンは、<b>アメリカ人ネイティブ講師</b>が担当。教科書だけでは身につかない、本場の発音・リズム・自然な言い回しを、会話を通してていねいにお伝えします。</p>
+      <p>クラスは<b>少人数グループ制</b>。一人ひとりの「話したい」に向き合えるから、英語が初めての方も、久しぶりの方も安心して通っていただけます。まずは気軽に、英語を口に出すところから。</p>
+      <div class="mth-tags">
+        <span>アメリカ人ネイティブ講師</span>
+        <span>少人数グループ制</span>
+        <span>幼児〜シニア対応</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- course -->
+<section class="course" id="course">
+  <div class="sec-head reveal"><span class="en">COURSE</span><h2>年齢・目的に合わせたコース</h2><p>幼稚園児からシニアまで、どの世代も歓迎です</p></div>
+  <div class="c-grid">
+    <div class="ccard reveal">
+      <div class="ic">🎈</div>
+      <div class="age">幼稚園児・小学生</div>
+      <h3>キッズ英会話</h3>
+      <p>歌やゲームを取り入れながら、英語を「楽しい」と感じるところから。耳が育つ時期に、ネイティブの発音にたっぷりふれます。</p>
+      <span class="tag">4歳〜小学生</span>
+    </div>
+    <div class="ccard reveal d1">
+      <div class="ic">🎓</div>
+      <div class="age">中学生・高校生</div>
+      <h3>ジュニア英会話・英検対策</h3>
+      <p>学校英語をベースに、話す・聞く力を強化。英検の面接対策や、高校・大学入試の面接練習にも対応します。</p>
+      <span class="tag">英検・面接対策</span>
+    </div>
+    <div class="ccard reveal d2">
+      <div class="ic">☕</div>
+      <div class="age">大人</div>
+      <h3>大人の英会話・学び直し</h3>
+      <p>「昔やったけど忘れてしまった」方も大歓迎。日常英会話・旅行英語・仕事で使える英語まで、目的に合わせて進めます。</p>
+      <span class="tag">初心者歓迎</span>
+    </div>
+    <div class="ccard reveal d3">
+      <div class="ic">🌏</div>
+      <div class="age">シニア</div>
+      <h3>シニア英会話</h3>
+      <p>ゆったりペースで、無理なく楽しく。新しい趣味として、世界とつながる会話を。同世代の仲間と一緒に続けられます。</p>
+      <span class="tag">ゆったりペース</span>
+    </div>
+  </div>
+  <p class="c-note reveal">※コース区分・対象年齢はデザイン案の一例です。実際のクラス編成・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2>AHSが選ばれる3つの理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🇺🇸</div>
+      <h3>アメリカ人ネイティブ講師</h3>
+      <p>本場の発音・リズム・自然な表現を、直接学べます。「通じる英語」を、生きた会話の中で身につけます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">👥</div>
+      <h3>安心の少人数グループ制</h3>
+      <p>一人ひとりが話す時間をしっかり確保。仲間と一緒だから続けやすく、初めての方も無理なく通えます。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🎯</div>
+      <h3>目的別のカリキュラム</h3>
+      <p>キッズの習い事から、英検・面接対策、大人の学び直しまで。年齢と目的に合わせて、ぴったりのレッスンを。</p>
+    </div>
+  </div>
+</section>
+
+<!-- free trial band -->
+<section class="trial" id="trial">
+  <div class="trial-in reveal">
+    <span class="ribbon">FREE TRIAL LESSON</span>
+    <h2>まずは、<span>無料体験レッスン</span></h2>
+    <p class="lead">アメリカ人ネイティブ講師による<br>マンツーマン20分の体験レッスンを、無料でご案内しています。</p>
+    <div class="trial-points">
+      <div>✅ 費用は一切かかりません</div>
+      <div>⏱️ マンツーマン20分</div>
+      <div>🧒 お子さま〜大人までOK</div>
+    </div>
+    <div class="trial-cta">
+      <a href="#reserve">無料体験レッスンを申し込む →</a>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="note" aria-hidden="true">🗽</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">NATIVE INSTRUCTOR</span>
+      <h3>アメリカ人ネイティブ講師<small>from U.S.A.</small></h3>
+      <span class="lic">ネイティブスピーカー</span>
+      <p>「英語は、テストのためだけのものじゃない。世界とつながるための、楽しいツールです」。一人ひとりのレベルに合わせて、ゆっくり・ていねいに。間違いを恐れず、どんどん話してみましょう。レッスンでは自然と笑顔があふれます。まずは無料体験で、本場の英語にふれてみてください。</p>
+      <p style="font-size:11.5px;color:#8ea3c4;margin-top:12px">※お名前・ご経歴・お写真はサンプルです。実際の講師の情報に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2>生徒さん・保護者の声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>人見知りだった娘が、レッスンが楽しみで仕方ない様子。ネイティブの先生の発音を、自然にまねするようになりました。</p>
+      <div class="who"><b>幼稚園児の保護者</b>（豊中市）</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>英検の面接対策でお世話になりました。少人数なので質問しやすく、本番も落ち着いて話せたそうです。合格できました。</p>
+      <div class="who"><b>中学生の保護者</b>（豊中市）</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>50代から学び直しで通っています。同世代の仲間と一緒に、ゆっくり進めてもらえるので楽しく続けられています。</p>
+      <div class="who"><b>大人の受講生</b>（60代）</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さん・保護者の声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">FREE TRIAL</span><h2>無料体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">下記フォームからお気軽にお申し込みください。折り返し、体験レッスンの日程をご案内します。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>受講される方</label>
+        <select name="who">
+          <option value="">選択してください</option>
+          <option>お子さま（幼稚園児〜高校生）</option>
+          <option>ご本人（大人）</option>
+          <option>ご本人（シニア）</option>
+        </select>
+      </div>
+      <div class="frow"><label>年齢・学年</label>
+        <select name="age">
+          <option value="">選択してください</option>
+          <option>幼稚園児</option>
+          <option>小学生</option>
+          <option>中学生</option>
+          <option>高校生</option>
+          <option>大人</option>
+          <option>シニア</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご希望のコース・ご相談内容（任意）</label><textarea name="note" rows="3" placeholder="例）英検2級の面接対策をお願いしたい／子どもの習い事として検討中／体験希望の曜日 など"></textarea></div>
+    <button type="submit" class="submit">この内容で無料体験を申し込む</button>
+    <p class="rsv-ok" id="rsvOk">🎉 お申し込みありがとうございます。メールソフトが起動しますので、そのまま送信してください。スクールより折り返しご連絡いたします。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-alt reveal">メールソフトが開かない場合は、<a href="mailto:headstart8150@gmail.com?subject=AHS英会話スクール%20無料体験のお申し込み">headstart8150@gmail.com</a> まで直接ご連絡ください。</p>
+  <p class="rsv-tech reveal">🔒 入力いただいた内容は、スクールへメールで届く仕組みです。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access" id="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2>スクールのご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>スクール名</th><td>AHS英会話スクール</td></tr>
+      <tr><th>所在地</th><td>大阪府豊中市<br>（阪急宝塚線 服部天神駅 徒歩5分）</td></tr>
+      <tr><th>講師</th><td>アメリカ人ネイティブ講師</td></tr>
+      <tr><th>対象</th><td>幼稚園児〜シニア（少人数グループ制）</td></tr>
+      <tr><th>レッスン</th><td>キッズ英会話・英検/面接対策・大人の学び直し ほか</td></tr>
+      <tr><th>無料体験</th><td>マンツーマン20分・随時受付中</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <div class="pin">📍</div>
+      MAP ─ ここにGoogleマップが入ります<br>（服部天神駅 徒歩5分）
+    </div>
+  </div>
+  <p class="sample-inline reveal">※詳しい所在地・レッスン時間・料金は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark">AHS英会話スクール</div>
+  <div class="fsub">AHS ENGLISH SCHOOL ｜ 大阪府豊中市</div>
+  <p class="fnote">このページは Web制作 ゆたか による AHS英会話スクール 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・写真・お客様の声はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():''};
+    var body=
+      'AHS英会話スクール 無料体験・お問い合わせ\n'+
+      '------------------------------\n'+
+      'お名前：'+g('name')+'\n'+
+      'メール：'+g('mail')+'\n'+
+      '受講される方：'+g('who')+'\n'+
+      '年齢・学年：'+g('age')+'\n'+
+      'ご希望・ご相談：'+g('note')+'\n'+
+      '------------------------------';
+    var url='mailto:headstart8150@gmail.com'+
+      '?subject='+encodeURIComponent('AHS英会話スクール 無料体験のお申し込み')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='送信ソフトを起動しました';
+    window.location.href=url;
+  });
+</script>
+</body>
+</html>

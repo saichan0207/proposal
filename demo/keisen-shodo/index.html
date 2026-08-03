@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>けいせん書道教室｜横浜市鶴見区の書道教室（デザイン案・サンプル）</title>
+<meta name="description" content="幼児から成人まで。日本習字教育財団の手本で段級位認定・師範免状取得まで。漢字・かな・ペン字・墨画・デザイン書。心穏やかに、集中して物事に取り組む姿勢が身に付く、横浜市鶴見区豊岡町の書道教室です。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f4efe1;
+    --panel:#fbf8ef;
+    --cream2:#ece4d1;
+    --green:#274232;
+    --green2:#1b2f22;
+    --green3:#33553f;
+    --green-soft:#dde6da;
+    --ink:#2b332a;
+    --sub:#6d766a;
+    --seal:#b23a2e;
+    --seal2:#c9503f;
+    --seal-soft:#f0dcd6;
+    --line:rgba(39,66,50,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.98;letter-spacing:.05em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{max-width:100%;display:block}
+
+  .sample-bar{background:linear-gradient(90deg,#1b2f22,#274232 58%,#33553f);color:#eef3e6;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.06em;position:relative;z-index:60;line-height:1.6}
+  .sample-bar b{color:#d8b46a}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(244,239,225,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(244,239,225,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:18px;letter-spacing:.16em;color:var(--green);font-weight:600;line-height:1.4}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--seal);margin-top:3px;font-weight:600}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s;white-space:nowrap}
+  nav a:hover{color:var(--seal);border-color:var(--seal)}
+  nav a.cta{background:var(--green);color:#fff;padding:9px 18px;border-radius:6px;border:none;letter-spacing:.06em;box-shadow:0 8px 18px rgba(27,47,34,.28)}
+  nav a.cta:hover{background:var(--green3);color:#fff;transform:translateY(-1px)}
+  @media(max-width:960px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden;
+    background:radial-gradient(70vw 60vh at 78% 20%,#33553f 0%,transparent 62%),radial-gradient(50vw 50vh at 10% 92%,#20392a 0%,transparent 60%),linear-gradient(160deg,#1f3628,#152418)}
+  .hero::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.05),transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%,rgba(255,255,255,.04),transparent);opacity:.6;pointer-events:none}
+  .hero-kanji{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-size:min(56vh,520px);line-height:1;color:rgba(255,255,255,.045);font-family:"Hiragino Mincho ProN",serif;z-index:0;user-select:none;letter-spacing:0}
+  .hero-inner{position:relative;z-index:2;max-width:640px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;color:#e6d3a4;margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:#d8b46a}
+  .hero h1{font-size:clamp(30px,5.8vw,54px);font-weight:600;line-height:1.6;letter-spacing:.1em;text-wrap:balance;text-shadow:0 2px 26px rgba(0,0,0,.4)}
+  .hero h1 span{color:#e6d3a4}
+  .hero p{margin-top:24px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.9);max-width:33em}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:6px;font-size:14px;letter-spacing:.06em;transition:.3s}
+  .btn-primary{background:linear-gradient(135deg,#c9503f,#b23a2e);color:#fff;font-weight:600;box-shadow:0 12px 26px rgba(178,58,46,.4)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
+  .btn-ghost:hover{border-color:#e6d3a4;color:#e6d3a4}
+  .hero-badges{margin-top:30px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.88)}
+  .hero-badges b{color:#e6d3a4}
+
+  section{padding:clamp(70px,10vw,118px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.36em;color:var(--seal);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.1em;color:var(--green)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* concept */
+  .concept{text-align:center}
+  .cnc{max-width:740px;margin:0 auto}
+  .cnc .seal{width:52px;height:52px;margin:0 auto 24px;border:2px solid var(--seal);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--seal);font-size:24px;font-family:"Hiragino Mincho ProN",serif}
+  .cnc .lead{font-size:clamp(19px,3.2vw,28px);line-height:2;color:var(--green);letter-spacing:.1em}
+  .cnc .lead b{color:var(--seal);font-weight:600}
+  .cnc p.body{margin-top:26px;font-size:14px;color:var(--sub);line-height:2.15}
+
+  /* target */
+  .target{background:linear-gradient(180deg,var(--bg),var(--cream2))}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 22px rgba(39,66,50,.05)}
+  .tg .ic{flex:0 0 auto;width:32px;height:32px;border-radius:8px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:15px;font-family:"Hiragino Mincho ProN",serif}
+  .tg p{font-size:13.8px;line-height:1.86}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--green);letter-spacing:.06em}
+  .tg-foot b{color:var(--seal);font-weight:600}
+
+  /* rank / 段級位 */
+  .rank{background:linear-gradient(150deg,var(--green2),var(--green) 70%);color:#eef3e6;overflow:hidden}
+  .rk-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:820px){.rk-wrap{grid-template-columns:1fr;gap:34px}}
+  .rk-info .en{font-size:11px;letter-spacing:.34em;color:#e6d3a4;display:block;margin-bottom:14px}
+  .rk-info h2{font-size:clamp(23px,3.4vw,32px);font-weight:600;letter-spacing:.08em;color:#fff;line-height:1.6}
+  .rk-info h2 span{color:#e6d3a4}
+  .rk-info p{margin-top:18px;font-size:14px;color:#d3ddd0;line-height:2.1}
+  .rk-info p b{color:#e6d3a4;font-weight:600}
+  .rk-steps{background:rgba(255,255,255,.05);border:1px solid rgba(230,211,164,.28);border-radius:16px;padding:26px 28px}
+  .rk-step{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed rgba(230,211,164,.24)}
+  .rk-step:last-child{border-bottom:none;padding-bottom:0}
+  .rk-step:first-child{padding-top:0}
+  .rk-step .no{flex:0 0 auto;width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#c9503f,#b23a2e);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+  .rk-step .tx h4{font-size:15px;color:#fff;font-weight:600;letter-spacing:.05em;margin-bottom:3px}
+  .rk-step .tx p{font-size:12.8px;color:#c3cec0;line-height:1.85;margin:0}
+
+  /* achievement banner */
+  .ach{background:var(--cream2);text-align:center}
+  .ach-wrap{max-width:900px;margin:0 auto}
+  .ach-lead{font-size:clamp(18px,2.8vw,25px);color:var(--green);letter-spacing:.08em;line-height:1.9}
+  .ach-lead b{color:var(--seal)}
+  .ach-stats{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:760px;margin-left:auto;margin-right:auto}
+  @media(max-width:640px){.ach-stats{grid-template-columns:1fr}}
+  .ach-c{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 18px;box-shadow:0 8px 22px rgba(39,66,50,.06)}
+  .ach-c .n{font-size:clamp(30px,5vw,42px);color:var(--green);font-family:"Hiragino Mincho ProN",serif;letter-spacing:.02em;line-height:1}
+  .ach-c .n small{font-size:15px;color:var(--seal);margin-left:3px}
+  .ach-c .l{margin-top:12px;font-size:12.8px;color:var(--sub);line-height:1.7}
+  .ach-note{margin-top:26px;font-size:11.5px;color:var(--sub)}
+
+  /* courses */
+  .course{background:var(--bg)}
+  .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1040px;margin:0 auto}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
+  .ccard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(39,66,50,.14)}
+  .ccard .kanji{width:60px;height:60px;border-radius:12px;background:linear-gradient(135deg,var(--green-soft),#cdd9c8);display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--green);font-family:"Hiragino Mincho ProN",serif;margin-bottom:16px}
+  .ccard h3{font-size:18px;font-weight:600;color:var(--green);letter-spacing:.06em;margin-bottom:9px}
+  .ccard p{font-size:13.2px;color:var(--sub);line-height:1.92}
+  .ccard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.06em;color:var(--seal);border:1px solid rgba(178,58,46,.36);border-radius:999px;padding:4px 12px}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,var(--cream2),var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.18em;color:var(--seal);margin-bottom:10px}
+  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:14px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--green);font-family:"Hiragino Mincho ProN",serif}
+  .rs h3{font-size:17px;font-weight:600;letter-spacing:.05em;color:var(--green);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.92}
+
+  /* teacher / classroom */
+  .teacher{background:var(--green2);color:#dfe7db}
+  .tc-wrap{display:grid;grid-template-columns:300px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(160deg,#33553f,#1b2f22);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.34)}
+  .tc-photo .fl{position:absolute;font-size:120px;color:rgba(255,255,255,.06);font-family:"Hiragino Mincho ProN",serif;line-height:1}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(223,231,219,.55);font-size:10.5px;letter-spacing:.16em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:#e6d3a4}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.08em;color:#fff;margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:#a9b8a5;letter-spacing:.08em;margin-left:8px;font-weight:400}
+  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tc-badges span{font-size:11.5px;color:#eef3e6;border:1px solid rgba(230,211,164,.4);border-radius:6px;padding:5px 14px;letter-spacing:.04em}
+  .tc-info p{font-size:14px;color:#c4cfbf;margin-top:16px;line-height:2.1}
+  .tc-info .disc{font-size:11.5px;color:#889784;margin-top:12px}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 8px 22px rgba(39,66,50,.05)}
+  .vcard .stars{color:var(--seal);letter-spacing:.16em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.98;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,var(--green2),var(--green) 74%);position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:#e6d3a4}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#cdd6c9;font-size:14px;margin-bottom:34px;position:relative;z-index:1}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#e6ece1}
+  .frow .req{color:#e6d3a4;font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:8px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.09);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #e6d3a4;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:linear-gradient(135deg,#c9503f,#b23a2e);color:#fff;font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:8px;font-size:14.5px;letter-spacing:.09em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.13);border-radius:10px;padding:16px;font-size:13.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-alt{text-align:center;margin-top:20px;position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .rsv-alt a{color:#fff;background:rgba(255,255,255,.1);font-size:12.5px;letter-spacing:.04em;text-decoration:none;padding:10px 20px;border-radius:8px;border:1px solid rgba(230,211,164,.5);transition:.25s}
+  .rsv-alt a:hover{background:rgba(230,211,164,.2)}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#a3b09e;margin-top:22px;line-height:1.9;position:relative;z-index:1}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.04em}
+  .map-ph{border-radius:16px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:11px;letter-spacing:.16em;background:linear-gradient(135deg,#dde6da,#cdd9c8)}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:linear-gradient(150deg,var(--green2),var(--green));color:#b3c0ad;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:19px;letter-spacing:.14em;color:#fff;font-weight:600;line-height:1.5}
+  footer .fsub{font-size:9.5px;letter-spacing:.28em;color:#e6d3a4;margin-top:6px}
+  footer .fnote{font-size:11.5px;color:#8a9884;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ご提案用のデザイン案（サンプル）</b>です ・ <b>2026年8月1日</b>までの限定公開</div>
+
+<header id="hd">
+  <div class="logo">けいせん書道教室<small>KEISEN SHODO</small></div>
+  <nav>
+    <a href="#concept">教室について</a>
+    <a href="#rank">段級位・師範</a>
+    <a href="#course">コース</a>
+    <a href="#access">アクセス</a>
+    <a href="#reserve" class="cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-kanji mincho" aria-hidden="true">書</div>
+  <div class="hero-inner">
+    <span class="eyebrow">神奈川県横浜市鶴見区豊岡町 ｜ 書道教室</span>
+    <h1 class="mincho">一筆に、心を<br><span>ととのえる</span>。</h1>
+    <p>幼児から成人まで。日本習字教育財団の手本で、段級位認定から師範免状の取得まで。筆を持つ静かな時間が、集中して物事に取り組む姿勢を育てます。横浜市鶴見区の書道教室、けいせん書道教室です。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験・お問い合わせ →</a>
+      <a href="#course" class="btn btn-ghost">コースを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>◆ <b>幼児〜成人</b>まで</span>
+      <span>◆ <b>段級位・師範免状</b>に対応</span>
+      <span>◆ 展覧会 <b>学校代表</b>選出実績</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <div class="cnc">
+    <div class="seal reveal mincho">心</div>
+    <div class="sec-head reveal" style="margin-bottom:28px"><span class="en">CONCEPT</span><h2 class="mincho">筆をとる時間が、心を育てる。</h2></div>
+    <p class="lead reveal mincho">墨の香りと、静かな筆の音。<br>一枚に向き合ううちに、<br><b>心穏やかに、集中する姿勢</b>が<br>自然と身についていきます。</p>
+    <p class="body reveal">けいせん書道教室が大切にしているのは、上手に書くことだけではありません。姿勢を正し、呼吸をととのえ、一文字に心を込める——その積み重ねが、落ち着いて物事に取り組む力を育てます。幼児から成人まで、一人ひとりの目標とペースに寄り添いながら、美しい文字とともに、一生ものの集中力をお伝えします。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic mincho">子</span><p>子どもに、集中力と美しい文字を身につけさせたい</p></div>
+    <div class="tg reveal d1"><span class="ic mincho">級</span><p>段級位を取得し、目標に向けてステップアップしたい</p></div>
+    <div class="tg reveal d2"><span class="ic mincho">師</span><p>将来は師範免状の取得まで、本格的に続けたい</p></div>
+    <div class="tg reveal"><span class="ic mincho">筆</span><p>大人になった今、趣味として書に親しみたい</p></div>
+    <div class="tg reveal d1"><span class="ic mincho">ペ</span><p>ペン字や実用書で、日常の文字をきれいにしたい</p></div>
+    <div class="tg reveal d2"><span class="ic mincho">静</span><p>静かな環境で、落ち着いて物事に取り組む時間がほしい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">ひとつでも心が動いたなら、<b>まずは体験</b>からどうぞ。</p>
+</section>
+
+<!-- rank / 段級位・師範 -->
+<section class="rank" id="rank">
+  <div class="rk-wrap">
+    <div class="rk-info reveal">
+      <span class="en">RANK & LICENSE</span>
+      <h2 class="mincho">段級位認定から、<br><span>師範免状</span>の取得まで。</h2>
+      <p>当教室は、<b>日本習字教育財団の手本</b>をもとに指導しています。毎月の課題を清書して提出することで、実力に応じた<b>段級位が認定</b>され、努力の成果が目に見えるかたちで積み重なっていきます。</p>
+      <p>級から段へ、そして最終的には<b>師範免状の取得</b>まで。明確な目標があるからこそ、子どもも大人も、飽きずに長く続けられます。一人ひとりの歩みに合わせて、着実に導きます。</p>
+    </div>
+    <div class="rk-steps reveal d1">
+      <div class="rk-step">
+        <div class="no">01</div>
+        <div class="tx"><h4 class="mincho">財団の手本で練習</h4><p>日本習字教育財団の手本をもとに、基本の運筆から丁寧に稽古します。</p></div>
+      </div>
+      <div class="rk-step">
+        <div class="no">02</div>
+        <div class="tx"><h4 class="mincho">毎月の課題を清書・提出</h4><p>仕上げた作品を提出。第三者の目で実力を客観的に評価します。</p></div>
+      </div>
+      <div class="rk-step">
+        <div class="no">03</div>
+        <div class="tx"><h4 class="mincho">段級位の認定</h4><p>実力に応じて級位・段位が認定され、上達が数字で見えていきます。</p></div>
+      </div>
+      <div class="rk-step">
+        <div class="no">04</div>
+        <div class="tx"><h4 class="mincho">師範免状の取得へ</h4><p>段位を重ねた先に、師範免状の取得という大きな目標があります。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- achievement -->
+<section class="ach">
+  <div class="ach-wrap">
+    <div class="sec-head reveal"><span class="en">ACHIEVEMENT</span><h2 class="mincho">確かな指導が、実績に。</h2></div>
+    <p class="ach-lead reveal mincho">当教室の生徒は、<b>横浜市・鶴見区の展覧会</b>に<br><b>学校代表</b>として毎年多数選出されています。</p>
+    <div class="ach-stats">
+      <div class="ach-c reveal"><div class="n mincho">毎<small>年</small></div><div class="l">市・区の展覧会へ<br>継続して選出</div></div>
+      <div class="ach-c reveal d1"><div class="n mincho">多数<small>名</small></div><div class="l">学校代表として<br>選ばれる生徒たち</div></div>
+      <div class="ach-c reveal d2"><div class="n mincho">幼〜成<small>人</small></div><div class="l">幅広い年代が<br>それぞれの目標へ</div></div>
+    </div>
+    <p class="ach-note reveal">※掲載の実績はデザイン案の表現例です。具体的な件数・受賞名は、実際の実績に差し替えてお納めします。</p>
+  </div>
+</section>
+
+<!-- courses -->
+<section class="course" id="course">
+  <div class="sec-head reveal"><span class="en">COURSE</span><h2 class="mincho">多彩なコース</h2><p>年齢や目的に合わせて、学びたい書を選べます</p></div>
+  <div class="c-grid">
+    <div class="ccard reveal">
+      <div class="kanji mincho">漢</div>
+      <h3 class="mincho">漢字</h3>
+      <p>筆づかいの基本となる楷書から、行書・草書まで。書のいちばんの土台を、じっくりと身につけます。</p>
+      <span class="tag">基礎〜応用</span>
+    </div>
+    <div class="ccard reveal d1">
+      <div class="kanji mincho">か</div>
+      <h3 class="mincho">かな</h3>
+      <p>やわらかく流れるような、日本ならではの美しいかな文字。繊細な線と余白の美を学びます。</p>
+      <span class="tag">やさしさの表現</span>
+    </div>
+    <div class="ccard reveal d2">
+      <div class="kanji mincho">ペ</div>
+      <h3 class="mincho">ペン字</h3>
+      <p>日常で書く文字を、美しく整えたい方へ。名前や住所など、実用に直結する文字を練習します。</p>
+      <span class="tag">実用・大人に人気</span>
+    </div>
+    <div class="ccard reveal d3">
+      <div class="kanji mincho">墨</div>
+      <h3 class="mincho">墨画</h3>
+      <p>墨の濃淡だけで、四季の風景や草花を描きます。書で養った筆づかいを、絵の表現へと広げます。</p>
+      <span class="tag">墨で描く</span>
+    </div>
+    <div class="ccard reveal">
+      <div class="kanji mincho">デ</div>
+      <h3 class="mincho">デザイン書</h3>
+      <p>言葉やメッセージを、自由な発想で表現するあたらしい書。感性を活かした一枚を仕上げます。</p>
+      <span class="tag">自由に表現</span>
+    </div>
+    <div class="ccard reveal d1">
+      <div class="kanji mincho">育</div>
+      <h3 class="mincho">幼児の書き方</h3>
+      <p>鉛筆の持ち方や姿勢から。はじめての一歩を、遊びの延長のように楽しく。集中する習慣を育てます。</p>
+      <span class="tag">幼児〜</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※コース区分はデザイン案の一例です。実際のクラス・料金・時間に差し替えてお納めします。</p>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">選ばれる3つの理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic mincho">認</div>
+      <h3 class="mincho">目標が見える段級位</h3>
+      <p>日本習字教育財団の段級位認定で、上達が数字で見えます。師範免状まで、明確な目標が続く力に。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic mincho">賞</div>
+      <h3 class="mincho">展覧会での確かな実績</h3>
+      <p>市・区の展覧会に学校代表として毎年多数が選出。ていねいな指導が、確かな結果につながっています。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic mincho">心</div>
+      <h3 class="mincho">集中力と落ち着き</h3>
+      <p>筆に向き合う静かな時間が、心を穏やかにし、集中して物事に取り組む姿勢を育てます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher / classroom -->
+<section class="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">書</div>
+      <span>PHOTO ─ 教室・作品（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">けいせん書道教室</span>
+      <h3 class="mincho">教室について<small>Our Classroom</small></h3>
+      <div class="tc-badges">
+        <span>財団手本</span>
+        <span>段級位認定</span>
+        <span>師範免状</span>
+        <span>幼児〜成人</span>
+      </div>
+      <p>「文字がきれいになる」ことは、始まりにすぎません。姿勢を正し、心を落ち着けて一枚に向き合う——その時間そのものが、これからの人生を支える集中力になると考えています。幼児から成人まで、一人ひとりの目標に寄り添い、級・段の認定から師範免状まで、着実に導いてまいります。まずは静かな墨の香りを、体験しにいらしてください。</p>
+      <p class="disc">※紹介文はデザイン案の表現例です。実際の教室紹介・講師プロフィールに差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さん・保護者の声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>落ち着きがなかった息子が、書道の日は別人のように集中しています。級が上がるのが励みになっているようです。</p>
+      <div class="who">小学生の保護者</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>展覧会に学校代表として選んでいただき、本人の大きな自信になりました。丁寧なご指導に感謝しています。</p>
+      <div class="who">中学生の保護者</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>大人になってペン字から始めました。静かに筆を持つ時間が、何よりの気分転換。目標があるので続きます。</p>
+      <div class="who">40代・女性</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さん・保護者の声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずはお気軽に。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>どなたが習われますか</label>
+        <select name="who">
+          <option value="">選択してください</option>
+          <option>幼児</option>
+          <option>小学生</option>
+          <option>中学生・高校生</option>
+          <option>成人（大人）</option>
+          <option>相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望のコース</label>
+        <select name="course">
+          <option value="">選択してください</option>
+          <option>漢字</option>
+          <option>かな</option>
+          <option>ペン字</option>
+          <option>墨画</option>
+          <option>デザイン書</option>
+          <option>幼児の書き方</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="書道のご経験、段級位のご希望、ご都合の曜日など、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">◆ ご入力ありがとうございます。メールソフトが立ち上がり、宛先と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <div class="rsv-alt reveal">
+    <a href="mailto:keisen.shodou@gmail.com?subject=%E4%BD%93%E9%A8%93%E3%83%BB%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">✉ メールで直接お問い合わせ</a>
+    <a href="#course">◆ コースをもう一度見る</a>
+  </div>
+  <p class="rsv-tech reveal">🔒 お問い合わせは、教室へ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。（お電話は非公開のため、メールにて承ります）</p>
+</section>
+
+<!-- access -->
+<section class="access" id="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>けいせん書道教室</td></tr>
+      <tr><th>エリア</th><td>神奈川県横浜市鶴見区豊岡町</td></tr>
+      <tr><th>コース</th><td>漢字／かな／ペン字／墨画／デザイン書／幼児の書き方</td></tr>
+      <tr><th>対象</th><td>幼児〜成人</td></tr>
+      <tr><th>認定・免状</th><td>日本習字教育財団の手本による段級位認定・師範免状取得に対応</td></tr>
+      <tr><th>お問い合わせ</th><td>keisen.shodou@gmail.com（メールのみ・電話非公開）</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
+  </div>
+  <p class="sample-inline reveal">※所在地・稽古日時・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">けいせん書道教室</div>
+  <div class="fsub">KEISEN SHODO ・ YOKOHAMA TSURUMI</div>
+  <p class="fnote">こちらはご提案用のデザイン案（サンプル）です。2026年8月1日までの限定公開。<br>掲載の文章・実績・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var name=(f.name.value||'').trim();
+    var mail=(f.mail.value||'').trim();
+    var who=f.who.value||'（未選択）';
+    var course=f.course.value||'（未選択）';
+    var note=(f.note.value||'').trim()||'（特になし）';
+    var subject='体験・お問い合わせ';
+    var body=
+      'けいせん書道教室 ご担当者さま\n\n'+
+      '体験・お問い合わせをお願いします。\n\n'+
+      '■お名前：'+name+'\n'+
+      '■メール：'+mail+'\n'+
+      '■どなたが習われますか：'+who+'\n'+
+      '■ご希望のコース：'+course+'\n'+
+      '■ご質問・ご希望：\n'+note+'\n';
+    var href='mailto:keisen.shodou@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    window.location.href=href;
+  });
+</script>
+</body>
+</html>

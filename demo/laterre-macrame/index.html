@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>マクラメ教室La Terre｜大阪・豊中／兵庫・尼崎のマクラメ・天然石アクセサリー教室（デザイン案・サンプル）</title>
+<meta name="description" content="ひと結びずつ、ていねいに。タブレロ（編み台）を使った基礎からのマクラメ教室。天然石を糸で結ぶ、自分だけのアクセサリーづくり。大阪府豊中市・兵庫県尼崎市の2拠点で開催。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f5efe3;
+    --panel:#fdf9f1;
+    --terra:#b5654a;
+    --terra-d:#994f38;
+    --terra-soft:#eed7c9;
+    --clay:#c88a6b;
+    --sand:#e6d6bd;
+    --sand-soft:#f0e6d3;
+    --stone:#8a9a86;
+    --gold:#b8935a;
+    --ink:#4a3a2e;
+    --sub:#8b7663;
+    --line:rgba(74,58,46,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.04em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{display:block}
+
+  .sample-bar{background:linear-gradient(90deg,#994f38,#b5654a 55%,#c88a6b);color:#fbeee4;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.05em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#fff3e8}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(245,239,227,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(245,239,227,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:19px;letter-spacing:.16em;color:var(--terra-d);font-weight:700;line-height:1.25}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.28em;color:var(--clay);margin-top:3px;font-weight:600}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--terra-d);border-color:var(--clay)}
+  nav a.cta{background:var(--terra-d);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.06em;white-space:nowrap;box-shadow:0 8px 18px rgba(153,79,56,.3)}
+  nav a.cta:hover{background:var(--terra);color:#fff;transform:translateY(-1px)}
+  @media(max-width:900px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:93vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(60,40,28,.5),rgba(60,40,28,.16) 60%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(60,40,28,.34) 0%,transparent 60%)}
+  .hero-inner{position:relative;z-index:2;max-width:640px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.2em;color:#f3ddce;margin-bottom:22px;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+  .eyebrow::before{content:"";width:28px;height:1px;background:#e9c3ad}
+  .hero h1{font-size:clamp(29px,5.6vw,52px);font-weight:600;line-height:1.55;letter-spacing:.05em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.38)}
+  .hero h1 span{color:#f0c8ae}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.94);max-width:31em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;transition:.3s}
+  .btn-primary{background:linear-gradient(135deg,var(--terra),var(--clay));color:#fff;font-weight:600;box-shadow:0 12px 26px rgba(153,79,56,.42)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{border-color:#f0c8ae;color:#f0c8ae}
+  .hero-badges{margin-top:30px;display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.92)}
+  .hero-badges b{color:#f0c8ae}
+
+  section{padding:clamp(70px,10vw,118px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.34em;color:var(--clay);display:block;margin-bottom:12px;font-weight:600}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.08em;color:var(--terra-d)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{text-align:center;background:linear-gradient(180deg,var(--bg),#efe4d1)}
+  .cnc{max-width:720px;margin:0 auto}
+  .knot{display:block;width:48px;height:48px;margin:0 auto 22px;color:var(--clay)}
+  .cnc .lead{font-size:clamp(19px,3.2vw,27px);line-height:1.95;color:var(--terra-d);letter-spacing:.07em}
+  .cnc .lead b{color:var(--terra);font-weight:600}
+  .cnc p.body{margin-top:24px;font-size:14px;color:var(--sub);line-height:2.1}
+
+  /* target */
+  .target{background:#efe4d1}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 20px rgba(153,79,56,.05)}
+  .tg .ic{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--terra-soft);color:var(--terra-d);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .tg p{font-size:13.8px;line-height:1.85}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--terra-d);letter-spacing:.05em}
+  .tg-foot b{color:var(--terra);font-weight:600}
+
+  /* method */
+  .method{background:var(--terra-d);color:#f3e4d8;overflow:hidden}
+  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:780px){.mth-wrap{grid-template-columns:1fr;gap:28px}}
+  .mth-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 42px rgba(0,0,0,.3)}
+  .mth-ph img{width:100%;height:100%;object-fit:cover}
+  .mth-info .en{font-size:11px;letter-spacing:.34em;color:#e9bfa5;display:block;margin-bottom:13px;font-weight:600}
+  .mth-info h2{font-size:clamp(22px,3.2vw,30px);font-weight:600;letter-spacing:.05em;color:#fff;line-height:1.55}
+  .mth-info h2 span{color:#f0c8ae}
+  .mth-info p{margin-top:18px;font-size:14px;color:#e7d6c8;line-height:2.1}
+  .mth-info p b{color:#f4d3bd;font-weight:600}
+  .mth-chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .mth-chips span{font-size:12px;color:#f6e6da;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;letter-spacing:.04em}
+
+  /* lesson */
+  .lesson{background:var(--bg)}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px;max-width:1020px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(153,79,56,.05)}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(153,79,56,.16)}
+  .lcard .ph{position:relative;height:180px;overflow:hidden}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .lcard:hover .ph img{transform:scale(1.06)}
+  .lcard .ph .badge{position:absolute;top:12px;left:12px;font-size:10.5px;letter-spacing:.08em;color:#fff;padding:5px 12px;border-radius:999px;background:rgba(153,79,56,.85);backdrop-filter:blur(2px)}
+  .lcard .body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .lcard h3{font-size:18px;font-weight:600;color:var(--terra-d);letter-spacing:.04em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.9;flex:1}
+  .lcard .tag{display:inline-block;margin-top:15px;font-size:11px;letter-spacing:.06em;color:var(--terra-d);border:1px solid rgba(181,101,74,.4);border-radius:999px;padding:4px 12px;align-self:flex-start}
+
+  /* location (2 places) */
+  .places{background:linear-gradient(180deg,#efe4d1,var(--bg))}
+  .pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:900px;margin:0 auto}
+  @media(max-width:720px){.pl-grid{grid-template-columns:1fr}}
+  .pl{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 30px;box-shadow:0 10px 26px rgba(153,79,56,.06);position:relative;overflow:hidden}
+  .pl::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--terra),var(--clay))}
+  .pl .no{font-size:11px;letter-spacing:.16em;color:var(--clay);font-weight:600}
+  .pl h3{font-size:21px;font-weight:600;color:var(--terra-d);letter-spacing:.05em;margin:8px 0 6px}
+  .pl .area{font-size:13px;color:var(--sub);margin-bottom:16px}
+  .pl ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .pl li{font-size:13.6px;color:var(--ink);line-height:1.7;padding-left:24px;position:relative}
+  .pl li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--terra)}
+  .pl-note{text-align:center;margin-top:38px;font-size:clamp(15px,2vw,18px);color:var(--terra-d);letter-spacing:.05em}
+  .pl-note b{color:var(--terra);font-weight:600}
+
+  /* reasons */
+  .reasons{background:var(--bg)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.18em;color:var(--clay);margin-bottom:8px;font-weight:600}
+  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:50%;background:var(--terra-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
+  .rs h3{font-size:17px;font-weight:600;letter-spacing:.04em;color:var(--terra-d);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+
+  /* teacher */
+  .teacher{background:#efe4d1}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#e3cbb8,#d3b193);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(153,79,56,.2)}
+  .tc-photo .fl{position:absolute;font-size:44px;color:rgba(255,255,255,.5)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(74,58,46,.55);font-size:10.5px;letter-spacing:.14em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--clay);font-weight:600}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.06em;color:var(--terra-d);margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-left:8px;font-weight:400}
+  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tc-badges span{font-size:11.5px;color:var(--terra-d);border:1px solid rgba(181,101,74,.4);border-radius:999px;padding:5px 14px;letter-spacing:.04em}
+  .tc-info p{font-size:14px;color:var(--sub);margin-top:16px;line-height:2.05}
+  .tc-info .note{font-size:11.5px;color:#a9927d;margin-top:12px}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(153,79,56,.05)}
+  .vcard .stars{color:var(--gold);letter-spacing:.16em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+
+  /* shop band */
+  .shop{background:linear-gradient(120deg,#c88a6b,#b5654a);color:#fff;text-align:center}
+  .shop-wrap{max-width:720px;margin:0 auto}
+  .shop .en{font-size:11px;letter-spacing:.32em;color:#ffe9db;display:block;margin-bottom:12px;font-weight:600}
+  .shop h2{font-size:clamp(22px,3.2vw,29px);font-weight:600;letter-spacing:.05em;color:#fff;line-height:1.55}
+  .shop p{margin-top:16px;font-size:14px;color:#fbeadf;line-height:2.05}
+  .shop .shop-btn{margin-top:26px}
+  .shop .shop-btn a{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--terra-d);text-decoration:none;padding:14px 30px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.05em;transition:.3s;box-shadow:0 12px 26px rgba(0,0,0,.16)}
+  .shop .shop-btn a:hover{transform:translateY(-2px);background:#fff5ee}
+
+  /* reserve */
+  .reserve{background:var(--terra-d);position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:#e9bfa5}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#e7d1c1;font-size:14px;margin-bottom:34px}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#f3e4d8}
+  .frow .req{color:#f4d3bd;font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.58)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #f4d3bd;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:linear-gradient(135deg,var(--clay),#dba382);color:#4a2a1c;font-weight:700;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.08em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.14);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-mail{text-align:center;margin-top:16px}
+  .rsv-mail a{color:#f4d3bd;font-size:12.5px;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#c9a892;margin-top:20px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.04em}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;color:var(--terra-d);font-size:11px;letter-spacing:.14em;background:linear-gradient(135deg,#e6d6bd,#e2c6ac);text-align:center;padding:20px}
+  .map-ph b{font-size:14px;letter-spacing:.1em}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:#3d2f24;color:#c3ac97;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:21px;letter-spacing:.14em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10px;letter-spacing:.28em;color:#e9bfa5;margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#a08c78;margin-top:22px;line-height:1.9}
+
+  @media(max-width:560px){
+    section{padding:62px 7vw}
+    .hero{padding:0 7vw}
+    header{padding:12px 18px}
+    header.scrolled{padding:10px 18px}
+    .logo{font-size:16px;max-width:64%}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>Web制作 ゆたか</b> による <b>マクラメ教室La Terre 様</b> へのご提案用デザイン案（サンプル）です ・ <b>2026年7月30日まで</b>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">マクラメ教室 La Terre<small>MACRAME &amp; STONE ・ OSAKA / HYOGO</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#method">教室の想い</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#places">2つの教室</a>
+    <a href="#reserve" class="cta">体験のお申し込み</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">大阪・豊中／兵庫・尼崎 ｜ マクラメ・天然石アクセサリー教室</span>
+    <h1 class="mincho">ひと結びずつ、<br><span>自分だけの</span>ひとつを。</h1>
+    <p>糸を結んで、天然石を包んで。マクラメ教室La Terre（ラ・テール）は、編み台「タブレロ」を使い、基礎からていねいにお伝えする教室です。大阪府豊中市・兵庫県尼崎市の2拠点で開催しています。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
+      <a href="#lesson" class="btn btn-ghost">レッスンを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>◍ <b>タブレロ</b>で基礎から</span>
+      <span>◍ <b>天然石</b>アクセサリー</span>
+      <span>◍ 豊中・尼崎の<b>2拠点</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept">
+  <div class="cnc">
+    <svg class="knot" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M10 14c6 0 8 6 14 6s8-6 14-6M10 34c6 0 8-6 14-6s8 6 14 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="24" cy="24" r="3" fill="currentColor"/>
+    </svg>
+    <div class="sec-head reveal" style="margin-bottom:26px"><span class="en">CONCEPT</span><h2 class="mincho">手を動かす、しずかな時間。</h2></div>
+    <p class="lead reveal mincho">上手・下手は、気にしなくて大丈夫。<br>ひと結びずつ、ていねいに。<br>その手から、<b>世界にひとつ</b>が生まれます。</p>
+    <p class="body reveal">マクラメは、糸を結んで模様や形をつくる、古くから伝わる手仕事です。La Terreでは、天然石を糸で包んでつくるアクセサリーを中心に、タペストリーなどの雑貨まで、幅広くお楽しみいただけます。むずかしく考えず、結び目の心地よいリズムに身をゆだねる——そんな、自分と向き合うあたたかな時間を大切にしています。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">◍</span><p>天然石が好きで、自分でアクセサリーを作ってみたい</p></div>
+    <div class="tg reveal d1"><span class="ic">◍</span><p>ハンドメイドに興味はあるけれど、不器用で自信がない</p></div>
+    <div class="tg reveal d2"><span class="ic">◍</span><p>独学で始めたものの、基礎からきちんと習いたい</p></div>
+    <div class="tg reveal"><span class="ic">◍</span><p>手を動かして、心が落ち着く時間がほしい</p></div>
+    <div class="tg reveal d1"><span class="ic">◍</span><p>自分だけの、身につけられる一点を仕立てたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◍</span><p>まずは1回、気軽に体験してみたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">ひとつでも心が動いたなら、<b>まずは体験</b>からどうぞ。</p>
+</section>
+
+<!-- method -->
+<section class="method" id="method">
+  <div class="mth-wrap">
+    <div class="mth-ph reveal"><img src="images/tablero.jpg" alt="編み台タブレロと綿糸（イメージ）"></div>
+    <div class="mth-info reveal">
+      <span class="en">OUR METHOD</span>
+      <h2 class="mincho">タブレロで、<br><span>基礎から</span>ていねいに。</h2>
+      <p>La Terreのレッスンでは、伝統的な編み台<b>「タブレロ」</b>を使います。糸をしっかり固定して結ぶことで、力の入れ方や結び目のそろえ方といった<b>基礎が自然と身につく</b>——それが、きれいな作品づくりへの近道です。</p>
+      <p>「なんとなく」ではなく、ひとつひとつの結びの意味を理解しながら。だからこそ、教室を卒業したあとも、自分の力で作り続けられるようになります。初めての方も、どうぞ安心してお越しください。</p>
+      <div class="mth-chips">
+        <span>◍ 編み台タブレロ使用</span><span>◍ 基礎重視の指導</span><span>◍ 少人数でていねいに</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><p>気になるものから、ひとつずつ。かけもちも大歓迎です</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="ph"><img src="images/macrame.jpg" alt="天然石マクラメアクセサリー（イメージ）"><span class="badge">STONE ACCESSORY</span></div>
+      <div class="body">
+        <h3 class="mincho">天然石マクラメアクセサリー</h3>
+        <p>お気に入りの天然石を、糸でやさしく包んで。ペンダントやブレスレットなど、身につけられる自分だけの一点を仕立てます。石選びから楽しいレッスンです。</p>
+        <span class="tag">身につける手仕事</span>
+      </div>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="ph"><img src="images/stones.jpg" alt="マクラメの材料・天然石（イメージ）"><span class="badge">MACRAME GOODS</span></div>
+      <div class="body">
+        <h3 class="mincho">マクラメ雑貨</h3>
+        <p>タペストリーやプラントハンガーなど、暮らしに寄りそう雑貨づくり。結びのパターンを重ねて、お部屋に飾れるあたたかな作品に仕上げます。</p>
+        <span class="tag">暮らしを彩る</span>
+      </div>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="ph"><img src="images/hero.jpg" alt="はじめての体験レッスン（イメージ）"><span class="badge">TRIAL</span></div>
+      <div class="body">
+        <h3 class="mincho">はじめての体験レッスン</h3>
+        <p>「続けられるかな」の前に、まず1回。手ぶらでお越しいただけます。作った作品は、その日にお持ち帰り。マクラメの心地よさを感じてください。</p>
+        <span class="tag">1回・初めての方歓迎</span>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※講座内容はデザイン案の一例です。実際のカリキュラム・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- places -->
+<section class="places" id="places">
+  <div class="sec-head reveal"><span class="en">2 STUDIOS</span><h2 class="mincho">2つの教室</h2><p>大阪・豊中／兵庫・尼崎。通いやすいほうへ、どうぞ</p></div>
+  <div class="pl-grid">
+    <div class="pl reveal">
+      <div class="no">STUDIO 01</div>
+      <h3 class="mincho">豊中教室</h3>
+      <div class="area">大阪府豊中市 ・ ねいろカフェ</div>
+      <ul>
+        <li>阪急「服部天神」駅から徒歩5分</li>
+        <li>やさしい雰囲気のカフェの一角で開催</li>
+        <li>お買いものやお出かけのついでにも</li>
+      </ul>
+    </div>
+    <div class="pl reveal d1">
+      <div class="no">STUDIO 02</div>
+      <h3 class="mincho">尼崎教室</h3>
+      <div class="area">兵庫県尼崎市 ・ 自宅教室</div>
+      <ul>
+        <li>落ち着いた自宅教室で、少人数制</li>
+        <li>マイペースにじっくり取り組めます</li>
+        <li>詳しい場所はご予約時にご案内します</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pl-note reveal mincho">お住まいやご予定に合わせて、<b>通いやすい教室</b>をお選びいただけます。</p>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">La Terreが選ばれる理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">◍</div>
+      <h3 class="mincho">タブレロで基礎から</h3>
+      <p>編み台タブレロを使い、力の入れ方や結び目のそろえ方から。基礎が身につくから、卒業後も自分で作り続けられます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">💎</div>
+      <h3 class="mincho">天然石を糸で結ぶ</h3>
+      <p>穴のあいていない石も、糸で包んでアクセサリーに。お気に入りの石を、身につけられる一点に仕立てられます。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🌿</div>
+      <h3 class="mincho">2拠点＆LINEで安心</h3>
+      <p>豊中・尼崎の2拠点で開催。LINE公式アカウントでも、日程や持ち物などお気軽にご相談いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">◍</div>
+      <span>PHOTO ─ 講師・作品（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">マクラメ教室 La Terre<small>Instructor</small></h3>
+      <div class="tc-badges">
+        <span>タブレロ指導</span>
+        <span>天然石アクセサリー</span>
+        <span>マクラメ雑貨</span>
+      </div>
+      <p>「作れた！」という小さな喜びが、毎日をそっと明るくしてくれる——そう思って、この教室をひらきました。糸を結ぶ手の動きは、いつのまにか心を落ち着けてくれます。天然石を糸で包む楽しさから、基礎の大切さまで、おひとりおひとりのペースに寄りそってお伝えします。まずは体験で、結びの心地よさを感じてください。</p>
+      <p class="note">※お名前・ご経歴はサンプルです。実際の内容に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>不器用で諦めていたのに、タブレロで結ぶうちに完成！ 天然石のペンダントが宝物になりました。次は何を作ろうか、毎回楽しみです。</p>
+      <div class="who">30代・女性／天然石アクセサリー</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>基礎からていねいに教えてもらえるので、家でも作れるように。結んでいる間は無心になれて、いちばんのリフレッシュ時間です。</p>
+      <div class="who">40代・女性／マクラメ雑貨</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>服部天神のカフェ教室に通っています。やわらかい雰囲気で、少人数だから質問しやすい。お出かけ気分で通えるのも嬉しいです。</p>
+      <div class="who">50代・女性／豊中教室</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- shop -->
+<section class="shop">
+  <div class="shop-wrap reveal">
+    <span class="en">ONLINE SHOP</span>
+    <h2 class="mincho">作品は、オンラインでも。</h2>
+    <p>La Terreの天然石アクセサリーは、ネットショップ「BASE」でもお求めいただけます。「まずは完成品を手にとってみたい」という方も、どうぞのぞいてみてください。</p>
+    <div class="shop-btn"><a href="#reserve">ショップについて問い合わせる →</a></div>
+  </div>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL &amp; CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは体験レッスンから。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望の教室</label>
+        <select name="place">
+          <option value="">選択してください</option>
+          <option>豊中教室（ねいろカフェ）</option>
+          <option>尼崎教室（自宅教室）</option>
+          <option>どちらでも・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>天然石マクラメアクセサリー</option>
+          <option>マクラメ雑貨</option>
+          <option>はじめての体験レッスン</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ハンドメイドのご経験や、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">◍ ご入力ありがとうございます。メールソフトが立ち上がり、宛先（マクラメ教室La Terre）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-mail reveal">メールソフトが開かない場合はこちら → <a id="mailLink" href="mailto:shop.laterre@gmail.com">shop.laterre@gmail.com</a></p>
+  <p class="rsv-tech reveal">🔒 お申し込みは、教室へ直接メールで届く仕組みです。LINE公式アカウントでのご相談にも対応できます。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>マクラメ教室 La Terre（ラ・テール）</td></tr>
+      <tr><th>豊中教室</th><td>大阪府豊中市 ・ ねいろカフェ（阪急「服部天神」駅 徒歩5分）</td></tr>
+      <tr><th>尼崎教室</th><td>兵庫県尼崎市 ・ 自宅教室（詳しい場所はご予約時にご案内）</td></tr>
+      <tr><th>レッスン</th><td>天然石マクラメアクセサリー／マクラメ雑貨／体験レッスン</td></tr>
+      <tr><th>ご予約</th><td>フォーム・メール・LINE公式アカウント</td></tr>
+      <tr><th>お問い合わせ</th><td>shop.laterre@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <b>MAP</b>
+      <span>ここにGoogleマップが入ります</span>
+      <span>（豊中・尼崎の2拠点）</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※所在地・レッスン時間・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">マクラメ教室 La Terre</div>
+  <div class="fsub">MACRAME &amp; STONE ・ OSAKA / HYOGO</div>
+  <p class="fnote">こちらは Web制作 ゆたか による マクラメ教室La Terre 様 へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var v=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=
+      'マクラメ教室La Terre 体験・お問い合わせ\n'+
+      '───────────────────\n'+
+      'お名前　　：'+v('name')+'\n'+
+      'メール　　：'+v('mail')+'\n'+
+      'ご希望の教室：'+v('place')+'\n'+
+      'ご希望レッスン：'+v('lesson')+'\n'+
+      'ご質問等　：'+v('note')+'\n'+
+      '───────────────────\n'+
+      '（このメールはデザイン見本のフォームから作成されました）';
+    var url='mailto:shop.laterre@gmail.com'+
+      '?subject='+encodeURIComponent('【体験・お問い合わせ】マクラメ教室La Terre')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    setTimeout(function(){window.location.href=url;},600);
+  });
+</script>
+</body>
+</html>

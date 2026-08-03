@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>ナレ韓国語オンライン教室｜おうちで、ネイティブと韓国語｜全国どこからでも受講OK（デザイン案・サンプル）</title>
+<meta name="description" content="オンライン完結・全国対応。K-POPや韓国ドラマが好きな初心者〜中級者のための韓国語オンライン教室。韓国ドラマを活用した学習法とネイティブ講師の指導で、楽しく続く韓国語を。グループ・個人レッスン対応。">
+<style>
+  :root{
+    --bg:#fff5f9;
+    --panel:#ffffff;
+    --pink:#f5619b;
+    --pink-d:#e5417f;
+    --pink-soft:#ffe0ee;
+    --mint:#2fc7b8;
+    --mint-d:#159c8f;
+    --mint-soft:#d5f4ef;
+    --cream:#fff6ea;
+    --ink:#42303c;
+    --sub:#8a7280;
+    --line:rgba(66,48,60,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.03em;font-size:17px;overflow-x:hidden}
+  img{display:block}
+
+  .sample-bar{background:linear-gradient(90deg,#e5417f,#2fc7b8);color:#fff;text-align:center;font-size:12.5px;padding:8px 16px;letter-spacing:.04em;position:relative;z-index:60;line-height:1.6}
+  .sample-bar b{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.6)}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;background:rgba(255,245,249,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(255,245,249,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(229,65,127,.1);padding:11px 26px}
+  .logo{font-size:20px;letter-spacing:.06em;color:#fff;font-weight:700;line-height:1.3;text-shadow:0 1px 12px rgba(0,0,0,.35);transition:color .4s,text-shadow .4s}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:10px;letter-spacing:.22em;color:#ffe0ee;margin-top:3px;font-weight:600;transition:color .4s}
+  header.scrolled .logo{color:var(--pink-d);text-shadow:none}
+  header.scrolled .logo small{color:var(--mint-d)}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:.06em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+  header.scrolled nav a:not(.cta){color:var(--ink);text-shadow:none}
+  nav a:hover{color:#fff5ba;border-color:#fff5ba}
+  header.scrolled nav a:not(.cta):hover{color:var(--pink-d);border-color:var(--pink-d)}
+  nav a.cta{background:var(--pink);color:#fff;padding:11px 20px;border-radius:999px;border:none;letter-spacing:.04em;box-shadow:0 8px 18px rgba(245,97,155,.4);text-shadow:none}
+  nav a.cta:hover{background:var(--pink-d);color:#fff;transform:translateY(-1px);border-color:transparent}
+  @media(max-width:920px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-64px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(103deg,rgba(213,42,110,.88) 24%,rgba(229,65,127,.62) 58%,rgba(47,199,184,.5) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:680px;color:#fff;margin-top:64px}
+  .eyebrow{display:inline-block;font-size:13.5px;letter-spacing:.08em;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);padding:8px 18px;border-radius:999px;margin-bottom:22px;font-weight:600;line-height:1.5}
+  .eyebrow b{color:#fff5ba}
+  .hero h1{font-size:clamp(31px,5.8vw,54px);font-weight:700;line-height:1.5;letter-spacing:.02em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.32)}
+  .hero h1 span{color:#fff5ba}
+  .hero p{margin-top:22px;font-size:clamp(15px,1.9vw,18px);color:rgba(255,255,255,.96);max-width:31em;line-height:1.9;text-shadow:0 1px 10px rgba(0,0,0,.28)}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:16px 32px;border-radius:999px;font-size:16px;letter-spacing:.04em;transition:.3s;font-weight:700}
+  .btn-primary{background:#fff;color:var(--pink-d);box-shadow:0 14px 28px rgba(0,0,0,.18)}
+  .btn-primary:hover{transform:translateY(-2px);background:#fff5ba;color:var(--pink-d)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.75);color:#fff}
+  .btn-ghost:hover{border-color:#fff5ba;color:#fff5ba}
+  .hero-badges{margin-top:32px;display:flex;gap:12px 22px;flex-wrap:wrap;font-size:14px;color:#fff;font-weight:600}
+  .hero-badges span{display:inline-flex;align-items:center;gap:8px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+  .hero-badges b{color:#fff5ba}
+
+  section{padding:clamp(66px,9vw,112px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:12px;letter-spacing:.24em;color:var(--pink);display:block;margin-bottom:12px;font-weight:700}
+  .sec-head h2{font-size:clamp(24px,3.8vw,36px);font-weight:700;letter-spacing:.03em;color:var(--ink);line-height:1.45}
+  .sec-head h2 b{color:var(--pink-d)}
+  .sec-head p{margin-top:14px;font-size:15px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* online band */
+  .online{background:linear-gradient(135deg,#2fc7b8,#20a99b);color:#fff;text-align:center}
+  .online .sec-head h2{color:#fff}
+  .online .sec-head .en{color:#d5f4ef}
+  .online .sec-head p{color:rgba(255,255,255,.9)}
+  .on-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .on{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:34px 26px;backdrop-filter:blur(2px)}
+  .on .ic{width:70px;height:70px;margin:0 auto 16px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 8px 18px rgba(0,0,0,.12)}
+  .on h3{font-size:19px;font-weight:700;margin-bottom:9px}
+  .on p{font-size:14px;color:rgba(255,255,255,.94);line-height:1.9}
+  .on-foot{max-width:820px;margin:40px auto 0;font-size:clamp(15px,2vw,18px);line-height:1.85;font-weight:600}
+  .on-foot b{color:#fff5ba}
+
+  /* target */
+  .target{background:var(--bg)}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;max-width:980px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 8px 20px rgba(229,65,127,.05)}
+  .tg .ic{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--pink-soft);color:var(--pink-d);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .tg:nth-child(even) .ic{background:var(--mint-soft);color:var(--mint-d)}
+  .tg p{font-size:15.5px;line-height:1.8;font-weight:500}
+  .tg-foot{text-align:center;margin-top:44px;font-size:clamp(17px,2.4vw,22px);color:var(--ink);line-height:1.85}
+  .tg-foot b{color:var(--pink-d);font-weight:700}
+
+  /* method */
+  .method{background:linear-gradient(180deg,#fff0f6,var(--bg))}
+  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:820px){.mth-wrap{grid-template-columns:1fr;gap:30px}}
+  .mth-ph{border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 44px rgba(229,65,127,.2);position:relative}
+  .mth-ph img{width:100%;height:100%;object-fit:cover}
+  .mth-ph .tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92);color:var(--pink-d);font-size:12.5px;font-weight:700;padding:7px 15px;border-radius:999px;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+  .mth-info .en{font-size:12px;letter-spacing:.24em;color:var(--pink);display:block;margin-bottom:13px;font-weight:700}
+  .mth-info h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:.02em;color:var(--ink);line-height:1.5}
+  .mth-info h2 b{color:var(--pink-d)}
+  .mth-info p{margin-top:18px;font-size:15.5px;color:var(--sub);line-height:2.05}
+  .mth-info p b{color:var(--mint-d);font-weight:700}
+  .mth-chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .mth-chips span{font-size:13px;font-weight:600;color:var(--pink-d);background:var(--pink-soft);border-radius:999px;padding:7px 15px}
+
+  /* reasons */
+  .reasons{background:var(--bg)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1040px;margin:0 auto}
+  .rs{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 26px rgba(229,65,127,.06);padding:34px 24px}
+  .rs .no{font-size:12.5px;letter-spacing:.12em;color:var(--mint-d);margin-bottom:12px;font-weight:700}
+  .rs .ic{width:72px;height:72px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(135deg,var(--pink-soft),#ffd0e6);display:flex;align-items:center;justify-content:center;font-size:32px}
+  .rs:nth-child(even) .ic{background:linear-gradient(135deg,var(--mint-soft),#bdeee7)}
+  .rs h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:11px;line-height:1.5}
+  .rs p{font-size:14px;color:var(--sub);line-height:1.9}
+
+  /* lesson */
+  .lesson{background:linear-gradient(180deg,var(--bg),#fff0f6)}
+  .l-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto}
+  @media(max-width:760px){.l-grid{grid-template-columns:1fr}}
+  .lcard{background:var(--panel);border-radius:24px;padding:36px 30px;box-shadow:0 12px 30px rgba(229,65,127,.08);position:relative;overflow:hidden;border:2px solid transparent}
+  .lcard.g{border-color:var(--mint)}
+  .lcard.p{border-color:var(--pink)}
+  .lcard .cap{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:#fff;padding:6px 16px;border-radius:999px;margin-bottom:16px}
+  .lcard.g .cap{background:var(--mint-d)}
+  .lcard.p .cap{background:var(--pink-d)}
+  .lcard h3{font-size:22px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .lcard .lead{font-size:14px;color:var(--sub);margin-bottom:20px;line-height:1.8}
+  .lcard ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .lcard li{font-size:15px;color:var(--ink);line-height:1.7;padding-left:30px;position:relative;font-weight:500}
+  .lcard li::before{content:"";position:absolute;left:0;top:7px;width:18px;height:18px;border-radius:50%;background:var(--mint-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23159c8f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/12px no-repeat}
+  .lcard.p li::before{background:var(--pink-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5417f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/12px no-repeat}
+  .lcard .fee{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--sub)}
+  .lcard .fee b{color:var(--ink);font-size:19px;font-weight:700}
+  .lesson-note{text-align:center;font-size:13px;color:var(--sub);margin-top:26px}
+
+  /* flow */
+  .flow{background:var(--bg)}
+  .fl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto;position:relative}
+  @media(max-width:720px){.fl-grid{grid-template-columns:1fr;gap:16px}}
+  .fl{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 26px;text-align:center;box-shadow:0 8px 20px rgba(229,65,127,.05)}
+  .fl .step{display:inline-block;font-size:12px;letter-spacing:.14em;color:#fff;background:var(--pink);border-radius:999px;padding:5px 16px;font-weight:700;margin-bottom:14px}
+  .fl .ic{font-size:38px;margin-bottom:12px}
+  .fl h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:9px}
+  .fl p{font-size:14px;color:var(--sub);line-height:1.85}
+
+  /* teacher */
+  .teacher{background:linear-gradient(135deg,#e5417f,#f5619b);color:#fff}
+  .tc-wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;max-width:940px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.tc-wrap{grid-template-columns:1fr;gap:28px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:24px;overflow:hidden;position:relative;background:linear-gradient(160deg,#ff8fb8,#e5417f);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 44px rgba(0,0,0,.24)}
+  .tc-photo .note{position:absolute;font-size:60px;opacity:.5}
+  .tc-photo span{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:12px;letter-spacing:.1em}
+  .tc-info .role{font-size:13px;letter-spacing:.14em;color:#fff5ba;font-weight:700}
+  .tc-info h3{font-size:27px;font-weight:700;letter-spacing:.04em;color:#fff;margin:10px 0 6px}
+  .tc-info h3 small{font-size:14px;color:#ffe0ee;letter-spacing:.08em;margin-left:10px;font-weight:400}
+  .tc-info .lic{display:inline-block;margin-top:10px;font-size:13.5px;color:#fff;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:6px 16px;letter-spacing:.04em}
+  .tc-info p{font-size:15.5px;color:#fff;margin-top:20px;line-height:2.05}
+
+  /* youtube */
+  .youtube{background:var(--bg)}
+  .yt-banner{max-width:1000px;margin:0 auto 34px;border-radius:24px;overflow:hidden;aspect-ratio:16/6;box-shadow:0 16px 40px rgba(229,65,127,.16);position:relative}
+  .yt-banner img{width:100%;height:100%;object-fit:cover}
+  .yt-banner .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .yt-banner .play span{width:78px;height:78px;border-radius:50%;background:rgba(255,0,50,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .yt-banner .play svg{width:30px;height:30px;fill:#fff;margin-left:5px}
+  @media(max-width:560px){.yt-banner{aspect-ratio:16/9}}
+  .yt-wrap{max-width:760px;margin:0 auto;text-align:center}
+  .yt-wrap p{font-size:15.5px;color:var(--sub);line-height:1.95;margin-bottom:26px}
+  .yt-wrap p b{color:var(--pink-d);font-weight:700}
+  .yt-btn{display:inline-flex;align-items:center;gap:10px;background:#ff0032;color:#fff;font-weight:700;font-size:16px;text-decoration:none;padding:16px 34px;border-radius:999px;box-shadow:0 12px 28px rgba(255,0,50,.3);transition:.3s}
+  .yt-btn:hover{transform:translateY(-2px);background:#e0002c}
+  .yt-btn svg{width:24px;height:24px;fill:#fff}
+  .yt-note{font-size:12.5px;color:var(--sub);margin-top:18px}
+
+  /* voice */
+  .voice{background:linear-gradient(180deg,#fff0f6,var(--bg))}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 28px;box-shadow:0 10px 24px rgba(229,65,127,.06)}
+  .vcard .stars{color:#ffb43b;letter-spacing:.14em;font-size:17px}
+  .vcard p{font-size:15px;color:var(--ink);line-height:1.95;margin:13px 0 16px;font-weight:500}
+  .vcard .who{font-size:13.5px;color:var(--sub);letter-spacing:.03em;font-weight:600}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,#e5417f,#2fc7b8)}
+  .reserve .sec-head .en{color:#fff5ba}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#fff;font-size:16px;margin-bottom:34px;line-height:1.85;opacity:.96}
+  form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+  .frow{display:flex;flex-direction:column;gap:8px}
+  .frow label{font-size:14.5px;letter-spacing:.03em;color:#fff;font-weight:600}
+  .frow .req{color:var(--pink-d);font-size:11px;margin-left:8px;background:#fff;padding:2px 8px;border-radius:6px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:16px;padding:14px 16px;border-radius:13px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.75)}
+  input:focus,select:focus,textarea:focus{outline:3px solid #fff;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:580px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:8px;background:#fff;color:var(--pink-d);font-weight:700;border:none;cursor:pointer;padding:18px;border-radius:999px;font-size:17px;letter-spacing:.06em;transition:.3s;box-shadow:0 12px 26px rgba(0,0,0,.16)}
+  button.submit:hover{transform:translateY(-2px);background:#fff5ba}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.2);border-radius:14px;padding:18px;font-size:15px;line-height:1.8}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:13px;color:#fff;margin-top:26px;line-height:1.95;max-width:600px;margin-left:auto;margin-right:auto;opacity:.95}
+
+  /* about */
+  .about{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:760px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:14px 8px;text-align:left;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:33%;color:var(--sub);font-weight:700;letter-spacing:.03em;white-space:nowrap}
+  .faq{display:flex;flex-direction:column;gap:14px}
+  .faq .q{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:0 8px 18px rgba(229,65,127,.05)}
+  .faq .q b{display:block;color:var(--pink-d);font-size:15px;margin-bottom:8px}
+  .faq .q b::before{content:"Q. ";color:var(--mint-d);font-weight:700}
+  .faq .q p{font-size:14px;color:var(--sub);line-height:1.85}
+  .sample-inline{text-align:center;font-size:13px;color:var(--sub);margin-top:24px}
+
+  footer{background:#42303c;color:#c9b3c1;text-align:center;padding:54px 20px 34px}
+  footer .fmark{font-size:22px;letter-spacing:.04em;color:#fff;font-weight:700}
+  footer .fsub{font-size:11px;letter-spacing:.22em;color:#ff9ec4;margin-top:6px}
+  footer .fnote{font-size:13px;color:#a58ea0;margin-top:24px;line-height:2}
+
+  @media(max-width:560px){
+    body{font-size:16px}
+    section{padding:60px 7vw}
+    .hero{padding:0 7vw}
+    header{padding:12px 18px}
+    header.scrolled{padding:10px 18px}
+    .logo{font-size:16px;max-width:60%}
+    .logo small{font-size:9px;letter-spacing:.16em}
+    nav a.cta{font-size:13px;padding:10px 15px}
+    .fl-grid{gap:14px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">※こちらは <b>Web制作 ゆたか</b> による <b>ナレ韓国語オンライン教室 様</b> へのご提案用デザイン案（サンプル）です</div>
+
+<header id="hd">
+  <div class="logo">ナレ韓国語オンライン教室<small>NARAE KOREAN ONLINE</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#method">学習法</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#reserve" class="cta">無料体験のお申込み</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">オンライン完結 ・ <b>全国どこからでも</b>受講OK</span>
+    <h1>おうちにいながら、<br>ネイティブと、<span>韓国語。</span></h1>
+    <p>K-POPや韓国ドラマが好き。そんな「好き」を入口に、楽しく続く韓国語を。全国どこにいても、パソコンやスマホでネイティブ講師のレッスンが受けられる、オンライン専門の韓国語教室です。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">無料体験を申し込む →</a>
+      <a href="#method" class="btn btn-ghost">学習法を見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>🌸 <b>オンライン</b>完結</span>
+      <span>🌸 <b>全国</b>どこでも受講</span>
+      <span>🌸 <b>ネイティブ</b>講師</span>
+    </div>
+  </div>
+</section>
+
+<!-- online band -->
+<section class="online" id="online">
+  <div class="sec-head reveal"><span class="en">ONLINE</span><h2>どこにいても、韓国語教室。</h2><p>スマホ・パソコンひとつで、あなたのお部屋がレッスン室に</p></div>
+  <div class="on-grid">
+    <div class="on reveal">
+      <div class="ic">🌏</div>
+      <h3>全国どこでもOK</h3>
+      <p>北海道から沖縄まで、海外からも。近くに教室がなくても、ネイティブのレッスンを受けられます。</p>
+    </div>
+    <div class="on reveal d1">
+      <div class="ic">💻</div>
+      <h3>スマホ・PCで手軽に</h3>
+      <p>特別な機材は不要。ビデオ通話がつながれば、いつものお部屋がそのままレッスン室になります。</p>
+    </div>
+    <div class="on reveal d2">
+      <div class="ic">⏰</div>
+      <h3>移動時間はゼロ</h3>
+      <p>通う手間がないから、忙しい方や小さなお子さまがいる方も、無理なく続けられます。</p>
+    </div>
+  </div>
+  <p class="on-foot reveal">通えないから、あきらめる。そんな時代は、もう終わり。<br><b>「好き」がある場所すべてが、あなたの韓国語教室です。</b></p>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2>こんな方に、<b>ぴったり</b>です</h2><p>ひとつでも当てはまったら、きっと楽しめます</p></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">♡</span><p>好きなK-POPの歌詞を、意味まで理解して聴きたい</p></div>
+    <div class="tg reveal d1"><span class="ic">♡</span><p>韓国ドラマを、字幕なしで楽しめるようになりたい</p></div>
+    <div class="tg reveal d2"><span class="ic">♡</span><p>ハングルから、まったくの初心者として始めたい</p></div>
+    <div class="tg reveal"><span class="ic">♡</span><p>独学に限界を感じ、ネイティブの発音を身につけたい</p></div>
+    <div class="tg reveal d1"><span class="ic">♡</span><p>推しのライブや現地旅行で、韓国語を話してみたい</p></div>
+    <div class="tg reveal d2"><span class="ic">♡</span><p>近くに教室がなく、オンラインで気軽に学びたい</p></div>
+  </div>
+  <p class="tg-foot reveal">「好き」ほど、強い先生はいません。<br><b>あなたの「好き」を、韓国語につなげていきましょう。</b></p>
+</section>
+
+<!-- method -->
+<section class="method" id="method">
+  <div class="mth-wrap">
+    <div class="mth-ph reveal"><img src="images/drama.jpg" alt="韓国ドラマを見ながら学ぶイメージ"><span class="tag">🎬 ドラマで学ぶ韓国語</span></div>
+    <div class="mth-info reveal">
+      <span class="en">METHOD</span>
+      <h2>韓国ドラマを活かした、<br><b>楽しく続く</b>学習法。</h2>
+      <p>大好きなドラマのセリフは、教科書の例文よりずっと記憶に残ります。当教室では、<b>韓国ドラマの生きた表現</b>を教材に取り入れ、「今すぐ使えるフレーズ」から自然な韓国語を身につけていきます。</p>
+      <p>土台となる文法・発音の指導には、韓国語教育で定評のある<b>西江大学（ソガン大学）の教材</b>を使用。楽しさと、確かな基礎。その両方を大切にしています。</p>
+      <div class="mth-chips">
+        <span>🎬 ドラマ活用</span><span>📘 西江大学の教材</span><span>🗣️ 発音・文法をネイティブ指導</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2>選ばれる<b>4つの理由</b></h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🗣️</div>
+      <h3>ネイティブ講師の指導</h3>
+      <p>発音もイントネーションも、ネイティブだからこそ伝えられる「本物の韓国語」。独学では気づけない癖まで丁寧に直します。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🎬</div>
+      <h3>ドラマ活用の学習法</h3>
+      <p>好きな作品のセリフが教材に。「楽しいから続く」から、いつのまにか実力に。挫折しにくい学び方です。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">📘</div>
+      <h3>西江大学の教材</h3>
+      <p>韓国語教育で定評のある教材で、文法と発音の基礎をしっかり。楽しさだけで終わらない、確かな土台をつくります。</p>
+    </div>
+    <div class="rs reveal d3">
+      <div class="no">REASON 04</div>
+      <div class="ic">🏠</div>
+      <h3>完全オンライン</h3>
+      <p>全国どこからでも、移動ゼロで受講可能。グループ・個人どちらにも対応し、あなたに合った形で学べます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2><b>グループ</b>と<b>個人</b>、選べる2つのレッスン</h2><p>あなたの目標とペースに合わせて、ぴったりの学び方を</p></div>
+  <div class="l-grid">
+    <div class="lcard g reveal">
+      <span class="cap">👥 グループレッスン</span>
+      <h3>仲間と、楽しく続ける</h3>
+      <p class="lead">同じ「好き」を持つ仲間と一緒に。会話量が増え、モチベーションも続きます。</p>
+      <ul>
+        <li>同じ趣味の仲間と楽しく学べる</li>
+        <li>会話やロールプレイの練習量が豊富</li>
+        <li>費用をおさえて続けやすい</li>
+        <li>初心者クラスも安心してスタート</li>
+      </ul>
+      <p class="fee">目安：<b>月々のお手頃価格</b>／少人数制</p>
+    </div>
+    <div class="lcard p reveal d1">
+      <span class="cap">🙋 個人レッスン</span>
+      <h3>自分のペースで、集中して</h3>
+      <p class="lead">マンツーマンだから、あなたの目標や弱点に合わせてとことん。</p>
+      <ul>
+        <li>レベルや目標に完全オーダーメイド</li>
+        <li>苦手なところを集中的に克服できる</li>
+        <li>スケジュールを自由に調整しやすい</li>
+        <li>話す時間をたっぷり確保できる</li>
+      </ul>
+      <p class="fee">目安：<b>1コマ集中の充実指導</b>／完全マンツーマン</p>
+    </div>
+  </div>
+  <p class="lesson-note reveal">※コース内容・料金はデザイン案の一例です。実際のレッスン内容・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- flow -->
+<section class="flow">
+  <div class="sec-head reveal"><span class="en">FLOW</span><h2>オンライン受講の<b>流れ</b></h2><p>はじめてでも、かんたん3ステップ</p></div>
+  <div class="fl-grid">
+    <div class="fl reveal">
+      <span class="step">STEP 01</span>
+      <div class="ic">📝</div>
+      <h3>無料体験を申し込む</h3>
+      <p>下のフォームから、お名前とご希望を送るだけ。折り返し日程をご案内します。</p>
+    </div>
+    <div class="fl reveal d1">
+      <span class="step">STEP 02</span>
+      <div class="ic">📅</div>
+      <h3>日程を決める</h3>
+      <p>ご都合に合わせて体験日を調整。ビデオ通話の使い方も、やさしくサポートします。</p>
+    </div>
+    <div class="fl reveal d2">
+      <span class="step">STEP 03</span>
+      <div class="ic">💻</div>
+      <h3>おうちでレッスン</h3>
+      <p>当日はリンクをクリックするだけ。お部屋にいながら、ネイティブのレッスンを体験できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="note" aria-hidden="true">🌸</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3>ナレ 先生<small>Narae</small></h3>
+      <span class="lic">ネイティブ講師 ・ 韓国語指導</span>
+      <p>「勉強」ではなく「好き」から始める韓国語を、大切にしています。K-POPやドラマが入口でいいんです。楽しいから続く、続くから話せるようになる。ハングルがまったく読めない方も、どうか安心して来てください。一人ひとりのペースに寄り添って、あなたの「話せた！」を一緒に増やしていきます。まずは無料体験で、レッスンの雰囲気を感じてくださいね。</p>
+    </div>
+  </div>
+</section>
+
+<!-- youtube -->
+<section class="youtube" id="youtube">
+  <div class="sec-head reveal"><span class="en">YOUTUBE</span><h2>YouTubeでも、<b>韓国語を発信中</b></h2><p>レッスンの雰囲気や学び方は、動画でも見てみてください</p></div>
+  <div class="yt-banner reveal">
+    <img src="images/seoul.jpg" alt="韓国の街並みイメージ">
+    <div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+  </div>
+  <div class="yt-wrap reveal">
+    <p>ドラマで学ぶ韓国語フレーズ、初心者向けのハングル講座、K-POPの歌詞解説など、<b>楽しく学べる動画を配信中</b>。まずは気軽に、教室の雰囲気をのぞいてみてください。</p>
+    <a href="#" class="yt-btn"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.6 12 3.6 12 3.6s-6.5 0-8.4.5A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>YouTubeチャンネルを見る</a>
+    <p class="yt-note">※リンク先はデザイン案です。実際のYouTubeチャンネル・SNSアカウントにつなげてお納めします。</p>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2>生徒さんの<b>声</b></h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>推しの動画をきっかけに始めました。好きなセリフで覚えるので楽しくて、気づけば毎週の楽しみに。おうちで受けられるのも最高です。</p>
+      <div class="who">20代・女性／初心者から</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>地方に住んでいて近くに教室がなく、あきらめていました。オンラインでネイティブの先生に習えて、発音がぐっと良くなりました。</p>
+      <div class="who">30代・女性／個人レッスン</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>独学ではあいまいだった文法を、教材でしっかり整理できました。ドラマが少しずつ聞き取れるようになって嬉しいです。</p>
+      <div class="who">40代・男性／中級クラス</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">FREE TRIAL</span><h2>無料体験のお申し込み</h2></div>
+  <p class="rsv-sub reveal">まずは無料体験から。ハングルが読めなくても大丈夫。<br>全国どこからでも、おうちでお気軽にどうぞ。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>グループレッスン</option>
+          <option>個人レッスン（マンツーマン）</option>
+          <option>どちらでも / 相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>韓国語のご経験</label>
+        <select name="exp">
+          <option value="">選択してください</option>
+          <option>まったくの初めて（ハングルから）</option>
+          <option>少し勉強したことがある</option>
+          <option>中級くらい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="好きなアーティストやドラマ、目標、聞いてみたいことなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容で無料体験を申し込む</button>
+    <p class="rsv-ok" id="rsvOk">🌸 無料体験のお申し込みありがとうございます。ご入力内容をメールでお送りする画面が開きます。折り返し教室よりご連絡いたします。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-tech reveal">🔒 お申し込み内容は、教室（info.narae9@gmail.com）へ直接メールで届く仕組みにできます。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
+</section>
+
+<!-- about -->
+<section class="about">
+  <div class="sec-head reveal"><span class="en">ABOUT</span><h2>教室について</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>ナレ韓国語オンライン教室</td></tr>
+      <tr><th>受講形式</th><td>完全オンライン（ビデオ通話）</td></tr>
+      <tr><th>対応エリア</th><td>全国どこからでも・海外も可</td></tr>
+      <tr><th>対象</th><td>初心者〜中級者／ハングル未経験も歓迎</td></tr>
+      <tr><th>レッスン</th><td>グループ／個人（マンツーマン）</td></tr>
+      <tr><th>特色</th><td>韓国ドラマ活用の学習法・西江大学の教材</td></tr>
+      <tr><th>お申込み</th><td>無料体験フォームから</td></tr>
+    </table>
+    <div class="faq reveal">
+      <div class="q"><b>ハングルが読めなくても大丈夫？</b><p>はい。まったくの初心者の方も歓迎です。ハングルの読み方から、一つひとつ丁寧に進めていきます。</p></div>
+      <div class="q"><b>パソコンが苦手でも受けられますか？</b><p>大丈夫です。ビデオ通話の準備や使い方も、やさしくサポートします。スマホでも受講いただけます。</p></div>
+      <div class="q"><b>グループと個人、どちらがいい？</b><p>楽しく続けたい方はグループ、目標に合わせて集中したい方は個人がおすすめ。迷ったら体験時にご相談ください。</p></div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※教室名・レッスン内容・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark">ナレ韓国語オンライン教室</div>
+  <div class="fsub">NARAE KOREAN ONLINE</div>
+  <p class="fnote">※こちらは Web制作 ゆたか による ナレ韓国語オンライン教室 様 へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真・SNS導線はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var v=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=
+      'ナレ韓国語オンライン教室 無料体験のお申し込み\n'+
+      '───────────────────\n'+
+      'お名前　　：'+v('name')+'\n'+
+      'メール　　：'+v('mail')+'\n'+
+      'ご希望レッスン：'+v('lesson')+'\n'+
+      'ご経験　　：'+v('exp')+'\n'+
+      'ご質問等　：'+v('note')+'\n'+
+      '───────────────────\n'+
+      '（このメールはデザイン見本のフォームから作成されました）';
+    var url='mailto:info.narae9@gmail.com'+
+      '?subject='+encodeURIComponent('【無料体験のお申込み】ナレ韓国語オンライン教室')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='送信画面を開きました';
+    setTimeout(function(){window.location.href=url;},600);
+  });
+</script>
+</body>
+</html>

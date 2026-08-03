@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>仁科バイオリン教室｜兵庫県宝塚市のバイオリン教室（デザイン案・サンプル）</title>
+<meta name="description" content="兵庫県宝塚市・清荒神駅より徒歩7分。インディアナ大学で学び、兵庫県立芸術文化センター管弦楽団で活躍する講師が、全米屈指の指導法で指導。子どもから大人・初心者から経験者まで。オンラインレッスン・年1回の発表会。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f8f3ea;
+    --panel:#fffdf8;
+    --wine:#7d2231;
+    --wine-d:#5d1824;
+    --wine-dd:#43101a;
+    --wine-soft:#efe0dd;
+    --ivory:#f3e9d6;
+    --gold:#b28a3e;
+    --gold-l:#cba75a;
+    --ink:#37282a;
+    --sub:#7a6a67;
+    --line:rgba(125,34,49,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.03em;font-size:16.5px;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{display:block}
+
+  .sample-bar{background:var(--wine-dd);color:#f3e6df;text-align:center;font-size:12px;padding:8px 14px;letter-spacing:.04em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#fff}
+  .sample-bar .lim{color:var(--gold-l);font-weight:700}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:rgba(248,243,234,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(248,243,234,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 30px}
+  .logo{font-size:19px;letter-spacing:.14em;color:#fff;font-weight:600;line-height:1.25;display:flex;flex-direction:column;text-shadow:0 1px 14px rgba(0,0,0,.5);transition:color .4s,text-shadow .4s}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{font-size:9.5px;letter-spacing:.32em;color:var(--gold-l);margin-top:3px;font-weight:600;transition:color .4s}
+  header.scrolled .logo{color:var(--wine);text-shadow:none}
+  header.scrolled .logo small{color:var(--gold)}
+  nav{display:flex;gap:22px;align-items:center}
+  nav a{color:#fff;text-decoration:none;font-size:13.5px;letter-spacing:.08em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  header.scrolled nav a:not(.cta){color:var(--ink);text-shadow:none}
+  nav a:hover{color:var(--gold-l);border-color:var(--gold-l)}
+  header.scrolled nav a:not(.cta):hover{color:var(--wine);border-color:var(--wine)}
+  nav a.cta{background:var(--gold);color:#fff;padding:10px 20px;border-radius:2px;border:none;letter-spacing:.06em;white-space:nowrap;box-shadow:0 8px 18px rgba(178,138,62,.35)}
+  nav a.cta:hover{background:#9c7830;color:#fff;transform:translateY(-1px);border-color:transparent}
+  @media(max-width:960px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(45,10,18,.86) 24%,rgba(67,16,26,.55) 62%,rgba(67,16,26,.3) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 18s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:670px;color:#fff;margin-top:62px}
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.22em;color:var(--gold-l);margin-bottom:24px}
+  .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--gold-l)}
+  .hero h1{font-size:clamp(30px,5.4vw,54px);font-weight:600;line-height:1.55;letter-spacing:.06em;text-wrap:balance;text-shadow:0 2px 26px rgba(0,0,0,.5)}
+  .hero h1 span{color:var(--gold-l)}
+  .hero p{margin-top:24px;font-size:clamp(15px,1.8vw,17px);color:rgba(255,255,255,.94);max-width:32em;line-height:2;text-shadow:0 1px 14px rgba(0,0,0,.4)}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:16px 34px;border-radius:2px;font-size:15px;letter-spacing:.06em;transition:.3s;font-weight:600}
+  .btn-primary{background:var(--gold);color:#fff;box-shadow:0 14px 30px rgba(178,138,62,.42)}
+  .btn-primary:hover{transform:translateY(-2px);background:#9c7830}
+  .btn-ghost{border:1px solid rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l)}
+  .hero-badges{margin-top:34px;display:flex;gap:12px 26px;flex-wrap:wrap;font-size:13.5px;color:#fff;font-weight:600}
+  .hero-badges span{display:inline-flex;align-items:center;gap:8px;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  .hero-badges b{color:var(--gold-l)}
+
+  section{padding:clamp(68px,9vw,116px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11.5px;letter-spacing:.32em;color:var(--gold);display:block;margin-bottom:14px;font-weight:700}
+  .sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;letter-spacing:.08em;color:var(--wine);line-height:1.5}
+  .sec-head h2 b{color:var(--gold)}
+  .sec-head p{margin-top:15px;font-size:15px;color:var(--sub)}
+  .sec-head .rule{width:48px;height:2px;background:var(--gold);margin:16px auto 0}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* concept */
+  .concept{background:linear-gradient(180deg,var(--bg),#efe4d2);text-align:center;overflow:hidden}
+  .cnc{max-width:760px;margin:0 auto}
+  .cnc .mark{font-size:34px;color:var(--gold);margin-bottom:18px;letter-spacing:.3em}
+  .cnc .lead{font-size:clamp(21px,3.2vw,29px);line-height:1.95;color:var(--wine);letter-spacing:.07em}
+  .cnc .lead b{color:var(--gold);font-weight:600}
+  .cnc p.body{margin-top:26px;font-size:15px;color:var(--sub);line-height:2.15}
+
+  /* target */
+  .target{background:#efe4d2}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:18px;max-width:990px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 8px 22px rgba(125,34,49,.06)}
+  .tg .ic{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--wine-soft);color:var(--wine);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .tg:nth-child(3n+2) .ic{background:#f2e7cf;color:var(--gold)}
+  .tg p{font-size:15px;line-height:1.85}
+  .tg-foot{text-align:center;margin-top:46px;font-size:clamp(16px,2.2vw,21px);color:var(--wine);line-height:1.9;letter-spacing:.05em}
+  .tg-foot b{color:var(--gold);font-weight:600}
+
+  /* teacher */
+  .teacher{background:linear-gradient(150deg,var(--wine-d),var(--wine-dd));color:#f2e4df;overflow:hidden}
+  .tc-wrap{display:grid;grid-template-columns:330px 1fr;gap:52px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:820px){.tc-wrap{grid-template-columns:1fr;gap:32px;max-width:520px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:6px;overflow:hidden;position:relative;background:linear-gradient(160deg,#6a1d29,#43101a);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 46px rgba(0,0,0,.38);border:1px solid rgba(203,167,90,.3)}
+  .tc-photo .note{font-size:52px;color:rgba(203,167,90,.4);margin-bottom:10px}
+  .tc-photo span{color:rgba(242,228,223,.6);font-size:11px;letter-spacing:.18em;text-align:center;padding:0 20px;line-height:1.7}
+  .tc-info .role{font-size:12px;letter-spacing:.2em;color:var(--gold-l);font-weight:700}
+  .tc-info h3{font-size:29px;font-weight:600;letter-spacing:.08em;color:#fff;margin:10px 0 2px;line-height:1.4}
+  .tc-info h3 small{font-size:14px;color:#d9bfb9;letter-spacing:.1em;margin-left:10px;font-weight:400}
+  .tc-info .career{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+  .tc-info .career span{font-size:11.5px;color:#f3e4df;border:1px solid rgba(203,167,90,.45);border-radius:2px;padding:5px 13px;letter-spacing:.04em}
+  .tc-info p{font-size:15px;color:#ecdcd6;margin-top:16px;line-height:2.1}
+  .tc-info p b{color:var(--gold-l);font-weight:600}
+  .tc-info .note{font-size:12px;color:#c19b95;margin-top:14px}
+
+  /* method */
+  .method{background:var(--bg)}
+  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1000px;margin:0 auto;align-items:center}
+  @media(max-width:800px){.mth-wrap{grid-template-columns:1fr;gap:30px}}
+  .mth-ph{border-radius:6px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 44px rgba(125,34,49,.18);border:1px solid var(--line)}
+  .mth-ph img{width:100%;height:100%;object-fit:cover}
+  .mth-info .en{font-size:11.5px;letter-spacing:.32em;color:var(--gold);display:block;margin-bottom:14px;font-weight:700}
+  .mth-info h2{font-size:clamp(23px,3.3vw,31px);font-weight:600;letter-spacing:.06em;color:var(--wine);line-height:1.55}
+  .mth-info h2 b{color:var(--gold)}
+  .mth-info p{margin-top:20px;font-size:15px;color:var(--ink);line-height:2.15}
+  .mth-info p b{color:var(--wine);font-weight:600}
+  .mth-list{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+  .mth-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--sub);line-height:1.8}
+  .mth-list li::before{content:"♪";color:var(--gold);font-size:16px;flex:0 0 auto;margin-top:1px}
+
+  /* lesson */
+  .lesson{background:linear-gradient(180deg,#efe4d2,var(--bg))}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px;max-width:1040px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:32px 28px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
+  .lcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--wine),var(--gold))}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 42px rgba(125,34,49,.14)}
+  .lcard .mic{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--wine-soft),#f2e7cf);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
+  .lcard h3{font-size:19px;font-weight:600;color:var(--wine);letter-spacing:.04em;margin-bottom:10px}
+  .lcard p{font-size:14.5px;color:var(--sub);line-height:1.95}
+  .lcard .tag{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.06em;color:var(--gold);border:1px solid rgba(178,138,62,.45);border-radius:2px;padding:5px 13px}
+  .lesson-note{text-align:center;font-size:13px;color:var(--sub);margin-top:28px}
+
+  /* reasons */
+  .reasons{background:var(--bg)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1060px;margin:0 auto}
+  .rs{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:36px 26px;box-shadow:0 10px 26px rgba(125,34,49,.05)}
+  .rs .no{font-size:12px;letter-spacing:.14em;color:var(--gold);margin-bottom:14px;font-weight:700}
+  .rs .ic{width:70px;height:70px;margin:0 auto 18px;border-radius:50%;background:var(--wine-soft);display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rs:nth-child(even) .ic{background:#f2e7cf}
+  .rs h3{font-size:18px;font-weight:600;color:var(--wine);margin-bottom:12px;line-height:1.5}
+  .rs p{font-size:14px;color:var(--sub);line-height:1.95}
+
+  /* recital band */
+  .recital{background:linear-gradient(135deg,var(--wine),var(--wine-d));color:#fff;text-align:center;overflow:hidden}
+  .rc-wrap{max-width:800px;margin:0 auto;position:relative;z-index:1}
+  .rc-wrap .en{font-size:11.5px;letter-spacing:.32em;color:var(--gold-l);display:block;margin-bottom:16px;font-weight:700}
+  .rc-wrap h2{font-size:clamp(24px,3.4vw,33px);font-weight:600;color:#fff;line-height:1.55;letter-spacing:.06em}
+  .rc-wrap h2 span{color:var(--gold-l)}
+  .rc-wrap p{margin-top:22px;font-size:15.5px;color:#f0dfda;line-height:2.15}
+  .rc-wrap p b{color:var(--gold-l);font-weight:600}
+  .rc-mark{font-size:30px;color:var(--gold-l);letter-spacing:.4em;margin-bottom:18px}
+
+  /* voice */
+  .voice{background:#efe4d2}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(282px,1fr));gap:20px;max-width:1020px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:30px 28px;box-shadow:0 10px 24px rgba(125,34,49,.05)}
+  .vcard .stars{color:var(--gold);letter-spacing:.14em;font-size:15px}
+  .vcard p{font-size:14.5px;color:var(--ink);line-height:2;margin:12px 0 16px}
+  .vcard .who{font-size:13px;color:var(--sub);letter-spacing:.02em;font-weight:600}
+  .voice-note{text-align:center;font-size:12.5px;color:var(--sub);margin-top:26px}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,var(--wine-d),var(--wine-dd));position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:var(--gold-l)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#f0dfda;font-size:15px;margin-bottom:34px;line-height:1.9}
+  form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:8px}
+  .frow label{font-size:14px;letter-spacing:.03em;color:#f3e6df;font-weight:600}
+  .frow .req{color:#fff;font-size:11px;margin-left:8px;background:var(--gold);padding:2px 8px;border-radius:3px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:16px;padding:14px 16px;border-radius:4px;border:1.5px solid rgba(255,255,255,.32);background:rgba(255,255,255,.1);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.62)}
+  input:focus,select:focus,textarea:focus{outline:2.5px solid var(--gold-l);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:580px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--gold);color:#fff;font-weight:700;border:none;cursor:pointer;padding:17px;border-radius:3px;font-size:16px;letter-spacing:.08em;transition:.3s;box-shadow:0 12px 28px rgba(178,138,62,.4)}
+  button.submit:hover{transform:translateY(-2px);background:#9c7830}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.14);border-radius:6px;padding:18px;font-size:14.5px;line-height:1.9}
+  .rsv-ok.show{display:block}
+  .rsv-mail{text-align:center;margin-top:18px}
+  .rsv-mail a{color:var(--gold-l);font-size:14px;letter-spacing:.03em;text-decoration:underline;text-underline-offset:3px}
+  .rsv-tech{text-align:center;font-size:12.5px;color:#c19b95;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  @media(max-width:780px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:15px 8px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:700;letter-spacing:.02em;white-space:nowrap}
+  .map-ph{border-radius:6px;min-height:240px;display:flex;flex-direction:column;gap:7px;align-items:center;justify-content:center;color:var(--wine);font-size:11.5px;letter-spacing:.1em;background:linear-gradient(135deg,var(--wine-soft),#f2e7cf);text-align:center;padding:22px;border:1px solid var(--line)}
+  .map-ph b{font-size:14px;letter-spacing:.06em}
+  .sample-inline{text-align:center;font-size:12.5px;color:var(--sub);margin-top:26px}
+
+  footer{background:var(--wine-dd);color:#c9a9a3;text-align:center;padding:56px 20px 34px}
+  footer .fmark{font-size:23px;letter-spacing:.14em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10.5px;letter-spacing:.3em;color:var(--gold-l);margin-top:6px}
+  footer .fnote{font-size:12.5px;color:#a98883;margin-top:24px;line-height:1.95}
+
+  @media(max-width:560px){
+    body{font-size:16px}
+    section{padding:60px 7vw}
+    .hero{padding:0 7vw}
+    header{padding:12px 20px}
+    header.scrolled{padding:10px 20px}
+    .logo{font-size:16px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ご提案用のデザイン案（サンプル）</b>です ・ <span class="lim">2026年8月1日まで</span>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">仁科バイオリン教室<small>NISHINA VIOLIN STUDIO</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#teacher">講師紹介</a>
+    <a href="#method">指導法</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#access">アクセス</a>
+    <a href="#reserve" class="cta">体験レッスン</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">兵庫県宝塚市 ・ 清荒神駅 徒歩7分</span>
+    <h1 class="mincho">本格を、<span>やさしく。</span><br>一音から、丁寧に。</h1>
+    <p>インディアナ大学で学び、兵庫県立芸術文化センター管弦楽団で活躍する講師が、世界に認められた指導法で導きます。お子さまから大人の方まで、初心者も経験者も。宝塚市のバイオリン教室です。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
+      <a href="#teacher" class="btn btn-ghost">講師の経歴を見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>♪ <b>インディアナ大学</b>で学士・修士</span>
+      <span>♪ <b>芸文センター管弦楽団</b>で活躍</span>
+      <span>♪ <b>オンライン</b>対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept">
+  <div class="cnc">
+    <div class="mark reveal" aria-hidden="true">♪</div>
+    <p class="lead reveal mincho">「本格的に学びたい」その気持ちに、<br><b>本物の音楽</b>で応えます。</p>
+    <p class="body reveal">仁科バイオリン教室は、趣味として楽しみたい方から、コンクールや音楽の道を志す方まで、一人ひとりの目標に真剣に向き合う教室です。国際的な演奏・指導の経験に裏打ちされた確かな技術を、無理なく、楽しく身につけていただけるよう、基礎の一音一音から丁寧にお伝えします。バイオリンという一生の宝物との出会いを、心を込めてお手伝いします。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2><div class="rule"></div></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">♪</span><p>子どもに、本格的なバイオリンを習わせたい</p></div>
+    <div class="tg reveal d1"><span class="ic">♪</span><p>まったくの初心者。基礎からきちんと学びたい</p></div>
+    <div class="tg reveal d2"><span class="ic">♪</span><p>大人になった今、あこがれのバイオリンを始めたい</p></div>
+    <div class="tg reveal"><span class="ic">♪</span><p>経験者として、さらに上のレベルを目指したい</p></div>
+    <div class="tg reveal d1"><span class="ic">♪</span><p>コンクールや音楽高校・音大受験を視野に入れている</p></div>
+    <div class="tg reveal d2"><span class="ic">♪</span><p>遠方・多忙でも、オンラインで質の高いレッスンを受けたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">目標は、人それぞれ。だからこそ、<b>一人ひとりに合わせて</b>。<br>まずは体験レッスンで、その音に触れてください。</p>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="note" aria-hidden="true">♪</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">仁科 人美<small>Hitomi Nishina</small></h3>
+      <div class="career">
+        <span>インディアナ大学 音楽学士号（B.M.）</span>
+        <span>同大学 音楽修士号（M.M.）</span>
+        <span>兵庫県立芸術文化センター管弦楽団</span>
+      </div>
+      <p>アメリカ・<b>インディアナ大学</b>にて音楽学士号・修士号を取得。同大学は世界屈指の音楽教育機関として知られ、その環境で研鑽を積みました。現在は<b>兵庫県立芸術文化センター管弦楽団のコアメンバー・レジデントプレイヤー</b>として第一線で演奏活動を続けています。</p>
+      <p>指導では、全米No.1と評されるバイオリン指導教授 <b>Mimi Zweig（ミミ・ツヴァイク）氏</b>から直接学んだ指導法を採用。演奏家としての現役の感覚と、体系化された確かなメソッドの両方で、生徒さん一人ひとりを導きます。</p>
+      <p class="note">※ご経歴は仁科先生からご提供いただいた情報です。お写真・掲載内容は最終確認のうえお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- method -->
+<section class="method" id="method">
+  <div class="mth-wrap">
+    <div class="mth-ph reveal"><img src="images/lesson.jpg" alt="レッスン室のバイオリンと楽譜（イメージ）"></div>
+    <div class="mth-info reveal">
+      <span class="en">METHOD</span>
+      <h2 class="mincho">全米屈指の指導教授<br><b>Mimi Zweig</b>氏直伝のメソッド</h2>
+      <p>当教室が採用するのは、数多くの一流演奏家を育てた <b>Mimi Zweig 氏</b>の指導法。「力を抜いた自然な奏法」と「音楽を楽しむ心」を土台に、無理のない体系立てられたステップで上達へと導きます。</p>
+      <ul class="mth-list">
+        <li>体に負担のない、正しく美しいフォームを最初から丁寧に</li>
+        <li>「できた！」を積み重ね、楽しみながら基礎を固める</li>
+        <li>初心者から経験者まで、レベルと目標に合わせて設計</li>
+        <li>演奏家としての現役の視点で、表現力までしっかり指導</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><div class="rule"></div><p>年齢・目的・レベルに合わせて、丁寧に進めます</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="mic">🎻</div>
+      <h3 class="mincho">お子さまのレッスン</h3>
+      <p>正しいフォームと豊かな音感を、遊びの延長のように楽しく。集中力や表現力も育みながら、一生ものの土台をつくります。</p>
+      <span class="tag">お子さま・初心者歓迎</span>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="mic">🎼</div>
+      <h3 class="mincho">大人のレッスン</h3>
+      <p>「憧れていた曲を弾きたい」「趣味として本格的に」。初めての方も、経験者の方も、ご自身のペースで無理なく続けられます。</p>
+      <span class="tag">大人・初心者〜経験者</span>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="mic">💻</div>
+      <h3 class="mincho">オンラインレッスン</h3>
+      <p>ご遠方の方やお忙しい方も、ご自宅で質の高い指導を。対面と変わらない丁寧さで、画面越しにもしっかり寄り添います。</p>
+      <span class="tag">全国対応・オンライン</span>
+    </div>
+  </div>
+  <p class="lesson-note reveal">※コース区分・レッスン内容・料金はデザイン案の一例です。実際の内容に差し替えてお納めします。</p>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">選ばれる<b>3つの理由</b></h2><div class="rule"></div></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🎓</div>
+      <h3 class="mincho">国際的に学んだ確かな実力</h3>
+      <p>インディアナ大学で学士・修士を取得し、プロのオーケストラで活躍する講師。本物の音楽を、間近で学べます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🌟</div>
+      <h3 class="mincho">世界で認められた指導法</h3>
+      <p>全米屈指の指導教授 Mimi Zweig 氏直伝のメソッド。無理のない自然な奏法で、着実に、そして楽しく上達します。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🎯</div>
+      <h3 class="mincho">初心者から受験まで対応</h3>
+      <p>趣味の方も、音楽の道を目指す方も。一人ひとりの目標に合わせて、対面・オンラインで丁寧に指導します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- recital band -->
+<section class="recital">
+  <div class="rc-wrap reveal">
+    <div class="rc-mark" aria-hidden="true">♪ ♪ ♪</div>
+    <span class="en">RECITAL</span>
+    <h2 class="mincho">年に一度の<span>発表会</span>で、<br>成長を舞台の上に。</h2>
+    <p>当教室では、<b>年1回の発表会</b>を開催しています。人前で演奏する経験は、大きな自信と成長につながる大切な機会。日頃の練習の成果を、ご家族やお仲間と分かち合う——そんな晴れやかな一日を、目標にしながら歩んでいきましょう。</p>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さん・保護者の<b>声</b></h2><div class="rule"></div></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>子どもの姿勢や音がみるみる変わっていくのに驚きました。無理なく、でも本格的に。先生の指導は的確で、毎回のレッスンが楽しみです。</p>
+      <div class="who">小学生の保護者</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>大人になってから憧れのバイオリンを始めました。基礎から丁寧に教えてくださるので、少しずつ弾ける曲が増えていくのが嬉しいです。</p>
+      <div class="who">50代・女性／大人のレッスン</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>遠方のためオンラインで受講しています。画面越しでも音や弓の使い方まで細かく見てくださり、対面と変わらない充実感があります。</p>
+      <div class="who">30代・男性／オンラインレッスン</div>
+    </div>
+  </div>
+  <p class="voice-note reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL LESSON</span><h2 class="mincho">体験レッスンのお申し込み</h2></div>
+  <p class="rsv-sub reveal">まずは体験レッスンから。お子さまも、大人の方も、お気軽にどうぞ。<br>下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>どなたが習われますか</label>
+        <select name="who">
+          <option value="">選択してください</option>
+          <option>お子さま</option>
+          <option>大人（ご本人）</option>
+          <option>相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="style">
+          <option value="">選択してください</option>
+          <option>対面レッスン（宝塚市の教室）</option>
+          <option>オンラインレッスン</option>
+          <option>どちらか相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>バイオリンのご経験</label>
+      <select name="exp">
+        <option value="">選択してください</option>
+        <option>まったくの初めて</option>
+        <option>少し弾いたことがある</option>
+        <option>経験者（数年）</option>
+        <option>コンクール・受験を視野に</option>
+      </select>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ご希望の曜日や、お子さまの年齢、目標など、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">🎻 ご入力ありがとうございます。メールソフトが立ち上がり、宛先（仁科バイオリン教室）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-mail reveal">メールソフトが開かない場合はこちら → <a href="mailto:hnishina0713@gmail.com">hnishina0713@gmail.com</a></p>
+  <p class="rsv-tech reveal">🔒 お申し込みは、教室へ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access" id="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2><div class="rule"></div></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>仁科バイオリン教室</td></tr>
+      <tr><th>所在地</th><td>兵庫県宝塚市川面2丁目4</td></tr>
+      <tr><th>アクセス</th><td>阪急宝塚線「清荒神駅」より徒歩7分</td></tr>
+      <tr><th>レッスン</th><td>お子さま／大人／オンライン（初心者〜経験者）</td></tr>
+      <tr><th>発表会</th><td>年1回開催</td></tr>
+      <tr><th>お問い合わせ</th><td>hnishina0713@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <b>MAP</b>
+      <span>ここにGoogleマップが入ります</span>
+      <span>（兵庫県宝塚市川面2丁目4 ・ 清荒神駅 徒歩7分）</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※所在地・レッスン時間などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">仁科バイオリン教室</div>
+  <div class="fsub">NISHINA VIOLIN STUDIO ・ TAKARAZUKA</div>
+  <p class="fnote">こちらは Web制作 ゆたか による 仁科バイオリン教室 様 へのご提案用デザイン案（サンプル）です。<br>お写真・生徒さんの声・料金などはイメージを含み、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var v=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=
+      '仁科バイオリン教室 体験レッスンのお申し込み\n'+
+      '───────────────────\n'+
+      'お名前　　　：'+v('name')+'\n'+
+      'メール　　　：'+v('mail')+'\n'+
+      'どなたが　　：'+v('who')+'\n'+
+      'ご希望の形式：'+v('style')+'\n'+
+      'ご経験　　　：'+v('exp')+'\n'+
+      'ご質問等　　：'+v('note')+'\n'+
+      '───────────────────\n'+
+      '（このメールはデザイン見本のフォームから作成されました）';
+    var url='mailto:hnishina0713@gmail.com'+
+      '?subject='+encodeURIComponent('【体験レッスン申込】仁科バイオリン教室')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    setTimeout(function(){window.location.href=url;},600);
+  });
+</script>
+</body>
+</html>

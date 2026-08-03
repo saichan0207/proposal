@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>カリグラフィーと絵付けとクロスステッチの小さなお教室｜池上・赤坂のカリグラフィー教室（デザイン案・サンプル）</title>
+<meta name="description" content="一文字ずつ、丁寧に。カリグラフィー・絵付け・クロスステッチの3つを、少人数でゆったり学べる小さなお教室。体験レッスン4,000円（約2時間）。東京・池上／赤坂。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f6f3ec;
+    --panel:#fffdf8;
+    --cream:#efe8d8;
+    --navy:#1b2b48;
+    --navy2:#14203a;
+    --navy-soft:#e5e9f0;
+    --ink-blue:#2f4468;
+    --gold:#b08a3e;
+    --gold2:#cba85a;
+    --gold-soft:#f0e6cf;
+    --ink:#2a3345;
+    --sub:#6c7486;
+    --line:rgba(27,43,72,.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.98;letter-spacing:.05em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{max-width:100%;display:block}
+
+  .sample-bar{background:linear-gradient(90deg,#14203a,#2f4468 60%,#4a5f88);color:#f2ecda;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.06em;position:relative;z-index:60;line-height:1.6}
+  .sample-bar b{color:var(--gold2)}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(246,243,236,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(246,243,236,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:16px;letter-spacing:.14em;color:var(--navy);font-weight:600;line-height:1.4}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--gold);margin-top:3px;font-weight:600}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s;white-space:nowrap}
+  nav a:hover{color:var(--gold);border-color:var(--gold)}
+  nav a.cta{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.06em;box-shadow:0 8px 18px rgba(27,43,72,.28)}
+  nav a.cta:hover{background:var(--ink-blue);color:#fff;transform:translateY(-1px)}
+  @media(max-width:900px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:93vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,24,44,.86) 28%,rgba(15,24,44,.5) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:640px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;color:var(--gold2);margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold2)}
+  .hero h1{font-size:clamp(28px,5.4vw,50px);font-weight:600;line-height:1.62;letter-spacing:.07em;text-wrap:balance;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+  .hero h1 span{color:var(--gold2)}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.9);max-width:32em}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;transition:.3s}
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#20130a;font-weight:600;box-shadow:0 12px 26px rgba(176,138,62,.4)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
+  .btn-ghost:hover{border-color:var(--gold2);color:var(--gold2)}
+  .hero-badges{margin-top:30px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.88)}
+  .hero-badges b{color:var(--gold2)}
+
+  section{padding:clamp(70px,10vw,118px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.36em;color:var(--gold);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(22px,3.3vw,31px);font-weight:600;letter-spacing:.09em;color:var(--navy)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{text-align:center}
+  .cnc{max-width:720px;margin:0 auto}
+  .cnc .rule{width:44px;height:1px;background:var(--gold);margin:0 auto 24px;position:relative}
+  .cnc .rule::before{content:"";position:absolute;top:-3px;left:50%;width:7px;height:7px;border:1px solid var(--gold);border-radius:50%;transform:translateX(-50%) rotate(45deg)}
+  .cnc .lead{font-size:clamp(19px,3.2vw,27px);line-height:1.98;color:var(--navy);letter-spacing:.08em}
+  .cnc .lead b{color:var(--gold);font-weight:600}
+  .cnc p.body{margin-top:26px;font-size:14px;color:var(--sub);line-height:2.1}
+
+  /* target */
+  .target{background:linear-gradient(180deg,var(--bg),#ece5d6)}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 22px rgba(27,43,72,.05)}
+  .tg .ic{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .tg p{font-size:13.8px;line-height:1.86}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--navy);letter-spacing:.06em}
+  .tg-foot b{color:var(--gold);font-weight:600}
+
+  /* lessons */
+  .lesson{background:#ece5d6}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px;max-width:1020px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(27,43,72,.16)}
+  .lcard .ph{position:relative;height:182px;overflow:hidden;background:var(--navy-soft)}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .lcard:hover .ph img{transform:scale(1.06)}
+  .lcard .ph .badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.14em;color:#fff;padding:5px 12px;border-radius:999px;background:rgba(20,32,58,.78);backdrop-filter:blur(2px)}
+  .lcard .body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .lcard h3{font-size:18px;font-weight:600;color:var(--navy);letter-spacing:.05em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.92;flex:1}
+  .lcard .tag{display:inline-block;margin-top:15px;font-size:11px;letter-spacing:.06em;color:var(--gold);border:1px solid rgba(176,138,62,.4);border-radius:999px;padding:4px 12px;align-self:flex-start}
+
+  /* trial feature */
+  .trial{background:linear-gradient(120deg,var(--navy2),var(--navy) 62%,var(--ink-blue));color:#eef1f7;overflow:hidden}
+  .ft-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.ft-wrap{grid-template-columns:1fr;gap:28px}}
+  .ft-info .en{font-size:11px;letter-spacing:.34em;color:var(--gold2);display:block;margin-bottom:14px}
+  .ft-info h2{font-size:clamp(23px,3.4vw,32px);font-weight:600;letter-spacing:.07em;color:#fff;line-height:1.55}
+  .ft-info h2 span{color:var(--gold2)}
+  .ft-info p{margin-top:18px;font-size:14px;color:#d7deea;line-height:2.08}
+  .ft-info p b{color:var(--gold2);font-weight:600}
+  .ft-price{margin-top:22px;display:inline-flex;align-items:baseline;gap:12px;background:rgba(255,255,255,.09);border:1px solid rgba(203,168,90,.4);border-radius:14px;padding:14px 24px}
+  .ft-price .lbl{font-size:11.5px;letter-spacing:.1em;color:#cfd7e5}
+  .ft-price .num{font-size:27px;font-weight:600;color:#fff;letter-spacing:.02em}
+  .ft-price .num small{font-size:12.5px;font-weight:500;color:#cba85a}
+  .ft-note{margin-top:10px;font-size:11.5px;color:#9fabc2}
+  .ft-btn{margin-top:26px}
+  .ft-btn a{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#20130a;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.06em;transition:.3s;box-shadow:0 12px 26px rgba(0,0,0,.28)}
+  .ft-btn a:hover{transform:translateY(-2px)}
+  .ft-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 44px rgba(0,0,0,.36)}
+  .ft-ph img{width:100%;height:100%;object-fit:cover}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,#ece5d6,var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.18em;color:var(--gold);margin-bottom:10px}
+  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
+  .rs h3{font-size:17px;font-weight:600;letter-spacing:.05em;color:var(--navy);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.92}
+
+  /* teacher */
+  .teacher{background:var(--navy2);color:#dde3ee}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,#22355a,#14203a);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.34)}
+  .tc-photo .fl{position:absolute;font-size:44px;color:rgba(203,168,90,.5)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(221,227,238,.55);font-size:10.5px;letter-spacing:.16em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--gold2)}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.07em;color:#fff;margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:#a9b5cb;letter-spacing:.08em;margin-left:8px;font-weight:400}
+  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tc-badges span{font-size:11.5px;color:#e7edf6;border:1px solid rgba(203,168,90,.4);border-radius:999px;padding:5px 14px;letter-spacing:.04em}
+  .tc-info p{font-size:14px;color:#c4cddd;margin-top:16px;line-height:2.08}
+  .tc-info .disc{font-size:11.5px;color:#8592ac;margin-top:12px}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(27,43,72,.05)}
+  .vcard .stars{color:var(--gold);letter-spacing:.16em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.98;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,var(--navy2),var(--navy) 72%);position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:var(--gold2)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#c9d2e2;font-size:14px;margin-bottom:34px;position:relative;z-index:1}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#e4e9f2}
+  .frow .req{color:var(--gold2);font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.09);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold2);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#20130a;font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.09em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.13);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-alt{text-align:center;margin-top:20px;position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .rsv-alt a{color:#20130a;background:var(--gold-soft);font-size:12.5px;letter-spacing:.04em;text-decoration:none;padding:10px 20px;border-radius:999px;border:1px solid rgba(203,168,90,.5);transition:.25s}
+  .rsv-alt a:hover{background:var(--gold2);color:#20130a}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#9fabc2;margin-top:22px;line-height:1.9;position:relative;z-index:1}
+
+  /* access */
+  .access{background:var(--bg)}
+  .ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto 34px}
+  @media(max-width:640px){.ac-grid{grid-template-columns:1fr}}
+  .ac-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:0 8px 22px rgba(27,43,72,.05)}
+  .ac-card .area{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:8px}
+  .ac-card h3{font-size:19px;font-weight:600;color:var(--navy);letter-spacing:.06em;margin-bottom:10px}
+  .ac-card p{font-size:13.4px;color:var(--sub);line-height:1.95}
+  table.info{width:100%;border-collapse:collapse;max-width:640px;margin:0 auto}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:30%;color:var(--sub);font-weight:600;letter-spacing:.04em}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:linear-gradient(150deg,var(--navy2),var(--navy));color:#b7c1d5;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:17px;letter-spacing:.12em;color:#fff;font-weight:600;line-height:1.5}
+  footer .fsub{font-size:9.5px;letter-spacing:.28em;color:var(--gold2);margin-top:6px}
+  footer .fnote{font-size:11.5px;color:#8e99b1;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ご提案用のデザイン案（サンプル）</b>です ・ <b>2026年7月30日</b>までの限定公開</div>
+
+<header id="hd">
+  <div class="logo">カリグラフィーと絵付けとクロスステッチの小さなお教室<small>IKEGAMI ・ AKASAKA</small></div>
+  <nav>
+    <a href="#concept">お教室について</a>
+    <a href="#lesson">3つのレッスン</a>
+    <a href="#trial">体験レッスン</a>
+    <a href="#access">アクセス</a>
+    <a href="#reserve" class="cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">東京・池上／赤坂 ｜ カリグラフィー・絵付け・クロスステッチ</span>
+    <h1 class="mincho">一文字ずつ、<br><span>丁寧に</span>書く時間を。</h1>
+    <p>ペン先が紙を走る、静かな音。少人数の小さなお教室で、カリグラフィー・絵付け・クロスステッチを、あなたのペースでゆっくりと。慌ただしい毎日から少し離れて、手仕事に向き合うひとときを。</p>
+    <div class="hero-cta">
+      <a href="#trial" class="btn btn-primary">体験レッスンを見る →</a>
+      <a href="#lesson" class="btn btn-ghost">3つのレッスン</a>
+    </div>
+    <div class="hero-badges">
+      <span>❖ 体験レッスン <b>4,000円</b>（約2時間）</span>
+      <span>❖ <b>少人数制</b>でゆったり</span>
+      <span>❖ 池上・赤坂の2エリア</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <div class="cnc">
+    <div class="rule reveal"></div>
+    <div class="sec-head reveal" style="margin-bottom:28px"><span class="en">CONCEPT</span><h2 class="mincho">丁寧に書く時間を、大切に。</h2></div>
+    <p class="lead reveal mincho">上手に仕上げることよりも、<br>一文字、ひと針に<b>心を込める時間</b>を。<br>その静けさが、日々の暮らしを<br>そっと豊かにしてくれます。</p>
+    <p class="body reveal">当教室は、カリグラフィー・絵付け・クロスステッチの3つを学べる、小さなお教室です。少人数制だからこそ、ひとりおひとりのペースに寄り添い、道具の持ち方から丁寧にお伝えします。「きれいに書けた」「かたちになった」——その小さな喜びを、落ち着いた空気の中で味わっていただけます。初めての方も、久しぶりに手仕事を再開したい方も、どうぞお気軽にいらしてください。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">❖</span><p>手仕事で、ゆったりとした自分の時間を過ごしたい</p></div>
+    <div class="tg reveal d1"><span class="ic">❖</span><p>美しい文字やあしらいに、前から憧れていた</p></div>
+    <div class="tg reveal d2"><span class="ic">❖</span><p>大人数より、少人数で落ち着いて教わりたい</p></div>
+    <div class="tg reveal"><span class="ic">❖</span><p>不器用だけれど、一から丁寧に習ってみたい</p></div>
+    <div class="tg reveal d1"><span class="ic">❖</span><p>贈りものや暮らしを、手づくりで彩りたい</p></div>
+    <div class="tg reveal d2"><span class="ic">❖</span><p>まずは体験で、雰囲気を確かめてから決めたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">ひとつでも心が動いたなら、<b>まずは体験レッスン</b>からどうぞ。</p>
+</section>
+
+<!-- lessons -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">3 LESSONS</span><h2 class="mincho">3つのレッスン</h2><p>気になるものを、ひとつずつ。かけもちも歓迎です</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="ph"><img src="images/calligraphy.jpg" alt="カリグラフィー（イメージ）"><span class="badge">CALLIGRAPHY</span></div>
+      <div class="body">
+        <h3 class="mincho">カリグラフィー</h3>
+        <p>専用のペンで、美しい西洋書体を一文字ずつ。ペンの持ち方や基本のストロークから丁寧にお伝えします。カードやお名前など、暮らしに使える作品づくりも楽しめます。</p>
+        <span class="tag">美しい文字を書く</span>
+      </div>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="ph"><img src="images/painting.jpg" alt="絵付け（イメージ）"><span class="badge">PORCELAIN PAINTING</span></div>
+      <div class="body">
+        <h3 class="mincho">絵付け</h3>
+        <p>白い器に、筆でやさしく絵柄を描いていきます。花や小さなモチーフを、自分の手で。世界にひとつだけの器は、毎日の食卓をそっと特別にしてくれます。</p>
+        <span class="tag">器を彩る</span>
+      </div>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="ph"><img src="images/crossstitch.jpg" alt="クロスステッチ（イメージ）"><span class="badge">CROSS STITCH</span></div>
+      <div class="body">
+        <h3 class="mincho">クロスステッチ</h3>
+        <p>糸と針で、ひと針ずつ「×」を重ねて図案を仕上げる刺繍です。無心で手を動かす心地よさが魅力。小物やインテリアなど、飾って楽しめる作品に仕上がります。</p>
+        <span class="tag">ひと針ずつ刺す</span>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※レッスン内容はデザイン案の一例です。実際のカリキュラム・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- trial feature -->
+<section class="trial" id="trial">
+  <div class="ft-wrap">
+    <div class="ft-info reveal">
+      <span class="en">TRIAL LESSON</span>
+      <h2 class="mincho">まずは、<span>体験レッスン</span>から。</h2>
+      <p>「続けられるかしら」「わたしにできるかしら」——その一歩の前に、<b>約2時間の体験レッスン</b>をご用意しています。3つのレッスンから気になるものを選んで、道具はこちらでご用意。静かな空気の中で、手仕事の心地よさをまず感じてください。</p>
+      <div class="ft-price">
+        <span class="lbl">体験レッスン</span>
+        <span class="num">4,000<small>円（約2時間・税込）</small></span>
+      </div>
+      <p class="ft-note">初めての方も、道具の持ち方から丁寧にお伝えします。</p>
+      <div class="ft-btn"><a href="#reserve">体験レッスンを申し込む →</a></div>
+    </div>
+    <div class="ft-ph reveal"><img src="images/atelier.jpg" alt="お教室の道具（イメージ）"></div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">このお教室が選ばれる理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🕊</div>
+      <h3 class="mincho">少人数でゆったり</h3>
+      <p>少人数制だからこそ、ひとりおひとりに目が届きます。周りを気にせず、自分のペースで。落ち着いた空気の中で、じっくり手仕事に向き合えます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">✒</div>
+      <h3 class="mincho">3つの手仕事に対応</h3>
+      <p>カリグラフィー・絵付け・クロスステッチ。ひとつのお教室で、気になる手仕事を選べます。かけもちや、季節に合わせた楽しみ方も自由です。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🌿</div>
+      <h3 class="mincho">初めてでも丁寧に</h3>
+      <p>道具の持ち方や基本から、ひとつずつ丁寧にお伝えします。不器用と感じている方こそ、「かたちになった」喜びを大切にしています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">❖</div>
+      <span>PHOTO ─ 講師・作品（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">小さなお教室 講師<small>Instructor</small></h3>
+      <div class="tc-badges">
+        <span>カリグラフィー</span>
+        <span>絵付け</span>
+        <span>クロスステッチ</span>
+      </div>
+      <p>「丁寧に書く・つくる時間」そのものが、日々の心をととのえてくれる——そう感じて、この小さなお教室をひらきました。上手・下手ではなく、手を動かすうちに生まれる小さな夢中を、いちばん大切にしています。少人数だからこそ、ひとりおひとりに寄り添い、道具の持ち方から一緒に、ゆっくり進めていきます。</p>
+      <p class="disc">※お名前・ご経歴はサンプルです。実際の内容に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>不器用で心配でしたが、ペンの持ち方から教えていただき、初回でカードが一枚仕上がりました。静かで落ち着ける時間が、何よりのごほうびです。</p>
+      <div class="who">40代・女性／カリグラフィー</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>自分で描いた器で、毎朝コーヒーを飲むのが楽しみになりました。少人数でゆっくり教われるので、通うたびに気持ちがほどけます。</p>
+      <div class="who">50代・女性／絵付け</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>ひと針ずつ刺していると、いつのまにか無心に。仕上がった作品を部屋に飾ると、手仕事っていいなと実感します。体験から始めて大正解でした。</p>
+      <div class="who">30代・女性／クロスステッチ</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL & CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは体験レッスンから。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>カリグラフィー</option>
+          <option>絵付け</option>
+          <option>クロスステッチ</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望のエリア</label>
+        <select name="area">
+          <option value="">選択してください</option>
+          <option>池上（大田区）</option>
+          <option>赤坂（港区）</option>
+          <option>どちらでも・相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="手仕事のご経験や、ご希望の曜日、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">❖ ご入力ありがとうございます。メールソフトが立ち上がり、宛先と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <div class="rsv-alt reveal">
+    <a href="mailto:miekoorange@gmail.com?subject=%E4%BD%93%E9%A8%93%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">✉ メールでお問い合わせ</a>
+    <a href="#lesson">❖ レッスンをもう一度見る</a>
+  </div>
+  <p class="rsv-tech reveal">🔒 お問い合わせは、お教室へ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。公式LINEでのお問い合わせにも対応いたします。</p>
+</section>
+
+<!-- access -->
+<section class="access" id="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">2つのエリアで開催</h2></div>
+  <div class="ac-grid">
+    <div class="ac-card reveal">
+      <div class="area">AREA 01</div>
+      <h3 class="mincho">池上（東京都大田区）</h3>
+      <p>落ち着いた住宅街の一角で、少人数のレッスンを開催しています。詳しい会場は、お申し込みいただいた方にご案内いたします。</p>
+    </div>
+    <div class="ac-card reveal d1">
+      <div class="area">AREA 02</div>
+      <h3 class="mincho">赤坂（東京都港区）</h3>
+      <p>都心でアクセスしやすい赤坂でも開催しています。お仕事帰りや、お出かけのついでにも通いやすいエリアです。詳しい会場は申込後にご案内します。</p>
+    </div>
+  </div>
+  <table class="info reveal">
+    <tr><th>お教室名</th><td>カリグラフィーと絵付けとクロスステッチの小さなお教室</td></tr>
+    <tr><th>レッスン</th><td>カリグラフィー／絵付け／クロスステッチ</td></tr>
+    <tr><th>エリア</th><td>東京都大田区池上・港区赤坂（詳細はお申し込み後にご案内）</td></tr>
+    <tr><th>体験レッスン</th><td>4,000円（約2時間・税込）</td></tr>
+    <tr><th>お問い合わせ</th><td>miekoorange@gmail.com ／ 公式LINE</td></tr>
+  </table>
+  <p class="sample-inline reveal">※所在地・レッスン時間・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">カリグラフィーと絵付けとクロスステッチの小さなお教室</div>
+  <div class="fsub">IKEGAMI ・ AKASAKA</div>
+  <p class="fnote">こちらはご提案用のデザイン案（サンプル）です。2026年7月30日までの限定公開。<br>掲載の文章・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var name=(f.name.value||'').trim();
+    var mail=(f.mail.value||'').trim();
+    var lesson=f.lesson.value||'（未選択）';
+    var area=f.area.value||'（未選択）';
+    var note=(f.note.value||'').trim()||'（特になし）';
+    var subject='体験レッスンのお申し込み';
+    var body=
+      'ご担当者さま\n\n'+
+      '体験レッスンを申し込みます。\n\n'+
+      '■お名前：'+name+'\n'+
+      '■メール：'+mail+'\n'+
+      '■ご希望のレッスン：'+lesson+'\n'+
+      '■ご希望のエリア：'+area+'\n'+
+      '■ご質問・ご希望：\n'+note+'\n';
+    var href='mailto:miekoorange@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    window.location.href=href;
+  });
+</script>
+</body>
+</html>

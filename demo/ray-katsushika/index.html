@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>ポーセラーツ・SurDecor教室 Ray｜東京都葛飾区の教室（デザイン案・サンプル）</title>
+<meta name="description" content="東京都葛飾区青戸のポーセラーツ・SurDecor教室Ray。白磁の器に絵付けを楽しむ教室です。趣味の1枚から資格取得まで。青砥駅から徒歩5分。体験随時受付。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#fbf4f5;
+    --panel:#ffffff;
+    --pinksoft:#f6e3e9;
+    --pink:#d597a6;
+    --pink2:#e6b4c0;
+    --rose:#b06d7d;
+    --rose2:#95576a;
+    --gold:#c3a367;
+    --gold2:#d8bd85;
+    --ink:#574a4e;
+    --sub:#9c8a90;
+    --line:rgba(176,109,125,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.045em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{display:block;max-width:100%}
+
+  .sample-bar{background:linear-gradient(90deg,#95576a,#b8798a);color:#fbeef1;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.06em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#f4d3c0}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(251,244,245,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(251,244,245,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:19px;letter-spacing:.14em;color:var(--rose2);font-weight:600}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.28em;color:var(--gold);margin-top:3px}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--rose);border-color:var(--rose)}
+  nav a.cta{background:var(--rose);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.06em;box-shadow:0 8px 18px rgba(176,109,125,.32)}
+  nav a.cta:hover{background:var(--rose2);color:#fff;transform:translateY(-1px)}
+  @media(max-width:880px){nav a:not(.cta){display:none}}
+
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(103deg,rgba(103,58,72,.72) 26%,rgba(150,90,108,.28) 100%),url("hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:640px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.24em;color:#f4d3c0;margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:#f4d3c0}
+  .hero h1{font-size:clamp(28px,5.4vw,50px);font-weight:600;line-height:1.62;letter-spacing:.06em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.32)}
+  .hero h1 span{color:#f4d3c0}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.94);max-width:34em}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;transition:.3s}
+  .btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink2));color:#5c3542;font-weight:600;box-shadow:0 12px 26px rgba(213,151,166,.5)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{border-color:#f4d3c0;color:#f4d3c0}
+  .hero-badges{margin-top:30px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.9)}
+  .hero-badges b{color:#f4d3c0}
+
+  section{padding:clamp(64px,9vw,116px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:11px;letter-spacing:.34em;color:var(--gold);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.09em;color:var(--rose2)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  .target{background:linear-gradient(180deg,var(--bg),#f6e9ec)}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 22px rgba(176,109,125,.06)}
+  .tg .ic{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--pinksoft);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .tg p{font-size:13.8px;line-height:1.85}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--rose2);letter-spacing:.05em}
+  .tg-foot b{color:var(--rose);font-weight:600}
+
+  .method{background:linear-gradient(160deg,#ffffff,#fbeef1)}
+  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:780px){.mth-wrap{grid-template-columns:1fr;gap:28px}}
+  .mth-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 22px 48px rgba(176,109,125,.2)}
+  .mth-ph img{width:100%;height:100%;object-fit:cover}
+  .mth-info .en{font-size:11px;letter-spacing:.34em;color:var(--gold);display:block;margin-bottom:12px}
+  .mth-info h2{font-size:clamp(21px,3.1vw,29px);font-weight:600;letter-spacing:.06em;color:var(--rose2);line-height:1.6}
+  .mth-info p{margin-top:18px;font-size:14px;color:var(--ink);line-height:2.1}
+  .mth-info p b{color:var(--rose);font-weight:600}
+
+  .course{background:var(--bg)}
+  .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:transform .35s,box-shadow .35s;box-shadow:0 10px 26px rgba(176,109,125,.07)}
+  .ccard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(176,109,125,.16)}
+  .ccard .ic{width:56px;height:56px;border-radius:15px;background:linear-gradient(135deg,var(--pinksoft),#f0d3dc);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+  .ccard h3{font-size:17.5px;font-weight:600;color:var(--rose2);letter-spacing:.03em;margin-bottom:9px;line-height:1.5}
+  .ccard p{font-size:13.4px;color:var(--sub);line-height:1.9}
+  .ccard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.05em;color:var(--rose);border:1px solid rgba(176,109,125,.35);border-radius:999px;padding:4px 12px}
+  .c-extra{max-width:720px;margin:34px auto 0;background:linear-gradient(135deg,#fff,#faeef2);border:1px solid var(--line);border-radius:18px;padding:26px 30px;text-align:center}
+  .c-extra .k{font-size:11px;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:8px}
+  .c-extra h3{font-size:18px;color:var(--rose2);font-weight:600;letter-spacing:.04em;margin-bottom:8px}
+  .c-extra p{font-size:13.4px;color:var(--sub);line-height:1.9}
+  .c-note{text-align:center;margin-top:26px;font-size:13px;color:var(--sub)}
+
+  .reasons{background:linear-gradient(180deg,#f6e9ec,var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.2em;color:var(--gold);margin-bottom:8px}
+  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:50%;background:var(--pinksoft);display:flex;align-items:center;justify-content:center;font-size:27px}
+  .rs h3{font-size:17px;font-weight:600;letter-spacing:.03em;color:var(--rose2);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+
+  .works{background:linear-gradient(160deg,#95576a,#6f3f4f);color:#f6e4e9}
+  .wk-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:780px){.wk-wrap{grid-template-columns:1fr;gap:28px}}
+  .wk-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 22px 48px rgba(0,0,0,.32)}
+  .wk-ph img{width:100%;height:100%;object-fit:cover}
+  .wk-info .en{font-size:11px;letter-spacing:.34em;color:var(--gold2);display:block;margin-bottom:12px}
+  .wk-info h2{font-size:clamp(21px,3.1vw,28px);font-weight:600;letter-spacing:.05em;color:#fff;line-height:1.6}
+  .wk-info p{margin-top:18px;font-size:14px;color:#eccdd6;line-height:2.05}
+  .wk-badge{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(216,189,133,.5);border-radius:14px;padding:14px 20px}
+  .wk-badge .em{font-size:22px}
+  .wk-badge b{color:var(--gold2);font-weight:600;font-size:13.5px;letter-spacing:.04em}
+  .wk-badge small{display:block;color:#e4c4ce;font-size:11.5px;margin-top:2px}
+
+  .teacher{background:var(--panel)}
+  .tc-wrap{display:grid;grid-template-columns:280px 1fr;gap:46px;max-width:900px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:28px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,#e7b7c1,#c88a99);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(176,109,125,.28)}
+  .tc-photo .mk{position:absolute;font-size:46px;color:rgba(255,255,255,.42)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:10.5px;letter-spacing:.16em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--gold)}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.06em;color:var(--rose2);margin:8px 0 6px}
+  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-left:8px;font-weight:400}
+  .tc-info .lic{display:inline-block;margin-top:6px;font-size:11.5px;color:var(--rose);border:1px solid rgba(176,109,125,.3);border-radius:999px;padding:5px 14px;letter-spacing:.05em}
+  .tc-info p{font-size:14px;color:var(--ink);margin-top:16px;line-height:2.05}
+
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:0 10px 26px rgba(176,109,125,.06)}
+  .vcard .stars{color:var(--pink);letter-spacing:.18em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+
+  .contact{background:linear-gradient(160deg,#95576a,#6f3f4f);color:#f6e4e9}
+  .contact .sec-head .en{color:var(--gold2)}
+  .contact .sec-head h2{color:#fff}
+  .ct-sub{text-align:center;color:#e4c4ce;font-size:14px;margin-bottom:38px;line-height:2}
+  .ct-actions{max-width:460px;margin:0 auto 30px}
+  .ct-btn{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;padding:24px 16px;border-radius:16px;transition:.3s;text-align:center;background:linear-gradient(135deg,var(--pink),var(--pink2));color:#5c3542}
+  .ct-btn:hover{transform:translateY(-2px)}
+  .ct-btn .lb{font-size:11.5px;letter-spacing:.12em}
+  .ct-btn .vl{font-size:18px;font-weight:600;letter-spacing:.03em}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .fhd{text-align:center;font-size:13px;color:#e4c4ce;letter-spacing:.04em;margin-bottom:2px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#f6e4e9}
+  .frow .req{color:var(--gold2);font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.1);color:#fff;width:100%}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold2);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:520px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:linear-gradient(135deg,var(--pink),var(--pink2));color:#5c3542;font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.08em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px)}
+  .ct-tech{text-align:center;font-size:11.5px;color:#d3adb8;margin-top:22px;line-height:1.9}
+
+  .access{background:var(--panel)}
+  .acc-wrap{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:30%;color:var(--sub);font-weight:600;letter-spacing:.04em;white-space:nowrap}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:11px;letter-spacing:.16em;background:linear-gradient(135deg,#f4dee5,#ecc9d4);text-align:center;padding:20px}
+
+  footer{background:#6f3f4f;color:#d9bcc4;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:21px;letter-spacing:.1em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10px;letter-spacing:.28em;color:var(--gold2);margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#b8949e;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ポーセラーツ・SurDecor教室 Ray 様</b> へのご提案用デザイン案（サンプル）です ・ <b>2026年8月7日まで</b>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">Ray<small>PORCELARTS &amp; SURDECOR</small></div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#course">コース</a>
+    <a href="#works">実績</a>
+    <a href="#teacher">講師</a>
+    <a href="#contact" class="cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">東京都葛飾区・青砥 ｜ ポーセラーツ＆SurDecor教室</span>
+    <h1 class="mincho">白い器に、<br><span>あなたらしさ</span>を描く。</h1>
+    <p>真っ白な磁器に、転写紙や絵の具で色をのせて。世界にひとつの器が生まれる、ポーセラーツ。趣味で楽しむ方から資格取得を目指す方まで。葛飾区青戸の教室、Rayです。</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">体験・お問い合わせ →</a>
+      <a href="#course" class="btn btn-ghost">コースを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>◇ 趣味〜<b>資格取得</b></span>
+      <span>◇ <b>SurDecor</b>も学べる</span>
+      <span>◇ 青砥駅<b>徒歩5分</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">◇</span><p>自分の手で、うつわや小物を作ってみたい</p></div>
+    <div class="tg reveal d1"><span class="ic">◇</span><p>絵付けやハンドメイドに、前から憧れていた</p></div>
+    <div class="tg reveal d2"><span class="ic">◇</span><p>集中できる、自分だけの時間がほしい</p></div>
+    <div class="tg reveal"><span class="ic">◇</span><p>おうちで使う器を、好きな色・柄で揃えたい</p></div>
+    <div class="tg reveal d1"><span class="ic">◇</span><p>贈り物に、心のこもった手作りを添えたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◇</span><p>いつかは資格を取って、仕事にもつなげたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">絵心がなくても大丈夫。<b>白い器の前に座るところ</b>から、はじめましょう。</p>
+</section>
+
+<!-- method -->
+<section class="method" id="method">
+  <div class="mth-wrap">
+    <div class="mth-ph reveal"><img src="craft.jpg" alt="白磁に絵付けをするイメージ"></div>
+    <div class="mth-info reveal">
+      <span class="en">WHAT IS PORCELARTS</span>
+      <h2 class="mincho">転写紙と絵の具で、<br>白い器を彩る手仕事。</h2>
+      <p>ポーセラーツは、白い磁器（白磁）に<b>転写紙や上絵の具</b>で模様をのせ、窯で焼き上げる絵付けのアート。難しい技術は要りません。色や柄を選び、貼って、描いて——だから<b>初めての方でも、その日から作品が生まれます</b>。</p>
+      <p>Rayでは、気軽に楽しむ趣味の1枚から、SurDecorの技法、資格取得コースまでご用意。あなたの「作りたい」に、ていねいに寄り添います。</p>
+    </div>
+  </div>
+</section>
+
+<!-- course -->
+<section class="course" id="course">
+  <div class="sec-head reveal"><span class="en">COURSE</span><h2 class="mincho">コースのご案内</h2><p>気軽な1枚から、資格取得まで。目的に合わせて選べます</p></div>
+  <div class="c-grid">
+    <div class="ccard reveal">
+      <div class="ic">🍽️</div>
+      <h3 class="mincho">趣味コース</h3>
+      <p>まずは楽しく1作品。器やプレートに、好きな色と柄で。初めての方も、その日から作れます。</p>
+      <span class="tag">初心者歓迎</span>
+    </div>
+    <div class="ccard reveal d1">
+      <div class="ic">🎨</div>
+      <h3 class="mincho">転写紙と上絵の具コース</h3>
+      <p>転写紙の貼り方から、上絵の具での彩色まで。表現の幅がぐんと広がる新カリキュラムです。</p>
+      <span class="tag">ステップアップ</span>
+    </div>
+    <div class="ccard reveal d2">
+      <div class="ic">✨</div>
+      <h3 class="mincho">SurDecor<br>コース</h3>
+      <p>絵の具を立体的に盛る華やかな装飾技法。作品にぐっと奥行きが出て、特別な一枚になります。</p>
+      <span class="tag">技法を深める</span>
+    </div>
+    <div class="ccard reveal d3">
+      <div class="ic">🎓</div>
+      <h3 class="mincho">インストラクター<br>資格取得コース</h3>
+      <p>基礎から体系的に学び、資格取得へ。教える側・作品づくりを仕事にしたい方に。</p>
+      <span class="tag">資格取得</span>
+    </div>
+  </div>
+  <div class="c-extra reveal">
+    <span class="k">＋ OPTION</span>
+    <h3 class="mincho">まずは体験レッスンから</h3>
+    <p>「絵心がなくて…」という方こそ大歓迎です。転写紙を選んで貼るところからご一緒しますので、初めてでもその日に1作品が仕上がります。</p>
+  </div>
+  <p class="c-note reveal">くわしいコース内容・料金は、お問い合わせ時にご案内いたします。</p>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">選ばれる3つの理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🎨</div>
+      <h3 class="mincho">ポーセラーツとSurDecor</h3>
+      <p>絵付けだけでなく、立体的な装飾技法まで。ひとつの教室で表現の幅を広げていけます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🌸</div>
+      <h3 class="mincho">趣味から資格まで</h3>
+      <p>気軽な1枚から、資格取得コースまで。新カリキュラムも展開。「もっと」に応えられます。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🚉</div>
+      <h3 class="mincho">通いやすい立地</h3>
+      <p>青砥駅から徒歩5分。お出かけのついでにも寄りやすい、通いやすさです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- works -->
+<section class="works" id="works">
+  <div class="wk-wrap">
+    <div class="wk-ph reveal"><img src="works.jpg" alt="ポーセラーツの作品イメージ"></div>
+    <div class="wk-info reveal">
+      <span class="en">WORKS ・ ACHIEVEMENT</span>
+      <h2 class="mincho">その一枚が、<br>作品として認められる場所へ。</h2>
+      <p>Rayの作品づくりは、基礎をていねいに積み重ねることから。だからこそ、飾って終わりではなく「毎日使いたくなる」一枚が生まれます。</p>
+      <div class="wk-badge">
+        <span class="em">🏆</span>
+        <div><b>※ 実績・受賞歴が入ります</b><small>掲載歴や資格などがあれば、ここに入れてお納めします</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="mk" aria-hidden="true">❀</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">Mika<small>主宰・講師</small></h3>
+      <span class="lic">ポーセラーツ インストラクター</span>
+      <p>白い器に色をのせる、その最初のわくわくを、一人でも多くの方に。Rayでは、初めての方が「できた！」と笑顔になる瞬間を、何より大切にしています。趣味として楽しむ時間も、資格取得を目指す学びも、あなたのペースに合わせてていねいに。まずは体験で、白磁に触れる心地よさを感じてみてください。</p>
+      <p style="font-size:11.5px;color:var(--sub);margin-top:12px">※お名前・ご経歴はデザイン見本です。実際の内容に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>絵は苦手でしたが、転写紙を使うので想像以上にきれいに仕上がって感動。自分で作った器で毎朝コーヒーを飲んでいます。</p>
+      <div class="who">40代・女性（趣味コース）</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>集中している時間が心地よくて、通うのが楽しみに。少しずつ技法が増えていくのがうれしいです。</p>
+      <div class="who">50代・女性（装飾コース）</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>趣味で始めましたが、今は資格取得を目指しています。基礎からきちんと教われるので安心です。</p>
+      <div class="who">30代・女性（資格取得コース）</div>
+    </div>
+  </div>
+  <p class="c-note reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="ct-sub reveal">体験レッスンのご予約、コースやお日にちのご相談など、<br>お気軽にお問い合わせください。</p>
+  <div class="ct-actions reveal">
+    <a href="mailto:ray1202info@gmail.com?subject=体験・お問い合わせ%EF%BC%88ポーセラーツ・SurDecor教室 Ray%EF%BC%89&body=お名前%EF%BC%9A%0D%0Aご希望のコース%EF%BC%9A%0D%0Aご希望の曜日・時間帯%EF%BC%9A%0D%0Aご質問など%EF%BC%9A%0D%0A" class="ct-btn">
+      <span class="lb">✉ メールで問い合わせる</span>
+      <span class="vl">ray1202info@gmail.com</span>
+    </a>
+  </div>
+
+  <form class="reveal" id="ctForm" novalidate>
+    <p class="fhd">下のフォームからもお送りいただけます（メールアプリが開きます）</p>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>ご希望のコース</label>
+        <select name="course">
+          <option value="">選択してください</option>
+          <option>趣味コース</option>
+          <option>転写紙と上絵の具コース</option>
+          <option>装飾コース</option>
+          <option>インストラクター資格取得コース</option>
+          <option>SurDecorコース</option>
+          <option>まだ決めていない／相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご希望の曜日・時間帯（任意）</label><input type="text" name="when" placeholder="例）平日の午前中、土曜の午後 など"></div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="作ってみたいもの、ポーセラーツのご経験など、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="ct-tech reveal">🔒 送信ボタンを押すと、入力内容が入ったメールが自動で作成されます。<br>宛先・件名も入力済みなので、そのまま送信するだけ。ホームページとは別に、教室へ直接メールで届きます。</p>
+  </form>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>ポーセラーツ・SurDecor教室 Ray</td></tr>
+      <tr><th>エリア</th><td>東京都葛飾区青戸</td></tr>
+      <tr><th>アクセス</th><td>青砥駅から徒歩5分</td></tr>
+      <tr><th>コース</th><td>趣味／転写紙と上絵の具／SurDecor／資格取得</td></tr>
+      <tr><th>お問い合わせ</th><td>ray1202info@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります<br>（東京都葛飾区／JR葛飾駅 徒歩12分）</div>
+  </div>
+  <p class="c-note reveal">※詳しい所在地・レッスン日時などは、お打ち合わせの内容に合わせてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">Ray</div>
+  <div class="fsub">PORCELARTS ・ OKAZAKI</div>
+  <p class="fnote">こちらは ポーセラーツ・SurDecor教室 Ray 様 へのご提案用デザイン案（サンプル）です。<br>掲載の写真はイメージ、生徒さんの声・講師名の一部はデザイン見本です。実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('ctForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var name=(f.name.value||'').trim();
+    var course=f.course.value||'';
+    var when=(f.when.value||'').trim();
+    var note=(f.note.value||'').trim();
+    var body='お名前：'+name+'\r\n'
+      +'ご希望のコース：'+course+'\r\n'
+      +'ご希望の曜日・時間帯：'+when+'\r\n'
+      +'ご質問など：'+note+'\r\n';
+    var url='mailto:ray1202info@gmail.com'
+      +'?subject='+encodeURIComponent('体験・お問い合わせ（ポーセラーツ・SurDecor教室 Ray）')
+      +'&body='+encodeURIComponent(body);
+    window.location.href=url;
+  });
+</script>
+</body>
+</html>

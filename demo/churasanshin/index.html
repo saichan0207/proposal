@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>美ら三線サークル｜福岡県春日市の沖縄三線教室・初心者歓迎（ご提案用デザイン案・サンプル）</title>
+<meta name="description" content="福岡県春日市・春日市ふれあい文化センターで開催する沖縄三線教室 美ら三線サークル。楽譜が読めなくても大丈夫。沖縄民謡・舞踊曲を、初心者から経験者の再スタートまで丁寧に。2026年度 新規受講生募集中。">
+<style>
+  :root{
+    /* 沖縄の色：白い砂・空・海・ハイビスカス・太陽 */
+    --paper:#fefbf4;      /* 白い砂 */
+    --paper2:#e9f8f8;     /* 遠浅の海 */
+    --panel:#ffffff;
+    --sky:#7fd6e8;        /* 沖縄の空 */
+    --sea:#00b5c8;        /* 海のターコイズ */
+    --sea-d:#0289a3;      /* 見出し用 */
+    --sea-dd:#046277;     /* 濃い海（反転セクション） */
+    --sea-soft:#d6f3f6;
+    --coral:#f2456b;      /* ハイビスカス */
+    --coral2:#ff7a6b;     /* 夕暮れの赤 */
+    --sun:#ffc233;        /* 太陽 */
+    --ink:#1f4750;
+    --sub:#5f7d85;
+    --line:rgba(2,137,163,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--paper);color:var(--ink);line-height:1.95;letter-spacing:.045em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+
+  .sample-bar{background:linear-gradient(90deg,#046277,#00b5c8);color:#effcfd;text-align:center;font-size:11.5px;padding:7px 14px;letter-spacing:.07em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#ffe0b0;font-weight:600}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;background:rgba(254,251,244,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(254,251,244,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 26px}
+  .logo{font-size:19px;letter-spacing:.16em;color:var(--sea-d);font-weight:700;transition:color .4s,text-shadow .4s}
+  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--coral);margin-top:3px;font-weight:600;transition:color .4s}
+  /* ヒーローの海に重なる間は白抜き。背景が明るいので、下ろすと読めなくなる */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,40,55,.55)}
+  header:not(.scrolled) .logo small{color:#ffe08a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,40,55,.5)}
+  header:not(.scrolled) nav a:not(.cta):hover{color:var(--sun);border-color:var(--sun)}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.12em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--sea);border-color:var(--sea)}
+  nav a.cta{background:var(--coral);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.08em;box-shadow:0 8px 18px rgba(242,69,107,.32)}
+  nav a.cta:hover{background:#dc2f57;color:#fff;transform:translateY(-1px)}
+  @media(max-width:880px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(2,74,95,.62) 0%,rgba(2,110,135,.34) 46%,rgba(0,181,200,.06) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.07);animation:heroZoom 17s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:660px;color:#fff;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.24em;color:#ffd9a6;margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--sun)}
+  .hero h1{font-size:clamp(27px,5.8vw,54px);font-weight:600;line-height:1.55;letter-spacing:.05em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+  .hero h1 .hl{color:var(--sun)}
+  .hero h1 .nb{white-space:nowrap}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.92);max-width:34em;line-height:2.05}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.08em;transition:.3s}
+  .btn-primary{background:linear-gradient(135deg,var(--coral),var(--coral2));color:#fff;font-weight:600;box-shadow:0 12px 26px rgba(242,69,107,.38)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{border-color:var(--sun);color:var(--sun)}
+  .hero-badges{margin-top:32px;display:flex;gap:12px 20px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.9)}
+  .hero-badges span{display:inline-flex;align-items:center;gap:7px}
+  .hero-badges b{color:var(--sun)}
+  .hero-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:1;line-height:0}
+  .hero-wave svg{width:100%;height:70px;display:block}
+
+  section{padding:clamp(70px,10vw,120px) 8vw;position:relative}
+
+  /* ハイビスカスの飾り（写真ではなく描画。どの端末でも軽く、権利の心配もない） */
+  .concept,.lesson,.target{overflow:hidden}
+  .hibi{position:absolute;pointer-events:none;z-index:0;opacity:.13}
+  .hibi svg{display:block;width:100%;height:auto}
+  .hibi-tr{top:-30px;right:-40px;width:210px;transform:rotate(14deg)}
+  .hibi-bl{bottom:-40px;left:-46px;width:240px;transform:rotate(-22deg)}
+  @media(max-width:700px){.hibi{width:140px!important}}
+  .sec-head,.wrap,.ft-grid,.l-grid,.tg-grid,.v-grid{position:relative;z-index:1}
+  /* 見出しの上に咲かせる小さな一輪 */
+  .bloom{display:block;width:34px;height:34px;margin:0 auto 14px}
+  .bloom svg{width:100%;height:100%;display:block}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.34em;color:var(--coral);display:block;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.07em;color:var(--sea-d)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 重要：中身を隠すのは JS が動いているときだけ。
+     JSが動かない・遅い・止まった環境で本文が真っ白に消える事故を防ぐ（2026-07-28 実際に発生） */
+  .reveal{opacity:1;transform:none}
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{background:linear-gradient(180deg,var(--paper),var(--paper2))}
+  .concept .wrap{max-width:730px;margin:0 auto;text-align:center}
+  .concept .lead{font-size:clamp(20px,3vw,28px);color:var(--sea-d);letter-spacing:.08em;line-height:1.9}
+  .concept .lead b{color:var(--coral);font-weight:600}
+  .concept p{font-size:clamp(14px,1.9vw,16px);line-height:2.3;color:var(--ink);margin-top:24px}
+
+  /* features */
+  .features{background:var(--paper2)}
+  .ft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+  .ft{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 28px;text-align:center;transition:transform .35s,box-shadow .35s}
+  .ft:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,137,163,.16)}
+  .ft .ic{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;background:var(--sea-soft);display:flex;align-items:center;justify-content:center}
+  .ft .ic svg{width:30px;height:30px;stroke:var(--sea-d);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .ft h3{font-size:18.5px;font-weight:600;letter-spacing:.04em;color:var(--sea-d);margin-bottom:11px}
+  .ft h3 .em{color:var(--coral)}
+  .ft p{font-size:13.6px;color:var(--sub);line-height:1.95}
+
+  /* policy */
+  .policy{background:var(--sea-d);color:#e7f5f1}
+  .pl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:970px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.pl-wrap{grid-template-columns:1fr;gap:28px}}
+  .pl-ph{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:#0a7f96;box-shadow:0 18px 44px rgba(0,0,0,.3)}
+  .ph-note{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,45,58,.8));color:#eafcff;font-size:11px;letter-spacing:.06em;text-align:center;padding:26px 10px 10px}
+  .pl-ph img{width:100%;height:100%;object-fit:contain;display:block}  /* 楽器を切らない */
+  .pl-info .en{font-size:11px;letter-spacing:.34em;color:var(--sun);display:block;margin-bottom:12px}
+  .pl-info h2{font-size:clamp(22px,3.2vw,29px);font-weight:600;letter-spacing:.05em;color:#fff;line-height:1.6}
+  .pl-info p{margin-top:18px;font-size:14px;color:#c4ddd7;line-height:2.1}
+  .pl-info p b{color:#ffe0b0;font-weight:600}
+
+  /* lesson */
+  .lesson{background:var(--paper)}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:transform .35s,box-shadow .35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(2,137,163,.16)}
+  .lcard .mic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--sea-soft),#a8e8ef);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+  .lcard h3{font-size:18px;font-weight:600;color:var(--sea-d);letter-spacing:.04em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.92}
+  .lcard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.08em;color:var(--coral);border:1px solid rgba(242,69,107,.4);border-radius:999px;padding:4px 12px}
+
+  /* target */
+  .target{background:linear-gradient(180deg,var(--paper2),var(--paper))}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start}
+  .tg .ic{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--sea-soft);color:var(--sea-d);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .tg p{font-size:13.8px;line-height:1.8}
+  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--sea-d);letter-spacing:.05em}
+  .tg-foot b{color:var(--coral);font-weight:600}
+
+  /* teacher */
+  .teacher{background:var(--sea-dd);color:#dcefeb}
+  .tc-wrap{display:grid;grid-template-columns:280px 1fr;gap:46px;max-width:900px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,#0a7f96,#04505f);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.32)}
+  .tc-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .tc-photo .note{position:absolute;font-size:44px;color:rgba(255,194,51,.45)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(220,239,235,.55);font-size:10.5px;letter-spacing:.18em}
+  .tc-info .role{font-size:11px;letter-spacing:.24em;color:var(--sun)}
+  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.07em;color:#fff;margin:8px 0 6px}
+  .tc-info .lic{display:inline-block;margin-top:6px;font-size:11.5px;color:#cfe6e1;border:1px solid rgba(220,239,235,.3);border-radius:999px;padding:5px 14px;letter-spacing:.05em}
+  .tc-info p{font-size:14px;color:#aecdc7;margin-top:16px;line-height:2.05}
+  .tc-info .sample-inline{color:#7fa8a1;text-align:left;margin-top:12px}
+
+
+  /* 教室の様子（実際のお写真） */
+  .gallery{background:var(--paper);overflow:hidden}
+  .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;max-width:1000px;margin:0 auto}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr}}
+  .gal{position:relative;border-radius:18px;overflow:hidden;background:var(--sea-soft);box-shadow:0 14px 34px rgba(2,137,163,.14)}
+  .gal img{width:100%;height:100%;object-fit:cover;display:block}
+  .gal,.gal-a,.gal-b,.gal-c{aspect-ratio:4/3}
+  .gal-b,.gal-c{aspect-ratio:4/3}
+  .gal cap,.gal .cap{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 13px;color:#fff;font-size:12.5px;letter-spacing:.05em;background:linear-gradient(transparent,rgba(0,45,58,.78))}
+
+  /* voice */
+  .voice{background:var(--paper)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+  .vcard .stars{color:var(--sun);letter-spacing:.18em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.05em}
+
+  /* photo band */
+  .photoband{position:relative;min-height:42vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(70px,10vw,110px) 8vw;color:#fff;overflow:hidden}
+  .photoband::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(2,98,119,.42),rgba(2,98,119,.55)),url("images/scene.jpg") center/cover no-repeat;transform:scale(1.02)}
+  .photoband .pb-inner{position:relative;z-index:2;max-width:620px}
+  .photoband .en{font-size:11px;letter-spacing:.34em;color:var(--sun);display:block;margin-bottom:14px}
+  .photoband h2{font-size:clamp(21px,3.2vw,30px);font-weight:600;letter-spacing:.08em;line-height:1.7;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .photoband p{margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.9);line-height:2}
+
+  /* recruit band */
+  .recruit{background:linear-gradient(120deg,var(--coral),var(--coral2));color:#fff;text-align:center;padding:clamp(56px,8vw,84px) 8vw}
+  .recruit .pill{display:inline-block;font-size:11.5px;letter-spacing:.2em;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:6px 18px;margin-bottom:20px}
+  .recruit h2{font-size:clamp(24px,4vw,36px);font-weight:700;letter-spacing:.06em;line-height:1.5}
+  .recruit p{margin-top:16px;font-size:clamp(13.5px,1.8vw,15.5px);color:rgba(255,255,255,.94);max-width:34em;margin-left:auto;margin-right:auto;line-height:2}
+  .recruit .venue{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.06em;background:rgba(255,255,255,.16);border-radius:999px;padding:9px 20px}
+  .recruit .rbtn{margin-top:30px;display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--coral);font-weight:700;text-decoration:none;padding:15px 34px;border-radius:999px;font-size:14.5px;letter-spacing:.08em;box-shadow:0 14px 30px rgba(0,0,0,.18);transition:.3s}
+  .recruit .rbtn:hover{transform:translateY(-2px)}
+
+
+  /* 教室一覧（金城安紀三線教室 全体） */
+  .rooms{background:linear-gradient(180deg,var(--paper2),var(--paper));overflow:hidden}
+  .rooms-lead{max-width:720px;margin:0 auto 34px;text-align:center;font-size:14px;color:var(--sub);line-height:2}
+  .rooms-lead b{color:var(--sea-d)}
+  .area-h{max-width:1040px;margin:38px auto 8px;display:flex;align-items:center;gap:12px}
+  .area-note{max-width:1040px;margin:0 auto 18px;font-size:13px;color:var(--sub);line-height:1.9}
+  .area-note b{color:var(--sea-d)}
+  .rm .area-tag{display:inline-block;font-size:11px;color:var(--sea-d);background:var(--sea-soft);
+    border-radius:999px;padding:3px 10px;margin-left:8px;vertical-align:2px;letter-spacing:.04em}
+  .area-h span{font-size:13px;letter-spacing:.16em;color:#fff;background:var(--sea-d);border-radius:999px;padding:5px 16px;white-space:nowrap}
+  .area-h i{flex:1;height:1px;background:var(--line);display:block}
+  .rm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;max-width:1040px;margin:0 auto}
+  .rm{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;position:relative;transition:transform .3s,box-shadow .3s}
+  .rm:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(2,137,163,.14)}
+  .rm.here{border:2px solid var(--coral);box-shadow:0 14px 30px rgba(242,69,107,.16)}
+  .rm .badge{position:absolute;top:-11px;left:18px;background:var(--coral);color:#fff;font-size:11px;letter-spacing:.08em;border-radius:999px;padding:4px 13px}
+  .rm h3{font-size:17.5px;font-weight:700;color:var(--sea-d);letter-spacing:.04em;margin-bottom:12px;line-height:1.5}
+  .rm dl{display:grid;grid-template-columns:4.6em 1fr;gap:6px 10px;font-size:13.2px;line-height:1.8}
+  .rm dt{color:var(--sub);font-weight:600}
+  .rm dd{color:var(--ink)}
+  .rm .fee{margin-top:13px;display:inline-block;font-size:14px;font-weight:700;color:#fff;background:var(--sea);border-radius:8px;padding:6px 14px;letter-spacing:.03em}
+  .rm .fee.circle{background:var(--sea-d)}
+  .rm .tag{display:inline-block;margin-left:8px;font-size:11px;color:var(--coral);border:1px solid rgba(242,69,107,.4);border-radius:999px;padding:3px 10px;vertical-align:2px}
+  .rooms-tel{max-width:1040px;margin:36px auto 0;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .rooms-tel .lb{font-size:12.5px;letter-spacing:.14em;color:var(--sub)}
+  .rooms-tel a{display:inline-block;margin-top:6px;font-size:clamp(24px,4vw,32px);font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:.04em}
+  .rooms-tel .nm{font-size:13px;color:var(--sub);margin-top:4px}
+
+  /* reserve */
+  .reserve{background:var(--sea-dd)}
+  .reserve .sec-head .en{color:var(--sun)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#aecdc7;font-size:14px;margin-bottom:36px;line-height:2}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#dcefeb}
+  .frow .req{color:var(--sun);font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.5)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--sun);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:linear-gradient(135deg,var(--coral),var(--coral2));color:#fff;font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.1em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.12);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.9}
+  .rsv-ok.show{display:block}
+  .rsv-alt{text-align:center;margin-top:22px;font-size:13px;color:#c4ddd7}
+  .rsv-alt a{color:var(--sun);text-decoration:none;border-bottom:1px solid rgba(255,194,51,.55)}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#7fa8a1;margin-top:18px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--paper)}
+  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.05em}
+  table.info td a{color:var(--sea-d);text-decoration:none;border-bottom:1px solid var(--line)}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--sea-d);font-size:11px;letter-spacing:.18em;background:linear-gradient(135deg,#d6f3f6,#a8e8ef);text-align:center;padding:20px}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px;line-height:1.8}
+
+  footer{background:var(--sea-dd);color:#a9cbc5;text-align:center;padding:52px 20px 32px}
+  footer .fmark{font-size:21px;letter-spacing:.14em;color:#fff;font-weight:700}
+  footer .fsub{font-size:10px;letter-spacing:.3em;color:var(--sun);margin-top:6px}
+  footer .fnote{font-size:11.5px;color:#7fa8a1;margin-top:22px;line-height:1.9}
+
+
+  /* ============================================================
+     動きの追加（2026-07-29）
+     【鉄則】文章そのものは絶対に隠さない。動くのは装飾と「見えている物の位置」だけ。
+     opacity:0 を使うのは html.js が付いているとき（＝JSが確実に動いているとき）に限る。
+     ============================================================ */
+
+  /* ① 波を実際に揺らす（純装飾） */
+  .hero-wave svg{width:200%;animation:waveMove 18s linear infinite}
+  @keyframes waveMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ② ハイビスカスの飾りがゆっくり揺れる（純装飾） */
+  .hibi{animation:sway 11s ease-in-out infinite}
+  .hibi-bl{animation-duration:14s;animation-delay:-4s}
+  @keyframes sway{0%,100%{transform:rotate(14deg) translateY(0)}50%{transform:rotate(9deg) translateY(-12px)}}
+  .hibi-bl{--r:-22deg}
+  @keyframes swayL{0%,100%{transform:rotate(-22deg) translateY(0)}50%{transform:rotate(-16deg) translateY(-14px)}}
+  .hibi-bl{animation-name:swayL}
+  /* 見出しの一輪はふわっと開く */
+  html.js .bloom{transform:scale(.6) rotate(-25deg);opacity:0;transition:transform .8s cubic-bezier(.2,1.3,.4,1),opacity .6s}
+  html:not(.js) .bloom{opacity:1;transform:none}
+  html.js .reveal.in .bloom,html.js .sec-head.in .bloom{transform:none;opacity:1}
+
+  /* ③ 見出しの下に線が伸びる（装飾のみ） */
+  .sec-head h2{position:relative;display:inline-block;padding-bottom:14px}
+  .sec-head h2::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:2px;
+    background:linear-gradient(90deg,var(--sea),var(--coral));transform:translateX(-50%);
+    transition:width .9s cubic-bezier(.22,1,.36,1) .25s;border-radius:2px}
+  .sec-head.in h2::after,.reveal.in h2::after{width:64px}
+  html:not(.js) .sec-head h2::after{width:64px}   /* JSが無い環境では最初から表示 */
+
+  /* ④ ヒーローを順番に持ち上げる
+     アニメーションではなく「クラスが付いたら表示」の形にする。
+     こうすると、動きが一切効かない環境でも .in が付いた瞬間に必ず表示される。
+     （アニメ前提で opacity:0 を置くと、動きが止まった環境で本文が消える。2026-07-28の事故と同じ） */
+  html.js .hero h1 .nb{display:inline-block}
+  html.js .hi{opacity:0;transform:translateY(18px);
+    transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  html.js .hi.in{opacity:1;transform:none}
+
+  /* ⑤ 写真がゆっくり寄る（Ken Burns・見えている物が動くだけ） */
+  .gal img,.pl-ph img{transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+  .gal:hover img,.pl-ph:hover img{transform:scale(1.05)}
+  .gal-a img{animation:kb 26s ease-in-out infinite alternate}
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+
+  /* ⑥ 教室カードが順番に出る（間隔だけ足す。表示自体は reveal の仕組みに乗る） */
+  html.js .rm-grid .rm:nth-child(2){transition-delay:.08s}
+  html.js .rm-grid .rm:nth-child(3){transition-delay:.16s}
+  html.js .rm-grid .rm:nth-child(4){transition-delay:.24s}
+  html.js .rm-grid .rm:nth-child(5){transition-delay:.32s}
+  html.js .rm-grid .rm:nth-child(6){transition-delay:.40s}
+
+  /* ⑦ ボタンに光が走る（装飾のみ） */
+  .btn-primary,.recruit .rbtn,button.submit{position:relative;overflow:hidden}
+  .btn-primary::after,.recruit .rbtn::after,button.submit::after{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+    transform:skewX(-18deg);animation:shine 5.5s ease-in-out infinite}
+  @keyframes shine{0%,72%{left:-120%}88%,100%{left:130%}}
+
+  /* ⑧ 読んだ量がわかる細い線（三線の弦のイメージ） */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;
+    background:linear-gradient(90deg,var(--sea),var(--sun),var(--coral));transition:width .12s linear}
+
+  /* ⑨ カードの浮き上がりを少し上品に */
+  .ft:hover,.lcard:hover,.rm:hover{transform:translateY(-7px)}
+  .ft,.lcard,.rm{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s}
+
+  /* ⑩ 電話番号をそっと呼吸させる（装飾のみ） */
+  .rooms-tel a{transition:transform .4s}
+  .rooms-tel a:hover{transform:scale(1.04)}
+
+  /* 動きを減らす設定の方には、全部止める */
+  @media(prefers-reduced-motion:reduce){
+    .hero-wave svg,.hibi,.gal-a img,.btn-primary::after,.recruit .rbtn::after,button.submit::after{animation:none!important}
+    html.js .hi{opacity:1!important;transform:none!important;transition:none!important}
+    html.js .bloom{opacity:1!important;transform:none!important}
+    .sec-head h2::after{width:64px;transition:none}
+    .progress{display:none}
+  }
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>
+  /* IntersectionObserver が使える環境でだけアニメを有効にする。
+     使えなければ .reveal は最初から表示されたまま（何も隠れない） */
+  if ('IntersectionObserver' in window) document.documentElement.className += ' js';
+</script>
+</head>
+<body>
+
+<div class="progress" id="prg" aria-hidden="true"></div>
+<div class="sample-bar">このページは <b>Web制作 ゆたか</b> による <b>美ら三線サークル 様</b>へのご提案用デザイン案（サンプル）です</div>
+
+<!-- ハイビスカスの図形をひとつだけ定義し、ページ内で使い回す（読み込みを軽くするため） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="hibiscus" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <g id="petals">
+        <path d="M50 52 C36 38 31 20 50 7 C69 20 64 38 50 52 Z"/>
+        <path d="M50 52 C36 38 31 20 50 7 C69 20 64 38 50 52 Z" transform="rotate(72 50 52)"/>
+        <path d="M50 52 C36 38 31 20 50 7 C69 20 64 38 50 52 Z" transform="rotate(144 50 52)"/>
+        <path d="M50 52 C36 38 31 20 50 7 C69 20 64 38 50 52 Z" transform="rotate(216 50 52)"/>
+        <path d="M50 52 C36 38 31 20 50 7 C69 20 64 38 50 52 Z" transform="rotate(288 50 52)"/>
+      </g>
+    </g>
+    <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85">
+      <path d="M50 52 C56 66 62 76 66 84"/>
+    </g>
+    <g fill="currentColor" opacity=".9">
+      <circle cx="66" cy="86" r="3"/><circle cx="60" cy="82" r="2.2"/>
+      <circle cx="71" cy="81" r="2.2"/><circle cx="64" cy="77" r="1.9"/>
+    </g>
+  </symbol>
+</svg>
+
+<header id="hd">
+  <div class="logo">美ら三線サークル<small>CHURA SANSHIN ・ 春日市</small></div>
+  <nav>
+    <a href="#concept">安心のポイント</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#teacher">講師</a>
+    <a href="#rooms">教室一覧</a>
+    <a href="#reserve" class="cta">見学・体験</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow hi" data-e="hero_eyebrow" data-l="トップ：小見出し">福岡県春日市・沖縄三線教室 ｜ 初心者歓迎</span>
+    <h1 class="mincho hi"><span class="nb">三線（さんしん）の</span><br><span class="nb">音色を、<span class="hl">あなたの指</span>で。</span></h1>
+    <p class="hi" data-e="hero_text" data-l="トップ：紹介文">楽譜が読めなくても、大丈夫。美ら三線サークルは、沖縄の唄と三線を、春日市でいちばん気軽に始められる教室です。ゆったりとした島の音色に身をゆだねて、はじめの一音から、ていねいに。</p>
+    <div class="hero-cta hi">
+      <a href="#reserve" class="btn btn-primary">見学・体験を申し込む →</a>
+      <a href="#lesson" class="btn btn-ghost">レッスンを見る</a>
+    </div>
+    <div class="hero-badges hi">
+      <span>♪ <b>楽譜が読めなくてもOK</b></span>
+      <span>♪ <b>2026年度</b> 新規受講生募集中</span>
+      <span>♪ 春日市ふれあい文化センター</span>
+    </div>
+  </div>
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#fefbf4" d="M0,40 C240,72 480,72 720,50 C960,28 1200,28 1440,48 L1440,70 L0,70 Z"></path></svg>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <div class="hibi hibi-tr" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="hibi hibi-bl" style="color:var(--sea)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <span class="bloom" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span>
+      <span class="en">CONCEPT</span><h2 class="mincho" data-e="concept_title" data-l="コンセプト：見出し">楽譜が読めなくても、始められます</h2></div>
+    <p class="lead mincho">「私にできるかな」を、<br><b>「楽しい」</b>に変える場所。</p>
+    <p data-e="concept_text" data-l="コンセプト：本文">三線の楽譜「工工四（くんくんしー）」は、実は漢字と数字で音を追えるやさしい仕組み。五線譜が読めなくても心配いりません。先生の唄と手元を見ながら、耳と指でゆっくり覚えていく——それが沖縄に伝わる三線の学び方です。年齢も経験も問いません。まずは一音、島の風のような音色を、一緒に鳴らしてみましょう。</p>
+  </div>
+</section>
+
+<!-- features -->
+<section class="features" id="features">
+  <div class="sec-head reveal"><span class="bloom" style="color:var(--sea)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span><span class="en">POINT</span><h2 class="mincho" data-e="point_title" data-l="3つの安心：見出し">美ら三線サークルの3つの安心</h2></div>
+  <div class="ft-grid">
+    <div class="ft reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h13a2 2 0 0 1 2 2v12"/><path d="M4 5v14h13"/><path d="M8 9h7M8 13h7"/></svg></div>
+      <h3 class="mincho"><span class="em">楽譜が読めなくてもOK</span></h3>
+      <p data-e="point1_text" data-l="3つの安心①：説明">三線の譜面「工工四」は数字で音が追える仕組み。五線譜の知識はいりません。先生の唄と手元を見ながら、耳と指で自然に覚えていけます。</p>
+    </div>
+    <div class="ft reveal d1">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3c-3 2-4 5-4 7a4 4 0 0 0 8 0c0-2-1-5-4-7z"/><path d="M6 20c2-1 4-1.5 6-1.5s4 .5 6 1.5"/></svg></div>
+      <h3 class="mincho">初心者〜再スタートまで</h3>
+      <p data-e="point2_text" data-l="3つの安心②：説明">まったく初めての方はもちろん、昔ならっていて「もう一度弾きたい」という経験者の再スタートも大歓迎。それぞれのペースを大切にします。</p>
+    </div>
+    <div class="ft reveal d2">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></div>
+      <h3 class="mincho">沖縄民謡・舞踊曲に対応</h3>
+      <p data-e="point3_text" data-l="3つの安心③：説明">「安里屋ユンタ」などの親しみやすい民謡から、「かぎやで風」などの舞踊曲まで。唄って弾く、沖縄音楽の楽しさを幅広く味わえます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- policy -->
+<section class="policy">
+  <div class="pl-wrap">
+    <div class="pl-ph reveal">
+      <img src="images/sanshin.jpg" alt="美ら三線サークルの三線" data-e="photo_sanshin" data-l="写真：三線">
+    </div>
+    <div class="pl-info reveal">
+      <span class="en">OUR HEART</span>
+      <h2 class="mincho" data-e="heart_title" data-l="想い：見出し">沖縄の唄を、<br>春日の街で。</h2>
+      <p>三線の魅力は、上手に弾くことよりも、<b>唄い、奏でる時間そのもの</b>にあります。ゆったりとした音色に合わせて口ずさむうちに、肩の力がふっと抜けていく。そんなひとときを、ここ春日市でお届けしたいと思っています。</p>
+      <p>ひとりで練習するのは心細くても、仲間と一緒なら続けられる。<b>同じ趣味でつながる、あたたかい輪</b>が、あなたを待っています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="hibi hibi-tr" style="color:var(--sea)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="sec-head reveal"><span class="bloom" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><p>はじめの一歩から、舞踊曲まで。あなたに合わせて。</p></div>
+  <div class="l-grid">
+    <div class="lcard reveal">
+      <div class="mic">🎶</div>
+      <h3 class="mincho">はじめての三線</h3>
+      <p>三線の構え方、調弦（ちんだみ）、工工四の読み方から、ていねいに。まったく初めての方が、無理なく一曲を弾けるようになるまで寄り添います。</p>
+      <span class="tag">初心者歓迎</span>
+    </div>
+    <div class="lcard reveal d1">
+      <div class="mic">🌺</div>
+      <h3 class="mincho">沖縄民謡コース</h3>
+      <p>「安里屋ユンタ」「てぃんさぐぬ花」など、親しみやすい沖縄民謡を唄三線で。弾きながら唄う、沖縄音楽ならではの楽しさを味わえます。</p>
+      <span class="tag">唄三線</span>
+    </div>
+    <div class="lcard reveal d2">
+      <div class="mic">🪕</div>
+      <h3 class="mincho">舞踊曲・古典</h3>
+      <p>「かぎやで風」など、琉球舞踊の地方（じかた）としても弾ける曲へ。経験者の再スタートや、次のステップを目指す方にもおすすめです。</p>
+      <span class="tag">経験者・再開の方</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※コース名・内容はデザイン案の一例です。実際のレッスン・曜日・費用に差し替えてお納めします。</p>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="hibi hibi-bl" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="sec-head reveal"><span class="bloom" style="color:var(--sun)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span><span class="en">FOR YOU</span><h2 class="mincho">こんな方を、お待ちしています</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">♪</span><p>沖縄の音楽や文化に、ふれてみたい</p></div>
+    <div class="tg reveal d1"><span class="ic">♪</span><p>楽譜が読めないけれど、楽器を始めてみたい</p></div>
+    <div class="tg reveal d2"><span class="ic">♪</span><p>昔ならった三線を、もう一度弾きたい</p></div>
+    <div class="tg reveal"><span class="ic">♪</span><p>唄いながら弾けるようになりたい</p></div>
+    <div class="tg reveal d1"><span class="ic">♪</span><p>定年後や子育ての合間に、新しい趣味がほしい</p></div>
+    <div class="tg reveal d2"><span class="ic">♪</span><p>同じ趣味の仲間と、楽しくつながりたい</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">年齢も経験も、関係ありません。<b>島の音色を楽しむ気持ち</b>があれば、それで十分です。</p>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <img src="images/teacher.jpg" alt="金城 安紀 講師" data-e="photo_teacher" data-l="写真：講師">
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho" data-e="teacher_name" data-l="講師：お名前">金城 安紀</h3>
+      <span class="lic" data-e="teacher_lic" data-l="講師：肩書き">福岡・熊本で三線教室を主宰／初心者〜経験者まで指導</span>
+      <p data-e="teacher_bio" data-l="講師：プロフィール文">沖縄の唄と三線に魅せられて、その温かさを一人でも多くの方に伝えたい——そんな想いでこの教室を続けています。大切にしているのは、上手・下手よりも「弾いていて楽しい」という気持ち。楽譜が読めない方も、久しぶりに三線に触れる方も、どうぞ安心していらしてください。まずは見学・体験で、島の音色を一緒に鳴らしてみましょう。</p>
+      <p class="sample-inline">※プロフィール文はデザイン案の一例です。ご経歴に差し替えられます。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 教室の様子 -->
+<section class="gallery" id="gallery">
+  <div class="hibi hibi-tr" style="color:var(--sun)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="sec-head reveal">
+    <span class="bloom" style="color:var(--sea)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span>
+    <span class="en">OUR CLASS</span><h2 class="mincho" data-e="gallery_title" data-l="教室の様子：見出し">教室の様子</h2>
+    <p>実際のレッスンと、仲間たちの写真です。</p>
+  </div>
+  <div class="gal-grid">
+    <figure class="gal gal-a reveal"><img src="images/lesson.jpg" alt="美ら三線サークルのレッスン風景" loading="lazy" data-e="photo_lesson" data-l="写真：レッスン風景">
+      <figcaption class="cap" data-e="gallery_cap1" data-l="教室の様子：写真1の説明">譜面台を並べて、みんなで一緒に</figcaption></figure>
+    <figure class="gal gal-b reveal d1"><img src="images/group.jpg" alt="美ら三線サークルの仲間たち" loading="lazy" data-e="photo_group" data-l="写真：仲間たち">
+      <figcaption class="cap" data-e="gallery_cap2" data-l="教室の様子：写真2の説明">同じ趣味でつながる、あたたかい輪</figcaption></figure>
+  </div>
+</section>
+
+<!-- voice -->
+<!-- 受講生の声：実際のお声をいただくまで表示しない（架空の感想は載せない） -->
+<section class="voice" id="voice" hidden>
+  <div class="sec-head reveal"><span class="bloom" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span><span class="en">VOICE</span><h2 class="mincho" data-e="voice_title" data-l="受講生の声：見出し">受講生の声</h2></div>
+  <div class="v-grid"></div>
+</section>
+
+<!-- photo band -->
+<section class="photoband">
+  <div class="pb-inner reveal">
+    <span class="en">OKINAWA</span>
+    <h2 class="mincho">海の向こうから、<br>島の唄がやってくる。</h2>
+    <p>三線の音色にのせて、沖縄のゆったりとした時間を、春日の毎日に。</p>
+  </div>
+</section>
+
+
+<!-- 教室一覧 -->
+<section class="rooms" id="rooms">
+  <div class="hibi hibi-bl" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
+  <div class="sec-head reveal">
+    <span class="bloom" style="color:var(--sun)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span>
+    <span class="en">CLASS LIST</span><h2 class="mincho" data-e="rooms_title" data-l="教室一覧：見出し">教室のご案内</h2>
+  </div>
+  <p class="rooms-lead reveal">美ら三線サークルのほかにも、<b>福岡と熊本で三線教室・サークルを開いています。</b><br>
+  お住まいやご都合に合わせて、通いやすい教室をお選びいただけます。<br>
+  <b>オンラインの個人レッスンもございます。</b>初心者・経験者どなたでも大歓迎です。<br>
+  三線をお持ちでない方もご相談ください。</p>
+
+  <div class="area-h reveal"><span>サークル</span><i></i></div>
+  <p class="area-note reveal">仲間と一緒に、月2回のペースで楽しむ集まりです。<b>月謝4,000円。</b>このページの「美ら三線サークル」もこのグループです。</p>
+  <div class="rm-grid">
+    <div class="rm here reveal"><span class="badge">このページの教室</span>
+      <h3>ふれあい美ら三線サークル<span class="area-tag">福岡</span></h3>
+      <dl><dt>会場</dt><dd>春日ふれあい文化センター<br><span style="font-size:12.4px;color:var(--sub)">福岡県春日市大谷6丁目24番地</span></dd><dt>日時</dt><dd>第1・第3火曜<br>中級 13:00〜14:00／初心者 14:00〜15:00</dd></dl>
+      <span class="fee circle">月謝 4,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>大野城中央サークル<span class="area-tag">福岡</span></h3>
+      <dl><dt>会場</dt><dd>大野城市中央コミュニティセンター</dd><dt>日時</dt><dd>第1・第3水曜 11:30〜13:30</dd></dl>
+      <span class="fee circle">月謝 4,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>大野城三線サークル<span class="area-tag">福岡</span><span class="tag">初心者大歓迎</span></h3>
+      <dl><dt>会場</dt><dd>大野城南コミュニティー</dd><dt>日時</dt><dd>第1・第3木曜 11:00〜12:00</dd></dl>
+      <span class="fee circle">月謝 4,000円</span>
+    </div>
+  </div>
+
+  <div class="area-h reveal"><span>教室</span><i></i></div>
+  <p class="area-note reveal">より本格的に習いたい方向けの教室です。<b>月謝5,000円〜7,000円。</b>初心者の方も、経験者の再スタートも歓迎しています。</p>
+  <div class="rm-grid">
+    <div class="rm reveal">
+      <h3>春日教室<span class="area-tag">福岡</span></h3>
+      <dl><dt>会場</dt><dd>大野城市中央コミュニティ</dd><dt>日時</dt><dd>第1・第3土曜 13:00〜15:00</dd></dl>
+      <span class="fee">月謝 7,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>博多教室<span class="area-tag">福岡</span><span class="tag">中級</span></h3>
+      <dl><dt>会場</dt><dd>出来町集会所<br><span style="font-size:12.4px;color:var(--sub)">福岡県福岡市博多区博多駅前1丁目25-14</span></dd><dt>日時</dt><dd>第1・第3日曜 16:00〜18:00</dd></dl>
+      <span class="fee">月謝 7,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>大野城日曜教室<span class="area-tag">福岡</span><span class="tag">新規開講</span></h3>
+      <dl><dt>会場</dt><dd>大野城中央コミュニティセンター</dd><dt>日時</dt><dd>第1・第3日曜 12:00〜13:00</dd></dl>
+      <span class="fee">月謝 5,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>大野城夜教室<span class="area-tag">福岡</span></h3>
+      <dl><dt>会場</dt><dd>大野城市中央コミュニティ</dd><dt>日時</dt><dd>第1・第3月曜 19:00〜21:00</dd></dl>
+      <span class="fee">月謝 7,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>大橋教室<span class="area-tag">福岡</span></h3>
+      <dl><dt>会場</dt><dd>福岡大橋レンタルスタジオ<br><span style="font-size:12.4px;color:var(--sub)">福岡市南区塩原3-17-12 松尾ビル205号室</span></dd><dt>日時</dt><dd>第1・第3火曜 19:00〜21:00</dd></dl>
+      <span class="fee">月謝 7,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>熊本 初心者教室<span class="area-tag">熊本</span><span class="tag">講師 松村 睦子</span></h3>
+      <dl><dt>会場</dt><dd>白川地域コミュニティセンター<br><span style="font-size:12.4px;color:var(--sub)">熊本県熊本市中央区新屋敷1丁目18-27　TEL 096-366-0611</span></dd><dt>日時</dt><dd>第2・第4水曜 19:00〜20:00</dd></dl>
+      <span class="fee">月謝 5,000円</span>
+    </div>
+    <div class="rm reveal">
+      <h3>熊本 中級教室<span class="area-tag">熊本</span><span class="tag">講師 金城 安紀</span></h3>
+      <dl><dt>会場</dt><dd>白川地域コミュニティセンター<br><span style="font-size:12.4px;color:var(--sub)">熊本県熊本市中央区新屋敷1丁目18-27　TEL 096-366-0611</span></dd><dt>日時</dt><dd>第2・第4水曜 19:30〜21:30</dd></dl>
+      <span class="fee">月謝 7,000円</span>
+    </div>
+  </div>
+
+  <div class="area-h reveal"><span>オンライン</span><i></i></div>
+  <p class="area-note reveal">遠方の方・お近くに教室がない方へ。<b>ご自宅から、お一人ずつの個人レッスン。</b>お時間はご相談のうえ決めさせていただきます。</p>
+  <div class="rm-grid">
+    <div class="rm reveal">
+      <h3>オンライン個人レッスン<span class="area-tag">全国</span><span class="tag">日程ご相談</span></h3>
+      <dl><dt>会場</dt><dd>オンライン（ビデオ通話）</dd><dt>日時</dt><dd>ご相談のうえ決めさせていただきます</dd></dl>
+      <span class="fee">1時間 5,000円</span>
+    </div>
+  </div>
+
+  <div class="rooms-tel reveal">
+    <div class="lb">見学・体験レッスン 随時受付中</div>
+    <a href="tel:09029683737" data-e="tel" data-l="お問い合わせ電話番号">090-2968-3737</a>
+    <div class="nm">金城 安紀 三線教室</div>
+  </div>
+</section>
+
+<!-- recruit band -->
+<section class="recruit" id="recruit">
+  <div class="reveal">
+    <span class="pill">2026年度 新規受講生募集中</span>
+    <h2 class="mincho">今こそ、三線を<br>はじめてみませんか。</h2>
+    <p>美ら三線サークルでは、2026年度の新しい仲間を募集しています。初めての方も、久しぶりの方も、まずは気軽な見学・体験から。楽器の貸し出しなど、ご不安な点もお気軽にご相談ください。</p>
+    <br>
+    <a href="#reserve" class="rbtn">見学・体験を申し込む →</a>
+  </div>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">見学・体験のお問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは見学・体験から。下のフォームにご記入いただくと、<br>教室あてにメールで届きます。お気軽にどうぞ。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="春日 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>お電話番号（任意）</label><input type="tel" name="tel" placeholder="090-0000-0000"></div>
+      <div class="frow"><label>三線のご経験</label>
+        <select name="exp">
+          <option value="">選択してください</option>
+          <option>まったく初めて</option>
+          <option>昔ならっていた</option>
+          <option>今もつづけている</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご希望</label>
+      <select name="want">
+        <option value="">選択してください</option>
+        <option>まず見学したい</option>
+        <option>体験レッスンを受けたい</option>
+        <option>見学・体験どちらも相談したい</option>
+      </select>
+    </div>
+    <div class="frow"><label>ご質問・ご要望（任意）</label><textarea name="note" rows="3" placeholder="ご希望の曜日や、初めてで不安な点、楽器の貸し出しについてなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容で問い合わせる</button>
+    <p class="rsv-ok" id="rsvOk">♪ お問い合わせ内容を確認しました。ご利用のメールソフトが立ち上がりますので、そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-alt reveal">フォームがうまく動かない場合は、<a href="mailto:kin1101yasu@gmail.com?subject=見学・体験のお問い合わせ（美ら三線サークル）">こちらからメールで直接お問い合わせ</a>いただけます。</p>
+  <p class="rsv-tech reveal">🔒 入力いただいた内容は、教室あてに直接メールで届きます。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
+</section>
+
+
+<footer>
+  <div class="fmark mincho">美ら三線サークル</div>
+  <div class="fsub">CHURA SANSHIN ・ KASUGA</div>
+  <p class="fnote">このページは Web制作 ゆたか による 美ら三線サークル 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・写真・受講生の声はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  /* ヒーローを順に表示する。アニメーションではなくクラスの付け外しで表示するので、
+     動きが効かない環境でも .in が付いた瞬間に必ず見える */
+  (function(){
+    var hi=[].slice.call(document.querySelectorAll('.hi'));
+    hi.forEach(function(el,i){ setTimeout(function(){ el.classList.add('in'); }, 120+i*190); });
+    setTimeout(function(){ hi.forEach(function(el){ el.classList.add('in'); }); }, 2000);
+  })();
+
+  /* 読んだ量を示す細い線（装飾のみ。無くても中身に影響しない） */
+  (function(){
+    var bar=document.getElementById('prg'); if(!bar) return;
+    var tick=function(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      bar.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+    };
+    window.addEventListener('scroll',tick,{passive:true});
+    window.addEventListener('resize',tick); tick();
+  })();
+
+  /* 最後の保険：何かの理由で発火しなかった要素は3秒後に必ず表示する */
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.in), .hi:not(.in)').forEach(function(el){el.classList.add('in')});
+  },3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var val=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=''
+      +'美ら三線サークル 見学・体験のお問い合わせ\n'
+      +'--------------------------------\n'
+      +'お名前：'+val('name')+'\n'
+      +'メール：'+val('mail')+'\n'
+      +'電話：'+val('tel')+'\n'
+      +'三線のご経験：'+val('exp')+'\n'
+      +'ご希望：'+val('want')+'\n'
+      +'ご質問・ご要望：\n'+val('note')+'\n';
+    var url='mailto:kin1101yasu@gmail.com'
+      +'?subject='+encodeURIComponent('見学・体験のお問い合わせ（美ら三線サークル）')
+      +'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを起動しました';
+    window.location.href=url;
+  });
+</script>
+
+<!-- ===== ここから：金城様がご自身で編集するための仕組み =====
+     Googleスプレッドシートの内容でページを書き換えます。
+
+     【設計方針】シートが読めなくても、ページは絶対に元の内容のまま表示されます。
+     読み込みに失敗した・シートが空だった・項目名を間違えた——どの場合でも、
+     HTMLに書いてある内容がそのまま残ります。空白になることはありません。
+     （2026-07-28に本文が消える事故を起こした反省から、この方針を最優先にしています）
+-->
+<script>
+(function(){
+  "use strict";
+
+  // ▼ここにスプレッドシートの「ウェブに公開」CSVアドレスを入れます（空なら何もしません）
+  var SHEET_TEXT  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfpQUMcLuN09-6AdGdfpJidwmDR_oyn9z4QTqIgv5aK8XKynBMLn_qs2hMzOouR7pmyC9lq8N61CMi/pub?gid=0&single=true&output=csv";   // タブ1「文章」
+  var SHEET_PHOTOS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfpQUMcLuN09-6AdGdfpJidwmDR_oyn9z4QTqIgv5aK8XKynBMLn_qs2hMzOouR7pmyC9lq8N61CMi/pub?gid=869028918&single=true&output=csv";   // タブ3「写真」（教室の様子）
+  var SHEET_VOICE  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfpQUMcLuN09-6AdGdfpJidwmDR_oyn9z4QTqIgv5aK8XKynBMLn_qs2hMzOouR7pmyC9lq8N61CMi/pub?gid=446067726&single=true&output=csv";   // タブ4「受講生の声」※お声をいただいたら設定する   // タブ3「写真」（教室の様子）※未設定なら今の2枚のまま
+  var SHEET_ROOMS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRfpQUMcLuN09-6AdGdfpJidwmDR_oyn9z4QTqIgv5aK8XKynBMLn_qs2hMzOouR7pmyC9lq8N61CMi/pub?gid=1571078257&single=true&output=csv";   // タブ2「教室一覧」
+
+  if (!SHEET_TEXT && !SHEET_ROOMS && !SHEET_PHOTOS && !SHEET_VOICE) return;   // 未設定なら一切さわらない
+
+  // --- CSVを読む（引用符・改行・カンマに対応した最小限の実装） ---
+  function parseCSV(t){
+    var rows=[], row=[], cell="", q=false, i=0;
+    t = t.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+    for(; i<t.length; i++){
+      var c=t[i];
+      if(q){
+        if(c==='"'){ if(t[i+1]==='"'){cell+='"';i++;} else q=false; }
+        else cell+=c;
+      }else{
+        if(c==='"') q=true;
+        else if(c===","){ row.push(cell); cell=""; }
+        else if(c==="\n"){ row.push(cell); rows.push(row); row=[]; cell=""; }
+        else cell+=c;
+      }
+    }
+    if(cell!=="" || row.length){ row.push(cell); rows.push(row); }
+    return rows;
+  }
+
+  function get(url){
+    return fetch(url, {cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+      .then(parseCSV);
+  }
+
+  // GoogleドライブのURLを、そのまま画像として表示できる形に変換する
+  function driveImg(u){
+    if(!u) return "";
+    var m = u.match(/\/d\/([A-Za-z0-9_-]{20,})/) || u.match(/[?&]id=([A-Za-z0-9_-]{20,})/);
+    if(m) return "https://drive.google.com/thumbnail?id="+m[1]+"&sz=w1600";
+    return u;
+  }
+
+  // --- タブ1「文章」：キーと内容の2列 ---
+  if (SHEET_TEXT) get(SHEET_TEXT).then(function(rows){
+    var map={};
+    rows.forEach(function(r){
+      var k=(r[0]||"").trim(), v=(r[1]||"");
+      if(k && k!=="キー") map[k]=v;
+    });
+    document.querySelectorAll("[data-e]").forEach(function(el){
+      var v = map[el.getAttribute("data-e")];
+      if(v===undefined) return;
+      v = String(v).trim();
+      if(v==="") return;                     // 空欄＝「変更なし」。消さない
+      if(el.tagName==="IMG"){
+        var src=driveImg(v), test=new Image();
+        test.onload=function(){ el.src=src; };   // 読めたときだけ差し替える
+        test.src=src;
+      }else{
+        el.innerHTML = v.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
+      }
+    });
+  }).catch(function(e){ /* 失敗しても元の内容のまま。何もしない */ });
+
+  // --- タブ4「受講生の声」：1行＝1件。1件も無ければ欄ごと出さない ---
+  if (SHEET_VOICE) get(SHEET_VOICE).then(function(rows){
+    if(rows.length<2) return;
+    var head=rows[0].map(function(x){return (x||"").trim();});
+    var idx={}; head.forEach(function(h,i){ idx[h]=i; });
+    if(idx["お声"]===undefined) return;
+
+    var esc=function(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+    var html="", n=0;
+    for(var r=1;r<rows.length;r++){
+      var row=rows[r]; if(!row) continue;
+      var v=(row[idx["お声"]]||"").trim(); if(!v) continue;
+      if(/^[（(]?記入例/.test(v)) continue;
+      var who=(idx["お名前・年代など"]!==undefined?(row[idx["お名前・年代など"]]||"").trim():"");
+      var star=(idx["星の数"]!==undefined?parseInt(row[idx["星の数"]],10):5);
+      if(!(star>=1&&star<=5)) star=5;
+      html+='<div class="vcard reveal in"><div class="stars">'+Array(star+1).join("★")+'</div>'
+         +  '<p>'+esc(v).replace(/\n/g,"<br>")+'</p>'
+         +  (who?'<div class="who">'+esc(who)+'</div>':'')+'</div>';
+      n++;
+    }
+    if(!n) return;                       // 1件も無ければ非表示のまま
+    var sec=document.getElementById("voice");
+    var grid=sec && sec.querySelector(".v-grid");
+    if(!grid) return;
+    grid.innerHTML=html;
+    sec.removeAttribute("hidden");       // 中身が入ったときだけ表示する
+  }).catch(function(e){ /* 失敗しても非表示のまま */ });
+
+  // --- タブ3「写真」：1行＝1枚（教室の様子）---
+  if (SHEET_PHOTOS) get(SHEET_PHOTOS).then(function(rows){
+    if(rows.length<2) return;
+    var head=rows[0].map(function(x){return (x||"").trim();});
+    var idx={}; head.forEach(function(h,i){ idx[h]=i; });
+    if(idx["写真URL"]===undefined) return;              // 形が違えば何もしない
+
+    var list=[];
+    for(var r=1;r<rows.length;r++){
+      var row=rows[r]; if(!row) continue;
+      var u=(row[idx["写真URL"]]||"").trim(); if(!u) continue;
+      var cap=(idx["説明"]!==undefined?(row[idx["説明"]]||"").trim():"");
+      if(/^[（(]?記入例/.test(cap)||/^[（(]?記入例/.test(u)) continue;   // 記入例は出さない
+      list.push({src:driveImg(u), cap:cap});
+    }
+    if(!list.length) return;                            // 1枚も無ければ今の写真のまま
+
+    // 実際に読み込める画像だけを採用する（読めない写真で穴が開かないように）
+    var ok=[], done=0;
+    list.forEach(function(it,i){
+      var im=new Image();
+      im.onload =function(){ ok[i]=it; finish(); };
+      im.onerror=function(){ ok[i]=null; finish(); };
+      im.src=it.src;
+    });
+    function finish(){
+      if(++done<list.length) return;
+      var use=ok.filter(function(x){return x;});
+      if(!use.length) return;                           // 全部読めなければ今のまま
+      var esc=function(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+      var html="";
+      use.forEach(function(it){
+        html+='<figure class="gal reveal in"><img src="'+it.src+'" alt="'+esc(it.cap||"教室の様子")+'" loading="lazy">'
+           + (it.cap?'<figcaption class="cap">'+esc(it.cap)+'</figcaption>':'')
+           + '</figure>';
+      });
+      var grid=document.querySelector("#gallery .gal-grid");
+      if(grid) grid.innerHTML=html;
+    }
+  }).catch(function(e){ /* 失敗しても今の写真のまま */ });
+
+  // --- タブ2「教室一覧」：1行＝1教室 ---
+  if (SHEET_ROOMS) get(SHEET_ROOMS).then(function(rows){
+    if(rows.length<2) return;
+    var head=rows[0].map(function(x){return (x||"").trim();});
+    var idx={}; head.forEach(function(h,i){ idx[h]=i; });
+    var need=["地域","教室名","会場","日時","月謝"];
+    for(var n=0;n<need.length;n++) if(idx[need[n]]===undefined) return;  // 形が違えば何もしない
+
+    // 「ここは空のまま」という指示を、文字どおり「空」「なし」と打たれても表示に出さない
+    var cell=function(v){ var s=(v||"").trim(); return /^(空|空欄|なし|無し|ー|−|-|―|・)$/.test(s)?"":s; };
+
+    var items=[];
+    for(var r=1;r<rows.length;r++){
+      var row=rows[r]; if(!row) continue;
+      var nm=(row[idx["教室名"]]||"").trim(); if(!nm) continue;
+      // 記入例の行は公開ページに出さない（金城様が消し忘れても事故にならないように）
+      if(/^[（(]?記入例/.test(nm) || /^[（(]?例[）)]/.test(nm)) continue;
+      items.push({
+        area:cell(row[idx["地域"]])||"福岡",
+        kind:(idx["区分"]!==undefined&&cell(row[idx["区分"]]))
+             ? cell(row[idx["区分"]])
+             : (/オンライン/.test((row[idx["教室名"]]||"")) ? "オンライン"
+               : /サークル/.test((row[idx["教室名"]]||"")) ? "サークル" : "教室"),
+        name:nm,
+        place:cell(row[idx["会場"]]),
+        addr:(idx["住所"]!==undefined?cell(row[idx["住所"]]):""),
+        day:cell(row[idx["日時"]]),
+        fee:cell(row[idx["月謝"]]),
+        tag:(idx["ひとこと"]!==undefined?cell(row[idx["ひとこと"]]):""),
+        here:(idx["このページの教室"]!==undefined?/○|◯|o|O|1|はい/.test(row[idx["このページの教室"]]||""):false)
+      });
+    }
+    if(!items.length) return;   // 1件も無ければ、もとの一覧をそのまま残す
+
+    var esc=function(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+    var NOTE={
+      "サークル":'仲間と一緒に、月2回のペースで楽しむ集まりです。<b>月謝4,000円。</b>このページの「美ら三線サークル」もこのグループです。',
+      "教室":'より本格的に習いたい方向けの教室です。<b>月謝5,000円〜7,000円。</b>初心者の方も、経験者の再スタートも歓迎しています。',
+      "オンライン":'遠方の方・お近くに教室がない方へ。<b>ご自宅から、お一人ずつの個人レッスン。</b>お時間はご相談のうえ決めさせていただきます。'
+    };
+    var ORDER={"サークル":0,"教室":1,"オンライン":2};
+    var kinds=[]; items.forEach(function(it){ if(kinds.indexOf(it.kind)<0) kinds.push(it.kind); });
+    kinds.sort(function(a,b){ return (ORDER[a]===undefined?9:ORDER[a])-(ORDER[b]===undefined?9:ORDER[b]); });
+    var html="";
+    kinds.forEach(function(a){
+      html+='<div class="area-h reveal in"><span>'+esc(a)+'</span><i></i></div>'
+          + (NOTE[a]?'<p class="area-note reveal in">'+NOTE[a]+'</p>':'')
+          + '<div class="rm-grid">';
+      items.filter(function(it){return it.kind===a;}).forEach(function(it){
+        html+='<div class="rm reveal in'+(it.here?" here":"")+'">'
+           + (it.here?'<span class="badge">このページの教室</span>':'')
+           + '<h3>'+esc(it.name)+'<span class="area-tag">'+esc(it.area)+'</span>'
+           + (it.tag?'<span class="tag">'+esc(it.tag)+'</span>':'')+'</h3>'
+           // 会場・日時が空の行（オンライン等）でも、見出しだけが残って崩れないようにする
+           + ((it.place||it.day)?'<dl>'
+               + (it.place?'<dt>会場</dt><dd>'+esc(it.place)
+                   + (it.addr?'<br><span style="font-size:12.4px;color:var(--sub)">'+esc(it.addr)+'</span>':'')
+                   + '</dd>':'')
+               + (it.day?'<dt>日時</dt><dd>'+esc(it.day).replace(/\n/g,"<br>")+'</dd>':'')
+               + '</dl>':'')
+           // 「1時間 5,000円」のように月謝でない書き方をされたら「月謝」を付けない
+           + (it.fee?'<span class="fee'+(/サークル|4,000/.test(it.fee+it.name)?' circle':'')+'">'
+               + (/月謝|時間|回|コマ|人|税|\//.test(it.fee)?'':'月謝 ')+esc(it.fee)+'</span>':'')
+           + '</div>';
+      });
+      html+='</div>';
+    });
+    var host=document.querySelector("#rooms .rooms-lead");
+    if(!host) return;
+    // 既存の一覧を消す前に、新しい中身が作れていることを確認してから入れ替える
+    var olds=document.querySelectorAll("#rooms .area-h, #rooms .area-note, #rooms .rm-grid");
+    if(!html) return;
+    olds.forEach(function(el){ el.remove(); });
+    host.insertAdjacentHTML("afterend", html);
+  }).catch(function(e){ /* 失敗しても元の一覧のまま */ });
+
+})();
+</script>
+<!-- ===== ここまで ===== -->
+
+</body>
+</html>

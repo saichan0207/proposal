@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>英語・中国語教室SOMILABO｜大阪府吹田市南千里の子ども向け語学教室（デザイン案・サンプル）</title>
+<meta name="description" content="親子英語・園児/小学生の英語・家族で楽しむ中国語。3か国語対応の講師がやさしく教えます。オンラインレッスンも対応。大阪府吹田市南千里（南千里駅より徒歩7分）。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f2f9fe;
+    --panel:#ffffff;
+    --sky:#3aa8e8;
+    --sky2:#1f8fd6;
+    --sky-deep:#166aa8;
+    --sky-soft:#e2f2fc;
+    --yellow:#ffd34e;
+    --yellow2:#ffc21f;
+    --yellow-soft:#fff4d1;
+    --ink:#2c4256;
+    --sub:#6a8195;
+    --line:rgba(44,66,86,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;letter-spacing:.03em;overflow-x:hidden}
+  .round{font-family:"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif}
+  img{max-width:100%;display:block}
+
+  .sample-bar{background:linear-gradient(90deg,#1f8fd6,#3aa8e8 55%,#ffc21f);color:#fff;text-align:center;font-size:11.5px;padding:8px 14px;letter-spacing:.04em;position:relative;z-index:60;line-height:1.6;font-weight:600}
+  .sample-bar b{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.6)}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(242,249,254,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(242,249,254,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(31,143,214,.12);padding:10px 24px}
+  .logo{font-size:20px;letter-spacing:.06em;color:var(--sky2);font-weight:800;line-height:1.2}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9.5px;letter-spacing:.14em;color:var(--yellow2);margin-top:3px;font-weight:700}
+  nav{display:flex;gap:18px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12.5px;letter-spacing:.06em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s;font-weight:600;white-space:nowrap}
+  nav a:hover{color:var(--sky2);border-color:var(--yellow)}
+  nav a.cta{background:var(--sky2);color:#fff;padding:10px 20px;border-radius:999px;border:none;letter-spacing:.04em;box-shadow:0 8px 18px rgba(31,143,214,.32)}
+  nav a.cta:hover{background:var(--sky-deep);color:#fff;transform:translateY(-1px);border-color:transparent}
+  @media(max-width:920px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:90vh;display:flex;align-items:center;padding:0 8vw;margin-top:-60px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(31,143,214,.24),rgba(242,249,254,.1) 60%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(242,249,254,.9) 0%,rgba(242,249,254,.4) 46%,transparent 68%)}
+  .hero-inner{position:relative;z-index:2;max-width:640px;margin-top:58px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.12em;color:var(--sky2);margin-bottom:20px;font-weight:700;background:rgba(255,255,255,.75);padding:7px 15px;border-radius:999px;box-shadow:0 4px 12px rgba(31,143,214,.12)}
+  .hero h1{font-size:clamp(28px,5.6vw,50px);font-weight:800;line-height:1.5;letter-spacing:.03em;color:var(--sky-deep);text-wrap:balance}
+  .hero h1 span{color:var(--yellow2)}
+  .hero h1 .en-word{position:relative;display:inline-block}
+  .hero h1 .en-word::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:34%;background:var(--yellow);opacity:.5;z-index:-1;border-radius:4px}
+  .hero p{margin-top:20px;font-size:clamp(14px,1.7vw,16px);color:#48657a;max-width:30em;font-weight:500}
+  .hero-cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.04em;transition:.3s;font-weight:700}
+  .btn-primary{background:var(--sky2);color:#fff;box-shadow:0 12px 26px rgba(31,143,214,.36)}
+  .btn-primary:hover{background:var(--sky-deep);transform:translateY(-2px)}
+  .btn-yellow{background:var(--yellow);color:#5a4300;box-shadow:0 12px 26px rgba(255,194,31,.4)}
+  .btn-yellow:hover{background:var(--yellow2);transform:translateY(-2px)}
+  .hero-badges{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#48657a;font-weight:600}
+  .hero-badges b{color:var(--sky2)}
+
+  section{padding:clamp(66px,9vw,110px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:11.5px;letter-spacing:.28em;color:var(--yellow2);display:block;margin-bottom:10px;font-weight:800}
+  .sec-head h2{font-size:clamp(23px,3.5vw,32px);font-weight:800;letter-spacing:.04em;color:var(--sky2)}
+  .sec-head p{margin-top:12px;font-size:14px;color:var(--sub);font-weight:500}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* langs strip */
+  .langs{background:linear-gradient(180deg,var(--bg),#e6f3fc);text-align:center}
+  .lg-wrap{max-width:760px;margin:0 auto}
+  .lg-lead{font-size:clamp(19px,3.2vw,27px);line-height:1.9;color:var(--sky2);font-weight:800;letter-spacing:.04em}
+  .lg-lead b{color:var(--yellow2)}
+  .lg-body{margin-top:22px;font-size:14px;color:var(--sub);line-height:2.05;font-weight:500}
+  .lg-chips{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .lg-chips span{background:#fff;border:2px solid var(--sky-soft);border-radius:999px;padding:10px 22px;font-size:14px;font-weight:700;color:var(--sky2);box-shadow:0 6px 16px rgba(31,143,214,.1)}
+  .lg-chips span em{font-style:normal;color:var(--yellow2)}
+
+  /* target */
+  .target{background:#e6f3fc}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .tg{background:var(--panel);border:2px solid #fff;border-radius:18px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 10px 24px rgba(31,143,214,.08)}
+  .tg .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--yellow-soft);color:var(--yellow2);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .tg p{font-size:13.8px;line-height:1.82;font-weight:500}
+  .tg-foot{text-align:center;margin-top:38px;font-size:clamp(15px,2vw,18px);color:var(--sky2);letter-spacing:.03em;font-weight:700}
+  .tg-foot b{color:var(--yellow2)}
+
+  /* lessons */
+  .lesson{background:var(--bg)}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1040px;margin:0 auto}
+  .lcard{background:var(--panel);border-radius:22px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column;box-shadow:0 10px 26px rgba(31,143,214,.09)}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 42px rgba(31,143,214,.18)}
+  .lcard .ph{position:relative;height:172px;overflow:hidden;background:var(--sky-soft)}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .lcard:hover .ph img{transform:scale(1.07)}
+  .lcard .ph .badge{position:absolute;top:12px;left:12px;font-size:11px;letter-spacing:.06em;color:#fff;padding:6px 14px;border-radius:999px;font-weight:700}
+  .lcard.c1 .badge{background:rgba(31,143,214,.9)}
+  .lcard.c2 .badge{background:rgba(233,120,60,.92)}
+  .lcard.c3 .badge{background:rgba(52,175,120,.92)}
+  .lcard.c4 .badge{background:rgba(150,110,200,.9)}
+  .lcard .body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .lcard h3{font-size:18px;font-weight:800;color:var(--sky2);letter-spacing:.03em;margin-bottom:8px}
+  .lcard .age{font-size:11.5px;color:var(--yellow2);font-weight:700;margin-bottom:10px;letter-spacing:.04em}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.88;flex:1;font-weight:500}
+
+  /* online feature */
+  .online{background:linear-gradient(120deg,var(--sky2),#3aa8e8 60%,#5cc0f0);color:#fff;overflow:hidden}
+  .ft-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.ft-wrap{grid-template-columns:1fr;gap:28px}}
+  .ft-info .en{font-size:11.5px;letter-spacing:.28em;color:var(--yellow);display:block;margin-bottom:14px;font-weight:800}
+  .ft-info h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:.03em;color:#fff;line-height:1.5}
+  .ft-info h2 span{color:var(--yellow)}
+  .ft-info p{margin-top:18px;font-size:14px;color:#eaf6ff;line-height:2.05;font-weight:500}
+  .ft-info p b{color:var(--yellow);font-weight:800}
+  .ft-points{margin-top:20px;display:flex;flex-direction:column;gap:11px}
+  .ft-points li{list-style:none;display:flex;gap:11px;align-items:center;font-size:13.5px;color:#f4faff;font-weight:600}
+  .ft-points li .dot{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--yellow);color:#5a4300;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+  .ft-btn{margin-top:26px}
+  .ft-btn a{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#5a4300;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:.04em;transition:.3s;box-shadow:0 12px 26px rgba(0,0,0,.16)}
+  .ft-btn a:hover{transform:translateY(-2px);background:var(--yellow2)}
+  .ft-ph{border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 44px rgba(20,70,110,.34)}
+  .ft-ph img{width:100%;height:100%;object-fit:cover}
+
+  /* reasons */
+  .reasons{background:var(--bg)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;background:var(--panel);border-radius:22px;padding:32px 26px;box-shadow:0 10px 26px rgba(31,143,214,.08)}
+  .rs .no{font-size:12px;letter-spacing:.14em;color:var(--yellow2);margin-bottom:10px;font-weight:800}
+  .rs .ic{width:64px;height:64px;margin:0 auto 16px;border-radius:22px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;font-size:28px}
+  .rs h3{font-size:17px;font-weight:800;letter-spacing:.03em;color:var(--sky2);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9;font-weight:500}
+
+  /* teacher */
+  .teacher{background:linear-gradient(180deg,#e6f3fc,var(--bg))}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center;background:var(--panel);border-radius:28px;padding:44px;box-shadow:0 16px 40px rgba(31,143,214,.12)}
+  @media(max-width:760px){.tc-wrap{grid-template-columns:1fr;gap:26px;padding:30px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--sky-soft),var(--yellow-soft));display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(31,143,214,.18)}
+  .tc-photo .fl{position:absolute;font-size:52px}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(44,66,86,.5);font-size:10.5px;letter-spacing:.12em;font-weight:600}
+  .tc-info .role{font-size:11.5px;letter-spacing:.16em;color:var(--yellow2);font-weight:800}
+  .tc-info h3{font-size:25px;font-weight:800;letter-spacing:.05em;color:var(--sky2);margin:8px 0 3px}
+  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.06em;margin-left:8px;font-weight:600}
+  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tc-badges span{font-size:11.5px;color:var(--sky2);background:var(--sky-soft);border-radius:999px;padding:6px 15px;letter-spacing:.03em;font-weight:700}
+  .tc-info p{font-size:14px;color:var(--sub);margin-top:16px;line-height:2.05;font-weight:500}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border-radius:20px;padding:26px;box-shadow:0 10px 24px rgba(31,143,214,.08)}
+  .vcard .stars{color:var(--yellow2);letter-spacing:.14em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px;font-weight:500}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.03em;font-weight:600}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,var(--sky-deep),var(--sky2) 78%);position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:var(--yellow)}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#e2f2fc;font-size:14px;margin-bottom:32px;position:relative;z-index:1;font-weight:500}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.03em;color:#eaf6ff;font-weight:600}
+  .frow .req{color:var(--yellow);font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.13);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.62)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--yellow);color:#5a4300;font-weight:800;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.06em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px);background:var(--yellow2)}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.18);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.85;font-weight:500}
+  .rsv-ok.show{display:block}
+  .rsv-alt{text-align:center;margin-top:20px;position:relative;z-index:1}
+  .rsv-alt a{color:#5a4300;background:var(--yellow-soft);font-size:12.5px;letter-spacing:.03em;text-decoration:none;padding:10px 22px;border-radius:999px;font-weight:700;transition:.25s;display:inline-block}
+  .rsv-alt a:hover{background:var(--yellow)}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#c9e3f4;margin-top:22px;line-height:1.9;position:relative;z-index:1;font-weight:500}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:30%;color:var(--sub);font-weight:700;letter-spacing:.03em}
+  table.info td{font-weight:500}
+  .map-ph{border-radius:22px;min-height:230px;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;color:var(--sky2);font-size:11px;letter-spacing:.12em;background:linear-gradient(135deg,var(--sky-soft),var(--yellow-soft));text-align:center;padding:20px;font-weight:600}
+  .map-ph b{font-size:15px;letter-spacing:.06em;font-weight:800}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px;font-weight:500}
+
+  footer{background:linear-gradient(150deg,var(--sky-deep),var(--sky2));color:#d6ecfa;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:22px;letter-spacing:.05em;color:#fff;font-weight:800}
+  footer .fsub{font-size:10px;letter-spacing:.16em;color:var(--yellow);margin-top:6px;font-weight:700}
+  footer .fnote{font-size:11.5px;color:#a8d0ea;margin-top:22px;line-height:1.9;font-weight:500}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>ご提案用のデザイン案（サンプル）</b>です ・ <b>2026年7月30日</b>までの限定公開</div>
+
+<header id="hd">
+  <div class="logo">SOMILABO<small>そうみラボ ・ 南千里</small></div>
+  <nav>
+    <a href="#langs">教室について</a>
+    <a href="#lesson">レッスン</a>
+    <a href="#online">オンライン</a>
+    <a href="#teacher">講師</a>
+    <a href="#reserve" class="cta">体験・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">大阪府吹田市 南千里 ｜ 英語・中国語教室</span>
+    <h1 class="round"><span class="en-word">英語</span>も<span class="en-word">中国語</span>も、<br><span>「楽しい！」</span>から始める。</h1>
+    <p>親子ではじめる英語、園児・小学生の英語クラス、家族で楽しむ中国語。3か国語を話す先生が、お子さまのペースに合わせてやさしく教えます。オンラインレッスンにも対応。南千里の、あたたかな語学教室です。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
+      <a href="#lesson" class="btn btn-yellow">レッスンを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>★ <b>英語・中国語</b>の2言語</span>
+      <span>★ 親子〜<b>小学生</b>まで</span>
+      <span>★ <b>オンライン</b>対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- langs / concept -->
+<section class="langs" id="langs">
+  <div class="lg-wrap">
+    <div class="sec-head reveal" style="margin-bottom:26px"><span class="en">WELCOME</span><h2 class="round">SOMILABO（そうみラボ）へようこそ</h2></div>
+    <p class="lg-lead reveal round">語学の第一歩は、<b>「わかった！」の笑顔</b>から。</p>
+    <p class="lg-body reveal">SOMILABOは、英語と中国語を学べる、大阪・南千里の小さな語学教室です。「勉強」としてではなく、歌やゲーム、絵本を通して、まずは言葉に親しむところから。親子でいっしょに、お子さまだけで、そしてご家族で。ひとりおひとりの「楽しい」を大切に、無理なく続けられるレッスンをお届けします。</p>
+    <div class="lg-chips reveal">
+      <span><em>English</em> ／ 英語</span>
+      <span><em>中文</em> ／ 中国語</span>
+      <span><em>Online</em> ／ オンライン対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="round">こんなご家族へ</h2></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">◎</span><p>小さいうちから、英語に楽しく親しませたい</p></div>
+    <div class="tg reveal d1"><span class="ic">◎</span><p>親子でいっしょに、英語を始めてみたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◎</span><p>園児・小学生の子に、英語のクラスを探している</p></div>
+    <div class="tg reveal"><span class="ic">◎</span><p>英語だけでなく、中国語にも興味がある</p></div>
+    <div class="tg reveal d1"><span class="ic">◎</span><p>送迎がむずかしいので、オンラインでも受けたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◎</span><p>大人数より、少人数でていねいに見てほしい</p></div>
+  </div>
+  <p class="tg-foot reveal round">ひとつでも当てはまったら、<b>まずは体験レッスン</b>からどうぞ。</p>
+</section>
+
+<!-- lessons -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="round">レッスンのご案内</h2><p>年齢とご家族のスタイルに合わせて、選べます</p></div>
+  <div class="l-grid">
+    <div class="lcard c1 reveal">
+      <div class="ph"><img src="images/eigo.jpg" alt="親子英語レッスン（イメージ）"><span class="badge">ENGLISH</span></div>
+      <div class="body">
+        <h3 class="round">親子英語レッスン</h3>
+        <div class="age">対象：乳幼児＋保護者</div>
+        <p>歌やふれあい遊びを通して、親子でいっしょに英語の音に親しみます。おうちでも続けやすいから、はじめての英語にぴったり。ママ・パパもいっしょに楽しめます。</p>
+      </div>
+    </div>
+    <div class="lcard c2 reveal d1">
+      <div class="ph"><img src="images/eigo.jpg" alt="園児・小学生の英語クラス（イメージ）"><span class="badge">ENGLISH</span></div>
+      <div class="body">
+        <h3 class="round">園児・小学生 英語クラス</h3>
+        <div class="age">対象：園児〜小学生</div>
+        <p>ゲームや絵本で「使える英語」を楽しく。聞く・話すを中心に、自然と英語が口から出てくる力を育てます。年齢や習熟度に合わせてクラスをご案内します。</p>
+      </div>
+    </div>
+    <div class="lcard c3 reveal d2">
+      <div class="ph"><img src="images/chinese.jpg" alt="家族向け中国語レッスン（イメージ）"><span class="badge">中文</span></div>
+      <div class="body">
+        <h3 class="round">家族で楽しむ中国語</h3>
+        <div class="age">対象：お子さま・ご家族</div>
+        <p>これからますます身近になる中国語を、ご家族で。あいさつや数字など、身近な言葉から楽しく。3か国語を話す先生だから、はじめての方も安心です。</p>
+      </div>
+    </div>
+    <div class="lcard c4 reveal d3">
+      <div class="ph"><img src="images/online.jpg" alt="オンラインレッスン（イメージ）"><span class="badge">ONLINE</span></div>
+      <div class="body">
+        <h3 class="round">オンラインレッスン</h3>
+        <div class="age">対象：英語・中国語 各クラス</div>
+        <p>ご自宅から、画面ごしにレッスン。送迎の負担がなく、遠方の方や忙しいご家庭にも。英語・中国語どちらもオンラインで受けられます。</p>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※レッスン内容・対象はデザイン案の一例です。実際のクラス・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- online feature -->
+<section class="online" id="online">
+  <div class="ft-wrap">
+    <div class="ft-info reveal">
+      <span class="en">ONLINE LESSON</span>
+      <h2 class="round">おうちから、<span>気軽に</span>受けられる。</h2>
+      <p>「教室まで送迎する時間がとれない」「近くに教室がない」——そんなご家庭のために、<b>オンラインレッスン</b>をご用意しています。パソコンやタブレットがあれば、ご自宅がそのままレッスンルームに。</p>
+      <ul class="ft-points">
+        <li><span class="dot">✓</span>送迎なしで、時間を有効に使える</li>
+        <li><span class="dot">✓</span>南千里から離れた地域の方も受講OK</li>
+        <li><span class="dot">✓</span>英語・中国語どちらのクラスも対応</li>
+      </ul>
+      <div class="ft-btn"><a href="#reserve">オンラインを相談する →</a></div>
+    </div>
+    <div class="ft-ph reveal"><img src="images/online.jpg" alt="オンラインレッスンのようす（イメージ）"></div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="round">SOMILABOが選ばれる理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🌏</div>
+      <h3 class="round">3か国語を話す先生</h3>
+      <p>英語・中国語・日本語の3か国語を話す先生が指導。言葉のちがいや学ぶコツを知っているから、お子さまにやさしく、わかりやすく伝えられます。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">😊</div>
+      <h3 class="round">「楽しい」から続く</h3>
+      <p>歌・ゲーム・絵本で、まずは言葉を好きになることから。楽しいから続き、続くから身につく——その好循環を、ひとりずつのペースで育てます。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">💻</div>
+      <h3 class="round">通いもオンラインも</h3>
+      <p>南千里の教室でも、ご自宅からのオンラインでも。ご家庭のスタイルに合わせて選べるから、無理なく続けていただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">🌷</div>
+      <span>PHOTO ─ 講師（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">講師</span>
+      <h3 class="round">山藤 双美<small>さんとう そうみ</small></h3>
+      <div class="tc-badges">
+        <span>大阪大学 外国語学部 卒</span>
+        <span>英語 教員免許</span>
+        <span>中国語 教員免許</span>
+      </div>
+      <p>大阪大学 外国語学部を卒業し、英語・中国語の教員免許を持つ講師です。「語学は、世界とつながる楽しい入り口」——そんな気持ちを、お子さまやご家族に届けたいと思っています。3か国語を学んできたからこそ分かる「つまずきやすいところ」に寄り添いながら、ひとりおひとりのペースで、楽しく続けられるレッスンを心がけています。まずは体験レッスンで、教室の雰囲気を感じてください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="round">保護者の声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>親子レッスンから始めました。家でも自然に英語の歌をくちずさむように。私も一緒に楽しめて、親子の時間が増えました。</p>
+      <div class="who">2歳の保護者／親子英語</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>「英語の日が楽しみ」と子どもが言うように。ゲームや絵本で飽きずに続けられ、少しずつ話せる言葉が増えています。</p>
+      <div class="who">小学生の保護者／英語クラス</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>送迎がむずかしくオンラインを選びましたが、画面ごしでも先生が明るくリードしてくださり、子どもも大喜びです。</p>
+      <div class="who">年長の保護者／オンライン</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さん・保護者の声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">TRIAL & CONTACT</span><h2 class="round">体験レッスン・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは体験レッスンから。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>保護者さまのお名前<span class="req">必須</span></label><input type="text" name="name" placeholder="吹田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のレッスン</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>親子英語レッスン</option>
+          <option>園児・小学生 英語クラス</option>
+          <option>家族で楽しむ中国語</option>
+          <option>オンラインレッスン</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>受講スタイル</label>
+        <select name="style">
+          <option value="">選択してください</option>
+          <option>教室で受けたい（南千里）</option>
+          <option>オンラインで受けたい</option>
+          <option>どちらでも・相談したい</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>お子さまの年齢・ご質問（任意）</label><textarea name="note" rows="3" placeholder="お子さまの年齢や、ご希望の曜日、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">◎ ご入力ありがとうございます。メールソフトが立ち上がり、宛先（SOMILABO）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-alt reveal"><a href="mailto:ouchideeigo123@gmail.com?subject=%E4%BD%93%E9%A8%93%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%E3%81%AE%E3%81%8A%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF">✉ メールソフトが開かない場合はこちら（ouchideeigo123@gmail.com）</a></p>
+  <p class="rsv-tech reveal">🔒 お申し込みは、教室へ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="round">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>英語・中国語教室 SOMILABO（そうみラボ）</td></tr>
+      <tr><th>エリア</th><td>大阪府吹田市南千里・佐竹台（南千里駅より徒歩7分）</td></tr>
+      <tr><th>レッスン</th><td>親子英語／園児・小学生英語／家族で中国語</td></tr>
+      <tr><th>オンライン</th><td>対応（英語・中国語とも）</td></tr>
+      <tr><th>お問い合わせ</th><td>ouchideeigo123@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <b>MAP</b>
+      <span>ここにGoogleマップが入ります</span>
+      <span>（南千里駅より徒歩7分・佐竹台）</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※所在地・レッスン時間・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark round">SOMILABO</div>
+  <div class="fsub">そうみラボ ・ 英語・中国語教室 ・ 南千里</div>
+  <p class="fnote">こちらはご提案用のデザイン案（サンプル）です。2026年7月30日までの限定公開。<br>掲載の文章・写真はイメージを含みます。実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var name=(f.name.value||'').trim();
+    var mail=(f.mail.value||'').trim();
+    var lesson=f.lesson.value||'（未選択）';
+    var style=f.style.value||'（未選択）';
+    var note=(f.note.value||'').trim()||'（特になし）';
+    var subject='体験レッスンのお申し込み（SOMILABO）';
+    var body=
+      'SOMILABO ご担当者さま\n\n'+
+      '体験レッスンを申し込みます。\n\n'+
+      '■保護者さまのお名前：'+name+'\n'+
+      '■メール：'+mail+'\n'+
+      '■ご希望のレッスン：'+lesson+'\n'+
+      '■受講スタイル：'+style+'\n'+
+      '■お子さまの年齢・ご質問：\n'+note+'\n';
+    var href='mailto:ouchideeigo123@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    window.location.href=href;
+  });
+</script>
+</body>
+</html>

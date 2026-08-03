@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>アトリエ千宙｜天然石アクセサリー・パステルアート教室（デザイン案・サンプル）</title>
+<meta name="description" content="指でクルクルって楽しい。天然石ワイヤーアクセサリー・パステルアート・エンジェルアートの3講座。お試し1回レッスンあり。名古屋の小さな自宅サロン。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f7f2ea;
+    --panel:#fffdf9;
+    --cream:#f2e9d8;
+    --lav:#a78bc7;
+    --lav2:#7d61a6;
+    --lav-soft:#ede6f6;
+    --pink:#dd9fbb;
+    --pink-soft:#f8e7ef;
+    --blue:#9fb9dd;
+    --blue-soft:#e7eef8;
+    --gold:#c6a662;
+    --ink:#4b4258;
+    --sub:#867c92;
+    --line:rgba(75,66,88,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.96;letter-spacing:.045em;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+
+  /* soft pastel blobs */
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;z-index:0}
+
+  .sample-bar{background:linear-gradient(90deg,#7d61a6,#a78bc7 55%,#dd9fbb);color:#fff;text-align:center;font-size:11.5px;padding:7px 14px;letter-spacing:.07em;position:relative;z-index:60}
+  .sample-bar b{color:#fff4fb}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(247,242,234,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
+  .logo{font-size:19px;letter-spacing:.2em;color:var(--lav2);font-weight:700}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo small{display:block;font-size:9px;letter-spacing:.28em;color:var(--pink);margin-top:3px;font-weight:600}
+  nav{display:flex;gap:20px;align-items:center}
+  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
+  nav a:hover{color:var(--lav2);border-color:var(--lav)}
+  nav a.cta{background:var(--lav2);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.06em;white-space:nowrap;box-shadow:0 8px 18px rgba(125,97,166,.32)}
+  nav a.cta:hover{background:#6a5090;color:#fff;transform:translateY(-1px)}
+  @media(max-width:880px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(90,70,120,.28),rgba(247,242,234,.12) 62%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,242,234,.82) 0%,rgba(247,242,234,.28) 46%,transparent 66%)}
+  .hero-inner{position:relative;z-index:2;max-width:620px;margin-top:60px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;color:var(--lav2);margin-bottom:22px}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--lav)}
+  .hero h1{font-size:clamp(29px,5.6vw,52px);font-weight:700;line-height:1.6;letter-spacing:.06em;color:var(--lav2);text-wrap:balance}
+  .hero h1 span{color:var(--pink)}
+  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:#6d6478;max-width:29em}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;transition:.3s}
+  .btn-primary{background:var(--lav2);color:#fff;box-shadow:0 12px 26px rgba(125,97,166,.36)}
+  .btn-primary:hover{background:#6a5090;transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--lav);color:var(--lav2);background:rgba(255,253,249,.7)}
+  .btn-ghost:hover{border-color:var(--lav2);background:#fff}
+  .hero-badges{margin-top:30px;display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:#6d6478}
+  .hero-badges b{color:var(--lav2)}
+
+  section{padding:clamp(70px,10vw,116px) 8vw;position:relative;z-index:1}
+  .sec-head{text-align:center;margin-bottom:50px}
+  .sec-head .en{font-size:11px;letter-spacing:.34em;color:var(--pink);display:block;margin-bottom:12px;font-weight:600}
+  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:700;letter-spacing:.08em;color:var(--lav2)}
+  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+
+  /* concept */
+  .concept{text-align:center;overflow:hidden}
+  .cnc{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .swirl{display:block;width:52px;height:52px;margin:0 auto 22px;color:var(--lav)}
+  .cnc .lead{font-size:clamp(20px,3.3vw,28px);line-height:1.95;color:var(--lav2);letter-spacing:.07em}
+  .cnc .lead b{color:var(--pink);font-weight:700}
+  .cnc p.body{margin-top:26px;font-size:14px;color:var(--sub);line-height:2.1}
+
+  /* charm */
+  .charm{background:linear-gradient(180deg,var(--bg),#f2ecf6)}
+  .ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
+  .ch{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 22px rgba(125,97,166,.06)}
+  .ch .ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--lav-soft);color:var(--lav2);display:flex;align-items:center;justify-content:center;font-size:15px}
+  .ch p{font-size:13.8px;line-height:1.85}
+  .ch-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--lav2);letter-spacing:.05em}
+  .ch-foot b{color:var(--pink);font-weight:700}
+
+  /* lesson */
+  .lesson{background:#f2ecf6}
+  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px;max-width:1020px;margin:0 auto}
+  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(125,97,166,.16)}
+  .lcard .ph{position:relative;height:178px;overflow:hidden}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+  .lcard:hover .ph img{transform:scale(1.06)}
+  .lcard .ph .badge{position:absolute;top:12px;left:12px;font-size:10.5px;letter-spacing:.08em;color:#fff;padding:5px 12px;border-radius:999px;backdrop-filter:blur(2px)}
+  .lcard.c1 .badge{background:rgba(125,97,166,.85)}
+  .lcard.c2 .badge{background:rgba(200,110,150,.85)}
+  .lcard.c3 .badge{background:rgba(110,140,190,.85)}
+  .lcard .body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .lcard h3{font-size:18.5px;font-weight:700;color:var(--lav2);letter-spacing:.04em;margin-bottom:9px}
+  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.9;flex:1}
+  .lcard .tag{display:inline-block;margin-top:15px;font-size:11px;letter-spacing:.06em;color:var(--lav2);border:1px solid rgba(125,97,166,.35);border-radius:999px;padding:4px 12px;align-self:flex-start}
+
+  /* trial feature */
+  .trial{background:linear-gradient(120deg,#7d61a6,#a78bc7 60%,#c98fb3);color:#fff8fc;overflow:hidden}
+  .ft-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;max-width:980px;margin:0 auto;align-items:center;position:relative;z-index:1}
+  @media(max-width:760px){.ft-wrap{grid-template-columns:1fr;gap:26px}}
+  .ft-info .en{font-size:11px;letter-spacing:.34em;color:#f6dcea;display:block;margin-bottom:14px;font-weight:600}
+  .ft-info h2{font-size:clamp(23px,3.4vw,32px);font-weight:700;letter-spacing:.06em;color:#fff;line-height:1.55}
+  .ft-info h2 span{color:#ffe6b3}
+  .ft-info p{margin-top:18px;font-size:14px;color:#f1e6f4;line-height:2.05}
+  .ft-info p b{color:#ffe6b3;font-weight:700}
+  .ft-price{margin-top:22px;display:inline-flex;align-items:baseline;gap:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:14px 22px}
+  .ft-price .lbl{font-size:11.5px;letter-spacing:.1em;color:#f6dcea}
+  .ft-price .num{font-size:26px;font-weight:700;color:#fff;letter-spacing:.02em}
+  .ft-price .num small{font-size:13px;font-weight:600}
+  .ft-btn{margin-top:26px}
+  .ft-btn a{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--lav2);text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:.06em;transition:.3s;box-shadow:0 12px 26px rgba(0,0,0,.2)}
+  .ft-btn a:hover{transform:translateY(-2px);background:#fdf6ff}
+  .ft-ph{border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 44px rgba(60,40,90,.34)}
+  .ft-ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,#f2ecf6,var(--bg))}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+  .rs{text-align:center;padding:8px}
+  .rs .no{font-size:12px;letter-spacing:.18em;color:var(--pink);margin-bottom:8px;font-weight:600}
+  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:50%;background:var(--lav-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
+  .rs h3{font-size:17px;font-weight:700;letter-spacing:.04em;color:var(--lav2);margin-bottom:10px}
+  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+
+  /* teacher */
+  .teacher{background:var(--bg)}
+  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
+  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
+  .tc-photo{aspect-ratio:3/4;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#ede6f6,#f0dfe9);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(125,97,166,.2)}
+  .tc-photo .fl{position:absolute;font-size:44px;color:rgba(167,139,199,.55)}
+  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(90,78,110,.5);font-size:10.5px;letter-spacing:.16em}
+  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--pink);font-weight:600}
+  .tc-info h3{font-size:25px;font-weight:700;letter-spacing:.06em;color:var(--lav2);margin:8px 0 4px}
+  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-left:8px;font-weight:400}
+  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tc-badges span{font-size:11.5px;color:var(--lav2);border:1px solid rgba(125,97,166,.4);border-radius:999px;padding:5px 14px;letter-spacing:.04em}
+  .tc-info p{font-size:14px;color:var(--sub);margin-top:16px;line-height:2.05}
+
+  /* voice */
+  .voice{background:linear-gradient(180deg,var(--bg),#f2ecf6)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 26px;box-shadow:0 8px 22px rgba(125,97,166,.06)}
+  .vcard .stars{color:var(--gold);letter-spacing:.16em;font-size:14px}
+  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,#6a5090,#7d61a6 70%);position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:#f6dcea}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#e6dcf2;font-size:14px;margin-bottom:34px;position:relative;z-index:1}
+  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+  .frow{display:flex;flex-direction:column;gap:7px}
+  .frow label{font-size:12.5px;letter-spacing:.05em;color:#f2ecf8}
+  .frow .req{color:#ffe6b3;font-size:10px;margin-left:8px}
+  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.12);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.6)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #ffe6b3;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:#fff;color:var(--lav2);font-weight:700;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.09em;transition:.3s}
+  button.submit:hover{transform:translateY(-2px);background:#fdf6ff}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.16);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-tech{text-align:center;font-size:11.5px;color:#cbbce0;margin-top:22px;line-height:1.9;position:relative;z-index:1}
+  .rsv-mail{text-align:center;margin-top:14px;position:relative;z-index:1}
+  .rsv-mail a{color:#ffe6b3;font-size:12.5px;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.04em}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;color:var(--lav2);font-size:11px;letter-spacing:.16em;background:linear-gradient(135deg,#ede6f6,#f4e3ec);text-align:center;padding:20px}
+  .map-ph b{font-size:14px;letter-spacing:.1em}
+  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
+
+  footer{background:linear-gradient(150deg,#6a5090,#7d61a6);color:#dcd2ec;text-align:center;padding:52px 20px 30px}
+  footer .fmark{font-size:21px;letter-spacing:.16em;color:#fff;font-weight:700}
+  footer .fsub{font-size:10px;letter-spacing:.28em;color:#f6dcea;margin-top:5px}
+  footer .fnote{font-size:11.5px;color:#bcaed4;margin-top:22px;line-height:1.9}
+
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">※こちらは <b>Web制作 ゆたか</b> による <b>アトリエ千宙 様</b> へのご提案用デザイン案（サンプル）です</div>
+
+<header id="hd">
+  <div class="logo">アトリエ千宙<small>HANDMADE ATELIER・NAGOYA</small></div>
+  <nav>
+    <a href="#concept">コンセプト</a>
+    <a href="#lesson">3つの講座</a>
+    <a href="#trial">お試しレッスン</a>
+    <a href="#teacher">講師</a>
+    <a href="#reserve" class="cta">お申し込み</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">天然石アクセサリー・パステルアート・エンジェルアート教室</span>
+    <h1 class="mincho">指でクルクル。<br>その手から、<br><span>ひとつだけ</span>。</h1>
+    <p>むずかしい道具はいりません。指先でクルクルと、天然石やパステルに触れるうちに、いつのまにか夢中に。名古屋の小さな自宅サロンで、あなただけの一点を仕立てる時間を。</p>
+    <div class="hero-cta">
+      <a href="#trial" class="btn btn-primary">お試し1回レッスンを見る →</a>
+      <a href="#lesson" class="btn btn-ghost">3つの講座を見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>✦ お試し<b>1回</b>レッスンOK</span>
+      <span>✦ <b>3講座</b>から選べる</span>
+      <span>✦ 少人数・名古屋 自宅サロン</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept" id="concept">
+  <span class="blob" style="width:280px;height:280px;background:var(--pink);top:-40px;left:-60px"></span>
+  <span class="blob" style="width:320px;height:320px;background:var(--lav);bottom:-80px;right:-70px;opacity:.35"></span>
+  <div class="cnc">
+    <svg class="swirl" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+      <path d="M26 44 C14 44 8 36 8 27 C8 19 14 13 22 13 C29 13 34 18 34 25 C34 31 30 35 25 35 C21 35 18 32 18 28 C18 25 20 23 23 23" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="23" cy="23" r="2.6" fill="currentColor"/>
+    </svg>
+    <div class="sec-head reveal" style="margin-bottom:30px"><span class="en">CONCEPT</span><h2 class="mincho">指でクルクルって、楽しい。</h2></div>
+    <p class="lead reveal mincho">「うまく作れるかな」より、<br>まず、<b>やってみたら楽しかった</b>。<br>そんな小さな夢中を、<br>この手から。</p>
+    <p class="body reveal">アトリエ千宙は、天然石ワイヤーアクセサリー・パステルアート・エンジェルアートの、小さな手づくり教室です。ワイヤーを指でクルクル、パステルを指先でふんわり。むずかしく考えず、触れているうちに夢中になれる——そんな時間を大切にしています。初めての方も、じっくり深めたい方も、ひとりおひとりのペースに寄り添ってお伝えします。</p>
+  </div>
+</section>
+
+<!-- charm -->
+<section class="charm">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
+  <div class="ch-grid">
+    <div class="ch reveal"><span class="ic">✦</span><p>ハンドメイドやクラフトに、前から興味があった</p></div>
+    <div class="ch reveal d1"><span class="ic">✦</span><p>不器用だけど、自分の手でひとつ作ってみたい</p></div>
+    <div class="ch reveal d2"><span class="ic">✦</span><p>天然石やパステルの、やさしい色あいが好き</p></div>
+    <div class="ch reveal"><span class="ic">✦</span><p>まずは1回だけ、気軽に体験してみたい</p></div>
+    <div class="ch reveal d1"><span class="ic">✦</span><p>大人数より、少人数でゆっくり教わりたい</p></div>
+    <div class="ch reveal d2"><span class="ic">✦</span><p>夢中になれる、自分だけの時間がほしい</p></div>
+  </div>
+  <p class="ch-foot reveal mincho">ひとつでも心が動いたなら、<b>まずはお試し1回</b>からどうぞ。</p>
+</section>
+
+<!-- lesson -->
+<section class="lesson" id="lesson">
+  <div class="sec-head reveal"><span class="en">3 LESSONS</span><h2 class="mincho">3つの講座</h2><p>気になる講座から、ひとつずつ。かけもちも大歓迎です</p></div>
+  <div class="l-grid">
+    <div class="lcard c1 reveal">
+      <div class="ph"><img src="images/wire.jpg" alt="天然石ワイヤーアクセサリー（イメージ）"><span class="badge">WIRE ACCESSORY</span></div>
+      <div class="body">
+        <h3 class="mincho">天然石ワイヤーアクセサリー</h3>
+        <p>お気に入りの天然石を、細いワイヤーで指でクルクルと包んで。ペンダントやリングなど、身につけられる自分だけの一点を仕立てます。石選びから楽しい講座です。</p>
+        <span class="tag">身につける手づくり</span>
+      </div>
+    </div>
+    <div class="lcard c2 reveal d1">
+      <div class="ph"><img src="images/pastel.jpg" alt="パステルアート（イメージ）"><span class="badge">PASTEL ART</span></div>
+      <div class="body">
+        <h3 class="mincho">パステルアート</h3>
+        <p>パステルを削って、指先でふんわり伸ばすだけ。絵が苦手でも大丈夫。やわらかな色が重なって、心がほどけるような一枚が仕上がります。飾って楽しめます。</p>
+        <span class="tag">指先でふんわり</span>
+      </div>
+    </div>
+    <div class="lcard c3 reveal d2">
+      <div class="ph"><img src="images/angel.jpg" alt="エンジェルアート（イメージ）"><span class="badge">ANGEL ART</span></div>
+      <div class="body">
+        <h3 class="mincho">エンジェルアート</h3>
+        <p>やさしい光と羽をモチーフに、心を込めて描くヒーリングアート。自分のために、大切な人への贈りものに。静かに向き合う、あたたかな時間になります。</p>
+        <span class="tag">心を込めて描く</span>
+      </div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※講座内容はデザイン案の一例です。実際のカリキュラム・料金に差し替えてお納めします。</p>
+</section>
+
+<!-- trial feature -->
+<section class="trial" id="trial">
+  <div class="ft-wrap">
+    <div class="ft-info reveal">
+      <span class="en">TRIAL LESSON</span>
+      <h2 class="mincho">まずは、<span>お試し1回</span>から。</h2>
+      <p>「続けられるかな」「わたしにできるかな」——その一歩の前に、<b>1回だけのお試しレッスン</b>をご用意しています。3つの講座から気になるものを選んで、手ぶらで、ふらりと。作った作品は、その日にお持ち帰りいただけます。</p>
+      <div class="ft-price">
+        <span class="lbl">お試し1回レッスン</span>
+        <span class="num">￥2,500<small>〜（税込・材料費込）</small></span>
+      </div>
+      <div class="ft-btn"><a href="#reserve">お試しを申し込む →</a></div>
+    </div>
+    <div class="ft-ph reveal"><img src="images/atelier.jpg" alt="アトリエの手づくり道具（イメージ）"></div>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">アトリエ千宙が選ばれる理由</h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🖐</div>
+      <h3 class="mincho">「楽しい」から始められる</h3>
+      <p>上手・下手は考えなくて大丈夫。指でクルクル、ふんわり触れるうちに夢中に。初めての方が「楽しい」と感じられることを、いちばん大切にしています。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🎨</div>
+      <h3 class="mincho">作家が教える確かさ</h3>
+      <p>講師は美術展にも作品を出品する作り手。フェアリーアートなど自身の表現を続けながら、その技と感性を、やさしい言葉でお伝えします。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🏠</div>
+      <h3 class="mincho">少人数の自宅サロン</h3>
+      <p>名古屋の落ち着いた自宅サロンで、少人数制。ひとりおひとりに目が届くから、自分のペースでゆっくり。まるで友人の家に遊びに行くような時間です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- teacher -->
+<section class="teacher" id="teacher">
+  <div class="tc-wrap">
+    <div class="tc-photo reveal">
+      <div class="fl" aria-hidden="true">✦</div>
+      <span>PHOTO ─ 講師・作品（お写真に差し替え）</span>
+    </div>
+    <div class="tc-info reveal">
+      <span class="role">主宰・講師</span>
+      <h3 class="mincho">アトリエ千宙</h3>
+      <div class="tc-badges">
+        <span>美術展 出品作家</span>
+        <span>フェアリーアート</span>
+        <span>ワイヤー／パステル／エンジェル</span>
+      </div>
+      <p>「作れた！」の小さな喜びが、毎日をちょっと明るくしてくれる——そう信じて、この教室をひらきました。天然石やパステルに指で触れる、その心地よさから始めていただけます。美術展に出品するフェアリーアートなど、自分自身も一人の作り手として表現を続けているからこそ、技術だけでなく「つくる楽しさ」そのものを、あなたのペースに寄り添ってお伝えします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さんの声</h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>不器用でずっと諦めていたのに、指でクルクルしているうちに完成！ お試しのつもりが、すっかり通うのが楽しみになりました。</p>
+      <div class="who">30代・女性／ワイヤーアクセサリー</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>絵は苦手でしたが、パステルを指で伸ばすだけでこんなに素敵に。少人数でていねいに教えてもらえて、心がほぐれる時間でした。</p>
+      <div class="who">40代・女性／パステルアート</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>エンジェルアートを大切な人へ贈りました。作家さんに直接教わっていると分かる、あたたかくて丁寧なレッスンです。</p>
+      <div class="who">50代・女性／エンジェルアート</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <span class="blob" style="width:300px;height:300px;background:#c98fb3;top:-60px;right:-70px;opacity:.4"></span>
+  <div class="sec-head reveal"><span class="en">TRIAL & CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずはお試し1回から。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="千宙 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望の講座</label>
+        <select name="lesson">
+          <option value="">選択してください</option>
+          <option>天然石ワイヤーアクセサリー</option>
+          <option>パステルアート</option>
+          <option>エンジェルアート</option>
+          <option>お試し1回レッスン（講座は相談したい）</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>ご希望日（任意）</label><input type="date" name="date"></div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ハンドメイドのご経験や、気になることなど、ご自由にどうぞ"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">✦ ご入力ありがとうございます。メールソフトが立ち上がり、宛先（アトリエ千宙）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-mail reveal">メールソフトが開かない場合はこちら → <a href="mailto:chihiro20110301@gmail.com?subject=%E3%82%A2%E3%83%88%E3%83%AA%E3%82%A8%E5%8D%83%E5%AE%99%20%E4%BD%93%E9%A8%93%E3%81%AE%E3%81%8A%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF">chihiro20110301@gmail.com</a></p>
+  <p class="rsv-tech reveal">🔒 お申し込みは、アトリエへ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">アトリエのご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>アトリエ千宙</td></tr>
+      <tr><th>エリア</th><td>愛知県名古屋市（自宅サロン・詳しい場所はご予約時にご案内）</td></tr>
+      <tr><th>講座</th><td>天然石ワイヤーアクセサリー／パステルアート／エンジェルアート</td></tr>
+      <tr><th>お試し</th><td>1回レッスンOK（初めての方歓迎）</td></tr>
+      <tr><th>ご予約</th><td>完全予約制（フォーム・メール）</td></tr>
+      <tr><th>お問い合わせ</th><td>chihiro20110301@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <b>MAP</b>
+      <span>ここにGoogleマップが入ります</span>
+      <span>（名古屋市・自宅サロン）</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※所在地・レッスン時間・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">アトリエ千宙</div>
+  <div class="fsub">HANDMADE ATELIER・NAGOYA</div>
+  <p class="fnote">※こちらは Web制作 ゆたか による アトリエ千宙 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var name=(f.name.value||'').trim();
+    var mail=(f.mail.value||'').trim();
+    var lesson=f.lesson.value||'（未選択）';
+    var date=f.date.value||'（希望日なし）';
+    var note=(f.note.value||'').trim()||'（特になし）';
+    var subject='アトリエ千宙 体験のお申し込み';
+    var body=
+      'アトリエ千宙 ご担当者さま\n\n'+
+      '体験レッスンを申し込みます。\n\n'+
+      '■お名前：'+name+'\n'+
+      '■メール：'+mail+'\n'+
+      '■ご希望の講座：'+lesson+'\n'+
+      '■ご希望日：'+date+'\n'+
+      '■ご質問・ご希望：\n'+note+'\n';
+    var href='mailto:chihiro20110301@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    window.location.href=href;
+  });
+</script>
+</body>
+</html>

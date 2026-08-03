@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>陶芸教室土夢｜新潟市中央区の陶芸教室・24時間アトリエ（デザイン案・サンプル）</title>
+<meta name="description" content="新潟市中央区の陶芸教室 土夢（どうむ）。24時間利用できるアトリエで、土揉みから本焼きまで陶芸の工程すべてに関われます。手びねり・ロクロ・絵付けの体験コース、初心者〜経験者向けクラス、英語対応クラスもご用意。（ご提案用デザイン案・サンプル）">
+<style>
+  :root{
+    --bg:#f5efe3;
+    --panel:#fdfaf3;
+    --terra:#b5623c;
+    --terra-d:#994e2c;
+    --terra-soft:#f0dccf;
+    --clay:#c98a5e;
+    --brown:#6b4a35;
+    --brown-d:#4e3626;
+    --kiln:#d98b3f;
+    --kiln-soft:#f6e2c4;
+    --ink:#3d3227;
+    --sub:#87765f;
+    --line:rgba(107,74,53,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.03em;font-size:16.5px;overflow-x:hidden}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  img{display:block}
+
+  .sample-bar{background:var(--brown-d);color:#f3e7db;text-align:center;font-size:12px;padding:8px 14px;letter-spacing:.04em;position:relative;z-index:60;line-height:1.7}
+  .sample-bar b{color:#fff}
+  .sample-bar .lim{color:#f0c188;font-weight:700}
+
+  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 26px;background:rgba(245,239,227,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(245,239,227,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 26px}
+  .logo{font-size:20px;letter-spacing:.14em;color:#fff;font-weight:700;line-height:1.2;display:flex;align-items:center;gap:11px;text-shadow:0 1px 12px rgba(0,0,0,.5);transition:color .4s,text-shadow .4s}
+  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
+  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  header:not(.scrolled) .logo small{color:#e8c87a}
+  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .logo .mk{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:linear-gradient(140deg,var(--clay),var(--terra-d));display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 3px 10px rgba(0,0,0,.28)}
+  .logo .lgt{display:block;line-height:1.2}
+  .logo small{display:block;font-size:9.5px;letter-spacing:.26em;color:#f0c188;margin-top:2px;font-weight:600;transition:color .4s}
+  header.scrolled .logo{color:var(--brown-d);text-shadow:none}
+  header.scrolled .logo small{color:var(--terra-d)}
+  nav{display:flex;gap:19px;align-items:center}
+  nav a{color:#fff;text-decoration:none;font-size:13.5px;letter-spacing:.05em;padding-bottom:3px;border-bottom:2px solid transparent;transition:.25s;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  header.scrolled nav a:not(.cta){color:var(--ink);text-shadow:none}
+  nav a:hover{color:#f5cd94;border-color:#f5cd94}
+  header.scrolled nav a:not(.cta):hover{color:var(--terra-d);border-color:var(--terra)}
+  nav a.cta{background:var(--terra);color:#fff;padding:10px 20px;border-radius:999px;border:none;letter-spacing:.03em;white-space:nowrap;box-shadow:0 8px 18px rgba(181,98,60,.34)}
+  nav a.cta:hover{background:var(--terra-d);color:#fff;transform:translateY(-1px);border-color:transparent}
+  @media(max-width:980px){nav a:not(.cta){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(50,32,20,.82) 26%,rgba(60,38,22,.5) 62%,rgba(60,38,22,.26) 100%),url("images/hero.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
+  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-inner{position:relative;z-index:2;max-width:660px;color:#fff;margin-top:62px}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.05em;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.4);padding:8px 18px;border-radius:999px;margin-bottom:22px;font-weight:600}
+  .eyebrow b{color:#f5cd94}
+  .hero h1{font-size:clamp(31px,5.7vw,54px);font-weight:600;line-height:1.5;letter-spacing:.05em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+  .hero h1 span{color:#f0c188}
+  .hero p{margin-top:22px;font-size:clamp(15px,1.8vw,17.5px);color:rgba(255,255,255,.95);max-width:31em;line-height:1.95;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:16px 32px;border-radius:999px;font-size:15.5px;letter-spacing:.03em;transition:.3s;font-weight:700}
+  .btn-primary{background:var(--terra);color:#fff;box-shadow:0 14px 28px rgba(181,98,60,.44)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--terra-d)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+  .btn-ghost:hover{border-color:#f0c188;color:#f0c188}
+  .hero-badges{margin-top:30px;display:flex;gap:12px 22px;flex-wrap:wrap;font-size:14px;color:#fff;font-weight:600}
+  .hero-badges span{display:inline-flex;align-items:center;gap:7px;text-shadow:0 1px 8px rgba(0,0,0,.32)}
+  .hero-badges b{color:#f0c188}
+
+  section{padding:clamp(66px,9vw,110px) 8vw;position:relative}
+  .sec-head{text-align:center;margin-bottom:48px}
+  .sec-head .en{font-size:12px;letter-spacing:.28em;color:var(--terra-d);display:block;margin-bottom:12px;font-weight:700}
+  .sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;letter-spacing:.05em;color:var(--brown);line-height:1.5}
+  .sec-head h2 b{color:var(--terra-d)}
+  .sec-head p{margin-top:14px;font-size:15px;color:var(--sub)}
+
+  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+
+  .reveal{opacity:1;transform:none}
+
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+
+  html.js .reveal.in{opacity:1;transform:none}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* concept */
+  .concept{background:linear-gradient(180deg,var(--bg),#efe6d6);text-align:center;overflow:hidden}
+  .cnc{max-width:760px;margin:0 auto}
+  .cnc .mark{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--terra-soft);color:var(--terra-d);font-size:26px;margin-bottom:22px}
+  .cnc .lead{font-size:clamp(20px,3.2vw,29px);line-height:1.9;color:var(--brown);letter-spacing:.06em}
+  .cnc .lead b{color:var(--terra-d);font-weight:600}
+  .cnc p.body{margin-top:24px;font-size:15px;color:var(--sub);line-height:2.1}
+
+  /* target */
+  .target{background:#efe6d6}
+  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px;max-width:980px;margin:0 auto}
+  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 8px 20px rgba(107,74,53,.05)}
+  .tg .ic{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--terra-soft);color:var(--terra-d);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .tg:nth-child(even) .ic{background:var(--kiln-soft);color:var(--kiln)}
+  .tg p{font-size:15px;line-height:1.8}
+  .tg-foot{text-align:center;margin-top:44px;font-size:clamp(16px,2.2vw,21px);color:var(--brown);line-height:1.85}
+  .tg-foot b{color:var(--terra-d);font-weight:600}
+
+  /* course */
+  .course{background:var(--bg)}
+  .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+  @media(max-width:860px){.cs-grid{grid-template-columns:1fr}}
+  .cs{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 30px 30px;box-shadow:0 10px 26px rgba(107,74,53,.06);position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .cs::before{content:"";position:absolute;top:0;left:0;right:0;height:6px}
+  .cs.c1::before{background:var(--clay)}.cs.c2::before{background:var(--terra)}.cs.c3::before{background:var(--kiln)}
+  .cs .ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:16px}
+  .cs.c1 .ic{background:var(--terra-soft)}.cs.c2 .ic{background:var(--kiln-soft)}.cs.c3 .ic{background:#e7ddce}
+  .cs h3{font-size:21px;font-weight:700;color:var(--brown);letter-spacing:.04em;line-height:1.4}
+  .cs .en{display:block;font-size:11.5px;color:var(--terra-d);letter-spacing:.14em;margin-top:4px;font-weight:600}
+  .cs p{font-size:14.5px;color:var(--sub);line-height:1.95;margin-top:14px;flex:1}
+  .cs .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+  .cs .chips span{font-size:11.5px;color:var(--brown);background:#efe6d6;border-radius:999px;padding:5px 12px;letter-spacing:.02em;font-weight:600}
+  .cs-note{text-align:center;font-size:13px;color:var(--sub);margin-top:26px}
+
+  /* process */
+  .process{background:linear-gradient(160deg,var(--brown),var(--brown-d));color:#f2e7db;overflow:hidden}
+  .process .sec-head .en{color:#f0c188}
+  .process .sec-head h2{color:#fff}
+  .process .sec-head p{color:#d8c6b2}
+  .pr-flow{max-width:940px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:14px}
+  .pstep{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 14px;text-align:center;position:relative}
+  .pstep .no{font-size:11px;letter-spacing:.16em;color:#f0c188;font-weight:700}
+  .pstep .ic{font-size:28px;margin:8px 0 8px}
+  .pstep h4{font-size:15px;font-weight:700;color:#fff;letter-spacing:.03em}
+  .pstep p{font-size:12px;color:#cbb9a4;line-height:1.7;margin-top:5px}
+  .pr-foot{text-align:center;margin-top:38px;font-size:clamp(15px,2.1vw,19px);color:#f7ecdf;line-height:1.9}
+  .pr-foot b{color:#f0c188;font-weight:600}
+
+  /* atelier / 24h band */
+  .band24{background:linear-gradient(135deg,var(--terra),var(--terra-d));color:#fff;text-align:center;overflow:hidden}
+  .b24{max-width:860px;margin:0 auto;position:relative;z-index:1}
+  .b24 .en{font-size:12px;letter-spacing:.28em;color:#ffe6c9;display:block;margin-bottom:14px;font-weight:600}
+  .b24 h2{font-size:clamp(24px,3.6vw,35px);font-weight:600;color:#fff;line-height:1.5;letter-spacing:.03em}
+  .b24 h2 span{color:#ffe0b0}
+  .b24 .big{margin:24px auto 6px;display:inline-flex;align-items:baseline;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:16px 36px}
+  .b24 .big .n{font-size:clamp(46px,9vw,68px);font-weight:700;color:#fff;line-height:1}
+  .b24 .big .u{font-size:22px;font-weight:700;color:#ffe0b0}
+  .b24 p{margin-top:20px;font-size:15px;color:#fbe9d8;line-height:2;max-width:34em;margin-left:auto;margin-right:auto}
+  .b24 p b{color:#ffe0b0;font-weight:600}
+
+  /* reasons */
+  .reasons{background:linear-gradient(180deg,var(--bg),#efe6d6)}
+  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1040px;margin:0 auto}
+  .rs{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 26px rgba(107,74,53,.05);padding:34px 26px}
+  .rs .no{font-size:12.5px;letter-spacing:.12em;color:var(--terra-d);margin-bottom:12px;font-weight:700}
+  .rs .ic{width:70px;height:70px;margin:0 auto 16px;border-radius:50%;background:var(--terra-soft);display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rs:nth-child(even) .ic{background:var(--kiln-soft)}
+  .rs h3{font-size:18px;font-weight:700;color:var(--brown);margin-bottom:11px;line-height:1.5}
+  .rs p{font-size:14px;color:var(--sub);line-height:1.9}
+
+  /* english band */
+  .english{background:#efe6d6}
+  .en-wrap{max-width:900px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:44px 46px;box-shadow:0 14px 34px rgba(107,74,53,.08);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+  @media(max-width:720px){.en-wrap{grid-template-columns:1fr;gap:22px;padding:34px 28px;text-align:center}}
+  .en-globe{width:96px;height:96px;border-radius:50%;background:linear-gradient(140deg,var(--kiln-soft),var(--terra-soft));display:flex;align-items:center;justify-content:center;font-size:44px;flex:0 0 auto;margin:0 auto}
+  .en-info .lbl{font-size:12px;letter-spacing:.22em;color:var(--terra-d);font-weight:700;display:block;margin-bottom:8px}
+  .en-info h3{font-size:clamp(21px,3vw,27px);font-weight:600;color:var(--brown);line-height:1.5}
+  .en-info h3 .sm{display:block;font-size:14px;color:var(--terra-d);letter-spacing:.06em;margin-top:6px;font-style:italic;font-family:"Hiragino Mincho ProN",serif}
+  .en-info p{font-size:14.5px;color:var(--sub);line-height:2;margin-top:14px}
+
+  /* studio / method */
+  .studio{background:linear-gradient(160deg,var(--brown),var(--brown-d));color:#f2e7db}
+  .st-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:960px;margin:0 auto;align-items:center}
+  @media(max-width:760px){.st-wrap{grid-template-columns:1fr;gap:28px}}
+  .st-photo{aspect-ratio:4/3;border-radius:22px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.32)}
+  .st-photo img{width:100%;height:100%;object-fit:cover}
+  .st-info .en{font-size:12px;letter-spacing:.28em;color:#f0c188;display:block;margin-bottom:12px;font-weight:600}
+  .st-info h2{font-size:clamp(22px,3.2vw,30px);font-weight:600;letter-spacing:.05em;color:#fff;line-height:1.6}
+  .st-info p{margin-top:18px;font-size:15px;color:#e3d5c5;line-height:2.1}
+  .st-info p b{color:#f0c188;font-weight:600}
+  .st-info .note{font-size:12px;color:#b39d86;margin-top:14px}
+
+  /* voice */
+  .voice{background:var(--bg)}
+  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:0 10px 24px rgba(107,74,53,.05)}
+  .vcard .stars{color:var(--kiln);letter-spacing:.14em;font-size:16px}
+  .vcard p{font-size:15px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
+  .vcard .who{font-size:13.5px;color:var(--sub);letter-spacing:.02em;font-weight:600}
+
+  /* reserve */
+  .reserve{background:linear-gradient(150deg,var(--terra),var(--terra-d));position:relative;overflow:hidden}
+  .reserve .sec-head .en{color:#ffe6c9}
+  .reserve .sec-head h2{color:#fff}
+  .rsv-sub{text-align:center;color:#fbe9d8;font-size:15px;margin-bottom:32px;line-height:1.85}
+  form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
+  .frow{display:flex;flex-direction:column;gap:8px}
+  .frow label{font-size:14px;letter-spacing:.03em;color:#fff5ec;font-weight:600}
+  .frow .req{color:var(--terra-d);font-size:11px;margin-left:8px;background:#fff;padding:2px 8px;border-radius:6px;font-weight:700}
+  input,select,textarea{font-family:inherit;font-size:16px;padding:14px 16px;border-radius:12px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.13);color:#fff}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.72)}
+  input:focus,select:focus,textarea:focus{outline:2.5px solid #ffe0b0;outline-offset:1px;border-color:transparent}
+  select option{color:#333}
+  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:580px){.frow-2{grid-template-columns:1fr}}
+  button.submit{margin-top:6px;background:var(--brown-d);color:#fff;font-weight:700;border:none;cursor:pointer;padding:17px;border-radius:999px;font-size:16px;letter-spacing:.06em;transition:.3s;box-shadow:0 12px 26px rgba(78,54,38,.4)}
+  button.submit:hover{transform:translateY(-2px);background:#3a281b}
+  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.17);border-radius:14px;padding:18px;font-size:14.5px;line-height:1.85}
+  .rsv-ok.show{display:block}
+  .rsv-mail{text-align:center;margin-top:16px}
+  .rsv-mail a{color:#fff;font-size:13.5px;letter-spacing:.03em;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+  .rsv-tech{text-align:center;font-size:12.5px;color:#fadfca;margin-top:22px;line-height:1.9}
+
+  /* access */
+  .access{background:var(--bg)}
+  .acc-wrap{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:760px){.acc-wrap{grid-template-columns:1fr}}
+  table.info{width:100%;border-collapse:collapse}
+  table.info th,table.info td{padding:14px 8px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.info th{width:32%;color:var(--sub);font-weight:700;letter-spacing:.02em;white-space:nowrap}
+  .map-ph{border-radius:18px;min-height:230px;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;color:var(--brown);font-size:11.5px;letter-spacing:.12em;background:linear-gradient(135deg,var(--terra-soft),#e7d6c6);text-align:center;padding:20px}
+  .map-ph b{font-size:14px;letter-spacing:.08em}
+  .sample-inline{text-align:center;font-size:12.5px;color:var(--sub);margin-top:24px}
+
+  footer{background:var(--brown-d);color:#c1ac96;text-align:center;padding:54px 20px 32px}
+  footer .fmark{font-size:23px;letter-spacing:.14em;color:#fff;font-weight:600}
+  footer .fsub{font-size:10.5px;letter-spacing:.24em;color:#f0c188;margin-top:5px}
+  footer .fnote{font-size:12.5px;color:#a08a74;margin-top:22px;line-height:1.95}
+
+  @media(max-width:560px){
+    body{font-size:16px}
+    section{padding:60px 7vw}
+    .hero{padding:0 7vw}
+    header{padding:12px 18px}
+    header.scrolled{padding:10px 18px}
+    .logo{font-size:16px;max-width:64%}
+    .cs{padding:28px 24px}
+    .en-wrap{padding:30px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
+/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
+  header{gap:12px}
+  header .logo{flex:1 1 auto;min-width:0}
+  header nav{flex:0 0 auto}
+  header nav a.cta{white-space:nowrap}
+  @media(max-width:560px){
+    header{padding-left:16px;padding-right:16px;gap:10px}
+    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
+    header .logo small{font-size:8.5px;letter-spacing:.24em}
+    header nav a.cta{padding:8px 14px;font-size:11.5px}
+  }
+</style>
+<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="sample-bar">こちらは <b>Web制作 ゆたか</b> による <b>陶芸教室土夢 様</b> へのご提案用デザイン案（サンプル）です ・ <span class="lim">2026年8月1日まで</span>の限定公開</div>
+
+<header id="hd">
+  <div class="logo">
+    <span class="mk">陶</span>
+    <span class="lgt">陶芸教室 土夢<small>POTTERY STUDIO DOMU</small></span>
+  </div>
+  <nav>
+    <a href="#target">こんな方へ</a>
+    <a href="#course">体験コース</a>
+    <a href="#process">陶芸の工程</a>
+    <a href="#atelier">24時間アトリエ</a>
+    <a href="#reserve" class="cta">体験・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">新潟市中央区 ｜ <b>24時間利用できる</b>陶芸アトリエ</span>
+    <h1 class="mincho">土に触れ、<br><span>ひとつを、生み出す</span>。</h1>
+    <p>陶芸教室 土夢（どうむ）は、土揉みから本焼きまで、陶芸のすべての工程に自分の手で関われる教室です。24時間利用できるアトリエで、初めての方も、深めたい方も、自分のペースで。</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn btn-primary">体験を申し込む →</a>
+      <a href="#course" class="btn btn-ghost">体験コースを見る</a>
+    </div>
+    <div class="hero-badges">
+      <span>◆ <b>24時間</b>利用OK</span>
+      <span>◆ 土揉み〜<b>本焼き</b>まで</span>
+      <span>◆ <b>英語対応</b>クラス</span>
+    </div>
+  </div>
+</section>
+
+<!-- concept -->
+<section class="concept">
+  <div class="cnc">
+    <div class="mark reveal" aria-hidden="true">◍</div>
+    <div class="sec-head reveal" style="margin-bottom:24px"><span class="en">CONCEPT</span><h2 class="mincho">はじめの一かたまりから、<br>自分の器へ。</h2></div>
+    <p class="lead reveal mincho">見て学ぶだけでは、ありません。<br><b>土を揉み、かたちを作り、火を入れる。</b><br>その一つひとつを、自分の手で。</p>
+    <p class="body reveal">陶芸には、土揉み・成形・削り・素焼き・施釉・窯詰め・本焼きと、いくつもの工程があります。土夢では、そのすべてに自分の手で関わることができます。作る楽しさだけでなく、一つの器が生まれるまでの流れを、まるごと体験してほしい——それが土夢の考えです。初めての方には基礎からていねいに、経験を深めたい方にはより自由に。土と向き合う時間を、あなたのペースで。</p>
+  </div>
+</section>
+
+<!-- target -->
+<section class="target" id="target">
+  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2><p>ひとつでも当てはまったら、土夢はきっと楽しい場所です</p></div>
+  <div class="tg-grid">
+    <div class="tg reveal"><span class="ic">◍</span><p>陶芸を、基礎からきちんと学んでみたい</p></div>
+    <div class="tg reveal d1"><span class="ic">◍</span><p>ロクロを回して、器を作ってみたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◍</span><p>自分の生活時間に合わせて、自由に通いたい</p></div>
+    <div class="tg reveal"><span class="ic">◍</span><p>手びねりや絵付けを、気軽に体験したい</p></div>
+    <div class="tg reveal d1"><span class="ic">◍</span><p>もっと深く、本格的に陶芸を続けたい</p></div>
+    <div class="tg reveal d2"><span class="ic">◍</span><p>English-speaking and want to try Japanese pottery</p></div>
+  </div>
+  <p class="tg-foot reveal mincho">初めての方も、深めたい方も。<br><b>土に触れたくなったら、それが始めどきです。</b></p>
+</section>
+
+<!-- course -->
+<section class="course" id="course">
+  <div class="sec-head reveal"><span class="en">COURSES</span><h2 class="mincho">選べる<b>体験コース</b></h2><p>やってみたいことに合わせて、3つの体験からどうぞ</p></div>
+  <div class="cs-grid">
+    <div class="cs c1 reveal">
+      <div class="ic">🤲</div>
+      <h3 class="mincho">手びねり体験<span class="en">HAND-BUILDING</span></h3>
+      <p>ロクロを使わず、土を手で少しずつ積み上げてかたちを作ります。マグカップや小鉢など、世界にひとつの器を、自分のペースでじっくりと。陶芸が初めての方にもおすすめです。</p>
+      <div class="chips"><span>初めて歓迎</span><span>器・小物</span><span>ゆっくり</span></div>
+    </div>
+    <div class="cs c2 reveal d1">
+      <div class="ic">🏺</div>
+      <h3 class="mincho">ロクロ体験<span class="en">POTTERY WHEEL</span></h3>
+      <p>回転するロクロの上で、土を引き上げてかたちを作る、陶芸らしい体験。お茶碗やお皿など、なめらかな曲線の器づくりに挑戦できます。スタッフがしっかりサポートします。</p>
+      <div class="chips"><span>人気</span><span>茶碗・皿</span><span>サポートあり</span></div>
+    </div>
+    <div class="cs c3 reveal d2">
+      <div class="ic">🎨</div>
+      <h3 class="mincho">絵付け体験<span class="en">PAINTING</span></h3>
+      <p>素焼きした器に、筆で模様や絵を描いていきます。土をこねるのはちょっと…という方も、気軽に楽しめる工程。お子さまやグループでのご参加にもぴったりです。</p>
+      <div class="chips"><span>手軽</span><span>親子OK</span><span>グループ歓迎</span></div>
+    </div>
+  </div>
+  <p class="cs-note reveal">※体験のほか、基礎から学ぶ初心者クラス・じっくり打ち込める一般クラスもご用意しています。コース内容・料金はデザイン案の一例で、実際の内容に差し替えてお納めします。</p>
+</section>
+
+<!-- process -->
+<section class="process" id="process">
+  <div class="sec-head reveal"><span class="en">PROCESS</span><h2 class="mincho">一つの器が生まれるまで</h2><p>土夢では、この工程すべてに自分の手で関われます</p></div>
+  <div class="pr-flow">
+    <div class="pstep reveal"><div class="no">STEP 01</div><div class="ic">💪</div><h4 class="mincho">土揉み</h4><p>土の中の空気を抜き、なめらかに整える</p></div>
+    <div class="pstep reveal d1"><div class="no">STEP 02</div><div class="ic">🏺</div><h4 class="mincho">成形</h4><p>手びねり・ロクロでかたちを作る</p></div>
+    <div class="pstep reveal d2"><div class="no">STEP 03</div><div class="ic">🔪</div><h4 class="mincho">削り</h4><p>乾かして、厚みや高台を整える</p></div>
+    <div class="pstep reveal"><div class="no">STEP 04</div><div class="ic">🔥</div><h4 class="mincho">素焼き</h4><p>低温で焼き、器の下地を固める</p></div>
+    <div class="pstep reveal d1"><div class="no">STEP 05</div><div class="ic">🖌️</div><h4 class="mincho">施釉</h4><p>釉薬をかけ、色とツヤを与える</p></div>
+    <div class="pstep reveal d2"><div class="no">STEP 06</div><div class="ic">📦</div><h4 class="mincho">窯詰め</h4><p>器を窯に並べ、本焼きに備える</p></div>
+    <div class="pstep reveal"><div class="no">STEP 07</div><div class="ic">✨</div><h4 class="mincho">本焼き</h4><p>高温で焼き上げ、器が完成する</p></div>
+  </div>
+  <p class="pr-foot reveal mincho">作るだけではなく、<b>火を入れて仕上げるところまで</b>。<br>だから、出来上がったときの喜びが、ひとしおです。</p>
+</section>
+
+<!-- 24h atelier band -->
+<section class="band24" id="atelier">
+  <div class="b24 reveal">
+    <span class="en">24H ATELIER</span>
+    <h2 class="mincho">アトリエは、<span>24時間、あなたのもの。</span></h2>
+    <div class="big"><span class="n">24</span><span class="u">時間 利用可能</span></div>
+    <p>お仕事や家事のあと、早朝でも、深夜でも。土夢のアトリエは<b>24時間利用できる</b>から、決まった時間に縛られず、自分の生活リズムに合わせて創作に集中できます。「もう少しだけ、続けたい」——その気持ちに、しっかり応えられる環境です。</p>
+  </div>
+</section>
+
+<!-- reasons -->
+<section class="reasons">
+  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">土夢が<b>選ばれる理由</b></h2></div>
+  <div class="rs-grid">
+    <div class="rs reveal">
+      <div class="no">REASON 01</div>
+      <div class="ic">🕐</div>
+      <h3>24時間のアトリエ</h3>
+      <p>時間を気にせず、自分のペースで。生活に合わせて自由に通える、24時間利用可能な創作環境です。</p>
+    </div>
+    <div class="rs reveal d1">
+      <div class="no">REASON 02</div>
+      <div class="ic">🔄</div>
+      <h3>工程すべてを体験</h3>
+      <p>土揉みから本焼きまで、陶芸のすべての工程に自分の手で。器が生まれる流れを、まるごと味わえます。</p>
+    </div>
+    <div class="rs reveal d2">
+      <div class="no">REASON 03</div>
+      <div class="ic">🌱</div>
+      <h3>初心者〜経験者まで</h3>
+      <p>基礎から学ぶ初心者クラスも、深く打ち込む一般クラスも。一人ひとりのレベルに合わせて対応します。</p>
+    </div>
+    <div class="rs reveal d3">
+      <div class="no">REASON 04</div>
+      <div class="ic">🌏</div>
+      <h3>英語対応クラス</h3>
+      <p>英語対応クラスを完備。海外から来られた方も、言葉の心配なく、日本の陶芸を楽しめます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- english band -->
+<section class="english">
+  <div class="en-wrap reveal">
+    <div class="en-globe" aria-hidden="true">🌏</div>
+    <div class="en-info">
+      <span class="lbl">ENGLISH-FRIENDLY</span>
+      <h3 class="mincho">英語対応クラス、あります。<span class="sm">English classes available.</span></h3>
+      <p>土夢では、英語に対応したクラスをご用意しています。日本の伝統的な陶芸を、言葉の壁を感じることなく体験していただけます。海外からお越しの方、日本在住の外国人の方も、どうぞお気軽にお問い合わせください。<br><span style="color:var(--terra-d);font-style:italic;font-family:'Hiragino Mincho ProN',serif">We offer classes in English. Enjoy authentic Japanese pottery with us — everyone is welcome.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- studio / method -->
+<section class="studio">
+  <div class="st-wrap">
+    <div class="st-photo reveal"><img src="images/studio.jpg" alt="ロクロで器を成形する様子（イメージ）"></div>
+    <div class="st-info reveal">
+      <span class="en">OUR STUDIO</span>
+      <h2 class="mincho">土と向き合う時間を、<br>のびのびと。</h2>
+      <p>土夢が大切にしているのは、<b>自分の手で、最後まで作りきる</b>という体験です。土を揉むところから、火を入れて仕上げるところまで。その流れを知ると、一つの器が、ぐっと愛おしくなります。</p>
+      <p>24時間利用できるアトリエだから、思い立ったときに、納得いくまで。初めての方も、深めたい方も、外国から来られた方も。土と過ごす、豊かな時間をご一緒しましょう。</p>
+      <p class="note">※内容はサンプルです。実際のご紹介文・お写真に差し替えてお納めします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- voice -->
+<section class="voice">
+  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">通われている方の<b>声</b></h2></div>
+  <div class="v-grid">
+    <div class="vcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>まったくの初心者でしたが、土揉みから本焼きまで一つずつ教えてもらえて、初めての器が焼き上がったときは本当に感動しました。次は湯のみに挑戦します。</p>
+      <div class="who">40代・女性／初心者クラス</div>
+    </div>
+    <div class="vcard reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>仕事帰りの遅い時間でも通えるのが、私にはぴったり。24時間使えるので、集中したい日はとことん向き合えます。自分のペースで続けられています。</p>
+      <div class="who">30代・男性／一般クラス</div>
+    </div>
+    <div class="vcard reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>Joined the English class while traveling in Niigata. The staff explained every step kindly, and I made my own bowl. A wonderful experience!</p>
+      <div class="who">Visitor from overseas／英語対応クラス</div>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
+</section>
+
+<!-- reserve -->
+<section class="reserve" id="reserve">
+  <div class="sec-head reveal"><span class="en">CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
+  <p class="rsv-sub reveal">まずは体験から。初めての方も、英語での参加をご希望の方も、お気軽にどうぞ。<br>下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
+  <form class="reveal" id="rsvForm" novalidate>
+    <div class="frow-2">
+      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
+      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
+    </div>
+    <div class="frow-2">
+      <div class="frow"><label>ご希望のコース</label>
+        <select name="course">
+          <option value="">選択してください</option>
+          <option>手びねり体験</option>
+          <option>ロクロ体験</option>
+          <option>絵付け体験</option>
+          <option>初心者クラス（基礎から学びたい）</option>
+          <option>一般クラス（本格的に続けたい）</option>
+          <option>英語対応クラス（English class）</option>
+          <option>まだ決めていない・相談したい</option>
+        </select>
+      </div>
+      <div class="frow"><label>陶芸のご経験</label>
+        <select name="exp">
+          <option value="">選択してください</option>
+          <option>まったくの初めて</option>
+          <option>少し体験したことがある</option>
+          <option>続けている・経験者</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ご希望の日時や、作ってみたいもの、気になることなど、ご自由にどうぞ（English is welcome）"></textarea></div>
+    <button type="submit" class="submit">この内容でメールを作成する</button>
+    <p class="rsv-ok" id="rsvOk">◍ ご入力ありがとうございます。メールソフトが立ち上がり、宛先（陶芸教室土夢）と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
+  </form>
+  <p class="rsv-mail reveal">メールソフトが開かない場合はこちら → <a href="mailto:tougeidomu@gmail.com">tougeidomu@gmail.com</a></p>
+  <p class="rsv-tech reveal">🔒 お問い合わせは、教室へ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。</p>
+</section>
+
+<!-- access -->
+<section class="access">
+  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
+  <div class="acc-wrap">
+    <table class="info reveal">
+      <tr><th>教室名</th><td>陶芸教室 土夢（どうむ）</td></tr>
+      <tr><th>所在地</th><td>新潟県新潟市中央区東堀前通5番町408-1</td></tr>
+      <tr><th>利用時間</th><td>24時間利用可能なアトリエ</td></tr>
+      <tr><th>コース</th><td>手びねり／ロクロ／絵付け 体験・初心者クラス・一般クラス</td></tr>
+      <tr><th>言語対応</th><td>日本語／英語（English-friendly）</td></tr>
+      <tr><th>お問い合わせ</th><td>tougeidomu@gmail.com</td></tr>
+    </table>
+    <div class="map-ph reveal">
+      <b>MAP</b>
+      <span>ここにGoogleマップが入ります</span>
+      <span>（新潟市中央区東堀前通5番町）</span>
+    </div>
+  </div>
+  <p class="sample-inline reveal">※所在地・利用時間・コース・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
+</section>
+
+<footer>
+  <div class="fmark mincho">陶芸教室 土夢</div>
+  <div class="fsub">POTTERY STUDIO DOMU ・ NIIGATA</div>
+  <p class="fnote">こちらは Web制作 ゆたか による 陶芸教室土夢 様 へのご提案用デザイン案（サンプル）です。<br>掲載の文章・コース・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+</footer>
+
+<script>
+  var hd=document.getElementById('hd');
+  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
+
+  document.getElementById('rsvForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var f=this;
+    var v=function(n){var el=f.elements[n];return el&&el.value?el.value:'（未入力）';};
+    var body=
+      '陶芸教室土夢 体験・お問い合わせ\n'+
+      '───────────────────\n'+
+      'お名前　　：'+v('name')+'\n'+
+      'メール　　：'+v('mail')+'\n'+
+      'ご希望コース：'+v('course')+'\n'+
+      'ご経験　　：'+v('exp')+'\n'+
+      'ご質問等　：'+v('note')+'\n'+
+      '───────────────────\n'+
+      '（このメールはデザイン見本のフォームから作成されました）';
+    var url='mailto:tougeidomu@gmail.com'+
+      '?subject='+encodeURIComponent('【体験・お問い合わせ】陶芸教室土夢')+
+      '&body='+encodeURIComponent(body);
+    document.getElementById('rsvOk').classList.add('show');
+    f.querySelector('button').textContent='メールソフトを開きました';
+    setTimeout(function(){window.location.href=url;},600);
+  });
+</script>
+</body>
+</html>
