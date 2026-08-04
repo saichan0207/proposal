@@ -26,11 +26,11 @@
   body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.02em;font-size:18px;overflow-x:hidden}
   .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
   img{display:block}
+  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
+  .sample-bar b{color:var(--gold2)}
+  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
 
-  .sample-bar{background:linear-gradient(90deg,#38220c,#6b4517);color:#f8ead2;text-align:center;font-size:13px;padding:9px 16px;letter-spacing:.04em;position:relative;z-index:60;line-height:1.6}
-  .sample-bar b{color:var(--orange3)}
-
-  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px 26px;background:rgba(253,245,231,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header{position:sticky;top:var(--bar-h,34px);z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px 26px;background:rgba(253,245,231,0);transition:background .4s,box-shadow .4s,padding .4s}
   header.scrolled{background:rgba(253,245,231,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:12px 26px}
   .logo{font-size:20px;letter-spacing:.12em;color:#fff;font-weight:700;line-height:1.3;text-shadow:0 1px 14px rgba(0,0,0,.5);transition:color .4s,text-shadow .4s}
   /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
@@ -236,7 +236,7 @@
 </head>
 <body>
 
-<div class="sample-bar">※こちらは <b>Web制作 ゆたか</b> による <b>平野区 60歳から始めるウクレレ教室 様</b> へのご提案用デザイン案（サンプル）です</div>
+<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜平野区 60歳から始めるウクレレ教室 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
   <div class="logo">60歳から始めるウクレレ教室<small>HIRANO UKULELE ─ OSAKA</small></div>
@@ -481,7 +481,7 @@
 <footer>
   <div class="fmark mincho">平野区 60歳から始めるウクレレ教室</div>
   <div class="fsub">HIRANO UKULELE ─ OSAKA</div>
-  <p class="fnote">※こちらは Web制作 ゆたか による 平野区 60歳から始めるウクレレ教室 様 へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真・会場情報はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+  <p class="fnote">このページは Web制作 ゆたか が 平野区 60歳から始めるウクレレ教室 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>平野区 60歳から始めるウクレレ教室 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
 <script>
@@ -516,6 +516,13 @@
     f.querySelector('button').textContent='送信画面を開きました';
     setTimeout(function(){window.location.href=url;},600);
   });
+</script>
+<!-- sample-bar patched 2026-08-04 -->
+<script>
+/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
+(function(){var b=document.querySelector('.sample-bar');if(!b)return;
+var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
+f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
 </script>
 </body>
 </html>

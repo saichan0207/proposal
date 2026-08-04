@@ -25,11 +25,11 @@
   html{scroll-behavior:smooth}
   body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--base);color:var(--ink);line-height:2;letter-spacing:.05em;overflow-x:hidden}
   .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
+  .sample-bar b{color:var(--gold2)}
+  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
 
-  .sample-bar{background:linear-gradient(90deg,#a86b78,#c98b96);color:#fff;text-align:center;font-size:11.5px;letter-spacing:.05em;padding:7px 14px;line-height:1.7;position:relative;z-index:60}
-  .sample-bar b{color:#fbeef0;font-weight:600}
-
-  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:17px 26px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header{position:sticky;top:var(--bar-h,34px);z-index:40;display:flex;justify-content:space-between;align-items:center;padding:17px 26px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
   header.scrolled{background:rgba(247,242,234,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 26px}
   .logo{font-size:19px;letter-spacing:.24em;color:var(--pink-d);font-weight:600}
   /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
@@ -214,7 +214,7 @@
 </head>
 <body>
 
-<div class="sample-bar">このページは <b>Web制作 ゆたか</b> による <b>ポーセラーツ教室Lady K 様</b>へのご提案用デザイン案（サンプル）です　・　<b>2026年7月30日まで</b>の限定公開</div>
+<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜ポーセラーツ教室Lady K 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
   <div class="logo">ポーセラーツ教室 Lady K<small>LADY K ・ 太宰府</small></div>
@@ -402,7 +402,7 @@
 <footer>
   <div class="fmark mincho">ポーセラーツ教室 Lady K</div>
   <div class="fsub">LADY K ・ DAZAIFU</div>
-  <p class="fnote">このページは Web制作 ゆたか による ポーセラーツ教室Lady K 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+  <p class="fnote">このページは Web制作 ゆたか が ポーセラーツ教室Lady K 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>ポーセラーツ教室Lady K 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
 <script>
@@ -428,6 +428,13 @@
     document.getElementById('rsvOk').classList.add('show');
     f.querySelector('button').textContent='メールソフトを開きました';
   });
+</script>
+<!-- sample-bar patched 2026-08-04 -->
+<script>
+/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
+(function(){var b=document.querySelector('.sample-bar');if(!b)return;
+var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
+f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
 </script>
 </body>
 </html>

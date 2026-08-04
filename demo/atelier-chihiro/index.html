@@ -30,11 +30,11 @@
 
   /* soft pastel blobs */
   .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none;z-index:0}
+  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
+  .sample-bar b{color:var(--gold2)}
+  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
 
-  .sample-bar{background:linear-gradient(90deg,#7d61a6,#a78bc7 55%,#dd9fbb);color:#fff;text-align:center;font-size:11.5px;padding:7px 14px;letter-spacing:.07em;position:relative;z-index:60}
-  .sample-bar b{color:#fff4fb}
-
-  header{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header{position:sticky;top:var(--bar-h,34px);z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(247,242,234,0);transition:background .4s,box-shadow .4s,padding .4s}
   header.scrolled{background:rgba(247,242,234,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
   .logo{font-size:19px;letter-spacing:.2em;color:var(--lav2);font-weight:700}
   /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
@@ -225,7 +225,7 @@
 </head>
 <body>
 
-<div class="sample-bar">※こちらは <b>Web制作 ゆたか</b> による <b>アトリエ千宙 様</b> へのご提案用デザイン案（サンプル）です</div>
+<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜アトリエ千宙 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
   <div class="logo">アトリエ千宙<small>HANDMADE ATELIER・NAGOYA</small></div>
@@ -457,7 +457,7 @@
 <footer>
   <div class="fmark mincho">アトリエ千宙</div>
   <div class="fsub">HANDMADE ATELIER・NAGOYA</div>
-  <p class="fnote">※こちらは Web制作 ゆたか による アトリエ千宙 様へのご提案用デザイン案（サンプル）です。<br>掲載の文章・料金・写真はすべてイメージで、実際の内容に差し替えてお納めします。</p>
+  <p class="fnote">このページは Web制作 ゆたか が アトリエ千宙 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>アトリエ千宙 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
 <script>
@@ -491,6 +491,13 @@
     f.querySelector('button').textContent='メールソフトを開きました';
     window.location.href=href;
   });
+</script>
+<!-- sample-bar patched 2026-08-04 -->
+<script>
+/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
+(function(){var b=document.querySelector('.sample-bar');if(!b)return;
+var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
+f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
 </script>
 </body>
 </html>

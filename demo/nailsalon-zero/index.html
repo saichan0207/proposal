@@ -27,7 +27,7 @@
   .propbar{background:#4a413c;color:#ffe6dc;text-align:center;font-size:11px;letter-spacing:.05em;padding:7px 14px;line-height:1.6}
   .propbar b{color:#ffb59f;font-weight:600}
 
-  header{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(255,247,241,0);transition:background .4s,box-shadow .4s,padding .4s}
+  header{position:sticky;top:var(--bar-h,34px);z-index:30;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(255,247,241,0);transition:background .4s,box-shadow .4s,padding .4s}
   header.scrolled{background:rgba(255,247,241,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(236,92,61,.08);padding:11px 24px}
   .logo{font-size:20px;letter-spacing:.16em;color:var(--coral-d);font-weight:700}
   /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
@@ -176,10 +176,14 @@
     header .logo small{font-size:8.5px;letter-spacing:.24em}
     header nav a.cta{padding:8px 14px;font-size:11.5px}
   }
+  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
+  .sample-bar b{color:var(--gold2)}
+  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
 </style>
 <script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
 </head>
 <body>
+<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜nailsalon ZERO 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
 
 <div class="propbar">このページは <b>Web制作 ゆたか</b> による <b>nailsalon ZERO</b>様へのご提案用デザイン案（サンプル）です</div>
 
@@ -320,7 +324,7 @@
 <footer>
   <div class="fmark">nailsalon ZERO</div>
   <div class="fsub">SHIZUOKA</div>
-  <p class="fnote">このページは Web制作 ゆたか による nailsalon ZERO様へのご提案用デザイン案（サンプル）です。<br>掲載内容・数値はサンプルを含みます。実際の情報に差し替えてお納めします。</p>
+  <p class="fnote">このページは Web制作 ゆたか が nailsalon ZERO 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>nailsalon ZERO 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
 <script>
@@ -331,6 +335,13 @@
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
   document.getElementById('rsvForm').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('rsvOk').classList.add('show');this.querySelector('button').textContent='送信しました';});
+</script>
+<!-- sample-bar patched 2026-08-04 -->
+<script>
+/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
+(function(){var b=document.querySelector('.sample-bar');if(!b)return;
+var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
+f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
 </script>
 </body>
 </html>
