@@ -160,6 +160,19 @@
   .tc-info p{font-size:14px;color:#aecdc7;margin-top:16px;line-height:2.05}
   .tc-info .sample-inline{color:#7fa8a1;text-align:left;margin-top:12px}
 
+  /* 略歴（年表）。年の桁が変わっても左端が揃うよう、年の幅を固定する */
+  .tc-hist{margin-top:26px;border-top:1px solid rgba(220,239,235,.18);padding-top:20px}
+  .tc-hist:empty{display:none;border:0;padding:0;margin:0}
+  .hist-row{display:flex;gap:16px;align-items:baseline;padding:7px 0;border-bottom:1px solid rgba(220,239,235,.08)}
+  .hist-row:last-child{border-bottom:0}
+  .hist-y{flex:0 0 8.5em;font-size:12.5px;letter-spacing:.04em;color:var(--sun);font-variant-numeric:tabular-nums}
+  .hist-t{font-size:13.5px;color:#aecdc7;line-height:1.85}
+  .hist-note{font-size:13px;color:#8fb8b1;line-height:1.9;padding-top:12px}
+  @media(max-width:560px){
+    .hist-row{flex-direction:column;gap:2px;padding:9px 0}
+    .hist-y{flex:none;font-size:11.5px}
+  }
+
 
   /* 教室の様子（実際のお写真） */
   .gallery{background:var(--paper);overflow:hidden}
@@ -527,6 +540,9 @@
       <h3 class="mincho" data-e="teacher_name" data-l="講師：お名前">金城 安紀</h3>
       <span class="lic" data-e="teacher_lic" data-l="講師：肩書き">福岡・熊本で三線教室を主宰／初心者〜経験者まで指導</span>
       <p data-e="teacher_bio" data-l="講師：プロフィール文">沖縄の唄と三線に魅せられて、その温かさを一人でも多くの方に伝えたい——そんな想いでこの教室を続けています。大切にしているのは、上手・下手よりも「弾いていて楽しい」という気持ち。楽譜が読めない方も、久しぶりに三線に触れる方も、どうぞ安心していらしてください。まずは見学・体験で、島の音色を一緒に鳴らしてみましょう。</p>
+
+      <!-- 略歴：シートの1セルに「1963年<空白>内容」を1行ずつ書くと、年と内容が縦に揃って出る -->
+      <div class="tc-hist" data-e="teacher_history" data-hist data-l="講師：略歴（年表）"></div>
     </div>
   </div>
 </section>
@@ -833,6 +849,14 @@
         var src=driveImg(v), test=new Image();
         test.onload=function(){ el.src=src; };   // 読めたときだけ差し替える
         test.src=src;
+      }else if(el.dataset.hist!==undefined){
+        // 年表：1行＝「1963年<タブか全角スペース>内容」。年と内容を別の枠に入れて縦に揃える
+        el.innerHTML = v.split(/\n/).map(function(line){
+          var m = String(line).trim().match(/^([0-9]{4}(?:年)?(?:\s*[〜～-]\s*[0-9]{4}年?)?)[\s　\t]+(.+)$/);
+          var esc = function(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+          if(!m) return line.trim() ? '<div class="hist-note">'+esc(line.trim())+'</div>' : '';
+          return '<div class="hist-row"><span class="hist-y">'+esc(m[1])+'</span><span class="hist-t">'+esc(m[2])+'</span></div>';
+        }).join("");
       }else{
         el.innerHTML = v.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
       }
