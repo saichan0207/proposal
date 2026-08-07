@@ -164,7 +164,39 @@
   }
 
   /* 波の区切り */
-  .wave{display:block;width:100%;height:auto;margin-bottom:-2px}
+  .wave{display:block;width:100%;height:clamp(46px,6vw,88px);margin-bottom:-2px}
+
+
+  /* ===== 背景の下地 =====
+     単色だと寂しいので、絵本のページのように三層で敷く。
+     ①やわらかい水玉 ②ふんわり浮かぶ大きな丸 ③セクションの境目の波。
+     どれも transform と opacity だけで動かすので、端末は重くならない。 */
+
+  /* ① 水玉：うっすら全体に */
+  .dots{position:relative}
+  .dots::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background-image:radial-gradient(circle, rgba(127,212,193,.16) 2.2px, transparent 2.4px);
+    background-size:30px 30px;background-position:0 0}
+  .dots.warm::before{background-image:radial-gradient(circle, rgba(255,143,126,.14) 2.2px, transparent 2.4px)}
+  .dots > *{position:relative;z-index:1}
+
+  /* ② ふんわり浮かぶ大きな丸 */
+  .blobs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;
+    animation:float 18s ease-in-out infinite alternate}
+  @keyframes float{
+    0%{transform:translate(0,0) scale(1)}
+    100%{transform:translate(18px,-22px) scale(1.06)}
+  }
+  .blob.b1{width:230px;height:230px;background:var(--mint-l);top:-70px;left:-70px}
+  .blob.b2{width:170px;height:170px;background:var(--lemon-l);bottom:-50px;right:-40px;animation-delay:-6s}
+  .blob.b3{width:130px;height:130px;background:var(--coral-l);top:32%;right:6%;animation-delay:-11s;opacity:.35}
+  .blob.b4{width:190px;height:190px;background:var(--lav-l);bottom:8%;left:4%;animation-delay:-3s;opacity:.4}
+  @media(max-width:640px){.blob.b3,.blob.b4{display:none}.blob.b1{width:150px;height:150px}.blob.b2{width:120px;height:120px}}
+
+  /* ③ セクションの境目の波 */
+  .wave2{display:block;width:100%;height:clamp(38px,4.6vw,68px);margin-bottom:-2px;position:relative;z-index:2}
+  .wave-up{margin-bottom:0;margin-top:-2px}
 
   /* ---- ポイント3つ ---- */
   .points{background:var(--white)}
@@ -343,7 +375,8 @@
 </svg>
 
 <!-- ============ とくちょう ============ -->
-<section class="points" id="points">
+<section class="points dots" id="points">
+  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
   <div class="inner">
     <div class="sec-head rv">
       <span class="en">OUR LESSON</span>
@@ -390,8 +423,13 @@
   </div>
 </section>
 
+<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#fffbf5" d="M0,30 C180,66 360,4 540,24 C760,48 900,72 1120,42 C1260,23 1360,10 1440,18 L1440,70 L0,70 Z"/>
+</svg>
+
 <!-- ============ 年齢 ============ -->
 <section class="ages" id="ages">
+  <div class="blobs" aria-hidden="true"><span class="blob b2"></span><span class="blob b4"></span></div>
   <div class="inner">
     <div class="sec-head rv">
       <span class="en">FOR AGES</span>
@@ -408,8 +446,13 @@
   </div>
 </section>
 
+<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#ffffff" d="M0,22 C200,58 420,66 660,38 C880,12 1080,4 1260,26 C1340,36 1400,44 1440,40 L1440,70 L0,70 Z"/>
+</svg>
+
 <!-- ============ レッスンの流れ ============ -->
-<section class="flow" id="flow">
+<section class="flow dots warm" id="flow">
+  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b3"></span></div>
   <div class="inner">
     <div class="sec-head rv">
       <span class="en">HOW IT GOES</span>
@@ -449,7 +492,8 @@
 </section>
 
 <!-- ============ お月謝 ============ -->
-<section class="price" id="price">
+<section class="price dots" id="price">
+  <div class="blobs" aria-hidden="true"><span class="blob b2"></span><span class="blob b4"></span></div>
   <div class="inner">
     <div class="sec-head rv">
       <span class="en">PRICE</span>
@@ -463,6 +507,10 @@
     </div>
   </div>
 </section>
+
+<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#fffbf5" d="M0,40 C220,8 460,4 700,30 C920,54 1120,66 1440,32 L1440,70 L0,70 Z"/>
+</svg>
 
 <!-- ============ 教室のこと ============ -->
 <section class="info" id="info">
