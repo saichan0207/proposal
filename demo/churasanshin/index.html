@@ -182,6 +182,30 @@
 
 
   /* 教室の様子（実際のお写真） */
+  /* 動画（YouTube）：サムネイルだけ先に出し、押されたときに読み込む＝ページを重くしない */
+  .listen{background:linear-gradient(180deg,var(--paper2),var(--paper))}
+  .videos{background:var(--paper2)}
+  .yt-wrap{max-width:900px;margin:0 auto}
+  .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+  @media(max-width:760px){.vid-grid{grid-template-columns:1fr}}
+  .yt{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--sea-soft);
+      box-shadow:0 14px 34px rgba(2,137,163,.16);cursor:pointer}
+  .yt img{width:100%;height:100%;object-fit:cover;display:block}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(4,98,119,.28);
+            transition:background .25s}
+  .yt:hover .play{background:rgba(4,98,119,.14)}
+  .yt .play span{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.94);
+                 display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .25s}
+  .yt:hover .play span{transform:scale(1.08)}
+  .yt .play span::after{content:"";border-style:solid;border-width:13px 0 13px 21px;
+                        border-color:transparent transparent transparent var(--coral);margin-left:5px}
+  .yt figcaption,.vid-cap{display:block;margin-top:12px;font-size:14px;color:var(--sub);text-align:center;line-height:1.7}
+  .yt-note{text-align:center;font-size:13.5px;color:var(--sub);margin-top:18px}
+  .yt-more{text-align:center;margin-top:34px}
+  .yt-more a{display:inline-block;padding:13px 30px;border-radius:999px;border:1.5px solid var(--sea);
+             color:var(--sea-d);text-decoration:none;font-weight:700;font-size:14.5px;transition:.25s}
+  .yt-more a:hover{background:var(--sea);color:#fff}
   .gallery{background:var(--paper);overflow:hidden}
   .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;max-width:1000px;margin:0 auto}
   @media(max-width:760px){.gal-grid{grid-template-columns:1fr}}
@@ -445,6 +469,20 @@
 </section>
 
 <!-- concept -->
+<!-- 演奏を聴く：URLがシートに入ったときだけ表示する -->
+<section class="listen" id="listen" hidden>
+  <div class="sec-head reveal">
+    <span class="bloom" style="color:var(--sun)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span>
+    <span class="en">LISTEN</span>
+    <h2 class="mincho" data-e="listen_title" data-l="演奏を聴く：見出し">まずは、三線の音を聴いてください</h2>
+    <p data-e="listen_text" data-l="演奏を聴く：説明文">講師・金城安紀の演奏です。再生ボタンを押すと音が出ますので、音量にご注意ください。</p>
+  </div>
+  <div class="yt-wrap reveal">
+    <div class="yt" data-yt="listen_video" data-l="動画：トップで聴かせる演奏（YouTubeのURL）"></div>
+    <p class="vid-cap" data-e="listen_cap" data-l="演奏を聴く：動画の説明"></p>
+  </div>
+</section>
+
 <section class="concept" id="concept">
   <div class="hibi hibi-tr" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
   <div class="hibi hibi-bl" style="color:var(--sea)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></div>
@@ -554,6 +592,25 @@
   </div>
 </section>
 
+
+<!-- レッスン動画：URLがシートに入ったものだけ表示する -->
+<section class="videos" id="videos" hidden>
+  <div class="sec-head reveal">
+    <span class="bloom" style="color:var(--coral)" aria-hidden="true"><svg><use href="#hibiscus"/></svg></span>
+    <span class="en">MOVIE</span>
+    <h2 class="mincho" data-e="videos_title" data-l="レッスン動画：見出し">レッスン動画</h2>
+    <p data-e="videos_text" data-l="レッスン動画：説明文">弾き方のコツを、動画でご覧いただけます。</p>
+  </div>
+  <div class="vid-grid">
+    <figure class="reveal"><div class="yt" data-yt="lesson_video1" data-l="レッスン動画1（YouTubeのURL）"></div>
+      <figcaption class="vid-cap" data-e="lesson_video1_cap" data-l="レッスン動画1：説明"></figcaption></figure>
+    <figure class="reveal d1"><div class="yt" data-yt="lesson_video2" data-l="レッスン動画2（YouTubeのURL）"></div>
+      <figcaption class="vid-cap" data-e="lesson_video2_cap" data-l="レッスン動画2：説明"></figcaption></figure>
+    <figure class="reveal d2"><div class="yt" data-yt="lesson_video3" data-l="レッスン動画3（YouTubeのURL）"></div>
+      <figcaption class="vid-cap" data-e="lesson_video3_cap" data-l="レッスン動画3：説明"></figcaption></figure>
+  </div>
+  <div class="yt-more reveal" id="ytMore" hidden><a data-e="youtube_channel_url" data-l="YouTubeチャンネルのURL" target="_blank" rel="noopener">ほかの動画もYouTubeで見る</a></div>
+</section>
 
 <!-- 教室の様子 -->
 <section class="gallery" id="gallery">
@@ -852,7 +909,11 @@
       if(v===undefined) return;
       v = String(v).trim();
       if(v==="") return;                     // 空欄＝「変更なし」。消さない
-      if(el.tagName==="IMG"){
+      if(el.tagName==="A" && /^https?:\/\//.test(v)){
+        el.href = v;
+        var box = el.closest("#ytMore");
+        if(box) box.removeAttribute("hidden");
+      }else if(el.tagName==="IMG"){
         var src=driveImg(v), test=new Image();
         test.onload=function(){ el.src=src; };   // 読めたときだけ差し替える
         test.src=src;
@@ -867,6 +928,45 @@
       }else{
         el.innerHTML = v.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>");
       }
+    });
+
+    // --- 動画（YouTube）---
+    // 押されるまで iframe を作らない（サムネイル1枚だけなのでページが軽い）。
+    // URLが空のものは出さない。1本も入っていなければセクションごと出さない。
+    function ytId(u){
+      var m = String(u).match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
+      return m ? m[1] : (/^[A-Za-z0-9_-]{11}$/.test(String(u).trim()) ? String(u).trim() : "");
+    }
+    document.querySelectorAll("[data-yt]").forEach(function(box){
+      var id = ytId(map[box.getAttribute("data-yt")] || "");
+      if(!id) return;
+      var img = new Image();
+      img.alt = "";
+      img.loading = "lazy";
+      img.src = "https://i.ytimg.com/vi/"+id+"/maxresdefault.jpg";
+      img.onerror = function(){ img.onerror=null; img.src="https://i.ytimg.com/vi/"+id+"/hqdefault.jpg"; };
+      box.appendChild(img);
+      var play = document.createElement("div");
+      play.className = "play";
+      play.innerHTML = "<span></span>";
+      box.appendChild(play);
+      box.setAttribute("role","button");
+      box.setAttribute("tabindex","0");
+      box.setAttribute("aria-label","動画を再生する（音が出ます）");
+      var open = function(){
+        if(box.querySelector("iframe")) return;
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&playsinline=1";
+        f.title = "演奏動画";
+        f.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+        f.setAttribute("allowfullscreen","");
+        box.innerHTML = "";
+        box.appendChild(f);
+      };
+      box.addEventListener("click", open);
+      box.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); open(); } });
+      var sec = box.closest("section");
+      if(sec) sec.removeAttribute("hidden");
     });
   }).catch(function(e){ /* 失敗しても元の内容のまま。何もしない */ });
 
