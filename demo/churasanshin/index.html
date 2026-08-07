@@ -222,6 +222,7 @@
   .yt .play span::after{content:"";border-style:solid;border-width:13px 0 13px 21px;
                         border-color:transparent transparent transparent var(--coral);margin-left:5px}
   .yt figcaption,.vid-cap{display:block;margin-top:12px;font-size:14px;color:var(--sub);text-align:center;line-height:1.7}
+  .yt[hidden],.vid-cap[hidden],.player[hidden]{display:none}
   .yt-note{text-align:center;font-size:13.5px;color:var(--sub);margin-top:18px}
   .yt-more{text-align:center;margin-top:34px}
   .yt-more a{display:inline-block;padding:13px 30px;border-radius:999px;border:1.5px solid var(--sea);
@@ -981,6 +982,10 @@
       box.removeAttribute("hidden");
       var yt = box.parentNode.querySelector(".yt");
       if(yt) yt.setAttribute("hidden","");                 // 音源があるときは動画を出さない
+      var vc = box.parentNode.querySelector(".vid-cap");
+      if(vc) vc.setAttribute("hidden","");                 // 動画用の説明文も一緒に下げる
+      var art = box.querySelector(".art");                 // ジャケット写真が無ければ枠ごと出さない
+      if(art && !(map["listen_art"]||"").trim()) art.remove();
       var sec = box.closest("section"); if(sec) sec.removeAttribute("hidden");
       var mmss=function(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2); };
       btn.addEventListener("click", function(){
