@@ -88,7 +88,12 @@
   .inner{max-width:980px;margin:0 auto}
   .sec-head{text-align:center;margin-bottom:clamp(36px,5vw,56px)}
   .sec-head .en{display:block;font-size:11px;letter-spacing:.3em;font-weight:800;color:var(--coral);margin-bottom:10px}
-  .sec-head h2{font-size:clamp(24px,4.4vw,34px);font-weight:800;color:var(--ink-d);line-height:1.5}
+  .sec-head h2{font-size:clamp(24px,4.4vw,34px);font-weight:800;color:var(--ink-d);line-height:1.5;
+    display:inline-block;position:relative}
+  .sec-head h2::after{content:"";position:absolute;left:-4px;right:-4px;bottom:2px;height:12px;
+    background:var(--lemon-l);border-radius:99px;z-index:-1;transform:scaleX(0);transform-origin:left;
+    transition:transform .8s cubic-bezier(.2,.8,.3,1) .25s}
+  .sec-head.in h2::after,.rv.in h2::after{transform:scaleX(1)}
   .sec-head p{margin-top:12px;color:var(--sub);font-size:15px}
 
   /* ゆらゆら揺れる小さな飾り */
@@ -150,6 +155,36 @@
   .tag{background:var(--white);padding:8px 17px;border-radius:999px;font-size:12.5px;
     font-weight:700;color:var(--sub);box-shadow:0 4px 12px rgba(122,145,160,.1)}
   .tag b{color:var(--mint)}
+
+  /* 音の波紋：中心から静かに広がる。リトミックは「音」が主役なので背景に置く */
+  .ripples{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:0;
+    pointer-events:none;width:min(720px,120vw);aspect-ratio:1}
+  .ripple{position:absolute;inset:0;border-radius:50%;border:2px solid var(--mint);
+    opacity:0;animation:ring 7s cubic-bezier(.2,.6,.3,1) infinite}
+  .ripple:nth-child(2){border-color:var(--coral);animation-delay:2.33s}
+  .ripple:nth-child(3){border-color:var(--lemon);animation-delay:4.66s}
+  @keyframes ring{
+    0%{transform:scale(.18);opacity:0}
+    14%{opacity:.42}
+    100%{transform:scale(1);opacity:0}
+  }
+
+  /* 楽器のイラスト：ヒーローの左右で、ゆっくり浮く */
+  .inst{position:absolute;z-index:1;pointer-events:none;animation:bobbing 6s ease-in-out infinite}
+  @keyframes bobbing{
+    0%,100%{transform:translateY(0) rotate(-4deg)}
+    50%{transform:translateY(-14px) rotate(4deg)}
+  }
+  .inst.i1{top:14%;left:4%}
+  .inst.i2{top:56%;right:5%;animation-delay:-2s}
+  .inst.i3{top:31%;right:11%;animation-delay:-4s}
+  .inst.i4{bottom:9%;left:9%;animation-delay:-1s}
+  @media(max-width:760px){
+    .inst{transform:scale(.62)}
+    .inst.i1{top:auto;bottom:4%;left:-1%}
+    .inst.i2{top:auto;bottom:9%;right:-2%}
+    .inst.i3,.inst.i4{display:none}
+  }
 
   /* シャボン玉：ゆっくり上がって消える */
   .bubbles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
@@ -246,6 +281,18 @@
   .sbody h4{font-size:17.5px;font-weight:800;color:var(--ink-d);margin-bottom:5px}
   .sbody p{font-size:14.5px;color:var(--sub)}
 
+  /* ---- はじめての方へ（ご不安への答え） ---- */
+  .faq{background:var(--white)}
+  .q-list{max-width:720px;margin:0 auto}
+  .q{background:var(--cream);border-radius:20px;padding:22px 26px;margin-bottom:14px;
+    transition:transform .3s cubic-bezier(.22,1.2,.36,1),box-shadow .3s}
+  .q:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .q h4{font-size:16px;font-weight:800;color:var(--ink-d);display:flex;gap:12px;align-items:flex-start;line-height:1.7}
+  .q h4::before{content:"Q";flex:none;width:28px;height:28px;border-radius:50%;background:var(--coral);
+    color:#fff;font-size:14px;display:grid;place-items:center;margin-top:2px}
+  .q p{margin-top:12px;padding-left:40px;font-size:14.5px;color:var(--sub);line-height:2}
+  @media(max-width:520px){.q{padding:20px 20px}.q p{padding-left:0}}
+
   /* ---- 先生 ---- */
   .teacher{background:linear-gradient(180deg,var(--cream2),var(--cream))}
   .t-card{background:var(--white);border-radius:var(--round);padding:clamp(30px,4.6vw,48px);
@@ -292,12 +339,20 @@
   .r-note{margin-top:18px;font-size:12.5px;color:var(--sub)}
 
   /* ---- フッター ---- */
-  footer{background:var(--ink-d);color:#fff;text-align:center;padding:52px 6vw 40px}
-  .fmark{font-size:21px;font-weight:800}
+  footer{background:linear-gradient(180deg,var(--mint-l),var(--cream2));color:var(--ink);
+    text-align:center;padding:56px 6vw 44px;position:relative}
+  .fmark{font-size:22px;font-weight:800;color:var(--ink-d)}
   .fsub{font-size:10.5px;letter-spacing:.24em;color:var(--mint);margin-top:5px;font-weight:700}
-  .fnote{margin-top:26px;font-size:11.5px;line-height:2;color:rgba(255,255,255,.62);
+  .fnote{margin-top:26px;font-size:11.5px;line-height:2;color:var(--sub);
     max-width:640px;margin-left:auto;margin-right:auto}
-  .fnote b{color:var(--lemon)}
+  .fnote b{color:var(--coral)}
+  .fmusic{display:flex;gap:14px;justify-content:center;margin-top:22px}
+  .fmusic span{width:9px;height:9px;border-radius:50%;background:var(--coral);
+    animation:hop 1.6s ease-in-out infinite}
+  .fmusic span:nth-child(2){background:var(--lemon);animation-delay:.16s}
+  .fmusic span:nth-child(3){background:var(--mint);animation-delay:.32s}
+  .fmusic span:nth-child(4){background:var(--lav);animation-delay:.48s}
+  @keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-9px)}}
 
   /* ---- スクロールで現れる ---- */
   .rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.2,.8,.3,1),transform .85s cubic-bezier(.2,.8,.3,1)}
@@ -331,26 +386,54 @@
 <div class="hero">
   <div class="bubbles" id="bubbles" aria-hidden="true"></div>
 
-  <!-- ゆらゆら揺れる音符 -->
-  <div class="deco" style="top:16%;left:6%;animation:sway 5s ease-in-out infinite" aria-hidden="true">
-    <svg width="42" height="52" viewBox="0 0 42 52" fill="none">
-      <path d="M16 40V8l20-5v29" stroke="#ff8f7e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#ff8f7e"/>
-      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#ff8f7e"/>
+  <!-- 音の波紋 -->
+  <div class="ripples" aria-hidden="true">
+    <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
+  </div>
+
+  <!-- 楽器のイラスト（リトミックで実際に使うもの） -->
+  <div class="inst i1" aria-hidden="true">
+    <!-- ハンドベル -->
+    <svg width="82" height="96" viewBox="0 0 82 96" fill="none">
+      <rect x="34" y="4" width="14" height="26" rx="7" fill="#b8a4dd"/>
+      <path d="M41 28c-15 0-25 13-27 27l-2 14c-.4 3 2 5.6 5 5.6h48c3 0 5.4-2.6 5-5.6l-2-14c-2-14-12-27-27-27Z" fill="#ff8f7e"/>
+      <ellipse cx="41" cy="76" rx="30" ry="6" fill="#ffb5a7"/>
+      <circle cx="41" cy="86" r="7" fill="#4a5568"/>
+      <path d="M28 46c1.6-7 6.4-12 13-13.6" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".65"/>
     </svg>
   </div>
-  <div class="deco" style="top:60%;right:7%;animation:sway 6.2s ease-in-out .8s infinite" aria-hidden="true">
-    <svg width="34" height="42" viewBox="0 0 42 52" fill="none">
-      <path d="M16 40V8l20-5v29" stroke="#7fd4c1" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#7fd4c1"/>
-      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#7fd4c1"/>
+  <div class="inst i2" aria-hidden="true">
+    <!-- タンバリン -->
+    <svg width="92" height="92" viewBox="0 0 92 92" fill="none">
+      <circle cx="46" cy="46" r="34" fill="#ffe9a3"/>
+      <circle cx="46" cy="46" r="34" stroke="#ffd466" stroke-width="8"/>
+      <circle cx="46" cy="46" r="24" fill="#fff8e2"/>
+      <circle cx="46" cy="10" r="7" fill="#7fd4c1"/>
+      <circle cx="76" cy="30" r="7" fill="#7fd4c1"/>
+      <circle cx="76" cy="63" r="7" fill="#7fd4c1"/>
+      <circle cx="46" cy="82" r="7" fill="#7fd4c1"/>
+      <circle cx="16" cy="63" r="7" fill="#7fd4c1"/>
+      <circle cx="16" cy="30" r="7" fill="#7fd4c1"/>
     </svg>
   </div>
-  <div class="deco" style="top:30%;right:14%;animation:sway 4.4s ease-in-out .4s infinite" aria-hidden="true">
-    <svg width="26" height="32" viewBox="0 0 42 52" fill="none">
-      <path d="M16 40V8l20-5v29" stroke="#ffd466" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#ffd466"/>
-      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#ffd466"/>
+  <div class="inst i3" aria-hidden="true">
+    <!-- マラカス -->
+    <svg width="62" height="92" viewBox="0 0 62 92" fill="none">
+      <rect x="25" y="46" width="12" height="42" rx="6" fill="#c9a882"/>
+      <ellipse cx="31" cy="30" rx="25" ry="28" fill="#8ecae6"/>
+      <path d="M14 24c2-9 9-15 17-16.4" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+      <circle cx="24" cy="36" r="3.4" fill="#fff" opacity=".7"/>
+      <circle cx="38" cy="28" r="3" fill="#fff" opacity=".55"/>
+      <circle cx="34" cy="42" r="2.6" fill="#fff" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="inst i4" aria-hidden="true">
+    <!-- カスタネット -->
+    <svg width="78" height="66" viewBox="0 0 78 66" fill="none">
+      <path d="M39 8C22 8 8 17 8 28c0 8 6 13 14 15l17 4 17-4c8-2 14-7 14-15C70 17 56 8 39 8Z" fill="#7fd4c1"/>
+      <path d="M39 58c-17 0-31-8-31-19 0 11 14 19 31 19s31-8 31-19c0 11-14 19-31 19Z" fill="#5cbfa9"/>
+      <circle cx="39" cy="26" r="9" fill="#fff8e2"/>
+      <path d="M20 20c2.4-4.6 7-7.6 12-8.6" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".55"/>
     </svg>
   </div>
 
@@ -386,10 +469,12 @@
     <div class="p-grid">
       <div class="pcard rv">
         <div class="picon">
-          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
-            <path d="M24 6c-7 0-12 5-12 12v9l-4 6h32l-4-6v-9c0-7-5-12-12-12Z" fill="#7fd4c1"/>
-            <circle cx="24" cy="40" r="4.5" fill="#4a5568"/>
-            <path d="M24 3v3" stroke="#4a5568" stroke-width="2.6" stroke-linecap="round"/>
+          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
+            <path d="M30 8c-9 0-15 8-16 17l-1.4 10c-.4 2.6 1.6 5 4.3 5h26.2c2.7 0 4.7-2.4 4.3-5L46 25c-1-9-7-17-16-17Z" fill="#7fd4c1"/>
+            <rect x="26" y="2" width="8" height="10" rx="4" fill="#4a5568"/>
+            <ellipse cx="30" cy="41" rx="19" ry="4" fill="#a5e3d5"/>
+            <circle cx="30" cy="50" r="5" fill="#4a5568"/>
+            <path d="M21 24c1-4.4 4-7.6 8-8.6" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".7"/>
           </svg>
         </div>
         <h3>泣いても、歩いても大丈夫</h3>
@@ -397,13 +482,16 @@
       </div>
       <div class="pcard rv d1">
         <div class="picon">
-          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="16" stroke="#ff8f7e" stroke-width="4"/>
-            <circle cx="24" cy="24" r="7" fill="#ff8f7e"/>
-            <circle cx="24" cy="7" r="3.4" fill="#ff8f7e"/>
-            <circle cx="41" cy="24" r="3.4" fill="#ff8f7e"/>
-            <circle cx="24" cy="41" r="3.4" fill="#ff8f7e"/>
-            <circle cx="7" cy="24" r="3.4" fill="#ff8f7e"/>
+          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="22" fill="#ffe1d9"/>
+            <circle cx="30" cy="30" r="22" stroke="#ff8f7e" stroke-width="6"/>
+            <circle cx="30" cy="30" r="15" fill="#fff5f2"/>
+            <circle cx="30" cy="6" r="4.6" fill="#ffd466"/>
+            <circle cx="51" cy="19" r="4.6" fill="#ffd466"/>
+            <circle cx="51" cy="42" r="4.6" fill="#ffd466"/>
+            <circle cx="30" cy="54" r="4.6" fill="#ffd466"/>
+            <circle cx="9" cy="42" r="4.6" fill="#ffd466"/>
+            <circle cx="9" cy="19" r="4.6" fill="#ffd466"/>
           </svg>
         </div>
         <h3>楽器はぜんぶ用意します</h3>
@@ -411,9 +499,14 @@
       </div>
       <div class="pcard rv d2">
         <div class="picon">
-          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
-            <path d="M14 30c-4 0-7-3-7-7s3-7 7-7c1 0 2 .2 3 .6C18.6 12 22 9 26 9c5.5 0 10 4.5 10 10 4 0 7 3 7 6.5S40 32 36 32H14Z" fill="#ffd466"/>
-            <path d="M18 38l3-4M27 39l3-5M35 37l2.5-3.5" stroke="#4a5568" stroke-width="2.6" stroke-linecap="round"/>
+          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
+            <path d="M30 51c-8 0-14-4-14-9V22c0-5 6-9 14-9s14 4 14 9v20c0 5-6 9-14 9Z" fill="#ffd466"/>
+            <ellipse cx="30" cy="22" rx="14" ry="8" fill="#fff3cf"/>
+            <ellipse cx="30" cy="42" rx="14" ry="8" fill="#f5c14f"/>
+            <path d="M17 27l26 10M43 27L17 37" stroke="#fff" stroke-width="3" opacity=".55"/>
+            <path d="M12 12l-5-6M48 12l5-6" stroke="#4a5568" stroke-width="3.6" stroke-linecap="round"/>
+            <circle cx="6" cy="4" r="3.4" fill="#4a5568"/>
+            <circle cx="54" cy="4" r="3.4" fill="#4a5568"/>
           </svg>
         </div>
         <h3>季節の歌と、手あそび</h3>
@@ -464,6 +557,23 @@
       <div class="step rv d1"><div class="snum">2</div><div class="sbody"><h4>からだを動かす</h4><p>音に合わせて歩く、走る、止まる。ピアノの音が変わったら、動きも変わります。</p></div></div>
       <div class="step rv d2"><div class="snum">3</div><div class="sbody"><h4>楽器であそぶ</h4><p>鈴やタンバリンを鳴らします。音の大きい・小さいを、耳と手で覚えていきます。</p></div></div>
       <div class="step rv d3"><div class="snum">4</div><div class="sbody"><h4>さようならの歌</h4><p>最後はゆっくり座って、今日の歌をもう一度。おうちで歌える曲を持って帰ります。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ はじめての方へ ============ -->
+<section class="faq" id="faq">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">FIRST TIME</span>
+      <h2>はじめての方から、よくいただくご質問</h2>
+      <p>ご不安なところは、遠慮なく聞いてください。</p>
+    </div>
+    <div class="q-list">
+      <div class="q rv"><h4>うちの子、じっとしていられません。だいじょうぶでしょうか</h4><p>だいじょうぶです。この年齢のお子さまは、じっと座っていられなくて当たり前です。走り回っても、部屋のすみで見ているだけでも、それがその日のその子のペースです。お母さんが謝られる必要はまったくありません。</p></div>
+      <div class="q rv d1"><h4>途中の月から入ることはできますか</h4><p>できます。毎月の歌や活動は月ごとに変わりますので、いつ入られても「途中から」にはなりません。はじめての方には、最初の数回はそばでご説明しながら進めます。</p></div>
+      <div class="q rv d2"><h4>下の子（赤ちゃん）を連れていっても大丈夫ですか</h4><p>どうぞご一緒にお越しください。抱っこひものままご参加いただけます。授乳やおむつ替えの場所も、お声がけいただければご案内します。</p></div>
+      <div class="q rv d3"><h4>まず見学だけしたいのですが</h4><p>もちろん大丈夫です。お子さまがその日の気分で参加されなくても構いません。教室の雰囲気を見ていただくだけでも、遠慮なくお越しください。</p></div>
     </div>
   </div>
 </section>
@@ -542,7 +652,8 @@
 </section>
 
 <footer>
-  <div class="fmark">大船ぽかぽかリトミック教室</div>
+  <div class="fmusic" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="fmark" style="margin-top:18px">大船ぽかぽかリトミック教室</div>
   <div class="fsub">POKAPOKA RYTHMIQUE</div>
   <p class="fnote">このページは Web制作 ゆたか が 大船ぽかぽかリトミック教室 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>大船ぽかぽかリトミック教室 様の公式サイトではありません</b>。<br>掲載の文章・料金はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、このページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
