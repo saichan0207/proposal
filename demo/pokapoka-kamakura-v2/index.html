@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>大船ぽかぽかリトミック教室｜神奈川県鎌倉市の親子リトミック教室（デザイン案・サンプル）</title>
+<meta name="description" content="神奈川県鎌倉市の親子リトミック教室「大船ぽかぽかリトミック教室」のホームページデザイン案です。0歳から通える親子のリトミック。体験レッスンのお申し込みまでスマホで完結します。">
+<style>
+  /* ===========================================================
+     未就学児向けリトミック教室のテンプレート（2026-08-08 作成）
+
+     なぜ作ったか：既存の base.html は濃紺＋明朝体＋金の落ち着いた型で、
+     ピアノ教室や大人の教室には合うが、0〜6歳の保護者には「堅すぎる」と
+     実際にご指摘をいただいた（大船ぽかぽかリトミック教室 木梨様）。
+
+     この型の考え方：
+       ・写真を使わない。実在しないお子さまの写真を載せないため、
+         そして「音」は写真より動きのほうが伝わるため。全部SVGとCSSで描く
+       ・色はパステル。線は太く、角は丸く。明朝体は使わない
+       ・動きは「ふわり」と「ぽん」。速い動き・鋭い動きは使わない
+       ・動きが苦手な方のために prefers-reduced-motion で全部止める
+     =========================================================== */
+
+  :root{
+    --cream:#fffbf5;      /* 生成りの紙 */
+    --cream2:#fff5e9;
+    --mint:#7fd4c1;
+    --mint-l:#c9efe6;
+    --coral:#ff8f7e;
+    --coral-l:#ffd9d2;
+    --lemon:#ffd466;
+    --lemon-l:#fff0c4;
+    --lav:#b8a4dd;
+    --lav-l:#e8dff7;
+    --sky:#8ecae6;
+    --sky-l:#d4ecf7;
+    --ink:#4a5568;        /* 黒すぎない文字色 */
+    --ink-d:#3a4553;
+    --sub:#8794a3;
+    --white:#fff;
+    --shadow:0 10px 30px rgba(122,145,160,.13);
+    --shadow-l:0 18px 44px rgba(122,145,160,.18);
+    --round:26px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN W4","Rounded Mplus 1c",
+                "Hiragino Sans","Yu Gothic",sans-serif;
+    background:var(--cream); color:var(--ink); line-height:1.9;
+    font-size:16px; letter-spacing:.02em; overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+
+  /* ---- 見本ページの帯 ---- */
+  .sample-bar{background:linear-gradient(90deg,#5b6b7c,#7a8b9c);color:#fff;text-align:center;
+    font-size:11.5px;line-height:1.7;padding:9px 14px;position:sticky;top:0;z-index:80}
+  .sample-bar b{color:var(--lemon)}
+  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:8px 12px}}
+
+  /* ---- ヘッダー ---- */
+  header{position:sticky;top:0;z-index:70;background:rgba(255,251,245,.9);
+    backdrop-filter:blur(10px);padding:14px 6vw;display:flex;align-items:center;
+    justify-content:space-between;gap:16px;transition:box-shadow .3s}
+  header.stuck{box-shadow:0 4px 20px rgba(122,145,160,.12)}
+  .logo{font-weight:800;font-size:18px;color:var(--ink-d);line-height:1.35}
+  .logo small{display:block;font-size:10px;letter-spacing:.22em;color:var(--mint);font-weight:700}
+  header nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
+  header nav a{text-decoration:none;color:var(--sub);transition:color .2s}
+  header nav a:hover{color:var(--mint)}
+  header .cta{background:var(--coral);color:#fff;padding:11px 22px;border-radius:999px;
+    box-shadow:0 6px 16px rgba(255,143,126,.35);transition:transform .25s,box-shadow .25s}
+  header .cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,143,126,.45)}
+  @media(max-width:820px){header nav a:not(.cta){display:none}}
+
+  /* ---- 共通 ---- */
+  section{padding:clamp(64px,9vw,110px) 6vw;position:relative}
+  .inner{max-width:980px;margin:0 auto}
+  .sec-head{text-align:center;margin-bottom:clamp(36px,5vw,56px)}
+  .sec-head .en{display:block;font-size:11px;letter-spacing:.3em;font-weight:800;color:var(--coral);margin-bottom:10px}
+  .sec-head h2{font-size:clamp(24px,4.4vw,34px);font-weight:800;color:var(--ink-d);line-height:1.5}
+  .sec-head p{margin-top:12px;color:var(--sub);font-size:15px}
+
+  /* ゆらゆら揺れる小さな飾り */
+  .deco{position:absolute;pointer-events:none;opacity:.55}
+  .deco svg{display:block}
+
+  /* ---- ヒーロー ---- */
+  .hero{padding:clamp(44px,7vw,72px) 6vw clamp(70px,9vw,110px);position:relative;overflow:hidden;
+    background:
+      radial-gradient(60% 50% at 12% 8%, var(--mint-l) 0%, transparent 60%),
+      radial-gradient(55% 45% at 92% 22%, var(--coral-l) 0%, transparent 62%),
+      radial-gradient(50% 45% at 70% 92%, var(--lemon-l) 0%, transparent 60%),
+      var(--cream);
+    background-size:170% 170%,170% 170%,170% 170%,100% 100%;
+    animation:bgDrift 26s ease-in-out infinite alternate}
+  @keyframes bgDrift{
+    0%{background-position:0% 0%,100% 20%,60% 100%,0 0}
+    100%{background-position:12% 10%,88% 8%,48% 88%,0 0}
+  }
+  .hero-in{max-width:980px;margin:0 auto;position:relative;z-index:3;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--white);
+    padding:9px 20px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--mint);
+    box-shadow:var(--shadow);margin-bottom:26px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral);
+    animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.45);opacity:.55}}
+
+  .hero h1{font-size:clamp(30px,7.2vw,58px);font-weight:800;line-height:1.42;color:var(--ink-d);
+    letter-spacing:.01em}
+  .hero h1 .w{display:inline-block;opacity:0;transform:translateY(26px) scale(.94);
+    animation:pop .78s cubic-bezier(.22,1.4,.36,1) forwards}
+  .hero h1 .c1{color:var(--coral)} .hero h1 .c2{color:var(--mint)} .hero h1 .c3{color:var(--lav)}
+  @keyframes pop{to{opacity:1;transform:translateY(0) scale(1)}}
+
+  .hero .lead{margin:26px auto 0;max-width:620px;font-size:clamp(14.5px,2.1vw,16.5px);
+    color:var(--ink);opacity:0;animation:fadeUp .9s .85s ease forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+  .hero-btns{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:fadeUp .9s 1.05s ease forwards}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:17px 34px;border-radius:999px;
+    font-weight:800;font-size:15.5px;text-decoration:none;transition:transform .28s cubic-bezier(.22,1.3,.36,1),box-shadow .28s}
+  .btn-main{background:var(--coral);color:#fff;box-shadow:0 10px 26px rgba(255,143,126,.4)}
+  .btn-main:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(255,143,126,.5)}
+  .btn-sub{background:var(--white);color:var(--ink);box-shadow:var(--shadow)}
+  .btn-sub:hover{transform:translateY(-4px);box-shadow:var(--shadow-l)}
+  .btn .arw{transition:transform .28s}
+  .btn:hover .arw{transform:translateX(4px)}
+
+  .hero-tags{margin-top:30px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+    opacity:0;animation:fadeUp .9s 1.25s ease forwards}
+  .tag{background:var(--white);padding:8px 17px;border-radius:999px;font-size:12.5px;
+    font-weight:700;color:var(--sub);box-shadow:0 4px 12px rgba(122,145,160,.1)}
+  .tag b{color:var(--mint)}
+
+  /* シャボン玉：ゆっくり上がって消える */
+  .bubbles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .bub{position:absolute;bottom:-90px;border-radius:50%;opacity:0;
+    background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),rgba(255,255,255,.25) 42%,transparent 68%);
+    animation:rise linear infinite}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) scale(.7);opacity:0}
+    12%{opacity:.85}
+    88%{opacity:.6}
+    100%{transform:translateY(-116vh) translateX(var(--dx)) scale(1.05);opacity:0}
+  }
+
+  /* 波の区切り */
+  .wave{display:block;width:100%;height:auto;margin-bottom:-2px}
+
+  /* ---- ポイント3つ ---- */
+  .points{background:var(--white)}
+  .p-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .pcard{background:var(--cream);border-radius:var(--round);padding:36px 28px;text-align:center;
+    transition:transform .35s cubic-bezier(.22,1.2,.36,1),box-shadow .35s}
+  .pcard:hover{transform:translateY(-7px);box-shadow:var(--shadow-l)}
+  .picon{width:88px;height:88px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center}
+  .pcard:nth-child(1) .picon{background:var(--mint-l)}
+  .pcard:nth-child(2) .picon{background:var(--coral-l)}
+  .pcard:nth-child(3) .picon{background:var(--lemon-l)}
+  .pcard h3{font-size:19px;font-weight:800;color:var(--ink-d);margin-bottom:10px}
+  .pcard p{font-size:14.5px;color:var(--sub);line-height:1.95}
+  .picon svg{animation:sway 3.4s ease-in-out infinite}
+  .pcard:nth-child(2) .picon svg{animation-delay:.4s}
+  .pcard:nth-child(3) .picon svg{animation-delay:.8s}
+  @keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+
+  /* ---- 年齢バッジ ---- */
+  .ages{background:linear-gradient(180deg,var(--cream),var(--cream2))}
+  .age-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .age{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;text-align:center;
+    font-weight:800;color:var(--ink-d);box-shadow:var(--shadow);background:var(--white);
+    opacity:0;transform:scale(.6)}
+  .age.in{animation:bounceIn .72s cubic-bezier(.22,1.5,.4,1) forwards}
+  @keyframes bounceIn{to{opacity:1;transform:scale(1)}}
+  .age span{display:block;font-size:24px;line-height:1.15}
+  .age small{display:block;font-size:11.5px;color:var(--sub);font-weight:700}
+  .age:nth-child(1){background:var(--mint-l)} .age:nth-child(2){background:var(--coral-l)}
+  .age:nth-child(3){background:var(--lemon-l)} .age:nth-child(4){background:var(--lav-l)}
+  .age:nth-child(5){background:var(--sky-l)}
+  @media(max-width:520px){.age{width:78px;height:78px}.age span{font-size:20px}}
+
+  /* ---- レッスンの流れ ---- */
+  .flow{background:var(--white)}
+  .steps{position:relative;max-width:720px;margin:0 auto}
+  .steps::before{content:"";position:absolute;left:35px;top:26px;bottom:26px;width:3px;
+    background:repeating-linear-gradient(180deg,var(--mint-l) 0 9px,transparent 9px 18px)}
+  @media(max-width:560px){.steps::before{left:27px}}
+  .step{display:flex;gap:22px;align-items:flex-start;margin-bottom:26px;position:relative}
+  .step:last-child{margin-bottom:0}
+  .snum{flex:none;width:72px;height:72px;border-radius:50%;background:var(--white);
+    border:3px solid var(--mint-l);display:grid;place-items:center;font-weight:800;font-size:20px;
+    color:var(--mint);box-shadow:var(--shadow);position:relative;z-index:2}
+  @media(max-width:560px){.snum{width:56px;height:56px;font-size:17px}.step{gap:16px}}
+  .sbody{padding-top:9px}
+  .sbody h4{font-size:17.5px;font-weight:800;color:var(--ink-d);margin-bottom:5px}
+  .sbody p{font-size:14.5px;color:var(--sub)}
+
+  /* ---- 先生 ---- */
+  .teacher{background:linear-gradient(180deg,var(--cream2),var(--cream))}
+  .t-card{background:var(--white);border-radius:var(--round);padding:clamp(30px,4.6vw,48px);
+    box-shadow:var(--shadow);max-width:760px;margin:0 auto;text-align:center}
+  .t-face{width:132px;height:132px;border-radius:50%;margin:0 auto 22px;
+    background:linear-gradient(135deg,var(--lav-l),var(--sky-l));display:grid;place-items:center}
+  .t-name{font-size:22px;font-weight:800;color:var(--ink-d)}
+  .t-role{font-size:13px;color:var(--mint);font-weight:800;letter-spacing:.06em;margin-top:4px}
+  .t-bio{margin-top:18px;font-size:15px;color:var(--ink);text-align:left;line-height:2.05}
+
+  /* ---- 料金 ---- */
+  .price{background:var(--white)}
+  .pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:820px;margin:0 auto}
+  .pr{border-radius:var(--round);padding:32px 26px;text-align:center;background:var(--cream);
+    transition:transform .35s cubic-bezier(.22,1.2,.36,1)}
+  .pr:hover{transform:translateY(-6px)}
+  .pr.rec{background:linear-gradient(160deg,var(--coral-l),var(--lemon-l));position:relative}
+  .pr.rec::after{content:"いちばん人気";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--coral);color:#fff;font-size:11.5px;font-weight:800;padding:5px 16px;border-radius:999px;
+    white-space:nowrap;box-shadow:0 5px 14px rgba(255,143,126,.4)}
+  .pr h3{font-size:17px;font-weight:800;color:var(--ink-d)}
+  .pr .yen{font-size:34px;font-weight:800;color:var(--coral);margin:10px 0 2px;line-height:1.2}
+  .pr .yen small{font-size:14px;color:var(--sub);font-weight:700}
+  .pr p{font-size:13.5px;color:var(--sub);margin-top:10px}
+
+  /* ---- 教室情報 ---- */
+  .info{background:linear-gradient(180deg,var(--cream),var(--mint-l))}
+  .i-table{background:var(--white);border-radius:var(--round);overflow:hidden;box-shadow:var(--shadow);
+    max-width:720px;margin:0 auto;width:100%;border-collapse:collapse}
+  .i-table th,.i-table td{padding:17px 22px;font-size:14.5px;text-align:left;
+    border-bottom:1px solid var(--cream2)}
+  .i-table tr:last-child th,.i-table tr:last-child td{border-bottom:0}
+  .i-table th{width:34%;color:var(--sub);font-weight:800;background:var(--cream)}
+  @media(max-width:560px){.i-table th,.i-table td{display:block;width:100%;padding:13px 20px}
+    .i-table th{border-bottom:0;padding-bottom:2px}}
+
+  /* ---- 申し込み ---- */
+  .reserve{background:var(--mint-l);text-align:center}
+  .r-box{background:var(--white);border-radius:var(--round);padding:clamp(32px,5vw,54px);
+    max-width:620px;margin:0 auto;box-shadow:var(--shadow-l)}
+  .r-box h2{font-size:clamp(22px,4vw,30px);font-weight:800;color:var(--ink-d);line-height:1.5}
+  .r-box p{margin-top:14px;color:var(--sub);font-size:14.5px}
+  .r-box .btn{margin-top:26px}
+  .r-note{margin-top:18px;font-size:12.5px;color:var(--sub)}
+
+  /* ---- フッター ---- */
+  footer{background:var(--ink-d);color:#fff;text-align:center;padding:52px 6vw 40px}
+  .fmark{font-size:21px;font-weight:800}
+  .fsub{font-size:10.5px;letter-spacing:.24em;color:var(--mint);margin-top:5px;font-weight:700}
+  .fnote{margin-top:26px;font-size:11.5px;line-height:2;color:rgba(255,255,255,.62);
+    max-width:640px;margin-left:auto;margin-right:auto}
+  .fnote b{color:var(--lemon)}
+
+  /* ---- スクロールで現れる ---- */
+  .rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.2,.8,.3,1),transform .85s cubic-bezier(.2,.8,.3,1)}
+  .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.12s} .rv.d2{transition-delay:.24s} .rv.d3{transition-delay:.36s}
+
+  /* ---- 動きが苦手な方への配慮：全部止める ---- */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .rv,.hero h1 .w,.hero .lead,.hero-btns,.hero-tags,.age{opacity:1!important;transform:none!important}
+    .bubbles{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜大船ぽかぽかリトミック教室 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、文章・料金はすべて仮の内容です</div>
+
+<header id="hd">
+  <div class="logo">大船ぽかぽかリトミック教室<small>POKAPOKA RYTHMIQUE</small></div>
+  <nav>
+    <a href="#points">とくちょう</a>
+    <a href="#flow">レッスンの流れ</a>
+    <a href="#teacher">せんせい</a>
+    <a href="#price">お月謝</a>
+    <a href="#reserve" class="cta">体験レッスン</a>
+  </nav>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<div class="hero">
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+
+  <!-- ゆらゆら揺れる音符 -->
+  <div class="deco" style="top:16%;left:6%;animation:sway 5s ease-in-out infinite" aria-hidden="true">
+    <svg width="42" height="52" viewBox="0 0 42 52" fill="none">
+      <path d="M16 40V8l20-5v29" stroke="#ff8f7e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#ff8f7e"/>
+      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#ff8f7e"/>
+    </svg>
+  </div>
+  <div class="deco" style="top:60%;right:7%;animation:sway 6.2s ease-in-out .8s infinite" aria-hidden="true">
+    <svg width="34" height="42" viewBox="0 0 42 52" fill="none">
+      <path d="M16 40V8l20-5v29" stroke="#7fd4c1" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#7fd4c1"/>
+      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#7fd4c1"/>
+    </svg>
+  </div>
+  <div class="deco" style="top:30%;right:14%;animation:sway 4.4s ease-in-out .4s infinite" aria-hidden="true">
+    <svg width="26" height="32" viewBox="0 0 42 52" fill="none">
+      <path d="M16 40V8l20-5v29" stroke="#ffd466" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="9" cy="42" rx="9" ry="7.4" fill="#ffd466"/>
+      <ellipse cx="29" cy="35" rx="9" ry="7.4" fill="#ffd466"/>
+    </svg>
+  </div>
+
+  <div class="hero-in">
+    <span class="eyebrow">神奈川県鎌倉市 ・ 親子リトミック教室</span>
+    <h1 id="h1">はじめての「音」を、|いっしょに。</h1>
+    <p class="lead">鈴を鳴らす。とことこ歩く。ぴたっと止まる。大船ぽかぽかリトミック教室は、0歳から年長さんまでの、はじめての音楽の場所です。上手にできなくても大丈夫。その日の「たのしかった」を、いちばん大切にしています。</p>
+    <div class="hero-btns">
+      <a href="#reserve" class="btn btn-main">体験レッスンにいく <span class="arw">→</span></a>
+      <a href="#flow" class="btn btn-sub">レッスンを見てみる</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag"><b>0歳</b>から通えます</span>
+      <span class="tag">楽器は<b>ぜんぶ用意</b>します</span>
+      <span class="tag">はじめてでも<b>だいじょうぶ</b></span>
+    </div>
+  </div>
+</div>
+
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#ffffff" d="M0,42 C240,90 480,0 720,26 C960,52 1200,90 1440,54 L1440,90 L0,90 Z"/>
+</svg>
+
+<!-- ============ とくちょう ============ -->
+<section class="points" id="points">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">OUR LESSON</span>
+      <h2>ちいさな子のための、3つのやくそく</h2>
+      <p>はじめて楽器にさわる日から、ずっと安心して通っていただけるように。</p>
+    </div>
+    <div class="p-grid">
+      <div class="pcard rv">
+        <div class="picon">
+          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
+            <path d="M24 6c-7 0-12 5-12 12v9l-4 6h32l-4-6v-9c0-7-5-12-12-12Z" fill="#7fd4c1"/>
+            <circle cx="24" cy="40" r="4.5" fill="#4a5568"/>
+            <path d="M24 3v3" stroke="#4a5568" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>泣いても、歩いても大丈夫</h3>
+        <p>じっと座っていられなくて当たり前の年齢です。走り回っても、途中で泣いても、そのまま受けとめます。お母さんが謝る必要はありません。</p>
+      </div>
+      <div class="pcard rv d1">
+        <div class="picon">
+          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="16" stroke="#ff8f7e" stroke-width="4"/>
+            <circle cx="24" cy="24" r="7" fill="#ff8f7e"/>
+            <circle cx="24" cy="7" r="3.4" fill="#ff8f7e"/>
+            <circle cx="41" cy="24" r="3.4" fill="#ff8f7e"/>
+            <circle cx="24" cy="41" r="3.4" fill="#ff8f7e"/>
+            <circle cx="7" cy="24" r="3.4" fill="#ff8f7e"/>
+          </svg>
+        </div>
+        <h3>楽器はぜんぶ用意します</h3>
+        <p>鈴、タンバリン、カスタネット、ボール。小さな手でも持てるものをそろえています。ご家庭で買っていただくものはありません。</p>
+      </div>
+      <div class="pcard rv d2">
+        <div class="picon">
+          <svg width="46" height="46" viewBox="0 0 48 48" fill="none">
+            <path d="M14 30c-4 0-7-3-7-7s3-7 7-7c1 0 2 .2 3 .6C18.6 12 22 9 26 9c5.5 0 10 4.5 10 10 4 0 7 3 7 6.5S40 32 36 32H14Z" fill="#ffd466"/>
+            <path d="M18 38l3-4M27 39l3-5M35 37l2.5-3.5" stroke="#4a5568" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>季節の歌と、手あそび</h3>
+        <p>春はちょうちょ、夏は水あそびの歌。おうちでも歌えるように、その月の歌をおたよりでお渡ししています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 年齢 ============ -->
+<section class="ages" id="ages">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">FOR AGES</span>
+      <h2>0歳から、年長さんまで</h2>
+      <p>月齢や年齢で、クラスをわけています。同じくらいのお子さまと一緒に過ごせます。</p>
+    </div>
+    <div class="age-row" id="ageRow">
+      <div class="age"><div><span>0</span><small>さい</small></div></div>
+      <div class="age"><div><span>1</span><small>さい</small></div></div>
+      <div class="age"><div><span>2</span><small>さい</small></div></div>
+      <div class="age"><div><span>3</span><small>さい</small></div></div>
+      <div class="age"><div><span>年長</span><small>まで</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ レッスンの流れ ============ -->
+<section class="flow" id="flow">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">HOW IT GOES</span>
+      <h2>レッスンの日は、こんなふうに</h2>
+      <p>45分間の流れです。はじめての日も、この順番で進みます。</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="snum">1</div><div class="sbody"><h4>ごあいさつの歌</h4><p>まずは名前を呼んで、お返事から。泣いていても、抱っこのままで大丈夫です。</p></div></div>
+      <div class="step rv d1"><div class="snum">2</div><div class="sbody"><h4>からだを動かす</h4><p>音に合わせて歩く、走る、止まる。ピアノの音が変わったら、動きも変わります。</p></div></div>
+      <div class="step rv d2"><div class="snum">3</div><div class="sbody"><h4>楽器であそぶ</h4><p>鈴やタンバリンを鳴らします。音の大きい・小さいを、耳と手で覚えていきます。</p></div></div>
+      <div class="step rv d3"><div class="snum">4</div><div class="sbody"><h4>さようならの歌</h4><p>最後はゆっくり座って、今日の歌をもう一度。おうちで歌える曲を持って帰ります。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ せんせい ============ -->
+<section class="teacher" id="teacher">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">TEACHER</span>
+      <h2>せんせいのこと</h2>
+    </div>
+    <div class="t-card rv">
+      <div class="t-face">
+        <svg width="62" height="62" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="23" r="12" fill="#fff"/>
+          <path d="M11 55c0-11 9.4-18 21-18s21 7 21 18" fill="#fff"/>
+          <path d="M25 21c1.4 1.6 3 2.4 4.6 2.4M39 21c-1.4 1.6-3 2.4-4.6 2.4" stroke="#b8a4dd" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M28 27c1.4 1.8 6.6 1.8 8 0" stroke="#ff8f7e" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="t-name">（お名前が入ります）</div>
+      <div class="t-role">リトミック研究センター認定教室</div>
+      <p class="t-bio">※ここには先生のご紹介文が入ります。ご経歴、リトミックを始められたきっかけ、お子さまと接するときに大切にされていること——このあたりを3〜5行いただければ、こちらで整えます。写真をお持ちでしたら、この丸い場所に入ります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お月謝 ============ -->
+<section class="price" id="price">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">PRICE</span>
+      <h2>お月謝</h2>
+      <p>※金額は仮のものです。実際の料金に差し替えます。</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr rv"><h3>体験レッスン</h3><div class="yen">1,000<small>円</small></div><p>1回かぎり。ご入会前にお試しいただけます。</p></div>
+      <div class="pr rec rv d1"><h3>月3回コース</h3><div class="yen">5,000<small>円／月</small></div><p>いちばん多くの方が選ばれているコースです。</p></div>
+      <div class="pr rv d2"><h3>きょうだい割</h3><div class="yen">-500<small>円／月</small></div><p>2人目からお月謝が割引になります。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 教室のこと ============ -->
+<section class="info" id="info">
+  <div class="inner">
+    <div class="sec-head rv">
+      <span class="en">CLASSROOM</span>
+      <h2>教室のこと</h2>
+    </div>
+    <table class="i-table rv">
+      <tr><th>教室名</th><td>大船ぽかぽかリトミック教室</td></tr>
+      <tr><th>ばしょ</th><td>（会場名・住所が入ります）</td></tr>
+      <tr><th>ひにち</th><td>（曜日と時間が入ります）</td></tr>
+      <tr><th>たいしょう</th><td>0歳〜年長（未就学児）</td></tr>
+      <tr><th>もちもの</th><td>動きやすい服装と、水分だけお持ちください</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 体験レッスン ============ -->
+<section class="reserve" id="reserve">
+  <div class="inner">
+    <div class="r-box rv">
+      <h2>まずは一度、遊びにきてください</h2>
+      <p>見学だけでも大丈夫です。お子さまの機嫌が悪い日は、日をあらためても構いません。</p>
+      <a href="#reserve" class="btn btn-main" id="ctaBtn">体験レッスンを申し込む <span class="arw">→</span></a>
+      <p class="r-note">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fmark">大船ぽかぽかリトミック教室</div>
+  <div class="fsub">POKAPOKA RYTHMIQUE</div>
+  <p class="fnote">このページは Web制作 ゆたか が 大船ぽかぽかリトミック教室 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>大船ぽかぽかリトミック教室 様の公式サイトではありません</b>。<br>掲載の文章・料金はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、このページの送り主までご連絡ください。すぐに削除いたします。</p>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* --- 見出しを1文字ずつ、ぽんっと出す --- */
+  var h1 = document.getElementById("h1");
+  if(h1){
+    var raw = h1.textContent.trim();
+    h1.textContent = "";
+    var i = 0;
+    raw.split("").forEach(function(ch){
+      if(ch === "|"){ h1.appendChild(document.createElement("br")); return; }
+      var s = document.createElement("span");
+      s.className = "w";
+      s.textContent = ch;
+      if(ch === "　" || ch === " ") s.style.width = ".4em";
+      s.style.animationDelay = (reduce ? 0 : (0.22 + i*0.045)) + "s";
+      h1.appendChild(s);
+      i++;
+    });
+  }
+
+  /* --- シャボン玉 --- */
+  if(!reduce){
+    var wrap = document.getElementById("bubbles");
+    var cols = ["rgba(127,212,193,.55)","rgba(255,143,126,.45)","rgba(255,212,102,.5)","rgba(184,164,221,.45)","rgba(142,202,230,.5)"];
+    for(var b=0;b<14;b++){
+      var d = document.createElement("div");
+      var size = 16 + Math.random()*54;
+      d.className = "bub";
+      d.style.width = d.style.height = size + "px";
+      d.style.left = (Math.random()*100) + "%";
+      d.style.animationDuration = (16 + Math.random()*16) + "s";
+      d.style.animationDelay = (Math.random()*14) + "s";
+      d.style.setProperty("--dx", (Math.random()*120-60) + "px");
+      d.style.boxShadow = "inset 0 0 22px " + cols[b % cols.length];
+      wrap.appendChild(d);
+    }
+  }
+
+  /* --- スクロールで現れる --- */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.16, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+
+  /* --- 年齢のまるを、順番にぽんぽん出す --- */
+  var row = document.getElementById("ageRow");
+  if(row){
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        Array.prototype.forEach.call(row.children, function(el, n){
+          el.style.animationDelay = (n*0.11) + "s";
+          el.classList.add("in");
+        });
+        io2.unobserve(e.target);
+      });
+    }, {threshold:.4});
+    io2.observe(row);
+  }
+
+  /* --- ヘッダーに影をつける --- */
+  var hd = document.getElementById("hd");
+  addEventListener("scroll", function(){
+    if(hd) hd.classList.toggle("stuck", scrollY > 12);
+  }, {passive:true});
+
+  /* --- 体験レッスンのボタン（見本なので、押されたらご案内を出す） --- */
+  var cta = document.getElementById("ctaBtn");
+  if(cta) cta.addEventListener("click", function(e){
+    e.preventDefault();
+    alert("こちらは見本ページです。実際のページでは、ここからそのままお申し込みいただけます。");
+  });
+})();
+</script>
+</body>
+</html>
