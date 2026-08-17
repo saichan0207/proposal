@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- favicon を指定しないとブラウザが favicon.ico を探して404になり、検品の「エラー0」に到達できない -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B6%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>みほん三線教室｜三線・沖縄民謡の教室（デザイン案・サンプル）</title>
+<meta name="description" content="三線・沖縄民謡の教室のホームページデザイン案です。写真がなくても成立する設計で、体験のお申し込みまでスマホで完結します。">
+
+<!--
+  2026-08-14 新型（写真ゼロ設計）
+  なぜ作り直したか：既存デモは「背景写真＋暗いオーバーレイ＋太いゴシック＋金と紺」で、
+  素材の質がそのまま見た目の質になっていた。お客様がスマホで撮った写真しか無い以上、
+  写真に依存する設計は、うちの価格帯では必ず安っぽくなる。
+  そこで「写真を使わずに成立する」ほうへ設計を移した。要点は3つ：
+    ① 文字を写真の上に置かない（そもそも写真を置かない）
+    ② 色は3色だけ（生成り・墨・枯茶）。差し色を増やすほどテンプレに見える
+    ③ 余白を主役にする。線は 1px、影は使わない
+  三線の線画は、この場でSVGとして描いている（外部画像に依存しない＝表示が絶対に崩れない）。
+-->
+
+<style>
+  :root{
+    --paper:#F4F1EA;      /* 生成り */
+    --paper2:#FBF9F5;     /* 面を切り替えるときの、ごくわずかに明るい紙 */
+    --ink:#2A2622;        /* 墨 */
+    --sub:#7C746A;        /* 添え字 */
+    --line:rgba(42,38,34,.16);
+    --line2:rgba(42,38,34,.08);
+    --accent:#7B6A4F;     /* 枯茶。ここぞという1語にだけ使う */
+    --side:390px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+    background:var(--paper);color:var(--ink);
+    line-height:2.15;letter-spacing:.16em;
+    font-size:15px;font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .gothic{font-family:"Hiragino Sans","Yu Gothic",sans-serif;letter-spacing:.12em}
+  .en{font-family:"Hiragino Sans","Yu Gothic",sans-serif;letter-spacing:.42em;font-size:10px;color:var(--sub);font-weight:400}
+
+  /* 見本であることの表示。2026-08-03に「無断で店名を使ったページ」として抗議を受けた経緯があるため、
+     スクロールしても最後まで残す（sticky）／「公式サイトではない」と明示する。この2点は外さない。 */
+  .sample-bar{
+    background:var(--ink);color:#E8E2D6;text-align:center;
+    font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    font-size:11px;line-height:1.75;padding:9px 16px;letter-spacing:.05em;
+    position:sticky;top:0;z-index:80;
+  }
+  .sample-bar b{color:#C9B48A;font-weight:600}
+  @media(max-width:560px){.sample-bar{font-size:10px;padding:8px 12px;letter-spacing:.01em}}
+
+  /* ───── 左の固定柱。sourire の設計を借りている。
+     情報（名前・道しるべ）は左に置いたまま動かさず、右だけが流れる。 ───── */
+  .shell{display:flex;align-items:flex-start}
+  .side{
+    width:var(--side);flex:0 0 var(--side);
+    position:sticky;top:38px;height:calc(100vh - 38px);
+    border-right:1px solid var(--line2);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:52px 46px 40px;
+  }
+  .brand{line-height:1.5}
+  .brand .name{font-size:27px;letter-spacing:.26em;font-weight:400}
+  .brand .yomi{display:block;margin-top:14px;font-size:9.5px;letter-spacing:.5em;color:var(--sub);font-family:"Hiragino Sans","Yu Gothic",sans-serif}
+  .brand .rule{width:34px;height:1px;background:var(--accent);margin:26px 0 22px;opacity:.7}
+  .brand .place{font-size:11.5px;letter-spacing:.24em;color:var(--sub);line-height:2.2}
+
+  .side nav{display:flex;flex-direction:column;gap:2px;margin:auto 0}
+  .side nav a{
+    text-decoration:none;color:var(--ink);font-size:12.5px;letter-spacing:.24em;
+    padding:9px 0;position:relative;transition:color .45s,padding-left .45s;
+  }
+  .side nav a::before{
+    content:"";position:absolute;left:-14px;top:50%;width:0;height:1px;background:var(--accent);
+    transition:width .45s;
+  }
+  .side nav a:hover{color:var(--accent);padding-left:8px}
+  .side nav a:hover::before{width:8px}
+  .side nav a small{display:block;font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-size:8.5px;letter-spacing:.34em;color:var(--sub);margin-top:1px}
+
+  .side .foot{font-size:10.5px;letter-spacing:.16em;color:var(--sub);line-height:2}
+  .side .foot a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
+
+  .main{flex:1 1 auto;min-width:0}
+
+  /* ───── 導入。写真の代わりに、余白と一行と線画で立ち上げる ───── */
+  .hero{
+    min-height:calc(100vh - 38px);
+    display:grid;grid-template-columns:1fr 300px;align-items:center;gap:40px;
+    padding:80px 72px 90px;
+  }
+  .hero .lead{max-width:520px}
+  .hero h1{
+    font-size:44px;font-weight:400;line-height:2.05;letter-spacing:.2em;
+    margin:26px 0 34px;
+  }
+  .hero h1 .em{color:var(--accent)}
+  .hero p{font-size:14.5px;color:#4A443D;line-height:2.5;letter-spacing:.14em;max-width:430px}
+  .hero .acts{display:flex;gap:26px;align-items:center;margin-top:44px;flex-wrap:wrap}
+
+  /* ボタンは塗らない。塗った瞬間に「よくあるテンプレ」に寄る。線と字間で品を出す */
+  .btn{
+    display:inline-block;text-decoration:none;color:var(--ink);
+    font-size:12.5px;letter-spacing:.26em;padding:15px 34px;
+    border:1px solid var(--ink);position:relative;overflow:hidden;
+    transition:color .5s;
+  }
+  .btn span{position:relative;z-index:2}
+  .btn::after{
+    content:"";position:absolute;inset:0;background:var(--ink);
+    transform:translateY(101%);transition:transform .5s cubic-bezier(.2,.7,.3,1);z-index:1;
+  }
+  .btn:hover{color:var(--paper)}
+  .btn:hover::after{transform:translateY(0)}
+  .btn-plain{font-size:12.5px;letter-spacing:.24em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:5px;transition:border-color .45s,color .45s}
+  .btn-plain:hover{color:var(--accent);border-color:var(--accent)}
+
+  .hero .art{justify-self:center}
+  .sanshin{width:200px;height:auto;display:block}
+  .sanshin *{vector-effect:non-scaling-stroke}
+
+  /* ───── 本文の面 ───── */
+  section{padding:110px 72px}
+  section.tone{background:var(--paper2)}
+  .sec-head{margin-bottom:56px}
+  .sec-head h2{font-size:25px;font-weight:400;letter-spacing:.24em;margin-top:14px;line-height:1.9}
+  .sec-head p{font-size:13px;color:var(--sub);margin-top:16px;letter-spacing:.14em}
+  .inner{max-width:880px}
+
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2)}
+  .cols .cell{background:var(--paper);padding:38px 30px}
+  section.tone .cols .cell{background:var(--paper2)}
+  .cols h3{font-size:15.5px;font-weight:400;letter-spacing:.2em;margin-bottom:16px;line-height:1.9}
+  .cols .no{font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-size:10px;letter-spacing:.3em;color:var(--accent);display:block;margin-bottom:14px}
+  .cols p{font-size:13px;color:#55504A;line-height:2.35;letter-spacing:.1em}
+
+  .list{border-top:1px solid var(--line2)}
+  .list .row{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:30px 4px;border-bottom:1px solid var(--line2);align-items:baseline}
+  .list .row .k{font-size:14px;letter-spacing:.2em}
+  .list .row .k small{display:block;font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-size:10px;letter-spacing:.24em;color:var(--sub);margin-top:6px}
+  .list .row .v{font-size:13px;color:#55504A;line-height:2.3;letter-spacing:.1em}
+  .list .row .v .price{font-size:15px;color:var(--ink);letter-spacing:.16em}
+
+  .quote{max-width:700px}
+  .quote .q{padding:34px 0;border-bottom:1px solid var(--line2)}
+  .quote .q:first-child{border-top:1px solid var(--line2)}
+  .quote .q p{font-size:14px;line-height:2.5;letter-spacing:.12em;color:#413B35}
+  .quote .q cite{display:block;margin-top:16px;font-style:normal;font-size:11px;letter-spacing:.24em;color:var(--sub)}
+
+  .teacher-grid{display:grid;grid-template-columns:170px 1fr;gap:56px;align-items:start;max-width:820px}
+  .teacher-grid .fig{border:1px solid var(--line2);padding:26px 18px;text-align:center}
+  .teacher-grid .fig .cap{font-size:10px;letter-spacing:.24em;color:var(--sub);margin-top:14px;font-family:"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.9}
+  .teacher-grid h3{font-size:19px;font-weight:400;letter-spacing:.24em;margin-bottom:8px}
+  .teacher-grid .role{font-size:11px;letter-spacing:.26em;color:var(--accent);margin-bottom:26px;font-family:"Hiragino Sans","Yu Gothic",sans-serif}
+  .teacher-grid p{font-size:13.5px;line-height:2.4;letter-spacing:.12em;color:#4A443D;margin-bottom:18px}
+
+  .form-note{font-size:12px;color:var(--sub);line-height:2.2;letter-spacing:.1em;margin-bottom:34px;max-width:620px}
+  form{max-width:620px}
+  .f-row{margin-bottom:26px}
+  label{display:block;font-size:11.5px;letter-spacing:.24em;margin-bottom:10px;color:var(--sub);font-family:"Hiragino Sans","Yu Gothic",sans-serif}
+  input,textarea,select{
+    width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);
+    padding:11px 2px;font-size:14px;color:var(--ink);font-family:inherit;letter-spacing:.1em;
+    transition:border-color .4s;
+  }
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical;min-height:96px;line-height:2}
+  .submit{margin-top:14px}
+
+  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:880px}
+  .access-grid .k{font-size:11px;letter-spacing:.26em;color:var(--sub);font-family:"Hiragino Sans","Yu Gothic",sans-serif;margin-bottom:8px}
+  .access-grid .v{font-size:14px;line-height:2.3;letter-spacing:.14em;margin-bottom:28px}
+
+  footer{padding:56px 72px;border-top:1px solid var(--line2);font-size:11px;letter-spacing:.18em;color:var(--sub);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  /* ───── 動き。派手にしない。10pxだけ上げて、ゆっくり出す ───── */
+  .reveal{opacity:0;transform:translateY(10px);transition:opacity 1.1s cubic-bezier(.2,.7,.3,1),transform 1.1s cubic-bezier(.2,.7,.3,1)}
+  .reveal.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* 三線の弦は、読み込み後にゆっくり引かれる（1本ずつ） */
+  .ito{stroke-dasharray:520;stroke-dashoffset:520;animation:draw 2.6s cubic-bezier(.3,.8,.3,1) forwards}
+  .ito2{animation-delay:.22s}
+  .ito3{animation-delay:.44s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media(prefers-reduced-motion:reduce){.ito{animation:none;stroke-dashoffset:0}}
+
+  /* ───── スマホ。左の柱は上に畳む ───── */
+  .sp-head{display:none}
+  @media(max-width:1000px){
+    .shell{display:block}
+    .side{display:none}
+    .sp-head{
+      display:flex;justify-content:space-between;align-items:center;gap:14px;
+      padding:22px 22px;border-bottom:1px solid var(--line2);
+      position:sticky;top:37px;background:rgba(244,241,234,.95);
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:50;
+    }
+    .sp-head .name{font-size:17px;letter-spacing:.2em;line-height:1.5}
+    .sp-head .name small{display:block;font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-size:8px;letter-spacing:.4em;color:var(--sub);margin-top:5px}
+    .sp-head a.mini{font-size:10.5px;letter-spacing:.18em;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:9px 14px;white-space:nowrap;font-family:"Hiragino Sans","Yu Gothic",sans-serif}
+    .hero{grid-template-columns:1fr;gap:52px;padding:64px 24px 76px;min-height:0;text-align:left}
+    .hero h1{font-size:30px;line-height:2.1;margin:20px 0 26px}
+    .hero .art{justify-self:start}
+    .sanshin{width:132px}
+    section{padding:76px 24px}
+    .cols{grid-template-columns:1fr}
+    .list .row{grid-template-columns:1fr;gap:10px;padding:24px 2px}
+    .teacher-grid{grid-template-columns:1fr;gap:30px}
+    .teacher-grid .fig{max-width:190px}
+    .access-grid{grid-template-columns:1fr;gap:0}
+    footer{padding:44px 24px;font-size:10.5px}
+    .sec-head h2{font-size:21px}
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-bar">
+  ⚠️ これは<b>見本ページ</b>です｜実在する教室のものではありません。<b>Web制作 ゆたか</b> がデザインをご覧いただくために作ったもので、文章・料金はすべて仮の内容です
+</div>
+
+<div class="sp-head">
+  <div class="name">みほん三線教室<small>SANSHIN</small></div>
+  <a class="mini" href="#reserve">体験のお申し込み</a>
+</div>
+
+<div class="shell">
+
+  <!-- 左の柱（PCのみ）。ここは動かない -->
+  <aside class="side">
+    <div class="brand">
+      <div class="name">みほん三線教室</div>
+      <span class="yomi">SANSHIN CLASSROOM</span>
+      <div class="rule"></div>
+      <div class="place">沖縄民謡・琉球古典音楽<br>はじめての方から、師範を目指す方まで</div>
+    </div>
+
+    <nav>
+      <a href="#about">教室について<small>ABOUT</small></a>
+      <a href="#lesson">お稽古のご案内<small>LESSON</small></a>
+      <a href="#teacher">師範のご紹介<small>TEACHER</small></a>
+      <a href="#voice">お弟子さんの声<small>VOICE</small></a>
+      <a href="#reserve">体験のお申し込み<small>TRIAL</small></a>
+      <a href="#access">稽古場のご案内<small>ACCESS</small></a>
+    </nav>
+
+    <div class="foot">
+      お問い合わせ<br>
+      <a href="#reserve">体験のお申し込みはこちら</a>
+    </div>
+  </aside>
+
+  <div class="main">
+
+    <!-- 導入 -->
+    <section class="hero">
+      <div class="lead">
+        <span class="en">SANSHIN CLASSROOM</span>
+        <h1>島の唄を、<br><span class="em">指先</span>から。</h1>
+        <p>三線は、楽譜が読めなくても始められます。工工四（くんくんしー）という沖縄の譜で、一音ずつ、手の形から覚えていきます。楽器をお持ちでない方には、稽古場のものをお貸しします。</p>
+        <div class="acts">
+          <a class="btn" href="#reserve"><span>体験のお申し込み</span></a>
+          <a class="btn-plain" href="#lesson">お稽古のご案内を見る</a>
+        </div>
+      </div>
+
+      <div class="art">
+        <!-- 三線の線画。外部画像を使わずSVGで描いている（画像の読み込み失敗で崩れることがない） -->
+        <!--
+          三線の比率は実物に合わせている。全長を約80cmとすると、胴（ちーが）は約19.5cm四方＝
+          ほぼ正方形で、全長の1/4を占める。ここを縦長に描くとギターに見えてしまう（初稿がそうだった）。
+          天（てぃーがー）は先端が前へ短く反る。カールを大きくすると洋楽器の渦巻きに寄るので浅くする。
+        -->
+        <svg class="sanshin" viewBox="0 0 200 620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="三線の線画">
+          <g stroke="#2A2622" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity=".82">
+            <!-- 天（てぃーがー）：先端が前へ短く反る。渦は作らない -->
+            <path d="M88 96 C88 68 89 52 95 42 C101 31 114 28 120 36 C125 43 121 53 112 55 C105 57 99 54 96 48"/>
+            <!-- 棹（さお）。胴の中を貫いて下端まで通る -->
+            <path d="M88 96 L88 404"/>
+            <path d="M112 96 L112 404"/>
+            <path d="M88 96 C92 90 108 90 112 96"/>
+            <!-- 糸巻き（カラクイ）3本。左右交互に突き出る -->
+            <path d="M76 112 L118 112"/><circle cx="72" cy="112" r="4.2"/>
+            <path d="M76 136 L118 136"/><circle cx="72" cy="136" r="4.2"/>
+            <path d="M82 160 L124 160"/><circle cx="128" cy="160" r="4.2"/>
+            <!-- 歌口（うたぐち） -->
+            <path d="M86 100 L114 100" opacity=".5"/>
+            <!-- 胴（ちーが）：ほぼ正方形。蛇皮を張る面 -->
+            <path d="M24 420 C24 409 31 402 43 402 L157 402 C169 402 176 409 176 420 L176 538 C176 549 169 556 157 556 L43 556 C31 556 24 549 24 538 Z"/>
+            <!-- 皮の張り縁 -->
+            <path d="M36 414 L164 414" opacity=".4"/>
+            <path d="M36 544 L164 544" opacity=".4"/>
+            <!-- 棹が胴を貫いている線（胴の中では線を薄くする） -->
+            <path d="M88 404 L88 556" opacity=".28"/>
+            <path d="M112 404 L112 556" opacity=".28"/>
+            <!-- 駒（ウマ）。胴の中ほどよりやや下 -->
+            <path d="M82 492 L118 492"/>
+            <path d="M88 492 L88 505"/><path d="M112 492 L112 505"/>
+            <!-- 緒止め（ちるどぅみ） -->
+            <path d="M100 556 L100 574"/>
+            <path d="M91 574 L109 574"/>
+          </g>
+          <!-- 弦3本。カラクイから駒を越えて緒止めへ集まる。読み込み後にゆっくり引かれる -->
+          <g stroke="#7B6A4F" stroke-width="1" stroke-linecap="round" opacity=".9">
+            <path class="ito"      d="M93 112 L93 492 L98 570"/>
+            <path class="ito ito2" d="M100 136 L100 492 L100 570"/>
+            <path class="ito ito3" d="M107 160 L107 492 L102 570"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 教室について -->
+    <section id="about" class="tone">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">ABOUT</span>
+          <h2>楽譜が読めなくても、<br>はじめられます。</h2>
+          <p>こんな方が通われています</p>
+        </div>
+        <div class="cols reveal">
+          <div class="cell">
+            <span class="no">01</span>
+            <h3>楽器にふれるのが<br>はじめての方</h3>
+            <p>音符が読めなくても大丈夫です。工工四という沖縄の譜は、押さえる場所が漢字で書かれています。最初のお稽古では、構え方と、開放弦の三つの音だけを覚えます。</p>
+          </div>
+          <div class="cell">
+            <span class="no">02</span>
+            <h3>ふるさとの唄を<br>もう一度</h3>
+            <p>沖縄を離れて暮らしておられる方、ご家族の郷里の唄をおぼえたい方も通われています。唄いながら弾く「唄三線」を、ゆっくり身につけていきます。</p>
+          </div>
+          <div class="cell">
+            <span class="no">03</span>
+            <h3>コンクールや<br>師範を目指す方</h3>
+            <p>民謡協会のコンクール（新人賞・優秀賞・最高賞）を受けられる方には、課題曲に沿ったお稽古をいたします。工工四の読み方から、節回しまでお伝えします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お稽古のご案内 -->
+    <section id="lesson">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">LESSON</span>
+          <h2>お稽古のご案内</h2>
+          <p>月に何度お越しになるかは、ご都合に合わせてお決めいただけます</p>
+        </div>
+        <div class="list reveal">
+          <div class="row">
+            <div class="k">はじめての方<small>BEGINNER</small></div>
+            <div class="v">
+              <span class="price">月2回・5,000円</span><br>
+              1回60分。三線の構え方、勘所（かんどころ）の押さえ方、工工四の読み方から。三線は稽古場のものをお貸ししますので、お手ぶらでお越しいただけます。
+            </div>
+          </div>
+          <div class="row">
+            <div class="k">唄三線のお稽古<small>UTA-SANSHIN</small></div>
+            <div class="v">
+              <span class="price">月2回・6,000円</span><br>
+              1回60分。弾きながら唄うお稽古です。安里屋ユンタ、てぃんさぐぬ花など、なじみのある曲から始めます。
+            </div>
+          </div>
+          <div class="row">
+            <div class="k">コンクール対策<small>CONCOURS</small></div>
+            <div class="v">
+              <span class="price">月4回・11,000円</span><br>
+              1回60分。受験される級に合わせて課題曲をお稽古します。前月の追い込みは回数を増やすこともできます。
+            </div>
+          </div>
+          <div class="row">
+            <div class="k">体験のお稽古<small>TRIAL</small></div>
+            <div class="v">
+              <span class="price">1回・無料</span><br>
+              三線にふれて、三つの音を出すところまで。入会をお決めいただく必要はありません。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 師範のご紹介 -->
+    <section id="teacher" class="tone">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">TEACHER</span>
+          <h2>師範のご紹介</h2>
+        </div>
+        <div class="teacher-grid reveal">
+          <div class="fig">
+            <!-- 顔写真の代わり。写真をご用意いただけない間も、ここが空白にならないようにしている -->
+            <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" aria-label="人物の線画">
+              <!-- 初稿は頭の円と胴が離れていて、人ではなく「丸とアーチ」に見えていた。
+                   首でつなぎ、肩を落として、胸から上の輪郭として描き直した。 -->
+              <g stroke="#2A2622" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity=".72" fill="none">
+                <circle cx="60" cy="41" r="19"/>
+                <path d="M43 41 C43 28 50 21 60 21 C70 21 77 28 77 41" opacity=".55"/>
+                <path d="M54 59 L54 70"/>
+                <path d="M66 59 L66 70"/>
+                <path d="M18 150 C18 112 33 88 54 70"/>
+                <path d="M102 150 C102 112 87 88 66 70"/>
+                <path d="M54 70 C57 76 63 76 66 70" opacity=".5"/>
+              </g>
+            </svg>
+            <div class="cap">お写真をいただければ<br>ここに入ります</div>
+          </div>
+          <div>
+            <h3>比嘉 （仮名）</h3>
+            <div class="role">琉球民謡協会 師範</div>
+            <p>十代のころに祖父の三線を手にしたのが始まりでした。以来四十年、島の唄を弾いております。コンクールの最高賞をいただいてからは、教える側にまわりました。</p>
+            <p>お稽古では、上手に弾くことよりも「唄いたい唄が一曲、最後まで弾けるようになること」を大切にしています。人前で弾く機会も、年に二度ほどご用意しています。</p>
+            <p>※この文章は見本です。実際には、先生ご自身のお言葉をそのまま載せます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お弟子さんの声 -->
+    <section id="voice">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">VOICE</span>
+          <h2>お弟子さんの声</h2>
+        </div>
+        <div class="quote reveal">
+          <div class="q">
+            <p>楽譜が読めないので諦めていましたが、工工四は漢字で書いてあるので覚えられました。半年で「安里屋ユンタ」を最後まで弾けるようになりました。</p>
+            <cite>60代・男性／お稽古歴 1年</cite>
+          </div>
+          <div class="q">
+            <p>母が沖縄の出身で、子どものころに聞いた唄をもう一度聴きたくて通い始めました。先生が一音ずつ待ってくださるので、続けられています。</p>
+            <cite>40代・女性／お稽古歴 2年</cite>
+          </div>
+          <div class="q">
+            <p>コンクールの新人賞をいただきました。課題曲だけでなく、節回しの意味まで教えていただけたのが大きかったです。</p>
+            <cite>30代・女性／お稽古歴 3年</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 体験のお申し込み -->
+    <section id="reserve" class="tone">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">TRIAL LESSON</span>
+          <h2>体験のお申し込み</h2>
+        </div>
+        <p class="form-note reveal">
+          はじめての方の体験は無料です。三線は稽古場のものをお貸ししますので、手ぶらでお越しください。<br>
+          お申し込みのあと、こちらから日どりのご相談をさしあげます。
+        </p>
+        <form class="reveal" onsubmit="event.preventDefault();alert('これは見本ページのため、送信は行われません。');">
+          <div class="f-row">
+            <label for="nm">お名前</label>
+            <input id="nm" type="text" placeholder="例：金城 太郎">
+          </div>
+          <div class="f-row">
+            <label for="ml">メールアドレス</label>
+            <input id="ml" type="email" placeholder="例：sample@example.com">
+          </div>
+          <div class="f-row">
+            <label for="cs">ご希望のお稽古</label>
+            <select id="cs">
+              <option>はじめての方</option>
+              <option>唄三線のお稽古</option>
+              <option>コンクール対策</option>
+              <option>まだ決めていません</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <label for="ms">ご質問など（任意）</label>
+            <textarea id="ms" placeholder="三線を持っていませんが大丈夫ですか、など"></textarea>
+          </div>
+          <div class="submit">
+            <button class="btn" type="submit" style="background:transparent;cursor:pointer;font-family:inherit"><span>この内容で申し込む</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 稽古場のご案内 -->
+    <section id="access">
+      <div class="inner">
+        <div class="sec-head reveal">
+          <span class="en">ACCESS</span>
+          <h2>稽古場のご案内</h2>
+        </div>
+        <div class="access-grid reveal">
+          <div>
+            <div class="k">稽古場</div>
+            <div class="v">〇〇県〇〇市〇〇 1-2-3<br>〇〇公民館 2階 和室</div>
+            <div class="k">お稽古の日</div>
+            <div class="v">毎週 日曜日 10:00〜17:00<br>（お一人ずつ、時間をお決めします）</div>
+          </div>
+          <div>
+            <div class="k">お問い合わせ</div>
+            <div class="v">090-0000-0000<br>sample@example.com</div>
+            <div class="k">駐車場</div>
+            <div class="v">公民館の駐車場をご利用いただけます（無料）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>みほん三線教室（見本）</div>
+      <div>Web制作 ゆたか がデザイン案として制作した見本ページです</div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  // 面がゆっくり立ち上がる。派手にしない
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
