@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>凛 RIN — 純米大吟醸｜コンセプト</title>
+<meta name="description" content="純米大吟醸「凛」のコンセプトサイト。液体そのものを、ブラウザの中でリアルタイムに描いています。">
+<style>
+  :root{
+    --ink:#0A0B0E; --paper:#F3F1EC; --dim:rgba(243,241,236,.56);
+    --line:rgba(243,241,236,.16); --accent:#9FB4C7;
+    --mincho:"Hiragino Mincho ProN","Yu Mincho",serif;
+    --sans:"Hiragino Sans","Yu Gothic",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+  /* ── 液体ガラス。画面に貼りついたまま、スクロールで形が変わる ── */
+  #glass{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0}
+  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 62% at 50% 46%, rgba(10,11,14,0) 38%, rgba(10,11,14,.86) 100%)}
+
+  .wrap{position:relative;z-index:2}
+
+  /* ── 導入 ── */
+  .hero{height:100vh;display:flex;flex-direction:column;justify-content:space-between;
+    padding:38px 30px 44px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.34em;color:var(--dim)}
+  .mark{font-family:var(--mincho);font-size:21px;letter-spacing:.4em;color:var(--paper)}
+  .heroin{padding-bottom:8px}
+  .kanji{font-family:var(--mincho);font-size:clamp(78px,25vw,150px);line-height:1;
+    letter-spacing:.06em;text-shadow:0 6px 60px rgba(0,0,0,.5)}
+  .roman{font-family:var(--mono);font-size:11px;letter-spacing:.62em;color:var(--dim);
+    margin-top:20px}
+  .lede{font-family:var(--mincho);font-size:17px;line-height:2.2;letter-spacing:.09em;
+    margin-top:30px;max-width:22em;color:rgba(243,241,236,.9)}
+
+  /* ── 本文 ── */
+  section{position:relative;padding:120px 30px}
+  .band{background:linear-gradient(180deg, rgba(10,11,14,0), rgba(10,11,14,.93) 16%, rgba(10,11,14,.93) 84%, rgba(10,11,14,0))}
+  .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.44em;color:var(--accent);
+    display:block;margin-bottom:26px}
+  h2{font-family:var(--mincho);font-weight:400;font-size:clamp(28px,7.6vw,40px);
+    line-height:1.62;letter-spacing:.08em}
+  .body{font-family:var(--mincho);font-size:16px;line-height:2.35;letter-spacing:.075em;
+    color:rgba(243,241,236,.76);margin-top:28px;max-width:26em}
+
+  .spec{margin-top:56px;border-top:1px solid var(--line)}
+  .row{display:flex;justify-content:space-between;gap:20px;padding:19px 2px;
+    border-bottom:1px solid var(--line);font-size:13.5px;letter-spacing:.08em}
+  .row dt{font-family:var(--mono);font-size:10px;letter-spacing:.32em;color:var(--dim);
+    padding-top:3px;white-space:nowrap}
+  .row dd{font-family:var(--mincho);text-align:right}
+
+  .num{display:flex;gap:0;margin-top:58px;border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line)}
+  .num div{flex:1;padding:30px 8px;text-align:center;border-right:1px solid var(--line)}
+  .num div:last-child{border-right:0}
+  .num b{display:block;font-family:var(--mincho);font-size:38px;font-weight:400;letter-spacing:.02em}
+  .num span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.3em;
+    color:var(--dim);margin-top:12px}
+
+  .quiet{text-align:center;padding:140px 30px}
+  .quiet p{font-family:var(--mincho);font-size:clamp(22px,6.4vw,30px);line-height:2.0;
+    letter-spacing:.12em}
+
+  footer{padding:90px 30px 70px;text-align:center;border-top:1px solid var(--line)}
+  footer .m{font-family:var(--mincho);font-size:19px;letter-spacing:.4em}
+  footer .s{font-family:var(--mono);font-size:9.5px;letter-spacing:.3em;color:var(--dim);
+    margin-top:22px;line-height:2.2}
+</style>
+</head>
+<body>
+
+<canvas id="glass"></canvas>
+<div class="veil"></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="top">
+      <span class="mark">凛</span>
+      <span>JUNMAI DAIGINJO<br>CONCEPT</span>
+    </div>
+    <div class="heroin">
+      <div class="kanji">凛</div>
+      <div class="roman">R I N</div>
+      <p class="lede">水と米だけで、ここまで澄む。<br>冷やして、なにも足さずに。</p>
+    </div>
+  </header>
+
+  <section class="band">
+    <span class="eyebrow">01 &#183; THE LIQUID</span>
+    <h2>液体は、<br>形を持たない。</h2>
+    <p class="body">
+      この画面で揺れているものは、動画ではありません。あなたの端末が、いま計算して描いています。
+      注ぐたびに違う形になる液体を、決まった映像で見せることはできない——そう考えて、
+      リアルタイムに描く方法を選びました。
+    </p>
+    <div class="num">
+      <div><b>15</b><span>SEIMAI %</span></div>
+      <div><b>‑7</b><span>℃ SERVE</span></div>
+      <div><b>720</b><span>ml</span></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">02 &#183; THE SPEC</span>
+    <h2>削り、待つ。</h2>
+    <p class="body">
+      精米歩合15%。米の85%を捨てて、芯だけを使います。
+      仕込みは寒の内、搾りは翌春。急がないことでしか出ない澄み方があります。
+    </p>
+    <dl class="spec">
+      <div class="row"><dt>SPECIFIC</dt><dd>純米大吟醸</dd></div>
+      <div class="row"><dt>RICE</dt><dd>山田錦 100%</dd></div>
+      <div class="row"><dt>POLISH</dt><dd>15%</dd></div>
+      <div class="row"><dt>YEAST</dt><dd>自家培養</dd></div>
+      <div class="row"><dt>ALC</dt><dd>15.5%</dd></div>
+      <div class="row"><dt>SERVE</dt><dd>‑7℃ / 冷酒</dd></div>
+    </dl>
+  </section>
+
+  <section class="quiet">
+    <p>音を立てずに、<br>のどを通る。</p>
+  </section>
+
+  <footer>
+    <div class="m">凛</div>
+    <div class="s">
+      RIN &#183; JUNMAI DAIGINJO &#183; CONCEPT<br>
+      架空のブランドです。実在しません。<br>
+      画面の液体は WebGL によるリアルタイム描画です。
+    </div>
+  </footer>
+
+</div>
+
+<script id="fs" type="x-shader/x-fragment">
+// 液体ガラスのレイマーチング。時間だけで決まる＝毎回同じ絵になる
+precision highp float;
+uniform vec2  uRes;
+uniform float uTime;
+uniform float uScroll;
+
+const int   STEPS = 96;
+const float EPS   = 0.0011;
+
+float smin(float a, float b, float k){
+  float h = clamp(0.5 + 0.5*(b-a)/k, 0.0, 1.0);
+  return mix(b, a, h) - k*h*(1.0-h);
+}
+mat2 rot(float a){ float c=cos(a), s=sin(a); return mat2(c,-s,s,c); }
+
+float map(vec3 p){
+  float t = uTime;
+  p.yz *= rot(0.18 + uScroll*0.8);
+  p.xz *= rot(t*0.13 + uScroll*1.4);
+
+  vec3 a = p - vec3(sin(t*0.42)*0.24, cos(t*0.35)*0.19, 0.0);
+  vec3 b = p - vec3(cos(t*0.31)*-0.28, sin(t*0.47)*0.16, sin(t*0.26)*0.18);
+  vec3 c = p - vec3(sin(t*0.23)*0.13, cos(t*0.52)*-0.24, cos(t*0.33)*-0.16);
+
+  float d = length(a) - 0.44;
+  d = smin(d, length(b) - 0.33, 0.30);
+  d = smin(d, length(c) - 0.28, 0.27);
+
+  d += 0.011*sin(p.x*9.0 + t*0.9)*sin(p.y*8.4 - t*0.7)*sin(p.z*9.6 + t*0.5);
+  return d;
+}
+
+vec3 nrm(vec3 p){
+  vec2 e = vec2(EPS, 0.0);
+  return normalize(vec3(
+    map(p+e.xyy)-map(p-e.xyy),
+    map(p+e.yxy)-map(p-e.yxy),
+    map(p+e.yyx)-map(p-e.yyx)));
+}
+
+/* 撮影スタジオの環境。
+   ★ここが前回の失敗の原因：背景が滑らかだと、屈折させても何も曲がって見えない。
+     帯状のライトを入れて「構造」を持たせると、はじめてガラスに見える。 */
+vec3 env(vec3 rd){
+  float y = rd.y*0.5 + 0.5;
+  vec3 col = mix(vec3(0.028,0.032,0.042), vec3(0.16,0.18,0.22), smoothstep(0.0,0.62,y));
+  col = mix(col, vec3(0.42,0.46,0.53), smoothstep(0.62,0.92,y));
+
+  // 天井の帯ライト（ソフトボックス）を3本
+  float b1 = smoothstep(0.640,0.664,y) * (1.0-smoothstep(0.760,0.784,y));
+  float b2 = smoothstep(0.872,0.888,y) * (1.0-smoothstep(0.962,0.978,y));
+  float b3 = smoothstep(0.306,0.318,y) * (1.0-smoothstep(0.368,0.380,y));
+  col += b1*vec3(1.00,0.99,0.96)*1.55;
+  col += b2*vec3(0.98,0.99,1.00)*2.30;
+  col += b3*vec3(0.52,0.60,0.72)*0.70;
+
+  // 横方向にも縞を入れる。曲がりが読み取れるようになる
+  // 細い縦縞。ガラスを通すと、これが曲がって見える
+  float a = atan(rd.x, -rd.z);
+  float s1 = smoothstep(0.42,0.58, 0.5+0.5*sin(a*11.0));
+  float s2 = smoothstep(0.46,0.54, 0.5+0.5*sin(a*29.0 + 1.3));
+  col += s1 * 0.16 * smoothstep(0.34, 1.0, y);
+  col += s2 * 0.07 * smoothstep(0.50, 1.0, y);
+  return col;
+}
+
+void main(){
+  vec2 uv = (gl_FragCoord.xy - 0.5*uRes) / uRes.y;
+  vec3 ro = vec3(0.0, 0.0, 3.55 - uScroll*0.30);
+  vec3 rd = normalize(vec3(uv, -1.9));
+
+  float t = 0.0; bool hit = false;
+  for(int i=0;i<STEPS;i++){
+    vec3 p = ro + rd*t;
+    float d = map(p);
+    if(d < EPS){ hit = true; break; }
+    if(t > 8.0) break;
+    t += d*0.85;
+  }
+
+  vec3 col = env(rd) * 0.14 + vec3(0.014,0.016,0.022);
+
+  if(hit){
+    vec3 p = ro + rd*t;
+    vec3 n = nrm(p);
+    float fres = pow(1.0 - max(dot(n, -rd), 0.0), 3.0);
+
+    // 色ごとに屈折率をずらす＝分散（プリズム）
+    vec3 r1 = refract(rd, n, 1.0/1.42);
+    vec3 r2 = refract(rd, n, 1.0/1.46);
+    vec3 r3 = refract(rd, n, 1.0/1.50);
+    vec3 refr = vec3(env(r1).r, env(r2).g, env(r3).b);
+
+    // 中を通った分だけ色を吸わせる＝密度が出る
+    vec3 absorb = exp(-vec3(0.55,0.34,0.20) * 0.9);
+    refr *= absorb;
+
+    vec3 refl = env(reflect(rd, n));
+    col = mix(refr, refl, clamp(fres*0.92, 0.0, 1.0));
+
+    // 鋭い光の点。これが無いとガラスに見えない
+    vec3 L = normalize(vec3(-0.35, 0.86, 0.36));
+    float spec = pow(max(dot(reflect(-L, n), -rd), 0.0), 120.0);
+    col += spec * vec3(1.0,0.99,0.97) * 2.6;
+    float spec2 = pow(max(dot(reflect(-normalize(vec3(0.6,0.5,0.62)), n), -rd), 0.0), 34.0);
+    col += spec2 * vec3(0.86,0.92,1.0) * 0.55;
+
+    // 薄膜の虹
+    float ir = 0.5 + 0.5*sin(fres*15.0 + uTime*0.4 + p.y*4.0);
+    col += mix(vec3(0.46,0.62,0.98), vec3(0.98,0.74,0.62), ir) * fres * 0.20;
+
+    // 縁の光
+    col += pow(fres, 7.0) * vec3(1.0,0.99,0.96) * 1.5;
+  }
+
+  float v = 1.0 - 0.52*length(uv*vec2(0.80,0.60));
+  col *= v;
+  col = col / (col + 0.62);            // 明るいところを飛ばさない
+  col = pow(max(col, 0.0), vec3(0.82));
+  gl_FragColor = vec4(col, 1.0);
+}
+
+</script>
+<script>
+(function(){
+  var cv = document.getElementById('glass');
+  var gl = cv.getContext('webgl', {antialias:false, alpha:false, powerPreference:'high-performance'})
+        || cv.getContext('experimental-webgl');
+  if(!gl){ cv.style.background='#0A0B0E'; return; }
+
+  var VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}';
+  function sh(type, src){
+    var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, document.getElementById('fs').textContent));
+  gl.linkProgram(prog); gl.useProgram(prog);
+
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(prog, 'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+  var uRes = gl.getUniformLocation(prog,'uRes'),
+      uTime = gl.getUniformLocation(prog,'uTime'),
+      uScroll = gl.getUniformLocation(prog,'uScroll');
+
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  function size(){
+    cv.width  = Math.floor(cv.clientWidth  * DPR);
+    cv.height = Math.floor(cv.clientHeight * DPR);
+    gl.viewport(0,0,cv.width,cv.height);
+  }
+  window.addEventListener('resize', size); size();
+
+  var t0 = performance.now();
+  function draw(sec, sc){
+    gl.uniform2f(uRes, cv.width, cv.height);
+    gl.uniform1f(uTime, sec);
+    gl.uniform1f(uScroll, sc);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  }
+  // 撮影用：外から1コマだけ描かせる（普段は使わない）
+  window.__drawAt = function(sec, sc){ size(); draw(sec, sc); };
+  function frame(now){
+    if(window.__capture) return;      // 撮影中は自走しない
+    var sc = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
+    draw((now - t0) / 1000, sc);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
