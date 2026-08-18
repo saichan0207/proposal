@@ -61,7 +61,14 @@
   .num b{display:block; font-size:clamp(26px,3.4vw,42px); font-weight:400; letter-spacing:.01em}
   .num span{display:block; margin-top:.7em; font-size:10px; letter-spacing:.2em; color:var(--ink-soft)}
 
-  .spec{margin-top:clamp(30px,5vh,56px); border-top:1px solid var(--line); max-width:640px}
+  /* 仕様の表は右端まで文字が来る。ここだけ紙を1枚追加で敷いて読ませる。
+     四角いまま敷くと帯の境目が見えるので、上下と右をぼかして紙に馴染ませる */
+  .spec{position:relative; margin-top:clamp(30px,5vh,56px);
+        border-top:1px solid var(--line); max-width:640px}
+  .spec::before{content:""; position:absolute; inset:-18px -26px -14px -14px; z-index:-1;
+        background:linear-gradient(90deg, rgba(243,240,233,.99) 0%, rgba(243,240,233,.97) 62%, rgba(243,240,233,.80) 100%);
+        -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+        mask-image:linear-gradient(180deg, transparent 0%, #000 9%, #000 91%, transparent 100%)}
   .row{display:flex; justify-content:space-between; gap:20px;
        padding:17px 2px; border-bottom:1px solid var(--line)}
   .row dt{font-size:10px; letter-spacing:.24em; color:var(--ink-soft); padding-top:.35em}
@@ -306,6 +313,11 @@ void main(){
     fluid.step();
   }
 
+  // 助走。ページを開いた瞬間が真っ白だと「何も起きていないサイト」に見える。
+  // 最初の3滴はここで落ち切っているので、開いた時点で既に墨が広がっている。
+  var PREWARM = 150;
+  for (var w = 0; w < PREWARM; w++) stepOnce();
+
   function present(sec){
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.viewport(0, 0, cv.width, cv.height);
@@ -320,6 +332,17 @@ void main(){
   // 撮影用：外から1コマだけ進めて描かせる（決定論・wall-clock を使わない）
   window.__tick = function(){ size(); stepOnce(); present(fluid.frame / 60); };
   window.__frame = function(){ return fluid.frame; };
+
+  // 撮影の道具（lab_shoot.mjs）が呼ぶ口。
+  // 流体は履歴で決まるので時刻へ飛べない。目標のコマ数まで順に進めてから描く。
+  // 進む向きは前だけなので、撮影は必ず先頭から順に回すこと。
+  window.__drawAt = function(sec){
+    size();
+    var target = PREWARM + Math.max(0, Math.round(sec * 60));
+    var guard = 0;
+    while(fluid.frame < target && guard++ < 400) stepOnce();
+    present(fluid.frame / 60);
+  };
 
   function loop(){
     if(window.__capture) return;   // 撮影中は自走しない
