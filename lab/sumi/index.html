@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>墨 SUMI ｜ [002] Lab — Web制作 ゆたか</title>
+<meta name="description" content="架空の墨（すみ）ブランドのコンセプトサイト。背景の墨は動画ではなく、流体の方程式をその場で解いて描いています。">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --paper:#F3F0E9;
+    --ink:#14161A;
+    --ink-soft:#3E434C;
+    --line:rgba(20,22,26,.14);
+    --accent:#1B3A5C;
+  }
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+    font-feature-settings:"palt" 1;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  #sumi{position:fixed; inset:0; width:100vw; height:100vh; display:block; z-index:0}
+  .veil{position:fixed; inset:0; z-index:1; pointer-events:none;
+        background:radial-gradient(120% 80% at 50% 0%, rgba(243,240,233,0) 40%, rgba(243,240,233,.72) 100%)}
+  .wrap{position:relative; z-index:2}
+
+  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:space-between;
+        padding:clamp(20px,5vw,52px);
+        background:linear-gradient(105deg,
+          rgba(243,240,233,.90) 0%,
+          rgba(243,240,233,.55) 30%,
+          rgba(243,240,233,0) 62%)}
+  .top{display:flex; justify-content:space-between; align-items:baseline;
+       font-size:11px; letter-spacing:.22em; color:var(--ink-soft)}
+  .top .mark{font-size:20px; letter-spacing:0}
+  .heroin{padding-bottom:clamp(24px,8vh,90px)}
+  .kanji{font-size:clamp(88px,26vw,300px); line-height:.86; letter-spacing:.02em}
+  .roman{margin-top:.5em; font-size:clamp(11px,1.4vw,15px); letter-spacing:.62em; color:var(--ink-soft)}
+  .lede{margin-top:clamp(18px,4vh,34px); font-size:clamp(15px,1.6vw,19px);
+        line-height:2.15; color:var(--ink-soft); max-width:30em}
+
+  /* 墨は右へ逃がし、文字は紙の余白の上で読ませる。
+     背景を全面に敷くと墨が死に、敷かないと本文が読めない（2026-08-18 初稿の失敗） */
+  .band{padding:clamp(64px,14vh,170px) clamp(20px,5vw,52px); max-width:1180px;
+        background:linear-gradient(100deg,
+          rgba(243,240,233,.985) 0%,
+          rgba(243,240,233,.965) 34%,
+          rgba(243,240,233,.86) 58%,
+          rgba(243,240,233,0) 88%)}
+  .eyebrow{display:block; font-size:10px; letter-spacing:.34em; color:var(--ink-soft); margin-bottom:1.9em}
+  .band h2{font-size:clamp(30px,5.2vw,68px); line-height:1.42; letter-spacing:.02em; font-weight:400}
+  .body{margin-top:clamp(22px,4vh,40px); font-size:clamp(14px,1.5vw,17px);
+        line-height:2.35; color:var(--ink-soft); max-width:34em}
+
+  .num{display:flex; gap:clamp(28px,6vw,86px); margin-top:clamp(34px,6vh,64px); flex-wrap:wrap}
+  .num div{border-top:1px solid var(--line); padding-top:14px; min-width:120px}
+  .num b{display:block; font-size:clamp(26px,3.4vw,42px); font-weight:400; letter-spacing:.01em}
+  .num span{display:block; margin-top:.7em; font-size:10px; letter-spacing:.2em; color:var(--ink-soft)}
+
+  .spec{margin-top:clamp(30px,5vh,56px); border-top:1px solid var(--line); max-width:640px}
+  .row{display:flex; justify-content:space-between; gap:20px;
+       padding:17px 2px; border-bottom:1px solid var(--line)}
+  .row dt{font-size:10px; letter-spacing:.24em; color:var(--ink-soft); padding-top:.35em}
+  .row dd{font-size:clamp(14px,1.5vw,17px); text-align:right}
+
+  .quiet{min-height:78svh; display:flex; flex-direction:column; align-items:center;
+         justify-content:center; text-align:center; padding:clamp(40px,10vh,120px) 20px; gap:26px;
+         background:radial-gradient(58% 44% at 50% 50%,
+           rgba(243,240,233,.95) 0%, rgba(243,240,233,.80) 55%, rgba(243,240,233,0) 100%)}
+  .quiet .m{font-size:clamp(56px,13vw,140px); line-height:1}
+  .quiet .s{font-size:12px; letter-spacing:.28em; color:var(--ink-soft); line-height:2.4}
+
+  footer{position:relative; z-index:2; border-top:1px solid var(--line);
+         padding:30px clamp(20px,5vw,52px) 54px;
+         font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+         font-size:11px; line-height:2.1; letter-spacing:.04em; color:var(--ink-soft)}
+  footer a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line)}
+  .note{max-width:46em}
+
+  @media (max-width:640px){
+    .num{gap:24px}
+    .num div{min-width:calc(50% - 12px)}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sumi"></canvas>
+<div class="veil"></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="top">
+      <span class="mark">墨</span>
+      <span>[002] &#183; LAB</span>
+    </div>
+    <div class="heroin">
+      <div class="kanji">墨</div>
+      <div class="roman">S U M I</div>
+      <p class="lede">置いた瞬間から、ずっと動いている。<br>乾くまで、この字は終わらない。</p>
+    </div>
+  </header>
+
+  <section class="band">
+    <span class="eyebrow">01 &#183; THE BLEED</span>
+    <h2>墨は、<br>止まらない。</h2>
+    <p class="body">
+      紙に触れた墨は、そこで待っていてくれません。繊維の隙間を伝って外へ広がり、
+      濃いところは沈み、薄いところは青に寄っていきます。書き終えた直後といちばん美しい瞬間は、
+      同じ時刻ではありません。<br><br>
+      だから、この墨の写真を撮ることには意味がないと考えました。
+      写真は、動き続けているもののうち、たまたま一瞬だけを止めた記録にすぎません。
+      このページの背景は動画ではありません。いま、あなたの端末の中で計算されています。
+    </p>
+    <div class="num">
+      <div><b>24</b><span>PRESSURE ITERATIONS</span></div>
+      <div><b>60</b><span>STEPS / SEC</span></div>
+      <div><b>0</b><span>PRE-RENDERED FRAMES</span></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">02 &#183; THE MAKING</span>
+    <h2>煤を集め、<br>膠で、とめる。</h2>
+    <p class="body">
+      松を焼いて出た煤を集め、鹿の膠でつなぎ止めたものが墨です。
+      配合が少し変わるだけで、にじみの速さも、乾いたあとの黒の色も変わります。
+      青みの強い黒を「青墨」と呼び、薄めたときにいちばん違いが出ます。
+    </p>
+    <dl class="spec">
+      <div class="row"><dt>SOOT</dt><dd>松煙</dd></div>
+      <div class="row"><dt>BINDER</dt><dd>鹿膠・三年熟成</dd></div>
+      <div class="row"><dt>ORIGIN</dt><dd>奈良</dd></div>
+      <div class="row"><dt>TONE</dt><dd>青墨</dd></div>
+      <div class="row"><dt>DENSITY</dt><dd>1.09 g/cm&#179;</dd></div>
+      <div class="row"><dt>DRY</dt><dd>8&#8211;14 min</dd></div>
+    </dl>
+  </section>
+
+  <section class="band">
+    <span class="eyebrow">03 &#183; THE METHOD</span>
+    <h2>絵ではなく、<br>方程式を置いた。</h2>
+    <p class="body">
+      背景の墨は、あらかじめ描いた絵でも、書き出した動画でもありません。
+      毎コマ、流れの方程式を解いています。速度を運び、湧き出しの量を測り、
+      圧力を24回ならして、体積が増えも減りもしない状態に直してから、墨そのものを運ぶ。
+      その6つの手順を1秒に60回くり返しています。<br><br>
+      だからこの模様は、二度と同じ形にはなりません。
+      ページを読み込み直せば、また違う広がり方をします。
+    </p>
+  </section>
+
+  <section class="quiet">
+    <div class="m">墨</div>
+    <div class="s">
+      S U M I<br>
+      [002] &#183; LAB
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="note">
+    <b>墨 SUMI は実在しないブランドです。</b>
+    表現の実験のために、Web制作 ゆたか が企画から制作までを行った架空の商品です。
+    実在の企業・商品とは関係がありません。
+  </p>
+  <p style="margin-top:14px">
+    制作：Web制作 ゆたか　／　<a href="https://saichan0207.github.io/portfolio/">制作実績</a>　／　<a href="https://saichan0207.github.io/proposal/lab/rin/">[001] 凛 RIN</a>
+  </p>
+</footer>
+
+<!-- 紙に置いた墨として見せる仕上げ -->
+<script id="fs-paper" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+in vec2 uv;
+out vec4 o;
+uniform sampler2D uDye;
+uniform vec2 uRes, uTexel;
+uniform float uTime;
+
+// 和紙の繊維
+float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float noise(vec2 p){
+  vec2 i = floor(p), f = fract(p);
+  f = f*f*(3.0-2.0*f);
+  return mix(mix(hash(i), hash(i+vec2(1,0)), f.x),
+             mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y);
+}
+float fbm(vec2 p){
+  float v = 0.0, a = 0.5;
+  for(int i=0;i<5;i++){ v += a*noise(p); p *= 2.03; a *= 0.5; }
+  return v;
+}
+
+void main(){
+  vec2 q = uv;
+  float d = texture(uDye, q).r;
+
+  // 紙の繊維で、にじみのふちを不規則にする（真円だと墨に見えない）
+  float fiber = fbm(q * vec2(uRes.x/uRes.y, 1.0) * 26.0);
+  d *= 0.82 + 0.36 * fiber;
+
+  // ふちが濃くなる（実際の墨のいちばんの特徴）
+  float dl = texture(uDye, q - vec2(uTexel.x, 0.)).r;
+  float dr = texture(uDye, q + vec2(uTexel.x, 0.)).r;
+  float db = texture(uDye, q - vec2(0., uTexel.y)).r;
+  float dt = texture(uDye, q + vec2(0., uTexel.y)).r;
+  float edge = length(vec2(dr - dl, dt - db)) * 26.0;
+
+  float ink = clamp(d * 2.7 + edge * 0.85, 0.0, 1.0);
+  ink = pow(ink, 0.72);
+
+  // 紙の地
+  vec3 paper = vec3(0.953, 0.941, 0.914);
+  paper -= (fbm(q * 180.0) - 0.5) * 0.028;                 // 繊維の粒
+  paper -= smoothstep(0.55, 1.25, length(q - 0.5)) * 0.045; // 四隅の落ち
+
+  // 薄い墨は青に寄り、濃い墨は温かい黒に沈む（青墨）
+  vec3 thin  = vec3(0.243, 0.310, 0.396);
+  vec3 thick = vec3(0.055, 0.063, 0.078);
+  vec3 sumi  = mix(thin, thick, smoothstep(0.10, 0.86, ink));
+
+  vec3 col = mix(paper, sumi, clamp(ink, 0.0, 1.0));
+
+  // 紙の凹凸に光が当たる分だけ、ほんの少し起伏を出す
+  col += (fbm(q * 60.0) - 0.5) * 0.016 * (1.0 - ink);
+
+  o = vec4(col, 1.0);
+}
+</script>
+
+<script src="fluid.js"></script>
+<script>
+(function(){
+  var cv = document.getElementById('sumi');
+  var gl = cv.getContext('webgl2', {antialias:false, alpha:false, powerPreference:'high-performance'});
+  if(!gl){ cv.style.background = '#F3F0E9'; return; }
+
+  // 画面の縦横比に合わせる。正方形のまま横長画面に伸ばすと、
+  // 横方向にだけ余計に流れて墨が煙に見える（2026-08-18 初稿の失敗）
+  var ar = Math.max(0.4, Math.min(2.6, (cv.clientWidth || 1280) / (cv.clientHeight || 800)));
+  var SIM = 256, DYE = 640;
+  var fluid;
+  try {
+    fluid = new Fluid(gl, {
+      simW: Math.round(SIM * (ar > 1 ? ar : 1)), simH: Math.round(SIM * (ar > 1 ? 1 : 1 / ar)),
+      dyeW: Math.round(DYE * (ar > 1 ? ar : 1)), dyeH: Math.round(DYE * (ar > 1 ? 1 : 1 / ar)),
+      dt: 1 / 60, iter: 24
+    });
+  }
+  catch(e){ console.error(e); cv.style.background = '#F3F0E9'; return; }
+
+  // 仕上げ（紙に置いた墨として描く）
+  var VS = '#version 300 es\nin vec2 p;out vec2 uv;void main(){uv=p*0.5+0.5;gl_Position=vec4(p,0.,1.);}';
+  function sh(t, src){
+    var s = gl.createShader(t); gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, document.getElementById('fs-paper').textContent));
+  gl.bindAttribLocation(prog, 0, 'p');
+  gl.linkProgram(prog);
+  var uDye = gl.getUniformLocation(prog,'uDye'),
+      uRes = gl.getUniformLocation(prog,'uRes'),
+      uTexel2 = gl.getUniformLocation(prog,'uTexel'),
+      uTime = gl.getUniformLocation(prog,'uTime');
+
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  function size(){
+    cv.width  = Math.floor(cv.clientWidth  * DPR);
+    cv.height = Math.floor(cv.clientHeight * DPR);
+  }
+  window.addEventListener('resize', size);
+  size();
+
+  // 墨を落とす時刻表。決定論のため、乱数ではなくコマ数で決める。
+  // 撮影しても本人の端末で見ても、同じ順番で同じ場所に落ちる。
+  var DROPS = [
+    { f:  4,  x:0.52, y:0.58, vx:  20, vy:-330, a:3.4 },
+    { f: 40,  x:0.30, y:0.46, vx: 230, vy:-140, a:2.8 },
+    { f: 86,  x:0.74, y:0.54, vx:-250, vy:-170, a:3.0 },
+    { f:140,  x:0.44, y:0.26, vx:  70, vy: 260, a:2.4 },
+    { f:200,  x:0.62, y:0.76, vx:-160, vy:-230, a:2.6 },
+    { f:268,  x:0.20, y:0.64, vx: 300, vy: 100, a:2.2 },
+    { f:340,  x:0.84, y:0.34, vx:-220, vy: 190, a:2.3 },
+    { f:420,  x:0.50, y:0.50, vx:  90, vy:-210, a:2.0 },
+    { f:500,  x:0.36, y:0.78, vx: 140, vy:-260, a:1.9 },
+    { f:590,  x:0.68, y:0.22, vx:-120, vy: 240, a:1.8 }
+  ];
+  var nextDrop = 0;
+
+  function stepOnce(){
+    while(nextDrop < DROPS.length && DROPS[nextDrop].f === fluid.frame){
+      var d = DROPS[nextDrop++];
+      fluid.splat(d.x, d.y, d.vx, d.vy, d.a);
+    }
+    fluid.step();
+  }
+
+  function present(sec){
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.viewport(0, 0, cv.width, cv.height);
+    gl.useProgram(prog);
+    gl.uniform1i(uDye, fluid.dye.read.bind(0));
+    gl.uniform2f(uRes, cv.width, cv.height);
+    gl.uniform2f(uTexel2, fluid.dye.texel[0], fluid.dye.texel[1]);
+    gl.uniform1f(uTime, sec);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  }
+
+  // 撮影用：外から1コマだけ進めて描かせる（決定論・wall-clock を使わない）
+  window.__tick = function(){ size(); stepOnce(); present(fluid.frame / 60); };
+  window.__frame = function(){ return fluid.frame; };
+
+  function loop(){
+    if(window.__capture) return;   // 撮影中は自走しない
+    stepOnce();
+    present(fluid.frame / 60);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
