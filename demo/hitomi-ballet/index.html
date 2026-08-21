@@ -2,681 +2,552 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hitomi Ballet Studio｜奈良県広陵町のバレエ教室（デザイン案・サンプル）</title>
-<meta name="description" content="小さなお子様から大人まで。バレエを、日常をより豊かにするエッセンスに。初心者も経験者も歓迎。みささぎ台教室（本部）とエコール・マミ教室の2拠点。奈良県北葛城郡広陵町のバレエ教室です。（ご提案用デザイン案・サンプル）">
+<meta name="description" content="楽譜を読む力、音を聴く力、そして続ける力。Hitomi Ballet Studioは、お子さまから大人の方まで、一人ひとりのペースでていねいに向き合う音楽教室です。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#fbf5f2;
-    --panel:#fffdfb;
-    --ivory:#f6ede4;
-    --rose:#c76b7f;
-    --rose2:#b45570;
-    --rose3:#e0a4b3;
-    --rose-soft:#f4dfe3;
-    --rose-deep:#8f4258;
-    --gold:#c9a24a;
-    --ink:#4a3b40;
-    --sub:#8b7a80;
-    --line:rgba(143,66,88,.14);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.98;letter-spacing:.05em;overflow-x:hidden}
-  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
-  img{max-width:100%;display:block}
-  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
-  .sample-bar b{color:var(--gold2)}
-  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
+/* ═══════════════════════════════════════════════════════════════
+   営業デモの型（写真あり・ピアノ／音楽教室）｜2026-08-21 作り直し
+   ヒーローの技術：弦の振動（波動方程式を1次元で解く）
+   すでに使った引き出し（レイマーチング・流体・粒子・熱・コースティクス・
+   呼吸・物理の紐・反応拡散）とは重ならないように選んでいる。
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0b0d14; --bg2:#070910; --panel:#12151f;
+  --fg:#e4e6ee; --fg2:#a2a7b8; --dim:#767c8f; --hi:#f7f8fc;
+  --acc:#c2a15e; --acc2:#d9bd80;
+  --hair:rgba(194,161,94,.18); --headbg:rgba(7,9,16,.9);
+  --navc:rgba(228,230,238,.62); --subc:rgba(228,230,238,.78);
+  --shadow:rgba(11,13,20,.7); --curr:rgba(217,189,128,.5); --curbg:rgba(217,189,128,.09);
+  --t-d:clamp(2.6rem,7.2vw,6.2rem);
+  --t-1:clamp(1.85rem,3.8vw,3rem);
+  --t-2:clamp(1.4rem,2.6vw,2rem);
+  --t-3:1.26rem; --t-4:1.08rem; --t-b:1rem; --t-s:.875rem; --t-x:.75rem;
+  --lh-d:1.24; --lh-h:1.42; --lh-b:1.95; --lh-s:1.7;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.25rem;
+  --s5:3.5rem; --s6:5rem; --s7:7.5rem; --s8:11rem;
+  --gut:clamp(20px,5.4vw,72px);
+  --wrap:1140px;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
 
-  header{position:sticky;top:var(--bar-h,34px);z-index:40;display:flex;justify-content:space-between;align-items:center;padding:15px 24px;background:rgba(251,245,242,0);transition:background .4s,box-shadow .4s,padding .4s}
-  header.scrolled{background:rgba(251,245,242,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
-  .logo{font-size:17px;letter-spacing:.14em;color:var(--rose-deep);font-weight:600;line-height:1.4;font-family:"Hiragino Mincho ProN",serif}
-  /* ヒーロー写真に重なる間は白抜き（濃い文字色だと暗い写真に沈む・2026-07-29） */
-  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-  header:not(.scrolled) .logo small{color:#e8c87a}
-  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
-  .logo small{display:block;font-size:9px;letter-spacing:.3em;color:var(--rose);margin-top:3px;font-weight:600;font-family:"Hiragino Sans",sans-serif}
-  nav{display:flex;gap:20px;align-items:center}
-  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s;white-space:nowrap}
-  nav a:hover{color:var(--rose);border-color:var(--rose)}
-  nav a.cta{background:var(--rose);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.06em;box-shadow:0 8px 18px rgba(199,107,127,.32)}
-  nav a.cta:hover{background:var(--rose2);color:#fff;transform:translateY(-1px)}
-  @media(max-width:960px){nav a:not(.cta){display:none}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans",sans-serif;
+  line-height:var(--lh-b);letter-spacing:.035em;overflow-x:hidden}
+body.lock{overflow:hidden;height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.mn{font-family:"Shippori Mincho",serif;font-weight:400}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 
-  /* hero */
-  .hero{position:relative;min-height:94vh;display:flex;align-items:center;padding:0 8vw;margin-top:-62px;overflow:hidden;
-    background:radial-gradient(60vw 58vh at 80% 18%,#f7e2e6 0%,transparent 62%),radial-gradient(50vw 52vh at 6% 90%,#f5e6da 0%,transparent 60%),linear-gradient(165deg,#fdf6f3,#f8ece7)}
-  .hero .orb{position:absolute;top:12%;right:6%;width:min(40vw,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 36% 32%,#fdf1f3,#f3d3da 56%,#e6b3c1);opacity:.85;z-index:0}
-  .hero .orb::after{content:"";position:absolute;inset:-11%;border-radius:50%;border:1px solid rgba(199,107,127,.24)}
-  .hero .petal{position:absolute;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#f5cdd6,#eab1c1);opacity:.5;z-index:0;filter:blur(.3px)}
-  .hero .p1{width:26px;height:26px;top:24%;left:12%;transform:rotate(20deg)}
-  .hero .p2{width:16px;height:16px;top:62%;left:26%;transform:rotate(-30deg)}
-  .hero .p3{width:20px;height:20px;top:40%;left:44%;transform:rotate(50deg);opacity:.35}
-  .hero-inner{position:relative;z-index:2;max-width:640px;margin-top:60px}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;color:var(--rose2);margin-bottom:22px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--rose)}
-  .hero h1{font-size:clamp(29px,5.6vw,52px);font-weight:600;line-height:1.58;letter-spacing:.08em;color:var(--rose-deep);text-wrap:balance}
-  .hero h1 span{color:var(--rose)}
-  .hero p{margin-top:24px;font-size:clamp(14px,1.7vw,16px);color:var(--sub);max-width:32em;line-height:2.1}
-  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.06em;transition:.3s}
-  .btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#fff;font-weight:600;box-shadow:0 12px 26px rgba(199,107,127,.38)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--rose3);color:var(--rose2)}
-  .btn-ghost:hover{border-color:var(--rose);color:var(--rose);background:rgba(199,107,127,.06)}
-  .hero-badges{margin-top:32px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
-  .hero-badges b{color:var(--rose2)}
+.bar{position:relative;z-index:120;background:var(--bg2);color:var(--dim);
+  font-size:var(--t-x);letter-spacing:.09em;text-align:center;padding:10px 16px;
+  line-height:1.7;border-bottom:1px solid var(--hair)}
 
-  section{padding:clamp(70px,10vw,118px) 8vw;position:relative}
-  .sec-head{text-align:center;margin-bottom:50px}
-  .sec-head .en{font-size:11px;letter-spacing:.36em;color:var(--rose);display:block;margin-bottom:12px}
-  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.1em;color:var(--rose-deep)}
-  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+#ld{position:fixed;inset:0;z-index:9990;background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .9s ease,visibility .9s}
+#ld .nm{font-family:"Shippori Mincho",serif;font-size:clamp(16px,2.4vw,23px);
+  letter-spacing:.3em;color:var(--acc2);opacity:0;transform:translateY(9px);
+  transition:opacity 1s ease .25s,transform 1.2s var(--ease) .25s}
+#ld.go .nm{opacity:1;transform:none}
+#ld .ln{margin:17px auto 0;width:0;height:1px;background:var(--acc);
+  transition:width 1.35s cubic-bezier(.5,0,.1,1) .45s}
+#ld.go .ln{width:min(190px,42vw)}
+#ld.done{opacity:0;visibility:hidden}
 
-  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+header{position:fixed;top:var(--bar-h,39px);left:0;width:100%;z-index:100;
+  padding:20px 0;transition:background .6s ease,padding .6s ease}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}
+header.on{background:var(--headbg);backdrop-filter:blur(14px);padding:12px 0}
+.logo{font-family:"Shippori Mincho",serif;font-size:1.12rem;letter-spacing:.24em;color:var(--hi)}
+nav{display:flex;gap:clamp(16px,2.7vw,36px);font-size:var(--t-s);letter-spacing:.11em}
+nav a{color:var(--navc);transition:color .4s ease;position:relative}
+nav a:hover{color:var(--hi)}
+nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+  background:var(--acc);transition:width .5s var(--ease)}
+nav a:hover::after{width:100%}
+@media(max-width:760px){nav a:nth-child(n+3){display:none}}
 
-  .reveal{opacity:1;transform:none}
+.hero{position:relative;min-height:calc(100svh - var(--bar-h,39px));
+  display:flex;align-items:center;overflow:hidden}
+#art{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:3;width:100%}
+.hero .eye{display:block;font-size:var(--t-x);letter-spacing:.3em;color:var(--acc2);
+  margin-bottom:var(--s3);opacity:0;transition:opacity 1.1s ease .3s}
+.hero .eye.in{opacity:1}
+.hero h1{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-d);line-height:var(--lh-d);letter-spacing:.03em;
+  text-shadow:0 2px 44px var(--shadow)}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>i{display:block;font-style:normal;transform:translateY(110%);
+  transition:transform 1.3s var(--ease)}
+.hero h1.in .l>i{transform:translateY(0)}
+.hero h1 .l:nth-child(2)>i{transition-delay:.12s}
+.hero .sub{margin-top:var(--s4);max-width:27em;color:var(--subc);
+  font-size:var(--t-4);opacity:0;transform:translateY(16px);
+  transition:opacity 1.1s ease .7s,transform 1.2s var(--ease) .7s}
+.hero .sub.in{opacity:1;transform:none}
+.hero .scroll{position:absolute;left:var(--gut);bottom:clamp(28px,5vh,54px);z-index:3;
+  font-size:var(--t-x);letter-spacing:.24em;color:var(--dim);
+  display:flex;align-items:center;gap:12px;opacity:0;transition:opacity 1s ease 1.2s}
+.hero .scroll.in{opacity:1}
+.hero .scroll::after{content:"";width:54px;height:1px;
+  background:linear-gradient(90deg,var(--acc),transparent)}
 
-  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+section{padding:clamp(80px,13vh,165px) 0;position:relative}
+.head{margin-bottom:clamp(34px,6vh,70px);padding-bottom:var(--s2);
+  border-bottom:1px solid var(--hair);
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.head .en{font-size:var(--t-x);letter-spacing:.26em;color:var(--acc)}
+.head h2{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-2);line-height:var(--lh-h);letter-spacing:.07em}
+.rv{opacity:0;transform:translateY(28px);
+  transition:opacity 1s ease,transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 
-  html.js .reveal.in{opacity:1;transform:none}
-  .reveal.in{opacity:1;transform:none}
-  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+.two{display:grid;gap:clamp(30px,5vw,72px);align-items:center}
+@media(min-width:920px){.two{grid-template-columns:1fr 1fr}}
+.two figure{overflow:hidden}
+.two figure img{width:100%;aspect-ratio:4/5;object-fit:cover;
+  transition:transform 1.8s var(--ease);filter:saturate(.93)}
+.two figure:hover img{transform:scale(1.05)}
+.two h3{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-1);line-height:var(--lh-h);margin-bottom:var(--s3);letter-spacing:.04em}
+.two p{color:var(--fg2);max-width:31em}
+.two p + p{margin-top:var(--s2)}
+.mark{margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--hair);
+  font-size:var(--t-s);color:var(--acc2);letter-spacing:.1em}
 
-  /* concept */
-  .concept{text-align:center;background:linear-gradient(180deg,var(--bg),var(--ivory))}
-  .cnc{max-width:730px;margin:0 auto}
-  .cnc .rule{width:44px;height:1px;background:var(--rose);margin:0 auto 24px;position:relative}
-  .cnc .rule::before{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;background:var(--rose3);border-radius:50% 50% 50% 0;transform:translateX(-50%) rotate(45deg)}
-  .cnc .lead{font-size:clamp(19px,3.2vw,27px);line-height:2;color:var(--rose-deep);letter-spacing:.09em}
-  .cnc .lead b{color:var(--rose);font-weight:600}
-  .cnc p.body{margin-top:26px;font-size:14px;color:var(--sub);line-height:2.15}
+.three{display:grid;gap:clamp(26px,4vw,52px)}
+@media(min-width:840px){.three{grid-template-columns:repeat(3,1fr)}}
+.three h3{font-size:var(--t-4);letter-spacing:.12em;color:var(--acc);
+  padding-bottom:var(--s1);margin-bottom:var(--s2);border-bottom:1px solid var(--hair)}
+.three p{color:var(--fg2);font-size:var(--t-s)}
+.three ul{list-style:none}
+.three li{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:12px 0;border-bottom:1px dotted var(--hair);font-size:var(--t-s);color:var(--fg2)}
+.three li span{color:var(--dim);white-space:nowrap;font-variant-numeric:tabular-nums}
 
-  /* target */
-  .target{background:var(--ivory)}
-  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;max-width:940px;margin:0 auto}
-  .tg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 8px 22px rgba(143,66,88,.06)}
-  .tg .ic{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--rose-soft);color:var(--rose2);display:flex;align-items:center;justify-content:center;font-size:14px}
-  .tg p{font-size:13.8px;line-height:1.86}
-  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--rose-deep);letter-spacing:.06em}
-  .tg-foot b{color:var(--rose);font-weight:600}
+.pics{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:var(--s5)}
+.pics figure{overflow:hidden}
+.pics img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform 1.6s var(--ease)}
+.pics figure:hover img{transform:scale(1.055)}
+.big{overflow:hidden;margin-top:var(--s4)}
+.big img{width:100%;aspect-ratio:16/7;object-fit:cover;transition:transform 2s var(--ease)}
+.big:hover img{transform:scale(1.045)}
 
-  /* class / 幅広い受け入れ */
-  .classes{background:var(--bg)}
-  .cl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1040px;margin:0 auto}
-  .clcard{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 26px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
-  .clcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose3),var(--rose))}
-  .clcard:hover{transform:translateY(-6px);box-shadow:0 22px 42px rgba(143,66,88,.14)}
-  .clcard .age{font-size:11px;letter-spacing:.14em;color:var(--rose);margin-bottom:6px}
-  .clcard .ic{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--rose-soft),#f6d0d9);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:14px}
-  .clcard h3{font-size:18px;font-weight:600;color:var(--rose-deep);letter-spacing:.05em;margin-bottom:9px}
-  .clcard p{font-size:13.2px;color:var(--sub);line-height:1.92}
-  .clcard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.06em;color:var(--rose2);border:1px solid var(--rose3);border-radius:999px;padding:4px 12px}
+.info{display:grid;gap:clamp(28px,4vw,60px)}
+@media(min-width:840px){.info{grid-template-columns:1fr 1fr}}
+.info dl{display:grid;grid-template-columns:6.5em 1fr;gap:15px 22px;font-size:var(--t-s)}
+.info dt{color:var(--acc);letter-spacing:.12em}
+.info dd{color:var(--fg2)}
+.note{margin-top:var(--s4);padding:17px 19px;background:var(--panel);
+  font-size:var(--t-x);color:var(--dim);line-height:var(--lh-s)}
 
-  /* beginner feature */
-  .beginner{background:linear-gradient(130deg,var(--rose-deep),var(--rose2) 70%);color:#fdeef0;overflow:hidden;position:relative}
-  .beginner::after{content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,255,255,.16),transparent 60%);pointer-events:none}
-  .bg-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;max-width:980px;margin:0 auto;align-items:center;position:relative;z-index:1}
-  @media(max-width:820px){.bg-wrap{grid-template-columns:1fr;gap:30px}}
-  .bg-info .en{font-size:11px;letter-spacing:.34em;color:#f6ddc2;display:block;margin-bottom:14px}
-  .bg-info h2{font-size:clamp(23px,3.4vw,32px);font-weight:600;letter-spacing:.08em;color:#fff;line-height:1.58}
-  .bg-info h2 span{color:#f6ddc2}
-  .bg-info p{margin-top:18px;font-size:14px;color:#f7dfe4;line-height:2.15}
-  .bg-info p b{color:#fff;font-weight:600}
-  .bg-points{display:flex;flex-direction:column;gap:12px}
-  .bg-pt{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
-  .bg-pt .n{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--rose2);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
-  .bg-pt .tx h4{font-size:14.5px;color:#fff;font-weight:600;letter-spacing:.04em;margin-bottom:3px}
-  .bg-pt .tx p{font-size:12.6px;color:#f4d7dd;line-height:1.8;margin:0}
+footer{background:var(--bg2);color:var(--dim);padding:var(--s5) 0 var(--s4);
+  border-top:1px solid var(--hair)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:var(--t-x);letter-spacing:.12em}
+footer .fn{font-family:"Shippori Mincho",serif;font-size:var(--t-4);
+  color:var(--hi);letter-spacing:.24em}
 
-  /* studios / 2拠点 */
-  .studios{background:var(--ivory)}
-  .st-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin:0 auto}
-  @media(max-width:720px){.st-grid{grid-template-columns:1fr}}
-  .stcard{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 26px rgba(143,66,88,.08);display:flex;flex-direction:column}
-  .stcard .ph{height:170px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .stcard.s1 .ph{background:linear-gradient(150deg,#e6b3c1,#c76b7f)}
-  .stcard.s2 .ph{background:linear-gradient(150deg,#e7c9a6,#c9a24a)}
-  .stcard .ph .mk{font-size:52px;color:rgba(255,255,255,.5)}
-  .stcard .ph .badge{position:absolute;top:14px;left:14px;font-size:10.5px;letter-spacing:.12em;color:#fff;padding:5px 13px;border-radius:999px;background:rgba(143,66,88,.55);backdrop-filter:blur(2px)}
-  .stcard .body{padding:24px 26px 28px}
-  .stcard .body h3{font-size:19px;font-weight:600;color:var(--rose-deep);letter-spacing:.04em;margin-bottom:4px}
-  .stcard .body .en{font-size:10.5px;letter-spacing:.2em;color:var(--rose);margin-bottom:12px}
-  .stcard .body p{font-size:13.2px;color:var(--sub);line-height:1.95}
-  .stcard .body .addr{margin-top:14px;font-size:12.5px;color:var(--ink);border-top:1px solid var(--line);padding-top:14px;line-height:1.8}
-  .stcard .body .addr b{color:var(--rose2)}
-  .st-note{text-align:center;margin-top:26px;font-size:11.5px;color:var(--sub)}
+.cur{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;
+  background:var(--acc2);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cur-r{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--curr);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .5s var(--ease),height .5s var(--ease),background .5s ease}
+.cur-r.on{width:66px;height:66px;background:var(--curbg)}
+@media (hover:none),(max-width:820px){.cur,.cur-r{display:none}}
 
-  /* reasons */
-  .reasons{background:var(--bg)}
-  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
-  .rs{text-align:center;padding:8px}
-  .rs .no{font-size:12px;letter-spacing:.18em;color:var(--rose);margin-bottom:10px}
-  .rs .ic{width:62px;height:62px;margin:0 auto 16px;border-radius:50%;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
-  .rs h3{font-size:17px;font-weight:600;letter-spacing:.05em;color:var(--rose-deep);margin-bottom:10px}
-  .rs p{font-size:13.4px;color:var(--sub);line-height:1.92}
+@media(prefers-reduced-motion:reduce){
+  #ld{display:none}
+  .rv,.hero .eye,.hero .sub,.hero .scroll{opacity:1;transform:none}
+  .hero h1 .l>i{transform:none}
+  .cur,.cur-r{display:none}
+}
 
-  /* teacher */
-  .teacher{background:linear-gradient(160deg,#fdf3f5,var(--ivory))}
-  .tc-wrap{display:grid;grid-template-columns:290px 1fr;gap:46px;max-width:920px;margin:0 auto;align-items:center}
-  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
-  .tc-photo{aspect-ratio:3/4;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#e6b3c1,#b45570);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(143,66,88,.24)}
-  .tc-photo .fl{position:absolute;font-size:96px;color:rgba(255,255,255,.34)}
-  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.72);font-size:10.5px;letter-spacing:.16em}
-  .tc-info .role{font-size:11px;letter-spacing:.22em;color:var(--rose)}
-  .tc-info h3{font-size:24px;font-weight:600;letter-spacing:.07em;color:var(--rose-deep);margin:8px 0 4px}
-  .tc-info h3 small{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-left:8px;font-weight:400}
-  .tc-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .tc-badges span{font-size:11.5px;color:var(--rose2);border:1px solid var(--rose3);border-radius:999px;padding:5px 14px;letter-spacing:.04em}
-  .tc-info p{font-size:14px;color:var(--ink);margin-top:16px;line-height:2.1}
-  .tc-info .disc{font-size:11.5px;color:var(--sub);margin-top:12px}
-
-  /* voice */
-  .voice{background:var(--bg)}
-  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
-  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 8px 22px rgba(143,66,88,.06)}
-  .vcard .stars{color:var(--rose);letter-spacing:.16em;font-size:14px}
-  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.98;margin:12px 0 16px}
-  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.04em}
-
-  /* reserve */
-  .reserve{background:linear-gradient(150deg,var(--rose-deep),var(--rose2) 74%);position:relative;overflow:hidden}
-  .reserve .sec-head .en{color:#f6ddc2}
-  .reserve .sec-head h2{color:#fff}
-  .rsv-sub{text-align:center;color:#f7dfe4;font-size:14px;margin-bottom:34px;position:relative;z-index:1}
-  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
-  .frow{display:flex;flex-direction:column;gap:7px}
-  .frow label{font-size:12.5px;letter-spacing:.05em;color:#fceef1}
-  .frow .req{color:#f6ddc2;font-size:10px;margin-left:8px}
-  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff}
-  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.6)}
-  input:focus,select:focus,textarea:focus{outline:2px solid #f6ddc2;outline-offset:1px;border-color:transparent}
-  select option{color:#333}
-  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
-  button.submit{margin-top:6px;background:#fff;color:var(--rose2);font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.09em;transition:.3s}
-  button.submit:hover{transform:translateY(-2px);background:#fdf3f5}
-  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.16);border-radius:12px;padding:16px;font-size:13.5px;line-height:1.85}
-  .rsv-ok.show{display:block}
-  .rsv-alt{text-align:center;margin-top:20px;position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .rsv-alt a{color:#fff;background:rgba(255,255,255,.14);font-size:12.5px;letter-spacing:.04em;text-decoration:none;padding:10px 20px;border-radius:999px;border:1px solid rgba(246,221,194,.6);transition:.25s}
-  .rsv-alt a:hover{background:rgba(255,255,255,.24)}
-  .rsv-tech{text-align:center;font-size:11.5px;color:#f2cdd4;margin-top:22px;line-height:1.9;position:relative;z-index:1}
-
-  /* access */
-  .access{background:var(--ivory)}
-  table.info{width:100%;border-collapse:collapse;max-width:680px;margin:0 auto}
-  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
-  table.info th{width:30%;color:var(--sub);font-weight:600;letter-spacing:.04em}
-  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
-
-  footer{background:linear-gradient(150deg,var(--rose-deep),var(--rose2));color:#f4d7dd;text-align:center;padding:52px 20px 30px}
-  footer .fmark{font-size:19px;letter-spacing:.14em;color:#fff;font-weight:600;line-height:1.5;font-family:"Hiragino Mincho ProN",serif}
-  footer .fsub{font-size:9.5px;letter-spacing:.28em;color:#f6ddc2;margin-top:6px}
-  footer .fnote{font-size:11.5px;color:#eec3cc;margin-top:22px;line-height:1.9}
-
-  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
-/* 2026-08-03 長い店名がヘッダーのボタンに重なる不具合の修正 */
-  header{gap:12px}
-  header .logo{flex:1 1 auto;min-width:0}
-  header nav{flex:0 0 auto}
-  header nav a.cta{white-space:nowrap}
-  @media(max-width:560px){
-    header{padding-left:16px;padding-right:16px;gap:10px}
-    header .logo{font-size:15px;letter-spacing:.06em;line-height:1.35}
-    header .logo small{font-size:8.5px;letter-spacing:.24em}
-    header nav a.cta{padding:8px 14px;font-size:11.5px}
-  }
-  /* ═══ 2026-08-21 追加：動きの4部品 ═══
-     社長がお手本に挙げた3サイトに共通していた作りを、
-     この業種に合う強さに落として入れている。硬派な演出は教室サイトには合わないので、
-     速さと振れ幅は弱めにしてある。 */
-
-  /* 1. 見出しを行ごとに立ち上げる（今までは要素ごと1回ふわっと出すだけだった） */
-  .ln{display:block;overflow:hidden}
-  .ln>i{display:block;font-style:normal;transform:translateY(105%);
-    transition:transform 1.05s cubic-bezier(.19,1,.22,1)}
-  .in .ln>i,.ln.in>i{transform:translateY(0)}
-  .ln:nth-child(2)>i{transition-delay:.09s}
-  .ln:nth-child(3)>i{transition-delay:.18s}
-  html:not(.js) .ln>i{transform:none}
-
-  /* 2. マウスの丸（保護者が見る画面なので、色は柔らかく・細く） */
-  .cur{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;
-    background:var(--gold);pointer-events:none;z-index:9999;
-    transform:translate(-50%,-50%);opacity:.9}
-  .cur-r{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
-    border:1px solid rgba(179,147,76,.5);pointer-events:none;z-index:9998;
-    transform:translate(-50%,-50%);
-    transition:width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1),
-      background .45s ease,border-color .45s ease}
-  .cur-r.on{width:64px;height:64px;background:rgba(179,147,76,.10);border-color:rgba(179,147,76,.75)}
-  @media (hover:none),(max-width:820px){.cur,.cur-r{display:none}}
-
-  /* 3. 開いた瞬間。教室名がすっと出てから本編へ */
-  #ld{position:fixed;inset:0;z-index:9990;background:var(--bg);
-    display:flex;align-items:center;justify-content:center;
-    transition:opacity .7s ease,visibility .7s}
-  #ld .ld-in{text-align:center;opacity:0;transform:translateY(10px);
-    transition:opacity .9s ease,transform 1.1s cubic-bezier(.19,1,.22,1)}
-  #ld.go .ld-in{opacity:1;transform:none}
-  #ld .ld-n{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-    font-size:clamp(17px,2.6vw,25px);letter-spacing:.16em;color:var(--navy)}
-  #ld .ld-l{margin:15px auto 0;width:0;height:1px;background:var(--gold);
-    transition:width 1.15s cubic-bezier(.5,0,.1,1) .18s}
-  #ld.go .ld-l{width:min(190px,42vw)}
-  #ld.done{opacity:0;visibility:hidden}
-  body.ld-lock{overflow:hidden}
-  @media(prefers-reduced-motion:reduce){
-    #ld{display:none}
-    .ln>i{transform:none;transition:none}
-    .cur,.cur-r{display:none}
-  }
-  /* ═══ 追加ここまで ═══ */
 </style>
-<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
 </head>
-<body class="ld-lock">
-<div id="ld"><div class="ld-in">
-  <div class="ld-n">Hitomi Ballet Studio</div>
-  <div class="ld-l"></div>
-</div></div>
+<body class="lock">
 
-<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜Hitomi Ballet Studio 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
+<div id="ld">
+  <div class="nm">Hitomi Ballet Studio</div>
+  <div class="ln"></div>
+</div>
+
+<div class="bar">※これは見本ページです｜Hitomi Ballet Studio 様の公式サイトではありません。Web制作 ゆたか がご提案用にお作りしたもので、文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
-  <div class="logo">Hitomi Ballet Studio<small>NARA ・ KORYO</small></div>
-  <nav>
-    <a href="#concept">スタジオについて</a>
-    <a href="#classes">クラス</a>
-    <a href="#studios">2つの教室</a>
-    <a href="#access">アクセス</a>
-    <a href="#reserve" class="cta">体験・お問い合わせ</a>
-  </nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Hitomi Ballet Studio</a>
+    <nav>
+      <a href="#target">こんな方へ</a>
+      <a href="#lesson">レッスン</a>
+      <a href="#teacher">講師</a>
+      <a href="#access">教室のご案内</a>
+    </nav>
+  </div>
 </header>
 
-<!-- hero -->
-<section class="hero">
-  <div class="orb"></div>
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="hero-inner">
-    <span class="eyebrow">奈良県北葛城郡広陵町 ｜ バレエ教室</span>
-    <h1 class="mincho">バレエが、毎日を<br><span>そっと美しく</span>する。</h1>
-    <p>小さなお子様から大人まで。バレエは、日常をより豊かにしてくれるエッセンス。初心者の方も、経験者の方も、あなたのペースで、しなやかに踊る喜びを。奈良・広陵町のHitomiBalletStudioへ。</p>
-    <div class="hero-cta">
-      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
-      <a href="#classes" class="btn btn-ghost">クラスを見る</a>
+<main id="top">
+  <div class="hero">
+    <canvas id="art" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="eye" id="eye">Instructor ・ 奈良県広陵町</span>
+      <h1 id="h1">ピアノを、一生つづく力<br>に。</h1>
+      <p class="sub" id="sub">この線は、ピアノの弦です。画像でも動画でもありません。
+        弦の揺れを、いまこの画面の中で計算しています。<br>触れると、その弦が鳴ります。</p>
     </div>
-    <div class="hero-badges">
-      <span>✦ <b>3歳〜大人</b>まで</span>
-      <span>✦ <b>初心者歓迎</b></span>
-      <span>✦ <b>2拠点</b>で開催</span>
-    </div>
+    <div class="scroll" id="scr">SCROLL</div>
   </div>
-</section>
 
-<!-- concept -->
-<section class="concept" id="concept">
-  <div class="cnc">
-    <div class="rule reveal"></div>
-    <div class="sec-head reveal" style="margin-bottom:28px"><span class="en">CONCEPT</span><h2 class="mincho">バレエを、暮らしのエッセンスに。</h2></div>
-    <p class="lead reveal mincho">上手に踊ることよりも、<br>踊る時間が<b>心をときめかせる</b>こと。<br>その一歩が、いつもの毎日を<br>そっと豊かにしてくれます。</p>
-    <p class="body reveal">Hitomi Ballet Studioは、バレエを「特別な人だけのもの」ではなく、日常をより豊かにしてくれるエッセンスとして楽しんでいただきたいと考えています。小さなお子様の情操教育として、大人の方の趣味やリフレッシュとして。初心者の方から経験者の方まで、一人ひとりの「踊りたい」に寄り添いながら、しなやかな身体と、美しい所作、そして自信を育てていきます。</p>
-  </div>
-</section>
-
-<!-- target -->
-<section class="target">
-  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
-  <div class="tg-grid">
-    <div class="tg reveal"><span class="ic">✦</span><p>子どもに、姿勢や礼儀・表現力を身につけさせたい</p></div>
-    <div class="tg reveal d1"><span class="ic">✦</span><p>バレエを通じて、心もからだも健やかに育てたい</p></div>
-    <div class="tg reveal d2"><span class="ic">✦</span><p>大人になった今、あこがれのバレエを始めてみたい</p></div>
-    <div class="tg reveal"><span class="ic">✦</span><p>運動不足やリフレッシュに、無理なく続けたい</p></div>
-    <div class="tg reveal d1"><span class="ic">✦</span><p>経験者として、また本格的に踊りを楽しみたい</p></div>
-    <div class="tg reveal d2"><span class="ic">✦</span><p>まずは体験で、教室の雰囲気を確かめたい</p></div>
-  </div>
-  <p class="tg-foot reveal mincho">ひとつでも心が動いたなら、<b>まずは体験レッスン</b>からどうぞ。</p>
-</section>
-
-<!-- classes -->
-<section class="classes" id="classes">
-  <div class="sec-head reveal"><span class="en">CLASS</span><h2 class="mincho">小さなお子様から、大人まで</h2><p>年齢や目的に合わせて、あなたに合ったクラスを</p></div>
-  <div class="cl-grid">
-    <div class="clcard reveal">
-      <div class="age">AGE 3〜6</div>
-      <div class="ic">🎀</div>
-      <h3 class="mincho">キッズクラス</h3>
-      <p>はじめてのバレエは、音楽に合わせて楽しく身体を動かすことから。ごあいさつや順番を待つことも、遊びの中で自然と身につきます。</p>
-      <span class="tag">未就学児〜</span>
-    </div>
-    <div class="clcard reveal d1">
-      <div class="age">AGE 6〜12</div>
-      <div class="ic">🩰</div>
-      <h3 class="mincho">ジュニアクラス</h3>
-      <p>バーレッスンや基礎のステップを、少しずつ本格的に。美しい姿勢と表現力を育て、発表会という大きな目標にも挑戦していきます。</p>
-      <span class="tag">小学生</span>
-    </div>
-    <div class="clcard reveal d2">
-      <div class="age">AGE 13〜</div>
-      <div class="ic">✨</div>
-      <h3 class="mincho">中高生クラス</h3>
-      <p>より高度なテクニックと表現へ。学業と両立しながら、憧れの一曲を踊りきる達成感を。経験者の方も歓迎です。</p>
-      <span class="tag">中学生・高校生</span>
-    </div>
-    <div class="clcard reveal d3">
-      <div class="age">ADULT</div>
-      <div class="ic">🌷</div>
-      <h3 class="mincho">大人クラス</h3>
-      <p>「憧れていたけれど機会がなかった」——そんな大人の方へ。初心者の方も、経験者の方も、ご自分のペースで、優雅なひとときを。</p>
-      <span class="tag">大人・初心者歓迎</span>
-    </div>
-  </div>
-  <p class="sample-inline reveal">※クラス区分はデザイン案の一例です。実際のクラス・対象年齢・料金に差し替えてお納めします。</p>
-</section>
-
-<!-- beginner feature -->
-<section class="beginner">
-  <div class="bg-wrap">
-    <div class="bg-info reveal">
-      <span class="en">FOR BEGINNERS</span>
-      <h2 class="mincho">はじめての方も、<br><span>どうぞ安心して</span>。</h2>
-      <p>「身体がかたいけれど大丈夫かしら」「経験がないから不安」——そんな気持ちこそ、大歓迎です。Hitomi Ballet Studioは、<b>初心者の方も経験者の方も分けへだてなく</b>受け入れ、一人ひとりのペースに合わせて丁寧にお伝えします。</p>
-      <p>お子様も、大人の方も。まずは体験レッスンで、バレエの心地よさに触れてみてください。</p>
-    </div>
-    <div class="bg-points reveal d1">
-      <div class="bg-pt"><div class="n">1</div><div class="tx"><h4 class="mincho">経験ゼロから丁寧に</h4><p>立ち方や姿勢の基本から。初めてでも置いていかれない指導です。</p></div></div>
-      <div class="bg-pt"><div class="n">2</div><div class="tx"><h4 class="mincho">年齢を問わず歓迎</h4><p>小さなお子様から大人の方まで、それぞれの目標に寄り添います。</p></div></div>
-      <div class="bg-pt"><div class="n">3</div><div class="tx"><h4 class="mincho">まずは体験から</h4><p>雰囲気を確かめてからで大丈夫。無理な勧誘はいたしません。</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- studios / 2拠点 -->
-<section class="studios" id="studios">
-  <div class="sec-head reveal"><span class="en">2 STUDIOS</span><h2 class="mincho">2つの教室で開催</h2><p>通いやすい方の教室をお選びいただけます</p></div>
-  <div class="st-grid">
-    <div class="stcard s1 reveal">
-      <div class="ph"><span class="mk">🩰</span><span class="badge">本部</span></div>
-      <div class="body">
-        <h3 class="mincho">みささぎ台教室</h3>
-        <div class="en">MISASAGIDAI ・ HEADQUARTERS</div>
-        <p>Hitomi Ballet Studioの本部教室。ゆったりとしたスペースで、キッズから大人まで幅広いクラスを開催しています。落ち着いた住宅街の中の、通いやすい教室です。</p>
-        <div class="addr">📍 <b>奈良県北葛城郡広陵町みささぎ台1-33</b></div>
+  <section id="target">
+    <div class="wrap">
+      <div class="head rv"><span class="en">FOR YOU</span><h2>こんな方へ</h2></div>
+      <div class="three">
+        <div class="rv"><h3>お子さまに</h3>
+          <p>基礎からしっかり習わせたい。楽譜を自分で読めるようになってほしい。
+            人前で弾く経験をさせたい。</p></div>
+        <div class="rv d1"><h3>大人の方に</h3>
+          <p>昔ならった曲をもう一度。まったくの初めてから。
+            自分のペースで、あせらず続けたい。</p></div>
+        <div class="rv d2"><h3>再開される方に</h3>
+          <p>ブランクがあっても大丈夫です。指は思っているより覚えています。
+            まずは一曲、弾ける形に戻すところから。</p></div>
       </div>
     </div>
-    <div class="stcard s2 reveal d1">
-      <div class="ph"><span class="mk">✦</span><span class="badge">サテライト</span></div>
-      <div class="body">
-        <h3 class="mincho">エコール・マミ教室</h3>
-        <div class="en">ECOLE MAMIE</div>
-        <p>南舘マミホール内で開催しているサテライト教室。ご都合や通いやすさに合わせて、本部教室とあわせてお選びいただけます。詳しい開催日はお問い合わせください。</p>
-        <div class="addr">📍 <b>エコール・マミ教室（南舘マミホール内）</b></div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="head rv"><span class="en">METHOD</span><h2>音楽を、「自分のもの」に。</h2></div>
+      <div class="two">
+        <figure class="rv"><img src="./images/hero-piano.jpg" alt="レッスンのようす" loading="lazy"></figure>
+        <div class="rv d1">
+          <h3>弾けた、で<br>終わらせない。</h3>
+          <p>譜面のとおりに指が動くことと、音楽が自分のものになることは別です。
+            Hitomi Ballet Studioでは、次の一音をどう鳴らしたいか、そこを一緒に探します。</p>
+          <p>正解をなぞる時間ではなく、選ぶ時間にしたいと思っています。
+            だから、うまくいかない日も含めて、そのまま持ってきてください。</p>
+          <div class="mark">奈良県広陵町 ・ バレエ教室 ・ 体験レッスン受付中</div>
+        </div>
       </div>
     </div>
-  </div>
-  <p class="st-note reveal">※開催曜日・時間などの詳細は、実際の情報に差し替えてお納めします。</p>
-</section>
+  </section>
 
-<!-- reasons -->
-<section class="reasons">
-  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">選ばれる3つの理由</h2></div>
-  <div class="rs-grid">
-    <div class="rs reveal">
-      <div class="no">REASON 01</div>
-      <div class="ic">🌸</div>
-      <h3 class="mincho">3歳から大人まで</h3>
-      <p>小さなお子様から大人の方まで、幅広い年齢に対応。ご家族それぞれのペースで、長く通っていただけます。</p>
-    </div>
-    <div class="rs reveal d1">
-      <div class="no">REASON 02</div>
-      <div class="ic">🕊</div>
-      <h3 class="mincho">初心者も経験者も歓迎</h3>
-      <p>経験の有無で分けへだてなく受け入れます。「はじめて」の不安も、丁寧な指導で自信に変わります。</p>
-    </div>
-    <div class="rs reveal d2">
-      <div class="no">REASON 03</div>
-      <div class="ic">📍</div>
-      <h3 class="mincho">通いやすい2拠点</h3>
-      <p>みささぎ台の本部と、エコール・マミ教室の2つ。ご都合に合わせて通いやすい教室を選べます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- teacher -->
-<section class="teacher">
-  <div class="tc-wrap">
-    <div class="tc-photo reveal">
-      <div class="fl" aria-hidden="true">🩰</div>
-      <span>PHOTO ─ 講師・レッスン風景（お写真に差し替え）</span>
-    </div>
-    <div class="tc-info reveal">
-      <span class="role">主宰・講師</span>
-      <h3 class="mincho">Hitomi Ballet Studio<small>Instructor</small></h3>
-      <div class="tc-badges">
-        <span>キッズ〜大人</span>
-        <span>初心者歓迎</span>
-        <span>2拠点で指導</span>
-      </div>
-      <p>バレエは、上手に踊るためだけのものではありません。音楽に身をゆだね、しなやかに動く——その時間そのものが、毎日を少し豊かにしてくれます。小さなお子様の「踊るのが楽しい」という笑顔も、大人の方の「憧れが叶った」という喜びも、同じくらい大切に。一人ひとりに寄り添いながら、バレエのある暮らしをご一緒します。</p>
-      <p class="disc">※紹介文はデザイン案の表現例です。実際の講師プロフィールに差し替えてお納めします。</p>
-    </div>
-  </div>
-</section>
-
-<!-- voice -->
-<section class="voice">
-  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さん・保護者の声</h2></div>
-  <div class="v-grid">
-    <div class="vcard reveal">
-      <div class="stars">★★★★★</div>
-      <p>人見知りだった娘が、レッスンに通ううちに背筋がピンと伸びて、ごあいさつも上手に。発表会での姿に感動しました。</p>
-      <div class="who">6歳の保護者</div>
-    </div>
-    <div class="vcard reveal d1">
-      <div class="stars">★★★★★</div>
-      <p>ずっと憧れていたバレエを、大人になって初めて習い始めました。初心者にもやさしく、毎週がリフレッシュの時間です。</p>
-      <div class="who">40代・女性</div>
-    </div>
-    <div class="vcard reveal d2">
-      <div class="stars">★★★★★</div>
-      <p>2拠点あるので、生活に合わせて通いやすいのが助かります。娘も私も、それぞれのクラスで楽しんでいます。</p>
-      <div class="who">小学生の保護者</div>
-    </div>
-  </div>
-  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さん・保護者の声に差し替えてお納めします。</p>
-</section>
-
-<!-- reserve -->
-<section class="reserve" id="reserve">
-  <div class="sec-head reveal"><span class="en">TRIAL & CONTACT</span><h2 class="mincho">体験・お問い合わせ</h2></div>
-  <p class="rsv-sub reveal">まずは体験レッスンから。下のフォームを送信すると、ご入力内容がそのままメールに反映されます。</p>
-  <form class="reveal" id="rsvForm" novalidate>
-    <div class="frow-2">
-      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
-      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
-    </div>
-    <div class="frow-2">
-      <div class="frow"><label>ご希望のクラス</label>
-        <select name="klass">
-          <option value="">選択してください</option>
-          <option>キッズクラス（3〜6歳）</option>
-          <option>ジュニアクラス（6〜12歳）</option>
-          <option>中高生クラス</option>
-          <option>大人クラス</option>
-          <option>まだ決めていない・相談したい</option>
-        </select>
-      </div>
-      <div class="frow"><label>ご希望の教室</label>
-        <select name="studio">
-          <option value="">選択してください</option>
-          <option>みささぎ台教室（本部）</option>
-          <option>エコール・マミ教室</option>
-          <option>どちらでも・相談したい</option>
-        </select>
+  <section id="lesson">
+    <div class="wrap">
+      <div class="head rv"><span class="en">LESSON</span><h2>レッスンのご案内</h2></div>
+      <div class="three">
+        <div class="rv"><h3>お子さまコース</h3><ul>
+          <li>月3回・30分<span>7,000円</span></li>
+          <li>月4回・30分<span>8,500円</span></li>
+          <li>月3回・45分<span>9,500円</span></li></ul>
+          <p style="margin-top:var(--s2)">年齢とペースに合わせて、時間を選べます。</p></div>
+        <div class="rv d1"><h3>大人コース</h3><ul>
+          <li>月2回・45分<span>8,000円</span></li>
+          <li>月3回・45分<span>11,000円</span></li>
+          <li>1回のみ<span>4,000円</span></li></ul>
+          <p style="margin-top:var(--s2)">お仕事の都合に合わせて、日程を調整できます。</p></div>
+        <div class="rv d2"><h3>そのほか</h3><ul>
+          <li>体験レッスン<span>1,000円</span></li>
+          <li>入会金<span>5,000円</span></li>
+          <li>発表会（年1回・任意）<span>別途</span></li></ul></div>
       </div>
     </div>
-    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="バレエのご経験、ご希望の曜日、お子様の年齢など、ご自由にどうぞ"></textarea></div>
-    <button type="submit" class="submit">この内容でメールを作成する</button>
-    <p class="rsv-ok" id="rsvOk">✦ ご入力ありがとうございます。メールソフトが立ち上がり、宛先と本文が自動で入ります。そのまま送信してください。（※これはデザイン見本です）</p>
-  </form>
-  <div class="rsv-alt reveal">
-    <a href="mailto:hitomiii.ballet@gmail.com?subject=%E4%BD%93%E9%A8%93%E3%83%AC%E3%83%83%E3%82%B9%E3%83%B3%E3%83%BB%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">✉ メールでお問い合わせ</a>
-    <a href="#studios">📍 教室をもう一度見る</a>
-  </div>
-  <p class="rsv-tech reveal">🔒 お問い合わせは、スタジオへ直接メールで届く仕組みです。ホームページ本体とは別に届くため、サイトを更新しても内容が消えることはありません。（Instagram DMでのお問い合わせにも対応いたします。お電話は非公開です）</p>
-</section>
+  </section>
 
-<!-- access -->
-<section class="access" id="access">
-  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">スタジオのご案内</h2></div>
-  <table class="info reveal">
-    <tr><th>スタジオ名</th><td>Hitomi Ballet Studio</td></tr>
-    <tr><th>本部教室</th><td>みささぎ台教室（奈良県北葛城郡広陵町みささぎ台1-33）</td></tr>
-    <tr><th>サテライト</th><td>エコール・マミ教室（南舘マミホール内）</td></tr>
-    <tr><th>クラス</th><td>キッズ／ジュニア／中高生／大人（初心者歓迎）</td></tr>
-    <tr><th>対象</th><td>3歳〜大人</td></tr>
-    <tr><th>お問い合わせ</th><td>hitomiii.ballet@gmail.com ／ Instagram DM（電話非公開）</td></tr>
-  </table>
-  <p class="sample-inline reveal">※開催曜日・時間・料金などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
-</section>
+  <section id="reason">
+    <div class="wrap">
+      <div class="head rv"><span class="en">REASON</span><h2>選ばれる三つの理由</h2></div>
+      <div class="three">
+        <div class="rv"><h3>ひとりずつ違う進め方</h3>
+          <p>同じ教材を同じ順番で、ということはしません。
+            その方が今いちばん弾きたい曲から入ることもあります。</p></div>
+        <div class="rv d1"><h3>おうちでの練習も一緒に</h3>
+          <p>レッスンの最後に、次の一週間で何をするかをひとつだけ決めます。
+            多すぎると続かないからです。</p></div>
+        <div class="rv d2"><h3>発表の場があります</h3>
+          <p>年に一度、小さな発表会を開いています。参加は自由です。
+            人前で弾くと、ふしぎと上達します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teacher">
+    <div class="wrap">
+      <div class="head rv"><span class="en">TEACHER</span><h2>講師のご紹介</h2></div>
+      <div class="two">
+        <div class="rv">
+          <h3>（お名前が入ります）</h3>
+          <p>※ ここには講師のご紹介が入ります。ご経歴、音楽を始めたきっかけ、
+            レッスンで大切にされていること——このあたりを3〜5行いただければ、こちらで整えます。</p>
+          <p>お写真をお持ちでしたら、右側に入ります。お持ちでなければ、このままでも構いません。</p>
+          <div class="mark">Instructor ・ 広陵町</div>
+        </div>
+        <div class="rv d1">
+          <div style="border:1px solid var(--hair);padding:clamp(24px,4vw,44px)">
+            <h3 style="font-size:var(--t-3);margin-bottom:var(--s3)">生徒さんの声</h3>
+            <p style="font-size:var(--t-s);margin-bottom:var(--s3)">「子どもが自分から練習するようになりました。
+              先生が毎回ひとつだけ宿題を出してくださるので、無理がないみたいです。」<br>
+              <span style="color:var(--dim);font-size:var(--t-x)">— 小2のお母さま</span></p>
+            <p style="font-size:var(--t-s)">「30年ぶりに再開しました。指は動かないのに、
+              曲は覚えているものですね。今は月に2回、楽しみに通っています。」<br>
+              <span style="color:var(--dim);font-size:var(--t-x)">— 50代・女性</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="wrap">
+      <div class="head rv"><span class="en">ACCESS</span><h2>教室のご案内</h2></div>
+      <div class="info">
+        <div class="rv"><dl>
+          <dt>教室名</dt><dd>Hitomi Ballet Studio</dd>
+          <dt>所在地</dt><dd>奈良県広陵町</dd>
+          <dt>レッスン</dt><dd>バレエ教室</dd>
+          <dt>体験</dt><dd>1,000円（30分）</dd>
+          <dt>駐車場</dt><dd>あり</dd>
+          <dt>お問い合わせ</dt><dd>メールにて承ります</dd>
+        </dl></div>
+        <div class="rv d1">
+          <p class="note" style="margin-top:0">このページは、Hitomi Ballet Studio 様へのご提案として
+            Web制作 ゆたか がお作りした見本です。文章・料金・写真はすべて仮のもので、
+            実際の内容とは異なります。ご希望に合わせて、すべて差し替えられます。<br><br>
+            背景の線は、ピアノの弦です。画像でも動画でもなく、
+            弦の揺れをその場で計算しています。触れると、その弦が鳴ります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  <div class="fmark">Hitomi Ballet Studio</div>
-  <div class="fsub">NARA ・ KORYO-CHO</div>
-  <p class="fnote">このページは Web制作 ゆたか が Hitomi Ballet Studio 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>Hitomi Ballet Studio 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
+  <div class="wrap">
+    <span class="fn">Hitomi Ballet Studio</span>
+    <span>ご提案の見本 ・ Web制作 ゆたか</span>
+  </div>
 </footer>
 
-<script>
-  var hd=document.getElementById('hd');
-  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-  },{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
-  document.getElementById('rsvForm').addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var f=this;
-    var name=(f.name.value||'').trim();
-    var mail=(f.mail.value||'').trim();
-    var klass=f.klass.value||'（未選択）';
-    var studio=f.studio.value||'（未選択）';
-    var note=(f.note.value||'').trim()||'（特になし）';
-    var subject='体験・お問い合わせ';
-    var body=
-      'Hitomi Ballet Studio ご担当者さま\n\n'+
-      '体験・お問い合わせをお願いします。\n\n'+
-      '■お名前：'+name+'\n'+
-      '■メール：'+mail+'\n'+
-      '■ご希望のクラス：'+klass+'\n'+
-      '■ご希望の教室：'+studio+'\n'+
-      '■ご質問・ご希望：\n'+note+'\n';
-    var href='mailto:hitomiii.ballet@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-    document.getElementById('rsvOk').classList.add('show');
-    f.querySelector('button').textContent='メールソフトを開きました';
-    window.location.href=href;
-  });
-</script>
-<!-- sample-bar patched 2026-08-04 -->
-<script>
-/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
-(function(){var b=document.querySelector('.sample-bar');if(!b)return;
-var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
-f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
-</script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-  /* ═══ 2026-08-21 追加：動きの4部品 ═══ */
+(function(){
+  "use strict";
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ═══ 弦の振動 ═══
+     ピアノの弦を、1本ずつ計算している。
+       ① 弦を細かく分けて、それぞれの縦のずれを持つ
+       ② 波動方程式（となりとの差から加速度を出す）で毎フレーム解く
+       ③ 両端は固定なので、波は跳ね返って重なり、定在波になる
+     ときどき弦が弾かれ、揺れは少しずつ収まる。触れた弦は、そこから鳴る。
+     模様を描いているのではなく、弦の動きそのものを解いている。 */
   (function(){
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var c=document.getElementById('art'); if(!c) return;
+    var ctx=c.getContext('2d',{alpha:false}); if(!ctx){c.style.background='#0b0d14';return;}
+    var W=0,H=0,DPR=1,strings=[],N=0;
+    var SEG=190;
 
-    /* 開いた瞬間 → 本編へ。読み込みが速くても最低0.9秒は見せる（一瞬すぎると演出に見えない） */
-    var ld = document.getElementById('ld');
-    function openPage(){
-      if(!ld) return;
-      ld.classList.add('done');
-      document.body.classList.remove('ld-lock');
-      setTimeout(function(){ if(ld.parentNode) ld.parentNode.removeChild(ld); }, 800);
-      lineIn(document.querySelector('.hero'));
-    }
-    if(reduce){ document.body.classList.remove('ld-lock'); }
-    else {
-      requestAnimationFrame(function(){ ld && ld.classList.add('go'); });
-      var t0 = Date.now();
-      window.addEventListener('load', function(){
-        setTimeout(openPage, Math.max(0, 1500 - (Date.now() - t0)));
-      });
-      setTimeout(openPage, 4000);   /* 画像が重いときの保険 */
-    }
-
-    /* 見出しを行に割る。<br> をそのまま行の区切りとして使う */
-    function splitH(el){
-      if(!el || el.dataset.ln) return;
-      var parts = el.innerHTML.split(/<br\s*\/?>/i);
-      if(parts.length < 1) return;
-      el.innerHTML = parts.map(function(x){
-        return '<span class="ln"><i>' + x + '</i></span>';
-      }).join('');
-      el.dataset.ln = '1';
-    }
-    document.querySelectorAll('.hero h1, .sec-head h2, .method h2').forEach(splitH);
-
-    function lineIn(scope){
-      (scope || document).querySelectorAll('.ln').forEach(function(l){ l.classList.add('in'); });
-    }
-
-    /* 画面に入った見出しから順に立ち上げる */
-    if('IntersectionObserver' in window && !reduce){
-      var io2 = new IntersectionObserver(function(es){
-        es.forEach(function(e){
-          if(e.isIntersecting){ lineIn(e.target); io2.unobserve(e.target); }
+    function build(){
+      strings=[];
+      N=Math.max(7, Math.min(13, Math.round(H/DPR/78)));
+      for(var i=0;i<N;i++){
+        var u=new Float32Array(SEG), v=new Float32Array(SEG);
+        strings.push({
+          u:u, v:v,
+          y:H*(0.10+ (i+0.5)/N*0.80),
+          /* 低い弦ほど太く、ゆっくり揺れる（実際のピアノと同じ向き） */
+          k:0.30+ (i/(N-1))*0.42,
+          w:(2.9-(i/(N-1))*1.6)*DPR,
+          amp:(1.0-(i/(N-1))*0.45),
+          next:Math.random()*2.2
         });
-      }, {threshold:.2});
-      document.querySelectorAll('.sec-head, .method h2').forEach(function(el){ io2.observe(el); });
-      setTimeout(function(){ lineIn(document); }, 5000);   /* 保険 */
-    } else {
-      lineIn(document);
+      }
+      /* 開いた時点で、何本かは鳴っている状態にしておく（静止していると弦に見えない） */
+      for(var q=0;q<N;q++){
+        if(q%2===0) pluck(strings[q], 30+((Math.random()*(SEG-60))|0), (4.0+Math.random()*3.0)*DPR*strings[q].amp);
+      }
+      for(var w2=0;w2<40;w2++) step(0.016);
+    }
+    function size(){
+      DPR=Math.min(devicePixelRatio||1,2);
+      var w=Math.round(c.clientWidth*DPR),h=Math.round(c.clientHeight*DPR);
+      if(w===W&&h===H) return;
+      W=w;H=h;c.width=W;c.height=H;build();
     }
 
-    /* マウスの丸 */
-    if(!reduce && window.matchMedia('(hover:hover)').matches){
-      var d=document.createElement('div'); d.className='cur';
-      var r=document.createElement('div'); r.className='cur-r';
-      document.body.appendChild(d); document.body.appendChild(r);
-      var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
-      addEventListener('mousemove',function(e){
-        mx=e.clientX; my=e.clientY;
-        d.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';
-      },{passive:true});
-      (function loop(){
-        rx+=(mx-rx)*.17; ry+=(my-ry)*.17;
-        r.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
-        requestAnimationFrame(loop);
-      })();
-      document.querySelectorAll('a,button,input,textarea,select,.card,.tg').forEach(function(el){
-        el.addEventListener('mouseenter',function(){ r.classList.add('on'); });
-        el.addEventListener('mouseleave',function(){ r.classList.remove('on'); });
-      });
+    function pluck(S, at, power){
+      /* 弾いた点を中心に、山をひとつ作る */
+      var w=14;
+      for(var i=-w;i<=w;i++){
+        var j=at+i; if(j<1||j>=SEG-1) continue;
+        S.u[j]+=Math.cos(i/w*Math.PI/2)*power;
+      }
     }
 
-    /* 慣性スクロール。ページ内リンクもここを通す */
-    if(window.Lenis && !reduce){
-      var le = new Lenis({duration:1.1, smoothWheel:true,
-        easing:function(x){ return Math.min(1, 1.001 - Math.pow(2, -10*x)); }});
-      requestAnimationFrame(function raf(t){ le.raf(t); requestAnimationFrame(raf); });
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click',function(ev){
-          var el=document.querySelector(a.getAttribute('href'));
-          if(el){ ev.preventDefault(); le.scrollTo(el,{offset:-70,duration:1.3}); }
-        });
-      });
+    var mx=-9999,my=-9999;
+    addEventListener('mousemove',function(e){
+      var rc=c.getBoundingClientRect();
+      mx=(e.clientX-rc.left)*DPR; my=(e.clientY-rc.top)*DPR;
+      /* 近い弦を、そっと鳴らす */
+      for(var i=0;i<N;i++){
+        var S=strings[i];
+        if(Math.abs(my-S.y)<26*DPR){
+          var at=Math.round(mx/W*(SEG-1));
+          if(at>1&&at<SEG-1) pluck(S, at, 1.6*DPR);
+        }
+      }
+    },{passive:true});
+
+    var vis=true;
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:0}).observe(c);
     }
+
+    function step(dt){
+      for(var i=0;i<N;i++){
+        var S=strings[i], u=S.u, v=S.v;
+        /* ときどき、ひとりでに弾かれる */
+        S.next-=dt;
+        if(S.next<=0){
+          S.next=2.6+Math.random()*6.5;
+          pluck(S, 20+((Math.random()*(SEG-40))|0), (3.2+Math.random()*3.4)*DPR*S.amp);
+        }
+        /* ② 波動方程式。となりとの差が、そのまま加速度になる */
+        for(var j=1;j<SEG-1;j++){
+          var acc=(u[j-1]+u[j+1]-2*u[j])*S.k;
+          v[j]=(v[j]+acc)*0.9965;      /* 少しずつ減衰する＝音が消えていく */
+        }
+        for(var j2=1;j2<SEG-1;j2++) u[j2]+=v[j2];
+        u[0]=0; u[SEG-1]=0;            /* ③ 両端は固定 */
+      }
+    }
+
+    function draw(){
+      var g=ctx.createLinearGradient(0,0,W*0.4,H);
+      g.addColorStop(0,'#0e1119'); g.addColorStop(1,'#080a10');
+      ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+
+      for(var i=0;i<N;i++){
+        var S=strings[i], u=S.u;
+        /* 揺れているほど明るい＝いま鳴っている弦がわかる */
+        var e=0; for(var j=0;j<SEG;j+=4) e+=Math.abs(u[j]);
+        e=Math.min(1, e/(SEG/4)/(7*DPR));
+        ctx.beginPath();
+        for(var j2=0;j2<SEG;j2++){
+          var x=j2/(SEG-1)*W, y=S.y+u[j2];
+          if(j2===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.strokeStyle='rgba('+Math.round(168+e*87)+','+Math.round(154+e*86)+','+
+          Math.round(126+e*64)+','+(0.34+e*0.56).toFixed(3)+')';
+        ctx.lineWidth=S.w*(1+e*0.5);
+        ctx.lineCap='round';
+        ctx.stroke();
+        /* 強く鳴っている弦には、うっすら光を乗せる */
+        if(e>0.16){
+          ctx.strokeStyle='rgba(214,178,102,'+((e-0.16)*0.50).toFixed(3)+')';
+          ctx.lineWidth=S.w*3.2; ctx.stroke();
+        }
+      }
+      /* 見出し側を落として、文字を読みやすく保つ */
+      var g2=ctx.createLinearGradient(0,0,W*0.86,H*0.4);
+      g2.addColorStop(0,'rgba(11,13,20,.90)');
+      g2.addColorStop(.55,'rgba(11,13,20,.52)');
+      g2.addColorStop(1,'rgba(11,13,20,.10)');
+      ctx.fillStyle=g2; ctx.fillRect(0,0,W,H);
+    }
+
+    if(reduce){ size(); for(var i=0;i<260;i++) step(0.016); draw(); return; }
+    var last=performance.now();
+    (function f(now){
+      requestAnimationFrame(f);
+      if(!vis) return;
+      size();
+      var dt=Math.min((now-last)/1000,0.05); last=now;
+      step(dt); step(dt);      /* 1フレームに2回進めると、弦の張りが出る */
+      draw();
+    })(last);
   })();
-  /* ═══ 追加ここまで ═══ */
+
+  var h1=document.getElementById('h1');
+  if(h1){
+    h1.innerHTML=h1.innerHTML.split(/<br\s*\/?>/i)
+      .map(function(x){return '<span class="l"><i>'+x.trim()+'</i></span>';}).join('');
+  }
+  var ld=document.getElementById('ld');
+  function open_(){
+    if(!ld) return;
+    ld.classList.add('done');
+    document.body.classList.remove('lock');
+    setTimeout(function(){ if(ld.parentNode) ld.parentNode.removeChild(ld); },1000);
+    if(h1) h1.classList.add('in');
+    ['eye','sub','scr'].forEach(function(id){
+      var e=document.getElementById(id); if(e) e.classList.add('in');
+    });
+  }
+  if(reduce){ document.body.classList.remove('lock'); }
+  else{
+    requestAnimationFrame(function(){ ld && ld.classList.add('go'); });
+    var _t0=Date.now();
+    addEventListener('load',function(){ setTimeout(open_, Math.max(0,1900-(Date.now()-_t0))); });
+    setTimeout(open_,4600);
+  }
+  (function(){
+    var bar=document.querySelector('.bar');
+    function fit(){ if(bar) document.documentElement.style.setProperty('--bar-h', bar.offsetHeight+'px'); }
+    fit(); addEventListener('resize',fit); addEventListener('load',fit);
+  })();
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    },{threshold:.16});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');}); },5200);
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+  var hd=document.getElementById('hd');
+  function onS(){ hd.classList.toggle('on', scrollY>60); }
+  addEventListener('scroll',onS,{passive:true}); onS();
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    var d=document.createElement('div');d.className='cur';
+    var rr=document.createElement('div');rr.className='cur-r';
+    document.body.appendChild(d);document.body.appendChild(rr);
+    var cx=innerWidth/2,cy=innerHeight/2,rx=cx,ry=cy;
+    addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;
+      d.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';},{passive:true});
+    (function loop(){rx+=(cx-rx)*.17;ry+=(cy-ry)*.17;
+      rr.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);})();
+    document.querySelectorAll('a,figure,li').forEach(function(el){
+      el.addEventListener('mouseenter',function(){rr.classList.add('on');});
+      el.addEventListener('mouseleave',function(){rr.classList.remove('on');});
+    });
+  }
+  if(window.Lenis && !reduce){
+    var le=new Lenis({duration:1.2,smoothWheel:true,
+      easing:function(x){return Math.min(1,1.001-Math.pow(2,-10*x));}});
+    requestAnimationFrame(function raf(t){le.raf(t);requestAnimationFrame(raf);});
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(ev){
+        var el=document.querySelector(a.getAttribute('href'));
+        if(el){ev.preventDefault();le.scrollTo(el,{offset:-64,duration:1.4});}
+      });
+    });
+  }
+
+})();
 </script>
 </body>
 </html>

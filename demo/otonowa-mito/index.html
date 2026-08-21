@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
@@ -23,32 +26,61 @@
      =========================================================== */
 
   :root{
-    --cream:#fffbf5;      /* 生成りの紙 */
-    --cream2:#fff5e9;
-    --mint:#7fd4c1;
-    --mint-l:#c9efe6;
-    --coral:#ff8f7e;
-    --coral-l:#ffd9d2;
-    --lemon:#ffd466;
-    --lemon-l:#fff0c4;
-    --lav:#b8a4dd;
-    --lav-l:#e8dff7;
-    --sky:#8ecae6;
-    --sky-l:#d4ecf7;
-    --ink:#4a5568;        /* 黒すぎない文字色 */
-    --ink-d:#3a4553;
-    --sub:#8794a3;
-    --white:#fff;
-    --shadow:0 10px 30px rgba(122,145,160,.13);
-    --shadow-l:0 18px 44px rgba(122,145,160,.18);
-    --round:26px;
+    /* ── 色：主役はコーラル1系統。9段階の階調を持たせる ────────────
+       今までは7色を1色ずつ置いていた。色数ではなく階調が効くので、
+       にぎやかさは「面積の小ささ」で出す（点で使う） */
+    --c50:#fff4f1;  --c100:#ffe4de;  --c200:#ffcabf;  --c300:#ffab99;
+    --c400:#ff8f7e;  --c500:#f4705c;  --c600:#dd5a47;  --c700:#b34638;
+    --c800:#8a352a;  --c900:#5e241d;
+
+    /* ── 文字・地：温かいグレー9段階。青みの強い灰は冷たく見える ── */
+    --n0:#ffffff;   --n25:#fffcf8;  --n50:#fdf7f0;  --n100:#f5ede3;
+    --n200:#e6dbcf;  --n300:#c9bcae;  --n400:#9d9083; --n500:#736961;
+    --n700:#4a433d;  --n900:#2b2724;
+
+    /* ── 差し色：3色まで。必ず小さく使う ───────────────── */
+    --a-mint:#5fbfa8;  --a-lemon:#f0b93f;  --a-sky:#6aa9c9;
+
+    /* 既存の名前は残す（他の場所が壊れないように） */
+    --cream:var(--n50);   --cream2:var(--n100);
+    --mint:var(--a-mint); --mint-l:#d3ece5;
+    --coral:var(--c400);  --coral-l:var(--c100);
+    --lemon:var(--a-lemon); --lemon-l:#fdefcf;
+    --lav:#9d8bc4;        --lav-l:#e6ddf3;
+    --sky:var(--a-sky);   --sky-l:#d8eaf3;
+    --ink:var(--n900);    --ink-d:var(--n900);
+    --sub:var(--n500);
+    --white:var(--n0);
+
+    /* ── 文字の大きさ：8段階の階段。途中の値は使わない ────────── */
+    --t-d:clamp(2.05rem,6.2vw,4.6rem);
+    --t-1:clamp(2.0rem,4.4vw,3.3rem);
+    --t-2:clamp(1.55rem,3.0vw,2.3rem);
+    --t-3:clamp(1.25rem,2.1vw,1.6rem);
+    --t-4:1.12rem;
+    --t-b:1rem;
+    --t-s:.875rem;
+    --t-x:.78rem;
+
+    /* ── 行間：見出しは詰める。ここが間延びしていた最大の原因 ──── */
+    --lh-d:1.22;  --lh-h:1.34;  --lh-b:1.85;  --lh-s:1.75;
+
+    /* ── 余白：8段階。都度の指定をやめる ─────────────── */
+    --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.25rem;
+    --s5:3.25rem; --s6:4.5rem; --s7:6.5rem; --s8:9rem;
+
+    /* ── 影：ぼかしを浅く、色は地の色に寄せる（灰色の影は濁って安く見える） */
+    --shadow:0 2px 4px rgba(94,36,29,.04),0 8px 20px rgba(94,36,29,.06);
+    --shadow-l:0 4px 10px rgba(94,36,29,.05),0 18px 40px rgba(94,36,29,.09);
+    --round:14px;
   }
+  .hero h1,.sec-head h2,.r-box h2{font-family:"Zen Kaku Gothic New","Zen Maru Gothic",sans-serif}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN W4","Rounded Mplus 1c",
+    font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN W4",
                 "Hiragino Sans","Yu Gothic",sans-serif;
-    background:var(--cream); color:var(--ink); line-height:1.9;
+    background:var(--cream); color:var(--ink); line-height:var(--lh-b);
     font-size:16px; letter-spacing:.02em; overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
   }
@@ -56,22 +88,27 @@
   a{color:inherit}
 
   /* ---- 見本ページの帯 ---- */
-  .sample-bar{background:linear-gradient(90deg,#5b6b7c,#7a8b9c);color:#fff;text-align:center;
+  .sample-bar{background:var(--n900);color:var(--n100);text-align:center;
     font-size:11.5px;line-height:1.7;padding:9px 14px;position:sticky;top:0;z-index:80}
   .sample-bar b{color:var(--lemon)}
   @media(max-width:560px){.sample-bar{font-size:10.5px;padding:8px 12px}}
 
   /* ---- ヘッダー ---- */
-  header{position:sticky;top:0;z-index:70;background:rgba(255,251,245,.9);
+  header{position:sticky;top:0;z-index:70;background:rgba(253,247,240,.97);
     backdrop-filter:blur(10px);padding:14px 6vw;display:flex;align-items:center;
     justify-content:space-between;gap:16px;transition:box-shadow .3s}
+  header>*:first-child{margin-right:auto}
+  /* ヘッダーの中身も、本文と同じ枠にそろえる */
+  @media(min-width:1240px){
+    header{padding-left:calc((100vw - 1080px)/2);padding-right:calc((100vw - 1080px)/2)}
+  }
   header.stuck{box-shadow:0 4px 20px rgba(122,145,160,.12)}
-  .logo{font-weight:800;font-size:18px;color:var(--ink-d);line-height:1.35}
+  .logo{font-weight:700;font-size:var(--t-4);color:var(--ink-d);line-height:var(--lh-h);letter-spacing:.02em}
   .logo small{display:block;font-size:10px;letter-spacing:.22em;color:var(--mint);font-weight:700}
   header nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
   header nav a{text-decoration:none;color:var(--sub);transition:color .2s}
   header nav a:hover{color:var(--mint)}
-  header .cta{background:var(--coral);color:#fff;padding:11px 22px;border-radius:999px;
+  header .cta{background:var(--c500);color:#fff;padding:12px 24px;border-radius:10px;
     white-space:nowrap;flex:none;
     box-shadow:0 6px 16px rgba(255,143,126,.35);transition:transform .25s,box-shadow .25s}
   header .cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,143,126,.45)}
@@ -86,9 +123,9 @@
   /* ---- 共通 ---- */
   section{padding:clamp(64px,9vw,110px) 6vw;position:relative}
   .inner{max-width:980px;margin:0 auto}
-  .sec-head{text-align:center;margin-bottom:clamp(36px,5vw,56px)}
+  .sec-head{text-align:left;margin-bottom:var(--s5);padding-bottom:var(--s2);border-bottom:1px solid var(--n200)}
   .sec-head .en{display:block;font-size:11px;letter-spacing:.3em;font-weight:800;color:var(--coral);margin-bottom:10px}
-  .sec-head h2{font-size:clamp(24px,4.4vw,34px);font-weight:800;color:var(--ink-d);line-height:1.5;
+  .sec-head h2{font-size:var(--t-2);font-weight:700;color:var(--ink-d);line-height:var(--lh-h);letter-spacing:.01em;
     display:inline-block;position:relative}
   .sec-head h2::after{content:"";position:absolute;left:-4px;right:-4px;bottom:2px;height:12px;
     background:var(--lemon-l);border-radius:99px;z-index:-1;transform:scaleX(0);transform-origin:left;
@@ -97,22 +134,22 @@
   .sec-head p{margin-top:12px;color:var(--sub);font-size:15px}
 
   /* ゆらゆら揺れる小さな飾り */
-  .deco{position:absolute;pointer-events:none;opacity:.55;z-index:0}
+  .deco{display:none}
   .deco svg{display:block}
   @media(max-width:700px){
     /* 狭い画面では文字にかぶるので、端へ逃がして薄くする */
-    .deco{opacity:.3;transform:scale(.72)}
+    .deco{opacity:.20;transform:scale(.66)}
     .hero .deco:nth-of-type(1){top:auto!important;bottom:6%;left:2%!important}
     .hero .deco:nth-of-type(2){top:auto!important;bottom:12%;right:2%!important}
     .hero .deco:nth-of-type(3){display:none}
   }
 
   /* ---- ヒーロー ---- */
+  #wave{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
   .hero{padding:clamp(44px,7vw,72px) 6vw clamp(70px,9vw,110px);position:relative;overflow:hidden;
     background:
-      radial-gradient(60% 50% at 12% 8%, var(--mint-l) 0%, transparent 60%),
-      radial-gradient(55% 45% at 92% 22%, var(--coral-l) 0%, transparent 62%),
-      radial-gradient(50% 45% at 70% 92%, var(--lemon-l) 0%, transparent 60%),
+      radial-gradient(70% 55% at 78% 12%, var(--c100) 0%, transparent 66%),
+      radial-gradient(58% 48% at 8% 88%, var(--c50) 0%, transparent 62%),
       var(--cream);
     background-size:170% 170%,170% 170%,170% 170%,100% 100%;
     animation:bgDrift 26s ease-in-out infinite alternate}
@@ -120,28 +157,31 @@
     0%{background-position:0% 0%,100% 20%,60% 100%,0 0}
     100%{background-position:12% 10%,88% 8%,48% 88%,0 0}
   }
-  .hero-in{max-width:980px;margin:0 auto;position:relative;z-index:3;text-align:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--white);
-    padding:9px 20px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--mint);
-    box-shadow:var(--shadow);margin-bottom:26px}
+  .hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:3;text-align:left}
+  .hero-in .lead,.hero-in p{margin-left:0;margin-right:auto;max-width:40em}
+  .hero-tags{justify-content:flex-start!important;text-align:left}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:transparent;
+    padding:0 0 10px;border-radius:0;font-size:var(--t-x);font-weight:500;color:var(--n500);
+    letter-spacing:.16em;border-bottom:1px solid var(--n200);
+    box-shadow:none;margin-bottom:var(--s3)}
   .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral);
     animation:pulse 2.2s ease-in-out infinite}
   @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.45);opacity:.55}}
 
-  .hero h1{font-size:clamp(30px,7.2vw,58px);font-weight:800;line-height:1.42;color:var(--ink-d);
+  .hero h1{font-size:var(--t-d);font-weight:700;line-height:var(--lh-d);letter-spacing:.005em;color:var(--ink-d);
     letter-spacing:.01em}
   .hero h1 .w{display:inline-block;opacity:0;transform:translateY(26px) scale(.94);
     animation:pop .78s cubic-bezier(.22,1.4,.36,1) forwards}
   .hero h1 .c1{color:var(--coral)} .hero h1 .c2{color:var(--mint)} .hero h1 .c3{color:var(--lav)}
   @keyframes pop{to{opacity:1;transform:translateY(0) scale(1)}}
 
-  .hero .lead{margin:26px auto 0;max-width:620px;font-size:clamp(14.5px,2.1vw,16.5px);
-    color:var(--ink);opacity:0;animation:fadeUp .9s .85s ease forwards}
+  .hero .lead{margin:var(--s3) 0 0;max-width:34em;font-size:var(--t-b);
+    color:var(--n700);opacity:0;animation:fadeUp .9s .85s ease forwards}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-  .hero-btns{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  .hero-btns{margin-top:var(--s4);display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;
     opacity:0;animation:fadeUp .9s 1.05s ease forwards}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:17px 34px;border-radius:999px;
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:18px 34px;border-radius:11px;
     font-weight:800;font-size:15.5px;text-decoration:none;transition:transform .28s cubic-bezier(.22,1.3,.36,1),box-shadow .28s}
   .btn-main{background:var(--coral);color:#fff;box-shadow:0 10px 26px rgba(255,143,126,.4)}
   .btn-main:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(255,143,126,.5)}
@@ -150,11 +190,11 @@
   .btn .arw{transition:transform .28s}
   .btn:hover .arw{transform:translateX(4px)}
 
-  .hero-tags{margin-top:30px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  .hero-tags{margin-top:var(--s3);display:flex;gap:22px;justify-content:flex-start;flex-wrap:wrap;
     opacity:0;animation:fadeUp .9s 1.25s ease forwards}
-  .tag{background:var(--white);padding:8px 17px;border-radius:999px;font-size:12.5px;
-    font-weight:700;color:var(--sub);box-shadow:0 4px 12px rgba(122,145,160,.1)}
-  .tag b{color:var(--mint)}
+  .tag{background:transparent;padding:0;border:0;border-radius:0;font-size:var(--t-s);
+    font-weight:500;color:var(--n500);box-shadow:none}
+  .tag b{color:var(--c600);font-weight:700}
 
   /* 音の波紋：中心から静かに広がる。リトミックは「音」が主役なので背景に置く */
   .ripples{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:0;
@@ -170,7 +210,8 @@
   }
 
   /* 楽器のイラスト：ヒーローの左右で、ゆっくり浮く */
-  .inst{position:absolute;z-index:1;pointer-events:none;animation:bobbing 6s ease-in-out infinite}
+  .inst{display:none}
+  .inst--off{position:absolute;z-index:1;pointer-events:none;animation:bobbing 6s ease-in-out infinite}
   @keyframes bobbing{
     0%,100%{transform:translateY(0) rotate(-4deg)}
     50%{transform:translateY(-14px) rotate(4deg)}
@@ -189,7 +230,7 @@
   /* シャボン玉：ゆっくり上がって消える */
   .bubbles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
   .bub{position:absolute;bottom:-90px;border-radius:50%;opacity:0;
-    background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),rgba(255,255,255,.25) 42%,transparent 68%);
+    background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.55),rgba(255,255,255,.12) 42%,transparent 66%);
     animation:rise linear infinite}
   @keyframes rise{
     0%{transform:translateY(0) translateX(0) scale(.7);opacity:0}
@@ -205,14 +246,14 @@
   /* ===== 背景の下地 =====
      単色だと寂しいので、絵本のページのように三層で敷く。
      ①やわらかい水玉 ②ふんわり浮かぶ大きな丸 ③セクションの境目の波。
-     どれも transform と opacity だけで動かすので、端末は重くならない。 */
+     どれも 移動の指定と opacity だけで動かすので、端末は重くならない。 */
 
   /* ① 水玉：うっすら全体に */
   .dots{position:relative}
   .dots::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-    background-image:radial-gradient(circle, rgba(127,212,193,.16) 2.2px, transparent 2.4px);
+    background-image:radial-gradient(circle, rgba(255,143,126,.10) 2.2px, transparent 2.4px);
     background-size:30px 30px;background-position:0 0}
-  .dots.warm::before{background-image:radial-gradient(circle, rgba(255,143,126,.14) 2.2px, transparent 2.4px)}
+  .dots.warm::before{background-image:radial-gradient(circle, rgba(94,36,29,.055) 2.2px, transparent 2.4px)}
   .dots > *{position:relative;z-index:1}
 
   /* ② ふんわり浮かぶ大きな丸 */
@@ -244,7 +285,7 @@
   .pcard:nth-child(2) .picon{background:var(--coral-l)}
   .pcard:nth-child(3) .picon{background:var(--lemon-l)}
   .pcard h3{font-size:19px;font-weight:800;color:var(--ink-d);margin-bottom:10px}
-  .pcard p{font-size:14.5px;color:var(--sub);line-height:1.95}
+  .pcard p{font-size:var(--t-s);color:var(--n500);line-height:var(--lh-b)}
   .picon svg{animation:sway 3.4s ease-in-out infinite}
   .pcard:nth-child(2) .picon svg{animation-delay:.4s}
   .pcard:nth-child(3) .picon svg{animation-delay:.8s}
@@ -258,7 +299,7 @@
     opacity:0;transform:scale(.6)}
   .age.in{animation:bounceIn .72s cubic-bezier(.22,1.5,.4,1) forwards}
   @keyframes bounceIn{to{opacity:1;transform:scale(1)}}
-  .age span{display:block;font-size:24px;line-height:1.15}
+  .age span{display:block;font-size:var(--t-3);line-height:1;font-weight:700}
   .age small{display:block;font-size:11.5px;color:var(--sub);font-weight:700}
   .age:nth-child(1){background:var(--mint-l)} .age:nth-child(2){background:var(--coral-l)}
   .age:nth-child(3){background:var(--lemon-l)} .age:nth-child(4){background:var(--lav-l)}
@@ -287,10 +328,10 @@
   .q{background:var(--cream);border-radius:20px;padding:22px 26px;margin-bottom:14px;
     transition:transform .3s cubic-bezier(.22,1.2,.36,1),box-shadow .3s}
   .q:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .q h4{font-size:16px;font-weight:800;color:var(--ink-d);display:flex;gap:12px;align-items:flex-start;line-height:1.7}
+  .q h4{font-size:var(--t-4);font-weight:700;color:var(--ink-d);display:flex;gap:12px;align-items:flex-start;line-height:var(--lh-h)}
   .q h4::before{content:"Q";flex:none;width:28px;height:28px;border-radius:50%;background:var(--coral);
     color:#fff;font-size:14px;display:grid;place-items:center;margin-top:2px}
-  .q p{margin-top:12px;padding-left:40px;font-size:14.5px;color:var(--sub);line-height:2}
+  .q p{margin-top:12px;padding-left:40px;font-size:var(--t-s);color:var(--n500);line-height:var(--lh-b)}
   @media(max-width:520px){.q{padding:20px 20px}.q p{padding-left:0}}
 
   /* ---- 先生 ---- */
@@ -301,7 +342,7 @@
     background:linear-gradient(135deg,var(--lav-l),var(--sky-l));display:grid;place-items:center}
   .t-name{font-size:22px;font-weight:800;color:var(--ink-d)}
   .t-role{font-size:13px;color:var(--mint);font-weight:800;letter-spacing:.06em;margin-top:4px}
-  .t-bio{margin-top:18px;font-size:15px;color:var(--ink);text-align:left;line-height:2.05}
+  .t-bio{margin-top:18px;font-size:var(--t-b);color:var(--n700);text-align:left;line-height:var(--lh-b)}
 
   /* ---- 料金 ---- */
   .price{background:var(--white)}
@@ -314,7 +355,7 @@
     background:var(--coral);color:#fff;font-size:11.5px;font-weight:800;padding:5px 16px;border-radius:999px;
     white-space:nowrap;box-shadow:0 5px 14px rgba(255,143,126,.4)}
   .pr h3{font-size:17px;font-weight:800;color:var(--ink-d)}
-  .pr .yen{font-size:34px;font-weight:800;color:var(--coral);margin:10px 0 2px;line-height:1.2}
+  .pr .yen{font-size:var(--t-1);font-weight:700;color:var(--c600);margin:12px 0 2px;line-height:1}
   .pr .yen small{font-size:14px;color:var(--sub);font-weight:700}
   .pr p{font-size:13.5px;color:var(--sub);margin-top:10px}
 
@@ -333,7 +374,7 @@
   .reserve{background:var(--mint-l);text-align:center}
   .r-box{background:var(--white);border-radius:var(--round);padding:clamp(32px,5vw,54px);
     max-width:620px;margin:0 auto;box-shadow:var(--shadow-l)}
-  .r-box h2{font-size:clamp(22px,4vw,30px);font-weight:800;color:var(--ink-d);line-height:1.5}
+  .r-box h2{font-size:var(--t-2);font-weight:700;color:var(--ink-d);line-height:var(--lh-h);letter-spacing:.01em}
   .r-box p{margin-top:14px;color:var(--sub);font-size:14.5px}
   .r-box .btn{margin-top:26px}
   .r-note{margin-top:18px;font-size:12.5px;color:var(--sub)}
@@ -343,7 +384,7 @@
     text-align:center;padding:56px 6vw 44px;position:relative}
   .fmark{font-size:22px;font-weight:800;color:var(--ink-d)}
   .fsub{font-size:10.5px;letter-spacing:.24em;color:var(--mint);margin-top:5px;font-weight:700}
-  .fnote{margin-top:26px;font-size:11.5px;line-height:2;color:var(--sub);
+  .fnote{margin-top:26px;font-size:var(--t-x);line-height:var(--lh-s);color:var(--n400);
     max-width:640px;margin-left:auto;margin-right:auto}
   .fnote b{color:var(--coral)}
   .fmusic{display:flex;gap:14px;justify-content:center;margin-top:22px}
@@ -359,12 +400,46 @@
   .rv.in{opacity:1;transform:none}
   .rv.d1{transition-delay:.12s} .rv.d2{transition-delay:.24s} .rv.d3{transition-delay:.36s}
 
+  /* ---- 教室のようす（写真）----
+     2026-08-17 追加。8/14にサロン向けで判明したこと——3回作り直しても安く見えた原因は
+     突き詰めると【写真が無いこと】だった。イラストと色だけの画面は、作り込むほど
+     「よくできた図」に近づき、「実在する場所」から遠ざかる。ここに写真を1枚入れるだけで
+     ページが現実の場所になる。
+     ⚠️ 写真は生成した仮素材で、その教室の実物ではない。無断使用は絶対にしないこと
+        （2026-08-03に無断で店名を使ったページで抗議を受けている）。仮であることは
+        画面上にも明記する。 */
+  .photos{position:relative;padding:clamp(56px,7vw,86px) 20px clamp(40px,5vw,64px);background:#fff}
+  .photos .strip{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:14px;max-width:1040px;margin:0 auto}
+  .photos figure{position:relative;overflow:hidden;border-radius:26px;
+    box-shadow:0 14px 34px rgba(58,54,74,.10);background:var(--cream2)}
+  .photos figure::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(58,54,74,.22));opacity:.9}
+  .photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;
+    transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.8,.3,1)}
+  .photos figure:hover img{transform:scale(1.07)}
+  .photos figcaption{position:absolute;left:16px;bottom:13px;z-index:2;color:#fff;
+    font-size:13px;font-weight:700;letter-spacing:.04em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+  .photos .note{max-width:1040px;margin:16px auto 0;text-align:center;
+    font-size:11.5px;color:var(--sub);letter-spacing:.02em}
+  @media(max-width:760px){
+    .photos .strip{grid-template-columns:1fr 1fr;gap:11px}
+    .photos figure:first-child{grid-column:1 / -1}
+    .photos img{aspect-ratio:16/10}
+    .photos figcaption{font-size:12px;left:13px;bottom:10px}
+  }
+
+  /* 教室のことの中に置く1枚 */
+  .info .shot{margin:0 0 26px;border-radius:24px;overflow:hidden;
+    box-shadow:0 12px 30px rgba(58,54,74,.10)}
+  .info .shot img{width:100%;aspect-ratio:16/7;object-fit:cover}
+
   /* ---- 動きが苦手な方への配慮：全部止める ---- */
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
     .rv,.hero h1 .w,.hero .lead,.hero-btns,.hero-tags,.age{opacity:1!important;transform:none!important}
     .bubbles{display:none}
   }
+
   /* ═══ 2026-08-21 追加：動きの4部品 ═══
      お手本にした3サイトに共通していた部品を、
      子ども向け教室の空気に合わせて入れている。硬い演出は合わないので、
@@ -434,6 +509,7 @@
 
 <!-- ============ ヒーロー ============ -->
 <div class="hero">
+  <canvas id="wave" aria-hidden="true"></canvas>
   <div class="bubbles" id="bubbles" aria-hidden="true"></div>
 
   <!-- 音の波紋 -->
@@ -506,6 +582,16 @@
 <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
   <path fill="#ffffff" d="M0,42 C240,90 480,0 720,26 C960,52 1200,90 1440,54 L1440,90 L0,90 Z"/>
 </svg>
+
+<!-- ============ 教室のようす（写真） ============ -->
+<section class="photos">
+  <div class="strip">
+    <figure class="rv"><img src="../shared-img/room.jpg" alt="レッスン室のようす（イメージ）" loading="lazy"><figcaption>レッスンのお部屋</figcaption></figure>
+    <figure class="rv d1"><img src="../shared-img/window.jpg" alt="窓からの光（イメージ）" loading="lazy"><figcaption>あかるい光の中で</figcaption></figure>
+    <figure class="rv d2"><img src="../shared-img/desk.jpg" alt="おうたのノート（イメージ）" loading="lazy"><figcaption>おうちでも歌えるように</figcaption></figure>
+  </div>
+  <p class="note">※ 写真はイメージです。リトミック教室 音の和 様の実際のお写真ではありません。ご依頼をいただいた際に、教室のお写真へ差し替えます。</p>
+</section>
 
 <!-- ============ とくちょう ============ -->
 <section class="points dots" id="points">
@@ -679,6 +765,7 @@
       <span class="en">CLASSROOM</span>
       <h2>教室のこと</h2>
     </div>
+    <div class="shot rv"><img src="../shared-img/window.jpg" alt="教室のようす（イメージ）" loading="lazy"></div>
     <table class="i-table rv">
       <tr><th>教室名</th><td>リトミック教室 音の和</td></tr>
       <tr><th>ばしょ</th><td>（会場名・住所が入ります）</td></tr>
@@ -708,6 +795,7 @@
   <p class="fnote">このページは Web制作 ゆたか が リトミック教室 音の和 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>リトミック教室 音の和 様の公式サイトではありません</b>。<br>掲載の文章・料金はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、このページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
 (function(){
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -783,9 +871,7 @@
     alert("こちらは見本ページです。実際のページでは、ここからそのままお申し込みいただけます。");
   });
 })();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-<script>
+
 /* ═══ 2026-08-21 追加：動きの4部品 ═══ */
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -859,6 +945,101 @@
       });
     });
   }
+})();
+/* ═══ 追加ここまで ═══ */
+
+/* ═══ 2026-08-21 追加：音の波紋（背景） ═══
+   動画ではなく、その場で計算して描いている。同じ画面は二度と出ない。 */
+(function(){
+  var c = document.getElementById('wave');
+  if(!c) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ c.style.display='none'; return; }
+  var gl = c.getContext('webgl',{antialias:false,alpha:true,premultipliedAlpha:false})
+        || c.getContext('experimental-webgl');
+  if(!gl){ c.style.display='none'; return; }   /* 使えない端末では、元の淡い地のまま */
+
+  var VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var FS = [
+    'precision highp float;',
+    'uniform vec2 r;uniform float t;uniform vec2 m;',
+    /* 波源4つ。ゆっくり位相をずらして、同じ形が繰り返さないようにする */
+    /* 波紋は「広がって消える」もの。定常波では止まって見えるので、つまらない。
+       ひとつの波源から、間隔をあけて何度もリングを出す。
+       リングは外へ進むほど薄く、太くなって消える（水面に落ちた雫と同じ） */
+    'float ripple(vec2 uv, vec2 c, float ph, float sp){',
+    '  float d = distance(uv, c);',
+    '  float sum = 0.0;',
+    '  for(int i = 0; i < 5; i++){',
+    '    float k = float(i);',
+    '    float cycle = 5.2;',
+    '    float age = mod(t * sp + ph + k * (cycle / 5.0), cycle);',
+    '    float rad = age * 0.145;',
+    '    float wide = 0.0035 + age * 0.0032;',
+    '    float ring = exp(-pow((d - rad) / wide, 2.0));',
+    '    float life = smoothstep(0.0, 0.55, age) * (1.0 - smoothstep(cycle * 0.45, cycle, age));',
+    '    sum += ring * life * exp(-d * 1.15);',
+    '  }',
+    '  return sum;',
+    '}',
+    'void main(){',
+    '  vec2 uv = gl_FragCoord.xy / r;',
+    '  float a = r.x / r.y;',
+    '  uv.x *= a;',
+    '  float v = 0.0;',
+    '  v += ripple(uv, vec2(0.24 * a, 0.74), 0.0, 1.00) * 0.95;',
+    '  v += ripple(uv, vec2(0.78 * a, 0.30), 2.6, 0.82) * 0.85;',
+    
+    '  v += ripple(uv, vec2(m.x * a, m.y), 0.0, 1.45) * 1.05;',
+    '  v = clamp(v, 0.0, 1.6);',
+    '  vec3 coral = vec3(0.98, 0.52, 0.44);',
+    '  vec3 mint  = vec3(0.42, 0.80, 0.71);',
+    '  vec3 col = mix(coral, mint, smoothstep(0.45, 1.05, uv.y) * 0.24);',
+    '  float guard = mix(0.42, 1.0, smoothstep(0.30, 0.62, uv.x / a));',
+    '  float al = (v * 0.52 + pow(v, 2.0) * 0.24) * guard;',
+    '  gl_FragColor = vec4(col, clamp(al, 0.0, 0.46));',
+    '}'
+  ].join('\n');
+
+  function sh(ty, src){ var o=gl.createShader(ty); gl.shaderSource(o,src); gl.compileShader(o);
+    return gl.getShaderParameter(o,gl.COMPILE_STATUS) ? o : null; }
+  var vs=sh(gl.VERTEX_SHADER,VS), fs=sh(gl.FRAGMENT_SHADER,FS);
+  if(!vs||!fs){ c.style.display='none'; return; }
+  var pg=gl.createProgram(); gl.attachShader(pg,vs); gl.attachShader(pg,fs); gl.linkProgram(pg);
+  if(!gl.getProgramParameter(pg,gl.LINK_STATUS)){ c.style.display='none'; return; }
+  gl.useProgram(pg);
+  gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var lp=gl.getAttribLocation(pg,'p'); gl.enableVertexAttribArray(lp);
+  gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+  var uR=gl.getUniformLocation(pg,'r'), uT=gl.getUniformLocation(pg,'t'), uM=gl.getUniformLocation(pg,'m');
+
+  var mx=0.5,my=0.5,tx=0.5,ty=0.5;
+  c.parentNode.addEventListener('mousemove',function(e){
+    var b=c.getBoundingClientRect();
+    tx=(e.clientX-b.left)/b.width; ty=1.0-(e.clientY-b.top)/b.height;
+  },{passive:true});
+
+  function size(){
+    var d=Math.min(window.devicePixelRatio||1,1.5);
+    var w=Math.max(1,Math.round(c.clientWidth*d)), h=Math.max(1,Math.round(c.clientHeight*d));
+    if(c.width!==w||c.height!==h){ c.width=w; c.height=h; gl.viewport(0,0,w,h); gl.uniform2f(uR,w,h); }
+  }
+  var vis=true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ vis=es[0].isIntersecting; },{threshold:0}).observe(c);
+  }
+  var t0=performance.now();
+  (function frame(now){
+    requestAnimationFrame(frame);
+    if(!vis) return;
+    size();
+    /* 指の位置は、追いかけるように少し遅れてついていく */
+    mx+=(tx-mx)*0.045; my+=(ty-my)*0.045;
+    gl.uniform2f(uM,mx,my);
+    gl.uniform1f(uT,(now-t0)*0.001);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+  })(t0);
 })();
 /* ═══ 追加ここまで ═══ */
 </script>

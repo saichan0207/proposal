@@ -2,557 +2,552 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<!-- 2026-07-31 追加：指定がないとブラウザが favicon.ico を探して404になり、
-     検品の「エラー0」に到達できず、本当の不具合が埋もれていた。音符のアイコンを直接埋め込む。 -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>浅草リトミック・ピアノ教室｜東京都台東区のピアノ・リトミック教室（デザイン案・サンプル）</title>
-<meta name="description" content="東京都台東区のピアノ・リトミック教室「浅草リトミック・ピアノ教室」のホームページデザイン案です。体験レッスンのお申し込みまでスマホで完結します。">
+<meta name="description" content="鈴を鳴らす、歩く、止まる。浅草リトミック・ピアノ教室は、音を耳だけでなくからだで受け取るリトミックの教室です。楽器がはじめての小さなお子さまから、ていねいに向き合います。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f7f5ef;
-    --panel:#fffefb;
-    --navy:#1b2846;
-    --navy2:#131e37;
-    --navy-soft:#e4e7ef;
-    --blue:#33456e;
-    --gold:#b3934c;
-    --gold2:#cbab63;
-    --ink:#2c3247;
-    --sub:#6d7488;
-    --line:rgba(27,40,70,.13);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95;letter-spacing:.04em;overflow-x:hidden}
-  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
-  .sample-bar{background:linear-gradient(90deg,#131e37,#2a3a60);color:#eae3d1;text-align:center;font-size:11.5px;line-height:1.7;padding:8px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:60}
-  .sample-bar b{color:var(--gold2)}
-  @media(max-width:560px){.sample-bar{font-size:10.5px;padding:7px 12px;letter-spacing:.02em}}
+/* ═══════════════════════════════════════════════════════════════
+   営業デモの型（写真あり・ピアノ／音楽教室）｜2026-08-21 作り直し
+   ヒーローの技術：弦の振動（波動方程式を1次元で解く）
+   すでに使った引き出し（レイマーチング・流体・粒子・熱・コースティクス・
+   呼吸・物理の紐・反応拡散）とは重ならないように選んでいる。
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0b0d14; --bg2:#070910; --panel:#12151f;
+  --fg:#e4e6ee; --fg2:#a2a7b8; --dim:#767c8f; --hi:#f7f8fc;
+  --acc:#c2a15e; --acc2:#d9bd80;
+  --hair:rgba(194,161,94,.18); --headbg:rgba(7,9,16,.9);
+  --navc:rgba(228,230,238,.62); --subc:rgba(228,230,238,.78);
+  --shadow:rgba(11,13,20,.7); --curr:rgba(217,189,128,.5); --curbg:rgba(217,189,128,.09);
+  --t-d:clamp(2.6rem,7.2vw,6.2rem);
+  --t-1:clamp(1.85rem,3.8vw,3rem);
+  --t-2:clamp(1.4rem,2.6vw,2rem);
+  --t-3:1.26rem; --t-4:1.08rem; --t-b:1rem; --t-s:.875rem; --t-x:.75rem;
+  --lh-d:1.24; --lh-h:1.42; --lh-b:1.95; --lh-s:1.7;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.25rem;
+  --s5:3.5rem; --s6:5rem; --s7:7.5rem; --s8:11rem;
+  --gut:clamp(20px,5.4vw,72px);
+  --wrap:1140px;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
 
-  header{position:sticky;top:var(--bar-h,34px);z-index:40;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 24px;background:rgba(247,245,239,0);transition:background .4s,box-shadow .4s,padding .4s}
-  header.scrolled{background:rgba(247,245,239,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);padding:11px 24px}
-  .logo{flex:1 1 auto;min-width:0;font-size:18px;letter-spacing:.2em;color:var(--navy);font-weight:600;line-height:1.35;transition:color .4s,text-shadow .4s}
-  /* ヒーロー写真に重なっている間は白抜きにする。
-     濃い文字色のままだと暗い写真に沈んで読めなくなる（2026-07-29 実際に発生） */
-  header:not(.scrolled) .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-  header:not(.scrolled) .logo small{color:#e8c87a}
-  header:not(.scrolled) nav a:not(.cta){color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55)}
-  .logo small{display:block;font-size:9px;letter-spacing:.32em;color:var(--gold);margin-top:2px}
-  nav{display:flex;gap:20px;align-items:center;flex:0 0 auto}
-  nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.12em;padding-bottom:3px;border-bottom:1px solid transparent;transition:.25s}
-  nav a:hover{color:var(--gold);border-color:var(--gold)}
-  nav a.cta{background:var(--navy);color:#fff;padding:9px 18px;border-radius:999px;border:none;letter-spacing:.08em;white-space:nowrap;box-shadow:0 8px 18px rgba(27,40,70,.28)}
-  nav a.cta:hover{background:var(--blue);color:#fff;transform:translateY(-1px)}
-  @media(max-width:860px){nav a:not(.cta){display:none}}
-  @media(max-width:560px){header{padding:13px 16px;gap:10px}header.scrolled{padding:10px 16px}.logo{font-size:15px;letter-spacing:.06em}.logo small{font-size:8.5px;letter-spacing:.24em}nav a.cta{padding:8px 14px;font-size:11.5px}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans",sans-serif;
+  line-height:var(--lh-b);letter-spacing:.035em;overflow-x:hidden}
+body.lock{overflow:hidden;height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.mn{font-family:"Shippori Mincho",serif;font-weight:400}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 
-  /* hero */
-  .hero{position:relative;min-height:94vh;display:flex;align-items:center;padding:0 8vw;margin-top:calc(var(--hd-h, 62px) * -1);overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,23,44,.9) 30%,rgba(15,23,44,.5) 100%),url("images/hero-rythmique.jpg") center/cover no-repeat;transform:scale(1.06);animation:heroZoom 16s ease-out forwards}
-  @keyframes heroZoom{to{transform:scale(1)}}
-  .hero-inner{position:relative;z-index:2;max-width:640px;color:#fff;margin-top:60px}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.26em;color:var(--gold2);margin-bottom:22px}
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold2)}
-  .hero h1{font-size:clamp(29px,5.6vw,52px);font-weight:600;line-height:1.6;letter-spacing:.05em;text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.4)}
-  .hero h1 span{color:var(--gold2)}
-  .hero p{margin-top:22px;font-size:clamp(14px,1.7vw,16px);color:rgba(255,255,255,.9);max-width:33em}
-  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:14px;letter-spacing:.08em;transition:.3s}
-  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy2);font-weight:600;box-shadow:0 12px 26px rgba(179,147,76,.4)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
-  .btn-ghost:hover{border-color:var(--gold2);color:var(--gold2)}
-  .hero-badges{margin-top:30px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.85)}
-  .hero-badges b{color:var(--gold2)}
+.bar{position:relative;z-index:120;background:var(--bg2);color:var(--dim);
+  font-size:var(--t-x);letter-spacing:.09em;text-align:center;padding:10px 16px;
+  line-height:1.7;border-bottom:1px solid var(--hair)}
 
-  section{padding:clamp(70px,10vw,120px) 8vw;position:relative}
-  .sec-head{text-align:center;margin-bottom:50px}
-  .sec-head .en{font-size:11px;letter-spacing:.36em;color:var(--gold);display:block;margin-bottom:12px}
-  .sec-head h2{font-size:clamp(23px,3.4vw,31px);font-weight:600;letter-spacing:.08em;color:var(--navy)}
-  .sec-head p{margin-top:13px;font-size:14px;color:var(--sub)}
+#ld{position:fixed;inset:0;z-index:9990;background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity .9s ease,visibility .9s}
+#ld .nm{font-family:"Shippori Mincho",serif;font-size:clamp(16px,2.4vw,23px);
+  letter-spacing:.3em;color:var(--acc2);opacity:0;transform:translateY(9px);
+  transition:opacity 1s ease .25s,transform 1.2s var(--ease) .25s}
+#ld.go .nm{opacity:1;transform:none}
+#ld .ln{margin:17px auto 0;width:0;height:1px;background:var(--acc);
+  transition:width 1.35s cubic-bezier(.5,0,.1,1) .45s}
+#ld.go .ln{width:min(190px,42vw)}
+#ld.done{opacity:0;visibility:hidden}
 
-  /* 中身を隠すのは JS が動いているときだけ（JSなしで本文が消える事故の対策 2026-07-28） */
+header{position:fixed;top:var(--bar-h,39px);left:0;width:100%;z-index:100;
+  padding:20px 0;transition:background .6s ease,padding .6s ease}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}
+header.on{background:var(--headbg);backdrop-filter:blur(14px);padding:12px 0}
+.logo{font-family:"Shippori Mincho",serif;font-size:1.12rem;letter-spacing:.24em;color:var(--hi)}
+nav{display:flex;gap:clamp(16px,2.7vw,36px);font-size:var(--t-s);letter-spacing:.11em}
+nav a{color:var(--navc);transition:color .4s ease;position:relative}
+nav a:hover{color:var(--hi)}
+nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+  background:var(--acc);transition:width .5s var(--ease)}
+nav a:hover::after{width:100%}
+@media(max-width:760px){nav a:nth-child(n+3){display:none}}
 
-  .reveal{opacity:1;transform:none}
+.hero{position:relative;min-height:calc(100svh - var(--bar-h,39px));
+  display:flex;align-items:center;overflow:hidden}
+#art{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:3;width:100%}
+.hero .eye{display:block;font-size:var(--t-x);letter-spacing:.3em;color:var(--acc2);
+  margin-bottom:var(--s3);opacity:0;transition:opacity 1.1s ease .3s}
+.hero .eye.in{opacity:1}
+.hero h1{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-d);line-height:var(--lh-d);letter-spacing:.03em;
+  text-shadow:0 2px 44px var(--shadow)}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>i{display:block;font-style:normal;transform:translateY(110%);
+  transition:transform 1.3s var(--ease)}
+.hero h1.in .l>i{transform:translateY(0)}
+.hero h1 .l:nth-child(2)>i{transition-delay:.12s}
+.hero .sub{margin-top:var(--s4);max-width:27em;color:var(--subc);
+  font-size:var(--t-4);opacity:0;transform:translateY(16px);
+  transition:opacity 1.1s ease .7s,transform 1.2s var(--ease) .7s}
+.hero .sub.in{opacity:1;transform:none}
+.hero .scroll{position:absolute;left:var(--gut);bottom:clamp(28px,5vh,54px);z-index:3;
+  font-size:var(--t-x);letter-spacing:.24em;color:var(--dim);
+  display:flex;align-items:center;gap:12px;opacity:0;transition:opacity 1s ease 1.2s}
+.hero .scroll.in{opacity:1}
+.hero .scroll::after{content:"";width:54px;height:1px;
+  background:linear-gradient(90deg,var(--acc),transparent)}
 
-  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+section{padding:clamp(80px,13vh,165px) 0;position:relative}
+.head{margin-bottom:clamp(34px,6vh,70px);padding-bottom:var(--s2);
+  border-bottom:1px solid var(--hair);
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.head .en{font-size:var(--t-x);letter-spacing:.26em;color:var(--acc)}
+.head h2{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-2);line-height:var(--lh-h);letter-spacing:.07em}
+.rv{opacity:0;transform:translateY(28px);
+  transition:opacity 1s ease,transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 
-  html.js .reveal.in{opacity:1;transform:none}
-  .reveal.in{opacity:1;transform:none}
-  .d1{transition-delay:.12s}.d2{transition-delay:.24s}
+.two{display:grid;gap:clamp(30px,5vw,72px);align-items:center}
+@media(min-width:920px){.two{grid-template-columns:1fr 1fr}}
+.two figure{overflow:hidden}
+.two figure img{width:100%;aspect-ratio:4/5;object-fit:cover;
+  transition:transform 1.8s var(--ease);filter:saturate(.93)}
+.two figure:hover img{transform:scale(1.05)}
+.two h3{font-family:"Shippori Mincho",serif;font-weight:400;color:var(--hi);
+  font-size:var(--t-1);line-height:var(--lh-h);margin-bottom:var(--s3);letter-spacing:.04em}
+.two p{color:var(--fg2);max-width:31em}
+.two p + p{margin-top:var(--s2)}
+.mark{margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--hair);
+  font-size:var(--t-s);color:var(--acc2);letter-spacing:.1em}
 
-  /* target */
-  .target{background:linear-gradient(180deg,var(--bg),#eceadf)}
-  .tg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;max-width:940px;margin:0 auto}
-  .tg{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:13px;align-items:flex-start}
-  .tg .ic{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--navy-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:14px}
-  .tg p{font-size:13.8px;line-height:1.85}
-  .tg-foot{text-align:center;margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--navy);letter-spacing:.06em}
-  .tg-foot b{color:var(--gold);font-weight:600}
+.three{display:grid;gap:clamp(26px,4vw,52px)}
+@media(min-width:840px){.three{grid-template-columns:repeat(3,1fr)}}
+.three h3{font-size:var(--t-4);letter-spacing:.12em;color:var(--acc);
+  padding-bottom:var(--s1);margin-bottom:var(--s2);border-bottom:1px solid var(--hair)}
+.three p{color:var(--fg2);font-size:var(--t-s)}
+.three ul{list-style:none}
+.three li{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:12px 0;border-bottom:1px dotted var(--hair);font-size:var(--t-s);color:var(--fg2)}
+.three li span{color:var(--dim);white-space:nowrap;font-variant-numeric:tabular-nums}
 
-  /* method / policy */
-  .method{background:var(--navy);color:#e6e9f1}
-  .mth-wrap{display:grid;grid-template-columns:1fr 1fr;gap:46px;max-width:960px;margin:0 auto;align-items:center}
-  @media(max-width:760px){.mth-wrap{grid-template-columns:1fr;gap:28px}}
-  .mth-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px rgba(0,0,0,.34)}
-  .mth-ph img{width:100%;height:100%;object-fit:cover;display:block}
-  .mth-info .en{font-size:11px;letter-spacing:.36em;color:var(--gold2);display:block;margin-bottom:12px}
-  .mth-info h2{font-size:clamp(22px,3.2vw,29px);font-weight:600;letter-spacing:.06em;color:#fff;line-height:1.6}
-  .mth-info p{margin-top:18px;font-size:14px;color:#c3cad9;line-height:2.1}
-  .mth-info p b{color:var(--gold2);font-weight:600}
+.pics{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:var(--s5)}
+.pics figure{overflow:hidden}
+.pics img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform 1.6s var(--ease)}
+.pics figure:hover img{transform:scale(1.055)}
+.big{overflow:hidden;margin-top:var(--s4)}
+.big img{width:100%;aspect-ratio:16/7;object-fit:cover;transition:transform 2s var(--ease)}
+.big:hover img{transform:scale(1.045)}
 
-  /* lesson */
-  .lesson{background:var(--bg)}
-  .l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1000px;margin:0 auto}
-  .lcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:transform .35s,box-shadow .35s}
-  .lcard:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(27,40,70,.13)}
-  .lcard .mic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--navy-soft),#cfd6e5);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
-  .lcard h3{font-size:18px;font-weight:600;color:var(--navy);letter-spacing:.05em;margin-bottom:9px}
-  .lcard p{font-size:13.4px;color:var(--sub);line-height:1.9}
-  .lcard .tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.08em;color:var(--gold);border:1px solid rgba(179,147,76,.4);border-radius:999px;padding:4px 12px}
+.info{display:grid;gap:clamp(28px,4vw,60px)}
+@media(min-width:840px){.info{grid-template-columns:1fr 1fr}}
+.info dl{display:grid;grid-template-columns:6.5em 1fr;gap:15px 22px;font-size:var(--t-s)}
+.info dt{color:var(--acc);letter-spacing:.12em}
+.info dd{color:var(--fg2)}
+.note{margin-top:var(--s4);padding:17px 19px;background:var(--panel);
+  font-size:var(--t-x);color:var(--dim);line-height:var(--lh-s)}
 
-  /* reasons */
-  .reasons{background:linear-gradient(180deg,#eceadf,var(--bg))}
-  .rs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;max-width:1000px;margin:0 auto}
-  .rs{text-align:center;padding:8px}
-  .rs .no{font-size:12px;letter-spacing:.2em;color:var(--gold);margin-bottom:8px}
-  .rs .ic{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;background:var(--navy-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
-  .rs h3{font-size:17px;font-weight:600;letter-spacing:.05em;color:var(--navy);margin-bottom:10px}
-  .rs p{font-size:13.4px;color:var(--sub);line-height:1.9}
+footer{background:var(--bg2);color:var(--dim);padding:var(--s5) 0 var(--s4);
+  border-top:1px solid var(--hair)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:var(--t-x);letter-spacing:.12em}
+footer .fn{font-family:"Shippori Mincho",serif;font-size:var(--t-4);
+  color:var(--hi);letter-spacing:.24em}
 
-  /* teacher */
-  .teacher{background:var(--navy2);color:#dbe0ec}
-  .tc-wrap{display:grid;grid-template-columns:280px 1fr;gap:46px;max-width:900px;margin:0 auto;align-items:center}
-  @media(max-width:720px){.tc-wrap{grid-template-columns:1fr;gap:26px}}
-  .tc-photo{aspect-ratio:3/4;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(160deg,#25335a,#141e37);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(0,0,0,.34)}
-  .tc-photo .note{position:absolute;font-size:40px;color:rgba(203,171,99,.4)}
-  .tc-photo span{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(219,224,236,.55);font-size:10.5px;letter-spacing:.2em}
-  .tc-info .role{font-size:11px;letter-spacing:.24em;color:var(--gold2)}
-  .tc-info h3{font-size:25px;font-weight:600;letter-spacing:.08em;color:#fff;margin:8px 0 4px}
-  .tc-info h3 small{font-size:13px;color:#a4adc3;letter-spacing:.1em;margin-left:8px;font-weight:400}
-  .tc-info .lic{display:inline-block;margin-top:8px;font-size:11.5px;color:#cdd4e2;border:1px solid rgba(219,224,236,.3);border-radius:999px;padding:5px 14px;letter-spacing:.06em}
-  .tc-info p{font-size:14px;color:#aeb7cb;margin-top:16px;line-height:2.05}
+.cur{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;
+  background:var(--acc2);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cur-r{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--curr);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .5s var(--ease),height .5s var(--ease),background .5s ease}
+.cur-r.on{width:66px;height:66px;background:var(--curbg)}
+@media (hover:none),(max-width:820px){.cur,.cur-r{display:none}}
 
-  /* voice */
-  .voice{background:var(--bg)}
-  .v-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:960px;margin:0 auto}
-  .vcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
-  .vcard .stars{color:var(--gold2);letter-spacing:.18em;font-size:14px}
-  .vcard p{font-size:13.4px;color:var(--ink);line-height:1.95;margin:12px 0 16px}
-  .vcard .who{font-size:12px;color:var(--sub);letter-spacing:.05em}
+@media(prefers-reduced-motion:reduce){
+  #ld{display:none}
+  .rv,.hero .eye,.hero .sub,.hero .scroll{opacity:1;transform:none}
+  .hero h1 .l>i{transform:none}
+  .cur,.cur-r{display:none}
+}
 
-  /* reserve */
-  .reserve{background:var(--navy2)}
-  .reserve .sec-head .en{color:var(--gold2)}
-  .reserve .sec-head h2{color:#fff}
-  .rsv-sub{text-align:center;color:#aeb7cb;font-size:14px;margin-bottom:36px}
-  form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:17px}
-  .frow{display:flex;flex-direction:column;gap:7px}
-  .frow label{font-size:12.5px;letter-spacing:.06em;color:#dbe0ec}
-  .frow .req{color:var(--gold2);font-size:10px;margin-left:8px}
-  input,select,textarea{font-family:inherit;font-size:14px;padding:13px 15px;border-radius:11px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff}
-  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.5)}
-  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold2);outline-offset:1px;border-color:transparent}
-  select option{color:#333}
-  .frow-2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-  @media(max-width:560px){.frow-2{grid-template-columns:1fr}}
-  button.submit{margin-top:6px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy2);font-weight:600;border:none;cursor:pointer;padding:16px;border-radius:999px;font-size:14.5px;letter-spacing:.1em;transition:.3s}
-  button.submit:hover{transform:translateY(-2px)}
-  .rsv-ok{display:none;text-align:center;color:#fff;background:rgba(255,255,255,.12);border-radius:12px;padding:16px;font-size:13.5px}
-  .rsv-ok.show{display:block}
-  .rsv-tech{text-align:center;font-size:11.5px;color:#8892ab;margin-top:22px;line-height:1.9}
-
-  /* access */
-  .access{background:var(--bg)}
-  .acc-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:36px}
-  @media(max-width:720px){.acc-wrap{grid-template-columns:1fr}}
-  table.info{width:100%;border-collapse:collapse}
-  table.info th,table.info td{padding:13px 6px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top}
-  table.info th{width:32%;color:var(--sub);font-weight:600;letter-spacing:.05em}
-  .map-ph{border-radius:18px;min-height:230px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:11px;letter-spacing:.2em;background:linear-gradient(135deg,#e0e4ee,#cfd6e5)}
-  .sample-inline{text-align:center;font-size:11.5px;color:var(--sub);margin-top:20px}
-
-  footer{background:var(--navy2);color:#a4adc3;text-align:center;padding:52px 20px 30px}
-  footer .fmark{font-size:20px;letter-spacing:.18em;color:#fff;font-weight:600}
-  footer .fsub{font-size:10px;letter-spacing:.32em;color:var(--gold2);margin-top:5px}
-  footer .fnote{font-size:11.5px;color:#7d879e;margin-top:22px;line-height:1.9}
-
-  @media(prefers-reduced-motion:reduce){.reveal,html.js .reveal{transition:none;opacity:1;transform:none}.hero::before{animation:none;transform:none}html{scroll-behavior:auto}}
-  /* ═══ 2026-08-21 追加：動きの4部品 ═══
-     社長がお手本に挙げた3サイトに共通していた作りを、
-     この業種に合う強さに落として入れている。硬派な演出は教室サイトには合わないので、
-     速さと振れ幅は弱めにしてある。 */
-
-  /* 1. 見出しを行ごとに立ち上げる（今までは要素ごと1回ふわっと出すだけだった） */
-  .ln{display:block;overflow:hidden}
-  .ln>i{display:block;font-style:normal;transform:translateY(105%);
-    transition:transform 1.05s cubic-bezier(.19,1,.22,1)}
-  .in .ln>i,.ln.in>i{transform:translateY(0)}
-  .ln:nth-child(2)>i{transition-delay:.09s}
-  .ln:nth-child(3)>i{transition-delay:.18s}
-  html:not(.js) .ln>i{transform:none}
-
-  /* 2. マウスの丸（保護者が見る画面なので、色は柔らかく・細く） */
-  .cur{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;
-    background:var(--gold);pointer-events:none;z-index:9999;
-    transform:translate(-50%,-50%);opacity:.9}
-  .cur-r{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
-    border:1px solid rgba(179,147,76,.5);pointer-events:none;z-index:9998;
-    transform:translate(-50%,-50%);
-    transition:width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1),
-      background .45s ease,border-color .45s ease}
-  .cur-r.on{width:64px;height:64px;background:rgba(179,147,76,.10);border-color:rgba(179,147,76,.75)}
-  @media (hover:none),(max-width:820px){.cur,.cur-r{display:none}}
-
-  /* 3. 開いた瞬間。教室名がすっと出てから本編へ */
-  #ld{position:fixed;inset:0;z-index:9990;background:var(--bg);
-    display:flex;align-items:center;justify-content:center;
-    transition:opacity .7s ease,visibility .7s}
-  #ld .ld-in{text-align:center;opacity:0;transform:translateY(10px);
-    transition:opacity .9s ease,transform 1.1s cubic-bezier(.19,1,.22,1)}
-  #ld.go .ld-in{opacity:1;transform:none}
-  #ld .ld-n{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-    font-size:clamp(17px,2.6vw,25px);letter-spacing:.16em;color:var(--navy)}
-  #ld .ld-l{margin:15px auto 0;width:0;height:1px;background:var(--gold);
-    transition:width 1.15s cubic-bezier(.5,0,.1,1) .18s}
-  #ld.go .ld-l{width:min(190px,42vw)}
-  #ld.done{opacity:0;visibility:hidden}
-  body.ld-lock{overflow:hidden}
-  @media(prefers-reduced-motion:reduce){
-    #ld{display:none}
-    .ln>i{transform:none;transition:none}
-    .cur,.cur-r{display:none}
-  }
-  /* ═══ 追加ここまで ═══ */
 </style>
-<script>if ('IntersectionObserver' in window) document.documentElement.className += ' js';</script>
 </head>
-<body class="ld-lock">
-<div id="ld"><div class="ld-in">
-  <div class="ld-n">浅草リトミック・ピアノ教室</div>
-  <div class="ld-l"></div>
-</div></div>
+<body class="lock">
 
-<div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜浅草リトミック・ピアノ教室 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、写真・文章・料金はすべて仮の内容です</div>
+<div id="ld">
+  <div class="nm">浅草リトミック・ピアノ教室</div>
+  <div class="ln"></div>
+</div>
+
+<div class="bar">※これは見本ページです｜浅草リトミック・ピアノ教室 様の公式サイトではありません。Web制作 ゆたか がご提案用にお作りしたもので、文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
-  <div class="logo">浅草リトミック・ピアノ教室<small>ASAKUSA MUSIC</small></div>
-  <nav>
-    <a href="#target">こんな方へ</a>
-    <a href="#method">教室の理念</a>
-    <a href="#lesson">レッスン</a>
-    <a href="#teacher">講師</a>
-    <a href="#reserve" class="cta">体験レッスン</a>
-  </nav>
+  <div class="wrap">
+    <a href="#top" class="logo">浅草リトミック・ピアノ教室</a>
+    <nav>
+      <a href="#target">こんな方へ</a>
+      <a href="#lesson">レッスン</a>
+      <a href="#teacher">講師</a>
+      <a href="#access">教室のご案内</a>
+    </nav>
+  </div>
 </header>
 
-<!-- hero -->
-<section class="hero">
-  <div class="hero-inner">
-    <span class="eyebrow">東京都台東区 ｜ ピアノ・リトミック教室</span>
-    <h1 class="mincho">音で遊ぶことから、<br><span>ピアノ</span>へつなぐ。</h1>
-    <p>はじめはリトミックで音を楽しみ、育ってきた耳と指でピアノへ。浅草リトミック・ピアノ教室は、その橋渡しをていねいに行う教室です。お子さまのペースを何より大切にします。</p>
-    <div class="hero-cta">
-      <a href="#reserve" class="btn btn-primary">体験レッスンを申し込む →</a>
-      <a href="#lesson" class="btn btn-ghost">レッスンを見る</a>
+<main id="top">
+  <div class="hero">
+    <canvas id="art" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="eye" id="eye">ASAKUSA MUSIC ・ 東京都台東区</span>
+      <h1 id="h1">音を、からだで<br>感じる。</h1>
+      <p class="sub" id="sub">この線は、ピアノの弦です。画像でも動画でもありません。
+        弦の揺れを、いまこの画面の中で計算しています。<br>触れると、その弦が鳴ります。</p>
     </div>
-    <div class="hero-badges">
-      <span>♪ <b>園児〜大人</b>まで</span>
-      <span>♪ <b>リトミック研究センター</b>認定教室</span>
-      <span>♪ 台東区</span>
-    </div>
+    <div class="scroll" id="scr">SCROLL</div>
   </div>
-</section>
 
-<!-- target -->
-<section class="target" id="target">
-  <div class="sec-head reveal"><span class="en">FOR YOU</span><h2 class="mincho">こんな方へ</h2></div>
-  <div class="tg-grid">
-    <div class="tg reveal"><span class="ic">♪</span><p>子どもに、基礎からしっかりピアノを習わせたい</p></div>
-    <div class="tg reveal d1"><span class="ic">♪</span><p>楽譜を自分で読めるようになってほしい</p></div>
-    <div class="tg reveal d2"><span class="ic">♪</span><p>大人になった今、あこがれのピアノを始めたい</p></div>
-    <div class="tg reveal"><span class="ic">♪</span><p>昔ならった曲を、もう一度自分の手で弾きたい</p></div>
-    <div class="tg reveal d1"><span class="ic">♪</span><p>発表会など、目標に向かう経験をさせたい</p></div>
-    <div class="tg reveal d2"><span class="ic">♪</span><p>一人ひとりのペースで、無理なく続けたい</p></div>
-  </div>
-  <p class="tg-foot reveal mincho">年齢も経験も、関係ありません。<b>弾ける楽しさ</b>を、一緒に育てていきましょう。</p>
-</section>
-
-<!-- method / policy -->
-<section class="method" id="method">
-  <div class="mth-wrap">
-    <div class="mth-ph reveal"><img src="images/piano.jpg" alt="レッスン室のピアノ（イメージ）"></div>
-    <div class="mth-info reveal">
-      <span class="en">OUR POLICY</span>
-      <h2 class="mincho">音楽を、<br>「自分のもの」に。</h2>
-      <p>大切にしているのは、レッスンの時間だけで終わらない力です。自分で楽譜を読み、自分の手で音にできるようになること。だからこそ、いちばん最初の導入期をていねいに積み重ねていきます。</p>
-      <p>一度身についた「読む・弾く」力は、一生の宝物です。レッスンを離れたあとも、ずっと自分で音楽を楽しんでいける——そんな力を、お一人おひとりに手渡していきます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- lesson -->
-<section class="lesson" id="lesson">
-  <div class="sec-head reveal"><span class="en">LESSON</span><h2 class="mincho">レッスンのご案内</h2><p>年齢や目的に合わせて、無理なく続けられます</p></div>
-  <div class="l-grid">
-    <div class="lcard reveal">
-      <div class="mic">🎵</div>
-      <h3 class="mincho">園児グループレッスン</h3>
-      <p>お友だちと一緒に、音楽の楽しさを感じるところから。リズムや音感を、遊びの中で自然に育てていきます。</p>
-      <span class="tag">幼児</span>
-    </div>
-    <div class="lcard reveal d1">
-      <div class="mic">🎹</div>
-      <h3 class="mincho">子ども個人レッスン</h3>
-      <p>一人ひとりのペースに合わせて。楽譜を読む力・書く力・弾く力を、基礎からていねいに積み上げます。</p>
-      <span class="tag">小学生〜</span>
-    </div>
-    <div class="lcard reveal d2">
-      <div class="mic">🎶</div>
-      <h3 class="mincho">大人の個人レッスン</h3>
-      <p>「昔あこがれていた」「もう一度弾きたい」。大人になった今こそ、自分のペースでピアノを楽しめます。</p>
-      <span class="tag">大人・初心者歓迎</span>
-    </div>
-  </div>
-  <p class="sample-inline reveal">※コース内容はデザイン案の一例です。実際のレッスン・料金に差し替えてお納めします。</p>
-</section>
-
-<!-- reasons -->
-<section class="reasons">
-  <div class="sec-head reveal"><span class="en">REASON</span><h2 class="mincho">選ばれる3つの理由</h2></div>
-  <div class="rs-grid">
-    <div class="rs reveal">
-      <div class="no">REASON 01</div>
-      <div class="ic">🌱</div>
-      <h3 class="mincho">導入期をていねいに</h3>
-      <p>最初の「読む・書く・弾く」の土台づくりを、何より大切にします。ここでの積み重ねが、一生ものの力になります。</p>
-    </div>
-    <div class="rs reveal d1">
-      <div class="no">REASON 02</div>
-      <div class="ic">🎯</div>
-      <h3 class="mincho">一人ひとりに合わせて</h3>
-      <p>年齢も経験も十人十色。その子・その方に合ったペースと教材で、無理なく、着実に進めていきます。</p>
-    </div>
-    <div class="rs reveal d2">
-      <div class="no">REASON 03</div>
-      <div class="ic">📱</div>
-      <h3 class="mincho">スマホで、すぐ体験申し込み</h3>
-      <p>気になったその場で、スマホから体験レッスンのお申し込みができます。お問い合わせは教室へ直接メールで届きます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- teacher -->
-<section class="teacher" id="teacher">
-  <div class="tc-wrap">
-    <div class="tc-photo reveal">
-      <div class="note" aria-hidden="true">♪</div>
-      <span>PHOTO ─ 講師（お写真に差し替え）</span>
-    </div>
-    <div class="tc-info reveal">
-      <span class="role">主宰・講師</span>
-      <h3 class="mincho">（先生のお名前が入ります）<small>お打ち合わせで差し替えます</small></h3>
-      <span class="lic">（ご経歴・お持ちの資格が入ります）</span>
-      <p>ここには先生ご自身のごあいさつが入ります。どんな思いで教室を続けてこられたか、どんなお子さん・大人の方に来てほしいか——先生の言葉がそのまま、いちばんの決め手になります。<br><span style="font-size:12.5px;color:#6d7488">※この欄はデザイン案のため空けてあります。お名前・ご経歴・お写真は、いただいた内容に差し替えてお納めします。</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- voice -->
-<section class="voice">
-  <div class="sec-head reveal"><span class="en">VOICE</span><h2 class="mincho">生徒さん・保護者の声</h2></div>
-  <div class="v-grid">
-    <div class="vcard reveal">
-      <div class="stars">★★★★★</div>
-      <p>楽譜を自分で読めるようになり、家でも進んで練習するように。導入のていねいさに感謝しています。</p>
-      <div class="who">小学生の保護者</div>
-    </div>
-    <div class="vcard reveal d1">
-      <div class="stars">★★★★★</div>
-      <p>大人になってから始めましたが、あこがれの曲が弾けるように。自分のペースで見てもらえて安心です。</p>
-      <div class="who">50代・女性</div>
-    </div>
-    <div class="vcard reveal d2">
-      <div class="stars">★★★★★</div>
-      <p>年1回の発表会が、子どもの大きな目標に。人前で弾く経験が、自信につながっています。</p>
-      <div class="who">年中の保護者</div>
-    </div>
-  </div>
-  <p class="sample-inline reveal">※掲載内容はデザイン案の一例です。実際の生徒さんの声に差し替えてお納めします。</p>
-</section>
-
-<!-- reserve -->
-<section class="reserve" id="reserve">
-  <div class="sec-head reveal"><span class="en">TRIAL LESSON</span><h2 class="mincho">体験レッスンのお申し込み</h2></div>
-  <p class="rsv-sub reveal">まずは体験レッスンから。お子さまも、大人の方も、お気軽にどうぞ。</p>
-  <form class="reveal" id="rsvForm" novalidate>
-    <div class="frow-2">
-      <div class="frow"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 花子" required></div>
-      <div class="frow"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="mail" placeholder="you@example.com" required></div>
-    </div>
-    <div class="frow-2">
-      <div class="frow"><label>どなたが習われますか</label>
-        <select name="who">
-          <option value="">選択してください</option>
-          <option>園児（グループ）</option>
-          <option>お子さま（個人）</option>
-          <option>大人（個人）</option>
-          <option>相談したい</option>
-        </select>
-      </div>
-      <div class="frow"><label>ピアノのご経験</label>
-        <select name="exp">
-          <option value="">選択してください</option>
-          <option>はじめて</option>
-          <option>昔ならっていた</option>
-          <option>今もつづけている</option>
-        </select>
+  <section id="target">
+    <div class="wrap">
+      <div class="head rv"><span class="en">FOR YOU</span><h2>こんな方へ</h2></div>
+      <div class="three">
+        <div class="rv"><h3>お子さまに</h3>
+          <p>基礎からしっかり習わせたい。楽譜を自分で読めるようになってほしい。
+            人前で弾く経験をさせたい。</p></div>
+        <div class="rv d1"><h3>大人の方に</h3>
+          <p>昔ならった曲をもう一度。まったくの初めてから。
+            自分のペースで、あせらず続けたい。</p></div>
+        <div class="rv d2"><h3>再開される方に</h3>
+          <p>ブランクがあっても大丈夫です。指は思っているより覚えています。
+            まずは一曲、弾ける形に戻すところから。</p></div>
       </div>
     </div>
-    <div class="frow"><label>ご質問・ご希望（任意）</label><textarea name="note" rows="3" placeholder="ご希望の曜日や、こうなりたいという目標など、ご自由にどうぞ"></textarea></div>
-    <button type="submit" class="submit">この内容で申し込む</button>
-    <p class="rsv-ok" id="rsvOk">♪ 体験レッスンのお申し込みを受け付けました。教室より折り返しご連絡いたします。（※これはデザイン見本です）</p>
-  </form>
-  <p class="rsv-tech reveal">🔒 入力いただいた内容は、教室へ直接メールで届く仕組みです。ホームページ本体とは別に管理されるため、サイトを更新しても情報が消えることはありません。</p>
-</section>
+  </section>
 
-<!-- access -->
-<section class="access">
-  <div class="sec-head reveal"><span class="en">ACCESS</span><h2 class="mincho">教室のご案内</h2></div>
-  <div class="acc-wrap">
-    <table class="info reveal">
-      <tr><th>教室名</th><td>浅草リトミック・ピアノ教室</td></tr>
-      <tr><th>エリア</th><td>東京都台東区</td></tr>
-      <tr><th>レッスン</th><td>園児グループ・子ども個人・大人個人</td></tr>
-      <tr><th>発表会</th><td>年1回</td></tr>
-      <tr><th>ご予約</th><td>お問い合わせ・体験レッスンから</td></tr>
-    </table>
-    <div class="map-ph reveal">MAP ─ ここにGoogleマップが入ります</div>
-  </div>
-  <p class="sample-inline reveal">※教室の所在地・レッスン時間などの詳細は、お打ち合わせの内容に差し替えてお納めします。</p>
-</section>
+  <section id="method">
+    <div class="wrap">
+      <div class="head rv"><span class="en">METHOD</span><h2>音楽を、「自分のもの」に。</h2></div>
+      <div class="two">
+        <figure class="rv"><img src="./images/hero-rythmique.jpg" alt="レッスンのようす" loading="lazy"></figure>
+        <div class="rv d1">
+          <h3>弾けた、で<br>終わらせない。</h3>
+          <p>譜面のとおりに指が動くことと、音楽が自分のものになることは別です。
+            浅草リトミック・ピアノ教室では、次の一音をどう鳴らしたいか、そこを一緒に探します。</p>
+          <p>正解をなぞる時間ではなく、選ぶ時間にしたいと思っています。
+            だから、うまくいかない日も含めて、そのまま持ってきてください。</p>
+          <div class="mark">東京都台東区 ・ ピアノ・リトミック教室 ・ 体験レッスン受付中</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="wrap">
+      <div class="head rv"><span class="en">LESSON</span><h2>レッスンのご案内</h2></div>
+      <div class="three">
+        <div class="rv"><h3>お子さまコース</h3><ul>
+          <li>月3回・30分<span>7,000円</span></li>
+          <li>月4回・30分<span>8,500円</span></li>
+          <li>月3回・45分<span>9,500円</span></li></ul>
+          <p style="margin-top:var(--s2)">年齢とペースに合わせて、時間を選べます。</p></div>
+        <div class="rv d1"><h3>大人コース</h3><ul>
+          <li>月2回・45分<span>8,000円</span></li>
+          <li>月3回・45分<span>11,000円</span></li>
+          <li>1回のみ<span>4,000円</span></li></ul>
+          <p style="margin-top:var(--s2)">お仕事の都合に合わせて、日程を調整できます。</p></div>
+        <div class="rv d2"><h3>そのほか</h3><ul>
+          <li>体験レッスン<span>1,000円</span></li>
+          <li>入会金<span>5,000円</span></li>
+          <li>発表会（年1回・任意）<span>別途</span></li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reason">
+    <div class="wrap">
+      <div class="head rv"><span class="en">REASON</span><h2>選ばれる三つの理由</h2></div>
+      <div class="three">
+        <div class="rv"><h3>ひとりずつ違う進め方</h3>
+          <p>同じ教材を同じ順番で、ということはしません。
+            その方が今いちばん弾きたい曲から入ることもあります。</p></div>
+        <div class="rv d1"><h3>おうちでの練習も一緒に</h3>
+          <p>レッスンの最後に、次の一週間で何をするかをひとつだけ決めます。
+            多すぎると続かないからです。</p></div>
+        <div class="rv d2"><h3>発表の場があります</h3>
+          <p>年に一度、小さな発表会を開いています。参加は自由です。
+            人前で弾くと、ふしぎと上達します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teacher">
+    <div class="wrap">
+      <div class="head rv"><span class="en">TEACHER</span><h2>講師のご紹介</h2></div>
+      <div class="two">
+        <div class="rv">
+          <h3>（お名前が入ります）</h3>
+          <p>※ ここには講師のご紹介が入ります。ご経歴、音楽を始めたきっかけ、
+            レッスンで大切にされていること——このあたりを3〜5行いただければ、こちらで整えます。</p>
+          <p>お写真をお持ちでしたら、右側に入ります。お持ちでなければ、このままでも構いません。</p>
+          <div class="mark">ASAKUSA MUSIC ・ 台東区</div>
+        </div>
+        <div class="rv d1">
+          <div style="border:1px solid var(--hair);padding:clamp(24px,4vw,44px)">
+            <h3 style="font-size:var(--t-3);margin-bottom:var(--s3)">生徒さんの声</h3>
+            <p style="font-size:var(--t-s);margin-bottom:var(--s3)">「子どもが自分から練習するようになりました。
+              先生が毎回ひとつだけ宿題を出してくださるので、無理がないみたいです。」<br>
+              <span style="color:var(--dim);font-size:var(--t-x)">— 小2のお母さま</span></p>
+            <p style="font-size:var(--t-s)">「30年ぶりに再開しました。指は動かないのに、
+              曲は覚えているものですね。今は月に2回、楽しみに通っています。」<br>
+              <span style="color:var(--dim);font-size:var(--t-x)">— 50代・女性</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="wrap">
+      <div class="head rv"><span class="en">ACCESS</span><h2>教室のご案内</h2></div>
+      <div class="info">
+        <div class="rv"><dl>
+          <dt>教室名</dt><dd>浅草リトミック・ピアノ教室</dd>
+          <dt>所在地</dt><dd>東京都台東区</dd>
+          <dt>レッスン</dt><dd>ピアノ・リトミック教室</dd>
+          <dt>体験</dt><dd>1,000円（30分）</dd>
+          <dt>駐車場</dt><dd>あり</dd>
+          <dt>お問い合わせ</dt><dd>メールにて承ります</dd>
+        </dl></div>
+        <div class="rv d1">
+          <p class="note" style="margin-top:0">このページは、浅草リトミック・ピアノ教室 様へのご提案として
+            Web制作 ゆたか がお作りした見本です。文章・料金・写真はすべて仮のもので、
+            実際の内容とは異なります。ご希望に合わせて、すべて差し替えられます。<br><br>
+            背景の線は、ピアノの弦です。画像でも動画でもなく、
+            弦の揺れをその場で計算しています。触れると、その弦が鳴ります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  <div class="fmark mincho">浅草リトミック・ピアノ教室</div>
-  <div class="fsub">ASAKUSA MUSIC</div>
-  <p class="fnote">このページは Web制作 ゆたか が 浅草リトミック・ピアノ教室 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>浅草リトミック・ピアノ教室 様の公式サイトではありません</b>。<br>掲載の文章・料金・写真はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、お手数ですがこのページの送り主までご連絡ください。すぐに削除いたします。</p>
+  <div class="wrap">
+    <span class="fn">浅草リトミック・ピアノ教室</span>
+    <span>ご提案の見本 ・ Web制作 ゆたか</span>
+  </div>
 </footer>
 
-<script>
-  var hd=document.getElementById('hd');
-  var onScroll=function(){hd.classList.toggle('scrolled',window.scrollY>40)};
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var fitHero=function(){document.documentElement.style.setProperty('--hd-h',hd.offsetHeight+'px');};
-  fitHero();window.addEventListener('resize',fitHero);window.addEventListener('load',fitHero);
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-  },{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});},3000);
-  document.getElementById('rsvForm').addEventListener('submit',function(ev){
-    ev.preventDefault();
-    document.getElementById('rsvOk').classList.add('show');
-    this.querySelector('button').textContent='送信しました';
-  });
-</script>
-<!-- sample-bar patched 2026-08-04 -->
-<script>
-/* 2026-08-04 注記バーを最後まで残す。ヘッダーはバーの実寸だけ下げて貼り付ける */
-(function(){var b=document.querySelector('.sample-bar');if(!b)return;
-var f=function(){document.documentElement.style.setProperty('--bar-h',b.offsetHeight+'px')};
-f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
-</script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-  /* ═══ 2026-08-21 追加：動きの4部品 ═══ */
+(function(){
+  "use strict";
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ═══ 弦の振動 ═══
+     ピアノの弦を、1本ずつ計算している。
+       ① 弦を細かく分けて、それぞれの縦のずれを持つ
+       ② 波動方程式（となりとの差から加速度を出す）で毎フレーム解く
+       ③ 両端は固定なので、波は跳ね返って重なり、定在波になる
+     ときどき弦が弾かれ、揺れは少しずつ収まる。触れた弦は、そこから鳴る。
+     模様を描いているのではなく、弦の動きそのものを解いている。 */
   (function(){
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var c=document.getElementById('art'); if(!c) return;
+    var ctx=c.getContext('2d',{alpha:false}); if(!ctx){c.style.background='#0b0d14';return;}
+    var W=0,H=0,DPR=1,strings=[],N=0;
+    var SEG=190;
 
-    /* 開いた瞬間 → 本編へ。読み込みが速くても最低0.9秒は見せる（一瞬すぎると演出に見えない） */
-    var ld = document.getElementById('ld');
-    function openPage(){
-      if(!ld) return;
-      ld.classList.add('done');
-      document.body.classList.remove('ld-lock');
-      setTimeout(function(){ if(ld.parentNode) ld.parentNode.removeChild(ld); }, 800);
-      lineIn(document.querySelector('.hero'));
-    }
-    if(reduce){ document.body.classList.remove('ld-lock'); }
-    else {
-      requestAnimationFrame(function(){ ld && ld.classList.add('go'); });
-      var t0 = Date.now();
-      window.addEventListener('load', function(){
-        setTimeout(openPage, Math.max(0, 1500 - (Date.now() - t0)));
-      });
-      setTimeout(openPage, 4000);   /* 画像が重いときの保険 */
-    }
-
-    /* 見出しを行に割る。<br> をそのまま行の区切りとして使う */
-    function splitH(el){
-      if(!el || el.dataset.ln) return;
-      var parts = el.innerHTML.split(/<br\s*\/?>/i);
-      if(parts.length < 1) return;
-      el.innerHTML = parts.map(function(x){
-        return '<span class="ln"><i>' + x + '</i></span>';
-      }).join('');
-      el.dataset.ln = '1';
-    }
-    document.querySelectorAll('.hero h1, .sec-head h2, .method h2').forEach(splitH);
-
-    function lineIn(scope){
-      (scope || document).querySelectorAll('.ln').forEach(function(l){ l.classList.add('in'); });
-    }
-
-    /* 画面に入った見出しから順に立ち上げる */
-    if('IntersectionObserver' in window && !reduce){
-      var io2 = new IntersectionObserver(function(es){
-        es.forEach(function(e){
-          if(e.isIntersecting){ lineIn(e.target); io2.unobserve(e.target); }
+    function build(){
+      strings=[];
+      N=Math.max(7, Math.min(13, Math.round(H/DPR/78)));
+      for(var i=0;i<N;i++){
+        var u=new Float32Array(SEG), v=new Float32Array(SEG);
+        strings.push({
+          u:u, v:v,
+          y:H*(0.10+ (i+0.5)/N*0.80),
+          /* 低い弦ほど太く、ゆっくり揺れる（実際のピアノと同じ向き） */
+          k:0.30+ (i/(N-1))*0.42,
+          w:(2.9-(i/(N-1))*1.6)*DPR,
+          amp:(1.0-(i/(N-1))*0.45),
+          next:Math.random()*2.2
         });
-      }, {threshold:.2});
-      document.querySelectorAll('.sec-head, .method h2').forEach(function(el){ io2.observe(el); });
-      setTimeout(function(){ lineIn(document); }, 5000);   /* 保険 */
-    } else {
-      lineIn(document);
+      }
+      /* 開いた時点で、何本かは鳴っている状態にしておく（静止していると弦に見えない） */
+      for(var q=0;q<N;q++){
+        if(q%2===0) pluck(strings[q], 30+((Math.random()*(SEG-60))|0), (4.0+Math.random()*3.0)*DPR*strings[q].amp);
+      }
+      for(var w2=0;w2<40;w2++) step(0.016);
+    }
+    function size(){
+      DPR=Math.min(devicePixelRatio||1,2);
+      var w=Math.round(c.clientWidth*DPR),h=Math.round(c.clientHeight*DPR);
+      if(w===W&&h===H) return;
+      W=w;H=h;c.width=W;c.height=H;build();
     }
 
-    /* マウスの丸 */
-    if(!reduce && window.matchMedia('(hover:hover)').matches){
-      var d=document.createElement('div'); d.className='cur';
-      var r=document.createElement('div'); r.className='cur-r';
-      document.body.appendChild(d); document.body.appendChild(r);
-      var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
-      addEventListener('mousemove',function(e){
-        mx=e.clientX; my=e.clientY;
-        d.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';
-      },{passive:true});
-      (function loop(){
-        rx+=(mx-rx)*.17; ry+=(my-ry)*.17;
-        r.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
-        requestAnimationFrame(loop);
-      })();
-      document.querySelectorAll('a,button,input,textarea,select,.card,.tg').forEach(function(el){
-        el.addEventListener('mouseenter',function(){ r.classList.add('on'); });
-        el.addEventListener('mouseleave',function(){ r.classList.remove('on'); });
-      });
+    function pluck(S, at, power){
+      /* 弾いた点を中心に、山をひとつ作る */
+      var w=14;
+      for(var i=-w;i<=w;i++){
+        var j=at+i; if(j<1||j>=SEG-1) continue;
+        S.u[j]+=Math.cos(i/w*Math.PI/2)*power;
+      }
     }
 
-    /* 慣性スクロール。ページ内リンクもここを通す */
-    if(window.Lenis && !reduce){
-      var le = new Lenis({duration:1.1, smoothWheel:true,
-        easing:function(x){ return Math.min(1, 1.001 - Math.pow(2, -10*x)); }});
-      requestAnimationFrame(function raf(t){ le.raf(t); requestAnimationFrame(raf); });
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click',function(ev){
-          var el=document.querySelector(a.getAttribute('href'));
-          if(el){ ev.preventDefault(); le.scrollTo(el,{offset:-70,duration:1.3}); }
-        });
-      });
+    var mx=-9999,my=-9999;
+    addEventListener('mousemove',function(e){
+      var rc=c.getBoundingClientRect();
+      mx=(e.clientX-rc.left)*DPR; my=(e.clientY-rc.top)*DPR;
+      /* 近い弦を、そっと鳴らす */
+      for(var i=0;i<N;i++){
+        var S=strings[i];
+        if(Math.abs(my-S.y)<26*DPR){
+          var at=Math.round(mx/W*(SEG-1));
+          if(at>1&&at<SEG-1) pluck(S, at, 1.6*DPR);
+        }
+      }
+    },{passive:true});
+
+    var vis=true;
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:0}).observe(c);
     }
+
+    function step(dt){
+      for(var i=0;i<N;i++){
+        var S=strings[i], u=S.u, v=S.v;
+        /* ときどき、ひとりでに弾かれる */
+        S.next-=dt;
+        if(S.next<=0){
+          S.next=2.6+Math.random()*6.5;
+          pluck(S, 20+((Math.random()*(SEG-40))|0), (3.2+Math.random()*3.4)*DPR*S.amp);
+        }
+        /* ② 波動方程式。となりとの差が、そのまま加速度になる */
+        for(var j=1;j<SEG-1;j++){
+          var acc=(u[j-1]+u[j+1]-2*u[j])*S.k;
+          v[j]=(v[j]+acc)*0.9965;      /* 少しずつ減衰する＝音が消えていく */
+        }
+        for(var j2=1;j2<SEG-1;j2++) u[j2]+=v[j2];
+        u[0]=0; u[SEG-1]=0;            /* ③ 両端は固定 */
+      }
+    }
+
+    function draw(){
+      var g=ctx.createLinearGradient(0,0,W*0.4,H);
+      g.addColorStop(0,'#0e1119'); g.addColorStop(1,'#080a10');
+      ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+
+      for(var i=0;i<N;i++){
+        var S=strings[i], u=S.u;
+        /* 揺れているほど明るい＝いま鳴っている弦がわかる */
+        var e=0; for(var j=0;j<SEG;j+=4) e+=Math.abs(u[j]);
+        e=Math.min(1, e/(SEG/4)/(7*DPR));
+        ctx.beginPath();
+        for(var j2=0;j2<SEG;j2++){
+          var x=j2/(SEG-1)*W, y=S.y+u[j2];
+          if(j2===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.strokeStyle='rgba('+Math.round(168+e*87)+','+Math.round(154+e*86)+','+
+          Math.round(126+e*64)+','+(0.34+e*0.56).toFixed(3)+')';
+        ctx.lineWidth=S.w*(1+e*0.5);
+        ctx.lineCap='round';
+        ctx.stroke();
+        /* 強く鳴っている弦には、うっすら光を乗せる */
+        if(e>0.16){
+          ctx.strokeStyle='rgba(214,178,102,'+((e-0.16)*0.50).toFixed(3)+')';
+          ctx.lineWidth=S.w*3.2; ctx.stroke();
+        }
+      }
+      /* 見出し側を落として、文字を読みやすく保つ */
+      var g2=ctx.createLinearGradient(0,0,W*0.86,H*0.4);
+      g2.addColorStop(0,'rgba(11,13,20,.90)');
+      g2.addColorStop(.55,'rgba(11,13,20,.52)');
+      g2.addColorStop(1,'rgba(11,13,20,.10)');
+      ctx.fillStyle=g2; ctx.fillRect(0,0,W,H);
+    }
+
+    if(reduce){ size(); for(var i=0;i<260;i++) step(0.016); draw(); return; }
+    var last=performance.now();
+    (function f(now){
+      requestAnimationFrame(f);
+      if(!vis) return;
+      size();
+      var dt=Math.min((now-last)/1000,0.05); last=now;
+      step(dt); step(dt);      /* 1フレームに2回進めると、弦の張りが出る */
+      draw();
+    })(last);
   })();
-  /* ═══ 追加ここまで ═══ */
+
+  var h1=document.getElementById('h1');
+  if(h1){
+    h1.innerHTML=h1.innerHTML.split(/<br\s*\/?>/i)
+      .map(function(x){return '<span class="l"><i>'+x.trim()+'</i></span>';}).join('');
+  }
+  var ld=document.getElementById('ld');
+  function open_(){
+    if(!ld) return;
+    ld.classList.add('done');
+    document.body.classList.remove('lock');
+    setTimeout(function(){ if(ld.parentNode) ld.parentNode.removeChild(ld); },1000);
+    if(h1) h1.classList.add('in');
+    ['eye','sub','scr'].forEach(function(id){
+      var e=document.getElementById(id); if(e) e.classList.add('in');
+    });
+  }
+  if(reduce){ document.body.classList.remove('lock'); }
+  else{
+    requestAnimationFrame(function(){ ld && ld.classList.add('go'); });
+    var _t0=Date.now();
+    addEventListener('load',function(){ setTimeout(open_, Math.max(0,1900-(Date.now()-_t0))); });
+    setTimeout(open_,4600);
+  }
+  (function(){
+    var bar=document.querySelector('.bar');
+    function fit(){ if(bar) document.documentElement.style.setProperty('--bar-h', bar.offsetHeight+'px'); }
+    fit(); addEventListener('resize',fit); addEventListener('load',fit);
+  })();
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    },{threshold:.16});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');}); },5200);
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+  var hd=document.getElementById('hd');
+  function onS(){ hd.classList.toggle('on', scrollY>60); }
+  addEventListener('scroll',onS,{passive:true}); onS();
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    var d=document.createElement('div');d.className='cur';
+    var rr=document.createElement('div');rr.className='cur-r';
+    document.body.appendChild(d);document.body.appendChild(rr);
+    var cx=innerWidth/2,cy=innerHeight/2,rx=cx,ry=cy;
+    addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;
+      d.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';},{passive:true});
+    (function loop(){rx+=(cx-rx)*.17;ry+=(cy-ry)*.17;
+      rr.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);})();
+    document.querySelectorAll('a,figure,li').forEach(function(el){
+      el.addEventListener('mouseenter',function(){rr.classList.add('on');});
+      el.addEventListener('mouseleave',function(){rr.classList.remove('on');});
+    });
+  }
+  if(window.Lenis && !reduce){
+    var le=new Lenis({duration:1.2,smoothWheel:true,
+      easing:function(x){return Math.min(1,1.001-Math.pow(2,-10*x));}});
+    requestAnimationFrame(function raf(t){le.raf(t);requestAnimationFrame(raf);});
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(ev){
+        var el=document.querySelector(a.getAttribute('href'));
+        if(el){ev.preventDefault();le.scrollTo(el,{offset:-64,duration:1.4});}
+      });
+    });
+  }
+
+})();
 </script>
 </body>
 </html>
