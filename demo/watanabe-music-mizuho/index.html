@@ -74,6 +74,23 @@ nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
   background:var(--acc);transition:width .5s var(--ease)}
 nav a:hover::after{width:100%}
 @media(max-width:760px){nav a:nth-child(n+3){display:none}}
+/* ── スマホのヘッダー崩れ対策（2026-08-22）
+   教室名が長いと2行に折り返し、その分だけメニューが押し出されて
+   文字が縦積みになっていた。教室名は1行に固定して収まらなければ「…」で切り、
+   メニュー側は縮まない・折り返さない、という優先順に変える。 */
+header .wrap{flex-wrap:nowrap}
+.logo{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav{flex:0 0 auto;white-space:nowrap;flex-wrap:nowrap}
+nav a{white-space:nowrap}
+@media(max-width:760px){
+  header .wrap{gap:12px}
+  .logo{font-size:.98rem;letter-spacing:.14em}
+  nav{gap:16px;font-size:var(--t-x);letter-spacing:.06em}
+}
+@media(max-width:400px){
+  .logo{font-size:.9rem;letter-spacing:.08em}
+  nav a:nth-child(n+2){display:none}
+}
 
 .hero{position:relative;min-height:calc(100svh - var(--bar-h,39px));
   display:flex;align-items:center;overflow:hidden}
