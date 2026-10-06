@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>夜市 YOICHI ｜ 妖の市で競り落とすカードゲーム（制作サンプル）</title>
+<meta name="description" content="クラウドファンディング後の一般販売ページの制作サンプルです。架空のカードゲーム「夜市 YOICHI」を題材に作成しました。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#f3ece0; --dim:#a79b86; --faint:#7a6f5c;
+  --bg:#0a0908; --bg2:#121009; --line:rgba(243,236,224,.13);
+  --gold:#d8a94b; --gold-l:#f3d79a; --gold-d:#9a6f22; --red:#b8372e;
+  --max:1120px; --pad:clamp(20px,5vw,44px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  line-height:1.9;letter-spacing:.02em;font-feature-settings:"palt"}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.mincho{font-family:"Shippori Mincho",serif}
+
+.sample-bar{background:#171309;border-bottom:1px solid var(--line);
+  padding:12px var(--pad);font-size:12px;line-height:1.7;color:var(--dim);text-align:center;position:relative;z-index:50}
+.sample-bar b{color:var(--gold-l);font-weight:700}
+
+header{position:sticky;top:0;z-index:40;background:rgba(10,9,8,.74);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .4s}
+header.on{border-bottom-color:var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:800;font-size:21px;letter-spacing:.2em}
+.logo span{color:var(--gold);font-size:11px;letter-spacing:.34em;margin-left:.7em;font-weight:500;
+  font-family:"Zen Kaku Gothic New",sans-serif}
+.hd a.cta{font-size:13px;font-weight:700;text-decoration:none;padding:9px 19px;border-radius:999px;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold-d));color:#1a1206;white-space:nowrap}
+
+/* ── ヒーロー（世界観の絵を全面に敷く） ── */
+.hero{position:relative;min-height:clamp(560px,92svh,880px);display:flex;align-items:flex-end;overflow:hidden;
+  padding:clamp(40px,8vw,84px) 0 clamp(44px,7vw,80px)}
+.hero-bg{position:absolute;inset:0;z-index:0;background:#0d1326}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,var(--bg) 4%,rgba(10,9,8,.88) 32%,rgba(10,9,8,.42) 66%,rgba(10,9,8,.55))}
+.hero .wrap{position:relative;z-index:1}
+.hero-copy{max-width:30em}
+.kicker{font-size:11.5px;letter-spacing:.34em;color:var(--gold);display:flex;align-items:center;gap:12px;
+  margin-bottom:22px;font-weight:500}
+.kicker::before{content:"";width:32px;height:1px;background:currentColor;opacity:.6}
+h1{font-family:"Shippori Mincho",serif;font-size:clamp(32px,7.4vw,60px);line-height:1.3;font-weight:800;
+  margin-bottom:22px;letter-spacing:.01em}
+h1 em{font-style:normal;color:var(--gold-l)}
+.lead{color:var(--dim);font-size:clamp(15px,1.9vw,17px);line-height:2.15;max-width:33em}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px;max-width:460px}
+@media(min-width:620px){.meta{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}}
+.meta div{border:1px solid var(--line);border-radius:11px;padding:11px 15px;font-size:12.5px;color:var(--dim);
+  line-height:1.5;background:rgba(10,9,8,.35)}
+.meta div b{display:block;color:var(--ink);font-size:16px;font-weight:700;margin-bottom:2px;
+  font-family:"Shippori Mincho",serif}
+
+section{padding:clamp(64px,11vw,128px) 0;position:relative;scroll-margin-top:78px}
+.sec-label{font-size:11px;letter-spacing:.34em;color:var(--gold);margin-bottom:16px;font-weight:500;
+  display:flex;align-items:center;gap:11px}
+.sec-label::before{content:"";width:26px;height:1px;background:currentColor;opacity:.55}
+h2{font-family:"Shippori Mincho",serif;font-size:clamp(24px,4.6vw,40px);line-height:1.45;font-weight:800;margin-bottom:20px}
+.sec-lead{color:var(--dim);max-width:40em;font-size:clamp(14.5px,1.7vw,16px);line-height:2.15}
+.note{font-size:12px;color:var(--faint);line-height:1.9}
+
+.rise{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.3,1),transform .9s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}}
+
+/* ── 遊び方の三手 ── */
+.steps3{display:grid;gap:14px;margin-top:44px;counter-reset:s}
+@media(min-width:760px){.steps3{grid-template-columns:repeat(3,1fr)}}
+.st{border:1px solid var(--line);border-radius:18px;padding:30px 24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0))}
+.st::before{counter-increment:s;content:counter(s);font-family:"Shippori Mincho",serif;font-size:50px;
+  font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold);opacity:.55;
+  display:block;margin-bottom:14px}
+.st b{display:block;font-size:17px;font-weight:700;margin-bottom:9px;font-family:"Shippori Mincho",serif}
+.st span{color:var(--faint);font-size:13.5px;line-height:1.95}
+
+/* ── 箱の中身（写真が安定しないので図で描く） ── */
+.parts{display:grid;gap:clamp(24px,4vw,44px);align-items:center;margin-top:44px}
+@media(min-width:860px){.parts{grid-template-columns:1fr .9fr}}
+.box-fig{border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,32px);aspect-ratio:7/5;
+  display:grid;place-items:center;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(216,169,75,.1),transparent 62%),var(--bg2)}
+.box-fig svg{width:100%;height:auto;max-height:100%}
+.parts ul{list-style:none;display:grid;gap:0}
+.parts li{display:flex;justify-content:space-between;gap:16px;padding:14px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+.parts li:first-child{border-top:1px solid var(--line)}
+.parts li b{font-weight:700}
+.parts li span{color:var(--gold-l);font-family:"Shippori Mincho",serif;font-size:16px;white-space:nowrap}
+
+/* ── 札（コードで描く。生成画像だと絵柄が毎回変わって商品にならない） ── */
+.fuda-stage{margin-top:44px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  padding:14px var(--pad) 18px;scrollbar-width:none}
+.fuda-stage::-webkit-scrollbar{display:none}
+.fuda-row{display:flex;gap:12px;width:max-content;margin-inline:auto}
+.fuda-item{display:flex;flex-direction:column;align-items:center;gap:11px}
+.fuda{width:clamp(112px,27vw,148px);aspect-ratio:63/88;position:relative;border-radius:9px;overflow:hidden;cursor:pointer;
+  background:linear-gradient(170deg,#1b2440,#0d1226 60%,#141a30);
+  box-shadow:0 16px 34px -16px rgba(0,0,0,.95), inset 0 0 0 1px rgba(216,169,75,.5);
+  transition:transform .5s cubic-bezier(.2,.8,.25,1), box-shadow .5s}
+.fuda-item:nth-child(odd) .fuda{rotate:-2.2deg}
+.fuda-item:nth-child(even) .fuda{rotate:2.2deg}
+.fuda:hover,.fuda:focus-visible{transform:translateY(-14px) scale(1.05) rotate(0deg);outline:none;
+  box-shadow:0 28px 54px -18px rgba(0,0,0,1), inset 0 0 0 1px rgba(243,215,154,.95)}
+.fuda svg{position:absolute;inset:0;width:100%;height:100%}
+.fuda-item .nm{font-family:"Shippori Mincho",serif;font-size:13px;color:var(--gold-l);letter-spacing:.14em}
+.fuda-note{text-align:center;color:var(--faint);font-size:12.5px;margin-top:10px}
+
+/* ── 手ざわり ── */
+.feel{display:grid;gap:clamp(24px,4vw,48px);align-items:center;margin-top:44px}
+@media(min-width:860px){.feel{grid-template-columns:1.05fr .95fr}}
+#feel.noimg .feel{grid-template-columns:1fr}
+.feel img{width:100%;border-radius:18px;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}
+.feel ul{list-style:none;display:grid;gap:18px}
+.feel li{border-left:2px solid var(--gold);padding-left:16px}
+.feel li b{display:block;font-size:15.5px;font-weight:700;margin-bottom:5px}
+.feel li span{color:var(--faint);font-size:13.5px;line-height:1.95}
+
+/* ── 比べる ── */
+.table-wrap{margin-top:40px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:15px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;letter-spacing:.1em;color:var(--dim);font-weight:500;background:rgba(255,255,255,.03)}
+thead th:nth-child(2){color:var(--gold-l)}
+tbody th{font-weight:500;color:var(--dim);width:36%}
+td:first-of-type{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+.mark{color:var(--gold);font-weight:900}
+@media(max-width:719px){
+  .table-wrap{border:0;border-radius:0}
+  table,thead,tbody,tr,th,td{display:block;width:auto}
+  thead{display:none}
+  tbody tr{border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px;
+    background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0))}
+  tbody th{width:auto;padding:0 0 14px;border:0;color:var(--ink);font-weight:700;font-size:15px}
+  tbody td{padding:0;border:0;font-size:14px;line-height:1.85}
+  tbody td::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:.12em;color:var(--faint);
+    margin-bottom:5px;font-weight:500}
+  tbody td:first-of-type{padding:12px 14px;border-radius:11px;background:rgba(216,169,75,.1);
+    border:1px solid rgba(216,169,75,.26);margin-bottom:10px}
+  tbody td:first-of-type::before{color:var(--gold)}
+  tbody td:last-of-type{padding:0 2px;color:var(--dim)}
+}
+
+.spec{margin-top:40px;border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:36% 1fr;gap:16px;padding:15px 2px;border-bottom:1px solid var(--line);font-size:14px}
+.spec dt{color:var(--dim);font-weight:500}
+
+.voices{display:grid;gap:14px;margin-top:40px}
+@media(min-width:760px){.voices{grid-template-columns:repeat(3,1fr)}}
+.voice{border:1px dashed var(--line);border-radius:16px;padding:24px;background:rgba(255,255,255,.015)}
+.voice .q{color:var(--faint);font-size:13.5px;line-height:2}
+.voice .w{margin-top:14px;font-size:12px;color:var(--faint);opacity:.8}
+
+.plans{display:grid;gap:14px;margin-top:44px}
+@media(min-width:880px){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{border:1px solid var(--line);border-radius:20px;padding:30px 26px;position:relative;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0))}
+.plan.best{border-color:rgba(216,169,75,.55);box-shadow:0 0 0 1px rgba(216,169,75,.18),0 24px 60px -30px rgba(216,169,75,.5)}
+.plan .badge{position:absolute;top:-11px;left:26px;font-size:11px;font-weight:700;letter-spacing:.08em;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#1a1206;padding:4px 13px;border-radius:999px}
+.plan .en{font-size:11px;letter-spacing:.26em;color:var(--faint)}
+.plan .nm{font-size:16.5px;font-weight:700;margin-top:10px;line-height:1.6;font-family:"Shippori Mincho",serif}
+.plan .pr{font-size:clamp(30px,5.4vw,38px);font-weight:900;margin-top:16px;letter-spacing:-.02em;
+  color:var(--gold-l);font-family:"Shippori Mincho",serif}
+.plan .pr small{font-size:.4em;font-weight:500;color:var(--dim);margin-left:.3em}
+.plan ul{list-style:none;margin-top:18px;display:grid;gap:9px;font-size:13.5px;color:var(--dim)}
+.plan li{display:flex;gap:9px;line-height:1.8}
+.plan li::before{content:"—";color:var(--gold);flex:none}
+.plan .go{margin-top:auto;padding-top:22px}
+.plan .go a{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:14.5px;padding:14px;
+  border-radius:12px;border:1px solid var(--line);color:var(--ink);transition:.25s}
+.plan.best .go a{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#1a1206;border-color:transparent}
+.plan .go a:hover{opacity:.88}
+
+.faq{margin-top:40px;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:20px 40px 20px 2px;position:relative;font-weight:700;font-size:15px;line-height:1.75}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:8px;top:28px;width:9px;height:9px;
+  border-right:1.6px solid var(--gold);border-bottom:1.6px solid var(--gold);rotate:45deg;transition:rotate .3s}
+details[open] summary::after{rotate:-135deg}
+details p{padding:0 2px 22px;color:var(--dim);font-size:14px;line-height:2.05}
+
+.order{background:var(--bg2);border-top:1px solid var(--line)}
+form{margin-top:36px;display:grid;gap:18px;max-width:620px}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+label i{font-style:normal;font-size:11px;color:var(--gold);margin-left:8px;font-weight:500}
+input,select,textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:rgba(255,255,255,.04);
+  border:1px solid var(--line);border-radius:11px;padding:14px}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(216,169,75,.5);outline-offset:1px}
+textarea{min-height:110px;resize:vertical}
+.submit{font:inherit;font-weight:700;font-size:16px;cursor:pointer;padding:17px;border:0;border-radius:12px;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#1a1206}
+footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:12.5px;color:var(--faint);line-height:2}
+footer b{color:var(--dim)}
+</style>
+</head>
+<body>
+
+<div class="sample-bar">
+  これは<b>ホームページ制作の見本</b>です。「夜市 YOICHI」は架空の商品で、数値・価格・お客様の声はすべて仮のものです。
+</div>
+
+<header id="hd">
+  <div class="wrap hd">
+    <div class="logo mincho">夜市<span>YOICHI</span></div>
+    <a class="cta" href="#price">価格を見る</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="img/art-market.jpg" alt="妖の夜市（サンプル画像）" width="1400" height="938" onerror="this.remove()">
+  </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="kicker">CARD GAME FOR 2–5 PLAYERS</div>
+      <h1>ほしいものは、<br><em>だまって競り落とす。</em></h1>
+      <p class="lead">
+        日が暮れると、どこからともなく市が立つ。売り手は妖、買い手もまた妖。
+        欲しい品に、いくら積むか。相手がいくら積んだかは、札を開くまで分かりません。
+        30分で終わる、静かな化かし合いのカードゲームです。
+      </p>
+      <div class="meta">
+        <div><b>2〜5人</b>あそべる人数</div>
+        <div><b>30分</b>1回の目安</div>
+        <div><b>10歳〜</b>対象年齢</div>
+        <div><b>112枚</b>カード枚数</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-label rise">HOW TO PLAY</div>
+    <h2 class="rise">覚えることは、三つだけ。</h2>
+    <p class="sec-lead rise">説明書を読み上げる時間は5分。1回目から勝負になります。</p>
+    <div class="steps3">
+      <div class="st rise"><b>品を並べる</b><span>場に品物の札を3枚めくります。壺、傘、面——どれも持ち主を待っています。</span></div>
+      <div class="st rise"><b>銭を伏せる</b><span>手持ちの銭札から1枚を選んで、伏せたまま出します。いくら積んだかは誰にも見えません。</span></div>
+      <div class="st rise"><b>いっせいに開く</b><span>いちばん高い銭が品を取ります。同じ額なら、両方とも取り損ねます。</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="parts">
+  <div class="wrap">
+    <div class="sec-label rise">COMPONENTS</div>
+    <h2 class="rise">箱の中身</h2>
+    <div class="parts">
+      <div class="box-fig rise">
+        <svg viewBox="0 0 420 300" role="img" aria-label="箱と札と木駒と布袋の図">
+          <defs>
+            <linearGradient id="bx" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#27325c"/><stop offset="1" stop-color="#0d1226"/></linearGradient>
+            <linearGradient id="cd" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2b3762"/><stop offset="1" stop-color="#121a33"/></linearGradient>
+          </defs>
+          <g>
+            <path d="M40 150 l80 -40 l150 0 l80 40 l-80 40 l-150 0 z" fill="url(#bx)" stroke="#d8a94b" stroke-opacity=".5"/>
+            <path d="M40 150 v62 l80 40 h150 l80 -40 v-62" fill="#0b1020" stroke="#d8a94b" stroke-opacity=".3"/>
+            <path d="M120 190 v62 M270 190 v62" stroke="#d8a94b" stroke-opacity=".18"/>
+            <path d="M152 142 q58 -24 116 0" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <path d="M152 152 q58 -24 116 0" fill="none" stroke="#d8a94b" stroke-opacity=".28"/>
+          </g>
+          <g transform="translate(34,30)">
+            <rect x="0" y="14" width="52" height="72" rx="4" fill="url(#cd)" stroke="#d8a94b" stroke-opacity=".45" transform="rotate(-9 26 50)"/>
+            <rect x="9" y="7" width="52" height="72" rx="4" fill="url(#cd)" stroke="#d8a94b" stroke-opacity=".6" transform="rotate(-3 35 43)"/>
+            <rect x="18" y="0" width="52" height="72" rx="4" fill="url(#cd)" stroke="#f3d79a" stroke-opacity=".8"/>
+            <circle cx="44" cy="30" r="13" fill="none" stroke="#f3d79a" stroke-opacity=".75"/>
+            <path d="M24 60 q10 -6 20 0 t20 0" fill="none" stroke="#d8a94b" stroke-opacity=".5"/>
+          </g>
+          <g transform="translate(296,36)" fill="none" stroke="#d8a94b" stroke-opacity=".7">
+            <path d="M14 46 q0 -20 14 -20 q14 0 14 20 q0 8 -14 8 q-14 0 -14 -8z"/>
+            <ellipse cx="28" cy="52" rx="16" ry="5"/>
+            <path d="M52 50 q0 -16 11 -16 q11 0 11 16 q0 7 -11 7 q-11 0 -11 -7z" stroke-opacity=".45"/>
+            <ellipse cx="63" cy="55" rx="13" ry="4" stroke-opacity=".45"/>
+          </g>
+          <g transform="translate(178,18)" fill="none" stroke="#d8a94b" stroke-opacity=".7">
+            <path d="M16 28 q18 -10 36 0 q12 26 2 50 q-20 10 -40 0 q-10 -24 2 -50z"/>
+            <path d="M16 28 q18 10 36 0"/>
+            <path d="M24 20 l6 8 M44 20 l-6 8"/>
+          </g>
+        </svg>
+      </div>
+      <ul>
+        <li class="rise"><b>品物札</b><span>60枚</span></li>
+        <li class="rise"><b>銭札</b><span>40枚</span></li>
+        <li class="rise"><b>妖札</b><span>12枚</span></li>
+        <li class="rise"><b>木駒</b><span>5個</span></li>
+        <li class="rise"><b>布袋</b><span>1枚</span></li>
+        <li class="rise"><b>説明書</b><span>1冊</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="wrap">
+    <div class="sec-label rise">ART</div>
+    <h2 class="rise">札の一枚一枚に、<br>絵がある。</h2>
+    <p class="sec-lead rise">60種類の品物すべてに、別々の絵を描き下ろしました。同じ札は1枚もありません。</p>
+  </div>
+  <div class="fuda-stage rise">
+    <div class="fuda-row">
+
+      <div class="fuda-item">
+        <div class="fuda" tabindex="0" aria-label="狐の面の札">
+          <svg viewBox="0 0 126 176" aria-hidden="true">
+            <defs>
+              <linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3560"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+              <radialGradient id="r0" cx="50%" cy="42%" r="52%"><stop offset="0" stop-color="#f3d79a" stop-opacity=".30"/><stop offset="1" stop-color="#f3d79a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="126" height="176" fill="url(#g0)"/><circle cx="63" cy="74" r="50" fill="url(#r0)"/>
+            <rect x="5" y="5" width="116" height="166" rx="5" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <rect x="9" y="9" width="108" height="158" rx="3" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <path d="M9 150 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".38"/>
+            <path d="M9 158 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <g fill="none" stroke="#f3d79a" stroke-width="1.6" stroke-opacity=".9">
+              <path d="M63 40 l20 10 q10 24 0 44 q-10 20 -20 20 q-10 0 -20 -20 q-10 -20 0 -44 z"/>
+              <path d="M50 56 q13 -6 26 0"/>
+              <circle cx="54" cy="68" r="3.4" fill="#b8372e" stroke="none"/>
+              <circle cx="72" cy="68" r="3.4" fill="#b8372e" stroke="none"/>
+              <path d="M58 88 q5 5 10 0"/>
+            </g>
+          </svg>
+        </div><span class="nm">狐の面</span>
+      </div>
+
+      <div class="fuda-item">
+        <div class="fuda" tabindex="0" aria-label="蛇の目傘の札">
+          <svg viewBox="0 0 126 176" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3560"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+              <radialGradient id="r1" cx="50%" cy="42%" r="52%"><stop offset="0" stop-color="#f3d79a" stop-opacity=".30"/><stop offset="1" stop-color="#f3d79a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="126" height="176" fill="url(#g1)"/><circle cx="63" cy="74" r="50" fill="url(#r1)"/>
+            <rect x="5" y="5" width="116" height="166" rx="5" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <rect x="9" y="9" width="108" height="158" rx="3" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <path d="M9 150 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".38"/>
+            <path d="M9 158 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <g fill="none" stroke="#f3d79a" stroke-width="1.6" stroke-opacity=".9">
+              <path d="M30 80 q33 -42 66 0 z"/><path d="M63 38 v76"/><path d="M63 114 q-8 0 -8 -7"/>
+              <path d="M41 80 q11 -14 22 0 q11 -14 22 0"/>
+            </g>
+          </svg>
+        </div><span class="nm">蛇の目傘</span>
+      </div>
+
+      <div class="fuda-item">
+        <div class="fuda" tabindex="0" aria-label="古壺の札">
+          <svg viewBox="0 0 126 176" aria-hidden="true">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3560"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+              <radialGradient id="r2" cx="50%" cy="42%" r="52%"><stop offset="0" stop-color="#f3d79a" stop-opacity=".30"/><stop offset="1" stop-color="#f3d79a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="126" height="176" fill="url(#g2)"/><circle cx="63" cy="74" r="50" fill="url(#r2)"/>
+            <rect x="5" y="5" width="116" height="166" rx="5" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <rect x="9" y="9" width="108" height="158" rx="3" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <path d="M9 150 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".38"/>
+            <path d="M9 158 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <g fill="none" stroke="#f3d79a" stroke-width="1.6" stroke-opacity=".9">
+              <path d="M52 44 h22 l-3 9 q17 11 17 30 q0 26 -25 26 q-25 0 -25 -26 q0 -19 17 -30 z"/>
+              <path d="M46 84 q17 7 34 0"/>
+            </g>
+          </svg>
+        </div><span class="nm">古壺</span>
+      </div>
+
+      <div class="fuda-item">
+        <div class="fuda" tabindex="0" aria-label="提灯の札">
+          <svg viewBox="0 0 126 176" aria-hidden="true">
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3560"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+              <radialGradient id="r3" cx="50%" cy="42%" r="52%"><stop offset="0" stop-color="#f3d79a" stop-opacity=".30"/><stop offset="1" stop-color="#f3d79a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="126" height="176" fill="url(#g3)"/><circle cx="63" cy="74" r="50" fill="url(#r3)"/>
+            <rect x="5" y="5" width="116" height="166" rx="5" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <rect x="9" y="9" width="108" height="158" rx="3" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <path d="M9 150 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".38"/>
+            <path d="M9 158 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <g fill="none" stroke="#f3d79a" stroke-width="1.6" stroke-opacity=".9">
+              <path d="M63 36 v8"/><rect x="50" y="44" width="26" height="6" rx="2"/>
+              <path d="M47 50 q-7 24 0 48 h32 q7 -24 0 -48 z"/>
+              <path d="M47 62 h32 M47 74 h32 M47 86 h32"/>
+              <rect x="50" y="98" width="26" height="6" rx="2"/>
+            </g>
+          </svg>
+        </div><span class="nm">提灯</span>
+      </div>
+
+      <div class="fuda-item">
+        <div class="fuda" tabindex="0" aria-label="鈴の札">
+          <svg viewBox="0 0 126 176" aria-hidden="true">
+            <defs>
+              <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3560"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+              <radialGradient id="r4" cx="50%" cy="42%" r="52%"><stop offset="0" stop-color="#f3d79a" stop-opacity=".30"/><stop offset="1" stop-color="#f3d79a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="126" height="176" fill="url(#g4)"/><circle cx="63" cy="74" r="50" fill="url(#r4)"/>
+            <rect x="5" y="5" width="116" height="166" rx="5" fill="none" stroke="#d8a94b" stroke-opacity=".55"/>
+            <rect x="9" y="9" width="108" height="158" rx="3" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <path d="M9 150 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".38"/>
+            <path d="M9 158 q14 -9 28 0 t28 0 t28 0 t24 0" fill="none" stroke="#d8a94b" stroke-opacity=".22"/>
+            <g fill="none" stroke="#f3d79a" stroke-width="1.6" stroke-opacity=".9">
+              <path d="M63 38 v8"/><circle cx="63" cy="74" r="26"/><path d="M45 84 h36"/><path d="M63 84 v14"/>
+              <circle cx="63" cy="74" r="4" fill="#b8372e" stroke="none"/>
+            </g>
+          </svg>
+        </div><span class="nm">鈴</span>
+      </div>
+
+    </div>
+  </div>
+  <div class="wrap"><p class="fuda-note rise">※ 札に触れると浮き上がります。横に動かすと残りの札が出ます。絵柄はデザイン案として描いた仮のものです。</p></div>
+</section>
+
+<section id="feel">
+  <div class="wrap">
+    <div class="sec-label rise">MATERIAL</div>
+    <h2 class="rise">手に取ったときに、<br>わかるもの。</h2>
+    <p class="sec-lead rise">何度も切る札だからこそ、紙と加工にお金をかけました。</p>
+    <div class="feel">
+      <img class="rise" src="img/art-foil.jpg" alt="箔押しの接写（サンプル画像）" loading="lazy"
+           onerror="this.remove();document.getElementById('feel').classList.add('noimg')">
+      <ul>
+        <li class="rise"><b>箔押しは、縁だけに</b><span>全面に押すと安く見えます。縁の波模様にだけ金箔を入れました。</span></li>
+        <li class="rise"><b>310g の黒芯紙</b><span>透けません。光にかざしても、裏の絵は分かりません。</span></li>
+        <li class="rise"><b>リネン仕上げ</b><span>布目の加工で、何度切っても指に張りつきません。</span></li>
+      </ul>
+    </div>
+    <p class="note rise" style="margin-top:14px">※ 仕様の説明はレイアウト確認用の仮の文です。</p>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-label rise">COMPARE</div>
+    <h2 class="rise">よくある競りゲームと、<br>どこが違うのか。</h2>
+    <div class="table-wrap rise">
+      <table>
+        <thead><tr><th>　</th><th>夜市 YOICHI</th><th>よくある競りゲーム</th></tr></thead>
+        <tbody>
+          <tr><th>競りのしかた</th><td data-l="夜市 YOICHI"><span class="mark">伏せて同時に開く</span></td><td data-l="よくある製品">順番に声をかけて吊り上げる</td></tr>
+          <tr><th>1回の長さ</th><td data-l="夜市 YOICHI"><span class="mark">30分</span></td><td data-l="よくある製品">60〜90分</td></tr>
+          <tr><th>説明の時間</th><td data-l="夜市 YOICHI">5分</td><td data-l="よくある製品">15〜20分</td></tr>
+          <tr><th>人数が減ったとき</th><td data-l="夜市 YOICHI">2人でも札の枚数を変えるだけ</td><td data-l="よくある製品">専用の2人用ルールが必要</td></tr>
+          <tr><th>勝ち筋</th><td data-l="夜市 YOICHI">読み合い</td><td data-l="よくある製品">資金の管理</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note rise" style="margin-top:14px">※ 比較欄の内容は、レイアウト確認のために置いた仮のものです。</p>
+  </div>
+</section>
+
+<section id="spec">
+  <div class="wrap">
+    <div class="sec-label rise">SPEC</div>
+    <h2 class="rise">仕様</h2>
+    <dl class="spec rise">
+      <div><dt>人数</dt><dd>2〜5人</dd></div>
+      <div><dt>対象年齢</dt><dd>10歳以上</dd></div>
+      <div><dt>1回の目安</dt><dd>約30分</dd></div>
+      <div><dt>カード枚数</dt><dd>112枚（品物60・銭40・妖12）</dd></div>
+      <div><dt>カードサイズ</dt><dd>63 × 88 mm</dd></div>
+      <div><dt>紙</dt><dd>310g 黒芯紙・リネン仕上げ</dd></div>
+      <div><dt>箱サイズ</dt><dd>102 × 146 × 38 mm</dd></div>
+      <div><dt>重さ</dt><dd>420 g</dd></div>
+      <div><dt>言語</dt><dd>日本語（説明書に英語併記）</dd></div>
+      <div><dt>生産</dt><dd>日本国内</dd></div>
+    </dl>
+    <p class="note rise" style="margin-top:14px">※ 数値はすべてレイアウト確認用の仮の値です。</p>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="sec-label rise">VOICE</div>
+    <h2 class="rise">遊んだ方の声は、ここに入ります。</h2>
+    <p class="sec-lead rise">実際に遊んでくださった方の感想を、届いた順に3〜6件ならべます。デザイン案の段階で、こちらが声を作って載せることはいたしません。</p>
+    <div class="voices">
+      <div class="voice rise"><p class="q">ここに遊んだ方のお声が入ります。ここに遊んだ方のお声が入ります。</p><p class="w">お名前 / ご年代</p></div>
+      <div class="voice rise"><p class="q">ここに遊んだ方のお声が入ります。ここに遊んだ方のお声が入ります。</p><p class="w">お名前 / ご年代</p></div>
+      <div class="voice rise"><p class="q">ここに遊んだ方のお声が入ります。ここに遊んだ方のお声が入ります。</p><p class="w">お名前 / ご年代</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="sec-label rise">PRICE</div>
+    <h2 class="rise">価格</h2>
+    <p class="sec-lead rise">一般販売の価格です。送料は全国一律で込みにしています。</p>
+    <div class="plans">
+      <div class="plan rise">
+        <div class="en">SINGLE</div>
+        <div class="nm">夜市 YOICHI 本体</div>
+        <div class="pr">4,800<small>円</small></div>
+        <ul><li>カード112枚・木駒5個・布袋・説明書</li><li>送料込み</li></ul>
+        <div class="go"><a href="#order">このプランで申し込む</a></div>
+      </div>
+      <div class="plan best rise">
+        <div class="badge">いちばん選ばれています</div>
+        <div class="en">WITH EXPANSION</div>
+        <div class="nm">本体＋拡張「百鬼」</div>
+        <div class="pr">7,200<small>円</small></div>
+        <ul><li>本体一式</li><li>拡張カード32枚（妖が8体増えます）</li><li>単品で買うより1,000円おトク</li><li>送料込み</li></ul>
+        <div class="go"><a href="#order">このプランで申し込む</a></div>
+      </div>
+      <div class="plan rise">
+        <div class="en">DELUXE</div>
+        <div class="nm">本体＋拡張＋専用マット</div>
+        <div class="pr">11,800<small>円</small></div>
+        <ul><li>本体一式・拡張カード32枚</li><li>ラシャ地のプレイマット（600×400mm）</li><li>送料込み</li></ul>
+        <div class="go"><a href="#order">このプランで申し込む</a></div>
+      </div>
+    </div>
+    <p class="note rise" style="margin-top:18px">※ 価格はレイアウト確認用の仮の値です。実際の金額・税の表記・送料の扱いは、御社の決定に合わせて入れ替えます。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-label rise">FAQ</div>
+    <h2 class="rise">よくあるご質問</h2>
+    <div class="faq rise">
+      <details><summary>2人でも面白いですか？</summary><p>2人のときは場に出す品物を2枚に減らします。読み合いが濃くなるので、2人専用のルールを足さなくても成立します。</p></details>
+      <details><summary>子どもと一緒に遊べますか？</summary><p>足し算ができれば遊べます。対象年齢は10歳からですが、銭札の数字を読める年齢であれば大人が手伝って楽しめます。</p></details>
+      <details><summary>拡張だけ後から買えますか？</summary><p>買えます。拡張「百鬼」は単品2,400円でご用意しています。</p></details>
+      <details><summary>説明書は英語でも読めますか？</summary><p>説明書は日本語と英語を併記しています。カードには文字がほとんど入っていないため、言語を問わず遊べます。</p></details>
+      <details><summary>いつ届きますか？</summary><p>ご注文から3営業日以内に発送します。離島の場合はもう少しお時間をいただきます。</p></details>
+    </div>
+    <p class="note rise" style="margin-top:14px">※ 回答はレイアウト確認用の仮の文です。</p>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap">
+    <div class="sec-label rise">ORDER</div>
+    <h2 class="rise">お申し込み・お問い合わせ</h2>
+    <p class="sec-lead rise">入力はおよそ30秒です。折り返しご連絡いたします。</p>
+    <form class="rise" onsubmit="event.preventDefault();alert('これは見本のページのため、送信はされません。');">
+      <div><label for="f1">お名前 <i>必須</i></label><input id="f1" required placeholder="山田 太郎"></div>
+      <div><label for="f2">メールアドレス <i>必須</i></label><input id="f2" type="email" required placeholder="you@example.com"></div>
+      <div><label for="f3">ご希望のプラン <i>必須</i></label>
+        <select id="f3" required>
+          <option value="">選んでください</option>
+          <option>本体 ／ 4,800円</option>
+          <option>本体＋拡張「百鬼」 ／ 7,200円</option>
+          <option>本体＋拡張＋専用マット ／ 11,800円</option>
+        </select></div>
+      <div><label for="f4">ご質問・ご要望 <i>任意</i></label><textarea id="f4" placeholder="例）拡張だけ追加で買えますか？"></textarea></div>
+      <button class="submit" type="submit">この内容で送信する</button>
+      <p class="note">※ これは制作見本のページです。送信ボタンを押しても、どこにも情報は送られません。</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>夜市 YOICHI（架空の商品）</b>｜ホームページ制作の見本として作成したサンプルページです。</p>
+    <p>実在する商品・会社ではありません。掲載の数値・仕様・価格・お客様の声は、すべてレイアウト確認のために置いた仮のものです。</p>
+    <p>制作：Web制作 ゆたか ／ saichan.98.0922@gmail.com</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd');
+  var onScroll=function(){ hd.classList.toggle('on', window.scrollY>8); };
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+  var io=null;
+  if('IntersectionObserver' in window){
+    io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px'});
+  }
+  [].forEach.call(document.querySelectorAll('.rise'), function(el){
+    if(io){ io.observe(el); } else { el.classList.add('in'); }
+  });
+})();
+</script>
+</body>
+</html>
