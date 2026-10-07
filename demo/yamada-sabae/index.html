@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="no-js">
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,8 +7,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>山田音楽教室｜福井県鯖江市のピアノ・リトミック教室（デザイン案・サンプル）</title>
-<meta name="description" content="福井県鯖江市のピアノ・リトミック教室「山田音楽教室」のホームページデザイン案です。0歳から通える親子のリトミック。体験レッスンのお申し込みまでスマホで完結します。">
+<title>山田音楽教室｜福井県鯖江市のリトミック・音楽教室（デザイン案・サンプル）</title>
+<meta name="description" content="福井県鯖江市のリトミック・音楽教室「山田音楽教室」のホームページデザイン案です。0歳から通える親子のリトミック。体験レッスンのお申し込みまでスマホで完結します。">
 <style>
   /* ===========================================================
      未就学児向けリトミック教室のテンプレート（2026-08-08 作成）
@@ -398,6 +398,12 @@
 
   /* ---- スクロールで現れる ---- */
   .rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.2,.8,.3,1),transform .85s cubic-bezier(.2,.8,.3,1)}
+  /* ⚠️ 2026-10-07 追加：JSが動かないと .rv は透明のまま、ローディングも被さったままで
+     **本文がまるごと消える**。2026-07-28 に同じ不具合のページを260通で配ってしまった。
+     JSが無い・止まった環境では、演出をあきらめて本文を出す。 */
+  .no-js .rv{opacity:1;transform:none}
+  .no-js #ld{display:none}
+  @media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
   .rv.in{opacity:1;transform:none}
   .rv.d1{transition-delay:.12s} .rv.d2{transition-delay:.24s} .rv.d3{transition-delay:.36s}
 
@@ -488,6 +494,7 @@
   }
   /* ═══ 追加ここまで ═══ */
 </style>
+<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body class="ld-lock">
 <div id="ld"><div class="ld-in">
@@ -498,7 +505,7 @@
 <div class="sample-bar">⚠️ <b>これは見本ページ（限定版）です</b>｜山田音楽教室 様の公式サイトではありません。<b>Web制作 ゆたか</b> がご提案用にお作りしたもので、文章・料金はすべて仮の内容です</div>
 
 <header id="hd">
-  <div class="logo">山田音楽教室<small>YAMADA MUSIC</small></div>
+  <div class="logo">山田音楽教室<small>sabae</small></div>
   <nav>
     <a href="#points">とくちょう</a>
     <a href="#flow">レッスンの流れ</a>
@@ -565,7 +572,7 @@
   </div>
 
   <div class="hero-in">
-    <span class="eyebrow">福井県鯖江市 ・ ピアノ・リトミック教室</span>
+    <span class="eyebrow">福井県鯖江市 ・ リトミック・音楽教室</span>
     <h1 id="h1">はじめての「音」を、|いっしょに。</h1>
     <p class="lead">鈴を鳴らす。とことこ歩く。ぴたっと止まる。山田音楽教室は、0歳から年長さんまでの、はじめての音楽の場所です。上手にできなくても大丈夫。その日の「たのしかった」を、いちばん大切にしています。</p>
     <div class="hero-btns">
@@ -676,58 +683,6 @@
   </div>
 </section>
 
-
-<!-- ============ ピアノ（業種にピアノが入る教室だけに出す・2026-08-22） ============
-     年齢の節の直後に置く。「0歳〜年長のリトミック」→「その先にピアノ」という並びにする。
-     背景は年齢の節の終わり（cream2）と同じにして、波を1枚増やさずにつなげる。 -->
-<section class="piano" id="piano">
-  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b3"></span></div>
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">AND PIANO</span>
-      <h2>その先に、ピアノがあります</h2>
-      <p>リトミックでついた「音を聴く力」は、そのままピアノに続きます。山田音楽教室では、ピアノのレッスンもしています。</p>
-    </div>
-    <div class="p-grid">
-      <div class="pcard rv">
-        <div class="picon">
-          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
-            <rect x="6" y="16" width="48" height="30" rx="5" fill="#fff5f2"/>
-            <rect x="6" y="16" width="48" height="30" rx="5" stroke="#ff8f7e" stroke-width="4"/>
-            <rect x="15" y="16" width="5" height="18" rx="2" fill="#4a5568"/>
-            <rect x="27" y="16" width="5" height="18" rx="2" fill="#4a5568"/>
-            <rect x="40" y="16" width="5" height="18" rx="2" fill="#4a5568"/>
-          </svg>
-        </div>
-        <h3>リトミックの、その先へ</h3>
-        <p>音を聴く耳ができているお子さまは、鍵盤に入るのがはやいです。年長さんから、そのまま続けていただけます。</p>
-      </div>
-      <div class="pcard rv d1">
-        <div class="picon">
-          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
-            <path d="M38 8v27" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="30" cy="38" r="9" fill="#7fd4c1"/>
-            <path d="M38 8c6 2 11 5 11 10" stroke="#ffd466" stroke-width="4.4" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>楽譜は、あとからで大丈夫</h3>
-        <p>さいしょから読ませることはしません。耳で覚えた曲を、あとから譜面と結びつけていきます。</p>
-      </div>
-      <div class="pcard rv d2">
-        <div class="picon">
-          <svg width="54" height="54" viewBox="0 0 60 60" fill="none">
-            <path d="M8 27 30 10l22 17" stroke="#ff8f7e" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13 26v20a3 3 0 0 0 3 3h28a3 3 0 0 0 3-3V26" fill="#fff3cf"/>
-            <path d="M13 26v20a3 3 0 0 0 3 3h28a3 3 0 0 0 3-3V26" stroke="#ffd466" stroke-width="4"/>
-            <rect x="25" y="35" width="10" height="14" rx="2" fill="#7fd4c1"/>
-          </svg>
-        </div>
-        <h3>おうちにピアノがなくても</h3>
-        <p>まずは教室の楽器ではじめられます。続けられそうだと思われてから、ご用意いただければ大丈夫です。</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
@@ -846,7 +801,7 @@
 <footer>
   <div class="fmusic" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
   <div class="fmark" style="margin-top:18px">山田音楽教室</div>
-  <div class="fsub">YAMADA MUSIC</div>
+  <div class="fsub">sabae</div>
   <p class="fnote">このページは Web制作 ゆたか が 山田音楽教室 様へのご提案用にお作りした<b>見本（限定版）</b>で、<b>山田音楽教室 様の公式サイトではありません</b>。<br>掲載の文章・料金はすべてこちらで用意したイメージです。ご依頼をいただいた場合に、実際の内容へ差し替えてお納めします。<br>掲載の取り下げをご希望の場合は、このページの送り主までご連絡ください。すぐに削除いたします。</p>
 </footer>
 
