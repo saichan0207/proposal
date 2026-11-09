@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="英会話カード">
+<title>ヒューストン英会話カード</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* 構成：上に進み具合 → 2つのタブ（場面で見る／カードで練習）。場面の見出しは米国の道路標識（緑の板）に見立てる */
+:root{
+  --bg:#f3f6f8; --surface:#ffffff; --ink:#14212b; --muted:#5b6b78; --line:#d9e1e7;
+  --sign:#1f6a4a; --sign-ink:#ffffff; --accent:#2f56c9; --accent-soft:#e3e9fb;
+  --say:#2f56c9; --hear:#b4561b; --hear-soft:#fbeadf; --ok:#1f7a4f; --ok-soft:#ddf1e6;
+  --f-en:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-ja:"Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f161c; --surface:#17212a; --ink:#e8eef2; --muted:#9aabb8; --line:#26333e;
+  --sign:#2a7f5a; --sign-ink:#f4fff9; --accent:#8aa6ff; --accent-soft:#1d2a4d;
+  --say:#8aa6ff; --hear:#f2a26e; --hear-soft:#3a2416; --ok:#6fd3a0; --ok-soft:#163626; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f161c; --surface:#17212a; --ink:#e8eef2; --muted:#9aabb8; --line:#26333e;
+  --sign:#2a7f5a; --sign-ink:#f4fff9; --accent:#8aa6ff; --accent-soft:#1d2a4d;
+  --say:#8aa6ff; --hear:#f2a26e; --hear-soft:#3a2416; --ok:#6fd3a0; --ok-soft:#163626; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ja);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+.wrap{max-width:640px;margin:0 auto}
+header{padding-block:20px 8px}
+h1{font-family:var(--f-ja);font-size:22px;font-weight:700;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;margin:4px 0 0}
+.prog{display:flex;align-items:center;gap:12px;margin-top:14px}
+.bar{flex:1;height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.prog b{font-variant-numeric:tabular-nums;font-size:14px;white-space:nowrap}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;padding-block:12px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tab{flex:1;font:inherit;font-weight:700;font-size:15px;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+button:focus-visible,.chip:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px;color:var(--muted);margin:4px 0 12px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px}
+.tag.say{color:var(--say);background:var(--accent-soft)}
+.tag.hear{color:var(--hear);background:var(--hear-soft)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px;scrollbar-width:none}
+.chip{flex:none;font:inherit;font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--sign);color:var(--sign-ink);border-color:var(--sign)}
+.scene{margin-top:22px}
+.sign{display:inline-flex;align-items:center;gap:10px;background:var(--sign);color:var(--sign-ink);border-radius:8px;padding:6px 14px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85),0 0 0 2px var(--sign)}
+.sign .en{font-family:var(--f-en);font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;opacity:.85}
+.sign .ja{font-weight:700;font-size:16px}
+.scene p.lead{color:var(--muted);font-size:14px;margin:8px 0 6px}
+ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.item{display:grid;grid-template-columns:44px 1fr 36px;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.item.done{opacity:.6}
+.play{width:44px;height:44px;border-radius:50%;border:none;background:var(--accent-soft);color:var(--accent);cursor:pointer;display:grid;place-items:center}
+.play svg{width:20px;height:20px}
+.txt{min-width:0}
+.en-line{font-family:var(--f-en);font-weight:600;font-size:19px;line-height:1.3;overflow-wrap:anywhere}
+.ja-line{font-size:15px;margin-top:2px}
+.tip{font-size:13px;color:var(--muted);margin-top:4px}
+.meta{margin-top:6px}
+.check{width:36px;height:36px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--ok);cursor:pointer;display:grid;place-items:center;font-size:18px;font-weight:700}
+.check[aria-pressed="true"]{background:var(--ok-soft);border-color:var(--ok)}
+/* 練習 */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:flex;border:2px solid var(--line);border-radius:12px;overflow:hidden;width:100%}
+.seg button{flex:1;font:inherit;font-size:14px;font-weight:700;padding:10px 6px;border:none;background:transparent;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.card{margin-top:16px;border-radius:18px;border:2px solid var(--line);background:var(--bg);padding:22px 18px;min-height:230px;display:flex;flex-direction:column;gap:12px;justify-content:center;text-align:center}
+.card .count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.card .q{font-size:22px;font-weight:700;text-wrap:balance}
+.card .q.en{font-family:var(--f-en);font-weight:600}
+.card .a{border-top:1px dashed var(--line);padding-top:12px}
+.card .a .en-line{font-size:22px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.big{font:inherit;font-weight:700;font-size:16px;padding:14px;border-radius:14px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.big.primary{background:var(--accent);border-color:var(--accent);color:var(--surface);grid-column:1/-1}
+.big.ok{border-color:var(--ok);color:var(--ok)}
+.listen{align-self:center}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.speed{font:inherit;font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.empty{color:var(--muted);text-align:center;padding:24px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>ヒューストン英会話カード</h1>
+    <p class="sub">アメリカの暮らしで毎日のように出る120フレーズ。中学英語で使える形だけ集めました。</p>
+    <div class="prog"><div class="bar"><i id="barFill"></i></div><b id="progText">0 / 120 覚えた</b></div>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tabList" aria-selected="true">場面で見る</button>
+    <button class="tab" role="tab" id="tabPractice" aria-selected="false">カードで練習</button>
+  </div>
+
+  <section id="viewList">
+    <div class="legend">
+      <span><span class="tag say">言う</span> 自分が使う</span>
+      <span><span class="tag hear">言われる</span> 相手から聞く・聞き取れればOK</span>
+      <button class="speed" id="speedBtn" type="button">読み上げ：ゆっくり</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div id="scenes"></div>
+  </section>
+
+  <section id="viewPractice" hidden>
+    <div class="panel">
+      <div class="seg" role="group" aria-label="練習のしかた">
+        <button type="button" id="modeSay" aria-pressed="true">日本語 → 英語で言う</button>
+        <button type="button" id="modeHear" aria-pressed="false">英語を聞いて意味</button>
+      </div>
+      <div class="card" id="card"></div>
+      <div class="btns" id="btns"></div>
+      <p class="note">1回10枚。まだ「覚えた」にしていないものから出ます。声に出して言ってから答えを見るのがコツです。</p>
+    </div>
+  </section>
+</div>
+
+<script src="voice.js"></script>
+<script>
+const SCENES = [
+ {en:"Small talk", ja:"あいさつ・立ち話", lead:"アメリカでは店員さんとも軽く言葉を交わします。返し方を決めておくと楽です。", items:[
+  ["How's it going?","調子どう？","「こんにちは」くらいの意味。くわしく答えなくてOK","hear"],
+  ["Good, how about you?","いいよ、あなたは？","聞き返すのが礼儀。これだけで会話になります","say"],
+  ["Nice to meet you.","はじめまして","2回目からは Nice to see you.","say"],
+  ["I just moved here from Japan.","日本から引っ越してきたばかりです","自己紹介の定番。相手がゆっくり話してくれます","say"],
+  ["Where are you from?","どこの出身ですか？","Japan. / I'm from Japan. で十分","hear"],
+  ["What do you do?","お仕事は何ですか？","今なにをしているか、ではなく職業を聞いています","hear"],
+  ["Have a good one.","よい一日を","お店の別れ際によく言われます","hear"],
+  ["You too!","あなたもね","Have a good one. への返し","say"],
+  ["See you around.","またね","近所の人や知り合いに","say"],
+  ["Take care.","じゃあね・気をつけて","別れ際にいつでも使えます","say"]]},
+ {en:"Coffee shop", ja:"カフェ・ファストフード", lead:"注文は Can I get ~? ひとつで足ります。", items:[
+  ["What can I get for you?","ご注文は？","レジでまず言われる一言","hear"],
+  ["Can I get a medium coffee?","Mサイズのコーヒーをください","Can I get ~? が注文の基本形","say"],
+  ["For here or to go?","店内で？持ち帰り？","聞き取れないと止まってしまう定番","hear"],
+  ["To go, please.","持ち帰りで","店内なら For here.","say"],
+  ["Anything else?","ほかにご注文は？","","hear"],
+  ["That's it.","以上です","That's all. でも同じ","say"],
+  ["What name should I put?","お名前は？","カップに名前を書くため","hear"],
+  ["No ice, please.","氷なしでお願いします","Less ice（少なめ）も使えます","say"],
+  ["Where's the restroom?","トイレはどこですか","toilet より restroom が普通","say"],
+  ["Is this seat taken?","この席、空いていますか","空いていれば No, go ahead. と返ってきます","say"]]},
+ {en:"Restaurant", ja:"レストラン", lead:"会計はテーブルで。チップは15〜20%が目安です。", items:[
+  ["How many in your party?","何名様ですか","party＝一緒に来た人たち","hear"],
+  ["A table for two, please.","2人です","人数＋please で通じます","say"],
+  ["Are you ready to order?","ご注文はお決まりですか","","hear"],
+  ["I need a few more minutes.","もう少し待ってください","","say"],
+  ["What do you recommend?","おすすめは何ですか","迷ったらこれ","say"],
+  ["How would you like your steak?","焼き加減はどうしますか","Medium, please. などで答えます","hear"],
+  ["Can I get a box?","持ち帰り用の箱をください","量が多いので残りを持ち帰るのは普通","say"],
+  ["Can we get the check, please?","お会計お願いします","アメリカでは席で払います","say"],
+  ["Separate checks, please.","別々に払います","","say"],
+  ["Is the tip included?","チップは含まれていますか","レシートに Gratuity とあれば含まれています","say"]]},
+ {en:"Grocery store", ja:"スーパー", lead:"レジで聞かれることは毎回ほぼ同じです。", items:[
+  ["Where can I find eggs?","卵はどこにありますか","Where can I find ~? で何でも探せます","say"],
+  ["It's in aisle five.","5番通路にあります","aisle は「アイル」。s は読みません","hear"],
+  ["Paper or plastic?","紙袋？ビニール袋？","","hear"],
+  ["Do you need a bag?","袋はいりますか","","hear"],
+  ["Do you have a rewards card?","ポイントカードはお持ちですか","phone number（電話番号）で探す店も多いです","hear"],
+  ["Debit or credit?","デビット？クレジット？","カードを出したときに聞かれます","hear"],
+  ["Would you like cash back?","現金を引き出しますか","デビットカードならレジで現金も受け取れます","hear"],
+  ["No, thank you.","いいえ、結構です","断るときはこれで十分","say"],
+  ["Can I pay with my phone?","スマホで払えますか","","say"],
+  ["Is this on sale?","これはセール中ですか","","say"]]},
+ {en:"Shopping", ja:"買い物・返品", lead:"アメリカは返品がしやすい国です。レシートは捨てずに。", items:[
+  ["Can I help you find anything?","何かお探しですか","","hear"],
+  ["I'm just looking, thanks.","見ているだけです","","say"],
+  ["How much is this?","これはいくらですか","","say"],
+  ["Do you have this in a smaller size?","これの小さいサイズはありますか","大きいなら bigger","say"],
+  ["Can I try this on?","試着していいですか","","say"],
+  ["It doesn't work.","動きません・使えません","家電やアプリにも使えます","say"],
+  ["I'd like to return this.","これを返品したいです","I'd like to ~＝〜したいです（ていねい）","say"],
+  ["Do you have the receipt?","レシートはありますか","","hear"],
+  ["Can I exchange it?","交換できますか","","say"],
+  ["It's out of stock.","在庫切れです","値札や画面でもよく見ます","hear"]]},
+ {en:"Getting around", ja:"車・道", lead:"ヒューストンは車社会。道を聞く・聞かれる場面が多いです。", items:[
+  ["How far is it?","どのくらい遠いですか","","say"],
+  ["It's about ten minutes by car.","車で10分くらいです","by car / on foot（歩いて）","hear"],
+  ["Go straight.","まっすぐ行ってください","","hear"],
+  ["Take a left at the light.","信号を左に曲がってください","light＝信号。右は a right","hear"],
+  ["I'm lost.","道に迷いました","","say"],
+  ["Where should I park?","どこに停めればいいですか","","say"],
+  ["Is there parking nearby?","近くに駐車場はありますか","","say"],
+  ["Which pump?","何番の給油機ですか","ガソリン代を店内で先に払うときに聞かれます","hear"],
+  ["Traffic is bad today.","今日は渋滞がひどいね","雑談にもなる一言","say"],
+  ["Can you give me a ride?","車で送ってもらえますか","ride＝車に乗せること","say"]]},
+ {en:"Doctor & pharmacy", ja:"病院・薬局", lead:"症状は I have ~. で言えます。", items:[
+  ["I'd like to make an appointment.","予約を取りたいです","","say"],
+  ["What brings you in today?","今日はどうされましたか","受付や診察室で最初に聞かれます","hear"],
+  ["I have a headache.","頭が痛いです","stomachache（おなか）、sore throat（のど）","say"],
+  ["I have a fever.","熱があります","","say"],
+  ["It hurts here.","ここが痛いです","指さしながら","say"],
+  ["Since yesterday.","昨日からです","Since last week.（先週から）","say"],
+  ["Are you allergic to anything?","アレルギーはありますか","なければ No, I'm not.","hear"],
+  ["Do you have insurance?","保険に入っていますか","保険証（card）を出します","hear"],
+  ["I'm here to pick up my prescription.","処方薬を受け取りに来ました","","say"],
+  ["How often should I take this?","どのくらいの間隔で飲めばいいですか","Twice a day.（1日2回）などと返ってきます","say"]]},
+ {en:"Bank & paperwork", ja:"銀行・手続き", lead:"名前のつづりや生年月日を聞かれることが多いです。", items:[
+  ["I'd like to open an account.","口座を開きたいです","","say"],
+  ["Can I see your ID?","身分証を見せてください","パスポートや運転免許証","hear"],
+  ["Here you go.","はい、どうぞ","物を渡すときの決まり文句","say"],
+  ["Could you fill out this form?","この用紙に記入してください","fill out＝記入する","hear"],
+  ["Sign here, please.","ここにサインしてください","","hear"],
+  ["What's your date of birth?","生年月日は？","アメリカは「月・日・年」の順に書きます","hear"],
+  ["Could you spell that?","つづりを言ってもらえますか","名前を聞き返されたときにも出ます","say"],
+  ["How long does it take?","どのくらい時間がかかりますか","","say"],
+  ["Is there a fee?","手数料はかかりますか","","say"],
+  ["Thanks for your help.","助かりました","手続きの最後に","say"]]},
+ {en:"Home & neighbors", ja:"家・ご近所", lead:"エアコンの故障はヒューストンでは一大事です。", items:[
+  ["Welcome to the neighborhood!","ようこそ、ご近所へ","引っ越してすぐに言われます","hear"],
+  ["Let me know if you need anything.","何かあったら言ってね","Thank you, I will. と返します","hear"],
+  ["The AC isn't working.","エアコンが動きません","AC は「エーシー」","say"],
+  ["Can someone come and fix it?","誰か直しに来てもらえますか","","say"],
+  ["When is trash day?","ゴミの日はいつですか","","say"],
+  ["The power is out.","停電しています","嵐のあとによく起きます","say"],
+  ["Is it okay if I park here?","ここに停めてもいいですか","Is it okay if I ~? で何でも許可を取れます","say"],
+  ["I have a package for you.","お荷物です","","hear"],
+  ["Could you keep it down, please?","少し静かにしてもらえますか","please を付けるとやわらかい","say"],
+  ["Sorry to bother you.","おじゃましてすみません","話しかける前のクッション","say"]]},
+ {en:"Phone calls", ja:"電話・予約", lead:"電話は顔が見えない分、聞き返す言葉が命綱です。", items:[
+  ["Hi, this is Yutaka.","もしもし、ゆたかです","電話では I'm でなく This is ~","say"],
+  ["Can I speak to the manager?","責任者の方と話せますか","","say"],
+  ["Can I put you on hold?","少々お待ちいただけますか","保留にされます","hear"],
+  ["Could you say that again?","もう一度言ってもらえますか","","say"],
+  ["Could you speak more slowly?","もう少しゆっくり話してもらえますか","","say"],
+  ["I'd like to make a reservation.","予約をしたいです","for two at seven（7時に2人）と続けます","say"],
+  ["What time works for you?","何時がご都合いいですか","","hear"],
+  ["I'll call you back.","かけ直します","","say"],
+  ["You've reached Dr. Smith's office.","スミス医院です","留守番電話の始まりの決まり文句","hear"],
+  ["Please leave a message.","メッセージをどうぞ","","hear"]]},
+ {en:"When you're stuck", ja:"困ったとき", lead:"わからないときに止まらず聞き返せれば、会話は続きます。", items:[
+  ["Sorry?","え、何て？","語尾を上げて言うと聞き返しになります","say"],
+  ["What does that mean?","それはどういう意味ですか","","say"],
+  ["How do you say this in English?","これは英語で何と言いますか","物を指さしながら","say"],
+  ["I'm still learning English.","英語はまだ勉強中です","言っておくと相手がゆっくり話してくれます","say"],
+  ["Could you write it down?","書いてもらえますか","住所や名前のときに便利","say"],
+  ["I don't understand.","わかりません","","say"],
+  ["Excuse me.","すみません","呼びかける・前を通る・聞き返す、どれにも使えます","say"],
+  ["I'm sorry.","ごめんなさい","謝るとき。軽い場面は Excuse me.","say"],
+  ["No problem.","いいですよ・どういたしまして","Thank you. の返事としてもよく聞きます","hear"],
+  ["Never mind.","やっぱりいいです","","say"]]},
+ {en:"Weather & chat", ja:"天気・雑談", lead:"ヒューストンの話題はたいてい「暑い」「湿気」「嵐」です。", items:[
+  ["It's so hot today.","今日はすごく暑いね","","say"],
+  ["It's really humid.","本当に蒸し暑いね","humid＝湿気が多い","say"],
+  ["Looks like rain.","雨が降りそうだね","","say"],
+  ["Stay safe.","気をつけてね","嵐やハリケーンの前によく言われます","hear"],
+  ["What are you up to this weekend?","週末は何するの？","be up to＝〜をする予定","hear"],
+  ["Not much.","特に何も","","say"],
+  ["Sounds good.","いいね","誘われたときの返事にも","say"],
+  ["I'm into cooking.","料理にハマっています","be into ~＝〜が好き・ハマっている","say"],
+  ["Let's get together sometime.","今度集まろうよ","","say"],
+  ["That's awesome!","すごいね！","相づちの定番","say"]]}
+];
+const ALL = []; SCENES.forEach((s,si)=>s.items.forEach((it,ii)=>ALL.push({id:si+'-'+ii,scene:si,en:it[0],ja:it[1],tip:it[2],who:it[3]})));
+
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let done = new Set(store.get('done',[]));
+let slow = store.get('slow',true);
+let mode = store.get('mode','say');
+let filter = -1;
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SPK = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+
+let voice = null;
+function pickVoice(){ try{ const vs = speechSynthesis.getVoices().filter(v=>/^en[-_]US/i.test(v.lang)); voice = vs.find(v=>/Samantha|Google US|Aria|Jenny|Allison/i.test(v.name)) || vs[0] || null; }catch(e){} }
+if('speechSynthesis' in window){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+let cur = null;
+function play(x){
+  const b64 = window.VOICE && window.VOICE[x.id];
+  if(!b64) return speak(x.en);
+  try{ if(cur) cur.pause(); cur = new Audio('data:audio/mpeg;base64,' + b64); cur.playbackRate = slow ? .8 : 1; cur.play().catch(()=>speak(x.en)); }catch(e){ speak(x.en); }
+}
+const byId = id => ALL.find(x=>x.id===id);
+function speak(text){
+  if(!('speechSynthesis' in window)) return;
+  try{ speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang='en-US'; if(voice) u.voice=voice; u.rate = slow ? .75 : 1; speechSynthesis.speak(u); }catch(e){}
+}
+
+function updateProg(){ $('barFill').style.width = (done.size/ALL.length*100)+'%'; $('progText').textContent = done.size+' / '+ALL.length+' 覚えた'; }
+function toggleDone(id){ done.has(id)?done.delete(id):done.add(id); store.set('done',[...done]); updateProg(); }
+
+function renderChips(){
+  const c = $('chips');
+  c.innerHTML = '<button class="chip" type="button" data-i="-1" aria-pressed="'+(filter<0)+'">ぜんぶ</button>' +
+    SCENES.map((s,i)=>'<button class="chip" type="button" data-i="'+i+'" aria-pressed="'+(filter===i)+'">'+esc(s.ja)+'</button>').join('');
+}
+function renderList(){
+  $('scenes').innerHTML = SCENES.map((s,si)=>{
+    if(filter>=0 && filter!==si) return '';
+    const rows = ALL.filter(x=>x.scene===si).map(x=>`
+      <li class="item${done.has(x.id)?' done':''}" data-id="${x.id}">
+        <button class="play" type="button" data-aid="${x.id}" aria-label="読み上げ：${esc(x.en)}">${SPK}</button>
+        <div class="txt">
+          <div class="en-line">${esc(x.en)}</div>
+          <div class="ja-line">${esc(x.ja)}</div>
+          ${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}
+          <div class="meta"><span class="tag ${x.who}">${x.who==='say'?'言う':'言われる'}</span></div>
+        </div>
+        <button class="check" type="button" data-done="${x.id}" aria-pressed="${done.has(x.id)}" aria-label="覚えた">✓</button>
+      </li>`).join('');
+    return `<section class="scene"><div class="sign"><span class="en">${esc(s.en)}</span><span class="ja">${esc(s.ja)}</span></div>
+      <p class="lead">${esc(s.lead)}</p><ul class="items">${rows}</ul></section>`;
+  }).join('');
+}
+
+// 練習
+let deck = [], pos = 0, shown = false;
+function newDeck(){
+  const pool = ALL.filter(x=> !done.has(x.id) && (mode==='say' ? x.who==='say' : true));
+  const src = pool.length ? pool : ALL.filter(x=> mode==='say' ? x.who==='say' : true);
+  deck = src.slice(0,10); pos = 0; shown = false; renderCard();
+}
+function renderCard(){
+  const card = $('card'), btns = $('btns');
+  if(pos >= deck.length){
+    card.innerHTML = `<div class="count">おつかれさまでした</div><div class="q">${deck.length}枚おわり</div><div class="tip">「覚えた」は ${done.size} / ${ALL.length}</div>`;
+    btns.innerHTML = `<button class="big primary" type="button" id="again">次の10枚</button>`;
+    $('again').onclick = newDeck; return;
+  }
+  const x = deck[pos], n = `<div class="count">${pos+1} / ${deck.length}　・　${esc(SCENES[x.scene].ja)}</div>`;
+  if(mode==='say'){
+    card.innerHTML = n + `<div class="q">${esc(x.ja)}</div>` + (shown ? `<div class="a"><div class="en-line">${esc(x.en)}</div>${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}</div>` : '<div class="tip">英語で声に出して言ってみてください</div>');
+  } else {
+    card.innerHTML = n + `<button class="play listen" type="button" id="listenBtn" aria-label="もう一度聞く">${SPK}</button>` +
+      (shown ? `<div class="a"><div class="en-line">${esc(x.en)}</div><div class="ja-line">${esc(x.ja)}</div>${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}</div>` : '<div class="tip">音を聞いて、意味を考えてみてください</div>');
+    $('listenBtn').onclick = ()=>play(x);
+  }
+  if(!shown){
+    btns.innerHTML = `<button class="big primary" type="button" id="reveal">こたえを見る</button>`;
+    $('reveal').onclick = ()=>{ shown = true; renderCard(); play(x); };
+  } else {
+    btns.innerHTML = `<button class="big" type="button" id="retry">もう一回</button><button class="big ok" type="button" id="got">覚えた</button>`;
+    $('retry').onclick = ()=>{ deck.push(x); pos++; shown=false; renderCard(); };
+    $('got').onclick = ()=>{ if(!done.has(x.id)) toggleDone(x.id); pos++; shown=false; renderCard(); renderList(); };
+  }
+}
+function setMode(m){ mode = m; store.set('mode',m); $('modeSay').setAttribute('aria-pressed', m==='say'); $('modeHear').setAttribute('aria-pressed', m==='hear'); newDeck(); if(m==='hear' && deck[0]) play(deck[0]); }
+
+function setTab(p){
+  $('tabList').setAttribute('aria-selected', !p); $('tabPractice').setAttribute('aria-selected', p);
+  $('viewList').hidden = p; $('viewPractice').hidden = !p;
+  if(p && !deck.length) newDeck();
+}
+function setSpeed(){ $('speedBtn').textContent = '読み上げ：' + (slow ? 'ゆっくり' : 'ふつう'); }
+
+document.addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  if(b.dataset.aid) play(byId(b.dataset.aid));
+  if(b.dataset.done){ toggleDone(b.dataset.done); const li = b.closest('.item'); li.classList.toggle('done', done.has(b.dataset.done)); b.setAttribute('aria-pressed', done.has(b.dataset.done)); }
+  if(b.classList.contains('chip')){ filter = +b.dataset.i; renderChips(); renderList(); }
+});
+$('tabList').onclick = ()=>setTab(false);
+$('tabPractice').onclick = ()=>setTab(true);
+$('modeSay').onclick = ()=>setMode('say');
+$('modeHear').onclick = ()=>setMode('hear');
+$('speedBtn').onclick = ()=>{ slow = !slow; store.set('slow',slow); setSpeed(); };
+
+renderChips(); renderList(); updateProg(); setSpeed();
+$('modeSay').setAttribute('aria-pressed', mode==='say'); $('modeHear').setAttribute('aria-pressed', mode==='hear');
+</script>
+
+</body>
+</html>
