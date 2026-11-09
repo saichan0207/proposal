@@ -16,7 +16,7 @@ window.ILLUST=[
 // 0 あいさつ・立ち話：郊外の家と芝生、手をふる2人
 svg('#cfe7f5',`<circle cx="280" cy="28" r="14" fill="#ffd66b"/>${house(18,'#efe2cc','#b4663e')}${house(222,'#dfe8d6','#4f6d8a')}
 <rect y="116" width="320" height="34" fill="#8cc47a"/><rect y="124" width="320" height="10" fill="#d9d4c7"/>
-${P(126,128,'#2f56c9',SK,INK,-1,armUp)}${P(196,128,'#e0793b',SK2,'#5a3b28',1,armUp)}${bub(124,22)}${bub(172,30,30,'#fff7e6')}`),
+${P(134,128,'#2f56c9',SK,INK,1,'<path d="M-10-56q-12-10-12-24" stroke="'+SK+'" stroke-width="6" stroke-linecap="round" fill="none"/>')}${P(188,128,'#e0793b',SK2,'#5a3b28',-1,'<path d="M-10-56q-12-10-12-24" stroke="'+SK2+'" stroke-width="6" stroke-linecap="round" fill="none"/>')}${bub(124,22)}${bub(172,30,30,'#fff7e6')}`),
 // 1 カフェ：カウンター、エスプレッソマシン、持ち帰りカップ
 svg('#f2e6d8',`<rect x="20" y="22" width="120" height="40" rx="6" fill="#3b4a40"/><g fill="#e9dcc4"><rect x="30" y="32" width="50" height="4" rx="2"/><rect x="30" y="42" width="70" height="4" rx="2"/><rect x="30" y="52" width="40" height="4" rx="2"/></g>
 ${P(96,104,'#2f6a4a',SK,'#3a2a20',1,armFwd)}
