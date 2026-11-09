@@ -59,7 +59,16 @@ button:focus-visible,.chip:focus-visible{outline:3px solid var(--accent);outline
 .card .pic{width:100%;max-width:280px;margin:0 auto}
 .scene p.lead{color:var(--muted);font-size:14px;margin:8px 0 6px}
 ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.item{display:grid;grid-template-columns:44px 1fr 36px;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.emo{width:68px;height:68px;border-radius:16px;background:var(--accent-soft);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:3px;padding:6px}
+.emo img{width:26px;height:26px;display:block}
+.emo.n1 img{width:42px;height:42px}
+.emo.n3 img{width:22px;height:22px}
+.card .emo{width:auto;height:auto;background:transparent;gap:12px;padding:0;margin:0 auto}
+.card .emo img{width:58px;height:58px}
+.item .play{width:36px;height:36px}
+.item .play svg{width:17px;height:17px}
+.meta{display:flex;align-items:center;gap:10px}
+.item{display:grid;grid-template-columns:68px 1fr 36px;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
 .item.done{opacity:.6}
 .play{width:44px;height:44px;border-radius:50%;border:none;background:var(--accent-soft);color:var(--accent);cursor:pointer;display:grid;place-items:center}
 .play svg{width:20px;height:20px}
@@ -126,13 +135,14 @@ ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
       </div>
       <div class="card" id="card"></div>
       <div class="btns" id="btns"></div>
-      <p class="note">1回10枚。まだ「覚えた」にしていないものから出ます。声に出して言ってから答えを見るのがコツです。</p>
+      <p class="note">絵文字の絵：Twemoji（CC-BY 4.0）。1回10枚。まだ「覚えた」にしていないものから出ます。声に出して言ってから答えを見るのがコツです。</p>
     </div>
   </section>
 </div>
 
 <script src="voice.js"></script>
 <script src="illust.js"></script>
+<script src="pics.js"></script>
 <script>
 const SCENES = [
  {en:"Small talk", ja:"あいさつ・立ち話", lead:"アメリカでは店員さんとも軽く言葉を交わします。返し方を決めておくと楽です。", items:[
@@ -268,7 +278,13 @@ const SCENES = [
   ["Let's get together sometime.","今度集まろうよ","","say"],
   ["That's awesome!","すごいね！","相づちの定番","say"]]}
 ];
-const ALL = []; SCENES.forEach((s,si)=>s.items.forEach((it,ii)=>ALL.push({id:si+'-'+ii,scene:si,en:it[0],ja:it[1],tip:it[2],who:it[3]})));
+const ALL = []; SCENES.forEach((s,si)=>s.items.forEach((it,ii)=>ALL.push({id:si+'-'+ii,n:ALL.length,scene:si,en:it[0],ja:it[1],tip:it[2],who:it[3]})));
+// フレーズごとの絵（Twemoji・CC-BY 4.0）
+function emo(x){
+  const ks = (window.PICS||[])[x.n] || [], tw = window.TW || {};
+  const imgs = ks.filter(k=>tw[k]).map(k=>`<img alt="" src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(tw[k])}">`).join('');
+  return `<div class="emo n${Math.min(ks.length,3)}" aria-hidden="true">${imgs}</div>`;
+}
 
 const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -309,12 +325,12 @@ function renderList(){
     if(filter>=0 && filter!==si) return '';
     const rows = ALL.filter(x=>x.scene===si).map(x=>`
       <li class="item${done.has(x.id)?' done':''}" data-id="${x.id}">
-        <button class="play" type="button" data-aid="${x.id}" aria-label="読み上げ：${esc(x.en)}">${SPK}</button>
+        ${emo(x)}
         <div class="txt">
           <div class="en-line">${esc(x.en)}</div>
           <div class="ja-line">${esc(x.ja)}</div>
           ${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}
-          <div class="meta"><span class="tag ${x.who}">${x.who==='say'?'言う':'言われる'}</span></div>
+          <div class="meta"><button class="play" type="button" data-aid="${x.id}" aria-label="読み上げ：${esc(x.en)}">${SPK}</button><span class="tag ${x.who}">${x.who==='say'?'言う':'言われる'}</span></div>
         </div>
         <button class="check" type="button" data-done="${x.id}" aria-pressed="${done.has(x.id)}" aria-label="覚えた">✓</button>
       </li>`).join('');
@@ -338,7 +354,7 @@ function renderCard(){
     btns.innerHTML = `<button class="big primary" type="button" id="again">次の10枚</button>`;
     $('again').onclick = newDeck; return;
   }
-  const x = deck[pos], n = `<div class="count">${pos+1} / ${deck.length}　・　${esc(SCENES[x.scene].ja)}</div><div class="pic">${(window.ILLUST||[])[x.scene]||''}</div>`;
+  const x = deck[pos], n = `<div class="count">${pos+1} / ${deck.length}　・　${esc(SCENES[x.scene].ja)}</div>${emo(x)}`;
   if(mode==='say'){
     card.innerHTML = n + `<div class="q">${esc(x.ja)}</div>` + (shown ? `<div class="a"><div class="en-line">${esc(x.en)}</div>${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}</div>` : '<div class="tip">英語で声に出して言ってみてください</div>');
   } else {
