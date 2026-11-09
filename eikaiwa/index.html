@@ -54,6 +54,9 @@ button:focus-visible,.chip:focus-visible{outline:3px solid var(--accent);outline
 .sign{display:inline-flex;align-items:center;gap:10px;background:var(--sign);color:var(--sign-ink);border-radius:8px;padding:6px 14px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85),0 0 0 2px var(--sign)}
 .sign .en{font-family:var(--f-en);font-weight:800;letter-spacing:.06em;font-size:13px;text-transform:uppercase;opacity:.85}
 .sign .ja{font-weight:700;font-size:16px}
+.pic{margin-top:10px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.pic svg{display:block;width:100%;height:auto}
+.card .pic{width:100%;max-width:280px;margin:0 auto}
 .scene p.lead{color:var(--muted);font-size:14px;margin:8px 0 6px}
 ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .item{display:grid;grid-template-columns:44px 1fr 36px;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
@@ -129,6 +132,7 @@ ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 </div>
 
 <script src="voice.js"></script>
+<script src="illust.js"></script>
 <script>
 const SCENES = [
  {en:"Small talk", ja:"あいさつ・立ち話", lead:"アメリカでは店員さんとも軽く言葉を交わします。返し方を決めておくと楽です。", items:[
@@ -315,6 +319,7 @@ function renderList(){
         <button class="check" type="button" data-done="${x.id}" aria-pressed="${done.has(x.id)}" aria-label="覚えた">✓</button>
       </li>`).join('');
     return `<section class="scene"><div class="sign"><span class="en">${esc(s.en)}</span><span class="ja">${esc(s.ja)}</span></div>
+      <div class="pic">${(window.ILLUST||[])[si]||''}</div>
       <p class="lead">${esc(s.lead)}</p><ul class="items">${rows}</ul></section>`;
   }).join('');
 }
@@ -333,7 +338,7 @@ function renderCard(){
     btns.innerHTML = `<button class="big primary" type="button" id="again">次の10枚</button>`;
     $('again').onclick = newDeck; return;
   }
-  const x = deck[pos], n = `<div class="count">${pos+1} / ${deck.length}　・　${esc(SCENES[x.scene].ja)}</div>`;
+  const x = deck[pos], n = `<div class="count">${pos+1} / ${deck.length}　・　${esc(SCENES[x.scene].ja)}</div><div class="pic">${(window.ILLUST||[])[x.scene]||''}</div>`;
   if(mode==='say'){
     card.innerHTML = n + `<div class="q">${esc(x.ja)}</div>` + (shown ? `<div class="a"><div class="en-line">${esc(x.en)}</div>${x.tip?`<div class="tip">${esc(x.tip)}</div>`:''}</div>` : '<div class="tip">英語で声に出して言ってみてください</div>');
   } else {
