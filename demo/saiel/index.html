@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="format-detection" content="telephone=no">
-<title>MiraWatch Home｜一般販売ページ（デザイン案・Linkware株式会社 様ご提案用）</title>
-<meta name="description" content="Linkware株式会社 様の「MiraWatch Home」一般販売用ランディングページのデザイン案です。公式サイトではありません。">
+<title>お米の未来を変える、【プレミアムライスサーバー】誕生。｜一般販売ページ（デザイン案・ご担当者 様ご提案用）</title>
+<meta name="description" content="ご担当者 様の「お米の未来を変える、【プレミアムライスサーバー】誕生。」一般販売用ランディングページのデザイン案です。公式サイトではありません。">
 <style>
 /* ============================================================================
    商品ランディングページの型（クラファン成功商品 → 一般販売）  shohin.html
@@ -23,19 +23,19 @@
 
    ■ 差し替え方
      {{ }} を置換するだけ。構造はいじらなくてよい。
-     ・基調色は 215（色相 0-360）と 22%（彩度 %）の2つだけ。
+     ・基調色は 142（色相 0-360）と 48%（彩度 %）の2つだけ。
        ここを変えると、地の暗色・罫線・図・グラフまで全部つれて変わる。
          例）水色/空気・速さ = 192 / 96%   赤/熱・力 = 8 / 82%
              緑/自然・食 = 148 / 52%       紫/美容 = 268 / 58%
      ・数字は3つまで。4つ目からは効かなくなる（大きい数字は少ないほど大きく見える）
 
    ■ 事実の扱い（ここを守らないと事故になる）
-     ・達成率の出どころは 172 ただ1つ。ゲージの数字も、見出しの文章も、
+     ・達成率の出どころは 109 ただ1つ。ゲージの数字も、見出しの文章も、
        すべてこの値から作る。数字を手で二度書きしない（食い違いの原因になる）
      ・クラウドファンディングが「募集中」か「終了」かは 募集中（"募集中" / "終了"）と
-       74（残り日数。分からなければ空）の2つで決める。この2つから、
-       ページに出る3か所——クラウドファンディング 実施中（ヒーローの帯）・いま募集中 ・ 残り74日（実績のしるし）・
-       live（live / done）——と クラウドファンディングで、<br>目標の172%を突破。 いまクラウドファンディングで募集中です（残り74日）。現在、目標金額の172%まで届いています。募集が終わったあと、この一般販売ページが受け皿になります。 を作る。
+       39（残り日数。分からなければ空）の2つで決める。この2つから、
+       ページに出る3か所——クラウドファンディング 実施中（ヒーローの帯）・いま募集中 ・ 残り39日（実績のしるし）・
+       live（live / done）——と クラウドファンディングで、<br>目標の109%を突破。 いまクラウドファンディングで募集中です（残り39日）。現在、目標金額の109%まで届いています。募集が終わったあと、この一般販売ページが受け皿になります。 を作る。
        募集中の案件に「終了しました」と書かない。文面の型は次の3つだけ：
          募集中・残り日数あり → 「いま募集中です（残り◯日）。募集が終わると、このページが受け皿になります」
          募集中・日数が不明   → 日数に触れない。「いま募集中です」までにとどめる
@@ -56,8 +56,8 @@
 
 :root{
   /* ── 基調色：ここ2つが全部の親 ───────────────────────── */
-  --bh:215;
-  --bs:22%;
+  --bh:142;
+  --bs:48%;
 
   --b50 :hsl(var(--bh) calc(var(--bs) * .40) 96%);
   --b100:hsl(var(--bh) calc(var(--bs) * .46) 90%);
@@ -621,7 +621,7 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
 <div class="notice">
   <div class="in">
     <span class="dot" aria-hidden="true"></span>
-    <p>これは <b>Linkware株式会社 様へのご提案用に作成したデザイン案</b> です。公式サイトではありません。
+    <p>これは <b>ご担当者 様へのご提案用に作成したデザイン案</b> です。公式サイトではありません。
       掲載の文章は Web制作 ゆたか が構成したもので、価格・仕様は公開情報をもとにレイアウト確認のために置いています。
       <b>このページは公開から2週間で閉じます。</b></p>
   </div>
@@ -648,8 +648,8 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
   <div class="hero-tex" aria-hidden="true"><img src="" alt="背景の装飾" onerror="this.parentElement.remove()"></div>
   <canvas id="wind" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <h1 id="h1">MiraWatch Home</h1>
-    <p class="lead">カメラではなく「ミリ波レーダー」で、室内の在室や動き、姿勢をとらえる見守り機器です。スマートフォンやパソコンから、離れて暮らす家族の様子をそっと見守れます。</p>
+    <h1 id="h1">お米の未来を変える、【プレミアムライスサーバー】誕生。</h1>
+    <p class="lead">そのためには、お米の選び方や炊き方だけでなく、「保存方法」の重要性を広めたいと考えました。</p>
     <div class="cta">
       <a href="#price" class="btn btn-p">価格プランを見る
         <svg class="ar" viewBox="0 0 18 8" fill="none"><path d="M0 4h16M12.5 1l3.5 3-3.5 3" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -657,7 +657,7 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
       
     </div>
     <div class="achv">
-      <span style="white-space:nowrap">クラウドファンディング 実施中</span><b style="white-space:nowrap">目標達成率 172%</b>
+      <span style="white-space:nowrap">クラウドファンディング 実施中</span><b style="white-space:nowrap">目標達成率 109%</b>
     </div>
   </div>
   
@@ -694,16 +694,16 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
           <g id="goalMark"></g>
         </svg>
         <div class="mid">
-          <!-- 表示も data-count も同じ 172 から作る。JSが動かなくても正しい値が出る -->
-          <div class="n"><span class="cnt" data-count="172">172</span><u>%</u></div>
+          <!-- 表示も data-count も同じ 109 から作る。JSが動かなくても正しい値が出る -->
+          <div class="n"><span class="cnt" data-count="109">109</span><u>%</u></div>
           <span>OF THE GOAL</span>
         </div>
       </div>
       <div class="ach-txt rv d1">
         <span class="eyebrow">CROWDFUNDING</span>
-        <span class="ach-state live">いま募集中 ・ 残り74日</span>
-        <h2 style="margin-top:var(--s2)">クラウドファンディングで、<br>目標の172%を突破。</h2>
-        <p>いまクラウドファンディングで募集中です（残り74日）。現在、目標金額の172%まで届いています。募集が終わったあと、この一般販売ページが受け皿になります。</p>
+        <span class="ach-state live">いま募集中 ・ 残り39日</span>
+        <h2 style="margin-top:var(--s2)">クラウドファンディングで、<br>目標の109%を突破。</h2>
+        <p>いまクラウドファンディングで募集中です（残り39日）。現在、目標金額の109%まで届いています。募集が終わったあと、この一般販売ページが受け皿になります。</p>
         <p class="note">達成率・残り日数はご提供いただいた数値です。掲載時点の数字のため、公開前に最新の値へ差し替えます。</p>
       </div>
     </div>
@@ -743,8 +743,15 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
     <div class="p-grid">
       <div class="pl rv">
         <div class="qty">STANDARD</div>
-        <h3>本体1台＋6か月利用</h3>
-        <div class="yen"><span class="n">58,680</span><u>円</u></div>
+        <h3>精米300g×5銘柄</h3>
+        <div class="yen"><span class="n">4,980</span><u>円</u></div>
+        <div class="per">クラウドファンディングでのリターン価格です</div>
+        <a href="#order" class="btn btn-g">このプランで申し込む</a>
+      </div>
+      <div class="pl rv d1">
+        <div class="qty">PLUS</div>
+        <h3>こうせい校長スペシャルプラン</h3>
+        <div class="yen"><span class="n">43,780</span><u>円</u></div>
         <div class="per">御社が「一般販売予定価格」として記載の金額です</div>
         <a href="#order" class="btn btn-g">このプランで申し込む</a>
       </div>
@@ -792,7 +799,8 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
               <label for="pl">ご希望のプラン <em>必須</em></label>
               <select id="pl" name="pl" data-req>
                 <option value="">選んでください</option>
-                <option>本体1台＋6か月利用（58,680円）</option>
+                <option>精米300g×5銘柄（4,980円）</option>
+                <option>こうせい校長スペシャルプラン（43,780円）</option>
                 <option>まだ決めていない／相談したい</option>
               </select>
               <span class="f-err">プランをお選びください</span>
@@ -822,7 +830,7 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
           </div>
           <h3>入力の確認まで動きます</h3>
           <p>これはデザイン案のため、実際には送信されません。<br>
-             本番では、ここから Linkware株式会社 様へメールが届き、<br class="pcbr">自動返信もお送りできます。</p>
+             本番では、ここから ご担当者 様へメールが届き、<br class="pcbr">自動返信もお送りできます。</p>
         </div>
       </form>
     </div>
@@ -835,11 +843,11 @@ footer{background:var(--d900);color:var(--td2);padding:clamp(56px,7vw,88px) 5vw 
       <div>
         <div style="font-size:11px;letter-spacing:.16em;color:var(--td2);margin-top:7px">一般販売ページ</div>
       </div>
-      <div class="co">Linkware株式会社<br></div>
+      <div class="co">ご担当者<br></div>
     </div>
     <p class="f-dis">
-      このページは <b>Web制作 ゆたか</b> が Linkware株式会社 様へのご提案用に作成した<b>デザイン案</b>です。
-      <b>Linkware株式会社 様の公式サイトではありません。</b>
+      このページは <b>Web制作 ゆたか</b> が ご担当者 様へのご提案用に作成した<b>デザイン案</b>です。
+      <b>ご担当者 様の公式サイトではありません。</b>
       商品写真は1枚も使用していません（図・数字はすべてこのページ内で描いたものです）。
       掲載の文章はレイアウト確認のためにこちらで用意したもので、価格・仕様は公開情報をもとに配置しています。
       正式なご依頼をいただいた際に、実際の内容・撮影写真へ差し替えてお納めします。
@@ -1221,5 +1229,140 @@ airCanvas(document.getElementById("jet"),  {speed:1.5, density:.55, drops:false,
 })();
 })();
 </script>
+<!-- ══════ 動きの上乗せ（GSAP + ScrollTrigger + Lenis）｜2026-10-31 社長提案で追加 ══════
+     守っていること：
+       ・ここが丸ごと読み込めなくても、本文は必ず見える（隠すのは GSAP が動いたときだけ）
+         ※ 2026-07-28 に「JSが止まると本文が真っ白」のページを260通配った反省
+       ・「動きを減らす」設定の方には、何も動かさない
+       ・既存の手書きの動き（.rv の出現・数字のカウント・ゲージ）は消さずに残す -->
+<style>
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+#readbar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:200;pointer-events:none;
+  transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,hsl(var(--bh) 80% 55%),hsl(var(--bh) 90% 70%))}
+.p-grid{perspective:1200px}
+/* React Bits の Shiny Text / Spotlight Card の考え方を参考に自作（コードは写していない） */
+.btn-p{position:relative;overflow:hidden}
+.btn-p::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg)}
+.gs-on .btn-p::after{animation:shine 4.2s ease-in-out 1.6s infinite}
+@keyframes shine{0%{left:-60%}22%{left:130%}100%{left:130%}}
+.p-grid .pl{--mx:50%;--my:50%}
+.gs-on .p-grid .pl::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;
+  transition:opacity .4s ease;background:radial-gradient(260px circle at var(--mx) var(--my),hsl(var(--bh) 90% 70% / .16),transparent 70%)}
+.gs-on .p-grid .pl:hover::before{opacity:1}
+@media (prefers-reduced-motion:reduce){.btn-p::after{display:none}}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" integrity="sha256-l4RQpedjgEfGkpQazax7wl5QcokGnQM/SFVpxCxMe+M=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce || !window.gsap || !window.ScrollTrigger) return;   /* 読めなければ、何もしない＝いつもの見え方のまま */
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ── 1. なめらかなスクロール（Lenis）を ScrollTrigger とつなぐ ── */
+  var lenis = null;
+  if(window.Lenis){
+    lenis = new Lenis({duration:1.15, smoothWheel:true,
+      easing:function(x){ return Math.min(1, 1.001 - Math.pow(2, -10*x)); }});
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener("click", function(e){
+        var id = a.getAttribute("href"); if(id.length < 2) return;
+        var el = document.querySelector(id); if(!el) return;
+        e.preventDefault(); lenis.scrollTo(el, {offset:-70, duration:1.4});
+      });
+    });
+  }
+
+  /* ── 2. 読み進み具合のバー ── */
+  var bar = document.createElement("div"); bar.id = "readbar"; document.body.appendChild(bar);
+  gsap.to(bar, {scaleX:1, ease:"none",
+    scrollTrigger:{trigger:document.documentElement, start:"top top", end:"bottom bottom", scrub:.3}});
+
+  /* ── 3. ヒーロー：スクロールに合わせて、見出しは奥へ・背景はわずかに寄る ── */
+  var hero = document.querySelector(".hero");
+  if(hero){
+    var hin = hero.querySelector(".hero-in");
+    if(hin) gsap.to(hin, {yPercent:-14, opacity:.25, ease:"none",
+      scrollTrigger:{trigger:hero, start:"top top", end:"bottom top", scrub:true}});
+    var cv = hero.querySelector("canvas");
+    if(cv) gsap.to(cv, {scale:1.12, ease:"none",
+      scrollTrigger:{trigger:hero, start:"top top", end:"bottom top", scrub:true}});
+    var tex = hero.querySelector(".hero-tex");
+    if(tex) gsap.to(tex, {yPercent:12, ease:"none",
+      scrollTrigger:{trigger:hero, start:"top top", end:"bottom top", scrub:true}});
+  }
+
+  /* ── 4. 価格のカード：1枚ずつ、奥から立ち上がる ──
+     既存の .rv（CSSで透明）を外して GSAP に引き継ぐ。
+     万一 ScrollTrigger が発火しなくても、7秒後に必ず見える状態へ戻す（保険）。 */
+  var cards = gsap.utils.toArray(".p-grid .pl");
+  if(cards.length){
+    cards.forEach(function(c){ c.classList.remove("rv","d1","d2"); c.classList.add("in"); });
+    gsap.from(cards, {y:70, rotationX:-18, opacity:0, duration:1.1, ease:"power3.out", stagger:.14,
+      transformOrigin:"50% 100%", clearProps:"transform,opacity",
+      scrollTrigger:{trigger:".p-grid", start:"top 82%", once:true}});
+    setTimeout(function(){ gsap.set(cards, {clearProps:"transform,opacity"}); }, 7000);
+    /* 価格の数字は、見えた瞬間に一度だけ小さく弾む */
+    gsap.utils.toArray(".p-grid .yen .n").forEach(function(n){
+      gsap.from(n, {scale:.82, duration:.9, ease:"back.out(2.2)",
+        scrollTrigger:{trigger:n, start:"top 85%", once:true}});
+    });
+  }
+
+  /* ── 5. 節の見出しの下線が、読み進めると伸びる ── */
+  gsap.utils.toArray(".shead .eyebrow").forEach(function(e){
+    gsap.from(e, {letterSpacing:"0.6em", opacity:0, duration:1.2, ease:"power2.out",
+      scrollTrigger:{trigger:e, start:"top 88%", once:true}});
+  });
+
+  /* ── 6. 主ボタンがマウスに少し吸い寄せられる（パソコンのみ）── */
+  if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+    gsap.utils.toArray(".btn-p").forEach(function(b){
+      var qx = gsap.quickTo(b, "x", {duration:.5, ease:"power3"}),
+          qy = gsap.quickTo(b, "y", {duration:.5, ease:"power3"});
+      b.addEventListener("mousemove", function(e){
+        var r = b.getBoundingClientRect();
+        qx((e.clientX - r.left - r.width/2) * .28); qy((e.clientY - r.top - r.height/2) * .4);
+      });
+      b.addEventListener("mouseleave", function(){ qx(0); qy(0); });
+    });
+  }
+
+
+  document.documentElement.classList.add("gs-on");
+
+  /* ── 7. 説明文が、ぼかしからくっきりへ（React Bits「Scroll Reveal」の考え方）── */
+  gsap.utils.toArray(".shead p, .hero .lead").forEach(function(p){
+    if(p.closest(".hero")) return;      /* ヒーローは既存の出現に任せる */
+    gsap.fromTo(p, {filter:"blur(8px)", opacity:.25}, {filter:"blur(0px)", opacity:1, ease:"none",
+      scrollTrigger:{trigger:p, start:"top 92%", end:"top 62%", scrub:true}});
+  });
+
+  /* ── 8. 価格カードの上を、マウスを追う柔らかい光（「Spotlight Card」の考え方・パソコンのみ）── */
+  if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+    gsap.utils.toArray(".p-grid .pl").forEach(function(c){
+      if(getComputedStyle(c).position === "static") c.style.position = "relative";
+      c.addEventListener("mousemove", function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        c.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
+  }
+
+  /* 画像・フォントの読み込みで高さが変わったら、きっかけの位置を測り直す */
+  addEventListener("load", function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+
 </body>
 </html>
