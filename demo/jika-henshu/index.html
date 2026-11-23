@@ -1217,7 +1217,7 @@
   });
   setTimeout(function(){ els.forEach(function(e){ start[e.dataset.key]=e.textContent; }); },1500);
   var bar=document.createElement('div'); bar.id='hs-bar';
-  bar.innerHTML='<span class="msg">編集中です。<b>点線の枠</b>を押すと書き換えられます。</span><button id="hs-quit">やめる</button><button id="hs-save">保存する</button>';
+  bar.innerHTML='<span class="msg">編集中です。<b>点線の枠</b>を押すと書き換えられます。</span><button id="hs-quit">やめる</button><button id="hs-undo" style="display:none;background:#fff;color:#2b2b2b">1つ前に戻す</button><button id="hs-save">保存する</button>';
   document.body.appendChild(bar);
   var msg=bar.querySelector('.msg'), btn=bar.querySelector('#hs-save');
   bar.querySelector('#hs-quit').onclick=function(){ location.href=location.pathname; };
@@ -1227,14 +1227,27 @@
     if(!n){ msg.textContent='まだ何も変わっていません。点線の枠を押して書き換えてください。'; return; }
     var pw=sessionStorage.getItem('hs-pw')||prompt('合言葉を入れてください');
     if(!pw) return;
+    var prev={}; Object.keys(data).forEach(function(k){prev[k]=start[k]});
+    send(pw,data,n,prev);
+  };
+  var undo=bar.querySelector('#hs-undo'), last=null;
+  undo.onclick=function(){
+    if(!last) return;
+    var pw=sessionStorage.getItem('hs-pw')||prompt('合言葉を入れてください'); if(!pw) return;
+    var back=last; els.forEach(function(e){ if(back[e.dataset.key]!=null) e.textContent=back[e.dataset.key]; });
+    send(pw,back,Object.keys(back).length,null,true);
+  };
+  function send(pw,data,n,prev,isUndo){
     btn.disabled=true; msg.textContent='保存しています…';
     fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({pw:pw,data:data})})
       .then(function(r){return r.json()}).then(function(res){
         btn.disabled=false;
-        if(res.ok){ try{sessionStorage.setItem('hs-pw',pw)}catch(e){} Object.keys(data).forEach(function(k){start[k]=data[k]}); msg.innerHTML='✅ <b>保存しました（'+n+'か所）。</b>ホームページに反映されています。'; }
+        if(res.ok){ try{sessionStorage.setItem('hs-pw',pw)}catch(e){} Object.keys(data).forEach(function(k){start[k]=data[k]});
+          if(isUndo){ last=null; undo.style.display='none'; msg.innerHTML='↩️ <b>元に戻しました。</b>'; }
+          else { last=prev; undo.style.display=''; msg.innerHTML='✅ <b>保存しました（'+n+'か所）。</b>ホームページに反映されています。'; } }
         else { try{sessionStorage.removeItem('hs-pw')}catch(e){} msg.textContent='保存できませんでした：'+(res.msg||''); }
       }).catch(function(){ btn.disabled=false; msg.textContent='保存できませんでした。電波のよい所でもう一度押してください。'; });
-  };
+  }
 })();
 </script>
 </body>
