@@ -270,6 +270,95 @@
   }
   .t-photo{width:132px;height:132px;margin:0 auto 18px;border-radius:50%;border:2px dashed #e3cfc2;
     display:grid;place-items:center;text-align:center;font-size:12.5px;line-height:1.5;color:var(--sub);font-weight:700;background:#fffaf6}
+
+  /* ===== 第4版（11/26 社長「安っぽい」）：白い箱をやめ、一面の色と大きな文字で組む ===== */
+  .v-sec{padding:clamp(80px,11vw,140px) 6vw}
+  .v-white{background:#fff} .v-cream{background:var(--n50)}
+  .v-mint{background:#dcf1ea} .v-coral{background:#ffe6df}
+  .v-in{max-width:1080px;margin:0 auto}
+  .v-h{word-break:keep-all;font-family:"Zen Kaku Gothic New","Zen Maru Gothic",sans-serif;font-size:clamp(1.85rem,3.6vw,2.75rem);
+    font-weight:700;line-height:1.3;color:var(--ink-d);letter-spacing:.01em}
+  .v-head{margin-bottom:clamp(40px,6vw,64px);max-width:40em}
+  .v-head p{margin-top:16px;font-size:17px;color:var(--n700)}
+  .v-two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+  .v-two>.v-h{position:sticky;top:120px}
+  @media(max-width:820px){.v-two{grid-template-columns:1fr}.v-two>.v-h{position:static}}
+  .v-sec h3{font-size:clamp(19px,2.2vw,22px);font-weight:700;color:var(--ink-d);line-height:1.45}
+  .v-sec p,.v-sec dd{color:var(--n700);font-size:16.5px;line-height:1.95}
+  /* やくそく */
+  .v-pr{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:34px 0;border-top:1.5px solid var(--n100)}
+  .v-pr:first-child{border-top:0;padding-top:4px}
+  .v-pr h3{margin-bottom:8px}
+  .v-nt{width:44px;height:62px}
+  /* 鍵盤を大きく */
+  .v-mint .kkeys{max-width:none;height:clamp(230px,32vw,330px);border-top-color:var(--c500);
+    box-shadow:0 30px 50px -36px rgba(40,90,75,.55)}
+  .v-mint .kk{border-color:#d9e6e1}
+  .v-mint .kk .kn{font-size:clamp(13px,2.1vw,20px)}
+  .v-mint .kk-after{display:none}
+  /* 流れ：五線の上を音が上がっていく */
+  .v-staff{display:block;width:100%;height:150px;margin-bottom:-150px}
+  .v-melody{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+  .v-st{padding-top:170px;position:relative}
+  .v-st i{position:absolute;left:8px;top:calc(var(--y) - 11px);width:30px;height:22px}
+  .v-st i::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--c);transform:rotate(-20deg)}
+  .v-st i::after{content:"";position:absolute;right:0;bottom:11px;width:3px;height:60px;background:#3b302c;border-radius:2px}
+  .v-st b{display:block;font-size:16px;color:var(--c600);margin-bottom:6px;font-weight:700}
+  .v-st h3{margin-bottom:8px}
+  .v-st p{font-size:15.5px}
+  @media(max-width:820px){
+    .v-staff{display:none}
+    .v-melody{grid-template-columns:1fr;gap:0}
+    .v-st{padding:26px 0 26px 64px;border-top:1.5px solid var(--n100)}
+    .v-st:first-child{border-top:0}
+    .v-st i{top:30px;left:6px}
+  }
+  /* 質問 */
+  .v-faq>div{padding:28px 0;border-top:1.5px solid var(--n200)}
+  .v-faq>div:first-child{border-top:0;padding-top:4px}
+  .v-faq dt{font-weight:700;font-size:18px;color:var(--ink-d);line-height:1.6;margin-bottom:8px}
+  .v-faq dt::before{content:"Q.";color:var(--c500);margin-right:.4em}
+  /* 先生 */
+  .v-teach{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:clamp(32px,6vw,80px);align-items:center}
+  .v-photo{aspect-ratio:4/5;border-radius:28px 28px 120px 28px;background:#fff1ec;border:2px dashed #f0c9bd;
+    display:grid;place-items:center;text-align:center;font-weight:700;color:var(--c600);font-size:15px;line-height:1.7}
+  .v-name{margin-top:24px;font-size:20px!important;font-weight:700;color:var(--ink-d)!important}
+  .v-role{font-size:14px!important;color:var(--mint)!important;font-weight:700}
+  .v-bio{margin-top:18px}
+  @media(max-width:820px){.v-teach{grid-template-columns:1fr}.v-photo{max-width:300px;width:100%}}
+  /* 月謝 */
+  .v-fee{background:#fff;border-radius:24px;padding:clamp(10px,2vw,20px) clamp(22px,4vw,48px)}
+  .v-free,.v-row{display:grid;grid-template-columns:1fr auto auto;align-items:baseline;gap:12px 32px;padding:26px 0}
+  .v-row{border-top:1.5px solid #f6e1d9}
+  .v-free-l,.v-c{font-weight:700;font-size:clamp(17px,2vw,20px);color:var(--ink-d)}
+  .v-c small{display:block;font-size:13px;color:var(--n500);font-weight:500;margin-top:2px}
+  .v-free-n,.v-k{color:var(--n500);font-size:15px}
+  .v-free-y{grid-column:3;color:var(--c500);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1}
+  .v-free-n{grid-column:2;grid-row:1}
+  .v-y{font-weight:700;font-size:clamp(28px,3.6vw,40px);color:var(--ink-d);line-height:1;text-align:right;white-space:nowrap}
+  .v-y small{font-size:14px;color:var(--n500);margin-left:4px;font-weight:500}
+  @media(max-width:560px){
+    .v-free,.v-row{grid-template-columns:1fr auto;gap:6px 12px}
+    .v-k,.v-free-n{grid-column:1;grid-row:2}
+    .v-y,.v-free-y{grid-column:2;grid-row:1/3;align-self:center}
+  }
+  /* 教室のこと */
+  .v-info>div{display:grid;grid-template-columns:7em 1fr;gap:16px;padding:20px 0;border-top:1.5px solid var(--n100)}
+  .v-info>div:first-child{border-top:0;padding-top:4px}
+  .v-info dt{font-weight:700;color:var(--n500);font-size:15px;padding-top:3px}
+  /* 申し込み */
+  .v-cta{background:var(--c500);text-align:left}
+  .v-cta h2{font-family:"Zen Kaku Gothic New","Zen Maru Gothic",sans-serif;color:#fff;
+    font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.25;font-weight:700}
+  .v-cta p{color:#fff;opacity:.92;margin-top:20px;font-size:17px}
+  .v-btn{display:inline-block;margin-top:36px;background:#fff;color:var(--c700);font-weight:700;font-size:17px;
+    padding:20px 40px;border-radius:999px;text-decoration:none;transition:transform .2s}
+  .v-btn:hover{transform:translateY(-2px)}
+  .v-btn:focus-visible{outline:3px solid #fff;outline-offset:4px}
+  .v-cta .v-note{font-size:13px;opacity:.8;margin-top:16px}
+  /* ページ全体の飾りを減らす */
+  .blobs,.dots::before{display:none!important}
+  footer{background:var(--n50)!important}
   .wa-kiri{position:fixed;right:14px;bottom:14px;z-index:60;background:#fff;border-radius:999px;
     box-shadow:0 4px 18px rgba(94,36,29,.16);padding:6px;display:flex;gap:4px;align-items:center;font-size:13px}
   .wa-kiri span{padding:0 8px 0 10px;color:var(--sub);font-weight:700}
@@ -583,7 +672,7 @@
 <header id="hd">
   <div class="logo">Ramiリトミック教室<small>kasugai</small></div>
   <nav>
-    <a href="#points">とくちょう</a>
+    <a href="#points">やくそく</a>
     <a href="#flow">レッスンの流れ</a>
     <a href="#teacher">せんせい</a>
     <a href="#price">お月謝</a>
@@ -667,164 +756,111 @@
   <path fill="#ffffff" d="M0,42 C240,90 480,0 720,26 C960,52 1200,90 1440,54 L1440,90 L0,90 Z"/>
 </svg>
 
-<!-- ============ 教室のようす（写真） ============ -->
-<section class="photos">
-  <div class="strip">
-    <figure class="rv"><img src="../shared-img/room.jpg" alt="レッスン室のようす（イメージ）" loading="lazy"><figcaption>レッスンのお部屋</figcaption></figure>
-    <figure class="rv d1"><img src="../shared-img/window.jpg" alt="窓からの光（イメージ）" loading="lazy"><figcaption>あかるい光の中で</figcaption></figure>
-    <figure class="rv d2"><img src="../shared-img/desk.jpg" alt="おうたのノート（イメージ）" loading="lazy"><figcaption>おうちでも歌えるように</figcaption></figure>
-  </div>
-  <p class="note">※ 写真はイメージです。Ramiリトミック教室 様の実際のお写真ではありません。ご依頼をいただいた際に、教室のお写真へ差し替えます。</p>
-</section>
-
-<!-- ============ とくちょう ============ -->
-<section class="points dots" id="points">
-  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">OUR LESSON</span>
-      <h2>ちいさな子のための、3つのやくそく</h2>
-      <p>はじめて楽器にさわる日から、ずっと安心して通っていただけるように。</p>
-    </div>
-    <div class="nb rv">
-      <div class="nb-row"><svg class="nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--coral)"/></svg><div><h3>泣いても、歩いても大丈夫</h3><p>じっと座っていられなくて当たり前の年齢です。走り回っても、途中で泣いても、そのまま受けとめます。</p></div></div>
-      <div class="nb-row"><svg class="nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--coral)"/></svg><div><h3>どのクラスも、3組まで</h3><p>少ない人数だから、お子さまひとりひとりの「できた」を見のがしません。おうちの方とも、ゆっくりお話しできます。</p></div></div>
-      <div class="nb-row"><svg class="nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--coral)"/></svg><div><h3>体験レッスンは無料です</h3><p>当面のあいだ、体験は無料です。教室の雰囲気が合うかどうか、まずは気軽にのぞいてみてください。</p></div></div>
+<!-- ============ 3つのやくそく ============ -->
+<section class="v-sec v-white" id="points">
+  <div class="v-in v-two">
+    <h2 class="v-h rv">ちいさな子の<br>ための、<br>3つのやくそく</h2>
+    <div class="v-promises">
+      <div class="v-pr rv"><svg class="v-nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--coral)"/></svg><div><h3>泣いても、歩いても大丈夫</h3><p>じっと座っていられなくて当たり前の年齢です。走り回っても、途中で泣いても、そのまま受けとめます。</p></div></div>
+      <div class="v-pr rv"><svg class="v-nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--mint)"/></svg><div><h3>どのクラスも、3組まで</h3><p>少ない人数だから、お子さまひとりひとりの「できた」を見のがしません。おうちの方とも、ゆっくりお話しできます。</p></div></div>
+      <div class="v-pr rv"><svg class="v-nt" viewBox="0 0 40 56" aria-hidden="true"><path d="M27 6c.4 13 .2 26-.4 38" fill="none" stroke="#3b302c" stroke-width="3" stroke-linecap="round"/><path d="M26.4 43.5c.8 5.2-5.6 9.6-11.4 9.2-5-.3-7-3.8-4.6-7.3 2.8-4.1 10.6-6.6 14.6-4.4 .6.4 1.1 1.2 1.4 2.5z" fill="var(--lemon)"/></svg><div><h3>体験レッスンは無料です</h3><p>当面のあいだ、体験は無料です。教室の雰囲気が合うかどうか、まずは気軽にのぞいてみてください。</p></div></div>
     </div>
   </div>
 </section>
 
-<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
-  <path fill="#fffbf5" d="M0,30 C180,66 360,4 540,24 C760,48 900,72 1120,42 C1260,23 1360,10 1440,18 L1440,70 L0,70 Z"/>
-</svg>
-
-<!-- ============ 年齢 ============ -->
-<section class="ages" id="ages">
-  <div class="blobs" aria-hidden="true"><span class="blob b2"></span><span class="blob b4"></span></div>
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">FOR AGES</span>
-      <h2>0歳から、小学生まで</h2>
-      <p>年齢ごとに7つのクラスにわけています。どのクラスも3組までの少人数なので、ひとりひとりに目が届きます。</p>
+<!-- ============ クラス（押すと鳴る鍵盤） ============ -->
+<section class="v-sec v-mint" id="ages">
+  <div class="v-in">
+    <div class="v-head rv">
+      <h2 class="v-h">0歳から、小学生まで</h2>
+      <p>年齢ごとに7つのクラスがあります。鍵盤を押すと、ドレミファソラシの音が鳴ります。</p>
     </div>
     <div class="kkeys" id="kkeys"><button class="kk" type="button" data-m="60" aria-label="ベビー（0さい）の鍵盤。押すとドの音が鳴ります"><span class="so">ド</span><span class="kn">ベビー</span><span class="ka">0さい</span></button><button class="kk" type="button" data-m="62" aria-label="STEP1（1さい）の鍵盤。押すとレの音が鳴ります"><span class="so">レ</span><span class="kn">STEP1</span><span class="ka">1さい</span></button><button class="kk" type="button" data-m="64" aria-label="STEP2（2さい）の鍵盤。押すとミの音が鳴ります"><span class="so">ミ</span><span class="kn">STEP2</span><span class="ka">2さい</span></button><button class="kk" type="button" data-m="65" aria-label="STEP3（3さい）の鍵盤。押すとファの音が鳴ります"><span class="so">ファ</span><span class="kn">STEP3</span><span class="ka">3さい</span></button><button class="kk" type="button" data-m="67" aria-label="STEP4（4さい）の鍵盤。押すとソの音が鳴ります"><span class="so">ソ</span><span class="kn">STEP4</span><span class="ka">4さい</span></button><button class="kk" type="button" data-m="69" aria-label="STEP5（5さい）の鍵盤。押すとラの音が鳴ります"><span class="so">ラ</span><span class="kn">STEP5</span><span class="ka">5さい</span></button><button class="kk" type="button" data-m="71" aria-label="小学生（クラス）の鍵盤。押すとシの音が鳴ります"><span class="so">シ</span><span class="kn">小学生</span><span class="ka">クラス</span></button><span class="kb" style="left:calc(14.285714285714286% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(28.571428571428573% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(57.142857142857146% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(71.42857142857143% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(85.71428571428572% - 4.6%)" aria-hidden="true"></span></div>
-      <p class="kk-after">鍵盤を押すと、ドレミファソラシの音が鳴ります。</p>
+  </div>
+</section>
+
+<!-- ============ レッスンの流れ（五線のメロディー） ============ -->
+<section class="v-sec v-white" id="flow">
+  <div class="v-in">
+    <div class="v-head rv">
+      <h2 class="v-h">レッスンの日は、こんなふうに</h2>
+      <p>はじめての日も、この順番で進みます。</p>
+    </div>
+    <svg class="v-staff rv" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="#e6d6ca" stroke-width="1.5"><line x1="0" y1="30" x2="1000" y2="30"/><line x1="0" y1="52" x2="1000" y2="52"/><line x1="0" y1="74" x2="1000" y2="74"/><line x1="0" y1="96" x2="1000" y2="96"/><line x1="0" y1="118" x2="1000" y2="118"/></g>
+    </svg>
+    <div class="v-melody">
+      <div class="v-st rv" style="--y:107px;--c:var(--coral)"><i></i><b>1</b><h3>ごあいさつの歌</h3><p>まずは名前を呼んで、お返事から。泣いていても、抱っこのままで大丈夫です。</p></div>
+      <div class="v-st rv" style="--y:85px;--c:var(--lemon)"><i></i><b>2</b><h3>からだを動かす</h3><p>音に合わせて歩く、走る、止まる。ピアノの音が変わったら、動きも変わります。</p></div>
+      <div class="v-st rv" style="--y:63px;--c:var(--mint)"><i></i><b>3</b><h3>楽器であそぶ</h3><p>鈴やタンバリンを鳴らします。音の大きい・小さいを、耳と手で覚えていきます。</p></div>
+      <div class="v-st rv" style="--y:41px;--c:var(--lav)"><i></i><b>4</b><h3>さようならの歌</h3><p>最後はゆっくり座って、今日の歌をもう一度。おうちで歌える曲を持って帰ります。</p></div>
     </div>
   </div>
 </section>
 
-
-
-<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
-  <path fill="#ffffff" d="M0,22 C200,58 420,66 660,38 C880,12 1080,4 1260,26 C1340,36 1400,44 1440,40 L1440,70 L0,70 Z"/>
-</svg>
-
-<!-- ============ レッスンの流れ ============ -->
-<section class="flow dots warm" id="flow">
-  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b3"></span></div>
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">HOW IT GOES</span>
-      <h2>レッスンの日は、こんなふうに</h2>
-      <p>45分間の流れです。はじめての日も、この順番で進みます。</p>
-    </div>
-    <div class="steps">
-      <div class="step rv"><div class="snum">1</div><div class="sbody"><h4>ごあいさつの歌</h4><p>まずは名前を呼んで、お返事から。泣いていても、抱っこのままで大丈夫です。</p></div></div>
-      <div class="step rv d1"><div class="snum">2</div><div class="sbody"><h4>からだを動かす</h4><p>音に合わせて歩く、走る、止まる。ピアノの音が変わったら、動きも変わります。</p></div></div>
-      <div class="step rv d2"><div class="snum">3</div><div class="sbody"><h4>楽器であそぶ</h4><p>鈴やタンバリンを鳴らします。音の大きい・小さいを、耳と手で覚えていきます。</p></div></div>
-      <div class="step rv d3"><div class="snum">4</div><div class="sbody"><h4>さようならの歌</h4><p>最後はゆっくり座って、今日の歌をもう一度。おうちで歌える曲を持って帰ります。</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ はじめての方へ ============ -->
-<section class="faq" id="faq">
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">FIRST TIME</span>
-      <h2>はじめての方から、よくいただくご質問</h2>
-      <p>ご不安なところは、遠慮なく聞いてください。</p>
-    </div>
-    <div class="q-list">
-      <div class="q rv"><h4>うちの子、じっとしていられません。だいじょうぶでしょうか</h4><p>だいじょうぶです。この年齢のお子さまは、じっと座っていられなくて当たり前です。走り回っても、部屋のすみで見ているだけでも、それがその日のその子のペースです。お母さんが謝られる必要はまったくありません。</p></div>
-      <div class="q rv d1"><h4>途中の月から入ることはできますか</h4><p>できます。毎月の歌や活動は月ごとに変わりますので、いつ入られても「途中から」にはなりません。はじめての方には、最初の数回はそばでご説明しながら進めます。</p></div>
-      <div class="q rv d2"><h4>下の子（赤ちゃん）を連れていっても大丈夫ですか</h4><p>どうぞご一緒にお越しください。抱っこひものままご参加いただけます。授乳やおむつ替えの場所も、お声がけいただければご案内します。</p></div>
-      <div class="q rv d3"><h4>まず見学だけしたいのですが</h4><p>もちろん大丈夫です。お子さまがその日の気分で参加されなくても構いません。教室の雰囲気を見ていただくだけでも、遠慮なくお越しください。</p></div>
-    </div>
+<!-- ============ よくあるご質問 ============ -->
+<section class="v-sec v-cream" id="faq">
+  <div class="v-in v-two">
+    <h2 class="v-h rv">はじめての方から、<br>よくいただく<br>ご質問</h2>
+    <dl class="v-faq">
+      <div class="rv"><dt>うちの子、じっとしていられません。だいじょうぶでしょうか</dt><dd>だいじょうぶです。この年齢のお子さまは、じっと座っていられなくて当たり前です。走り回っても、部屋のすみで見ているだけでも、それがその日のその子のペースです。</dd></div>
+      <div class="rv"><dt>途中の月から入ることはできますか</dt><dd>できます。はじめての方には、最初の数回はそばでご説明しながら進めます。</dd></div>
+      <div class="rv"><dt>下の子（赤ちゃん）を連れていっても大丈夫ですか</dt><dd>どうぞご一緒にお越しください。抱っこひものままご参加いただけます。</dd></div>
+      <div class="rv"><dt>まず見学だけしたいのですが</dt><dd>もちろん大丈夫です。教室の雰囲気を見ていただくだけでも、遠慮なくお越しください。</dd></div>
+    </dl>
   </div>
 </section>
 
 <!-- ============ せんせい ============ -->
-<section class="teacher" id="teacher">
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">TEACHER</span>
-      <h2>せんせいのこと</h2>
-    </div>
-    <div class="t-card rv">
-      <div class="t-photo" aria-label="先生のお写真が入る場所">お写真が<br>入ります</div>
-      <div class="t-name">（お名前が入ります）</div>
-      <div class="t-role">リトミック研究センター認定教室</div>
-      <p class="t-bio">※ここには先生のご紹介文が入ります。ご経歴、リトミックを始められたきっかけ、お子さまと接するときに大切にされていること——このあたりを3〜5行いただければ、こちらで整えます。写真をお持ちでしたら、この丸い場所に入ります。</p>
+<section class="v-sec v-white" id="teacher">
+  <div class="v-in v-teach">
+    <div class="v-photo rv" aria-label="先生のお写真が入る場所">先生のお写真が<br>入ります</div>
+    <div class="rv">
+      <h2 class="v-h">せんせいのこと</h2>
+      <p class="v-name">（お名前が入ります）</p>
+      <p class="v-role">リトミック研究センター認定教室</p>
+      <p class="v-bio">ここには先生のご紹介文が入ります。ご経歴、リトミックを始められたきっかけ、お子さまと接するときに大切にされていること。3〜5行ほどいただければ、こちらで整えます。</p>
     </div>
   </div>
 </section>
 
 <!-- ============ お月謝 ============ -->
-<section class="price dots" id="price">
-  <div class="blobs" aria-hidden="true"><span class="blob b2"></span><span class="blob b4"></span></div>
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">PRICE</span>
-      <h2>お月謝</h2>
-      <p>年齢ごとのクラスで、お月謝は2つだけです。</p>
+<section class="v-sec v-coral" id="price">
+  <div class="v-in">
+    <div class="v-head rv">
+      <h2 class="v-h">お月謝</h2>
+      <p>どのクラスも、3組までの少人数レッスンです。</p>
     </div>
-    <div class="fee rv">
-      <div class="fee-free"><b>体験レッスン　無料</b><span>当面のあいだ</span></div>
-      <table class="fee-t">
-        <thead><tr><th scope="col">クラス</th><th scope="col">レッスン</th><th scope="col">お月謝</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">ベビー</th><td>年間36回</td><td class="y">4,000<small>円</small></td></tr>
-          <tr><th scope="row">STEP1（1歳児）〜 STEP5（5歳児）</th><td>年間40回</td><td class="y">5,000<small>円</small></td></tr>
-          <tr><th scope="row">小学生</th><td>年間40回</td><td class="y">5,000<small>円</small></td></tr>
-        </tbody>
-      </table>
-      <p class="fee-n">どのクラスも、3組までの少人数レッスンです。</p>
+    <div class="v-fee rv">
+      <div class="v-free"><span class="v-free-l">体験レッスン</span><span class="v-free-y">無料</span><span class="v-free-n">当面のあいだ</span></div>
+      <div class="v-row"><span class="v-c">ベビー<small>0歳</small></span><span class="v-k">年間36回</span><span class="v-y">4,000<small>円／月</small></span></div>
+      <div class="v-row"><span class="v-c">STEP1〜STEP5<small>1歳児〜5歳児</small></span><span class="v-k">年間40回</span><span class="v-y">5,000<small>円／月</small></span></div>
+      <div class="v-row"><span class="v-c">小学生</span><span class="v-k">年間40回</span><span class="v-y">5,000<small>円／月</small></span></div>
     </div>
   </div>
 </section>
 
-<svg class="wave2" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
-  <path fill="#fffbf5" d="M0,40 C220,8 460,4 700,30 C920,54 1120,66 1440,32 L1440,70 L0,70 Z"/>
-</svg>
-
 <!-- ============ 教室のこと ============ -->
-<section class="info" id="info">
-  <div class="inner">
-    <div class="sec-head rv">
-      <span class="en">CLASSROOM</span>
-      <h2>教室のこと</h2>
-    </div>
-    <div class="shot rv"><img src="../shared-img/window.jpg" alt="教室のようす（イメージ）" loading="lazy"></div>
-    <table class="i-table rv">
-      <tr><th>教室名</th><td>Ramiリトミック教室</td></tr>
-      <tr><th>ばしょ</th><td>（会場名・住所が入ります）</td></tr>
-      <tr><th>ひにち</th><td>（曜日と時間が入ります）</td></tr>
-      <tr><th>たいしょう</th><td>0歳〜小学生（ベビー・STEP1〜5・小学生の7クラス）</td></tr>
-      <tr><th>もちもの</th><td>動きやすい服装と、水分だけお持ちください</td></tr>
-    </table>
+<section class="v-sec v-white" id="info">
+  <div class="v-in v-two">
+    <h2 class="v-h rv">教室のこと</h2>
+    <dl class="v-info rv">
+      <div><dt>教室名</dt><dd>Ramiリトミック教室</dd></div>
+      <div><dt>ばしょ</dt><dd>愛知県春日井市（会場名・住所が入ります）</dd></div>
+      <div><dt>ひにち</dt><dd>（曜日と時間が入ります）</dd></div>
+      <div><dt>たいしょう</dt><dd>0歳〜小学生（ベビー・STEP1〜5・小学生の7クラス）</dd></div>
+      <div><dt>もちもの</dt><dd>動きやすい服装と、水分だけお持ちください</dd></div>
+    </dl>
   </div>
 </section>
 
 <!-- ============ 体験レッスン ============ -->
-<section class="reserve" id="reserve">
-  <div class="inner">
-    <div class="r-box rv">
-      <h2>まずは一度、遊びにきてください</h2>
-      <p>見学だけでも大丈夫です。お子さまの機嫌が悪い日は、日をあらためても構いません。</p>
-      <a href="#reserve" class="btn btn-main" id="ctaBtn">体験レッスンを申し込む <span class="arw">→</span></a>
-      <p class="r-note">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
-    </div>
+<section class="v-sec v-cta" id="reserve">
+  <div class="v-in">
+    <h2 class="rv">まずは一度、<br>遊びにきてください。</h2>
+    <p class="rv">体験レッスンは当面のあいだ無料です。見学だけでも大丈夫です。</p>
+    <a href="#reserve" class="v-btn rv" id="ctaBtn">体験レッスンを申し込む</a>
+    <p class="v-note">このボタンは見本です。実際のページでは、ここからそのままお申し込みいただけます。</p>
   </div>
 </section>
 
