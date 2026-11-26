@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>渡部沙織ピアノ・リトミック教室｜北海道釧路市昭和中央のピアノ教室</title>
+<meta name="description" content="北海道釧路市昭和中央のピアノ教室。3歳半頃から高校生までのピアノコースを中心に、プレピアノ・リトミック・ベビーリトミックのコースがあります。リトミック研究センター認定教室。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   渡部沙織ピアノ・リトミック教室（本番・2026-11-27 制作）
+   ・色：見本でご覧いただいたコーラルを引き継ぐ。コースごとに1色ずつ割り当てて「色＝コース」で読めるようにする
+       ピアノ＝コーラル／プレピアノ＝レモン／リトミック＝ミント／ベビー＝空色／大人＝墨
+   ・文字：見出しは Zen Maru Gothic（小さな子の保護者にも固くない）、本文は Zen Kaku Gothic New（料金表の数字が読みやすい）
+   ・写真は届いたら差し込む（.photo-slot）。それまでは線の絵で組む
+   ・文章と料金は data-key の付いた所だけ、#henshu で本人が直せる
+   ============================================================ */
+:root{
+  --ink:#2b2724; --ink2:#4a433d; --mute:#6f655d; --line:#e3d8cc;
+  --paper:#fdf7f0; --white:#fffdfa;
+  --coral:#e8604b; --coral-d:#b8412f; --coral-l:#fde3dc; --coral-ll:#fff1ec;
+  --lemon:#e9a92a; --lemon-l:#fcefcc;
+  --mint:#3fa58c;  --mint-l:#d6efe7;
+  --sky:#4f93b8;   --sky-l:#dcebf3;
+  --piano:#26211e;
+  --w:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-size:17px;line-height:1.9;letter-spacing:.02em}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 20px}
+h1,h2,h3,.maru{font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;font-weight:700;letter-spacing:.04em;line-height:1.45}
+.kicker{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.12em;color:var(--coral-d);margin-bottom:10px}
+.sec{padding:88px 0}
+.sec h2{font-size:clamp(28px,5.4vw,42px)}
+.lead{font-size:18px;color:var(--ink2);margin-top:14px;max-width:34em}
+
+/* ---- ヘッダー ---- */
+header{position:sticky;top:0;z-index:20;background:rgba(253,247,240,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:16px;line-height:1.3}
+.logo small{display:block;font-size:11px;color:var(--mute);font-weight:500;letter-spacing:.06em}
+nav{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none}
+nav a:hover{color:var(--coral-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:999px;padding:14px 26px;font-size:16px;line-height:1.3}
+.btn-line{background:#06c755;color:#fff}
+.btn-line:hover{background:#05a948}
+.btn-ghost{border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+header .btn{padding:9px 16px;font-size:14px}
+@media(max-width:860px){nav{display:none}header .btn{margin-left:auto}}
+@media(max-width:700px){header .btn{display:none}.logo{font-size:15px}.logo span{white-space:nowrap}}
+
+/* ---- 表紙 ---- */
+.hero{padding:64px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,6.6vw,60px);font-weight:900;letter-spacing:.03em;line-height:1.35}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.ph{display:inline-block}
+.hero .lead{font-size:18px;margin-top:22px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.facts b{font-family:"Zen Maru Gothic",sans-serif;font-size:20px;color:var(--ink);margin-right:4px}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+@media(max-width:860px){.hero{padding:36px 0 56px}.hero .wrap{grid-template-columns:1fr;gap:28px}.hero-art{order:-1;max-width:360px;margin:0 auto}}
+
+/* 鍵盤の帯（区切り） */
+.keys{height:30px;background:
+  repeating-linear-gradient(90deg,transparent 0 22px,var(--piano) 22px 24px),
+  var(--white);
+  border-top:2px solid var(--piano);border-bottom:2px solid var(--piano);position:relative}
+.keys::after{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,
+   transparent 0 15px,var(--piano) 15px 29px,transparent 29px 39px,var(--piano) 39px 53px,transparent 53px 72px,
+   transparent 72px 87px,var(--piano) 87px 101px,transparent 101px 111px,var(--piano) 111px 125px,transparent 125px 135px,var(--piano) 135px 149px,transparent 149px 168px);
+  height:17px}
+
+/* ---- 年齢の道すじ ---- */
+.path{background:var(--white)}
+.chart{margin-top:44px;border-top:2px solid var(--ink)}
+.axis,.row{display:grid;grid-template-columns:200px 1fr;align-items:center}
+.axis{border-bottom:1px solid var(--line)}
+.axis .ticks,.row .track{display:grid;grid-template-columns:repeat(9,1fr);position:relative}
+.axis .ticks span{font-size:13px;font-weight:700;text-align:center;padding:10px 0;color:var(--ink2);border-left:1px dashed var(--line)}
+.row{border-bottom:1px solid var(--line);min-height:74px}
+.row .name{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:17px;line-height:1.35;padding:12px 12px 12px 0}
+.row .name small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;font-size:13px;color:var(--mute)}
+.row .track{height:74px}
+.row .track i{border-left:1px dashed var(--line)}
+.bar{position:absolute;top:50%;transform:translateY(-50%);height:34px;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;text-decoration:none}
+.bar.dash{background:transparent!important;border:2px dashed currentColor}
+.c-piano{background:var(--coral)} .t-piano{color:var(--coral-d)}
+.c-pre{background:var(--lemon)} .t-pre{color:#9a6a08}
+.c-rit{background:var(--mint)} .t-rit{color:#257a66}
+.c-baby{background:var(--sky)} .t-baby{color:#2f6f92}
+.c-adult{background:var(--ink2)} .t-adult{color:var(--ink2)}
+.chart-note{font-size:14px;color:var(--mute);margin-top:14px}
+@media(max-width:700px){
+  .axis,.row{grid-template-columns:1fr}
+  .axis .label{display:none}
+  .row{padding-top:10px}
+  .row .name{padding:0}
+  .row .track{height:52px}
+  .axis .ticks span{font-size:11px;padding:8px 0;letter-spacing:0}
+  .bar{font-size:11px;padding:0 6px;height:28px}
+  .bar .long{display:none}
+}
+
+/* ---- コースの区切り（区切りごとに一面の色） ---- */
+.course .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+@media(max-width:860px){.course .wrap{grid-template-columns:1fr;gap:28px}}
+.course .who{display:inline-block;font-weight:700;font-size:15px;padding:4px 14px;border-radius:4px;margin-top:16px}
+.course p.body{margin-top:16px;color:var(--ink2)}
+.spec{list-style:none;margin-top:20px;border-top:1px solid rgba(0,0,0,.14)}
+.spec li{display:grid;grid-template-columns:8em 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.14)}
+.spec li b{font-weight:700}
+.price{border-radius:4px;overflow:hidden}
+.price table{width:100%;border-collapse:collapse}
+.price th,.price td{text-align:left;padding:16px 18px;border-bottom:1px solid rgba(0,0,0,.12);vertical-align:baseline}
+.price th{font-weight:500;font-size:16px}
+.price td{text-align:right;white-space:nowrap}
+.yen{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:30px;letter-spacing:.01em}
+.yen small{font-size:15px;font-weight:700;margin-left:2px}
+.notes{list-style:none;margin-top:14px;font-size:15px;color:var(--ink2)}
+.notes li{padding-left:1.1em;text-indent:-1.1em}
+.notes li::before{content:"※"}
+
+/* ピアノ：主役。黒いピアノの色の面 */
+.c1{background:var(--piano);color:#f6efe7}
+.c1 h2{color:#fff;font-size:clamp(32px,6vw,50px)}
+.c1 .kicker{color:#ff9f8c}
+.c1 .who{background:var(--coral);color:#fff}
+.c1 p.body,.c1 .notes{color:#d9cfc4}
+.c1 .spec{border-color:rgba(255,255,255,.18)} .c1 .spec li{border-color:rgba(255,255,255,.18)}
+.c1 .price{background:#fffdfa;color:var(--ink)}
+.c1 .price caption{caption-side:top;text-align:left;padding:16px 18px 6px;font-weight:700;color:var(--coral-d);font-size:14px;letter-spacing:.1em}
+.c2{background:var(--lemon-l)} .c2 .who{background:var(--lemon);color:#fff} .c2 .kicker{color:#9a6a08}
+.c3{background:var(--mint-l)} .c3 .who{background:var(--mint);color:#fff} .c3 .kicker{color:#257a66}
+.c4{background:var(--sky-l)} .c4 .who{background:var(--sky);color:#fff} .c4 .kicker{color:#2f6f92}
+.c2 .price,.c3 .price,.c4 .price{background:var(--white)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:22px;border-top:1px solid rgba(0,0,0,.14);border-left:1px solid rgba(0,0,0,.14)}
+.steps div{padding:12px 14px;border-right:1px solid rgba(0,0,0,.14);border-bottom:1px solid rgba(0,0,0,.14);background:rgba(255,255,255,.55)}
+.steps b{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:18px}
+.steps span{font-size:14px;color:var(--ink2)}
+.steps .off{background:transparent;color:var(--mute)}
+@media(max-width:520px){.steps{grid-template-columns:repeat(2,1fr)}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;margin-top:14px;padding:6px 12px;border:1.5px solid currentColor;border-radius:4px;color:#257a66}
+
+/* 大人＋共通の費用 */
+.extra{background:var(--white)}
+.extra .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:860px){.extra .wrap{grid-template-columns:1fr;gap:40px}}
+.extra h3{font-size:24px;margin-top:6px}
+.extra p{margin-top:12px;color:var(--ink2)}
+.common{border:2px solid var(--ink);border-radius:4px;padding:26px 24px}
+.common .yen{font-size:34px}
+
+/* ---- お知らせ ---- */
+.news{background:var(--paper)}
+.news-list{list-style:none;margin-top:28px;border-top:2px solid var(--ink)}
+.news-list li{display:grid;grid-template-columns:9em 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.news-list time{font-weight:700;color:var(--coral-d);font-size:15px}
+.news-list .del{display:none}
+@media(max-width:600px){.news-list li{grid-template-columns:1fr auto;gap:2px 12px}.news-list time{grid-column:1/-1}}
+
+/* ---- せんせい ---- */
+.teacher{background:var(--coral-ll)}
+.teacher .wrap{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+@media(max-width:860px){.teacher .wrap{grid-template-columns:1fr;gap:32px}}
+.photo-slot{aspect-ratio:4/5;border-radius:4px;background:var(--coral-l);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo-slot img{width:100%;height:100%;object-fit:cover}
+.photo-slot svg{width:62%}
+@media(max-width:860px){.photo-slot{max-width:300px;aspect-ratio:1/1}}
+.teacher .name{font-size:26px;margin-top:6px}
+.teacher .name small{display:block;font-size:14px;color:var(--mute);font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;letter-spacing:.06em}
+.greet{margin-top:22px;font-size:18px;line-height:2;color:var(--ink)}
+.career{margin-top:28px;padding-top:24px;border-top:1px solid rgba(0,0,0,.14)}
+.career h3{font-size:18px;color:var(--coral-d)}
+.career p{margin-top:8px;color:var(--ink2)}
+.qual{list-style:none;margin-top:10px}
+.qual li{padding:8px 0;border-bottom:1px dashed rgba(0,0,0,.16);color:var(--ink2)}
+
+/* ---- 教室 ---- */
+.access{background:var(--white)}
+.access .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:860px){.access .wrap{grid-template-columns:1fr;gap:28px}}
+.map{aspect-ratio:4/3;border:2px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--paper)}
+.map iframe{width:100%;height:100%;border:0}
+.days{display:flex;gap:6px;margin-top:10px}
+.days span{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-weight:700;font-family:"Zen Maru Gothic",sans-serif;border:2px solid var(--ink)}
+.days .on{background:var(--ink);color:#fff}
+.days .sat{background:var(--mint);border-color:var(--mint);color:#fff}
+
+/* ---- お問い合わせ ---- */
+.contact{background:var(--coral);color:#fff;text-align:left}
+.contact h2{color:#fff}
+.contact .lead{color:#fff6f3}
+.contact .row2{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;align-items:center}
+.contact .btn-line{font-size:18px;padding:18px 32px;box-shadow:0 0 0 3px #fff}
+.contact .mail{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;padding:16px 4px;word-break:break-all}
+.contact .small{font-size:15px;margin-top:18px;color:#ffe9e3}
+
+footer{background:var(--piano);color:#cfc5ba;padding:40px 0 100px;font-size:14px}
+footer .logo{color:#fff}
+footer p{margin-top:10px}
+
+/* 下に固定のLINEボタン（スマホだけ） */
+.fixed-line{display:none}
+@media(max-width:700px){
+  .fixed-line{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .sec{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== 編集モード（#henshu のときだけ） ===== */
+.hs-on [data-key]{outline:2px dashed #e0703a;outline-offset:3px;border-radius:3px;cursor:text;min-width:1em;display:inline-block}
+.hs-on .news-list .del{display:inline-block;font-size:13px;border:1px solid #b8412f;color:#b8412f;background:#fff;border-radius:6px;padding:4px 10px;cursor:pointer}
+.hs-on .news{display:block!important}
+#news-add{display:none;margin-top:20px;gap:10px;flex-wrap:wrap;align-items:flex-end;background:#fff;border:2px dashed #e0703a;border-radius:6px;padding:16px}
+.hs-on #news-add{display:flex}
+#news-add label{display:flex;flex-direction:column;font-size:14px;font-weight:700;gap:4px}
+#news-add input,#news-add textarea{font:inherit;font-size:16px;padding:8px 10px;border:1px solid #bbb;border-radius:6px}
+#news-add textarea{width:min(560px,80vw);height:70px}
+#news-add button{font:700 16px "Hiragino Sans",sans-serif;background:#2b2724;color:#fff;border:0;border-radius:8px;padding:12px 20px;cursor:pointer}
+#hs-bar{position:fixed;left:0;right:0;bottom:0;z-index:99;background:#2b2724;color:#fff;display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 16px;font:15px/1.6 "Hiragino Sans",sans-serif}
+#hs-bar .msg{flex:1 1 220px}
+#hs-bar button{font:700 16px "Hiragino Sans",sans-serif;border:0;border-radius:10px;padding:12px 20px;cursor:pointer}
+#hs-save{background:#e0703a;color:#fff}#hs-save:disabled{background:#777}
+#hs-quit{background:#555;color:#fff}
+.hs-on .fixed-line{display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="6" fill="#26211e"/><g fill="#fffdfa"><rect x="5" y="8" width="5" height="19" rx="1"/><rect x="11" y="8" width="5" height="19" rx="1"/><rect x="17" y="8" width="5" height="19" rx="1"/><rect x="23" y="8" width="5" height="19" rx="1"/></g><g fill="#e8604b"><rect x="8.5" y="8" width="3.5" height="11" rx="1"/><rect x="14.5" y="8" width="3.5" height="11" rx="1"/><rect x="26.5" y="8" width="3" height="11" rx="1"/></g></svg>
+      <span>渡部沙織ピアノ・リトミック教室<small>北海道釧路市 昭和中央</small></span>
+    </a>
+    <nav>
+      <a href="#courses">コースと月謝</a>
+      <a href="#teacher">講師</a>
+      <a href="#access">教室</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="btn btn-line" href="https://page.line.me/442brqeg" target="_blank" rel="noopener">LINEで問い合わせ</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- 表紙 -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">釧路市昭和中央のピアノ教室</span>
+      <h1><span class="ph">小さな一歩を</span><span class="ph">大切に、</span><br><em class="ph">音楽とともに。</em></h1>
+      <p class="lead" data-key="表紙の文">年齢や経験、得意なことや苦手なことは一人ひとり違います。それぞれのペースを大切にしながら、基礎から丁寧にお教えします。</p>
+      <div class="cta">
+        <a class="btn btn-line" href="https://page.line.me/442brqeg" target="_blank" rel="noopener">LINEで問い合わせる</a>
+        <a class="btn btn-ghost" href="#courses">コースと月謝を見る</a>
+      </div>
+      <div class="facts">
+        <span><b>2005</b>年に開室</span>
+        <span><b>3歳半頃〜</b>高校生まで</span>
+        <span>リトミック研究センター<b style="font-size:16px">認定教室</b></span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <!-- アップライトピアノと譜面（写真が届いたら教室の写真に差し替えてもよい） -->
+      <svg viewBox="0 0 420 380">
+        <rect x="18" y="340" width="384" height="8" rx="4" fill="#e3d8cc"/>
+        <!-- 本体 -->
+        <rect x="40" y="70" width="340" height="270" rx="10" fill="#26211e"/>
+        <rect x="52" y="82" width="316" height="96" rx="5" fill="#332c28"/>
+        <!-- 譜面台と楽譜 -->
+        <rect x="96" y="150" width="228" height="10" rx="3" fill="#4a3f38"/>
+        <g transform="rotate(-2 210 110)">
+          <rect x="112" y="60" width="196" height="96" rx="3" fill="#fffdfa"/>
+          <g stroke="#c9bcae" stroke-width="1.4">
+            <line x1="124" y1="80" x2="296" y2="80"/><line x1="124" y1="87" x2="296" y2="87"/><line x1="124" y1="94" x2="296" y2="94"/><line x1="124" y1="101" x2="296" y2="101"/><line x1="124" y1="108" x2="296" y2="108"/>
+            <line x1="124" y1="124" x2="296" y2="124"/><line x1="124" y1="131" x2="296" y2="131"/><line x1="124" y1="138" x2="296" y2="138"/><line x1="124" y1="145" x2="296" y2="145"/>
+          </g>
+          <g fill="#2b2724">
+            <ellipse cx="150" cy="104" rx="5" ry="3.8" transform="rotate(-20 150 104)"/><rect x="154" y="78" width="1.6" height="26"/>
+            <ellipse cx="178" cy="97" rx="5" ry="3.8" transform="rotate(-20 178 97)"/><rect x="182" y="71" width="1.6" height="26"/>
+            <ellipse cx="206" cy="90" rx="5" ry="3.8" transform="rotate(-20 206 90)"/><rect x="210" y="64" width="1.6" height="26"/>
+            <ellipse cx="236" cy="94" rx="5" ry="3.8" transform="rotate(-20 236 94)"/><rect x="240" y="68" width="1.6" height="26"/>
+            <ellipse cx="266" cy="101" rx="5" ry="3.8" transform="rotate(-20 266 101)"/><rect x="270" y="75" width="1.6" height="26"/>
+          </g>
+          <g fill="#e8604b"><ellipse cx="164" cy="138" rx="5" ry="3.8" transform="rotate(-20 164 138)"/><ellipse cx="226" cy="131" rx="5" ry="3.8" transform="rotate(-20 226 131)"/><ellipse cx="282" cy="138" rx="5" ry="3.8" transform="rotate(-20 282 138)"/></g>
+        </g>
+        <!-- 鍵盤 -->
+        <rect x="30" y="186" width="360" height="12" rx="3" fill="#3b332e"/>
+        <rect x="44" y="198" width="332" height="46" fill="#fffdfa"/>
+        <g stroke="#cfc5ba" stroke-width="1.2">
+          <line x1="64.75" y1="198" x2="64.75" y2="244"/><line x1="85.5" y1="198" x2="85.5" y2="244"/><line x1="106.25" y1="198" x2="106.25" y2="244"/><line x1="127" y1="198" x2="127" y2="244"/><line x1="147.75" y1="198" x2="147.75" y2="244"/><line x1="168.5" y1="198" x2="168.5" y2="244"/><line x1="189.25" y1="198" x2="189.25" y2="244"/><line x1="210" y1="198" x2="210" y2="244"/><line x1="230.75" y1="198" x2="230.75" y2="244"/><line x1="251.5" y1="198" x2="251.5" y2="244"/><line x1="272.25" y1="198" x2="272.25" y2="244"/><line x1="293" y1="198" x2="293" y2="244"/><line x1="313.75" y1="198" x2="313.75" y2="244"/><line x1="334.5" y1="198" x2="334.5" y2="244"/><line x1="355.25" y1="198" x2="355.25" y2="244"/>
+        </g>
+        <g fill="#26211e">
+          <rect x="58" y="198" width="12" height="28" rx="1.5"/><rect x="79" y="198" width="12" height="28" rx="1.5"/>
+          <rect x="121" y="198" width="12" height="28" rx="1.5"/><rect x="141" y="198" width="12" height="28" rx="1.5"/><rect x="162" y="198" width="12" height="28" rx="1.5"/>
+          <rect x="204" y="198" width="12" height="28" rx="1.5"/><rect x="224" y="198" width="12" height="28" rx="1.5"/>
+          <rect x="266" y="198" width="12" height="28" rx="1.5"/><rect x="287" y="198" width="12" height="28" rx="1.5"/><rect x="307" y="198" width="12" height="28" rx="1.5"/>
+          <rect x="349" y="198" width="12" height="28" rx="1.5"/>
+        </g>
+        <!-- 下の板と足 -->
+        <rect x="52" y="252" width="316" height="80" rx="4" fill="#332c28"/>
+        <rect x="70" y="332" width="20" height="10" fill="#26211e"/><rect x="330" y="332" width="20" height="10" fill="#26211e"/>
+        <g fill="#c9a24a"><rect x="196" y="318" width="6" height="16" rx="2"/><rect x="208" y="318" width="6" height="16" rx="2"/><rect x="220" y="318" width="6" height="16" rx="2"/></g>
+        <!-- 浮かぶ音符 -->
+        <g fill="#e8604b"><ellipse cx="372" cy="40" rx="8" ry="6" transform="rotate(-20 372 40)"/><rect x="378" y="6" width="2.4" height="34"/><path d="M380 6 q14 6 10 20 q-2-10 -10-12z"/></g>
+        <g fill="#3fa58c"><ellipse cx="30" cy="52" rx="7" ry="5.4" transform="rotate(-20 30 52)"/><rect x="35" y="22" width="2.2" height="30"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="keys" aria-hidden="true"></div>
+
+<!-- 年齢の道すじ -->
+<section class="sec path" id="courses">
+  <div class="wrap">
+    <span class="kicker">コースの全体</span>
+    <h2>年齢に合わせて、5つのコース</h2>
+    <p class="lead">生後6か月のベビーリトミックから、高校生までのピアノまで。お子さまの年齢から、通えるコースをご覧ください。</p>
+
+    <div class="chart" role="table" aria-label="年齢ごとのコース">
+      <div class="axis"><span class="label"></span>
+        <div class="ticks"><span>0歳</span><span>1歳</span><span>2歳</span><span>3歳</span><span>4歳</span><span>5歳</span><span>小学生</span><span>中高生</span><span>大人</span></div>
+      </div>
+      <div class="row"><div class="name t-piano">ピアノ<small>3歳半頃〜高校生</small></div>
+        <div class="track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <a class="bar c-piano" href="#piano" style="left:38.9%;width:50%">ピアノ<span class="long">　3歳半頃〜高校生</span></a></div></div>
+      <div class="row"><div class="name t-pre">プレピアノ<small>2歳10か月頃〜年少</small></div>
+        <div class="track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <a class="bar c-pre" href="#pre" style="left:31.5%;width:13%">&nbsp;</a></div></div>
+      <div class="row"><div class="name t-rit">リトミック<small>1歳〜（STEP1〜4）</small></div>
+        <div class="track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <a class="bar c-rit" href="#ritmic" style="left:11.1%;width:44.4%">STEP1〜4</a>
+          <a class="bar dash t-rit" href="#ritmic" style="left:56.2%;width:10.4%">未定</a></div></div>
+      <div class="row"><div class="name t-baby">ベビーリトミック<small>生後6か月〜</small></div>
+        <div class="track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <a class="bar c-baby" href="#baby" style="left:5.6%;width:5.5%">&nbsp;</a></div></div>
+      <div class="row"><div class="name t-adult">大人のピアノ<small>ご相談ください</small></div>
+        <div class="track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <a class="bar dash t-adult" href="#adult" style="left:89.4%;width:10.4%">相談</a></div></div>
+    </div>
+    <p class="chart-note">リトミックの年齢は4月2日時点です。STEP5（年長）は開講未定で、現在は0歳〜4歳まで開講しています。</p>
+  </div>
+</section>
+
+<!-- ピアノ（主役） -->
+<section class="sec course c1" id="piano">
+  <div class="wrap">
+    <div>
+      <span class="kicker">メインのコース</span>
+      <h2>ピアノコース</h2>
+      <span class="who">3歳半頃〜高校生</span>
+      <p class="body" data-key="ピアノの説明">一人ひとりのペースを大切にしながら、基礎から丁寧に。音楽の楽しさや、表現する喜びを感じられるレッスンを心がけています。</p>
+      <ul class="spec">
+        <li><b>回数</b><span data-key="ピアノの回数">年間40回</span></li>
+        <li><b>入会金</b><span data-key="ピアノの入会金">3,000円</span></li>
+        <li><b>楽譜代</b><span>実費</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="price">
+        <table>
+          <caption>お月謝（レッスン時間ごと）</caption>
+          <tr><th>30分</th><td><span class="yen"><span data-key="ピアノ30分">8,000</span><small>円</small></span></td></tr>
+          <tr><th>45分</th><td><span class="yen"><span data-key="ピアノ45分">9,000</span><small>円</small></span></td></tr>
+          <tr><th>60分</th><td><span class="yen"><span data-key="ピアノ60分">10,000</span><small>円</small></span></td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>レベルによるレッスン料の変更はありません。</li>
+        <li>レッスン時間には入退室時間を含みます。</li>
+        <li>楽譜代は実費となります。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- プレピアノ -->
+<section class="sec course c2" id="pre">
+  <div class="wrap">
+    <div>
+      <span class="kicker">ピアノの前に</span>
+      <h2>プレピアノコース</h2>
+      <span class="who">2歳10か月頃〜年少さん</span>
+      <p class="body" data-key="プレピアノの説明">ピアノを始める前の、はじめの一歩のコースです。半年〜1年ほど通ったあと、ピアノコースやリトミックコースへ進めます。</p>
+      <ul class="spec">
+        <li><b>回数</b><span data-key="プレピアノの回数">月2回（半年〜1年程度）</span></li>
+        <li><b>レッスン時間</b><span>30分</span></li>
+        <li><b>入会金</b><span>なし</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="price">
+        <table>
+          <tr><th>お月謝</th><td><span class="yen"><span data-key="プレピアノ月謝">5,000</span><small>円</small></span></td></tr>
+          <tr><th>入会金</th><td><span class="yen">0<small>円</small></span></td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>ピアノコースへ進級する場合は入会金不要です。</li>
+        <li>リトミックコースへ進級する場合は入会金2,000円となります。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- リトミック -->
+<section class="sec course c3" id="ritmic">
+  <div class="wrap">
+    <div>
+      <span class="kicker">1歳から</span>
+      <h2>リトミックコース</h2>
+      <span class="who">1歳〜（STEP1〜4）</span><br>
+      <span class="badge">リトミック研究センター認定教室</span>
+      <p class="body" data-key="リトミックの説明">個人レッスンです（STEPによって親子でのレッスンになります）。リトミックは基本的に土曜日の午前中に開講しています。</p>
+      <div class="steps">
+        <div><b>STEP1</b><span>1歳</span></div>
+        <div><b>STEP2</b><span>2歳</span></div>
+        <div><b>STEP3</b><span>3歳（年少）</span></div>
+        <div><b>STEP4</b><span>4歳（年中）</span></div>
+        <div class="off"><b>STEP5</b><span>5歳（年長）・開講未定</span></div>
+      </div>
+      <p class="chart-note">年齢は4月2日時点です。</p>
+    </div>
+    <div>
+      <div class="price">
+        <table>
+          <tr><th>レッスン料</th><td><span class="yen"><span data-key="リトミックのレッスン料">6,000</span><small>円</small></span></td></tr>
+          <tr><th>チャイルド会員会費</th><td><span class="yen"><span data-key="リトミックの会費">660</span><small>円</small></span></td></tr>
+          <tr><th>入会金</th><td><span class="yen"><span data-key="リトミックの入会金">3,000</span><small>円</small></span></td></tr>
+        </table>
+      </div>
+      <ul class="spec">
+        <li><b>回数</b><span>年間40回</span></li>
+        <li><b>レッスン時間</b><span>1レッスン30分（入退室時間を含む）</span></li>
+      </ul>
+      <ul class="notes">
+        <li>体験レッスンを受けていただいた方は、入会金の割引があります。</li>
+        <li>教材費は別途となります。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ベビーリトミック -->
+<section class="sec course c4" id="baby">
+  <div class="wrap">
+    <div>
+      <span class="kicker">生後6か月から</span>
+      <h2>ベビーリトミック</h2>
+      <span class="who">0歳（生後6か月〜）</span>
+      <ul class="spec">
+        <li><b>回数</b><span>年間36回（月3回）</span></li>
+        <li><b>レッスン時間</b><span>1レッスン30分</span></li>
+        <li><b>教材</b><span>半年ユニット（教材費別途）</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="price">
+        <table>
+          <tr><th>レッスン料</th><td><span class="yen"><span data-key="ベビーのレッスン料">6,000</span><small>円</small></span></td></tr>
+          <tr><th>チャイルド会員会費</th><td><span class="yen"><span data-key="ベビーの会費">660</span><small>円</small></span></td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>教材費は別途となります（半年ユニット）。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 大人＋共通 -->
+<section class="sec extra" id="adult">
+  <div class="wrap">
+    <div>
+      <span class="kicker">大人の方へ</span>
+      <h3>大人のピアノ</h3>
+      <p data-key="大人のピアノの説明">現在、定期的な募集は予定していませんが、ご希望の方はお気軽にお問い合わせください。ご相談に応じます。</p>
+    </div>
+    <div class="common">
+      <span class="kicker" style="color:var(--ink)">全コース共通</span>
+      <h3>冷暖房費</h3>
+      <p><span class="yen" style="color:var(--ink)">年間 <span data-key="冷暖房費">3,000</span><small>円</small></span></p>
+      <p>※別途、冷暖房費として年間3,000円を頂戴いたします（全コース共通）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ（中身が無いときは表示しない／#henshu では常に表示） -->
+<section class="sec news" id="news" style="display:none">
+  <div class="wrap">
+    <span class="kicker">お知らせ</span>
+    <h2>教室からのお知らせ</h2>
+    <ul class="news-list" id="news-list"></ul>
+    <div id="news-add">
+      <label>日付<input type="date" id="news-date"></label>
+      <label>お知らせの文<textarea id="news-text" placeholder="例：12月のレッスン日のお知らせ"></textarea></label>
+      <button type="button" id="news-btn">お知らせを追加</button>
+    </div>
+  </div>
+</section>
+
+<!-- せんせい -->
+<section class="sec teacher" id="teacher">
+  <div class="wrap">
+    <div class="photo-slot">
+      <!-- 先生のお写真が届いたら <img src="sensei.jpg" alt="渡部沙織 先生"> に差し替える -->
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="#e8604b"><ellipse cx="70" cy="140" rx="22" ry="16" transform="rotate(-22 70 140)"/><rect x="88" y="40" width="7" height="100" rx="2"/><ellipse cx="140" cy="122" rx="22" ry="16" transform="rotate(-22 140 122)"/><rect x="158" y="24" width="7" height="98" rx="2"/><rect x="88" y="24" width="77" height="20" rx="3"/></g>
+      </svg>
+    </div>
+    <div>
+      <span class="kicker">講師</span>
+      <h2 class="name">渡部 沙織<small>講師</small></h2>
+      <p class="greet" data-key="講師挨拶">年齢や経験、得意なことや苦手なことは一人ひとり違います。それぞれのペースを大切にしながら、基礎から丁寧に学び、音楽の楽しさや表現する喜びを感じられるレッスンを心がけています。小さな一歩を大切に、音楽とともに成長していける教室でありたいと思っています。</p>
+      <div class="career">
+        <h3>経歴</h3>
+        <p data-key="講師経歴">カワイ音楽学園 音楽教育専攻卒業。カワイ音楽教室にてピアノ・ドリマトーン講師を経験後、2005年12月に渡部沙織ピアノ教室を開室。現在はピアノ指導のほか、幼稚園の課外教室やリトミック指導にも携わっています。</p>
+      </div>
+      <div class="career">
+        <h3>資格・指導歴</h3>
+        <ul class="qual">
+          <li>カワイピアノ、ドリマトーン、音楽教育グレード</li>
+          <li>リトミック研究センター 指導者認定 デュプロマB</li>
+          <li>こどものためのリトミック STEP1 指導資格</li>
+          <li>ベビーのためのリトミック 指導資格</li>
+          <li>2005年〜 渡部沙織ピアノ教室開室</li>
+          <li>2016年〜 わかばフレンド幼稚園 課外ピアノ講師</li>
+          <li>2022年〜 島村楽器 ピアノ講師</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 教室 -->
+<section class="sec access" id="access">
+  <div class="wrap">
+    <div>
+      <span class="kicker">教室のご案内</span>
+      <h2>教室の場所と曜日</h2>
+      <ul class="spec">
+        <li><b>住所</b><span>北海道釧路市<br>昭和中央<span style="white-space:nowrap">3-35-14</span></span></li>
+        <li><b>レッスン曜日</b><span data-key="レッスン曜日">月・火・水・木・土曜日</span></li>
+        <li><b>リトミック</b><span data-key="リトミックの曜日">基本的に土曜日の午前中</span></li>
+      </ul>
+      <div class="days" aria-label="レッスン曜日">
+        <span class="on">月</span><span class="on">火</span><span class="on">水</span><span class="on">木</span><span>金</span><span class="sat">土</span><span>日</span>
+      </div>
+      <p class="chart-note">土曜日の午前は、リトミックのレッスンです。</p>
+      <p style="margin-top:20px"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8C%97%E6%B5%B7%E9%81%93%E9%87%A7%E8%B7%AF%E5%B8%82%E6%98%AD%E5%92%8C%E4%B8%AD%E5%A4%AE3-35-14" target="_blank" rel="noopener">Googleマップで開く</a></p>
+    </div>
+    <div class="map">
+      <iframe title="教室の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E9%87%A7%E8%B7%AF%E5%B8%82%E6%98%AD%E5%92%8C%E4%B8%AD%E5%A4%AE3-35-14&amp;z=16&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <span class="kicker" style="color:#fff">お問い合わせ</span>
+    <h2>体験レッスン・ご質問は、<br>公式LINEからどうぞ</h2>
+    <p class="lead" data-key="問い合わせの文">体験レッスンのご希望や、コース・お月謝についてのご質問は、公式LINEからお気軽にお問い合わせください。</p>
+    <div class="row2">
+      <a class="btn btn-line" href="https://page.line.me/442brqeg" target="_blank" rel="noopener">LINEで問い合わせる</a>
+      <a class="mail" href="mailto:w.saori.piano@gmail.com">メール：w.saori.piano@gmail.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">渡部沙織ピアノ・リトミック教室</span>
+    <p>北海道釧路市昭和中央3-35-14</p>
+    <p>© 渡部沙織ピアノ・リトミック教室</p>
+  </div>
+</footer>
+
+<a class="btn btn-line fixed-line" href="https://page.line.me/442brqeg" target="_blank" rel="noopener">LINEで問い合わせる</a>
+
+<script>
+/* ============================================================
+   その場で直す仕組み
+   ・ふだん：保存先（Apps Script）から最新の文章を読み込んで表示するだけ
+   ・URLの最後が #henshu：点線の枠を押して直す → 合言葉を入れて保存
+   ・お知らせ：「お知らせ」という名前で一覧（JSON）を保存。追加・書き換え・削除ができる
+   ============================================================ */
+(function(){
+  var API = "";   // ← 渡部様のGoogleアカウントに作った保存先のURLを入れる（空のあいだはページに書いた内容をそのまま表示）
+  var els=[].slice.call(document.querySelectorAll('[data-key]'));
+  var news=[];   // [{d:'2026-12-01', t:'…'}]
+  var list=document.getElementById('news-list'), sec=document.getElementById('news');
+  var EDIT = location.hash==='#henshu';
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function fmt(d){ var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||''); return m? m[1]+'年'+(+m[2])+'月'+(+m[3])+'日' : (d||''); }
+  function drawNews(){
+    list.innerHTML = news.map(function(n,i){
+      return '<li data-i="'+i+'"><time>'+esc(fmt(n.d))+'</time><span class="nt"'+(EDIT?' contenteditable="true"':'')+'>'+esc(n.t)+'</span><button type="button" class="del">削除</button></li>';
+    }).join('');
+    sec.style.display = (news.length||EDIT)?'block':'none';
+    if(EDIT){
+      [].forEach.call(list.querySelectorAll('.nt'),function(s){ s.addEventListener('input',function(){ news[+s.parentNode.dataset.i].t=s.textContent; }); });
+      [].forEach.call(list.querySelectorAll('.del'),function(b){ b.onclick=function(){ if(confirm('このお知らせを削除しますか？（「保存する」を押すまでホームページには反映されません）')){ news.splice(+b.parentNode.dataset.i,1); drawNews(); } }; });
+    }
+  }
+  function apply(d){
+    els.forEach(function(e){ var v=d[e.dataset.key]; if(v!=null && v!=='') e.textContent=v; });
+    if(d['お知らせ']){ try{ news=JSON.parse(d['お知らせ'])||[]; }catch(e){ news=[]; } }
+    drawNews();
+  }
+  drawNews();
+  var loaded = API ? fetch(API+'?t='+Date.now()).then(function(r){return r.json()}).then(apply).catch(function(){}) : Promise.resolve();
+
+  if(!EDIT) return;
+  document.documentElement.classList.add('hs-on');
+  var start={}, startNews='[]';
+  els.forEach(function(e){
+    e.contentEditable='plaintext-only'; if(e.contentEditable!=='plaintext-only') e.contentEditable='true';
+    e.addEventListener('paste',function(ev){ev.preventDefault();document.execCommand('insertText',false,(ev.clipboardData||window.clipboardData).getData('text'));});
+    e.addEventListener('keydown',function(ev){ if(ev.key==='Enter' && e.tagName==='SPAN'){ev.preventDefault();e.blur();} });
+    e.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();});
+  });
+  loaded.then(function(){ els.forEach(function(e){ start[e.dataset.key]=e.textContent; }); startNews=JSON.stringify(news); });
+
+  var dIn=document.getElementById('news-date'), tIn=document.getElementById('news-text');
+  try{ dIn.value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10); }catch(e){}
+  document.getElementById('news-btn').onclick=function(){
+    var t=tIn.value.trim(); if(!t){ tIn.focus(); return; }
+    news.unshift({d:dIn.value,t:t}); news.sort(function(a,b){return (b.d||'').localeCompare(a.d||'')});
+    news=news.slice(0,10); tIn.value=''; drawNews();
+    msg.innerHTML='お知らせを追加しました。<b>「保存する」</b>を押すとホームページに反映されます。';
+  };
+
+  var bar=document.createElement('div'); bar.id='hs-bar';
+  bar.innerHTML='<span class="msg">編集中です。<b>点線の枠</b>を押すと書き換えられます。</span><button id="hs-quit">やめる</button><button id="hs-save">保存する</button>';
+  document.body.appendChild(bar);
+  var msg=bar.querySelector('.msg'), btn=bar.querySelector('#hs-save');
+  bar.querySelector('#hs-quit').onclick=function(){ location.href=location.pathname; };
+  btn.onclick=function(){
+    var data={}, n=0;
+    els.forEach(function(e){ var k=e.dataset.key, v=e.textContent.trim(); if(v!==start[k]){data[k]=v;n++;} });
+    var nj=JSON.stringify(news); if(nj!==startNews){ data['お知らせ']=nj; n++; }
+    if(!n){ msg.textContent='まだ何も変わっていません。点線の枠を押して書き換えてください。'; return; }
+    if(!API){ msg.textContent='保存先がまだ設定されていません。'; return; }
+    var pw=sessionStorage.getItem('hs-pw')||prompt('合言葉を入れてください'); if(!pw) return;
+    btn.disabled=true; msg.textContent='保存しています…';
+    fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({pw:pw,data:data})})
+      .then(function(r){return r.json()}).then(function(res){
+        btn.disabled=false;
+        if(res.ok){ try{sessionStorage.setItem('hs-pw',pw)}catch(e){}
+          Object.keys(data).forEach(function(k){ if(k!=='お知らせ') start[k]=data[k]; }); startNews=nj;
+          msg.innerHTML='<b>保存しました（'+n+'か所）。</b>ホームページに反映されています。'; }
+        else { try{sessionStorage.removeItem('hs-pw')}catch(e){} msg.textContent='保存できませんでした：'+(res.msg||''); }
+      }).catch(function(){ btn.disabled=false; msg.textContent='保存できませんでした。電波のよい所でもう一度押してください。'; });
+  };
+})();
+</script>
+</body>
+</html>
