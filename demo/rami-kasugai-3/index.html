@@ -209,6 +209,31 @@
   body.wa-sukuname .ripple{animation-duration:12s;border-width:1.5px}
   body.wa-sukuname .ripple:nth-child(n+2){display:none}
   body.wa-sukuname .ripple:first-child{border-color:var(--coral)}
+
+  /* 第3版：7つのクラスを、押すと鳴る鍵盤に（11/26 社長「音がなる鍵盤は残した方がいい」） */
+  .kkeys{position:relative;display:grid;grid-template-columns:repeat(7,1fr);max-width:760px;margin:8px auto 0;
+    height:clamp(200px,30vw,270px);border-top:10px solid var(--coral);border-radius:6px 6px 0 0;
+    box-shadow:0 18px 30px -22px rgba(94,36,29,.35)}
+  .kk{all:unset;box-sizing:border-box;position:relative;cursor:pointer;background:#fff;border:1px solid #eadfd6;border-top:0;
+    border-radius:0 0 12px 12px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+    padding:0 2px 16px;transform-origin:50% 0;transition:transform .08s,background .12s;touch-action:manipulation}
+  .kk:nth-child(1){background:linear-gradient(#fff 55%,var(--mint-l))}
+  .kk:nth-child(2){background:linear-gradient(#fff 55%,var(--coral-l))}
+  .kk:nth-child(3){background:linear-gradient(#fff 55%,var(--lemon-l))}
+  .kk:nth-child(4){background:linear-gradient(#fff 55%,var(--lav-l))}
+  .kk:nth-child(5){background:linear-gradient(#fff 55%,var(--sky-l))}
+  .kk:nth-child(6){background:linear-gradient(#fff 55%,var(--mint-l))}
+  .kk:nth-child(7){background:linear-gradient(#fff 55%,var(--coral-l))}
+  .kk.dn{transform:scaleY(.975);filter:brightness(.96)}
+  .kk:focus-visible{outline:3px solid var(--c600);outline-offset:-6px}
+  .kk .so{color:var(--c600);font-size:13px;font-weight:700;margin-bottom:6px}
+  .kk .kn{font-weight:700;font-size:clamp(12px,2.2vw,17px);color:var(--ink-d);line-height:1.2;text-align:center}
+  .kk .ka{font-size:11.5px;color:var(--sub);font-weight:700;margin-top:2px}
+  .kb{position:absolute;top:0;width:9.2%;height:46%;background:#3b302c;border-radius:0 0 6px 6px;pointer-events:none}
+  .kk-after{text-align:center;margin-top:22px;color:var(--sub);font-size:14px}
+  .kk-note{position:absolute;font-size:22px;color:var(--coral);pointer-events:none;animation:kkUp 1.1s ease-out forwards}
+  @keyframes kkUp{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-60px)}}
+  @media(max-width:520px){.kk .so{font-size:11px}.kk .ka{font-size:10px}.kk{padding-bottom:12px}}
   .wa-kiri{position:fixed;right:14px;bottom:14px;z-index:60;background:#fff;border-radius:999px;
     box-shadow:0 4px 18px rgba(94,36,29,.16);padding:6px;display:flex;gap:4px;align-items:center;font-size:13px}
   .wa-kiri span{padding:0 8px 0 10px;color:var(--sub);font-weight:700}
@@ -688,14 +713,8 @@
       <h2>0歳から、小学生まで</h2>
       <p>年齢ごとに7つのクラスにわけています。どのクラスも3組までの少人数なので、ひとりひとりに目が届きます。</p>
     </div>
-    <div class="age-row" id="ageRow">
-      <div class="age age-w"><div><span>ベビー</span><small>0さい</small></div></div>
-      <div class="age"><div><span>STEP1</span><small>1さい</small></div></div>
-      <div class="age"><div><span>STEP2</span><small>2さい</small></div></div>
-      <div class="age"><div><span>STEP3</span><small>3さい</small></div></div>
-      <div class="age"><div><span>STEP4</span><small>4さい</small></div></div>
-      <div class="age"><div><span>STEP5</span><small>5さい</small></div></div>
-      <div class="age age-w"><div><span>小学生</span><small>クラス</small></div></div>
+    <div class="kkeys" id="kkeys"><button class="kk" type="button" data-m="60" aria-label="ベビー（0さい）の鍵盤。押すとドの音が鳴ります"><span class="so">ド</span><span class="kn">ベビー</span><span class="ka">0さい</span></button><button class="kk" type="button" data-m="62" aria-label="STEP1（1さい）の鍵盤。押すとレの音が鳴ります"><span class="so">レ</span><span class="kn">STEP1</span><span class="ka">1さい</span></button><button class="kk" type="button" data-m="64" aria-label="STEP2（2さい）の鍵盤。押すとミの音が鳴ります"><span class="so">ミ</span><span class="kn">STEP2</span><span class="ka">2さい</span></button><button class="kk" type="button" data-m="65" aria-label="STEP3（3さい）の鍵盤。押すとファの音が鳴ります"><span class="so">ファ</span><span class="kn">STEP3</span><span class="ka">3さい</span></button><button class="kk" type="button" data-m="67" aria-label="STEP4（4さい）の鍵盤。押すとソの音が鳴ります"><span class="so">ソ</span><span class="kn">STEP4</span><span class="ka">4さい</span></button><button class="kk" type="button" data-m="69" aria-label="STEP5（5さい）の鍵盤。押すとラの音が鳴ります"><span class="so">ラ</span><span class="kn">STEP5</span><span class="ka">5さい</span></button><button class="kk" type="button" data-m="71" aria-label="小学生（クラス）の鍵盤。押すとシの音が鳴ります"><span class="so">シ</span><span class="kn">小学生</span><span class="ka">クラス</span></button><span class="kb" style="left:calc(14.285714285714286% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(28.571428571428573% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(57.142857142857146% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(71.42857142857143% - 4.6%)" aria-hidden="true"></span><span class="kb" style="left:calc(85.71428571428572% - 4.6%)" aria-hidden="true"></span></div>
+      <p class="kk-after">鍵盤を押すと、ドレミファソラシの音が鳴ります。</p>
     </div>
   </div>
 </section>
@@ -1165,6 +1184,52 @@
     document.body.classList.toggle("wa-sukuname", b.dataset.wa==="sukuname");
     bs.forEach(function(x){ x.setAttribute("aria-pressed", x===b ? "true":"false"); });
   });});
+})();
+</script>
+<script>
+/* 鍵盤：押したときだけ音が鳴る（自動では鳴らさない） */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, ac=null;
+  function play(m){
+    try{
+      ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+      if(ac.state==='suspended') ac.resume();
+      var f=440*Math.pow(2,(m-69)/12), t=ac.currentTime;
+      var out=ac.createGain(); out.gain.setValueAtTime(0,t);
+      out.gain.linearRampToValueAtTime(.32,t+.006);
+      out.gain.exponentialRampToValueAtTime(.08,t+.35);
+      out.gain.exponentialRampToValueAtTime(.0008,t+2.2);
+      var lp=ac.createBiquadFilter(); lp.type='lowpass';
+      lp.frequency.setValueAtTime(Math.min(9000,f*9),t); lp.frequency.exponentialRampToValueAtTime(Math.max(300,f*2),t+1.4);
+      lp.connect(out); out.connect(ac.destination);
+      [[1,'triangle',1],[2,'sine',.35],[3,'sine',.12],[4,'sine',.06]].forEach(function(h){
+        var o=ac.createOscillator(), g=ac.createGain();
+        o.type=h[1]; o.frequency.value=f*h[0]*(1+(h[0]-1)*.0006); g.gain.value=h[2];
+        o.connect(g); g.connect(lp); o.start(t); o.stop(t+2.3);
+      });
+    }catch(e){}
+  }
+  var box=document.getElementById('kkeys');
+  function press(el,sound){
+    el.classList.add('dn'); setTimeout(function(){el.classList.remove('dn');},200);
+    if(sound) play(+el.dataset.m);
+    if(sound && !reduce){
+      var n=document.createElement('span'); n.className='kk-note'; n.textContent='♪';
+      n.style.left=(el.offsetLeft+el.offsetWidth/2-8)+'px'; n.style.top='40%';
+      box.appendChild(n); setTimeout(function(){n.remove();},1200);
+    }
+  }
+  box.querySelectorAll('.kk').forEach(function(k){
+    k.addEventListener('click',function(){ press(k,true); });
+  });
+  /* 見えたときに、音なしでドレミ…と順に沈む（鳴らせることに気づいてもらうため） */
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      if(!es[0].isIntersecting) return; io.disconnect();
+      box.querySelectorAll('.kk').forEach(function(k,i){ setTimeout(function(){press(k,false);},i*150); });
+    },{threshold:.5});
+    io.observe(box);
+  }
 })();
 </script>
 </body>
