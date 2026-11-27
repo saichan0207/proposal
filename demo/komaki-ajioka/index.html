@@ -9,7 +9,7 @@
 <meta name="description" content="愛知県小牧市・味岡駅から徒歩7分の「小牧味岡ピアノ教室」のホームページデザイン案です。3歳から、ひと駅ずつピアノの旅へ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700;900&family=Barlow:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700;900&family=Barlow:wght@500;600;700&family=Noto+Music&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1A66B3;
@@ -63,55 +63,51 @@ section[id]{scroll-margin-top:64px}
 .btn-sun{background:var(--sun);color:var(--ink);padding:18px 28px;font-size:17px;box-shadow:0 3px 0 #C98F00}
 .btn-sun:hover{background:#FFC92E}
 
-/* ===== 表紙：空色一面＋駅名標 ===== */
+/* ===== 表紙：空色一面＋五線の路線 ===== */
 .hero{background:var(--blue);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:var(--blue-d)}
-.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:56px;align-items:end;padding:72px 0 120px}
-.hero-copy{padding-bottom:64px}
-.hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.18;font-weight:900;letter-spacing:.01em;margin:0 0 26px}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:end;padding:56px 0 0}
+.hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.18;font-weight:900;letter-spacing:.01em;margin:0}
 .hero h1 .nb{white-space:nowrap}
-.hero .lead{font-size:18px;line-height:1.9;margin:0 0 32px;max-width:26em;color:#EAF2FA;font-weight:500}
-.facts{display:flex;flex-wrap:wrap;gap:0;margin:0 0 34px;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.35)}
+.hero .lead{font-size:18px;line-height:1.9;margin:0 0 22px;max-width:26em;color:#EAF2FA;font-weight:500}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin:0 0 26px;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.35)}
 .facts li{padding:12px 22px 0 0;margin-right:22px;border-right:1px solid rgba(255,255,255,.35);font-weight:700;font-size:15px;line-height:1.5}
 .facts li:last-child{border-right:0;margin-right:0}
 .facts b{display:block;font-family:var(--num);font-size:30px;line-height:1.1;color:var(--sun);font-weight:700}
 
-/* 駅名標 */
-.sign-wrap{position:relative}
-.sign{position:relative;z-index:2;background:#fff;color:var(--ink);border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 24px 50px -22px rgba(6,28,52,.55);overflow:hidden}
-.sign-top{display:flex;align-items:center;gap:22px;padding:26px 32px 18px}
-.st-no{flex:none;width:78px;height:78px;border:7px solid var(--blue);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-.st-no small{font-family:var(--num);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.06em}
-.st-no b{font-family:var(--num);font-weight:700;font-size:30px;margin-top:2px}
-.st-name{min-width:0}
-.st-kana{font-size:15px;font-weight:700;color:var(--steel);letter-spacing:.32em;margin:0}
-.st-main{font-size:clamp(46px,6.2vw,86px);font-weight:900;line-height:1.1;margin:0;letter-spacing:.08em;white-space:nowrap}
-.st-en{font-family:var(--num);font-weight:600;font-size:17px;color:var(--steel);letter-spacing:.04em;margin:4px 0 0}
-.sign-band{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;background:var(--blue);color:#fff;border-top:6px solid var(--sun)}
-.sign-band button{font:inherit;color:#fff;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 22px;font-weight:700;font-size:17px;letter-spacing:.08em;transition:background-color .2s}
-.sign-band button:hover{background:var(--blue-d)}
-.sign-band button:disabled{opacity:.4;cursor:default;background:transparent}
-.sign-band .next{justify-content:flex-end}
-.sign-band .mid{display:flex;align-items:center;padding:0 12px;font-family:var(--num);font-size:13px;letter-spacing:.1em;opacity:.85}
-.sign-band svg{width:20px;height:20px;flex:none}
-.swap{animation:swap .5s cubic-bezier(.16,1,.3,1)}
-@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.posts{position:relative;z-index:1;display:flex;justify-content:space-between;padding:0 18%;height:64px}
-.posts i{width:16px;background:linear-gradient(90deg,#8A99A6,#C9D3DB 45%,#7D8C99);border-radius:0 0 2px 2px}
-
-/* 路線の帯（看板の下） */
-.strip{position:absolute;left:0;right:0;bottom:0;height:120px;z-index:3;display:flex;align-items:center}
-.strip .wrap{position:relative}
-.strip-line{position:relative;height:12px;background:rgba(255,255,255,.22);border-radius:6px;margin:0 10px}
-.strip-fill{position:absolute;left:0;top:0;bottom:0;background:var(--sun);border-radius:6px;width:0;transition:width .8s cubic-bezier(.16,1,.3,1)}
-.strip-stops{position:absolute;inset:-14px 0 auto 0;display:flex;justify-content:space-between}
-.strip-stops button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;width:90px;margin:0 -35px;color:#D6E5F3;font-size:13px;font-weight:700;letter-spacing:.06em;text-align:center}
-.strip-stops button:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
-.strip-stops .o{width:28px;height:28px;border-radius:50%;background:var(--blue-d);border:5px solid #fff;transition:background-color .4s,transform .4s}
-.strip-stops button.pass .o{background:var(--sun)}
-.strip-stops button.now .o{background:var(--sun);transform:scale(1.25)}
-.strip-stops button.now{color:#fff}
-.strip-cap{position:absolute;right:20px;top:-46px;font-size:12.5px;color:#BFD6EC;font-weight:400}
+/* 五線＝路線 */
+.score{position:relative;margin-top:4px}
+.score svg{display:block;width:100%;height:auto;max-height:400px;overflow:visible}
+.score .staff line{stroke:rgba(255,255,255,.9);stroke-width:3}
+.score .bar{stroke:#fff;stroke-width:3}
+.score .route-bg{fill:none;stroke:rgba(255,255,255,.18);stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.score .route-fg{fill:none;stroke:var(--sun);stroke-width:12;stroke-linecap:round;stroke-linejoin:round;transition:stroke-dashoffset .7s cubic-bezier(.16,1,.3,1)}
+.score .clef{font-family:"Noto Music",serif;fill:#fff}
+.note{cursor:pointer;outline:none}
+.note .hit{fill:transparent}
+.note .head{fill:#fff;stroke:var(--blue-d);stroke-width:6;transition:fill .3s,stroke .3s}
+.note .stem{stroke:#fff;stroke-width:5;stroke-linecap:round}
+.note .ledger{stroke:rgba(255,255,255,.9);stroke-width:3}
+.note.pass .head{fill:var(--sun);stroke:var(--sun)}
+.note.now .head{fill:var(--sun);stroke:#fff}
+.note:focus-visible .head{stroke:var(--sun);stroke-width:8}
+.note .ly{font-family:"Murecho",sans-serif;font-weight:900;font-size:30px;fill:#fff;text-anchor:middle}
+.note .nm{font-family:"Murecho",sans-serif;font-weight:700;font-size:17px;fill:#BFD6EC;text-anchor:middle}
+.note.now .nm,.note.pass .nm{fill:var(--sun)}
+.note.ping .head{animation:ping .5s cubic-bezier(.16,1,.3,1)}
+@keyframes ping{0%{transform:rotate(-20deg) scale(1.4)}100%{transform:rotate(-20deg) scale(1)}}
+.note .head{transform-box:fill-box;transform-origin:center;transform:rotate(-20deg)}
+.score-ctl{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:20px 0 64px;border-top:1px solid rgba(255,255,255,.25);margin-top:10px}
+.ctl-l{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pbtn{font:inherit;font-weight:700;font-size:16px;letter-spacing:.06em;color:var(--ink);background:#fff;border:0;border-radius:4px;padding:12px 18px;display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:background-color .2s}
+.pbtn:hover{background:var(--sun-l)}
+.pbtn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.pbtn.ghost:hover{background:rgba(255,255,255,.12)}
+.pbtn svg{width:16px;height:16px}
+.ctl-cap{font-size:13.5px;color:#CFE1F2;margin:0}
+.kb{display:flex;position:relative;height:84px;width:300px;flex:none}
+.kb .w{flex:1;background:#fff;border:1.5px solid var(--blue-d);border-radius:0 0 5px 5px;margin-right:-1.5px;transition:background-color .15s}
+.kb .b{position:absolute;top:0;width:6.5%;height:56%;background:var(--ink);border-radius:0 0 3px 3px;z-index:2}
+.kb .w.lit{background:var(--sun)}
 
 /* ===== 路線図 ===== */
 .sec{padding:110px 0}
@@ -215,28 +211,14 @@ footer p{margin:6px 0 0}
   .brand{font-size:15px;letter-spacing:.04em;white-space:nowrap}
   .band nav a.tk{white-space:nowrap;padding:7px 12px;font-size:14px}
   .brand .sym{width:30px;height:30px;font-size:11px;border-width:4px}
-  .hero-in{grid-template-columns:1fr;gap:28px;padding-top:40px}
-  .hero-copy{padding-bottom:0;display:contents}
-  .hero h1{order:1;margin:0}
-  .sign-wrap{order:2}
-  .hero .go{order:3}
-  .hero .lead{order:4;margin:0}
-  .facts{order:5;margin:0 0 8px}
-  .posts{height:44px}
-  .hero-in{padding-bottom:0}
-  .strip{position:relative;height:auto;padding:34px 0 46px;background:var(--blue-d)}
-  .hero::before{display:none}
-  .strip-stops button{width:56px;margin:0 -20px;font-size:0}
-  .strip-stops button .o{width:22px;height:22px;border-width:4px}
-  .strip-cap{position:static;display:block;text-align:center;margin-top:36px}
-  .sign-top{padding:18px 18px 14px;gap:14px}
-  .st-no{width:60px;height:60px;border-width:6px}
-  .st-no b{font-size:23px}
-  .st-kana{font-size:12px;letter-spacing:.2em}
-  .st-en{font-size:14px}
-  .sign-band button{padding:12px 14px;font-size:15px}
-  .sign-band .mid{display:none}
-  .sign-band{grid-template-columns:1fr 1fr}
+  .hero-top{grid-template-columns:1fr;gap:22px;padding-top:40px}
+  .hero .lead{margin:0 0 18px}
+  .score-ctl{padding-bottom:48px}
+  .kb{width:100%;height:70px}
+  .note .ly{font-size:44px}
+  .note .nm{font-size:26px}
+  .facts li{padding-right:14px;margin-right:14px;font-size:13px}
+  .facts b{font-size:26px}
   .sec{padding:80px 0}
   .route-grid,.greet,.access,.ticket-in,.tt-grid{grid-template-columns:1fr;gap:40px}
   .route-head{position:static}
@@ -280,43 +262,39 @@ footer p{margin:6px 0 0}
 
 <main id="top">
 <section class="hero">
-  <div class="wrap hero-in">
-    <div class="hero-copy">
+  <div class="wrap">
+    <div class="hero-top">
       <h1><span class="nb">ひと駅ずつ、</span><span class="nb">ピアノの旅へ。</span></h1>
-      <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。3歳から、お子さまのペースで1曲ずつ進みます。</p>
-      <ul class="facts">
-        <li><b>3歳</b>から通えます</li>
-        <li><b>0円</b>見学はいつでも</li>
-        <li><b>7分</b>味岡駅から徒歩</li>
-      </ul>
-      <div class="go"><a class="btn btn-sun" href="#ticket">見学のきっぷを受け取る<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-    </div>
-
-    <div class="sign-wrap">
-      <div class="sign" aria-live="polite">
-        <div class="sign-top" id="sTop">
-          <div class="st-no" aria-hidden="true"><small>PN</small><b id="sNum">01</b></div>
-          <div class="st-name">
-            <p class="st-kana" id="sKana">きらきらぼし</p>
-            <p class="st-main" id="sMain">きらきら星</p>
-            <p class="st-en" id="sEn">Twinkle, Twinkle, Little Star</p>
-          </div>
-        </div>
-        <div class="sign-band">
-          <button class="prev" id="bPrev" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="sPrev">けんがく</span></button>
-          <span class="mid" aria-hidden="true">PIANO LINE</span>
-          <button class="next" id="bNext" type="button"><span id="sNext">ちょうちょう</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        </div>
+      <div>
+        <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。最初の駅は「きらきら星」。3歳から、1音ずつ進みます。</p>
+        <ul class="facts">
+          <li><b>3歳</b>から通えます</li>
+          <li><b>0円</b>見学はいつでも</li>
+          <li><b>7分</b>味岡駅から徒歩</li>
+        </ul>
+        <div class="go"><a class="btn btn-sun" href="#ticket">見学のきっぷを受け取る<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </div>
-      <div class="posts" aria-hidden="true"><i></i><i></i></div>
     </div>
-  </div>
-
-  <div class="strip">
-    <div class="wrap">
-      <span class="strip-cap">駅（曲）の並びは見本です</span>
-      <div class="strip-line"><div class="strip-fill" id="fill"></div>
-        <div class="strip-stops" id="stops"></div>
+    <div class="score">
+      <svg viewBox="0 0 830 332" role="group" aria-label="きらきら星の最初の7音。五線が路線、音符が駅です">
+        <g class="staff"><line x1="120" x2="815" y1="80" y2="80"/><line x1="120" x2="815" y1="112" y2="112"/><line x1="120" x2="815" y1="144" y2="144"/><line x1="120" x2="815" y1="176" y2="176"/><line x1="120" x2="815" y1="208" y2="208"/></g>
+        <text class="clef" x="70" y="226" font-size="150" text-anchor="middle" aria-hidden="true">&#x1D11E;</text>
+        <line class="bar" x1="505" x2="505" y1="80" y2="208"/>
+        <line class="bar" x1="800" x2="800" y1="80" y2="208"/><line class="bar" x1="811" x2="811" y1="80" y2="208" style="stroke-width:7"/>
+        <polyline class="route-bg" points="175,240 265,240 355,176 445,176 565,160 655,160 745,176"/>
+        <polyline class="route-fg" id="routeFg" points="175,240 265,240 355,176 445,176 565,160 655,160 745,176"/>
+        <g class="note" data-i="0" tabindex="0" role="button" aria-label="1番目の音 ド（き）を鳴らす"><circle class="hit" cx="175" cy="240" r="44"/><line class="ledger" x1="141" x2="209" y1="240" y2="240"/><line class="stem" x1="195" x2="195" y1="236" y2="144"/><ellipse class="head" cx="175" cy="240" rx="23" ry="17"/><text class="ly" x="175" y="292">き</text><text class="nm" x="175" y="322">ド</text></g><g class="note" data-i="1" tabindex="0" role="button" aria-label="2番目の音 ド（ら）を鳴らす"><circle class="hit" cx="265" cy="240" r="44"/><line class="ledger" x1="231" x2="299" y1="240" y2="240"/><line class="stem" x1="285" x2="285" y1="236" y2="144"/><ellipse class="head" cx="265" cy="240" rx="23" ry="17"/><text class="ly" x="265" y="292">ら</text><text class="nm" x="265" y="322">ド</text></g><g class="note" data-i="2" tabindex="0" role="button" aria-label="3番目の音 ソ（き）を鳴らす"><circle class="hit" cx="355" cy="176" r="44"/><line class="stem" x1="375" x2="375" y1="172" y2="80"/><ellipse class="head" cx="355" cy="176" rx="23" ry="17"/><text class="ly" x="355" y="292">き</text><text class="nm" x="355" y="322">ソ</text></g><g class="note" data-i="3" tabindex="0" role="button" aria-label="4番目の音 ソ（ら）を鳴らす"><circle class="hit" cx="445" cy="176" r="44"/><line class="stem" x1="465" x2="465" y1="172" y2="80"/><ellipse class="head" cx="445" cy="176" rx="23" ry="17"/><text class="ly" x="445" y="292">ら</text><text class="nm" x="445" y="322">ソ</text></g><g class="note" data-i="4" tabindex="0" role="button" aria-label="5番目の音 ラ（ひ）を鳴らす"><circle class="hit" cx="565" cy="160" r="44"/><line class="stem" x1="585" x2="585" y1="156" y2="64"/><ellipse class="head" cx="565" cy="160" rx="23" ry="17"/><text class="ly" x="565" y="292">ひ</text><text class="nm" x="565" y="322">ラ</text></g><g class="note" data-i="5" tabindex="0" role="button" aria-label="6番目の音 ラ（か）を鳴らす"><circle class="hit" cx="655" cy="160" r="44"/><line class="stem" x1="675" x2="675" y1="156" y2="64"/><ellipse class="head" cx="655" cy="160" rx="23" ry="17"/><text class="ly" x="655" y="292">か</text><text class="nm" x="655" y="322">ラ</text></g><g class="note" data-i="6" tabindex="0" role="button" aria-label="7番目の音 ソ（る）を鳴らす"><circle class="hit" cx="745" cy="176" r="44"/><line class="stem" x1="765" x2="765" y1="172" y2="80"/><ellipse class="head" cx="745" cy="176" rx="23" ry="17"/><text class="ly" x="745" y="292">る</text><text class="nm" x="745" y="322">ソ</text></g>
+      </svg>
+    </div>
+    <div class="score-ctl">
+      <div class="ctl-l">
+        <button class="pbtn" id="pNext" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>次の音へ</button>
+        <button class="pbtn ghost" id="pReset" type="button">最初から</button>
+        <p class="ctl-cap">音符を押すと、ピアノの音が鳴ります。</p>
+      </div>
+      <div class="kb" id="kb" aria-hidden="true">
+        <span class="w" data-n="C"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w" data-n="G"></span><span class="w" data-n="A"></span><span class="w"></span><span class="w"></span>
+        <span class="b" style="left:9%"></span><span class="b" style="left:21.5%"></span><span class="b" style="left:46.5%"></span><span class="b" style="left:59%"></span><span class="b" style="left:71.5%"></span>
       </div>
     </div>
   </div>
@@ -466,36 +444,34 @@ footer p{margin:6px 0 0}
 
 <script>
 (function(){
-  var S=[
-    {n:'00',kana:'けんがく',main:'見学',en:'Start'},
-    {n:'01',kana:'きらきらぼし',main:'きらきら星',en:'Twinkle, Twinkle, Little Star'},
-    {n:'02',kana:'ちょうちょう',main:'ちょうちょう',en:'Lightly Row'},
-    {n:'03',kana:'ぶんぶんぶん',main:'ぶんぶんぶん',en:'The Honeybee'},
-    {n:'04',kana:'かっこう',main:'かっこう',en:'Cuckoo'},
-    {n:'…',kana:'そのさきへ',main:'その先へ',en:'and beyond'}
-  ];
-  var i=1,$=function(id){return document.getElementById(id)};
-  var stops=$('stops');
-  S.forEach(function(s,k){
-    var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(k+1)+'番目の駅 '+s.main+' へ');
-    b.innerHTML='<span class="o"></span><span>'+s.kana+'</span>';
-    b.addEventListener('click',function(){i=k;show(true)});stops.appendChild(b);
-  });
-  function show(anim){
-    var s=S[i];
-    $('sNum').textContent=s.n;$('sKana').textContent=s.kana;$('sMain').textContent=s.main;$('sEn').textContent=s.en;
-    $('sPrev').textContent=i>0?S[i-1].kana:'';$('sNext').textContent=i<S.length-1?S[i+1].kana:'';
-    $('bPrev').disabled=i===0;$('bNext').disabled=i===S.length-1;
-    $('bPrev').setAttribute('aria-label',i>0?'前の駅 '+S[i-1].main+' へ':'前の駅はありません');
-    $('bNext').setAttribute('aria-label',i<S.length-1?'次の駅 '+S[i+1].main+' へ':'次の駅はありません');
-    $('fill').style.width=(i/(S.length-1)*100)+'%';
-    [].forEach.call(stops.children,function(b,k){b.classList.toggle('pass',k<i);b.classList.toggle('now',k===i)});
-    if(anim){var t=$('sTop');t.classList.remove('swap');void t.offsetWidth;t.classList.add('swap')}
+  var $=function(id){return document.getElementById(id)};
+  var notes=[].slice.call(document.querySelectorAll('.note')),FQ={'ド':261.63,'ソ':392.0,'ラ':440.0},NM=['ド','ド','ソ','ソ','ラ','ラ','ソ'],KEY={'ド':'C','ソ':'G','ラ':'A'};
+  var fg=$('routeFg'),cum=[0],pts=fg.points,total=0;
+  for(var k=1;k<pts.numberOfItems;k++){var a=pts.getItem(k-1),b=pts.getItem(k);total+=Math.hypot(b.x-a.x,b.y-a.y);cum.push(total)}
+  fg.style.strokeDasharray=total;fg.style.strokeDashoffset=total;
+  var idx=-1,ac=null;
+  function tone(f){
+    try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var t=ac.currentTime,g=ac.createGain();g.connect(ac.destination);
+      g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.32,t+0.012);g.gain.exponentialRampToValueAtTime(0.0001,t+1.6);
+      [[1,'triangle',1],[2,'sine',.35],[3,'sine',.12]].forEach(function(h){var o=ac.createOscillator(),og=ac.createGain();o.type=h[1];o.frequency.value=f*h[0];og.gain.value=h[2];o.connect(og);og.connect(g);o.start(t);o.stop(t+1.7)});
+    }catch(e){}
   }
-  $('bPrev').addEventListener('click',function(){if(i>0){i--;show(true)}});
-  $('bNext').addEventListener('click',function(){if(i<S.length-1){i++;show(true)}});
-  show(false);
-
+  function go(i,sound){
+    idx=i;fg.style.strokeDashoffset=total-(i<0?0:cum[i]);
+    notes.forEach(function(n,k){n.classList.toggle('pass',k<i);n.classList.toggle('now',k===i)});
+    [].forEach.call($('kb').children,function(w){w.classList.remove('lit')});
+    if(i>=0){var key=$('kb').querySelector('[data-n="'+KEY[NM[i]]+'"]');if(key)key.classList.add('lit');
+      var n=notes[i];n.classList.remove('ping');void n.getBoundingClientRect();n.classList.add('ping');if(sound)tone(FQ[NM[i]])}
+  }
+  notes.forEach(function(n,k){
+    n.addEventListener('click',function(){go(k,true)});
+    n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(k,true)}});
+  });
+  $('pNext').addEventListener('click',function(){go(idx>=notes.length-1?0:idx+1,true)});
+  $('pReset').addEventListener('click',function(){go(-1,false)});
+  // 開いたときに一度だけ、音を出さずに路線を走らせる
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){go(notes.length-1,false)}
+  else{var a=0,run=setInterval(function(){go(a,false);a++;if(a>=notes.length)clearInterval(run)},380)}
   var line=$('route-line'),rs=line.querySelectorAll('.stop'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function onScroll(){
     var vh=window.innerHeight,r=line.getBoundingClientRect();
