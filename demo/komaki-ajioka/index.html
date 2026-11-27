@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#1A66B3">
 <title>小牧味岡ピアノ教室｜ホームページ案（見本）</title>
-<meta name="description" content="愛知県小牧市・味岡駅から徒歩7分の「小牧味岡ピアノ教室」のホームページデザイン案です。3歳から、ひと駅ずつピアノの旅へ。">
+<meta name="description" content="愛知県小牧市・味岡駅から徒歩7分の「小牧味岡ピアノ教室」のホームページデザイン案です。3歳から、聴いて、まねて、はじめてのピアノ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700;900&family=Barlow:wght@500;600;700&family=Noto+Music&display=swap" rel="stylesheet">
@@ -48,7 +48,8 @@ section[id]{scroll-margin-top:64px}
 .band{position:sticky;top:0;z-index:40;background:var(--blue);color:#fff;border-bottom:4px solid var(--sun)}
 .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
 .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.08em}
-.brand .sym{width:34px;height:34px;border-radius:50%;background:#fff;border:5px solid var(--sun);display:flex;align-items:center;justify-content:center;font-family:var(--num);font-weight:700;color:var(--blue);font-size:12px;letter-spacing:0;flex:none}
+.brand .sym{width:34px;height:34px;border-radius:50%;background:var(--sun);display:flex;align-items:center;justify-content:center;color:var(--ink);flex:none}
+.brand .sym .nh{width:16px;height:21px}
 .band nav{display:flex;align-items:center;gap:26px}
 .band nav a{color:#fff;text-decoration:none;font-size:15px;font-weight:500}
 .band nav a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:2px}
@@ -63,7 +64,7 @@ section[id]{scroll-margin-top:64px}
 .btn-sun{background:var(--sun);color:var(--ink);padding:18px 28px;font-size:17px;box-shadow:0 3px 0 #C98F00}
 .btn-sun:hover{background:#FFC92E}
 
-/* ===== 表紙：空色一面＋五線の路線 ===== */
+/* ===== 表紙：空色一面＋五線 ===== */
 .hero{background:var(--blue);color:#fff;position:relative;overflow:hidden}
 .hero-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:end;padding:56px 0 0}
 .hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.18;font-weight:900;letter-spacing:.01em;margin:0}
@@ -74,13 +75,11 @@ section[id]{scroll-margin-top:64px}
 .facts li:last-child{border-right:0;margin-right:0}
 .facts b{display:block;font-family:var(--num);font-size:30px;line-height:1.1;color:var(--sun);font-weight:700}
 
-/* 五線＝路線 */
+/* 五線（押すと鳴る） */
 .score{position:relative;margin-top:4px}
 .score svg{display:block;width:100%;height:auto;max-height:400px;overflow:visible}
 .score .staff line{stroke:rgba(255,255,255,.9);stroke-width:3}
 .score .bar{stroke:#fff;stroke-width:3}
-.score .route-bg{fill:none;stroke:rgba(255,255,255,.18);stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
-.score .route-fg{fill:none;stroke:var(--sun);stroke-width:12;stroke-linecap:round;stroke-linejoin:round;transition:stroke-dashoffset .7s cubic-bezier(.16,1,.3,1)}
 .score .clef{font-family:"Noto Music",serif;fill:#fff}
 .note{cursor:pointer;outline:none}
 .note .hit{fill:transparent}
@@ -109,29 +108,23 @@ section[id]{scroll-margin-top:64px}
 .kb .b{position:absolute;top:0;width:6.5%;height:56%;background:var(--ink);border-radius:0 0 3px 3px;z-index:2}
 .kb .w.lit{background:var(--sun)}
 
-/* ===== 路線図 ===== */
+/* ===== レッスンの進み方 ===== */
 .sec{padding:110px 0}
 .h2{font-size:clamp(32px,4vw,52px);line-height:1.25;font-weight:900;margin:0 0 20px;letter-spacing:.02em}
 .sec-lead{font-size:19px;color:var(--ink2);max-width:34em;margin:0}
-.route-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:start}
-.route-head{position:sticky;top:110px}
-.route{position:relative;list-style:none;margin:0;padding:0}
-.route::before,.route::after{content:"";position:absolute;left:31px;top:34px;bottom:34px;width:12px;border-radius:6px}
-.route::before{background:var(--blue-l)}
-.route::after{background:var(--blue);transform-origin:top;transform:scaleY(var(--p,0))}
-.stop{position:relative;display:grid;grid-template-columns:74px minmax(0,1fr);gap:26px;padding-bottom:56px}
-.stop:last-child{padding-bottom:0}
-.stop .o{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:#fff;border:8px solid var(--blue);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transition:background-color .4s}
-.stop .o small{font-family:var(--num);font-weight:700;font-size:11px;color:var(--blue);letter-spacing:.06em}
-.stop .o b{font-family:var(--num);font-weight:700;font-size:24px}
-.stop.on .o{background:var(--sun-l)}
-.stop.end .o{background:var(--sun);border-color:var(--sun)}
-.stop h3{font-size:30px;font-weight:900;margin:10px 0 2px;letter-spacing:.06em;line-height:1.35}
-.stop .en{font-family:var(--num);font-weight:600;color:var(--steel);font-size:15px;margin:0 0 10px}
-.stop p{margin:0;color:var(--ink2);max-width:27em}
-.route-note{font-size:14px;color:var(--steel);margin:34px 0 0 100px;font-weight:400}
+.steps-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:start}
+.steps-head{position:sticky;top:110px}
+.steps{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
+.step{display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;padding:30px 0;border-bottom:1px solid var(--rule)}
+.step .no{display:flex;align-items:flex-start;gap:8px;color:var(--blue);font-weight:700;font-size:15px;line-height:1.3;padding-top:6px}
+.step .no .nh{width:22px;height:30px;flex:none;transition:color .4s}
+.step.on .no .nh{color:var(--sun)}
+.step h3{font-size:28px;font-weight:900;margin:0 0 2px;letter-spacing:.06em;line-height:1.4}
+.step .en{font-family:var(--num);font-weight:600;color:var(--steel);font-size:15px;margin:0 0 8px}
+.step p{margin:0;color:var(--ink2);max-width:27em}
+.steps-note{font-size:14px;color:var(--steel);margin:22px 0 0;font-weight:400}
 
-/* ===== のりかえ案内：黄色一面 ===== */
+/* ===== はじめての方へ：黄色一面 ===== */
 .xfer-sec{background:var(--sun);color:var(--ink)}
 .xfer-sec .sec-lead{color:#3A3420}
 .xfer{margin-top:52px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;border-top:3px solid var(--ink)}
@@ -140,7 +133,7 @@ section[id]{scroll-margin-top:64px}
 .xrow h3{font-size:24px;font-weight:900;margin:4px 0 4px;letter-spacing:.04em;line-height:1.4}
 .xrow p{margin:0;color:#3A3420}
 
-/* ===== 時刻表と運賃：白い紙の上に直接組む ===== */
+/* ===== 時間とお月謝：白い紙の上に直接組む ===== */
 .tt-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:72px;margin-top:56px;align-items:start}
 .tbl-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:6px solid var(--blue);padding-bottom:10px;margin-bottom:4px}
 .tbl-h h3{margin:0;font-size:24px;font-weight:900;letter-spacing:.06em}
@@ -180,22 +173,16 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 .map{border-radius:6px;overflow:hidden;min-height:360px;background:var(--mist)}
 .map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
 
-/* ===== きっぷ：空色一面 ===== */
-.ticket-sec{background:var(--blue);color:#fff;padding:110px 0 120px;overflow:hidden}
-.ticket-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
-.ticket-sec .h2{color:#fff}
-.ticket-sec p.sec-lead{color:#E2EEF9}
-.ticket-sec .go{margin-top:34px}
-.ticket-sec .note{font-size:13px;color:#BFD6EC;margin:16px 0 0;font-weight:400}
-.ticket{position:relative;width:100%;max-width:520px;justify-self:center;aspect-ratio:57/30;transform:rotate(-4deg);border-radius:4px;color:#20323F;box-shadow:0 30px 50px -24px rgba(0,0,0,.55);overflow:hidden;background:#E8F1E4}
-.ticket svg.jimon{position:absolute;inset:0;width:100%;height:100%}
-.t-body{position:relative;height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:7% 8% 6%}
-.t-row{display:flex;justify-content:space-between;align-items:baseline;font-size:clamp(11px,1.3vw,14px);font-weight:700;letter-spacing:.1em}
-.t-route{display:flex;align-items:center;gap:4%;font-size:clamp(20px,2.7vw,34px);font-weight:900;letter-spacing:.06em;align-self:center;white-space:nowrap}
-.t-route svg{width:1em;height:1em;color:var(--blue)}
-.t-fare{font-family:var(--num);font-weight:700;font-size:clamp(26px,3.4vw,42px);line-height:1}
-.t-fare small{font-family:"Murecho",sans-serif;font-size:.45em;margin-left:2px}
-.t-stamp{position:absolute;right:8%;top:22%;width:19%;aspect-ratio:1;border:3px solid rgba(199,64,31,.75);border-radius:50%;color:rgba(199,64,31,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:clamp(10px,1.2vw,14px);line-height:1.3;transform:rotate(12deg);text-align:center}
+/* ===== 見学のお申し込み：空色一面 ===== */
+.visit-sec{background:var(--blue);color:#fff;padding:110px 0 120px}
+.visit-in{max-width:760px}
+.visit-sec .h2{color:#fff}
+.visit-sec p.sec-lead{color:#E2EEF9}
+.visit-sec .go{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.visit-sec .note{font-size:13px;color:#BFD6EC;margin:16px 0 0;font-weight:400}
+.visit-sec .how{list-style:none;margin:34px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.35)}
+.visit-sec .how li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+.visit-sec .how b{color:var(--sun)}
 
 footer{background:var(--blue-d);color:#E6EEF6;padding:44px 0 52px;font-size:14px;font-weight:400}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
@@ -221,27 +208,22 @@ footer p{margin:6px 0 0}
   .facts li{padding-right:14px;margin-right:14px;font-size:13px}
   .facts b{font-size:26px}
   .sec{padding:80px 0}
-  .route-grid,.greet,.access,.ticket-in,.tt-grid{grid-template-columns:1fr;gap:40px}
-  .route-head{position:static}
-  .stop{grid-template-columns:60px minmax(0,1fr);gap:18px}
-  .stop .o{width:60px;height:60px;border-width:7px}
-  .route::before,.route::after{left:24px}
-  .stop h3{font-size:25px}
-  .route-note{margin-left:78px}
+  .steps-grid,.greet,.access,.tt-grid{grid-template-columns:1fr;gap:40px}
+  .steps-head{position:static}
+  .step{grid-template-columns:1fr;gap:6px}
+  .visit-sec .how li{grid-template-columns:90px minmax(0,1fr)}
   .xfer{grid-template-columns:1fr}
   .mark{width:54px;height:54px;font-size:20px;border-width:6px}
   .xrow{grid-template-columns:54px minmax(0,1fr)}
   .tt th,.tt td{padding:8px 4px}
   .tt tbody th{width:52px;font-size:26px}
   .tt td{font-size:15px}
-  .ticket{transform:rotate(-3deg)}
   .fab.show{display:block}
   footer{padding-bottom:100px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
-  .route::after{transform:none}
 }
 </style>
 </head>
@@ -251,12 +233,12 @@ footer p{margin:6px 0 0}
 
 <header class="band">
   <div class="wrap">
-    <a class="brand" href="#top" translate="no"><span class="sym" aria-hidden="true">PN</span>小牧味岡ピアノ教室</a>
+    <a class="brand" href="#top" translate="no"><span class="sym" aria-hidden="true"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>小牧味岡ピアノ教室</a>
     <nav aria-label="ページ内">
       <a class="nl" href="#route">レッスンの進み方</a>
       <a class="nl" href="#time">時間割と月謝</a>
       <a class="nl" href="#access">アクセス</a>
-      <a class="tk" href="#ticket">見学を申し込む</a>
+      <a class="tk" href="#visit">見学を申し込む</a>
     </nav>
   </div>
 </header>
@@ -265,25 +247,23 @@ footer p{margin:6px 0 0}
 <section class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <h1><span class="nb">ひと駅ずつ、</span><span class="nb">ピアノの旅へ。</span></h1>
+      <h1><span class="nb">はじめての1曲は、</span><span class="nb">きらきら星。</span></h1>
       <div>
-        <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。最初の駅は「きらきら星」。3歳から、1音ずつ進みます。</p>
+        <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。3歳から、お子さまのペースで1曲ずつ進みます。</p>
         <ul class="facts">
           <li><b>3歳</b>から通えます</li>
           <li><b>0円</b>見学はいつでも</li>
           <li><b>7分</b>味岡駅から徒歩</li>
         </ul>
-        <div class="go"><a class="btn btn-sun" href="#ticket">見学のきっぷを受け取る<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="go"><a class="btn btn-sun" href="#visit">見学を申し込む<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </div>
     </div>
     <div class="score">
-      <svg viewBox="0 0 830 332" role="group" aria-label="きらきら星の最初の7音。五線が路線、音符が駅です">
+      <svg viewBox="0 0 830 332" role="group" aria-label="きらきら星の最初の7音。音符を押すと音が鳴ります">
         <g class="staff"><line x1="120" x2="815" y1="80" y2="80"/><line x1="120" x2="815" y1="112" y2="112"/><line x1="120" x2="815" y1="144" y2="144"/><line x1="120" x2="815" y1="176" y2="176"/><line x1="120" x2="815" y1="208" y2="208"/></g>
         <text class="clef" x="70" y="226" font-size="150" text-anchor="middle" aria-hidden="true">&#x1D11E;</text>
         <line class="bar" x1="505" x2="505" y1="80" y2="208"/>
         <line class="bar" x1="800" x2="800" y1="80" y2="208"/><line class="bar" x1="811" x2="811" y1="80" y2="208" style="stroke-width:7"/>
-        <polyline class="route-bg" points="175,240 265,240 355,176 445,176 565,160 655,160 745,176"/>
-        <polyline class="route-fg" id="routeFg" points="175,240 265,240 355,176 445,176 565,160 655,160 745,176"/>
         <g class="note" data-i="0" tabindex="0" role="button" aria-label="1番目の音 ド（き）を鳴らす"><circle class="hit" cx="175" cy="240" r="44"/><line class="ledger" x1="141" x2="209" y1="240" y2="240"/><line class="stem" x1="195" x2="195" y1="236" y2="144"/><ellipse class="head" cx="175" cy="240" rx="23" ry="17"/><text class="ly" x="175" y="292">き</text><text class="nm" x="175" y="322">ド</text></g><g class="note" data-i="1" tabindex="0" role="button" aria-label="2番目の音 ド（ら）を鳴らす"><circle class="hit" cx="265" cy="240" r="44"/><line class="ledger" x1="231" x2="299" y1="240" y2="240"/><line class="stem" x1="285" x2="285" y1="236" y2="144"/><ellipse class="head" cx="265" cy="240" rx="23" ry="17"/><text class="ly" x="265" y="292">ら</text><text class="nm" x="265" y="322">ド</text></g><g class="note" data-i="2" tabindex="0" role="button" aria-label="3番目の音 ソ（き）を鳴らす"><circle class="hit" cx="355" cy="176" r="44"/><line class="stem" x1="375" x2="375" y1="172" y2="80"/><ellipse class="head" cx="355" cy="176" rx="23" ry="17"/><text class="ly" x="355" y="292">き</text><text class="nm" x="355" y="322">ソ</text></g><g class="note" data-i="3" tabindex="0" role="button" aria-label="4番目の音 ソ（ら）を鳴らす"><circle class="hit" cx="445" cy="176" r="44"/><line class="stem" x1="465" x2="465" y1="172" y2="80"/><ellipse class="head" cx="445" cy="176" rx="23" ry="17"/><text class="ly" x="445" y="292">ら</text><text class="nm" x="445" y="322">ソ</text></g><g class="note" data-i="4" tabindex="0" role="button" aria-label="5番目の音 ラ（ひ）を鳴らす"><circle class="hit" cx="565" cy="160" r="44"/><line class="stem" x1="585" x2="585" y1="156" y2="64"/><ellipse class="head" cx="565" cy="160" rx="23" ry="17"/><text class="ly" x="565" y="292">ひ</text><text class="nm" x="565" y="322">ラ</text></g><g class="note" data-i="5" tabindex="0" role="button" aria-label="6番目の音 ラ（か）を鳴らす"><circle class="hit" cx="655" cy="160" r="44"/><line class="stem" x1="675" x2="675" y1="156" y2="64"/><ellipse class="head" cx="655" cy="160" rx="23" ry="17"/><text class="ly" x="655" y="292">か</text><text class="nm" x="655" y="322">ラ</text></g><g class="note" data-i="6" tabindex="0" role="button" aria-label="7番目の音 ソ（る）を鳴らす"><circle class="hit" cx="745" cy="176" r="44"/><line class="stem" x1="765" x2="765" y1="172" y2="80"/><ellipse class="head" cx="745" cy="176" rx="23" ry="17"/><text class="ly" x="745" y="292">る</text><text class="nm" x="745" y="322">ソ</text></g>
       </svg>
     </div>
@@ -302,28 +282,21 @@ footer p{margin:6px 0 0}
 </section>
 
 <section class="sec" id="route">
-  <div class="wrap route-grid">
-    <div class="route-head">
-      <h2 class="h2">弾けたら、<br>次の駅へ。</h2>
+  <div class="wrap steps-grid">
+    <div class="steps-head">
+      <h2 class="h2">1曲弾けたら、<br>次の曲へ。</h2>
       <p class="sec-lead">スズキ・メソードは、赤ちゃんがことばを覚えるように音楽を身につける学び方です。たくさん聴いて、まねて弾く。急ぐ必要はありません。</p>
     </div>
     <div>
-      <ol class="route" id="route-line">
-        <li class="stop"><span class="o"><small>PN</small><b>00</b></span><div><h3>けんがく</h3><p class="en">Start</p><p>まずは教室の様子を見にきてください。見学はいつでも無料。下のお子さまも一緒にどうぞ。</p></div></li>
-        <li class="stop"><span class="o"><small>PN</small><b>01</b></span><div><h3>きらきら星</h3><p class="en">Twinkle, Twinkle, Little Star</p><p>最初の曲は、おうちで録音を流して、たくさん聴くところから。楽譜はまだ使いません。</p></div></li>
-        <li class="stop"><span class="o"><small>PN</small><b>02</b></span><div><h3>ちょうちょう</h3><p class="en">Lightly Row</p><p>聴いて覚えたメロディを、まねして弾きます。おうちの方もレッスンに付きそって、練習のしかたを一緒に覚えます。</p></div></li>
-        <li class="stop"><span class="o"><small>PN</small><b>03</b></span><div><h3>ぶんぶんぶん</h3><p class="en">The Honeybee</p><p>指が動くようになってきたら、楽譜にも少しずつ。進み方は一人ひとり違います。</p></div></li>
-        <li class="stop"><span class="o"><small>PN</small><b>04</b></span><div><h3>かっこう</h3><p class="en">Cuckoo</p><p>1曲弾けるたびに、ひと駅。弾ける曲が、そのまま自信になっていきます。</p></div></li>
-        <li class="stop end"><span class="o"><small>PN</small><b>…</b></span><div><h3>その先へ</h3><p class="en">and beyond</p><p>続けていくと、いつのまにかバッハやモーツァルトの名曲へ。路線は、ずっと先まで続いています。</p></div></li>
-      </ol>
-      <p class="route-note">※駅（曲）の名前と並びは見本です。実際の教本に合わせて差し替えます。</p>
+      <ol class="steps" id="steps"><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>見学</span><div><h3>けんがく</h3><p class="en">Visit</p><p>まずは教室の様子を見にきてください。見学はいつでも無料。下のお子さまも一緒にどうぞ。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>1曲目</span><div><h3>きらきら星</h3><p class="en">Twinkle, Twinkle, Little Star</p><p>最初の曲は、おうちで録音を流して、たくさん聴くところから。楽譜はまだ使いません。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>2曲目</span><div><h3>ちょうちょう</h3><p class="en">Lightly Row</p><p>聴いて覚えたメロディを、まねして弾きます。おうちの方もレッスンに付きそって、練習のしかたを一緒に覚えます。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>3曲目</span><div><h3>ぶんぶんぶん</h3><p class="en">The Honeybee</p><p>指が動くようになってきたら、楽譜にも少しずつ。進み方は一人ひとり違います。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>4曲目</span><div><h3>かっこう</h3><p class="en">Cuckoo</p><p>1曲弾けるたびに、弾ける曲が1つ増えます。それがそのまま、お子さまの自信になります。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>その先</span><div><h3>その先へ</h3><p class="en">and beyond</p><p>続けていくと、いつのまにかバッハやモーツァルトの名曲へ。</p></div></li></ol>
+      <p class="steps-note">※曲の名前と並びは見本です。実際の教本に合わせて差し替えます。</p>
     </div>
   </div>
 </section>
 
 <section class="sec xfer-sec" id="about">
   <div class="wrap">
-    <h2 class="h2">のりかえ案内</h2>
+    <h2 class="h2">はじめての方へ</h2>
     <p class="sec-lead">はじめての方から、よくいただくご不安にお答えします。</p>
     <div class="xfer">
       <div class="xrow"><span class="mark" style="--c:#1A66B3" aria-hidden="true">歳</span><div><h3>3歳から通えます</h3><p>小さなお子さまも、ことばを覚えるように、音楽を楽しみながら身につけられます。</p></div></div>
@@ -338,11 +311,11 @@ footer p{margin:6px 0 0}
 
 <section class="sec" id="time">
   <div class="wrap">
-    <h2 class="h2">時刻表と運賃</h2>
+    <h2 class="h2">レッスンの時間とお月謝</h2>
     <p class="sec-lead">レッスンの時間とお月謝です。空いている時間は、見学のときにご相談ください。</p>
     <div class="tt-grid">
       <div>
-        <div class="tbl-h"><h3>レッスン時刻表</h3><small>見本の時間割です</small></div>
+        <div class="tbl-h"><h3>レッスンの時間</h3><small>見本の時間割です</small></div>
         <table class="tt">
           <thead><tr><th scope="col">時</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col" class="sat">土</th></tr></thead>
           <tbody>
@@ -356,7 +329,7 @@ footer p{margin:6px 0 0}
         <p class="tbl-note">1回30分の個人レッスンです（見本）。実際の曜日と時間に差し替えます。</p>
       </div>
       <div>
-        <div class="tbl-h"><h3>運賃表</h3><small>見本の金額です</small></div>
+        <div class="tbl-h"><h3>お月謝</h3><small>見本の金額です</small></div>
         <table class="fare">
           <tr><th scope="row">見学</th><td>0<small>円</small></td></tr>
           <tr><th scope="row">入会金</th><td>5,000<small>円</small></td></tr>
@@ -403,38 +376,22 @@ footer p{margin:6px 0 0}
   </div>
 </section>
 
-<section class="ticket-sec" id="ticket">
-  <div class="wrap ticket-in">
-    <div>
-      <h2 class="h2">見学のきっぷは、<br>無料です。</h2>
-      <p class="sec-lead">いつでも見学できます。おうちの方も、きょうだいも一緒にどうぞ。メールで日にちをご相談ください。</p>
-      <div class="go"><a class="btn btn-sun" href="#ticket" aria-describedby="ctaNote">メールで見学を申し込む<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      <p class="note" id="ctaNote">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
-    </div>
-    <div class="ticket" role="img" aria-label="見学きっぷ。ご自宅から小牧味岡ピアノ教室ゆき、0円、有効期限なし">
-      <svg class="jimon" viewBox="0 0 570 300" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <pattern id="jm" width="18" height="18" patternUnits="userSpaceOnUse">
-            <path d="M0 9c4.5-6 9-6 13.5 0S22.5 15 27 9M-9 9c4.5 6 9 6 13.5 0" fill="none" stroke="#9FC3A0" stroke-width=".9" opacity=".75"/>
-            <circle cx="9" cy="0" r="1.1" fill="#A8C9A9" opacity=".7"/>
-          </pattern>
-        </defs>
-        <rect width="570" height="300" fill="#E8F1E4"/>
-        <rect width="570" height="300" fill="url(#jm)"/>
-        <rect x="0" y="0" width="570" height="300" fill="none" stroke="#B9D3B8" stroke-width="10"/>
-      </svg>
-      <div class="t-body">
-        <div class="t-row"><span>見学きっぷ</span><span>小牧味岡ピアノ教室 発行</span></div>
-        <div class="t-route"><span>ご自宅</span><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 13h18M15 6l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>小牧味岡</span></div>
-        <div class="t-row"><span>有効期限なし　おとな・こども</span><span class="t-fare">0<small>円</small></span></div>
-      </div>
-      <div class="t-stamp" aria-hidden="true">見学<br>歓迎</div>
-    </div>
+<section class="visit-sec" id="visit">
+  <div class="wrap visit-in">
+    <h2 class="h2">まずは一度、<br>見学にいらしてください。</h2>
+    <p class="sec-lead">見学はいつでも無料です。おうちの方も、きょうだいも一緒にどうぞ。メールで日にちをご相談ください。</p>
+    <ul class="how">
+      <li><b>見学</b><span>無料・いつでも（日にちはご相談ください）</span></li>
+      <li><b>持ち物</b><span>特にありません</span></li>
+      <li><b>場所</b><span>愛知県小牧市小松寺4丁目78（駐車場あり）</span></li>
+    </ul>
+    <div class="go"><a class="btn btn-sun" href="#visit" aria-describedby="ctaNote">メールで見学を申し込む<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <p class="note" id="ctaNote">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
   </div>
 </section>
 </main>
 
-<div class="fab" id="fab"><a class="btn btn-cta" href="#ticket">見学のきっぷを受け取る</a></div>
+<div class="fab" id="fab"><a class="btn btn-cta" href="#visit">見学を申し込む</a></div>
 
 <footer>
   <div class="wrap">
@@ -447,9 +404,6 @@ footer p{margin:6px 0 0}
 (function(){
   var $=function(id){return document.getElementById(id)};
   var notes=[].slice.call(document.querySelectorAll('.note')),FQ={'ド':261.63,'ソ':392.0,'ラ':440.0},NM=['ド','ド','ソ','ソ','ラ','ラ','ソ'],KEY={'ド':'C','ソ':'G','ラ':'A'};
-  var fg=$('routeFg'),cum=[0],pts=fg.points,total=0;
-  for(var k=1;k<pts.numberOfItems;k++){var a=pts.getItem(k-1),b=pts.getItem(k);total+=Math.hypot(b.x-a.x,b.y-a.y);cum.push(total)}
-  fg.style.strokeDasharray=total;fg.style.strokeDashoffset=total;
   var idx=-1,ac=null;
   function tone(f){
     try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var t=ac.currentTime,g=ac.createGain();g.connect(ac.destination);
@@ -458,7 +412,7 @@ footer p{margin:6px 0 0}
     }catch(e){}
   }
   function go(i,sound){
-    idx=i;fg.style.strokeDashoffset=total-(i<0?0:cum[i]);
+    idx=i;
     notes.forEach(function(n,k){n.classList.toggle('pass',k<i);n.classList.toggle('now',k===i)});
     [].forEach.call($('kb').children,function(w){w.classList.remove('lit')});
     if(i>=0){var key=$('kb').querySelector('[data-n="'+KEY[NM[i]]+'"]');if(key)key.classList.add('lit');
@@ -470,15 +424,14 @@ footer p{margin:6px 0 0}
   });
   $('pNext').addEventListener('click',function(){go(idx>=notes.length-1?0:idx+1,true)});
   $('pReset').addEventListener('click',function(){go(-1,false)});
-  // 開いたときに一度だけ、音を出さずに路線を走らせる
+  // 開いたときに一度だけ、音を出さずに音符を順に光らせる
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){go(notes.length-1,false)}
   else{var a=0,run=setInterval(function(){go(a,false);a++;if(a>=notes.length)clearInterval(run)},380)}
-  var line=$('route-line'),rs=line.querySelectorAll('.stop'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rs=document.querySelectorAll('.step');
   function onScroll(){
-    var vh=window.innerHeight,r=line.getBoundingClientRect();
-    line.style.setProperty('--p',reduce?1:Math.min(1,Math.max(0,(vh*0.6-r.top)/r.height)));
+    var vh=window.innerHeight;
     rs.forEach(function(st){st.classList.toggle('on',st.getBoundingClientRect().top<vh*0.6)});
-    var h=document.querySelector('.hero').getBoundingClientRect(),t=$('ticket').getBoundingClientRect();
+    var h=document.querySelector('.hero').getBoundingClientRect(),t=$('visit').getBoundingClientRect();
     $('fab').classList.toggle('show',h.bottom<0&&t.top>vh);
   }
   var tk=false;function req(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;onScroll()})}}
