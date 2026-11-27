@@ -4,238 +4,256 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#1F7BC9">
+<meta name="theme-color" content="#1A66B3">
 <title>小牧味岡ピアノ教室｜ホームページ案（見本）</title>
 <meta name="description" content="愛知県小牧市・味岡駅から徒歩7分の「小牧味岡ピアノ教室」のホームページデザイン案です。3歳から、ひと駅ずつピアノの旅へ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700;900&family=Barlow:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ground:#F3F7F8;
-  --plate:#FFFFFF;
-  --ink:#1B2B3A;
-  --ink2:#475869;
-  --line:#1F7BC9;
-  --line-d:#165E9C;
-  --line-t:#E3F0FA;
-  --sun:#F5B700;
-  --sun-t:#FFF4CC;
-  --cta:#C8432A;
-  --cta-d:#A63520;
-  --rule:#D5E0E6;
-  --r:6px;
-  --shadow:0 2px 3px rgba(27,43,58,.06),0 10px 28px -12px rgba(27,43,58,.22);
+  --blue:#1A66B3;
+  --blue-d:#124E8C;
+  --blue-l:#D9E8F6;
+  --sun:#F7B500;
+  --sun-l:#FFE9A8;
+  --ink:#152536;
+  --ink2:#2F4357;
+  --paper:#FFFFFF;
+  --mist:#F2F6F9;
+  --steel:#5E6E7C;
+  --rule:#CBD7E1;
+  --cta:#C7401F;
+  --cta-d:#A2321A;
+  --num:"Barlow",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px}
-a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(245,183,0,.25)}
-.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--sun);color:var(--ink);padding:10px 16px;border-radius:6px;font-weight:700;text-decoration:none}
-.skip:focus{top:12px}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:"BIZ UDPGothic",system-ui,sans-serif;font-size:17px;line-height:1.85;letter-spacing:.02em}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;scrollbar-color:var(--blue) var(--mist)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Murecho",system-ui,sans-serif;font-size:18px;line-height:1.9;letter-spacing:.02em;font-weight:400}
 ::selection{background:var(--sun);color:var(--ink)}
-:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
-a{color:var(--line-d);text-underline-offset:.22em}
-img,svg{display:block;max-width:100%}
-html{scrollbar-color:var(--line) var(--line-t)}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-section[id]{scroll-margin-top:64px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:3px}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(247,181,0,.3)}
+a{color:var(--blue-d);text-underline-offset:.22em}
+svg{display:block}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
 .nb{display:inline-block}
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--sun);color:var(--ink);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+section[id]{scroll-margin-top:64px}
 
-/* 見本のお知らせ */
-.sample-bar{background:#2E3A46;color:#F3F7F8;font-size:12.5px;line-height:1.6;padding:8px 16px;text-align:center}
+.sample-bar{background:#22303D;color:#EEF3F7;font-size:12.5px;line-height:1.6;padding:8px 16px;text-align:center;font-weight:400}
 .sample-bar b{color:var(--sun)}
 
-/* 路線の帯（ヘッダー） */
-.band{background:var(--line);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 var(--line-d)}
-.band .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
-.brand .mark{width:34px;height:34px;flex:none}
-.brand b{font-size:18px;letter-spacing:.06em;display:block;line-height:1.3}
-.brand small{display:block;font-size:12px;opacity:.9;letter-spacing:.08em}
-.band nav{display:flex;align-items:center;gap:22px}
-.band nav a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:.06em}
-.band nav a:hover{text-decoration:underline}
-.band nav a.btn-small{color:var(--line-d);text-decoration:none}
-.btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:700;letter-spacing:.08em;text-decoration:none;border:0;border-radius:var(--r);cursor:pointer;transition:background .2s,transform .2s}
-.btn-cta{background:var(--cta);color:#fff;padding:16px 26px;font-size:16px;box-shadow:0 2px 0 var(--cta-d)}
-.btn-cta:hover{background:var(--cta-d)}
-.btn-cta:active{transform:translateY(1px)}
-.btn-small{background:#fff;color:var(--line-d);padding:9px 16px;font-size:14px}
-.btn-small:hover{background:var(--sun-t)}
-@media (max-width:820px){.band nav a.nl{display:none}}
+/* 上の帯 */
+.band{position:sticky;top:0;z-index:40;background:var(--blue);color:#fff;border-bottom:4px solid var(--sun)}
+.band .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.08em}
+.brand .sym{width:34px;height:34px;border-radius:50%;background:#fff;border:5px solid var(--sun);display:flex;align-items:center;justify-content:center;font-family:var(--num);font-weight:700;color:var(--blue);font-size:12px;letter-spacing:0;flex:none}
+.band nav{display:flex;align-items:center;gap:26px}
+.band nav a{color:#fff;text-decoration:none;font-size:15px;font-weight:500}
+.band nav a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:2px}
+.band nav a.tk{background:var(--sun);color:var(--ink);font-weight:700;padding:8px 16px;border-radius:4px;text-decoration:none}
+.band nav a.tk:hover{background:#fff}
 
-/* ファーストビュー */
-.hero{padding:64px 0 0;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.28;letter-spacing:.02em;margin:0 0 22px;font-weight:700;text-wrap:balance}
-.hero h1 span{display:inline-block}
-.lead{color:var(--ink2);max-width:30em;margin:0 0 26px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px;padding:0;list-style:none}
-.chip{display:inline-flex;align-items:center;gap:8px;background:var(--plate);border:1.5px solid var(--rule);border-radius:999px;padding:5px 14px 5px 6px;font-size:14px;font-weight:700}
-.chip i{width:20px;height:20px;border-radius:50%;background:var(--sun);border:4px solid #fff;box-shadow:0 0 0 2px var(--line);flex:none}
+.btn{display:inline-flex;align-items:center;gap:12px;font:inherit;font-weight:700;letter-spacing:.06em;text-decoration:none;border:0;border-radius:4px;cursor:pointer;transition:background-color .2s,transform .2s}
+.btn svg{width:20px;height:20px}
+.btn-cta{background:var(--cta);color:#fff;padding:18px 28px;font-size:17px;box-shadow:0 3px 0 var(--cta-d)}
+.btn-cta:hover{background:var(--cta-d)}
+.btn-cta:active{transform:translateY(2px);box-shadow:0 1px 0 var(--cta-d)}
+.btn-sun{background:var(--sun);color:var(--ink);padding:18px 28px;font-size:17px;box-shadow:0 3px 0 #C98F00}
+.btn-sun:hover{background:#FFC92E}
+
+/* ===== 表紙：空色一面＋駅名標 ===== */
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:var(--blue-d)}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:56px;align-items:end;padding:72px 0 120px}
+.hero-copy{padding-bottom:64px}
+.hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.18;font-weight:900;letter-spacing:.01em;margin:0 0 26px}
+.hero h1 .nb{white-space:nowrap}
+.hero .lead{font-size:18px;line-height:1.9;margin:0 0 32px;max-width:26em;color:#EAF2FA;font-weight:500}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin:0 0 34px;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.35)}
+.facts li{padding:12px 22px 0 0;margin-right:22px;border-right:1px solid rgba(255,255,255,.35);font-weight:700;font-size:15px;line-height:1.5}
+.facts li:last-child{border-right:0;margin-right:0}
+.facts b{display:block;font-family:var(--num);font-size:30px;line-height:1.1;color:var(--sun);font-weight:700}
 
 /* 駅名標 */
-.sign{position:relative}
-.plate{background:var(--plate);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
-.plate-top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px 0;font-size:13px;color:var(--ink2);letter-spacing:.1em}
-.num{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;border:5px solid var(--line);font-weight:700;font-size:10px;line-height:1;letter-spacing:.06em;text-align:center;color:var(--line-d);background:#fff;flex:none}
-.num b{display:block;font-size:19px;color:var(--ink);margin-top:2px;letter-spacing:0}
-.plate-main{display:flex;align-items:center;gap:20px;padding:10px 24px 22px}
-.station{font-size:clamp(44px,6.3vw,78px);font-weight:700;letter-spacing:.06em;line-height:1.15;margin:0;white-space:nowrap}
-.station-sub{font-size:14px;color:var(--ink2);margin:2px 0 0;letter-spacing:.1em}
-.plate-band{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:var(--line);color:#fff;min-height:58px}
-.plate-band button{font:inherit;color:#fff;background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:8px;padding:12px 18px;font-weight:700;font-size:15px;letter-spacing:.06em}
-.plate-band button:hover{background:var(--line-d)}
-.plate-band button:disabled{opacity:.45;cursor:default;background:none}
-.plate-band .prev{justify-self:start}
-.plate-band .next{justify-self:end}
-.plate-band .here{width:14px;height:14px;border-radius:50%;background:var(--sun);border:3px solid #fff}
-.plate-band svg{width:18px;height:18px}
-.flip{animation:wipe .55s cubic-bezier(.16,1,.3,1)}
-@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.sign-note{font-size:12.5px;color:var(--ink2);margin:10px 4px 0}
+.sign-wrap{position:relative}
+.sign{position:relative;z-index:2;background:#fff;color:var(--ink);border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.08),0 24px 50px -22px rgba(6,28,52,.55);overflow:hidden}
+.sign-top{display:flex;align-items:center;gap:22px;padding:26px 32px 18px}
+.st-no{flex:none;width:78px;height:78px;border:7px solid var(--blue);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.st-no small{font-family:var(--num);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.06em}
+.st-no b{font-family:var(--num);font-weight:700;font-size:30px;margin-top:2px}
+.st-name{min-width:0}
+.st-kana{font-size:15px;font-weight:700;color:var(--steel);letter-spacing:.32em;margin:0}
+.st-main{font-size:clamp(46px,6.2vw,86px);font-weight:900;line-height:1.1;margin:0;letter-spacing:.08em;white-space:nowrap}
+.st-en{font-family:var(--num);font-weight:600;font-size:17px;color:var(--steel);letter-spacing:.04em;margin:4px 0 0}
+.sign-band{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;background:var(--blue);color:#fff;border-top:6px solid var(--sun)}
+.sign-band button{font:inherit;color:#fff;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 22px;font-weight:700;font-size:17px;letter-spacing:.08em;transition:background-color .2s}
+.sign-band button:hover{background:var(--blue-d)}
+.sign-band button:disabled{opacity:.4;cursor:default;background:transparent}
+.sign-band .next{justify-content:flex-end}
+.sign-band .mid{display:flex;align-items:center;padding:0 12px;font-family:var(--num);font-size:13px;letter-spacing:.1em;opacity:.85}
+.sign-band svg{width:20px;height:20px;flex:none}
+.swap{animation:swap .5s cubic-bezier(.16,1,.3,1)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.posts{position:relative;z-index:1;display:flex;justify-content:space-between;padding:0 18%;height:64px}
+.posts i{width:16px;background:linear-gradient(90deg,#8A99A6,#C9D3DB 45%,#7D8C99);border-radius:0 0 2px 2px}
 
-/* 線路と電車 */
-.track{position:relative;height:96px;margin-top:40px}
-.rails{position:absolute;left:0;right:0;bottom:22px;height:10px;border-top:3px solid #9DB0BC;border-bottom:3px solid #9DB0BC;background:repeating-linear-gradient(90deg,transparent 0 22px,#C3D1D9 22px 28px)}
-.train{position:absolute;bottom:30px;left:50%;width:300px;transform:translateX(-50%);animation:arrive 2.2s cubic-bezier(.16,1,.3,1) .3s both}
-@keyframes arrive{from{transform:translateX(70vw)}to{transform:translateX(-50%)}}
+/* 路線の帯（看板の下） */
+.strip{position:absolute;left:0;right:0;bottom:0;height:120px;z-index:3;display:flex;align-items:center}
+.strip .wrap{position:relative}
+.strip-line{position:relative;height:12px;background:rgba(255,255,255,.22);border-radius:6px;margin:0 10px}
+.strip-fill{position:absolute;left:0;top:0;bottom:0;background:var(--sun);border-radius:6px;width:0;transition:width .8s cubic-bezier(.16,1,.3,1)}
+.strip-stops{position:absolute;inset:-14px 0 auto 0;display:flex;justify-content:space-between}
+.strip-stops button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;width:90px;margin:0 -35px;color:#D6E5F3;font-size:13px;font-weight:700;letter-spacing:.06em;text-align:center}
+.strip-stops button:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+.strip-stops .o{width:28px;height:28px;border-radius:50%;background:var(--blue-d);border:5px solid #fff;transition:background-color .4s,transform .4s}
+.strip-stops button.pass .o{background:var(--sun)}
+.strip-stops button.now .o{background:var(--sun);transform:scale(1.25)}
+.strip-stops button.now{color:#fff}
+.strip-cap{position:absolute;right:20px;top:-46px;font-size:12.5px;color:#BFD6EC;font-weight:400}
 
-/* 見出し */
-.sec{padding:96px 0}
-.h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;margin:0 0 14px;letter-spacing:.03em;text-wrap:balance}
-.sec-lead{color:var(--ink2);max-width:36em;margin:0}
-
-/* 路線図 */
-.route-sec{background:var(--plate)}
-.route-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
-.route-head{position:sticky;top:104px}
-.route{position:relative;list-style:none;margin:0;padding:0 0 0 0}
-.route::before,.route::after{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:10px;border-radius:5px}
-.route::before{background:var(--line-t)}
-.route::after{background:var(--line);transform-origin:top;transform:scaleY(var(--p,0))}
-.stop{position:relative;display:grid;grid-template-columns:64px 1fr;gap:20px;padding:0 0 44px}
+/* ===== 路線図 ===== */
+.sec{padding:110px 0}
+.h2{font-size:clamp(32px,4vw,52px);line-height:1.25;font-weight:900;margin:0 0 20px;letter-spacing:.02em}
+.sec-lead{font-size:19px;color:var(--ink2);max-width:34em;margin:0}
+.route-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:start}
+.route-head{position:sticky;top:110px}
+.route{position:relative;list-style:none;margin:0;padding:0}
+.route::before,.route::after{content:"";position:absolute;left:31px;top:34px;bottom:34px;width:12px;border-radius:6px}
+.route::before{background:var(--blue-l)}
+.route::after{background:var(--blue);transform-origin:top;transform:scaleY(var(--p,0))}
+.stop{position:relative;display:grid;grid-template-columns:74px minmax(0,1fr);gap:26px;padding-bottom:56px}
 .stop:last-child{padding-bottom:0}
-.dot{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;background:#fff;border:6px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;line-height:1;color:var(--line-d);font-size:11px;transition:background .4s}
-.dot b{font-size:18px;color:var(--ink);margin-top:2px}
-.stop.on .dot{background:var(--sun-t)}
-.stop h3{font-size:24px;margin:10px 0 4px;letter-spacing:.06em}
-.stop p{margin:0;color:var(--ink2);max-width:28em}
-.stop .kind{display:inline-block;font-size:12px;font-weight:700;color:var(--line-d);background:var(--line-t);border-radius:4px;padding:1px 8px;margin-left:8px;vertical-align:middle;letter-spacing:.06em}
-.stop.end .dot{border-color:var(--sun);background:var(--sun)}
-.stop.end .dot b,.stop.end .dot{color:var(--ink)}
-.route-note{font-size:13px;color:var(--ink2);margin:28px 0 0 84px}
+.stop .o{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:#fff;border:8px solid var(--blue);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;transition:background-color .4s}
+.stop .o small{font-family:var(--num);font-weight:700;font-size:11px;color:var(--blue);letter-spacing:.06em}
+.stop .o b{font-family:var(--num);font-weight:700;font-size:24px}
+.stop.on .o{background:var(--sun-l)}
+.stop.end .o{background:var(--sun);border-color:var(--sun)}
+.stop h3{font-size:30px;font-weight:900;margin:10px 0 2px;letter-spacing:.06em;line-height:1.35}
+.stop .en{font-family:var(--num);font-weight:600;color:var(--steel);font-size:15px;margin:0 0 10px}
+.stop p{margin:0;color:var(--ink2);max-width:27em}
+.route-note{font-size:14px;color:var(--steel);margin:34px 0 0 100px;font-weight:400}
 
-/* のりかえ案内 */
-.xfer{margin-top:40px;border-top:2px solid var(--ink)}
-.xrow{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--rule)}
-.xtag{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:.04em}
-.xtag i{width:30px;height:30px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff}
-.xtag i svg{width:18px;height:18px}
-.xrow p{margin:0;color:var(--ink2)}
+/* ===== のりかえ案内：黄色一面 ===== */
+.xfer-sec{background:var(--sun);color:var(--ink)}
+.xfer-sec .sec-lead{color:#3A3420}
+.xfer{margin-top:52px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;border-top:3px solid var(--ink)}
+.xrow{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;padding:26px 0;border-bottom:1.5px solid rgba(21,37,54,.28);align-items:start}
+.mark{width:64px;height:64px;border-radius:50%;background:#fff;border:7px solid var(--c);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:var(--ink)}
+.xrow h3{font-size:24px;font-weight:900;margin:4px 0 4px;letter-spacing:.04em;line-height:1.4}
+.xrow p{margin:0;color:#3A3420}
 
-/* 時刻表と運賃 */
-.tt-sec{background:var(--line-t)}
-.tt-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;margin-top:40px;align-items:start}
-.board{background:var(--plate);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
-.board-h{background:var(--line-d);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;font-weight:700;letter-spacing:.08em}
-.board-h small{font-weight:400;opacity:.85;font-size:12px}
+/* ===== 時刻表と運賃：白い紙の上に直接組む ===== */
+.tt-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:72px;margin-top:56px;align-items:start}
+.tbl-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:6px solid var(--blue);padding-bottom:10px;margin-bottom:4px}
+.tbl-h h3{margin:0;font-size:24px;font-weight:900;letter-spacing:.06em}
+.tbl-h small{font-size:13px;color:var(--steel);font-weight:400}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-.tt th,.tt td{border-bottom:1px solid var(--rule);padding:8px 10px;text-align:left}
-.tt thead th{font-size:13px;color:var(--ink2);font-weight:700;letter-spacing:.1em;background:#F8FAFB}
-.tt tbody th{width:64px;font-size:26px;color:var(--line-d);text-align:center;border-right:1px solid var(--rule)}
-.tt td{font-size:15px;letter-spacing:.06em}
-.tt td span{display:inline-block;min-width:2.1em}
-.tt .sat{color:var(--line-d)}
-.fare td,.fare th{padding:14px 20px;border-bottom:1px solid var(--rule)}
-.fare th{text-align:left;font-weight:400;color:var(--ink2);font-size:15px}
-.fare td{text-align:right;font-size:24px;font-weight:700}
-.fare td small{font-size:13px;font-weight:400;color:var(--ink2);margin-left:2px}
-.board-note{font-size:12.5px;color:var(--ink2);padding:12px 20px;margin:0}
+.tt th,.tt td{border-bottom:1px solid var(--rule);padding:10px 8px;text-align:left}
+.tt thead th{font-size:14px;color:var(--steel);font-weight:700;letter-spacing:.12em;padding-top:14px}
+.tt tbody th{width:72px;font-family:var(--num);font-size:34px;font-weight:700;color:var(--blue);border-right:2px solid var(--blue);text-align:center;line-height:1.2}
+.tt td{font-family:var(--num);font-size:19px;font-weight:600;letter-spacing:.04em}
+.tt td span{display:inline-block;min-width:1.7em}
+.tt .sat,.tt thead .sat{color:var(--blue)}
+.fare th,.fare td{border-bottom:1px solid var(--rule);padding:16px 0}
+.fare th{text-align:left;font-weight:700;color:var(--ink2);font-size:17px}
+.fare td{text-align:right;font-family:var(--num);font-size:34px;font-weight:700;line-height:1}
+.fare td small{font-family:"Murecho",sans-serif;font-size:14px;font-weight:700;color:var(--steel);margin-left:4px}
+.tbl-note{font-size:14px;color:var(--steel);margin:14px 0 0;font-weight:400}
 
-/* 先生 */
-.teacher{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;margin-top:40px}
-.portrait{aspect-ratio:1;border-radius:50%;background:var(--line-t);border:8px solid #fff;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;color:var(--line-d);font-size:13px;text-align:center;padding:20px}
-.teacher h3{font-size:26px;margin:0 0 4px;letter-spacing:.06em}
-.teacher .role{color:var(--line-d);font-weight:700;font-size:14px;margin:0 0 14px;letter-spacing:.06em}
-.teacher p{margin:0;color:var(--ink2);max-width:36em}
+/* ===== ごあいさつ ===== */
+.greet-sec{background:var(--mist)}
+.greet{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:start}
+.greet .quote{font-size:clamp(26px,2.8vw,36px);font-weight:900;line-height:1.55;margin:0;letter-spacing:.03em}
+.greet .who{margin:28px 0 0;padding-top:16px;border-top:3px solid var(--blue);font-weight:700}
+.greet .who small{display:block;color:var(--steel);font-weight:500;font-size:15px}
+.greet .body p{margin:0 0 1em;color:var(--ink2)}
+.ph{background:var(--sun-l);padding:2px 4px;border-radius:2px}
 
-/* 出口案内とアクセス */
-.access{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start}
-.exit{background:var(--sun);color:var(--ink);border-radius:10px;padding:26px 28px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
-.exit-h{display:flex;align-items:center;gap:14px;font-size:26px;font-weight:700;letter-spacing:.06em}
-.exit-h svg{width:44px;height:44px;flex:none}
-.exit dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;background:#fff;border-radius:8px;padding:18px 20px}
-.exit dt{font-weight:700;font-size:14px;color:var(--ink2);white-space:nowrap}
-.exit dd{margin:0}
-.map{border-radius:10px;overflow:hidden;box-shadow:var(--shadow);min-height:320px;background:var(--line-t)}
-.map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+/* ===== アクセス ===== */
+.access{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;margin-top:52px;align-items:stretch}
+.exit-sign{background:var(--sun);color:var(--ink);border-radius:6px;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:20px;padding:24px 28px;margin-bottom:28px}
+.exit-sign .ex{width:64px;height:64px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.exit-sign .ex svg{width:40px;height:40px}
+.exit-sign b{display:block;font-size:30px;font-weight:900;line-height:1.3;letter-spacing:.04em}
+.exit-sign span{font-size:15px;font-weight:700}
+.adl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);border-top:3px solid var(--ink)}
+.adl dt,.adl dd{padding:16px 0;border-bottom:1px solid var(--rule);margin:0}
+.adl dt{font-weight:700;color:var(--steel);padding-right:28px;white-space:nowrap}
+.map{border-radius:6px;overflow:hidden;min-height:360px;background:var(--mist)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
 
-/* きっぷ */
-.ticket-sec{padding:96px 0 110px}
-.ticket{position:relative;max-width:760px;margin:0 auto;background:#E9F3FB;border-radius:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 210px;overflow:hidden;
-  background-image:repeating-linear-gradient(135deg,rgba(31,123,201,.06) 0 2px,transparent 2px 9px)}
-.ticket::before,.ticket::after{content:"";position:absolute;right:197px;width:26px;height:26px;border-radius:50%;background:var(--ground)}
-.ticket::before{top:-13px}.ticket::after{bottom:-13px}
-.t-main{padding:34px 36px;border-right:2px dashed #9DB0BC}
-.t-kind{font-size:13px;color:var(--line-d);font-weight:700;letter-spacing:.2em;margin:0}
-.t-route{font-size:clamp(22px,3vw,30px);font-weight:700;margin:6px 0 4px;letter-spacing:.06em;line-height:1.4}
-.t-route svg{display:inline-block;width:26px;height:26px;vertical-align:-5px;margin:0 6px;color:var(--line)}
-.t-meta{color:var(--ink2);font-size:14px;margin:0 0 22px}
-.t-side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
-.t-side .fareb{font-size:44px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
-.t-side .fareb small{font-size:16px}
-.t-side p{margin:8px 0 0;font-size:13px;color:var(--ink2)}
-.cta-note{text-align:center;font-size:12.5px;color:var(--ink2);margin:18px 0 0}
+/* ===== きっぷ：空色一面 ===== */
+.ticket-sec{background:var(--blue);color:#fff;padding:110px 0 120px;overflow:hidden}
+.ticket-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.ticket-sec .h2{color:#fff}
+.ticket-sec p.sec-lead{color:#E2EEF9}
+.ticket-sec .go{margin-top:34px}
+.ticket-sec .note{font-size:13px;color:#BFD6EC;margin:16px 0 0;font-weight:400}
+.ticket{position:relative;width:100%;max-width:520px;justify-self:center;aspect-ratio:57/30;transform:rotate(-4deg);border-radius:4px;color:#20323F;box-shadow:0 30px 50px -24px rgba(0,0,0,.55);overflow:hidden;background:#E8F1E4}
+.ticket svg.jimon{position:absolute;inset:0;width:100%;height:100%}
+.t-body{position:relative;height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:7% 8% 6%}
+.t-row{display:flex;justify-content:space-between;align-items:baseline;font-size:clamp(11px,1.3vw,14px);font-weight:700;letter-spacing:.1em}
+.t-route{display:flex;align-items:center;gap:4%;font-size:clamp(20px,2.7vw,34px);font-weight:900;letter-spacing:.06em;align-self:center;white-space:nowrap}
+.t-route svg{width:1em;height:1em;color:var(--blue)}
+.t-fare{font-family:var(--num);font-weight:700;font-size:clamp(26px,3.4vw,42px);line-height:1}
+.t-fare small{font-family:"Murecho",sans-serif;font-size:.45em;margin-left:2px}
+.t-stamp{position:absolute;right:8%;top:22%;width:19%;aspect-ratio:1;border:3px solid rgba(199,64,31,.75);border-radius:50%;color:rgba(199,64,31,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:clamp(10px,1.2vw,14px);line-height:1.3;transform:rotate(12deg);text-align:center}
 
-/* 足元 */
-footer{background:var(--line);color:#fff;padding:40px 0 48px;font-size:14px}
+footer{background:var(--blue-d);color:#E6EEF6;padding:44px 0 52px;font-size:14px;font-weight:400}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
-footer b{font-size:18px;letter-spacing:.06em}
-footer p{margin:4px 0 0;opacity:.92}
+footer b{font-size:18px;font-weight:700;color:#fff;letter-spacing:.06em}
+footer p{margin:6px 0 0}
 
-/* 下に固定のボタン（スマホ） */
-.fab{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;display:none;justify-content:center}
-@media (max-width:820px){
-  body{font-size:16px}
-  .hero{padding-top:36px}
-  .hero .wrap{grid-template-columns:1fr;gap:28px}
-  .hero-copy{display:contents}
+.fab{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;display:none}
+.fab .btn{width:100%;justify-content:center}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  .band nav a.nl{display:none}
+  .brand{font-size:15px;letter-spacing:.04em;white-space:nowrap}
+  .band nav a.tk{white-space:nowrap;padding:7px 12px;font-size:14px}
+  .brand .sym{width:30px;height:30px;font-size:11px;border-width:4px}
+  .hero-in{grid-template-columns:1fr;gap:28px;padding-top:40px}
+  .hero-copy{padding-bottom:0;display:contents}
   .hero h1{order:1;margin:0}
-  .sign{order:2}
+  .sign-wrap{order:2}
   .hero .go{order:3}
-  .lead{order:4;margin:0}
-  .chips{order:5;margin:0}
-  .plate-top{padding:14px 16px 0}
-  .plate-main{padding:8px 16px 18px;gap:14px}
-  .num{width:50px;height:50px;border-width:4px}
-  .brand small{display:none}
-  .brand b{font-size:16px}
-  .brand .mark{width:28px;height:28px}
-  .band .wrap{min-height:56px}
-  .btn-small{padding:8px 12px;font-size:13px}
-  section[id]{scroll-margin-top:56px}
-  .plate-band button{padding:12px 12px;font-size:14px}
-  .train{width:230px}
-  .sec{padding:72px 0}
-  .route-grid{grid-template-columns:1fr;gap:36px}
+  .hero .lead{order:4;margin:0}
+  .facts{order:5;margin:0 0 8px}
+  .posts{height:44px}
+  .hero-in{padding-bottom:0}
+  .strip{position:relative;height:auto;padding:34px 0 46px;background:var(--blue-d)}
+  .hero::before{display:none}
+  .strip-stops button{width:56px;margin:0 -20px;font-size:0}
+  .strip-stops button .o{width:22px;height:22px;border-width:4px}
+  .strip-cap{position:static;display:block;text-align:center;margin-top:36px}
+  .sign-top{padding:18px 18px 14px;gap:14px}
+  .st-no{width:60px;height:60px;border-width:6px}
+  .st-no b{font-size:23px}
+  .st-kana{font-size:12px;letter-spacing:.2em}
+  .st-en{font-size:14px}
+  .sign-band button{padding:12px 14px;font-size:15px}
+  .sign-band .mid{display:none}
+  .sign-band{grid-template-columns:1fr 1fr}
+  .sec{padding:80px 0}
+  .route-grid,.greet,.access,.ticket-in,.tt-grid{grid-template-columns:1fr;gap:40px}
   .route-head{position:static}
-  .xrow{grid-template-columns:1fr;gap:6px}
-  .tt-grid{grid-template-columns:1fr}
-  .tt th,.tt td{padding:7px 6px}
-  .tt tbody th{width:48px;font-size:22px}
-  .tt td{font-size:13.5px}
-  .teacher{grid-template-columns:1fr;gap:24px;justify-items:start}
-  .portrait{width:170px}
-  .access{grid-template-columns:1fr}
-  .ticket{grid-template-columns:1fr}
-  .ticket::before,.ticket::after{display:none}
-  .t-main{border-right:0;border-bottom:2px dashed #9DB0BC;padding:28px 22px}
-  .t-side{flex-direction:row;gap:14px;padding:18px 22px}
-  .t-side p{margin:0;text-align:left}
-  .fab.show{display:flex}
-  footer{padding-bottom:96px}
+  .stop{grid-template-columns:60px minmax(0,1fr);gap:18px}
+  .stop .o{width:60px;height:60px;border-width:7px}
+  .route::before,.route::after{left:24px}
+  .stop h3{font-size:25px}
+  .route-note{margin-left:78px}
+  .xfer{grid-template-columns:1fr}
+  .mark{width:54px;height:54px;font-size:20px;border-width:6px}
+  .xrow{grid-template-columns:54px minmax(0,1fr)}
+  .tt th,.tt td{padding:8px 4px}
+  .tt tbody th{width:52px;font-size:26px}
+  .tt td{font-size:15px}
+  .ticket{transform:rotate(-3deg)}
+  .fab.show{display:block}
+  footer{padding-bottom:100px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -250,113 +268,102 @@ footer p{margin:4px 0 0;opacity:.92}
 
 <header class="band">
   <div class="wrap">
-    <a class="brand" href="#top" translate="no">
-      <svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="14" fill="#fff"/><circle cx="17" cy="17" r="14" fill="none" stroke="#F5B700" stroke-width="5"/><rect x="11" y="12" width="12" height="10" rx="1.5" fill="#1F7BC9"/><rect x="13.5" y="12" width="2" height="6" fill="#fff"/><rect x="18.5" y="12" width="2" height="6" fill="#fff"/></svg>
-      <span><b>小牧味岡ピアノ教室</b><small>名鉄小牧線 味岡駅から徒歩7分</small></span>
-    </a>
+    <a class="brand" href="#top" translate="no"><span class="sym" aria-hidden="true">PN</span>小牧味岡ピアノ教室</a>
     <nav aria-label="ページ内">
       <a class="nl" href="#route">レッスンの進み方</a>
       <a class="nl" href="#time">時間割と月謝</a>
       <a class="nl" href="#access">アクセス</a>
-      <a class="btn btn-small" href="#ticket">見学を申し込む</a>
+      <a class="tk" href="#ticket">見学を申し込む</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-in">
     <div class="hero-copy">
-      <h1><span>ひと駅ずつ、</span><span>ピアノの旅へ。</span></h1>
-      <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。最初の駅は「きらきら星」。3歳から、お子さまのペースで1曲ずつ進みます。</p>
-      <ul class="chips">
-        <li class="chip"><i></i>3歳からOK</li>
-        <li class="chip"><i></i>見学はいつでも無料</li>
-        <li class="chip"><i></i>きょうだい同席OK</li>
+      <h1><span class="nb">ひと駅ずつ、</span><span class="nb">ピアノの旅へ。</span></h1>
+      <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。3歳から、お子さまのペースで1曲ずつ進みます。</p>
+      <ul class="facts">
+        <li><b>3歳</b>から通えます</li>
+        <li><b>0円</b>見学はいつでも</li>
+        <li><b>7分</b>味岡駅から徒歩</li>
       </ul>
-      <div class="go"><a class="btn btn-cta" href="#ticket">見学のきっぷを受け取る
-        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="go"><a class="btn btn-sun" href="#ticket">見学のきっぷを受け取る<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
 
-    <div class="sign">
-      <div class="plate" aria-live="polite">
-        <div class="plate-top"><span id="sOrder">1曲目</span><span>小牧味岡ピアノ教室 線</span></div>
-        <div class="plate-main" id="sMain">
-          <span class="num" aria-hidden="true">PN<b id="sNum">01</b></span>
-          <div>
-            <p class="station" id="sName">きらきらぼし</p>
-            <p class="station-sub" id="sSub">聴いて、まねて、はじめての1曲</p>
+    <div class="sign-wrap">
+      <div class="sign" aria-live="polite">
+        <div class="sign-top" id="sTop">
+          <div class="st-no" aria-hidden="true"><small>PN</small><b id="sNum">01</b></div>
+          <div class="st-name">
+            <p class="st-kana" id="sKana">きらきらぼし</p>
+            <p class="st-main" id="sMain">きらきら星</p>
+            <p class="st-en" id="sEn">Twinkle, Twinkle, Little Star</p>
           </div>
         </div>
-        <div class="plate-band">
-          <button class="prev" id="bPrev" type="button" aria-label="前の駅へ"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M15 9H4M8 4.5 3.5 9 8 13.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="sPrev">けんがく</span></button>
-          <span class="here" aria-hidden="true"></span>
-          <button class="next" id="bNext" type="button" aria-label="次の駅へ"><span id="sNext">ちょうちょう</span><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="sign-band">
+          <button class="prev" id="bPrev" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="sPrev">けんがく</span></button>
+          <span class="mid" aria-hidden="true">PIANO LINE</span>
+          <button class="next" id="bNext" type="button"><span id="sNext">ちょうちょう</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
-      <p class="sign-note">矢印を押すと、次の駅（曲）へ進みます。曲の並びは見本です。</p>
+      <div class="posts" aria-hidden="true"><i></i><i></i></div>
     </div>
   </div>
 
-  <div class="track" aria-hidden="true">
-    <div class="rails"></div>
-    <svg class="train" viewBox="0 0 300 64">
-      <rect x="4" y="6" width="292" height="46" rx="12" fill="#1F7BC9"/>
-      <path d="M4 18h292" stroke="#165E9C" stroke-width="2"/>
-      <rect x="4" y="38" width="292" height="7" fill="#F5B700"/>
-      <rect x="20" y="15" width="34" height="17" rx="3" fill="#E3F0FA"/>
-      <rect x="64" y="15" width="34" height="17" rx="3" fill="#E3F0FA"/>
-      <rect x="132" y="12" width="18" height="34" rx="2" fill="#E3F0FA"/>
-      <rect x="152" y="12" width="18" height="34" rx="2" fill="#E3F0FA"/>
-      <rect x="202" y="15" width="34" height="17" rx="3" fill="#E3F0FA"/>
-      <rect x="246" y="15" width="34" height="17" rx="3" fill="#E3F0FA"/>
-      <circle cx="52" cy="56" r="7" fill="#2E3A46"/><circle cx="76" cy="56" r="7" fill="#2E3A46"/>
-      <circle cx="224" cy="56" r="7" fill="#2E3A46"/><circle cx="248" cy="56" r="7" fill="#2E3A46"/>
-    </svg>
+  <div class="strip">
+    <div class="wrap">
+      <span class="strip-cap">駅（曲）の並びは見本です</span>
+      <div class="strip-line"><div class="strip-fill" id="fill"></div>
+        <div class="strip-stops" id="stops"></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="sec route-sec" id="route">
+<section class="sec" id="route">
   <div class="wrap route-grid">
     <div class="route-head">
-      <h2 class="h2">レッスンは、<br>こんなふうに進みます</h2>
-      <p class="sec-lead">スズキ・メソードは、赤ちゃんがことばを覚えるように音楽を身につける学び方です。たくさん聴いて、まねて弾く。弾けたら、次の駅へ。急ぐ必要はありません。</p>
+      <h2 class="h2">弾けたら、<br>次の駅へ。</h2>
+      <p class="sec-lead">スズキ・メソードは、赤ちゃんがことばを覚えるように音楽を身につける学び方です。たくさん聴いて、まねて弾く。急ぐ必要はありません。</p>
     </div>
     <div>
       <ol class="route" id="route-line">
-        <li class="stop"><span class="dot">PN<b>00</b></span><div><h3>けんがく<span class="kind">始発</span></h3><p>まずは教室の様子を見にきてください。見学はいつでも無料です。下のお子さまも一緒にどうぞ。</p></div></li>
-        <li class="stop"><span class="dot">PN<b>01</b></span><div><h3>きらきらぼし</h3><p>最初の曲は、おうちで録音を流して、たくさん聴くところから。楽譜はまだ使いません。</p></div></li>
-        <li class="stop"><span class="dot">PN<b>02</b></span><div><h3>ちょうちょう</h3><p>聴いて覚えたメロディを、まねして弾きます。おうちの方もレッスンに付きそって、練習のしかたを一緒に覚えます。</p></div></li>
-        <li class="stop"><span class="dot">PN<b>03</b></span><div><h3>ぶんぶんぶん</h3><p>指が動くようになってきたら、楽譜にも少しずつ。進み方は一人ひとり違います。</p></div></li>
-        <li class="stop"><span class="dot">PN<b>04</b></span><div><h3>かっこう</h3><p>1曲弾けるたびに、ひと駅。弾ける曲が、そのまま自信になっていきます。</p></div></li>
-        <li class="stop end"><span class="dot">PN<b>…</b></span><div><h3>その先へ</h3><p>続けていくと、いつのまにかバッハやモーツァルトの名曲へ。路線は、ずっと先まで続いています。</p></div></li>
+        <li class="stop"><span class="o"><small>PN</small><b>00</b></span><div><h3>けんがく</h3><p class="en">Start</p><p>まずは教室の様子を見にきてください。見学はいつでも無料。下のお子さまも一緒にどうぞ。</p></div></li>
+        <li class="stop"><span class="o"><small>PN</small><b>01</b></span><div><h3>きらきら星</h3><p class="en">Twinkle, Twinkle, Little Star</p><p>最初の曲は、おうちで録音を流して、たくさん聴くところから。楽譜はまだ使いません。</p></div></li>
+        <li class="stop"><span class="o"><small>PN</small><b>02</b></span><div><h3>ちょうちょう</h3><p class="en">Lightly Row</p><p>聴いて覚えたメロディを、まねして弾きます。おうちの方もレッスンに付きそって、練習のしかたを一緒に覚えます。</p></div></li>
+        <li class="stop"><span class="o"><small>PN</small><b>03</b></span><div><h3>ぶんぶんぶん</h3><p class="en">The Honeybee</p><p>指が動くようになってきたら、楽譜にも少しずつ。進み方は一人ひとり違います。</p></div></li>
+        <li class="stop"><span class="o"><small>PN</small><b>04</b></span><div><h3>かっこう</h3><p class="en">Cuckoo</p><p>1曲弾けるたびに、ひと駅。弾ける曲が、そのまま自信になっていきます。</p></div></li>
+        <li class="stop end"><span class="o"><small>PN</small><b>…</b></span><div><h3>その先へ</h3><p class="en">and beyond</p><p>続けていくと、いつのまにかバッハやモーツァルトの名曲へ。路線は、ずっと先まで続いています。</p></div></li>
       </ol>
       <p class="route-note">※駅（曲）の名前と並びは見本です。実際の教本に合わせて差し替えます。</p>
     </div>
   </div>
 </section>
 
-<section class="sec" id="about">
+<section class="sec xfer-sec" id="about">
   <div class="wrap">
     <h2 class="h2">のりかえ案内</h2>
     <p class="sec-lead">はじめての方から、よくいただくご不安にお答えします。</p>
     <div class="xfer">
-      <div class="xrow"><div class="xtag"><i style="background:#1F7BC9"><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="6" r="3" fill="none" stroke="#fff" stroke-width="2"/><path d="M4 16c.6-3 2.6-4.6 5-4.6s4.4 1.6 5 4.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></i>3歳からOK</div><p>小さなお子さまも、ことばを覚えるように、音楽を楽しみながら身につけられます。</p></div>
-      <div class="xrow"><div class="xtag"><i style="background:#C8432A"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5Z" fill="none" stroke="#fff" stroke-width="2"/><circle cx="9" cy="9" r="2.2" fill="#fff"/></svg></i>見学は無料</div><p>いつでも見学できます。気になったら、まずは見るだけでも大丈夫です。</p></div>
-      <div class="xrow"><div class="xtag"><i style="background:#2E8A57"><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="6" cy="6.5" r="2.4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12.5" cy="8" r="1.9" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M2 15.5c.4-2.4 2-3.7 4-3.7s3.6 1.3 4 3.7M10 15.5c.3-1.8 1.3-2.8 2.5-2.8s2.2 1 2.5 2.8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></i>きょうだい同席OK</div><p>下のお子さまを連れてのレッスンも、見学も、どうぞご一緒に。</p></div>
-      <div class="xrow"><div class="xtag"><i style="background:#8A5A00"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 3v9.5M5 12.5a2.2 2.2 0 1 1-2.2-2.2H5M13 2v8.5M13 10.5a2.2 2.2 0 1 1-2.2-2.2H13M5 3l8-1" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></i>経験は不要</div><p>おうちの方に音楽の経験がなくても大丈夫です。基礎から一緒に取り組みます。</p></div>
-      <div class="xrow"><div class="xtag"><i style="background:#475869"><svg viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="4" width="12" height="10" rx="1.5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M6.5 4v6M11.5 4v6" stroke="#fff" stroke-width="1.8"/></svg></i>個人レッスン</div><p>一人ひとりの様子を見ながら、そのお子さまに合ったペースで進めます。</p></div>
+      <div class="xrow"><span class="mark" style="--c:#1A66B3" aria-hidden="true">歳</span><div><h3>3歳から通えます</h3><p>小さなお子さまも、ことばを覚えるように、音楽を楽しみながら身につけられます。</p></div></div>
+      <div class="xrow"><span class="mark" style="--c:#C7401F" aria-hidden="true">見</span><div><h3>見学はいつでも無料</h3><p>気になったら、まずは見るだけでも大丈夫です。</p></div></div>
+      <div class="xrow"><span class="mark" style="--c:#23885A" aria-hidden="true">兄</span><div><h3>きょうだい同席OK</h3><p>下のお子さまを連れてのレッスンも、見学も、どうぞご一緒に。</p></div></div>
+      <div class="xrow"><span class="mark" style="--c:#7A4FB0" aria-hidden="true">初</span><div><h3>音楽の経験は不要</h3><p>おうちの方に音楽の経験がなくても大丈夫です。基礎から一緒に取り組みます。</p></div></div>
+      <div class="xrow"><span class="mark" style="--c:#152536" aria-hidden="true">個</span><div><h3>個人レッスン</h3><p>一人ひとりの様子を見ながら、そのお子さまに合ったペースで進めます。</p></div></div>
+      <div class="xrow"><span class="mark" style="--c:#E08A00" aria-hidden="true">車</span><div><h3>駐車場があります</h3><p>お車での送り迎えも安心です。味岡駅からは歩いて7分です。</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec tt-sec" id="time">
+<section class="sec" id="time">
   <div class="wrap">
     <h2 class="h2">時刻表と運賃</h2>
     <p class="sec-lead">レッスンの時間とお月謝です。空いている時間は、見学のときにご相談ください。</p>
     <div class="tt-grid">
-      <div class="board">
-        <div class="board-h"><span>レッスン時刻表</span><small>見本の時間割です</small></div>
+      <div>
+        <div class="tbl-h"><h3>レッスン時刻表</h3><small>見本の時間割です</small></div>
         <table class="tt">
           <thead><tr><th scope="col">時</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col" class="sat">土</th></tr></thead>
           <tbody>
@@ -367,43 +374,46 @@ footer p{margin:4px 0 0;opacity:.92}
             <tr><th scope="row">17</th><td><span>00</span></td><td><span>00</span><span>30</span></td><td><span>00</span><span>30</span></td><td><span>00</span></td><td><span>00</span></td><td class="sat"></td></tr>
           </tbody>
         </table>
-        <p class="board-note">1回30分の個人レッスンです（見本）。実際の曜日と時間に差し替えます。</p>
+        <p class="tbl-note">1回30分の個人レッスンです（見本）。実際の曜日と時間に差し替えます。</p>
       </div>
-      <div class="board">
-        <div class="board-h"><span>運賃表（お月謝）</span><small>見本の金額です</small></div>
+      <div>
+        <div class="tbl-h"><h3>運賃表</h3><small>見本の金額です</small></div>
         <table class="fare">
           <tr><th scope="row">見学</th><td>0<small>円</small></td></tr>
           <tr><th scope="row">入会金</th><td>5,000<small>円</small></td></tr>
-          <tr><th scope="row">月3回</th><td>8,000<small>円／月</small></td></tr>
-          <tr><th scope="row">月4回</th><td>10,000<small>円／月</small></td></tr>
+          <tr><th scope="row">月3回</th><td>8,000<small>円</small></td></tr>
+          <tr><th scope="row">月4回</th><td>10,000<small>円</small></td></tr>
         </table>
-        <p class="board-note">金額は仮のものです。実際の料金に差し替えます。</p>
+        <p class="tbl-note">金額は仮のものです。実際の料金に差し替えます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="teacher">
-  <div class="wrap">
-    <h2 class="h2">運転士より、ごあいさつ</h2>
-    <div class="teacher">
-      <div class="portrait">先生のお写真が<br>入ります</div>
-      <div>
-        <h3>（お名前が入ります）</h3>
-        <p class="role">スズキ・メソード ピアノ科</p>
-        <p>※ここには先生のご紹介文が入ります。ご経歴、ピアノを始められたきっかけ、レッスンで大切にされていること。このあたりを3〜5行いただければ、こちらで整えます。</p>
-      </div>
+<section class="sec greet-sec" id="teacher">
+  <div class="wrap greet">
+    <div>
+      <h2 class="h2">ごあいさつ</h2>
+      <p class="quote">「上手に弾けた」より、<br>「また弾きたい」を<br>大切にしています。</p>
+      <p class="who"><span class="ph">（先生のお名前が入ります）</span><small>小牧味岡ピアノ教室　スズキ・メソード ピアノ科</small></p>
+    </div>
+    <div class="body">
+      <p><span class="ph">※ここには先生のご紹介文が入ります。</span>ご経歴、ピアノを始められたきっかけ、レッスンで大切にされていること。このあたりを3〜5行いただければ、こちらで読みやすく整えます。</p>
+      <p>上の一言も見本です。先生ご自身の言葉に差し替えます。お写真をいただければ、この欄に大きく載せます。</p>
     </div>
   </div>
 </section>
 
-<section class="sec tt-sec" id="access">
+<section class="sec" id="access">
   <div class="wrap">
     <h2 class="h2">アクセス</h2>
     <div class="access">
-      <div class="exit">
-        <div class="exit-h"><svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="8" fill="#1B2B3A"/><circle cx="25" cy="10" r="3.2" fill="#F5B700"/><path d="M22 15.5 17 24l6 3-2 9M22 15.5l6 6 5-1M17 24l-5 3" fill="none" stroke="#F5B700" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>味岡駅から 徒歩7分</div>
-        <dl>
+      <div>
+        <div class="exit-sign">
+          <span class="ex" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="23" cy="7" r="3.6" fill="#F7B500"/><path d="M20 13 14 23l7 3.5-2.5 10M20 13l7 6.5 6-1.2M14 23l-6 3" fill="none" stroke="#F7B500" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>味岡駅から 徒歩7分</b><span>名鉄小牧線</span></div>
+        </div>
+        <dl class="adl">
           <dt>住所</dt><dd>愛知県小牧市小松寺4丁目78</dd>
           <dt>電車</dt><dd>名鉄小牧線「味岡駅」から徒歩7分</dd>
           <dt>お車</dt><dd>駐車場があります</dd>
@@ -415,22 +425,37 @@ footer p{margin:4px 0 0;opacity:.92}
 </section>
 
 <section class="ticket-sec" id="ticket">
-  <div class="wrap">
-    <div class="ticket">
-      <div class="t-main">
-        <p class="t-kind">見学きっぷ</p>
-        <p class="t-route"><span class="nb">ご自宅</span><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 13h16M14 7l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nb">小牧味岡ピアノ教室</span></p>
-        <p class="t-meta">有効期限なし　おうちの方・きょうだいも一緒にどうぞ</p>
-        <a class="btn btn-cta" href="#ticket" aria-describedby="ctaNote">メールで見学を申し込む</a>
-      </div>
-      <div class="t-side"><div class="fareb">0<small>円</small></div><p>見学は<br>いつでも無料</p></div>
+  <div class="wrap ticket-in">
+    <div>
+      <h2 class="h2">見学のきっぷは、<br>無料です。</h2>
+      <p class="sec-lead">いつでも見学できます。おうちの方も、きょうだいも一緒にどうぞ。メールで日にちをご相談ください。</p>
+      <div class="go"><a class="btn btn-sun" href="#ticket" aria-describedby="ctaNote">メールで見学を申し込む<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <p class="note" id="ctaNote">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
     </div>
-    <p class="cta-note" id="ctaNote">※このボタンは見本です。実際のページでは、そのままお申し込みいただけます。</p>
+    <div class="ticket" role="img" aria-label="見学きっぷ。ご自宅から小牧味岡ピアノ教室ゆき、0円、有効期限なし">
+      <svg class="jimon" viewBox="0 0 570 300" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <pattern id="jm" width="18" height="18" patternUnits="userSpaceOnUse">
+            <path d="M0 9c4.5-6 9-6 13.5 0S22.5 15 27 9M-9 9c4.5 6 9 6 13.5 0" fill="none" stroke="#9FC3A0" stroke-width=".9" opacity=".75"/>
+            <circle cx="9" cy="0" r="1.1" fill="#A8C9A9" opacity=".7"/>
+          </pattern>
+        </defs>
+        <rect width="570" height="300" fill="#E8F1E4"/>
+        <rect width="570" height="300" fill="url(#jm)"/>
+        <rect x="0" y="0" width="570" height="300" fill="none" stroke="#B9D3B8" stroke-width="10"/>
+      </svg>
+      <div class="t-body">
+        <div class="t-row"><span>見学きっぷ</span><span>小牧味岡ピアノ教室 発行</span></div>
+        <div class="t-route"><span>ご自宅</span><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 13h18M15 6l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>小牧味岡</span></div>
+        <div class="t-row"><span>有効期限なし　おとな・こども</span><span class="t-fare">0<small>円</small></span></div>
+      </div>
+      <div class="t-stamp" aria-hidden="true">見学<br>歓迎</div>
+    </div>
   </div>
 </section>
 </main>
 
-<div class="fab" id="fab"><a class="btn btn-cta" href="#ticket" style="width:100%;justify-content:center">見学のきっぷを受け取る</a></div>
+<div class="fab" id="fab"><a class="btn btn-cta" href="#ticket">見学のきっぷを受け取る</a></div>
 
 <footer>
   <div class="wrap">
@@ -442,36 +467,44 @@ footer p{margin:4px 0 0;opacity:.92}
 <script>
 (function(){
   var S=[
-    {n:'00',o:'始発',name:'けんがく',sub:'まずは、教室を見にきてください'},
-    {n:'01',o:'1曲目',name:'きらきらぼし',sub:'聴いて、まねて、はじめての1曲'},
-    {n:'02',o:'2曲目',name:'ちょうちょう',sub:'覚えたメロディを、指でなぞる'},
-    {n:'03',o:'3曲目',name:'ぶんぶんぶん',sub:'楽譜にも、少しずつ'},
-    {n:'04',o:'4曲目',name:'かっこう',sub:'弾ける曲が、自信になる'},
-    {n:'…',o:'その先',name:'その先へ',sub:'バッハやモーツァルトへ続く路線'}
+    {n:'00',kana:'けんがく',main:'見学',en:'Start'},
+    {n:'01',kana:'きらきらぼし',main:'きらきら星',en:'Twinkle, Twinkle, Little Star'},
+    {n:'02',kana:'ちょうちょう',main:'ちょうちょう',en:'Lightly Row'},
+    {n:'03',kana:'ぶんぶんぶん',main:'ぶんぶんぶん',en:'The Honeybee'},
+    {n:'04',kana:'かっこう',main:'かっこう',en:'Cuckoo'},
+    {n:'…',kana:'そのさきへ',main:'その先へ',en:'and beyond'}
   ];
   var i=1,$=function(id){return document.getElementById(id)};
-  function show(){
+  var stops=$('stops');
+  S.forEach(function(s,k){
+    var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(k+1)+'番目の駅 '+s.main+' へ');
+    b.innerHTML='<span class="o"></span><span>'+s.kana+'</span>';
+    b.addEventListener('click',function(){i=k;show(true)});stops.appendChild(b);
+  });
+  function show(anim){
     var s=S[i];
-    $('sNum').textContent=s.n;$('sOrder').textContent=s.o;$('sName').textContent=s.name;$('sSub').textContent=s.sub;
-    $('sPrev').textContent=i>0?S[i-1].name:'';$('sNext').textContent=i<S.length-1?S[i+1].name:'';
+    $('sNum').textContent=s.n;$('sKana').textContent=s.kana;$('sMain').textContent=s.main;$('sEn').textContent=s.en;
+    $('sPrev').textContent=i>0?S[i-1].kana:'';$('sNext').textContent=i<S.length-1?S[i+1].kana:'';
     $('bPrev').disabled=i===0;$('bNext').disabled=i===S.length-1;
-    var m=$('sMain');m.classList.remove('flip');void m.offsetWidth;m.classList.add('flip');
+    $('bPrev').setAttribute('aria-label',i>0?'前の駅 '+S[i-1].main+' へ':'前の駅はありません');
+    $('bNext').setAttribute('aria-label',i<S.length-1?'次の駅 '+S[i+1].main+' へ':'次の駅はありません');
+    $('fill').style.width=(i/(S.length-1)*100)+'%';
+    [].forEach.call(stops.children,function(b,k){b.classList.toggle('pass',k<i);b.classList.toggle('now',k===i)});
+    if(anim){var t=$('sTop');t.classList.remove('swap');void t.offsetWidth;t.classList.add('swap')}
   }
-  $('bPrev').addEventListener('click',function(){if(i>0){i--;show()}});
-  $('bNext').addEventListener('click',function(){if(i<S.length-1){i++;show()}});
+  $('bPrev').addEventListener('click',function(){if(i>0){i--;show(true)}});
+  $('bNext').addEventListener('click',function(){if(i<S.length-1){i++;show(true)}});
+  show(false);
 
-  // 路線図：読み進めた分だけ線が伸び、通った駅に色がつく
-  var line=$('route-line'),stops=line.querySelectorAll('.stop');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var line=$('route-line'),rs=line.querySelectorAll('.stop'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function onScroll(){
-    var r=line.getBoundingClientRect(),vh=window.innerHeight;
-    var p=Math.min(1,Math.max(0,(vh*0.6-r.top)/r.height));
-    line.style.setProperty('--p',reduce?1:p);
-    stops.forEach(function(st){st.classList.toggle('on',st.getBoundingClientRect().top<vh*0.6)});
-    var fab=$('fab'),hero=document.querySelector('.hero').getBoundingClientRect(),t=$('ticket').getBoundingClientRect();
-    fab.classList.toggle('show',hero.bottom<0&&t.top>vh);
+    var vh=window.innerHeight,r=line.getBoundingClientRect();
+    line.style.setProperty('--p',reduce?1:Math.min(1,Math.max(0,(vh*0.6-r.top)/r.height)));
+    rs.forEach(function(st){st.classList.toggle('on',st.getBoundingClientRect().top<vh*0.6)});
+    var h=document.querySelector('.hero').getBoundingClientRect(),t=$('ticket').getBoundingClientRect();
+    $('fab').classList.toggle('show',h.bottom<0&&t.top>vh);
   }
-  var ticking=false;function req(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;onScroll()})}}
+  var tk=false;function req(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;onScroll()})}}
   window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);onScroll();
 })();
 </script>
