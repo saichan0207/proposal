@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#1A66B3">
+<meta name="theme-color" content="#1F3A5C">
 <title>小牧味岡ピアノ教室｜ホームページ案（見本）</title>
 <meta name="description" content="愛知県小牧市・味岡駅から徒歩7分の「小牧味岡ピアノ教室」のホームページデザイン案です。3歳から、聴いて、まねて、はじめてのピアノ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700;900&family=Barlow:wght@500;600;700&family=Noto+Music&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700&family=Zen+Old+Mincho:wght@500;700&family=Barlow:wght@500;600;700&family=Noto+Music&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#1A66B3;
@@ -241,6 +241,74 @@ footer p{margin:6px 0 0}
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ===== 第5稿：保護者向けの落ち着いたトーン（11/28「子供すぎる。親が見る」） ===== */
+:root{--blue:#1F3A5C;--blue-d:#172C47;--blue-l:#DDE5EC;--sun:#C9A55A;--sun-l:#EFE3C6;--ink:#1C2733;--ink2:#3D4A57;--steel:#66727E;--rule:#C9D2DA;--cta:#1F3A5C;--cta-d:#172C47}
+body{letter-spacing:.04em}
+.h2,.hero h1,.greet .quote,.step h3,.xrow h3,.tbl-h h3,.exit-sign b{font-family:"Zen Old Mincho",serif;font-weight:700}
+.hero h1{font-size:clamp(34px,4.2vw,56px);line-height:1.4;letter-spacing:.06em}
+.h2{font-size:clamp(28px,3vw,40px);line-height:1.45;letter-spacing:.06em}
+.hero .lead{font-weight:400;color:#DCE4EC;font-size:17px}
+.facts b{color:var(--sun)}
+.facts li{font-weight:500}
+.btn-sun{background:var(--sun);color:#1C2733;box-shadow:none}
+.btn-sun:hover{background:#D9B86F}
+.band{border-bottom:1px solid rgba(201,165,90,.6)}
+.band nav a.tk{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--sun)}
+.band nav a.tk:hover{background:var(--sun);color:var(--ink)}
+.brand{font-family:"Zen Old Mincho",serif;font-weight:700;letter-spacing:.1em}
+.brand .sym{background:transparent;color:var(--sun);box-shadow:inset 0 0 0 1.5px var(--sun)}
+.score .staff line{stroke:rgba(255,255,255,.75);stroke-width:2}
+.score .bar{stroke-width:2}
+.note .head{fill:var(--blue);stroke:#fff;stroke-width:3}
+.note.pass .head,.note.now .head{fill:var(--sun);stroke:var(--sun)}
+.note .stem{stroke-width:3;stroke:rgba(255,255,255,.85)}
+.note .ly{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:26px}
+.note .nm{font-weight:500}
+.pbtn{font-weight:500}
+.kb .w{border-color:#9FB0C2}
+.kb .b{background:#22303D}
+#route{background:#EEF2F5}
+#route .steps{border-top:1px solid var(--ink)}
+#route .step{border-bottom-color:#D3DBE2}
+.step .no{font-weight:500;color:var(--steel)}
+.step .no .nh{color:#B9C4CE}
+.step.on .no .nh{color:var(--sun)}
+.step h3{font-size:24px}
+.xfer-sec{background:var(--blue);color:#fff}
+.xfer-sec .h2{color:#fff}
+.xfer-sec .sec-lead,.xrow p{color:#D2DCE6}
+.xfer{border-top:1px solid rgba(255,255,255,.5)}
+.xrow{border-bottom:1px solid rgba(255,255,255,.18)}
+.xrow h3{font-size:20px;color:#fff}
+.mark{background:transparent;border:1.5px solid var(--sun);color:var(--sun);font-family:"Zen Old Mincho",serif;font-weight:500;font-size:20px;width:54px;height:54px}
+.xrow{grid-template-columns:54px minmax(0,1fr)}
+#time{background:#F4F1EB}
+#time .tt th,#time .tt td,#time .fare th,#time .fare td{border-bottom-color:#DDD6CA}
+#time .tt thead th,#time .tbl-h small,#time .tbl-note,#time .fare td small{color:#6B6458}
+.tbl-h{border-bottom:2px solid var(--ink)}
+.tt tbody th{color:var(--blue);border-right:1px solid var(--ink);font-size:28px}
+.tt .sat,.tt thead .sat{color:#8A6B2E}
+.fare td{font-size:28px}
+#teacher{background:#E4EAF0!important;color:var(--ink)}
+#teacher .h2,#teacher .quote{color:var(--ink)}
+#teacher .quote{font-size:clamp(24px,2.4vw,30px);font-weight:500;line-height:1.8}
+#teacher .who{border-top:1px solid var(--ink)}
+#teacher .who small{color:var(--steel)}
+#teacher .body p{color:var(--ink2)}
+#teacher .ph{background:#F1E6CC;color:var(--ink)}
+#access{background:#EEF2F5}
+#access .adl{border-top:1px solid var(--ink)}
+#access .adl dt,#access .adl dd{border-bottom-color:#D3DBE2}
+.exit-sign{background:transparent;border:1px solid var(--ink);padding:20px 24px}
+.exit-sign .ex{background:var(--blue)}
+.exit-sign b{font-size:24px}
+.visit-sec .how b{color:var(--sun)}
+.fab .btn-cta{background:var(--blue)}
+.ph{font-weight:400}
+.score{max-width:940px;margin-inline:auto;margin-top:28px}
+.score svg{max-height:330px}
+@media (max-width:900px){.hero h1{font-size:clamp(30px,8vw,40px)}.note .ly{font-size:38px}}
 </style>
 </head>
 <body>
@@ -263,9 +331,9 @@ footer p{margin:6px 0 0}
 <section class="hero">
   <div class="wrap">
     <div class="hero-top">
-      <h1><span class="nb">はじめての1曲は、</span><span class="nb">きらきら星。</span></h1>
+      <h1><span class="nb">ことばを覚えるように、</span><span class="nb">ピアノを。</span></h1>
       <div>
-        <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。ことばを覚えるように、まず聴いて、まねて弾く。3歳から、お子さまのペースで1曲ずつ進みます。</p>
+        <p class="lead">小牧味岡ピアノ教室は、スズキ・メソードのピアノ教室です。よい音楽をたくさん聴き、まねて弾くことで、自然に力を身につけていきます。最初の1曲は「きらきら星」。3歳から、お子さまのペースに合わせて丁寧に進めます。</p>
         <ul class="facts">
           <li><b>3歳</b>から通えます</li>
           <li><b>0円</b>見学はいつでも</li>
@@ -300,8 +368,8 @@ footer p{margin:6px 0 0}
 <section class="sec" id="route">
   <div class="wrap steps-grid">
     <div class="steps-head">
-      <h2 class="h2">1曲弾けたら、<br>次の曲へ。</h2>
-      <p class="sec-lead">スズキ・メソードは、赤ちゃんがことばを覚えるように音楽を身につける学び方です。たくさん聴いて、まねて弾く。急ぐ必要はありません。</p>
+      <h2 class="h2">1曲ずつ、<br>確かな力に。</h2>
+      <p class="sec-lead">スズキ・メソードは、赤ちゃんがことばを覚えるように音楽を身につける学び方です。たくさん聴いて、まねて弾く。一人ひとりの進み方に合わせ、急がせることはありません。</p>
     </div>
     <div>
       <ol class="steps" id="steps"><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>見学</span><div><h3>けんがく</h3><p class="en">Visit</p><p>まずは教室の様子を見にきてください。見学はいつでも無料。下のお子さまも一緒にどうぞ。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>1曲目</span><div><h3>きらきら星</h3><p class="en">Twinkle, Twinkle, Little Star</p><p>最初の曲は、おうちで録音を流して、たくさん聴くところから。楽譜はまだ使いません。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>2曲目</span><div><h3>ちょうちょう</h3><p class="en">Lightly Row</p><p>聴いて覚えたメロディを、まねして弾きます。おうちの方もレッスンに付きそって、練習のしかたを一緒に覚えます。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>3曲目</span><div><h3>ぶんぶんぶん</h3><p class="en">The Honeybee</p><p>指が動くようになってきたら、楽譜にも少しずつ。進み方は一人ひとり違います。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>4曲目</span><div><h3>かっこう</h3><p class="en">Cuckoo</p><p>1曲弾けるたびに、弾ける曲が1つ増えます。それがそのまま、お子さまの自信になります。</p></div></li><li class="step"><span class="no"><svg class="nh" viewBox="0 0 30 40" aria-hidden="true"><ellipse cx="11" cy="31" rx="10" ry="7.5" transform="rotate(-20 11 31)" fill="currentColor"/><path d="M20 29V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>その先</span><div><h3>その先へ</h3><p class="en">and beyond</p><p>続けていくと、いつのまにかバッハやモーツァルトの名曲へ。</p></div></li></ol>
@@ -313,7 +381,7 @@ footer p{margin:6px 0 0}
 <section class="sec xfer-sec" id="about">
   <div class="wrap">
     <h2 class="h2">はじめての方へ</h2>
-    <p class="sec-lead">はじめての方から、よくいただくご不安にお答えします。</p>
+    <p class="sec-lead">はじめて習い事を考える保護者の方から、よくいただくご質問にお答えします。</p>
     <div class="xfer">
       <div class="xrow"><span class="mark" style="--c:#1A66B3" aria-hidden="true">歳</span><div><h3>3歳から通えます</h3><p>小さなお子さまも、ことばを覚えるように、音楽を楽しみながら身につけられます。</p></div></div>
       <div class="xrow"><span class="mark" style="--c:#C7401F" aria-hidden="true">見</span><div><h3>見学はいつでも無料</h3><p>気になったら、まずは見るだけでも大丈夫です。</p></div></div>
@@ -328,7 +396,7 @@ footer p{margin:6px 0 0}
 <section class="sec" id="time">
   <div class="wrap">
     <h2 class="h2">レッスンの時間とお月謝</h2>
-    <p class="sec-lead">レッスンの時間とお月謝です。空いている時間は、見学のときにご相談ください。</p>
+    <p class="sec-lead">空いている時間帯は、見学の際にご相談ください。</p>
     <div class="tt-grid">
       <div>
         <div class="tbl-h"><h3>レッスンの時間</h3><small>見本の時間割です</small></div>
@@ -394,8 +462,8 @@ footer p{margin:6px 0 0}
 
 <section class="visit-sec" id="visit">
   <div class="wrap visit-in">
-    <h2 class="h2">まずは一度、<br>見学にいらしてください。</h2>
-    <p class="sec-lead">見学はいつでも無料です。おうちの方も、きょうだいも一緒にどうぞ。メールで日にちをご相談ください。</p>
+    <h2 class="h2">まずは一度、<br>教室をご覧ください。</h2>
+    <p class="sec-lead">見学はいつでも無料です。ごきょうだいもご一緒にどうぞ。ご都合のよい日をメールでお知らせください。</p>
     <ul class="how">
       <li><b>見学</b><span>無料・いつでも（日にちはご相談ください）</span></li>
       <li><b>持ち物</b><span>特にありません</span></li>
